@@ -58,7 +58,7 @@
                         data = arr1[0];
                         for(let i = 1; i < arr1.length; i++)
                             data += "```" + arr1[i];
-                        $("#content").html(marked.parse(data));
+                        $("#content").html("<div class=\"title\"><h1>"+ info["title"] +"</h1></a><p><em>时间："+ info["mtime"] + "</em></p></div>" + marked.parse(data));
                         hljs.initHighlighting();
                     });
                 });

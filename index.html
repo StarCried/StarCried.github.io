@@ -44,7 +44,7 @@
             $(function(){
                 $.get("/blog/index.json", function(data){
                     for(let key in data)
-                        $(".column.middle").prepend("<div class=\"card\"><a href=\"/blog/?pid=" + key + "\"><h2>" + data[key]["title"] + "</h2></a><p>" + data[key]["abstract"] + "</p></div>");
+                        $(".column.middle").prepend("<div class=\"card\"><div class=\"title\"><a href=\"/blog/?pid=" + key + "\"><h2>" + data[key]["title"] + "</h2></a><p><em>时间："+ data[key]["mtime"] + "</em></p></div><p>" + data[key]["abstract"] + "</p></div>");
                 });
             });
         </script>
