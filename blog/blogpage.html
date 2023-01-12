@@ -46,8 +46,8 @@
             $.get("/blog/index.json",function(data){
                 if(data[pid] == undefined) location.replace("/404.html");
                 let info = data[pid];
-                $("title").html(info["title"] + " - (≧ω≦)/");
-                $("#content").ready(function(){
+                $(function(){
+                    $("title").html(info["title"] + " - (≧ω≦)/");
                     $.get(info["url"], function(data){
                         let arr1 = data.split(/^```/m);
                         for(let i = 0; i < arr1.length; i += 2)

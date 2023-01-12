@@ -41,10 +41,10 @@
         </div>
 
         <script>
-            $(".column.middle").ready(function(){
+            $(function(){
                 $.get("/blog/index.json", function(data){
                     for(let key in data)
-                        $(".column.middle").append("<div class=\"card\"><a href=\"/blog/blogpage.html?pid=" + key + "\"><h2>" + data[key]["title"] + "</h2></a><p>" + data[key]["abstract"] + "</p></div>");
+                        $(".column.middle").prepend("<div class=\"card\"><a href=\"/blog/blogpage.html?pid=" + key + "\"><h2>" + data[key]["title"] + "</h2></a><p>" + data[key]["abstract"] + "</p></div>");
                 });
             });
         </script>
