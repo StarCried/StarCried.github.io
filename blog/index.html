@@ -30,7 +30,13 @@
 
         <div class="mainpage">
             <div class="column left">
-                <div class="card" id="content"></div>
+                <div class="card">
+                    <div class="title">
+                        <h1></h1>
+                        <p><em></em></p>
+                    </div>
+                    <div class="content"></div>
+                </div>
             </div>
             <div class="column right"></div>
         </div>
@@ -48,6 +54,8 @@
                 let info = data[pid];
                 $(function(){
                     $("title").html(info["title"] + " - (≧ω≦)/");
+                    $(".title h1").html(info["title"]);
+                    $(".title p em").html("时间："+ info["mtime"]);
                     $.get(info["url"], function(data){
                         let arr1 = data.split(/^```/m);
                         for(let i = 0; i < arr1.length; i += 2)
@@ -58,7 +66,7 @@
                         data = arr1[0];
                         for(let i = 1; i < arr1.length; i++)
                             data += "```" + arr1[i];
-                        $("#content").html("<div class=\"title\"><h1>"+ info["title"] +"</h1></a><p><em>时间："+ info["mtime"] + "</em></p></div>" + marked.parse(data));
+                        $(".content").html(marked.parse(data));
                         hljs.initHighlighting();
                     });
                 });
