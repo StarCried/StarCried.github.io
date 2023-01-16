@@ -1,63 +1,4 @@
-.column{
-    float: left;
-    padding: 10px;
-}
-
-.column.side{
-    width: 20%;
-}
-
-.column.middle{
-    width: 60%;
-}
-
-.card{
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    transition: box-shadow 1s, padding 1s;
-    -webkit-transition: box-shadow 1s, padding 1s;
-}
-
-.card .title{
-    width: 100%;
-    border-bottom: 1px solid #eeeeee;
-    margin: 20px 0;
-}
-
-.card .title a{
-    float: left;
-    text-decoration: none;
-    color: black;
-    padding-left: 10px;
-}
-
-.card .title a h2{
-    display: inline;
-    font-weight: normal;
-}
-
-.card .title p{
-    float: right;
-    padding-right: 20px;
-}
-
-.card .title a:hover{
-    text-decoration: underline;
-}
-
-.card .title::after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.card:hover{
-    padding: 40px;
-    box-shadow: 10px 10px 5px;
-}
-
-#playcard{
+.playcard{
     width:100px;
     height:100px;
     background-image: linear-gradient(45deg, red, yellow);
@@ -68,8 +9,6 @@
     -moz-animation:pcani 5s linear 2s infinite alternate;
     /* Safari and Chrome: */
     -webkit-animation:pcani 5s linear 2s infinite alternate;
-    /* Opera: */
-    -o-animation:pcani 5s linear 2s infinite alternate;
 }
 
 @keyframes pcani{
@@ -94,24 +33,4 @@
     50% {background-image: -webkit-linear-gradient(225deg, green, blue); top: 400px; -webkit-transform: rotate(180deg);}
     75% {background-image: -webkit-linear-gradient(315deg, blue, red); top: 200px; -webkit-transform: rotate(270deg);}
     100% {background-image: -webkit-linear-gradient(45deg, red, yellow); top: 0px; -webkit-transform: rotate(360deg);}
-}
-
-@-o-keyframes pcani{
-    0% {background-image: -o-linear-gradient(45deg, red, yellow); top: 0px; transform: rotate(0deg);}
-    25% {background-image: -o-linear-gradient(135deg, yellow, green); top: 200px; transform: rotate(90deg);}
-    50% {background-image: -o-linear-gradient(225deg, green, blue); top: 400px; transform: rotate(180deg);}
-    75% {background-image: -o-linear-gradient(315deg, blue, red); top: 200px; transform: rotate(270deg);}
-    100% {background-image: -o-linear-gradient(45deg, red, yellow); top: 0px; transform: rotate(360deg);}
-}
-
-.ylcard{
-    background-color: aliceblue;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 25px;
-    font-weight: lighter;
-}
-
-.ylcard h2{
-    font-weight: normal;
 }

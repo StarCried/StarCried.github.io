@@ -1,0 +1,70 @@
+.column{
+    float: left;
+    padding: 10px;
+}
+
+.column.side{
+    width: 20%;
+}
+
+.column.middle{
+    width: 60%;
+}
+
+.card{
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    transition: box-shadow 1s, padding 1s;
+    -webkit-transition: box-shadow 1s, padding 1s;
+}
+
+.card .title{
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    margin: 20px 0;
+}
+
+.card .title a{
+    float: left;
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+}
+
+.card .title a h2{
+    display: inline;
+    font-weight: normal;
+}
+
+.card .title p{
+    float: right;
+    padding-right: 20px;
+}
+
+.card .title a:hover{
+    text-decoration: underline;
+}
+
+.card .title::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card:hover{
+    padding: 40px;
+    box-shadow: 10px 10px 5px;
+}
+
+.ylcard{
+    background-color: aliceblue;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+    font-weight: lighter;
+}
+
+.ylcard h2{
+    font-weight: normal;
+}

@@ -1,0 +1,50 @@
+.playbox{
+    width:150px;
+    height:150px;
+    position: relative;
+    top: 75px;
+    margin: auto;
+    transform-style: preserve-3d;
+    animation: boxani 6s linear infinite;
+}
+
+@keyframes boxani{
+    0%{
+        transform: rotateX(-30deg) rotateY(-180deg);
+    }
+    100%{
+        transform: rotateX(-390deg) rotateY(-540deg);
+    }
+}
+
+.playbox .face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: 0 0 7px white;
+}
+
+.playbox .face.a{
+    background: linear-gradient(45deg, red, yellow);
+    transform: rotateX(90deg) translateZ(75px);
+}
+.playbox .face.b{
+    background: linear-gradient(135deg, red, green);
+    transform: rotateY(0deg) translateZ(75px);
+}
+.playbox .face.c{
+    background: linear-gradient(225deg, yellow, green);
+    transform: rotateY(90deg) translateZ(75px);
+}
+.playbox .face.d{
+    background: linear-gradient(315deg, blue, yellow);
+    transform: rotateY(180deg) translateZ(75px);
+}
+.playbox .face.e{
+    background: linear-gradient(45deg, blue, red);
+    transform: rotateY(270deg) translateZ(75px);
+}
+.playbox .face.f{
+    background: linear-gradient(45deg, blue, green);
+    transform: rotateX(-90deg) translateZ(75px);
+}

@@ -1,50 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
     <head>
         <meta charset="utf-8">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
         <title> - (≧ω≦)/</title>
         <link rel="stylesheet" type="text/css" href="/css/base.css">
-        <link rel="stylesheet" type="text/css" href="/css/cblog.css">
-
+        <link rel="stylesheet" type="text/css" href="/css/blog.css">
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/marked@4.2.5/marked.min.js"></script>
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
-
         <link rel="stylesheet" type="text/css" href="/css/highlight_tomorrow.css">
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.7.0/build/highlight.min.js"></script>
-    </head>
-    <body>
-        <div class="header">
-            <a href="/"><h1>Blog</h1></a>
-        </div>
-
-        <div class="topnav">
-            <a href="/">首页</a>
-            <a href="/blog/0.html">测试页1</a>
-            <a href="#2">测试页2</a>
-            <a href="#3" style="float: right;">测试页3</a>
-        </div>
-
-        <div class="mainpage">
-            <div class="column left">
-                <div class="card">
-                    <div class="title">
-                        <h1></h1>
-                        <p><em></em></p>
-                    </div>
-                    <div class="content"></div>
-                </div>
-            </div>
-            <div class="column right"></div>
-        </div>
-
-        <div class="footer">
-            <p>Developed by a___</p>
-        </div>
-
         <script>
             let pid = location.search.match(/pid=\d+/);
             if(pid == null) location.replace("/404.html");
@@ -53,9 +23,12 @@
                 if(data[pid] == undefined) location.replace("/404.html");
                 let info = data[pid];
                 $(function(){
+                    $(".header").load("/html/header");
+                    $(".topnav").load("/html/topnav");
+                    $(".footer").load("/html/footer");
                     $("title").html(info["title"] + " - (≧ω≦)/");
                     $(".title h1").html(info["title"]);
-                    $(".title p em").html("时间："+ info["mtime"]);
+                    $(".title p em").html("时间：" + info["mtime"]);
                     $.get(info["url"], function(data){
                         let arr1 = data.split(/^```/m);
                         for(let i = 0; i < arr1.length; i += 2)
@@ -72,5 +45,22 @@
                 });
             });
         </script>
+    </head>
+    <body>
+        <div class="header"></div>
+        <div class="topnav"></div>
+        <div class="mainpage">
+            <div class="column left">
+                <div class="card">
+                    <div class="title">
+                        <h1></h1>
+                        <p><em></em></p>
+                    </div>
+                    <div class="content"></div>
+                </div>
+            </div>
+            <div class="column right"></div>
+        </div>
+        <div class="footer"></div>
     </body>
 </html>
