@@ -1,0 +1,117 @@
+.flappybird{
+    margin: 0 auto;
+    width: 285px;
+    height: 510px;
+    position: relative;
+    background: url("/resource/flappybird/background1.png");
+    overflow: hidden;
+}
+
+.flappybird .ground{
+    width: 285px;
+    height: 110px;
+    position: absolute;
+    z-index: 3;
+    top: 400px;
+    background: url("/resource/flappybird/ground.png");
+}
+
+.flappybird .pipe{
+    width: 54px;
+    height: 321px;
+    background: url("/resource/flappybird/pipe.png");
+}
+.flappybird .pipe.up{
+    transform: rotate(180deg);
+}
+.flappybird .pipe.middle{
+    height: 125px;
+    background: none;
+}
+
+.flappybird .pipebox{
+    width: 54px;
+    height: 767px;
+    position: absolute;
+    z-index: 1;
+    top: -200px;
+    display: none;
+}
+
+@keyframes pipemoving{
+    0%{
+        left: 285px;
+    }
+    100%{
+        left: -55px;
+    }
+}
+
+.flappybird .bird{
+    width: 35px;
+    height: 25px;
+    background: url("/resource/flappybird/bird1.png");
+    animation: birdflying 0.6s steps(3) infinite alternate;
+}
+
+@keyframes birdflying{
+    0%{
+        background: url("/resource/flappybird/bird1.png");
+    }
+    50%{
+        background: url("/resource/flappybird/bird2.png");
+    }
+    100%{
+        background: url("/resource/flappybird/bird3.png");
+    }
+}
+
+.flappybird .birdbox{
+    width: 35px;
+    height: 25px;
+    position: absolute;
+    z-index: 2;
+    top: 200px;
+    left: 125px;
+    transform: rotate(30deg);
+    transition: transform 0.05s, top 0.2s;
+}
+
+.flappybird .board{
+    width: 228px;
+    height: 116px;
+    background: url("/resource/flappybird/board.png");
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+    left: 28px;
+    display: none;
+}
+
+.flappybird .board .medal{
+    width: 45px;
+    height: 45px;
+    background: url("/resource/flappybird/medal1.png");
+    position: absolute;
+    z-index: 5;
+    top: 45px;
+    left: 27px;
+}
+.flappybird .board .score{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+    position: absolute;
+    z-index: 5;
+    top: 35px;
+    left: 185px;
+}
+.flappybird .board .bestscore{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 5;
+    top: 75px;
+    left: 185px;
+}
