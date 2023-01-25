@@ -1,3 +1,4 @@
+(function(){
 var movingpipe1, movingpipe2, movingpipe3, movingbird;
 var birdpos = 200;
 var gamerunning = false, gamescore = 0, bestscore = 0;
@@ -67,7 +68,7 @@ function gameover(){
     document.getElementById("board").style.display = "block";
     setTimeout(function(){unabled = false;}, 5000);
 }
-window.onload = function(){
+window.addEventListener("load", function(){
     document.getElementById("flappybird").addEventListener("click", function(){
         if(unabled) return;
         if(!gamerunning){
@@ -83,4 +84,5 @@ window.onload = function(){
             clicked = true;
         }
     });
-};
+});
+})();
