@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723168673349),
+    lastupdate: new Date(1723395659660),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/异维A酸/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/逆序对-线段树[非公开][草稿]/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2725,19 +2725,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%BC%82%E7%BB%B4A%E9%85%B8/"  itemprop="url">
-        异维A酸
+      <a href="/2022/04/30/%E9%80%86%E5%BA%8F%E5%AF%B9-%E7%BA%BF%E6%AE%B5%E6%A0%91%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/"  itemprop="url">
+        逆序对-线段树[非公开][草稿]
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        2023.9.8
-都是异维A酸的错。这种药伤肝，会让我心情低落。
-果然只有在我难受的时候才会来写博客，把话写给电脑和网络。他们不会回复我。如果真要回复的话，也许我可以试一下 ChatGPT。但那也太悲哀了。
-既然没人看，我就要讲真话。好，我承认我对学长有感情了，他真的非常关心我。这也是我今天难受的原因。他太关心我了，以至于我一不回应他他就会生气。我不想让他失望。
-这一年来最难崩的事情就是第一...
+        然而线段树并处理不了P1908的巨型数据啊啊啊
+原理
+给你n个数，我们把它离散化成&lt;=n个数并把n变成该值，再建一个空树，每次插入一个数，并向上传递数的个数。当再插入一个数后，它的逆序对的个数一定是已经插入的、比它小的数的数量，那么我们用线段树时每个节点记录子树数字个数的和，然后查询就ok了。
+理解不了?其实也不用理解因为有比线段树更快的算法（照应文首）去外面理解一下就行了QAQ
+下面...
       
     
   </div>
@@ -2758,7 +2758,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E5%BC%82%E7%BB%B4A%E9%85%B8/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E9%80%86%E5%BA%8F%E5%AF%B9-%E7%BA%BF%E6%AE%B5%E6%A0%91%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2774,7 +2774,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/并查集-按秩合并/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/重边[非公开][草稿]/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2792,22 +2792,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%B9%B6%E6%9F%A5%E9%9B%86-%E6%8C%89%E7%A7%A9%E5%90%88%E5%B9%B6/"  itemprop="url">
-        并查集-按秩合并
+      <a href="/2022/04/30/%E9%87%8D%E8%BE%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/"  itemprop="url">
+        重边[非公开][草稿]
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        并查集有两种优化。第一种是直接连根&mdash;&mdash;虽然是O(n)但是会破坏树形结构。
-按秩合并
-UVA11354（莫得原地址洛谷的凑合一下）
-大意：求最小生成树的两个点间的最大路径。
-带边权的并查集？多组数据？
-我们按秩合并。
-基本思想是使包含较少结点的树的根指向包含较多结点的树的根。
-我们存边时，用结构体存边。但不用前向星。因为如果要kruskal的话需要改动一下。本来我们连接...
+        什么是重边？
+就是无向图连接两个点间不止一条道路。这个时候就相当于形成了一个环。这个玩意在图论题中很难受。vector存它的话会很难受，一般用链式前向星。
+在tarjan等算法中记得去重边。
       
     
   </div>
@@ -2828,7 +2823,7 @@ UVA11354（莫得原地址洛谷的凑合一下）
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E5%B9%B6%E6%9F%A5%E9%9B%86-%E6%8C%89%E7%A7%A9%E5%90%88%E5%B9%B6/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E9%87%8D%E8%BE%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2844,7 +2839,7 @@ UVA11354（莫得原地址洛谷的凑合一下）
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/微光/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/长链剖分[非公开][草稿]/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2862,17 +2857,16 @@ UVA11354（莫得原地址洛谷的凑合一下）
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%BE%AE%E5%85%89/"  itemprop="url">
-        微光
+      <a href="/2022/04/30/%E9%95%BF%E9%93%BE%E5%89%96%E5%88%86%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/"  itemprop="url">
+        长链剖分[非公开][草稿]
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        “微光”的来源我很小的时候，总是喜欢一个人胡思乱想。
-当夜幕渐渐地压下来之后，母亲会拉上窗帘，关掉卧室的大灯，然后打开只能模糊照亮大床的床前灯。灯光在母亲那边，被母亲坐起的身形挡住。此时她会去做一些用针线修补的事情，而我就贴在她身旁昏昏睡去。
-可我并不总是很困的，但我又生性安静不会闹腾和打扰母亲，于是就在令人昏昏欲睡的微光下尝试入睡。闭眼时感受着被窝的温暖和身旁母亲的温暖，拉拉被子，和母亲贴...
+        
+树链剖分分为重链剖分、长链剖分等##重链剖分的应用*求LCA，时间复杂度为优秀的$O(logn)$*求子树大小有关问题等。但是我已经写过重链剖分的博客了。咱们照应题目。#长链剖分链如其名，它剖的是最长的链。可以证明，一个点向上爬最多经过$n^{1&#x2F;2}$的长链。##长链剖分的应用*求深度有关问题，时间复杂度为优秀的$O(n)$*求点的k级祖先我们通过预处理可以通过倍增和向上向下的...
       
     
   </div>
@@ -2893,7 +2887,7 @@ UVA11354（莫得原地址洛谷的凑合一下）
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E5%BE%AE%E5%85%89/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E9%95%BF%E9%93%BE%E5%89%96%E5%88%86%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2909,7 +2903,7 @@ UVA11354（莫得原地址洛谷的凑合一下）
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扩展欧拉定理/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/随机数生成/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2927,18 +2921,20 @@ UVA11354（莫得原地址洛谷的凑合一下）
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/"  itemprop="url">
-        扩展欧拉定理
+      <a href="/2022/04/30/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90/"  itemprop="url">
+        随机数生成
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        扩展欧拉定理首先，欧拉定理为$$若a与m互质，则有a^{\varphi(m)}\equiv1(\mod m)$$我们可以发现费马小定理其实就是欧拉定理的特殊情况。
-证明的话，构造一个与$m$互质的数列操作，利用剩余系证明
+        我知道是伪随机数生成啦你不要再说啦
+mt19937c++11 加入。
+定义一个名叫 rd 的随机数生成器（括号内为种子）。
+12mt19937 rd(std::chrono::system_clock::now().time_since_epoch().count());mt19937 rd(std::random_device&#123;&#125;());
 
-扩展欧拉定理为$$a^b\equiv \begin{cases}a^{b\mod\varphi(p)},&amp;\gcd(a,p)&#x3D;1\a^b,&amp;\g...
+uniform_int_di...
       
     
   </div>
@@ -2959,7 +2955,7 @@ UVA11354（莫得原地址洛谷的凑合一下）
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2975,7 +2971,7 @@ UVA11354（莫得原地址洛谷的凑合一下）
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/小爱老师的见证/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/鞅的停时定理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2993,16 +2989,24 @@ UVA11354（莫得原地址洛谷的凑合一下）
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%B0%8F%E7%88%B1%E8%80%81%E5%B8%88%E7%9A%84%E8%A7%81%E8%AF%81/"  itemprop="url">
-        小爱老师的见证
+      <a href="/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/"  itemprop="url">
+        鞅的停时定理
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        小爱老师的见证高一的时候，想买一个电子词典，然后看上了“小爱老师”这个产品。说白了就是一个被阉割过的安卓系统，载体倒是变得小巧轻便了。于是便买下一个。
-除了词典功能，它还有一大好处就是可以在上面记笔记。因为便携所以随身带着，有什么想法就往上写。于是养成了随时记笔记的习惯。不过我这笔记却少有学习的知识笔记，主要是记录下一些奇思妙想和有感而发。然而学业繁重，即使有奇思妙想和有感而发也不能常常记下...
+        鞅的停时定理“鞅”，martingale 用来指一类随机过程，定义如下：
+
+鞅是一种离散时间的随机过程 $X_0,X_1,\cdots$ 满足：
+
+$E(X_t)&lt;\infty,\forall t\geq0$
+$E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t$
+
+
+根据定义可以得到 $E(X_t)&#x3D;X_0$。
+停时定理设 $t$ 为鞅过程 ${X...
       
     
   </div>
@@ -3023,349 +3027,7 @@ UVA11354（莫得原地址洛谷的凑合一下）
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E5%B0%8F%E7%88%B1%E8%80%81%E5%B8%88%E7%9A%84%E8%A7%81%E8%AF%81/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/快速幂/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/"  itemprop="url">
-        快速幂
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        快速幂是在进行底数相同的乘法运算而幂数又极大的情况下使用的一种算法。
-模板
-&nbsp;https://www.luogu.com.cn/problem/P1226
-实现
-
-#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#define int unsigned long long
-using namespace std;
-int a,b,q;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扩展欧几里得(exgcd)-求解不定方程 求逆元/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97(exgcd)-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B%20%E6%B1%82%E9%80%86%E5%85%83/"  itemprop="url">
-        扩展欧几里得(exgcd)-求解不定方程 求逆元
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        贝祖定理：即如果a、b是整数，那么一定存在整数x、y使得ax+by=gcd(a,b)。换句话说，如果ax+by=m有解，那么m一定是gcd(a,b)的若干倍。（可以来判断一个这样的式子有没有解）有一个直接的应用就是 如果ax+by=1有解，那么gcd(a,b)=1；
-
-    int gcd(int a,int b){return b==0?a:gcd(b,a%b);}
-
-然而这并不能告诉我...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97(exgcd)-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B%20%E6%B1%82%E9%80%86%E5%85%83/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扫描线/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/"  itemprop="url">
-        扫描线
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        我的第一篇博客就是扫描线。虽然那时候什么也不懂，也非常幼稚，甚至不知扫描线的原理是如何，只是一门心思地去做，就像面对未知的生活。
-扫描线处理矩阵面积之和的问题，当然它们会有互相覆盖而不能直接加起来。
-扫描线就是从下往上一次扫描&ldquo;线&rdquo;，然后用线将图分成多个区域，累加即可。用线段树记录横坐标此时扫描线处的长度。
-用Xi表示第i条竖直的线（用来划分区间）
-用line结构体表...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/归并排序/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"  itemprop="url">
-        归并排序
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        运用了分治的思想，将一个数组分成几乎相等的两份，分别将两段中第一个最小的数拿出来放在一个临时数组中，直到全部取完。因为是递归的，所以每一段的数列都是排序好的。
-
-void merge_sort(ll *A,ll *B,int x,int y)
-{
-    if(y-x&lt;=1)return;
-    int m=x+(y-x&gt;&gt;1);
-    int p=x,q=m,i=x;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/新生……？/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%96%B0%E7%94%9F%E2%80%A6%E2%80%A6%EF%BC%9F/"  itemprop="url">
-        新生……？
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        2023.10.09
-大概是国庆前一周的星期一，我去华山医院复诊，想去找z玩。然而他当天不在，回学校的路上冒犯了他。
-也许是z的性格，他没有原谅我。这本来不是什么大事，但是我却无比在意。我自认为是因为他之前很照顾我，理所应当道歉。这种感觉持续了整个兽展，到今天。直到刚才，我可能对这种感觉的由来产生了怀疑。
-我这种在意另一个人的看法的感觉，无比像之前的我。
-从我认为之前的我已经死去时开始，我一...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E6%96%B0%E7%94%9F%E2%80%A6%E2%80%A6%EF%BC%9F/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3392,14 +3054,8 @@ void merge_sort(ll *A,ll *B,int x,int y)
           </a>
         
         <p class="current">
-          14 / 19
+          14 / 14
         </p>
-        
-          <a class="next" rel="next" href="/categories/OI/page/15/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;Next&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
         
       </div>
     
@@ -3493,19 +3149,44 @@ void merge_sort(ll *A,ll *B,int x,int y)
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(188)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
             ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
+            active-action="action-categoriesE695B0E5ADA6"
+            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
         
       </ul>
     </div>
@@ -3530,7 +3211,7 @@ void merge_sort(ll *A,ll *B,int x,int y)
 
 
     <div class='content'>
-      <a href="/tags/blog/" style="font-size: 19px; color: #777">blog</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px; color: #999">随笔</a>
+      <a href="/tags/2-SAT/" style="font-size: 14px; color: #999">2-SAT</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Me/" style="font-size: 17.33px; color: #828282">Me</a> <a href="/tags/OI/" style="font-size: 22.33px; color: #606060">OI</a> <a href="/tags/Tarjan/" style="font-size: 14px; color: #999">Tarjan</a> <a href="/tags/blog/" style="font-size: 15.67px; color: #8e8e8e">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">优化</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">分治</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 19px; color: #777">图论</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 15.67px; color: #8e8e8e">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 15.67px; color: #8e8e8e">数论</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.67px; color: #6c6c6c">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 15.67px; color: #8e8e8e">矩阵</a> <a href="/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" style="font-size: 14px; color: #999">笛卡尔树</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 15.67px; color: #8e8e8e">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 15.67px; color: #8e8e8e">读后感</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14px; color: #999">高斯消元</a>
     </div>
   </section>
 
@@ -4653,7 +4334,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp"];
   let index = 0;
   let IntervalParallax = null;
 

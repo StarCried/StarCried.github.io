@@ -48,20 +48,22 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>费马小定理 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,数论,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="费马小定理">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="费马小定理 对于任何互质数a,p,有 ap-1&#x3D;1(mod p) 就是ap&#x3D;a(mod p) 应用 求逆元 ap-2*p&#x3D;1(mod p)">
+<meta property="og:description" content="费马小定理对于任何互质数 $a,p$,有 $$a^{p-1}&#x3D;1\pmod p$$ 应用求逆元： $$a^{p-2}&#x3D;a^{-1}\pmod p$$">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-09T01:34:51.500Z">
+<meta property="article:modified_time" content="2024-08-11T16:08:42.611Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723168673349),
+    lastupdate: new Date(1723395659660),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
       </span>
     
   </div>
@@ -2761,10 +2763,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-12T00:08:42+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 12, 2024</p>
   </a>
 </div>
 
@@ -2801,13 +2803,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><strong>费马小定理</strong></p>
-<p>对于任何互质数a,p,有</p>
-<p>a<sup>p-1</sup>=1(mod p)</p>
-<p>就是a<sup>p</sup>=a(mod p)</p>
-<p><strong>应用</strong></p>
-<p>求逆元</p>
-<p>a<sup>p-2</sup>*p=1(mod p)</p>
+    <h2 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h2><p>对于任何互质数 $a,p$,有</p>
+<p>$$<br>a^{p-1}&#x3D;1\pmod p<br>$$</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>求逆元：</p>
+<p>$$<br>a^{p-2}&#x3D;a^{-1}\pmod p<br>$$</p>
+
   </div>
   
   
@@ -2831,10 +2831,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-12T00:08:42+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 12, 2024</p>
   </a>
 </div>
 
@@ -2843,8 +2843,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E8%AE%BA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数论</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 数论</span>
 
 
         
@@ -2904,20 +2904,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E9%87%8D%E8%BE%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>重边[非公开][草稿]</p>
-          <p class='content'>什么是重边？
-就是无向图连接两个点间不止一条道路。这个时候就相当于形成了一个环。这个玩意在图论题中很难受。vector存它的话会很难受，一般用链式前向星。
-在tarjan等算法中记得去重边。</p>
+        <a class='prev' href='/2022/04/30/%E8%AF%BB%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>读入、输出优化</p>
+          <p class='content'>关闭流同步1std::ios::sync_with_stdio(false);
+
+关闭输入输出流与标准输入输出（scanf printf）的同步，加快流速度，但关闭后不可混用。
+整形快读从标准输...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90/'>
-          <p class='title'>随机数生成<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>我知道是伪随机数生成啦你不要再说啦
-mt19937c++11 加入。
-定义一个名叫 rd 的随机数生成器（括号内为种子）。
-12mt19937 rd(std::chrono::system_cl...</p>
+        <a class='next' href='/2022/04/30/%E9%80%86%E5%BA%8F%E5%AF%B9-%E7%BA%BF%E6%AE%B5%E6%A0%91%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'>逆序对-线段树[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>然而线段树并处理不了P1908的巨型数据啊啊啊
+原理
+给你n个数，我们把它离散化成&lt;=n个数并把n变成该值，再建一个空树，每次插入一个数，并向上传递数的个数。当再插入一个数后，它的逆序对的...</p>
         </a>
       
     </div>
@@ -2976,19 +2976,44 @@ mt19937c++11 加入。
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(188)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
             ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
+            active-action="action-categoriesE695B0E5ADA6"
+            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
         
       </ul>
     </div>
@@ -3005,9 +3030,19 @@ mt19937c++11 加入。
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="toc-text">费马小定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-text">应用</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4130,7 +4165,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4359,7 +4394,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/费马小定理/","name":"费马小定理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"费马小定理","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-09T01:34:51.500Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/费马小定理/","name":"费马小定理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"费马小定理","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-11T16:08:42.611Z","articleSection":"数学","keywords":"博客园,OI,数论","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723168673349),
+    lastupdate: new Date(1723395659660),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2705,7 +2705,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/I ❤ SJTU/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2375 [NOI2014]动物园/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2723,25 +2723,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/I%20%E2%9D%A4%20SJTU/"  itemprop="url">
-        I ❤ SJTU
+      <a href="/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/"  itemprop="url">
+        P2375 [NOI2014]动物园
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-最近更新：2023.3.26
-
-I ❤ SJTU
-这个家伙愉快地踏入了上海交通大学的大门。
-他将在上海交通大学闵行校区度过他的若干年大学生活。
-让我们看看他会变成什么样子。
-这里会记录日常，也会记录他可能有（回忆）价值的思考碎片。
-
-2022.9.6军训已经几周了。如果算上之前 ACM 队训练的一个月，时间也许更长。
-上海交通大学，全国最大的校区，我即将在这里度过四年或更长的时间。虽然我已...
+        P2375 [NOI2014]动物园
+为什么复制题目连字体大小一块复制过来了（雾）
+我竟然会做NOI的题目辣~\(≧▽≦)/~（看的题解
+总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。
+我们发现，这个所谓的num数组和nxt有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。
+于是在标记nxt时同时也可以把num标...
       
     
   </div>
@@ -2762,7 +2757,7 @@ I ❤ SJTU
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/I%20%E2%9D%A4%20SJTU/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2778,7 +2773,7 @@ I ❤ SJTU
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/LCT(Link-Cut-Tree)/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2015/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2796,32 +2791,24 @@ I ❤ SJTU
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/LCT(Link-Cut-Tree)/"  itemprop="url">
-        LCT(Link-Cut-Tree)
+      <a href="/2022/04/30/P2015/"  itemprop="url">
+        P2015
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        LCT(Link-Cut-Tree)LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
+        二叉苹果树
 
-查询、修改链上的信息
-
-随意指定原树的根（即换根）
-
-动态连边、删边
-
-合并两棵树、分离一棵树
-
-动态维护连通性
-
-等
-
-
-主要性质
-每一个Splay维护的是一条从上到下按在原树中深度严格递增的路径，且中序遍历Splay得到的每个点的深度序列严格递增。
-每个节点仅包含于一个splay中...
+ 1 #include&lt;iostream&gt;
+ 2 #include&lt;cstdio&gt;
+ 3 #include&lt;algorithm&gt;
+ 4 #include&lt;cstring&gt;
+ 5 using namespace std;
+ 6 const int maxn=200;
+ 7 struct edge{
+ 8     int to,nxt...
       
     
   </div>
@@ -2842,7 +2829,7 @@ I ❤ SJTU
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/LCT(Link-Cut-Tree)/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2015/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2858,7 +2845,7 @@ I ❤ SJTU
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/NOI2021游记/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2490 [SDOI2011]黑白棋/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2876,20 +2863,17 @@ I ❤ SJTU
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/NOI2021%E6%B8%B8%E8%AE%B0/"  itemprop="url">
-        NOI2021游记
+      <a href="/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/"  itemprop="url">
+        P2490 [SDOI2011]黑白棋
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        NOI2021游记前言写于 2021.7.28，成绩榜刚出后几个小时。总分 345 拿到银牌 183 名。
-我的高中 OI 生活在这里画上句号。结局对我而言虽然不够完美，但是无论怎样都是我人生道路上最好的结果。
-
-7.23北方人第一次遇到台风，害怕极了。何况还是迎面直冲台风圈。
-不过队友都在身边，没在怕的。
-一切准备工作没有出什么纰漏，一切都好，我们只需要全心备战 NOI 就行。我有预感，陕...
+        P2490 [SDOI2011]黑白棋题意一个 $1*n$ 的棋盘上，A 可以移动白色棋子，B 可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动 1 到 $d$ 个棋子。
+每当移动某一个棋子时，这个棋子不能跨越两边的棋子，当然也不可以出界。当谁不可以操作时，谁就失败了。
+思路显然可以将题意转化为一种 K-Nim 游戏，即在 $\frac k2$ 堆石子中，每次可将 $...
       
     
   </div>
@@ -2910,7 +2894,7 @@ I ❤ SJTU
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/NOI2021%E6%B8%B8%E8%AE%B0/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2926,7 +2910,7 @@ I ❤ SJTU
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/NOIP 游记/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2491 消防 P1099 树网的核/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2944,22 +2928,21 @@ I ❤ SJTU
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/NOIP%20%E6%B8%B8%E8%AE%B0/"  itemprop="url">
-        NOIP 游记
+      <a href="/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/"  itemprop="url">
+        P2491 消防 P1099 树网的核
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        NOIP 游记T1水题，所幸我还会分析复杂度——
-$O(能过)$
-T2数位 Dp、Dp 数字，当初我就没搞懂过这个东西……
-傻乎乎的，被之前欠的账暗算了。还在那里想怎么组合一下，没想到操作次数巨少，可以直接开多个维度暴力 Dp。
-幸好还是有一半的暴力分的。
-T3方差……
-回忆了一下之前见过的有关方差的题目，要么需要维护非常阴间的东西，要么就根本只能暴力，似乎没有什么优秀的方法。
-两边的数是不...
+        P2491 消防&#x2F;P1099 树网的核双倍经验，双倍快乐。
+题意在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。
+输出这个最小的值。
+做法Define:以下$s$指链或链长。
+
+证明一下$s$一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到$s$的距离大于现在所处支链的最大距离。所以$s$不在直径上一定不优。
+于是我们找到直径并记录下直径上的所...
       
     
   </div>
@@ -2980,7 +2963,7 @@ T3方差……
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/NOIP%20%E6%B8%B8%E8%AE%B0/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2996,7 +2979,7 @@ T3方差……
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/KMP算法/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3203 弹飞绵羊-分块/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3014,18 +2997,19 @@ T3方差……
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/KMP%E7%AE%97%E6%B3%95/"  itemprop="url">
-        KMP算法
+      <a href="/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/"  itemprop="url">
+        P3203 弹飞绵羊-分块
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。
-问题：求a字符串与b字符串中子串相同的串首位置。
-暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。
-KMP主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可以直接将前缀跳至该子串的位置。...
+        P3203 弹飞绵羊-分块观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。
+对于修改，重构整个块内信息即可。
+时间复杂度正确的一批
+具体实现也挺简单。注意重构时从后往前贡献即可。
+1234567891011121314151617181920212223242526272829303132333435363738394041424...
       
     
   </div>
@@ -3046,7 +3030,7 @@ KMP主要思想：如果一个字符串的子串与前缀相等，那么在查�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/KMP%E7%AE%97%E6%B3%95/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3062,7 +3046,7 @@ KMP主要思想：如果一个字符串的子串与前缀相等，那么在查�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/NOIp 2020/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3312 数表/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3080,23 +3064,16 @@ KMP主要思想：如果一个字符串的子串与前缀相等，那么在查�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/NOIp%202020/"  itemprop="url">
-        NOIp 2020
+      <a href="/2022/04/30/P3312%20%E6%95%B0%E8%A1%A8/"  itemprop="url">
+        P3312 数表
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        游记Day-1 我已经开始慌了。
-不知道前路如何。不想回文化课。唯一一次机会，可是这几天却一直在颓，不颓就慌。
-没心思写题，导致这几天看的题啥都不会。不知道考试当天又会出什么幺蛾子。
-啊啊啊，烦。
-有兽焉400话更新了，果然不负众望，我更加焦虑了。
-想想CSP考场上干的事情，怎么都发挥不出自己的水平，还是因为我的水平真的……
-不想，不管，不慌，不慌。
-
-父亲说我变了。几个月来，我确实变得——...
+        P3312 数表题意求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^m\sigma(\gcd(i,j))[\sigma(\gcd(i,j))\le a]$$其中 $\sigma$ 表示约数和。
+思路&#x2F;推导考虑没有 $a$ 的限制的情况。$$\begin{aligned}ans&amp;&#x3D;\sum_{d&#x3D;1}^{\min(n,m)}\si...
       
     
   </div>
@@ -3117,7 +3094,7 @@ KMP主要思想：如果一个字符串的子串与前缀相等，那么在查�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/NOIp%202020/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P3312%20%E6%95%B0%E8%A1%A8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3133,7 +3110,7 @@ KMP主要思想：如果一个字符串的子串与前缀相等，那么在查�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/LA LA LAND/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3209-平面图判定/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3151,18 +3128,15 @@ KMP主要思想：如果一个字符串的子串与前缀相等，那么在查�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/LA%20LA%20LAND/"  itemprop="url">
-        LA LA LAND
+      <a href="/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/"  itemprop="url">
+        P3209-平面图判定
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-City of starsAre you shining just for meCity of starsThere’s so much that I can’t seeWho knowsI felt from the first embrace I shared with youThat now our dreamsThey’ve finally come true
-
-很久没有看过一部能...
+        ##平面图平面图就是所有点的连边不相交的图。（当然是在你尽量想让它不相交的情况下）。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过其他边的。###平面图定理边数大于点数的三倍减六的图一定不是平面图。即设n为点数，m为边数，有$$m&lt;&#x3D;n*3-6$$关于平面图的其他定理和上定理的证明我不...
       
     
   </div>
@@ -3183,7 +3157,7 @@ City of starsAre you shining just for meCity of starsThere’s so much that I ca
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/LA%20LA%20LAND/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3199,7 +3173,7 @@ City of starsAre you shining just for meCity of starsThere’s so much that I ca
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1040 加分二叉树/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3214 [HNOI2011]卡农/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3217,20 +3191,22 @@ City of starsAre you shining just for meCity of starsThere’s so much that I ca
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/"  itemprop="url">
-        P1040 加分二叉树
+      <a href="/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/"  itemprop="url">
+        P3214 [HNOI2011]卡农
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        https://www.luogu.com.cn/problem/P1040
-n很小，可以树形dp或者区间dp。
-设fij为从i到j的最大加分值，则有f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
-有一个小技巧，将f[i][i-1]全部设置为1，这样的话搜索到叶子就也可以按照通式dp了。
-对于输出前序遍历（根，左树，右树）我们再树形dp一下就行了。
-树形d...
+        P3214 [HNOI2011]卡农题意在集合 ${1,2,\cdots,n}$ 中选出 $m$ 个非空子集满足：
+
+不存在完全相同的两个集合；
+每个元素在所有集合中出现次数之和为偶数。
+
+思路考虑转移，利用容斥方法进行 Dp。设 $f_i$ 表示选了 $i$ 个集合满足条件的方案数：
+
+首先，如果确定了前 $i-1$ 个集合，那么为了满足上面第二个限制这个位置选的集合一定是固定的。前 $i...
       
     
   </div>
@@ -3251,7 +3227,7 @@ n很小，可以树形dp或者区间dp。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3267,7 +3243,7 @@ n很小，可以树形dp或者区间dp。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/OI 生涯回忆录/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3643 [APIO2016]划艇/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3285,20 +3261,16 @@ n很小，可以树形dp或者区间dp。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/OI%20%E7%94%9F%E6%B6%AF%E5%9B%9E%E5%BF%86%E5%BD%95/"  itemprop="url">
-        OI 生涯回忆录
+      <a href="/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/"  itemprop="url">
+        P3643 [APIO2016]划艇
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        OI 生涯回忆录本篇为意识流文章。
-谨献给我结束的高中信息竞赛生活。
-
-最开始，我只是玩过 MC 对指令有点兴趣，只是看到网上关于程序员和计算机科学家的描述，只是在初中带领过机器人比赛。
-考上附中以后，我在许多见烦了名字的竞赛中发现了：信息竞赛。
-说实话，一开始我真的以为这个竞赛是搞什么网络攻防或者软件设计的竞赛，和机器人比赛类似。可惜的是，我在入门的时候根本没有理解到这个竞赛的真正含义，没...
+        P3643 [APIO2016]划艇题意一个合法序列可表示为一个长度为 $n$ 的序列，其中第 $i$ 个数可以为 0 或 $[l_i,r_i]$ 中一个整数，且满足所有不为零的数组成的子序列严格上升。求合法序列方案数。
+思路朴素动态规划做法为，设 $f_{ij}$ 表示第 $i$ 个数不为零且数量为 $j$ 的方案数，则$$ans&#x3D;\sum_{i&#x3D;1}^n\sum_{j...
       
     
   </div>
@@ -3319,7 +3291,7 @@ n很小，可以树形dp或者区间dp。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/OI%20%E7%94%9F%E6%B6%AF%E5%9B%9E%E5%BF%86%E5%BD%95/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3335,7 +3307,7 @@ n很小，可以树形dp或者区间dp。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1414 又是毕业季II/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4074 [WC2013]糖果公园/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3353,19 +3325,20 @@ n很小，可以树形dp或者区间dp。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/"  itemprop="url">
-        P1414 又是毕业季II
+      <a href="/2022/04/30/P4074%20%5BWC2013%5D%E7%B3%96%E6%9E%9C%E5%85%AC%E5%9B%AD/"  itemprop="url">
+        P4074 [WC2013]糖果公园
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1414 又是毕业季II
-数论题，主要在于推演。
-洛谷的《又是毕业季I》更好玩
-发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个c数组为所有因子出现的次数。
-因为让输出1-n所有的值，而且因子数c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的c向下遍历到c[i]更高的位置，即最大公约数i向下递减，当第一次发现c[i]&gt...
+        P4074 [WC2013]糖果公园Tag：树上带修莫队
+题意：树上每个点有一种糖果，求$\sum_c\sum_{i&#x3D;1}^{cnt_c}v_c*w_i$
+其中c为糖果种类，$cnt_c$其为出现次数。
+思路离线树上带修莫队。
+先进行树上分块。分块内的询问按照出发点、终止点、询问id优先级依次递减排序。
+对于树上莫队，其实就是在欧拉序上莫队。因为欧拉序的性质，即每个节点子树内的节点...
       
     
   </div>
@@ -3386,7 +3359,7 @@ n很小，可以树形dp或者区间dp。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P4074%20%5BWC2013%5D%E7%B3%96%E6%9E%9C%E5%85%AC%E5%9B%AD/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3413,7 +3386,7 @@ n很小，可以树形dp或者区间dp。
           </a>
         
         <p class="current">
-          4 / 19
+          4 / 16
         </p>
         
           <a class="next" rel="next" href="/archives/2022/04/page/5/">
@@ -3513,19 +3486,44 @@ n很小，可以树形dp或者区间dp。
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(188)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
             ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
+            active-action="action-categoriesE695B0E5ADA6"
+            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
         
       </ul>
     </div>
@@ -3550,7 +3548,7 @@ n很小，可以树形dp或者区间dp。
 
 
     <div class='content'>
-      <a href="/tags/blog/" style="font-size: 19px; color: #777">blog</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px; color: #999">随笔</a>
+      <a href="/tags/2-SAT/" style="font-size: 14px; color: #999">2-SAT</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Me/" style="font-size: 17.33px; color: #828282">Me</a> <a href="/tags/OI/" style="font-size: 22.33px; color: #606060">OI</a> <a href="/tags/Tarjan/" style="font-size: 14px; color: #999">Tarjan</a> <a href="/tags/blog/" style="font-size: 15.67px; color: #8e8e8e">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">优化</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">分治</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 19px; color: #777">图论</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 15.67px; color: #8e8e8e">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 15.67px; color: #8e8e8e">数论</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.67px; color: #6c6c6c">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 15.67px; color: #8e8e8e">矩阵</a> <a href="/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" style="font-size: 14px; color: #999">笛卡尔树</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 15.67px; color: #8e8e8e">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 15.67px; color: #8e8e8e">读后感</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14px; color: #999">高斯消元</a>
     </div>
   </section>
 
@@ -4673,7 +4671,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp"];
   let index = 0;
   let IntervalParallax = null;
 

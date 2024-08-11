@@ -48,20 +48,23 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>斐波那契数列相关 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,矩阵,数学,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="斐波那契数列相关">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="斐波那契数列$F(0)&#x3D;F(1)&#x3D;1$或$F(1)&#x3D;F(2)&#x3D;1$，$F(i)&#x3D;F(i-1)+F(i-2)$. 广义斐波那契数列在转移时有系数且首两项给定。 求法注意到斐波那契数列的转移为一个矩阵乘$$\begin{matrix}F(i)&amp;F(i-1)\end{matrix}\ \ \ \ \ \ \ \begin{matrix}1&amp;amp">
+<meta property="og:description" content="斐波那契数列$F(0)&#x3D;F(1)&#x3D;1$ 或 $F(1)&#x3D;F(2)&#x3D;1$，$F(i)&#x3D;F(i-1)+F(i-2)$. 广义斐波那契数列在转移时有系数且首两项给定。 求法注意到斐波那契数列的转移为一个矩阵乘$$\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}\begin{bmatrix}1&amp;1\1&amp;">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-09T01:34:51.482Z">
+<meta property="article:modified_time" content="2024-08-11T06:33:01.674Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="矩阵">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1893,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723168673349),
+    lastupdate: new Date(1723395659660),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2742,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
       </span>
     
   </div>
@@ -2761,10 +2764,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-11T14:33:01+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 11, 2024</p>
   </a>
 </div>
 
@@ -2801,9 +2804,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p>$F(0)&#x3D;F(1)&#x3D;1$或$F(1)&#x3D;F(2)&#x3D;1$，$F(i)&#x3D;F(i-1)+F(i-2)$.</p>
+    <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p>$F(0)&#x3D;F(1)&#x3D;1$ 或 $F(1)&#x3D;F(2)&#x3D;1$，$F(i)&#x3D;F(i-1)+F(i-2)$.</p>
 <p>广义斐波那契数列在转移时有系数且首两项给定。</p>
-<h3 id="求法"><a href="#求法" class="headerlink" title="求法"></a>求法</h3><p>注意到斐波那契数列的转移为一个矩阵乘<br>$$<br>\begin{matrix}F(i)&amp;F(i-1)\end{matrix}\ \ \ \ \ \ \ <br>\begin{matrix}<br>1&amp;1\<br>1&amp;0<br>\end{matrix}<br>$$<br>当然广义斐波那契数列的转移就是把转移矩阵的系数换了一下。</p>
+<h3 id="求法"><a href="#求法" class="headerlink" title="求法"></a>求法</h3><p>注意到斐波那契数列的转移为一个矩阵乘<br>$$<br>\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}<br>\begin{bmatrix}<br>1&amp;1\<br>1&amp;0<br>\end{bmatrix}<br>$$<br>当然广义斐波那契数列的转移就是把转移矩阵的系数换了一下。</p>
 <p>所以我们可以通过矩阵快速幂快速求得所求项数。</p>
 <p>给出<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1349">广义斐波那契数列</a>的矩阵乘代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> mod;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">mat</span>&#123;</span><br><span class="line">		<span class="type">int</span> a[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">set</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span> a);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">zero</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="built_in">set</span>();a[<span class="number">0</span>][<span class="number">0</span>]=a[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="type">int</span>* <span class="keyword">operator</span> [] (<span class="type">const</span> <span class="type">int</span> x)&#123;<span class="keyword">return</span> a[x];&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="type">const</span> <span class="type">int</span>* <span class="keyword">operator</span> [] (<span class="type">const</span> <span class="type">int</span> x) <span class="type">const</span> &#123;<span class="keyword">return</span> a[x];&#125;</span><br><span class="line">		<span class="keyword">inline</span> mat <span class="keyword">operator</span> * (<span class="type">const</span> mat &amp;b)<span class="type">const</span>&#123;</span><br><span class="line">			mat ans;</span><br><span class="line">			ans.<span class="built_in">set</span>();</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;<span class="number">2</span>;j++)</span><br><span class="line">					<span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;<span class="number">2</span>;k++)</span><br><span class="line">					ans[i][j]=(ans[i][j]+a[i][k]*b[k][j]%mod)%mod;</span><br><span class="line">			<span class="keyword">return</span> ans;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;now,pow;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> mat <span class="title">fpow</span><span class="params">(mat a,<span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">		mat ans;</span><br><span class="line">		ans.<span class="built_in">zero</span>();</span><br><span class="line">		<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=a*a)<span class="keyword">if</span>(b&amp;<span class="number">1</span>)ans=ans*a;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="type">int</span> p=<span class="built_in">read</span>(),q=<span class="built_in">read</span>(),a1=<span class="built_in">read</span>(),a2=<span class="built_in">read</span>(),n=<span class="built_in">read</span>();</span><br><span class="line">		mod=<span class="built_in">read</span>();</span><br><span class="line">		now[<span class="number">0</span>][<span class="number">1</span>]=a1,now[<span class="number">0</span>][<span class="number">0</span>]=a2,pow[<span class="number">0</span>][<span class="number">0</span>]=p,pow[<span class="number">1</span>][<span class="number">0</span>]=q,pow[<span class="number">0</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,(now*<span class="built_in">fpow</span>(pow,n<span class="number">-1</span>))[<span class="number">0</span>][<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2817,9 +2820,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>更形式化地讲，从大到小枚举斐波那契数，每当$ F[i]$不小于当前数就将此位置为1并减去该$ F[i]$，根据定理最后一定会被减完，即被一个01串表示。</p>
 <p>因为斐波那契数的增长速度很快，所以这个串并不会很长。</p>
 <p>我们来看个毒瘤题：</p>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6791">P6791</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6791">P6791 [SNOI2020] 取石子</a></p>
 <p>对于这个LCA的毒瘤题本身<del>我并不会</del>没什么好说的，<del>没有发现打表之外的解法</del></p>
-<p>通过打表我们可以发现，设$a_i$表示还剩i颗石子时甲必胜此次至少要取的石子个数，那么**$a_i$为$i$在斐波那契进制下的lowbit**。</p>
+<p>通过打表我们可以发现，设$a_i$表示还剩i颗石子时甲必胜此次至少要取的石子个数，那么 $a_i$ 为 $i$ 在斐波那契进制下的 lowbit。</p>
 <p><del>所以这个题本身和斐波那契数就只有这么点关系</del></p>
 <p>对于题本身不予讨论。<del>我也不会证</del></p>
 <h4 id="斐波那契公约数"><a href="#斐波那契公约数" class="headerlink" title="斐波那契公约数"></a>斐波那契公约数</h4><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1306">P1306</a></p>
@@ -2845,20 +2848,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>$F[i-1]*F[i+2]-F[i]*F[i+1]&#x3D;(-1)^i$</li>
 </ul>
 <p>还是设$F[i]&#x3D;a,F[i+1]&#x3D;b$，然后<del>推来推去</del>，具体看<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/solution/P3986">@浅色调 的过程</a></p>
-<p>对于<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3986">P3986</a>，这个结论可以用来快速解决$aF[i]+bF[i+1]&#x3D;k$而不用exgcd。</p>
-<p>即有通解$x&#x3D;k*(-1)^iF[i-1],y&#x3D;k*(-1)^{i+1}F[i-2]$</p>
-<p>贴下P3986的代码：</p>
+<p>对于<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3986">P3986</a>，这个结论可以用来快速解决 $aF[i]+bF[i+1]&#x3D;k$ 而不用exgcd。</p>
+<p>即有通解 $x&#x3D;k*(-1)^iF[i-1],y&#x3D;k*(-1)^{i+1}F[i-2]$</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">100</span>,mod=<span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line">	<span class="type">int</span> N,f[maxn],ans;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="type">int</span> k=<span class="built_in">read</span>();</span><br><span class="line">		f[<span class="number">1</span>]=f[<span class="number">2</span>]=<span class="number">1</span>;ans=k<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(N=<span class="number">3</span>;(f[N]=f[N<span class="number">-1</span>]+f[N<span class="number">-2</span>])&lt;k;N++);</span><br><span class="line">		N--;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> x,y,j=<span class="number">2</span>;j&lt;=N;j++)&#123;</span><br><span class="line">			<span class="type">int</span> q=((j<span class="number">-1</span>)&amp;<span class="number">1</span>)?<span class="number">-1</span>:<span class="number">1</span>;</span><br><span class="line">			x=k*q*f[j<span class="number">+3</span>],y=-k*q*f[j<span class="number">+2</span>];</span><br><span class="line">			<span class="keyword">if</span>(x&lt;<span class="number">0</span>)&#123;</span><br><span class="line">				y-=((-x)/f[j<span class="number">+1</span>]<span class="number">+1</span>)*f[j];</span><br><span class="line">				<span class="keyword">if</span>(y&gt;<span class="number">0</span>)ans=(ans+(<span class="type">int</span>)<span class="built_in">ceil</span>(<span class="number">1.0</span>*y/f[j]))%mod;</span><br><span class="line">			&#125;<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">if</span>(y&lt;<span class="number">0</span>)&#123;</span><br><span class="line">				x-=((-y)/f[j]<span class="number">+1</span>)*f[j<span class="number">+1</span>];</span><br><span class="line">				<span class="keyword">if</span>(x&gt;<span class="number">0</span>)ans=(ans+(<span class="type">int</span>)<span class="built_in">ceil</span>(<span class="number">1.0</span>*x/f[j<span class="number">+1</span>]))%mod;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>PS:浅色调的题解对N多算了一次，减掉即可。或者在第二遍for循环内直接判掉break也行。</p>
+<p>PS: @浅色调的题解对N多算了一次，减掉即可。或者在第二遍 <code>for</code> 循环内直接判掉 <code>break</code> 也行。</p>
 <hr>
 <h4 id="UPD10-15"><a href="#UPD10-15" class="headerlink" title="UPD10.15"></a>UPD10.15</h4><ul>
 <li>给定一个长为n的序列，可在其中填1，求使1任意两个都不相邻的方案数。</li>
 </ul>
-<p>昨天看了一道叫做<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1539">01矩阵</a>的题目想到该问题，经询问luogu聚铑们得到答案。</p>
-<p>首先，</p>
-<p>这玩意和斐波那契数有什么关系？</p>
-<p>考虑DP，对于位置$i$,设$f[i][0],f[i][1]$为前i个数填完、i填0或1的方案数，则有转移<br>$$<br>f[i][0]&#x3D;f[i-1][0]+f[i-1][1]\<br>f[i][1]&#x3D;f[i-1][0]<br>$$<br>设$g[i]$为到i的方案总数，则有<br>$$<br>g[i]&#x3D;f[i][0]+f[i][1]\<br>g[i]&#x3D;f[i-1][0]+f[i-1][1]+f[i-1][0]\<br>g[i]&#x3D;g[i-1]+g[i-2]<br>$$<br>和斐波那契数列的转移相同。</p>
+<p>昨天看了一道叫做<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1539">01矩阵</a>的题目想到该问题，经询问 luogu 聚铑们得到答案。</p>
+<p>首先，这玩意和斐波那契数有什么关系？</p>
+<p>考虑 DP，对于位置 $i$,设 $f[i][0],f[i][1]$ 为前 $i$ 个数填完、$i$ 填 $0$ 或 $1$ 的方案数，则有转移<br>$$<br>f[i][0]&#x3D;f[i-1][0]+f[i-1][1]\<br>f[i][1]&#x3D;f[i-1][0]<br>$$<br>设$g[i]$为到i的方案总数，则有<br>$$<br>g[i]&#x3D;f[i][0]+f[i][1]\<br>g[i]&#x3D;f[i-1][0]+f[i-1][1]+f[i-1][0]\<br>g[i]&#x3D;g[i-1]+g[i-2]<br>$$<br>和斐波那契数列的转移相同。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4910">板子题</a></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>斐波那契数列性质很多。之后遇到新的我应该会补。</p>
 <p>如果您凑巧看到了这里并知道一些相关题目请不吝赐教~</p>
@@ -2886,10 +2887,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-11T14:33:01+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 11, 2024</p>
   </a>
 </div>
 
@@ -2898,8 +2899,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%9F%A9%E9%98%B5/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>矩阵</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E5%AD%A6/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数学</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 矩阵 数学</span>
 
 
         
@@ -2959,18 +2960,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%96%B0%E7%94%9F%E2%80%A6%E2%80%A6%EF%BC%9F/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>新生……？</p>
-          <p class='content'>2023.10.09
-大概是国庆前一周的星期一，我去华山医院复诊，想去找z玩。然而他当天不在，回学校的路上冒犯了他。
-也许是z的性格，他没有原谅我。这本来不是什么大事，但是我却无比在意。我自认为...</p>
+        <a class='prev' href='/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>扫描线</p>
+          <p class='content'>我的第一篇博客就是扫描线。虽然那时候什么也不懂，也非常幼稚，甚至不知扫描线的原理是如何，只是一门心思地去做，就像面对未知的生活。
+扫描线处理矩阵面积之和的问题，当然它们会有互相覆盖而不能直接加起...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%96%87%E5%8C%96%E8%AF%BE%E9%9A%8F%E7%AC%94/'>
-          <p class='title'>文化课随笔<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>2021&#x2F;9&#x2F;4
-我不应该坐在这里，坐在电脑前写这些字的。我现在应该在晚自习，应该在学习，应该在做作业。可是我静不下心来。这不是一旁 sys 在给高二讲课导致的，我清楚；但是...</p>
+        <a class='next' href='/2022/04/30/%E6%96%9C%E5%A0%86-%E6%80%9D%E7%BB%B4%EF%BC%8C%E6%80%A7%E8%B4%A8/'>
+          <p class='title'>斜堆-思维，性质<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>斜堆斜堆是个很有趣的东西。而且它有一些很有意思的性质。
+斜堆的大概就是每次往堆里面插入一个元素的操作非常“有趣”。插入的节点从根节点开始。如果插入的元素值比所在根小，它会将根“挤下去”，即替代原...</p>
         </a>
       
     </div>
@@ -3029,19 +3029,44 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(188)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
             ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
+            active-action="action-categoriesE695B0E5ADA6"
+            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
         
       </ul>
     </div>
@@ -4193,7 +4218,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4422,7 +4447,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/斐波那契数列相关/","name":"斐波那契数列相关"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"斐波那契数列相关","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-09T01:34:51.482Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/斐波那契数列相关/","name":"斐波那契数列相关"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"斐波那契数列相关","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-11T06:33:01.674Z","articleSection":"题解","keywords":"博客园,OI,矩阵,数学","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

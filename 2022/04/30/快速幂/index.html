@@ -48,20 +48,21 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>快速幂 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速幂">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="快速幂是在进行底数相同的乘法运算而幂数又极大的情况下使用的一种算法。 模板 &nbsp;https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;problem&#x2F;P1226 实现  #include&lt;iostream&gt; #include&lt;cstdio&gt; #define int unsigned long long using namespace std; int a,b,q; in">
+<meta property="og:description" content="快速幂快速幂是在进行底数相同的乘法运算而幂数又极大的情况下使用的一种算法。 将幂次做二进制拆分，然后从低位到高位维护幂次积，同时若该位为 1 乘入答案。 模板P1226 【模板】快速幂 12345678910111213141516171819202122#include&lt;iostream&gt;#include&lt;cstdio&gt;#define int unsigned long">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-09T01:34:51.479Z">
+<meta property="article:modified_time" content="2024-08-11T16:02:43.692Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1891,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723168673349),
+    lastupdate: new Date(1723395659660),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2740,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
       </span>
     
   </div>
@@ -2761,10 +2762,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-12T00:02:43+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 12, 2024</p>
   </a>
 </div>
 
@@ -2801,93 +2802,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>快速幂是在进行底数相同的乘法运算而幂数又极大的情况下使用的一种算法。</p>
-<p><strong>模板</strong></p>
-<p>&nbsp;<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1226">https://www.luogu.com.cn/problem/P1226</a></p>
-<p><strong>实现</strong></p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;
-<span style="color: #0000ff;">#define</span> int unsigned long long
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> a,b,q;
-</span><span style="color: #0000ff;">int</span> qsm(<span style="color: #0000ff;">int</span> a,<span style="color: #0000ff;">int</span> b,<span style="color: #0000ff;">int</span><span style="color: #000000;"> q)//快速幂
-{
-    </span><span style="color: #0000ff;">int</span> ans=<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span><span style="color: #000000;">(b)
-    {
-        </span><span style="color: #0000ff;">if</span>(b&amp;<span style="color: #800080;">1</span>)ans=(ans*a)%<span style="color: #000000;">q;
-        a</span>=(a*a)%<span style="color: #000000;">q;
-        b</span>&gt;&gt;=<span style="color: #800080;">1</span><span style="color: #000000;">;  //二进制运算，相当于b/=2;
-    }
-    </span><span style="color: #0000ff;">return</span> ans%<span style="color: #000000;">q;
-}
-signed main()
-{</span><span style="color: #000000;">
-    cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;<span style="color: #000000;">q;
-    cout</span>&lt;&lt;a&lt;&lt;<span style="color: #800000;">"</span><span style="color: #800000;">^</span><span style="color: #800000;">"</span>&lt;&lt;b&lt;&lt;<span style="color: #800000;">"</span><span style="color: #800000;"> mod </span><span style="color: #800000;">"</span>&lt;&lt;q&lt;&lt;<span style="color: #800000;">"</span><span style="color: #800000;">=</span><span style="color: #800000;">"</span>&lt;&lt;<span style="color: #000000;">qsm(a,b,q);
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
-</div>
-<p>分析原理，即a<sup>b</sup>可以分解为a的2进制位数的次方，就是由X<sup>m</sup>*X<sup>n</sup>&nbsp;= X<sup>m+n</sup></p>
-<p>然后，当b&amp;1（二进制运算，当第一位为1时返回true）时，说明这一位应该被ans乘，乘就对了。</p>
-<p>如果要取模的话（对q取模），在每个数的后面取模就行了（防止数字过大）。</p>
-<p>最后的最后，因为数字都比较大，记得开long long。</p>
-<p><strong>矩阵快速幂</strong></p>
-<p>这个算法的经典例题是求斐波那契数列第n项（mod q）的值。和快速幂一样，这类题指数非常的大。</p>
-<p>要了解透彻矩阵快速幂，需要先了解一下矩阵乘法。这个知识在线性代数有所涉及（吧</p>
-<p>若A为n&times;k矩阵，B为k&times;m矩阵，则它们的乘积AB(有时记做A&middot;B)将是一个n&times;m矩阵。前一个矩阵的列数应该等于后一个矩阵的行数，得出的矩阵行数等于前一个矩阵的行数，列数等于后一个矩阵的行数。</p>
-<p><strong>举例：A、B均为3*3的矩阵：C=A*B，下面的代码会涉及到两种运算顺序，第一种就是直接一步到位求，第二种就是每次求一列，比如第一次，C00+=a00*b00,C01+=a00*b01&hellip;&hellip;第二次C00+=a00*b10，C01+=a01*b11&hellip;&hellip;以此类推。。。（网上摘录）</strong></p>
-<p>C00 = a00*b00 + a01*b10 + a02*b20<br data-filtered="filtered" />C01 =&nbsp;a00*b01 + a01*b11 + a02*b21&nbsp;<br data-filtered="filtered" />C02 =&nbsp;a00*b02 + a01*b12 + a02*b22<br data-filtered="filtered" />C10 =&nbsp;a10*b00 + a11*b10 + a12*b20<br data-filtered="filtered" />C11 =&nbsp;a10*b00 + a11*b11 + a12*b21<br data-filtered="filtered" />C12 =&nbsp;a10*b02 + a11*b12 + a12*b22<br data-filtered="filtered" />C20 =&nbsp;a20*b00 + a21*b10 + a22*b20<br data-filtered="filtered" />C21 =&nbsp;a20*b01 + a21*b11 + a22*b21<br data-filtered="filtered" />C22 =&nbsp;a20*b02 + a21*b12 + a22*b22<br data-filtered="filtered" />C00 = a00*b00 + a01*b10 + a02*b20<br data-filtered="filtered" />C01 =&nbsp;a00*b01 + a01*b11 + a02*b21&nbsp;<br data-filtered="filtered" />C02 =&nbsp;a00*b02 + a01*b12 + a02*b22</p>
-<p>简而言之就是用前一个矩阵的行对应地乘下一个矩阵的列并把结果相加。用代码的方式可以表示为</p>
-<div class="cnblogs_code">
-<pre><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>;i&lt;<span style="color: #800080;">2</span>;i++<span style="color: #000000;">)  
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">0</span>;j&lt;<span style="color: #800080;">2</span>;j++<span style="color: #000000;">)  
-            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> k=<span style="color: #800080;">0</span>;k&lt;<span style="color: #800080;">2</span>;k++<span style="color: #000000;">)  
-        tmp.a[i][j]</span>+=x.a[i][k]*y.a[k][j]　　,　　tmp.a[i][j]%=MOD;<span style="color: #008000;">//</span><span style="color: #008000;">如果题目让对某个数取模的话</span></pre>
-</div>
-<p>这里的res矩阵用于临时存储结果，乘完后输出就行了。</p>
-<p>矩阵乘法符合结合律但不符合交换律。</p>
-<p>那么把矩阵当做运算的元素就有了矩阵快速幂，也就是乘幂次个矩阵。</p>
-<p>例如斐波那契数列的问题。我们知道了矩阵乘法之后，可以发现</p>
-<p><img src="./img/2027395-20200505162707356-297653923.png" class="lazyload" data-srcset="./img/2027395-20200505162707356-297653923.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /><img src="./img/2027395-20200505162658072-945477845.png" class="lazyload" data-srcset="./img/2027395-20200505162658072-945477845.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></p>
-<p>和快速幂的想法一样，用[1 1] [1 0]res这个矩阵一乘原来的矩阵i,i+1就可以得到i+1,i+2的矩阵了。然后和快速幂一样，只要每次让它乘自身就和快速幂一样了。</p>
-<p><strong>模板</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3390">https://www.luogu.com.cn/problem/P3390</a>&nbsp;//矩阵乘法</p>
-<p><strong>实现</strong></p>
-<p>&nbsp;这个题是输入斐波那契数列的第1、2项，找第n项并对p取模。输入a1,a2,n,p。</p>
-<div class="cnblogs_code">
-<pre><span style="color: #000000;">matrix mul(matrix a,matrix b,ull q)//矩阵乘法
-{
-    matrix tmp;
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>;i&lt;=<span style="color: #800080;">1</span>;i++<span style="color: #000000;">)
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">0</span>;j&lt;=<span style="color: #800080;">1</span>;j++<span style="color: #000000;">)
-        tmp.m[i][j]</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>;i&lt;=<span style="color: #800080;">1</span>;i++<span style="color: #000000;">)
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">0</span>;j&lt;=<span style="color: #800080;">1</span>;j++<span style="color: #000000;">)
-            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> k=<span style="color: #800080;">0</span>;k&lt;=<span style="color: #800080;">1</span>;k++<span style="color: #000000;">)
-            tmp.m[i][j]</span>=(tmp.m[i][j]+(a.m[i][k]*b.m[k][j]%q)%<span style="color: #000000;">q);
-    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> tmp;
-}
+    <h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h2><p>快速幂是在进行底数相同的乘法运算而幂数又极大的情况下使用的一种算法。</p>
+<p>将幂次做二进制拆分，然后从低位到高位维护幂次积，同时若该位为 1 乘入答案。</p>
+<h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1226">P1226 【模板】快速幂</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int unsigned long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> a,b,q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">qsm</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> q)</span><span class="comment">//快速幂</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>)ans=(ans*a)%q;</span><br><span class="line">        a=(a*a)%q;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;  <span class="comment">//二进制运算，相当于b/=2;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%q;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;q;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;<span class="string">&quot;^&quot;</span>&lt;&lt;b&lt;&lt;<span class="string">&quot; mod &quot;</span>&lt;&lt;q&lt;&lt;<span class="string">&quot;=&quot;</span>&lt;&lt;<span class="built_in">qsm</span>(a,b,q);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>ull fib(ull a1,ull a2,ull n,ull p)&#x2F;&#x2F;解决问题<br>{<br>    ans.m[</span><span style="color: #800080;">0</span>][<span style="color: #800080;">0</span>]&#x3D;a1,ans.m[<span style="color: #800080;">0</span>][<span style="color: #800080;">1</span>]&#x3D;<span style="color: #000000;">a2;&#x2F;&#x2F;初始的两个数<br>    res.m[</span><span style="color: #800080;">0</span>][<span style="color: #800080;">0</span>]&#x3D;<span style="color: #800080;">1</span>,res.m[<span style="color: #800080;">0</span>][<span style="color: #800080;">1</span>]&#x3D;<span style="color: #800080;">1</span>,res.m[<span style="color: #800080;">1</span>][<span style="color: #800080;">0</span>]&#x3D;<span style="color: #800080;">1</span>,res.m[<span style="color: #800080;">1</span>][<span style="color: #800080;">1</span>]&#x3D;<span style="color: #800080;">0</span><span style="color: #000000;">;&#x2F;&#x2F;初始化要乘的矩阵<br>    </span><span style="color: #0000ff;">while</span><span style="color: #000000;">(n)<br>    {<br>        </span><span style="color: #0000ff;">if</span>(n&amp;<span style="color: #800080;">1</span>)ans&#x3D;<span style="color: #000000;">mul(ans,res,p);&#x2F;&#x2F;如果要乘<br>        res</span>&#x3D;<span style="color: #000000;">mul(res,res,p);<br>        n</span>&gt;&gt;&#x3D;<span style="color: #800080;">1</span><span style="color: #000000;">;<br>    }<br>    </span><span style="color: #0000ff;">return</span> ans.m[<span style="color: #800080;">0</span>][<span style="color: #800080;">0</span><span style="color: #000000;">];<br>}</p>
-<p></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    ull n,m,p,a1,a2;<br>    scanf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%lld%lld%lld%lld</span><span style="color: #800000;">“</span>,&amp;a1,&amp;a2,&amp;n,&amp;<span style="color: #000000;">p);&#x2F;&#x2F;记得开longlong<br>    printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%lld</span><span style="color: #800000;">“</span>,fib(a1,a2,n-<span style="color: #800080;">2</span><span style="color: #000000;">,p));<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>}</span></pre></p>
-</div>
-<p>至于矩阵乘法还能干什么，应该应用也挺多的，但是我还没那个水平&hellip;&hellip;</p>
+<h2 id="矩阵快速幂"><a href="#矩阵快速幂" class="headerlink" title="矩阵快速幂"></a>矩阵快速幂</h2><p>矩阵快速幂是指用矩阵乘法来求幂次方，矩阵乘法的结合律和交换律保证了运算的顺序。可以套用以上的快速幂。</p>
+<p>经典例题是求斐波那契数列第 $n$ 项（mod q）的值。和快速幂一样，这类题指数非常的大。</p>
+<h3 id="模板-1"><a href="#模板-1" class="headerlink" title="模板"></a>模板</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3390">P3390 【模板】矩阵快速幂</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">long</span> <span class="type">long</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> x=<span class="number">0</span>;<span class="type">bool</span> w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">105</span>,mod=<span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">mat</span>&#123;</span><br><span class="line">		<span class="type">int</span> n,a[maxn][maxn];</span><br><span class="line">		<span class="built_in">mat</span>()&#123;&#125;</span><br><span class="line">		<span class="built_in">mat</span>(<span class="type">const</span> <span class="type">int</span> &amp;x)&#123;n=x;<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span> a);&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">set</span><span class="params">()</span></span>&#123;<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) a[i][i]=<span class="number">1</span>;&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="type">int</span>* <span class="keyword">operator</span> [] (<span class="type">const</span> <span class="type">int</span> &amp;x) &#123;<span class="keyword">return</span> a[x];&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="type">const</span> <span class="type">int</span>* <span class="keyword">operator</span> [] (<span class="type">const</span> <span class="type">int</span> &amp;x) <span class="type">const</span> &#123;<span class="keyword">return</span> a[x];&#125;</span><br><span class="line">		<span class="keyword">inline</span> mat <span class="keyword">operator</span> * (<span class="type">const</span> mat &amp;b) <span class="type">const</span>&#123;</span><br><span class="line">			<span class="function">mat <span class="title">ans</span><span class="params">(n)</span></span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">1</span>;k&lt;=n;k++)</span><br><span class="line">			ans[i][j]=(ans[i][j]<span class="number">+1ll</span>*a[i][k]*b[k][j]%mod)%mod;</span><br><span class="line">			<span class="keyword">return</span> ans;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;now;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> mat <span class="title">fpow</span><span class="params">(mat a,<span class="type">long</span> <span class="type">long</span> b)</span></span>&#123;</span><br><span class="line">		<span class="function">mat <span class="title">ans</span><span class="params">(a.n)</span></span>;</span><br><span class="line">		ans.<span class="built_in">set</span>();</span><br><span class="line">		<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=a*a)<span class="keyword">if</span>(b&amp;<span class="number">1</span>)ans=ans*a;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> k;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=now.n=<span class="built_in">read</span>();k=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) now[i][j]=<span class="built_in">read</span>();</span><br><span class="line">		now=<span class="built_in">fpow</span>(now,k);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,now[i][j]);</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>至于矩阵乘法还能干什么，应该应用也挺多的，但是我还没那个水平……</p>
 <p>大家一起进步吧XD</p>
-<hr />
-<p>&nbsp;</p>
+<hr>
 <p>UPD：NOI2020出来了，发现D1T1用到了矩阵快速幂，于是来更新我写的水的一p的第一篇博客。</p>
 <p>也就是更新一个例子：矩阵快速幂优化DP</p>
 <p>我们先来个简单版的DP：给你一个图（的邻接矩阵），边权全为1，求给定时间从s到t的路径方案数。</p>
-<p>记f[i]表示i时状态，f[i]=f[i-1]*g。</p>
+<p>记f[i]表示i时状态，f[i]&#x3D;f[i-1]*g。</p>
 <p>所以我们要求x直接矩阵快速幂乘g的幂次就行了。</p>
-<p>&nbsp;</p>
-<hr />
-<p>&nbsp;</p>
+<hr>
 <p>2022.9.29</p>
-<p>UPD：高中时不求甚解写的东西&hellip;&hellip;也不是我不想了解，是竞赛要求我在理解之前就使用矩阵。突然感觉竞赛和文化课其实没有什么本质区别。</p>
+<p>UPD：高中时不求甚解写的东西……也不是我不想了解，是竞赛要求我在理解之前就使用矩阵。突然感觉竞赛和文化课其实没有什么本质区别。</p>
 <p>没时间大改，把错误的地方尽量删了。</p>
+
   </div>
   
   
@@ -2911,10 +2848,10 @@ signed main()
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-12T00:02:43+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 12, 2024</p>
   </a>
 </div>
 
@@ -2923,8 +2860,8 @@ signed main()
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI</span>
 
 
         
@@ -2984,16 +2921,26 @@ signed main()
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E5%B0%8F%E7%88%B1%E8%80%81%E5%B8%88%E7%9A%84%E8%A7%81%E8%AF%81/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>小爱老师的见证</p>
-          <p class='content'>小爱老师的见证高一的时候，想买一个电子词典，然后看上了“小爱老师”这个产品。说白了就是一个被阉割过的安卓系统，载体倒是变得小巧轻便了。于是便买下一个。
-除了词典功能，它还有一大好处就是可以在上面...</p>
+        <a class='prev' href='/2022/04/30/tarjan%E7%AE%97%E6%B3%95%20%E5%BC%BA%E8%BF%9E%E9%80%9A%20%E8%BE%B9%E5%8F%8C%E8%81%94%E9%80%9A%20%E7%82%B9%E5%8F%8C%E8%81%94%E9%80%9A%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>tarjan算法 强连通 边双联通 点双联通[非公开][草稿]</p>
+          <p class='content'>概念在无向图中：
+
+边双联通：删去图中任何一条边图仍联通
+
+点双联通：删去图中任何一个点图仍联通（不具有传递性）
+
+
+
+此图为边双连通图但非点双联通图。
+
+割点：如果删去一个点将会把图分成两个或...</p>
         </a>
       
       
         <a class='next' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97(exgcd)-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B%20%E6%B1%82%E9%80%86%E5%85%83/'>
           <p class='title'>扩展欧几里得(exgcd)-求解不定方程 求逆元<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>贝祖定理：即如果a、b是整数，那么一定存在整数x、y使得ax+by=gcd(a,b)。换句话说，如果ax+by=m有解，那么m一定是gcd(a,b)的若干倍。（可以来判断一个这样的式子有没有解）...</p>
+          <p class='content'>贝祖定理如果 $a$、$b$ 是整数，那么一定存在整数 $x$、$y$ 使得 $ax+by&#x3D;\gcd(a,b)$。
+换句话说，如果 $ax+by&#x3D;m$ 有解，那么 $m$ 一...</p>
         </a>
       
     </div>
@@ -3052,19 +2999,44 @@ signed main()
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(188)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
             ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
+            active-action="action-categoriesE695B0E5ADA6"
+            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
         
       </ul>
     </div>
@@ -3081,9 +3053,19 @@ signed main()
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="toc-text">快速幂</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-text">模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="toc-text">矩阵快速幂</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF-1"><span class="toc-text">模板</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4206,7 +4188,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4435,7 +4417,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/快速幂/","name":"快速幂"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"快速幂","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-09T01:34:51.479Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/快速幂/","name":"快速幂"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"快速幂","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-11T16:02:43.692Z","articleSection":"算法","keywords":"博客园,OI","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

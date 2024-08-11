@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723168673349),
+    lastupdate: new Date(1723395659660),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2705,7 +2705,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/deque[非公开][草稿]/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/动态逆序对专练/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2723,18 +2723,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/deque%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/"  itemprop="url">
-        deque[非公开][草稿]
+      <a href="/2022/04/30/%E5%8A%A8%E6%80%81%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%93%E7%BB%83/"  itemprop="url">
+        动态逆序对专练
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        deque['dek]
-double-ended-queue，双端队列，引用于&lt;queue&gt;。它的特别之处在于它可以处理前端和后端的元素，似乎更灵活了，但是实际操作却远没有栈和queue有用。
-弊端
-deque因为其能够处理双端，使得它不能像vector一样有效率。它存储的特殊性（不像vector一样连续使用内存）导致它不是那么有用。但是在一些算法上（如单调队列）也是很容易理解的...
+        就是三倍经验
+题意维护一个序列，每次修改后求出当前序列逆序对个数。
+思路题目让我们求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;i+1}^n[a_i&gt;a_j]$$也就是让我们求出满足$$pos_i&lt;pos_j&amp;&amp;a_i&gt;a_j$$的点对数量。
+对于不修改的情况，这显然是一个三维偏序问题，用树状数组或归并处理都可以。
+对于修改的情况，我们...
       
     
   </div>
@@ -2745,17 +2746,17 @@ deque因为其能够处理双端，使得它不能像vector一样有效率。它
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/deque%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E5%8A%A8%E6%80%81%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%93%E7%BB%83/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2771,7 +2772,7 @@ deque因为其能够处理双端，使得它不能像vector一样有效率。它
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/static/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/在 Ubuntu 22.04 上部署 WordPress/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2789,23 +2790,17 @@ deque因为其能够处理双端，使得它不能像vector一样有效率。它
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/static/"  itemprop="url">
-        static
+      <a href="/2022/04/30/%E5%9C%A8%20Ubuntu%2022.04%20%E4%B8%8A%E9%83%A8%E7%BD%B2%20WordPress/"  itemprop="url">
+        在 Ubuntu 22.04 上部署 WordPress
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        工程代码员请看详解
-static
-adj.静止的;固定的;无活力的;静电的;静电干扰的
-就是静态的意思啦~
-当我们在一个函数内部普通地定义一个变量时，相当于在程序中进栈，出函数就会被清除，程序也不会对其初始化，所以可以在不同函数内使用。
-但是在前面加上static前缀就不一样了：
-
-变量在全局数据区分配内存空间；编译器自动对其初始化
-其作用域为局部作用域，当定义它的函数结束时，其作用域随之结...
+        很简单的事情被搞得很复杂，踩了很多坑……以及莫名其妙的错误。本来碰壁了之后会一拖再拖。昨天新冠阳性难受了一整天，晚上退烧了，不想学数学就想搞搞这个，第二天早上就弄好了。果然这种东西需要的最重要的是耐心和时间。
+教程搞了好久才找到这篇博客重新搞了一遍。博主基本上是手把手教了，很新，而且有链接可以直接跳转引用的位置去看。用的是 Nginx, MySQL, php7.4, php-fpm。
+下面是...
       
     
   </div>
@@ -2826,7 +2821,7 @@ adj.静止的;固定的;无活力的;静电的;静电干扰的
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/static/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E5%9C%A8%20Ubuntu%2022.04%20%E4%B8%8A%E9%83%A8%E7%BD%B2%20WordPress/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2842,7 +2837,7 @@ adj.静止的;固定的;无活力的;静电的;静电干扰的
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/erase/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/基数排序/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2860,22 +2855,96 @@ adj.静止的;固定的;无活力的;静电的;静电干扰的
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/erase/"  itemprop="url">
-        erase
+      <a href="/2022/04/30/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/"  itemprop="url">
+        基数排序
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        erase详细解释及原理
-我们先定义一个字符串string
+        算法描述基数排序（又叫做桶排序）是一种非比较排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行排序。
+基数排序的步骤如下：
 
-string.erase(iterator) iterator表示要删除元素的迭代器。
-string.erase(it_begin,it_end) 两个元素，表示删除从begin到end-1的所有元素。
-string.erase(0,1) string独有，删除第0到1-0的字符。
+找出最大数，确定位数。
+确定每个位数的范围，并统计每个数字在每个位数上的数量。
+位数从低到高按每个位数从小到大进行排序。
+输出排序后的数组。
 
-erase的返回值是end的迭代器。
+1234567891011121314151617181920212223242526272829303...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/容斥原理[非公开][草稿]/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/"  itemprop="url">
+        容斥原理[非公开][草稿]
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        容斥原理就是
+
+例1
+http://acm.hdu.edu.cn/showproblem.php?pid=4135
+
+#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+typedef long long ll;
+int prime[33],pn;//pn是1-n互质数的个数
+inline ll calc(...
       
     
   </div>
@@ -2896,7 +2965,146 @@ erase的返回值是end的迭代器。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/erase/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/平面几何入门/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95%E5%85%A5%E9%97%A8/"  itemprop="url">
+        平面几何入门
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        为了给同学讲课，做了一个平面几何入门的课件，保存在网上。平面几何入门奇怪的是明明是平面几何还写了一点三维的东西。应该叫计算几何的。
+
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/OI/">OI</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95%E5%85%A5%E9%97%A8/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/并查集及其优化/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96/"  itemprop="url">
+        并查集及其优化
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        并查集并查集是一种树型数据结构，用于处理一些动态集合的合并及查询问题。
+并查集的基本操作有：
+
+合并：将两个集合合并为一个集合。
+查询：判断两个元素是否属于同一个集合。
+
+并查集的应用场景有：
+
+动态连通性：判断两个点是否连通。
+最小生成树：计算最小生成树。
+路径压缩：减少树的高度。
+
+并查集优化并查集有两种启发式优化。第一种是路径压缩，即将每个节点的父节点压缩到根节点，总时间复杂度为 $O...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2991,7 +3199,7 @@ int main()
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/set 和 multiset[非公开][草稿]/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/归并排序/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3009,19 +3217,16 @@ int main()
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/set%20%E5%92%8C%20multiset%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/"  itemprop="url">
-        set 和 multiset[非公开][草稿]
+      <a href="/2022/04/30/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"  itemprop="url">
+        归并排序
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        set和multiset都是stl中的容器，可以按照特定的顺序将元素存储。
-区别
-set不允许元素重复，而multiset可以。
-详细用法
-c.insert()为插入元素
+        算法描述运用了分治的思想，将一个数组分成几乎相等的两份，分别将两段中第一个最小的数拿出来放在一个临时数组中，直到全部取完。因为是递归的，所以每一段的数列都是排序好的。
+1234567891011121314void merge_sort(ll *A,ll *B,int x,int y)&#123;	if(y-x&lt;=1)return;	int mid=x+(y-x)/2;	int p=x...
       
     
   </div>
@@ -3032,81 +3237,17 @@ c.insert()为插入元素
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/set%20%E5%92%8C%20multiset%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/《时间简史》 初读后感/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E3%80%8A%E6%97%B6%E9%97%B4%E7%AE%80%E5%8F%B2%E3%80%8B%20%E5%88%9D%E8%AF%BB%E5%90%8E%E6%84%9F/"  itemprop="url">
-        《时间简史》 初读后感
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        细菌性痢疾让我有机会一瞥史蒂芬霍金博士的这本科普著作。这本书是我初中时买的，当时读不懂便放下。然而此时再读时，霍金博士已经逝世了。
-这是一本惊人的科普著作。所谓科普，就是让读者了解最基本和他们最关心的知识，而忽略晦涩难懂复杂冗长的细节。虽然霍金博士的幽默风趣对我的阅读很有帮助，但由于他所阐释的内容本身，以及译者显然为了不曲解原意而导致的晦涩的直译，致使我在现有知识储备下并无法完全理解其中的全...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E3%80%8A%E6%97%B6%E9%97%B4%E7%AE%80%E5%8F%B2%E3%80%8B%20%E5%88%9D%E8%AF%BB%E5%90%8E%E6%84%9F/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3203,7 +3344,7 @@ c.insert()为插入元素
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/【游记】OI 2020-2021/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/快速幂/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3221,22 +3362,18 @@ c.insert()为插入元素
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91OI%202020-2021/"  itemprop="url">
-        【游记】OI 2020-2021
+      <a href="/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/"  itemprop="url">
+        快速幂
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        【CSP-S2020初赛】
-【CSP-S2020】
-【NOIp 2020】
-【NOI冬令营 2021】
-【省选 2021】
-【NOI 2021】
-【回忆录】
-
+        快速幂快速幂是在进行底数相同的乘法运算而幂数又极大的情况下使用的一种算法。
+将幂次做二进制拆分，然后从低位到高位维护幂次积，同时若该位为 1 乘入答案。
+模板P1226 【模板】快速幂
+12345678910111213141516171819202122#include&lt;iostream&gt;#include&lt;cstdio&gt;#define int unsigned lo...
       
     
   </div>
@@ -3247,151 +3384,17 @@ c.insert()为插入元素
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91OI%202020-2021/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/unique/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/unique/"  itemprop="url">
-        unique
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        unique
-unique一般先用sort将要处理的序列排序，因为unique只会&ldquo;删除&rdquo;相邻的重复元素。
-我们定义一个数列a[]={1,3,3,4,5,6,6,7}(a.begin为a首元素的迭代器，a.end同理）
-
-unique(a.begin(),a.end())或者unique(a,a+a.size())，数组变为{1,3,4,5,6,7,6,7}.
-uni...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/unique/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/《星星之卵》读后随笔/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E3%80%8A%E6%98%9F%E6%98%9F%E4%B9%8B%E5%8D%B5%E3%80%8B%E8%AF%BB%E5%90%8E%E9%9A%8F%E7%AC%94/"  itemprop="url">
-        《星星之卵》读后随笔
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        8.29晚自习
-方读完《星星之卵》。不常读类似的小说，因为读完后感觉好像读了些什么，但是却什么也没读到。
-作者一个有趣的人，一个“另类”的人。从他的自话和故事中可以感觉得到。我还是能与他产生些许共鸣的。
-人物上，许多角色都有着作者现实经历的影子。我觉得最重要的还是两位主角，我能从他们身上感受到作者自身的感情。我猜。事实上，除了这两位，其他角色仿佛都是可有可无的存在，和构造出的整个世界一样。作...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E3%80%8A%E6%98%9F%E6%98%9F%E4%B9%8B%E5%8D%B5%E3%80%8B%E8%AF%BB%E5%90%8E%E9%9A%8F%E7%AC%94/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3418,7 +3421,7 @@ uni...
           </a>
         
         <p class="current">
-          11 / 19
+          11 / 16
         </p>
         
           <a class="next" rel="next" href="/archives/2022/04/page/12/">
@@ -3518,19 +3521,44 @@ uni...
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(188)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
             ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
+            active-action="action-categoriesE695B0E5ADA6"
+            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
         
       </ul>
     </div>
@@ -3555,7 +3583,7 @@ uni...
 
 
     <div class='content'>
-      <a href="/tags/blog/" style="font-size: 19px; color: #777">blog</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px; color: #999">随笔</a>
+      <a href="/tags/2-SAT/" style="font-size: 14px; color: #999">2-SAT</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Me/" style="font-size: 17.33px; color: #828282">Me</a> <a href="/tags/OI/" style="font-size: 22.33px; color: #606060">OI</a> <a href="/tags/Tarjan/" style="font-size: 14px; color: #999">Tarjan</a> <a href="/tags/blog/" style="font-size: 15.67px; color: #8e8e8e">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">优化</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">分治</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 19px; color: #777">图论</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 15.67px; color: #8e8e8e">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 15.67px; color: #8e8e8e">数论</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.67px; color: #6c6c6c">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%9F%A9%E9%98%B5/" style="font-size: 15.67px; color: #8e8e8e">矩阵</a> <a href="/tags/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/" style="font-size: 14px; color: #999">笛卡尔树</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 15.67px; color: #8e8e8e">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 15.67px; color: #8e8e8e">读后感</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14px; color: #999">高斯消元</a>
     </div>
   </section>
 
@@ -4678,7 +4706,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp"];
   let index = 0;
   let IntervalParallax = null;
 

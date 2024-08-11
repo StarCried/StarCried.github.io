@@ -48,20 +48,24 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>2-SAT问题 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,图论,2-SAT,Tarjan,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-SAT问题">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/2-SAT%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="2-SAT SAT(satisfiabality)是适应性的缩写，一般称K的适应性问题为k-SAT 适应性问题就是有x1-n和y1-n的布尔变量，加入一些限制然后求限制内的解得问题（自己理解） 因为k&gt;2的k-SAT问题是DP完全问题（没有一定的算法和正解）（好吧就是暴力），我们只讨论2-SAT问题。 我们先看一道洛谷的紫题。 注意下面的Two-SAT函数并不是2-SAT的标程，这是一种便于">
+<meta property="og:description" content="问题描述SAT(satisfiabality) 是适应性的缩写，一般称 k 的适应性问题为 k-SAT。适应性问题指有 $n$ 个布尔变量 ${x_i}$，加入一些限制然后求限制内的解的问题。 因为 $k&gt;2$ 的 k-SAT 问题是 NP 完全问题（没有一定的算法和正解），我们只讨论 2-SAT 问题。 Tarjan一般来讲，我们会想到把变量 $x_i$ 的两种状态（比如选和不选，记为 $">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-09T01:34:51.418Z">
+<meta property="article:modified_time" content="2024-08-10T13:28:12.433Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="图论">
+<meta property="article:tag" content="2-SAT">
+<meta property="article:tag" content="Tarjan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1894,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723168673349),
+    lastupdate: new Date(1723395659660),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2743,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
       </span>
     
   </div>
@@ -2761,10 +2765,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-10T21:28:12+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 10, 2024</p>
   </a>
 </div>
 
@@ -2801,132 +2805,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>2-SAT</p>
-<p>SAT(satisfiabality)是适应性的缩写，一般称K的适应性问题为k-SAT</p>
-<p>适应性问题就是有x1-n和y1-n的布尔变量，加入一些限制然后求限制内的解得问题（自己理解）</p>
-<p>因为k&gt;2的k-SAT问题是DP完全问题（没有一定的算法和正解）（好吧就是暴力），我们只讨论2-SAT问题。</p>
-<p>我们先看一道洛谷的紫题。</p>
-<p>注意下面的Two-SAT函数并不是2-SAT的标程，这是一种便于理解的（我写的时候只会的）方法。</p>
-<p><a href="https://www.luogu.com.cn/problem/P5782" target="_blank">洛谷P5782</a></p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;vector&gt;<span style="color: #000000;">
-#include</span>&lt;cstring&gt;<span style="color: #000000;">
-#include</span>&lt;algorithm&gt;
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=<span style="color: #800080;">10005</span><span style="color: #000000;">;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> n,m;
-vector</span>&lt;<span style="color: #0000ff;">int</span>&gt; g[maxn*<span style="color: #800080;">2</span><span style="color: #000000;">];
-</span><span style="color: #0000ff;">bool</span> mark[maxn*<span style="color: #800080;">2</span><span style="color: #000000;">];
-</span><span style="color: #0000ff;">int</span> sta[maxn*<span style="color: #800080;">2</span><span style="color: #000000;">],top;
-</span><span style="color: #0000ff;">bool</span> dfs(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x)
-{
-    </span><span style="color: #0000ff;">if</span>(mark[x^<span style="color: #800080;">1</span>])<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">if</span>(mark[x])<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #000000;">;
-    mark[x]</span>=<span style="color: #800080;">1</span><span style="color: #000000;">;
-    sta[top</span>++]=<span style="color: #000000;">x;
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>;i&lt;g[x].size();i++<span style="color: #000000;">)
-        </span><span style="color: #0000ff;">if</span>(!dfs(g[x][i]))<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #000000;">;
-}
-inline </span><span style="color: #0000ff;">bool</span><span style="color: #000000;"> TwoSAT()
-{
-    memset(mark,</span><span style="color: #800080;">0</span>,<span style="color: #0000ff;">sizeof</span><span style="color: #000000;"> mark);
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>;i&lt;n;i+=<span style="color: #800080;">2</span><span style="color: #000000;">){
-        </span><span style="color: #0000ff;">if</span>(!mark[i] and !mark[i^<span style="color: #800080;">1</span><span style="color: #000000;">]){
-            top</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
-            </span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">dfs(i))
-            {
-                </span><span style="color: #0000ff;">while</span>(top)mark[sta[--top]]=<span style="color: #800080;">0</span><span style="color: #000000;">;
-                </span><span style="color: #0000ff;">if</span>(!dfs(i^<span style="color: #800080;">1</span>))<span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
-            }
-        }
-    }
-    </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #000000;">;
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> u,v;
-    scanf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d%d</span><span style="color: #800000;">"</span>,&amp;n,&amp;<span style="color: #000000;">m);
-        n</span>*=<span style="color: #800080;">2</span><span style="color: #000000;">;
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>;i&lt;m;i++<span style="color: #000000;">){
-            scanf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d%d</span><span style="color: #800000;">"</span>,&amp;u,&amp;<span style="color: #000000;">v);
-            u</span>--,v--<span style="color: #000000;">;
-            g[u].push_back(v</span>^<span style="color: #800080;">1</span>);<span style="color: #008000;">//</span><span style="color: #008000;">建边 </span>
-            g[v].push_back(u^<span style="color: #800080;">1</span><span style="color: #000000;">);
-        }
-        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(TwoSAT()){
-            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>;i&lt;n;i+=<span style="color: #800080;">2</span><span style="color: #000000;">)
-            </span><span style="color: #0000ff;">if</span>(mark[i])printf(<span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span>,i+<span style="color: #800080;">1</span><span style="color: #000000;">);
-            </span><span style="color: #0000ff;">else</span> printf(<span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span>,(i^<span style="color: #800080;">1</span>)+<span style="color: #800080;">1</span><span style="color: #000000;">);
-        }</span><span style="color: #0000ff;">else</span> printf(<span style="color: #800000;">"</span><span style="color: #800000;">NIE\n</span><span style="color: #800000;">"</span><span style="color: #000000;">);
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
-</div>
-<p>&nbsp;然而这并不是2-SAT的普遍解法。一般来讲，我们会想到把所有元素的两种状态分别写出来，也就是把一个元素分为两个，然后通过求强联通分量求解。</p>
-<p>怎么理解？</p>
-<p>eg:给出条件，&ldquo;a-&gt;b&rdquo;表示满足a必须满足b（因为这些条件都是要满足的所以可以理解为下列条件都要满足）</p>
-<p>条件：a -&gt; -b , -b -&gt; -a , -a -&gt; b</p>
-<p>我们把它想成一个图，发现b和-b在同一个强联通分量里，也就是说要符合条件必须满足b同事取b和-b，这显然是不可能的，所以本例无解。</p>
-<p>那么我们就可以得到通俗解法，即求强联通分量：若一个元素的两种状态在同一个强联通分量里，此题无解;否则有解。</p>
-<p><a href="https://www.luogu.com.cn/problem/P4782" target="_blank">P4782洛谷模板</a></p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;cstring&gt;<span style="color: #000000;">
-#include</span>&lt;vector&gt;<span style="color: #000000;">
-#include</span>&lt;algorithm&gt;<span style="color: #000000;">
-#include</span>&lt;stack&gt;
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-inline </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> read()
-{
-    </span><span style="color: #0000ff;">int</span> x=<span style="color: #800080;">0</span>,w=<span style="color: #800080;">0</span>;<span style="color: #0000ff;">char</span> c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(!isdigit(c))w|=c==<span style="color: #800000;">'</span><span style="color: #800000;">-</span><span style="color: #800000;">'</span>,c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(isdigit(c))x=(x&lt;&lt;<span style="color: #800080;">3</span>)+(x&lt;&lt;<span style="color: #800080;">1</span>)+(c^<span style="color: #800080;">48</span>),c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">return</span> w?-<span style="color: #000000;">x:x;
-}
-</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=2e6+<span style="color: #800080;">10</span><span style="color: #000000;">;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> n,m;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> ecnt,dfn[maxn],low[maxn],head[maxn],to[maxn],nxt[maxn],cnt,_n,belong[maxn];
-vector</span>&lt;<span style="color: #0000ff;">int</span>&gt;<span style="color: #000000;"> g[maxn];
-</span><span style="color: #008000;">//</span><span style="color: #008000;">inline void addedge(int from,int too)
-</span><span style="color: #008000;">//</span><span style="color: #008000;">{
-</span><span style="color: #008000;">//</span><span style="color: #008000;">    to[++ecnt]=too;nxt[ecnt]=head[from];head[from]=ecnt;
-</span><span style="color: #008000;">//</span><span style="color: #008000;">    to[++ecnt]=from;nxt[ecnt]=head[too];head[too]=ecnt;
-</span><span style="color: #008000;">//</span><span style="color: #008000;">}</span>
-stack &lt;<span style="color: #0000ff;">int</span>&gt;<span style="color: #000000;"> st;
-</span><span style="color: #0000ff;">bool</span><span style="color: #000000;"> vis[maxn];
-</span><span style="color: #0000ff;">void</span> tarjan(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x)
-{
-    dfn[x]</span>=low[x]=++<span style="color: #000000;">cnt;
-    st.push(x);vis[x]</span>=<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>;i&lt;g[x].size();i++<span style="color: #000000;">)
-    {
-        </span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">g[x][i];
-        </span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">dfn[u])
-        {
-            tarjan(u);
-            low[x]</span>=<span style="color: #000000;">min(low[x],low[u]);
-        }</span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">(vis[u])
-            low[x]</span>=<span style="color: #000000;">min(low[x],dfn[u]);
-    }
-    
-<pre><code>&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(low[x]==&lt;span style=&quot;color: #000000;&quot;&gt;dfn[x])
-&#123;
-    &lt;/span&gt;++&lt;span style=&quot;color: #000000;&quot;&gt;_n;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;do&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&#123;
-        belong[x]&lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt;_n;
-        x&lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt;st.top();st.pop();
-        vis[x]&lt;/span&gt;=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &#125;&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;while&lt;/span&gt;(dfn[x]!=&lt;span style=&quot;color: #000000;&quot;&gt;low[x]);
-&#125;
-</code></pre>
-<p>}<br></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    n</span>&#x3D;read(),m&#x3D;<span style="color: #000000;">read();<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> x,y,x1,y1,i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;m;i++<span style="color: #000000;">)<br>    {<br>        x</span>&#x3D;read(),x1&#x3D;read(),y&#x3D;read(),y1&#x3D;<span style="color: #000000;">read();<br></span><span style="color: #008000;">&#x2F;&#x2F;</span><span style="color: #008000;">        addedge(x+n*(x1&amp;1),y+n*(y1^1));addedge(y+n*(y1&amp;1),x+n*(x1^1));</span><br>        g[x+n<em>x1].push_back(y+n</em>(y1^<span style="color: #800080;">1</span><span style="color: #000000;">));<br>        g[y</span>+n<em>y1].push_back(x+n</em>(x1^<span style="color: #800080;">1</span><span style="color: #000000;">));<br>    }<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;(n&lt;&lt;<span style="color: #800080;">1</span>);i++<span style="color: #000000;">)<br>    </span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">dfn[i])tarjan(i);<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++<span style="color: #000000;">)<br>    </span><span style="color: #0000ff;">if</span>(belong[i]&#x3D;&#x3D;belong[i+<span style="color: #000000;">n]){<br>        printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">IMPOSSIBLE\n</span><span style="color: #800000;">“</span><span style="color: #000000;">);<br>        </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>    }<br>    printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">POSSIBLE\n</span><span style="color: #800000;">“</span><span style="color: #000000;">);<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++<span style="color: #000000;">)<br>        printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%d </span><span style="color: #800000;">“</span>,belong[i]&lt;belong[i+<span style="color: #000000;">n]);<br>    printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">\n</span><span style="color: #800000;">“</span><span style="color: #000000;">);<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>}</p>
-<p></span><span style="color: #008000;">&#x2F;&#x2F;</span><span style="color: #008000;">x1 1 0<br></span><span style="color: #008000;">&#x2F;&#x2F;</span><span style="color: #008000;">2 0 1 1</span></pre></p>
-</div>
-<p><span style="text-decoration: line-through;">看到被我注释掉的前向星了吗？没错我因为这调了一下午</span></p>
-<p><span style="text-decoration: line-through;">似乎有一个名为Kosaraju的算法也可以解决2SAT问题</span></p>
+    <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>SAT(satisfiabality) 是适应性的缩写，一般称 k 的适应性问题为 k-SAT。适应性问题指有 $n$ 个布尔变量 ${x_i}$，加入一些限制然后求限制内的解的问题。</p>
+<p>因为 $k&gt;2$ 的 k-SAT 问题是 NP 完全问题（没有一定的算法和正解），我们只讨论 2-SAT 问题。</p>
+<h2 id="Tarjan"><a href="#Tarjan" class="headerlink" title="Tarjan"></a>Tarjan</h2><p>一般来讲，我们会想到把变量 $x_i$ 的两种状态（比如选和不选，记为 $x_{i0},x_{i1}$）抽象成两个点，将限制条件转化为有向边，然后通过求强联通分量求解。连边 $a\rightarrow b$ 表示条件为满足 $a$ 必须满足 $b$。</p>
+<p>如果有条件 $a_0\rightarrow b_0$，$b_0\rightarrow a_1$，$a_1\rightarrow b_1$，$b_1\rightarrow a_0$，我们把它想成一个图进行连边，发现 $a_0$ 和 $a_1$ 在同一个强联通分量里。也就是说要符合条件必须同时选 $a_0,a_1$，即 $a$ 变量同时选且不选，这显然是不可能的，所以本例无解。</p>
+<p>那么我们就可以得到普遍解法，即求强联通分量：若存在一个元素的两种状态在同一个强联通分量里，此题无解；否则有解。</p>
+<p>得到一个解的方法为：选一个未被确定的变量，可随便指定其为一个状态，将所有与之相连的变量状态确定，重复此过程直到所有变量都确定。</p>
+<h2 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4782">P4782洛谷模板</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">2e6</span><span class="number">+10</span>;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> ecnt,dfn[maxn],low[maxn],head[maxn],to[maxn],nxt[maxn],cnt,_n,belong[maxn];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; g[maxn];</span><br><span class="line"><span class="comment">//inline void addedge(int from,int too)</span></span><br><span class="line"><span class="comment">//&#123;</span></span><br><span class="line"><span class="comment">//    to[++ecnt]=too;nxt[ecnt]=head[from];head[from]=ecnt;</span></span><br><span class="line"><span class="comment">//    to[++ecnt]=from;nxt[ecnt]=head[too];head[too]=ecnt;</span></span><br><span class="line"><span class="comment">//&#125;Wrong!</span></span><br><span class="line">stack &lt;<span class="type">int</span>&gt; st;</span><br><span class="line"><span class="type">bool</span> vis[maxn];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">tarjan</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dfn[x]=low[x]=++cnt;</span><br><span class="line">    st.<span class="built_in">push</span>(x);vis[x]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;g[x].<span class="built_in">size</span>();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u=g[x][i];</span><br><span class="line">        <span class="keyword">if</span>(!dfn[u])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">tarjan</span>(u);</span><br><span class="line">            low[x]=<span class="built_in">min</span>(low[x],low[u]);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(vis[u])</span><br><span class="line">            low[x]=<span class="built_in">min</span>(low[x],dfn[u]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(low[x]==dfn[x])</span><br><span class="line">    &#123;</span><br><span class="line">        ++_n;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            belong[x]=_n;</span><br><span class="line">            x=st.<span class="built_in">top</span>();st.<span class="built_in">pop</span>();</span><br><span class="line">            vis[x]=<span class="number">0</span>;</span><br><span class="line">        &#125;<span class="keyword">while</span>(dfn[x]!=low[x]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> x,y,x1,y1,i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="built_in">read</span>(),x1=<span class="built_in">read</span>(),y=<span class="built_in">read</span>(),y1=<span class="built_in">read</span>();</span><br><span class="line"><span class="comment">//        addedge(x+n*(x1&amp;1),y+n*(y1^1));addedge(y+n*(y1&amp;1),x+n*(x1^1));</span></span><br><span class="line">        g[x+n*x1].<span class="built_in">push_back</span>(y+n*(y1^<span class="number">1</span>));</span><br><span class="line">        g[y+n*y1].<span class="built_in">push_back</span>(x+n*(x1^<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=(n&lt;&lt;<span class="number">1</span>);i++)</span><br><span class="line">    <span class="keyword">if</span>(!dfn[i])<span class="built_in">tarjan</span>(i);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">if</span>(belong[i]==belong[i+n])&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;IMPOSSIBLE\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;POSSIBLE\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,belong[i]&lt;belong[i+n]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5782">洛谷P5782</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">10005</span>;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; g[maxn*<span class="number">2</span>];</span><br><span class="line"><span class="type">bool</span> mark[maxn*<span class="number">2</span>];</span><br><span class="line"><span class="type">int</span> sta[maxn*<span class="number">2</span>],top;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(mark[x^<span class="number">1</span>])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(mark[x])<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    mark[x]=<span class="number">1</span>;</span><br><span class="line">    sta[top++]=x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;g[x].<span class="built_in">size</span>();i++)</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">dfs</span>(g[x][i]))<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">TwoSAT</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(mark,<span class="number">0</span>,<span class="keyword">sizeof</span> mark);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i+=<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!mark[i] <span class="keyword">and</span> !mark[i^<span class="number">1</span>])&#123;</span><br><span class="line">            top=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="built_in">dfs</span>(i))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">while</span>(top)mark[sta[--top]]=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(!<span class="built_in">dfs</span>(i^<span class="number">1</span>))<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> u,v;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">        n*=<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;u,&amp;v);</span><br><span class="line">            u--,v--;</span><br><span class="line">            g[u].<span class="built_in">push_back</span>(v^<span class="number">1</span>);</span><br><span class="line">            g[v].<span class="built_in">push_back</span>(u^<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">TwoSAT</span>())&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i+=<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span>(mark[i])<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i<span class="number">+1</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,(i^<span class="number">1</span>)<span class="number">+1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;NIE\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
   </div>
   
   
@@ -2950,10 +2840,10 @@ stack &lt;<span style="color: #0000ff;">int</span>&gt;<span style="color: #00000
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-10T21:28:12+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 10, 2024</p>
   </a>
 </div>
 
@@ -2962,8 +2852,8 @@ stack &lt;<span style="color: #0000ff;">int</span>&gt;<span style="color: #00000
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9B%BE%E8%AE%BA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>图论</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/2-SAT/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>2-SAT</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Tarjan/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Tarjan</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 图论 2-SAT Tarjan</span>
 
 
         
@@ -3023,24 +2913,17 @@ stack &lt;<span style="color: #0000ff;">int</span>&gt;<span style="color: #00000
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/0%201%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>0 1分数规划</p>
-          <p class='content'>参照
-有两个数字n,k,两个大小为n的数组a,b,将其分成k-n（包含）份，使得
-R=sigma(ai)/sigma(bi)
-最大。
-我们将之化成di=ai-r*bi，求d的和，二分求出来r的最...</p>
+        <a class='prev' href='/2022/04/30/AT2390%20Games%20on%20DAG/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>AT2390 Games on DAG</p>
+          <p class='content'>AT2390 Games on DAG题意$1,2$ 号点各一个石头，每次沿边移动一个石头，不能动者输。求所有连边子集中先手胜的情况。
+思路发现对于两个石头的 SG 函数是独立的，输者两个石头 ...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/2021%20NOI%E5%86%AC%E4%BB%A4%E8%90%A5/'>
-          <p class='title'>2021 NOI冬令营<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>2021 NOI冬令营……
-本来想写得稍微文艺一点的，但是停课这么久已经退化到不会写文章了。
-毕竟省选了我才来补的，时间也过去很久了。
-毕竟这次我没有获得任何奖项。
-我唯一的获得就是……
-……好...</p>
+        <a class='next' href='/2022/04/30/AT2304%20Cleaning/'>
+          <p class='title'>AT2304 Cleaning<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>AT2304 Cleaning题意一个树上每个节点有一些石子，每次只能选取两个叶子节点并将路径间的所有点上的石子数量减1，问是否能将所有石子取完。
+思路设 $f_x$ 表示从 $x$ 节点向上的...</p>
         </a>
       
     </div>
@@ -3099,19 +2982,44 @@ R=sigma(ai)/sigma(bi)
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(188)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
             ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
+            active-action="action-categoriesE695B0E5ADA6"
+            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
         
       </ul>
     </div>
@@ -3128,9 +3036,19 @@ R=sigma(ai)/sigma(bi)
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tarjan"><span class="toc-text">Tarjan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%89%88"><span class="toc-text">模版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4253,7 +4171,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4482,7 +4400,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/2-SAT问题/","name":"2-SAT问题"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"2-SAT问题","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/2-SAT%E9%97%AE%E9%A2%98/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/2-SAT%E9%97%AE%E9%A2%98/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-09T01:34:51.418Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/2-SAT问题/","name":"2-SAT问题"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"2-SAT问题","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/2-SAT%E9%97%AE%E9%A2%98/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/2-SAT%E9%97%AE%E9%A2%98/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-10T13:28:12.433Z","articleSection":"算法","keywords":"博客园,OI,图论,2-SAT,Tarjan","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

@@ -48,20 +48,22 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>二项式反演 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,数学,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="二项式反演">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="二项式反演常用结论$$g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni g_i\g_n&#x3D;\sum_{i&#x3D;0}^n\binom ni f_i\Leftrightarrow g_n&#x3D;\sum_{i&#x3D;0}^n(">
+<meta property="og:description" content="二项式反演$$g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni g_i\g_n&#x3D;\sum_{i&#x3D;0}^n\binom ni f_i\Leftrightarrow g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-09T01:34:51.469Z">
+<meta property="article:modified_time" content="2024-08-11T06:33:19.747Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723168673349),
+    lastupdate: new Date(1723395659660),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
       </span>
     
   </div>
@@ -2761,10 +2763,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-11T14:33:19+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 11, 2024</p>
   </a>
 </div>
 
@@ -2801,10 +2803,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="二项式反演"><a href="#二项式反演" class="headerlink" title="二项式反演"></a>二项式反演</h1><h2 id="常用结论"><a href="#常用结论" class="headerlink" title="常用结论"></a>常用结论</h2><p>$$<br>g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni g_i\<br>g_n&#x3D;\sum_{i&#x3D;0}^n\binom ni f_i\Leftrightarrow g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^{n-i}\binom ni f_i<br>$$</p>
-<h4 id="反演"><a href="#反演" class="headerlink" title="反演"></a>反演</h4><p>对于一个数列 $f$，若有另一个数列 $g$ 满足<br>$$<br>g_n&#x3D;\sum_{i&#x3D;0}^{n}a_if_i<br>$$<br>反演即是求出<br>$$<br>f_n&#x3D;\sum_{i&#x3D;0}^nb_ig_i<br>$$</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p><a target="_blank" rel="noopener" href="http://blog.miskcoo.com/2015/12/inversion-magic-binomial-inversion#mjx-eqn-inversion-2">引用</a></p>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>可以应用于至少、至多和恰好选择方案数之间的转化。</p>
+    <h2 id="二项式反演"><a href="#二项式反演" class="headerlink" title="二项式反演"></a>二项式反演</h2><p>$$<br>g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni g_i\<br>g_n&#x3D;\sum_{i&#x3D;0}^n\binom ni f_i\Leftrightarrow g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^{n-i}\binom ni f_i<br>$$</p>
+<h3 id="反演"><a href="#反演" class="headerlink" title="反演"></a>反演</h3><p>对于一个数列 $f$，若有另一个数列 $g$ 满足<br>$$<br>g_n&#x3D;\sum_{i&#x3D;0}^{n}a_if_i<br>$$<br>反演即是求出<br>$$<br>f_n&#x3D;\sum_{i&#x3D;0}^nb_ig_i<br>$$</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p><a target="_blank" rel="noopener" href="http://blog.miskcoo.com/2015/12/inversion-magic-binomial-inversion#mjx-eqn-inversion-2">反演魔术：反演原理及二项式反演</a></p>
 
   </div>
   
@@ -2829,10 +2830,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-11T14:33:19+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 11, 2024</p>
   </a>
 </div>
 
@@ -2841,8 +2842,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E5%AD%A6/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数学</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 数学</span>
 
 
         
@@ -2902,21 +2903,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>中国剩余定理</p>
-          <p class='content'>
-“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
-
-#中国剩余定理即求多个同余方程的解。
-举个栗子。求一个数x，使得：$$\begin{cases}x≡2...</p>
+        <a class='prev' href='/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>主定理</p>
+          <p class='content'>定义主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
+时间复杂度相关定义在计算机科学中，算法的时间复杂度（time complexi...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D/'>
-          <p class='title'>个人介绍<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>2023.7.22将部分个人独白文章隐藏。
-2023.5.5这是 Star_Cried 的博客。外文名 Ezio。本人是一名已经退役了的高中 OIer。现为 ACMer in SJTU。
-生日为...</p>
+        <a class='next' href='/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/'>
+          <p class='title'>分层图<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ 所以又在网上找着看了看写一篇博客备忘。
+学习笔记真的很有用！
+分层图这个很容易理解，来源就是在一些最短路的问题上题目又加了...</p>
         </a>
       
     </div>
@@ -2975,19 +2973,44 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(188)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
             ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
+            active-action="action-categoriesE695B0E5ADA6"
+            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            active-action="action-categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
         
       </ul>
     </div>
@@ -3014,7 +3037,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%93%E8%AE%BA"><span class="toc-text">常用结论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94"><span class="toc-text">反演</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%98%8E"><span class="toc-text">证明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-text">应用</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94"><span class="toc-text">二项式反演</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94"><span class="toc-text">反演</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%98%8E"><span class="toc-text">证明</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4139,7 +4162,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4368,7 +4391,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/二项式反演/","name":"二项式反演"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"二项式反演","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-09T01:34:51.469Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/二项式反演/","name":"二项式反演"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"二项式反演","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-11T06:33:19.747Z","articleSection":"数学","keywords":"博客园,OI,数学","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 
