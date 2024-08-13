@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://StarCried.github.io/2022/04/30/求逆元[非公开][草稿]/"/>
+  <link rel="canonical" href="https://StarCried.github.io/2022/04/30/p1880 [noi1995] 石子合并/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -47,21 +47,23 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>求逆元[非公开][草稿] - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <title>P1880 [NOI1995] 石子合并 - StarCried 的狼窝</title>
+  <meta name="keywords" content="博客园,OI,DP,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="求逆元[非公开][草稿]">
-<meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%B1%82%E9%80%86%E5%85%83[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/index.html">
+<meta property="og:title" content="P1880 [NOI1995] 石子合并">
+<meta property="og:url" content="https://starcried.github.io/2022/04/30/P1880%20[NOI1995]%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="逆元 逆元是个啥？x的逆元就是x的倒数（误 在数论意义下（正整数），逆元b是指a*b&amp;mod&#x3D;&#x3D;1的数。而这个b不一定唯一。同时，，如果mod不同，b也是不同的。所以可以说a有无数个逆元。 当a&gt;mod时，它莫得逆元；当a和mod不互质时，a不一定有逆元。 例如，求4在mod7意义下的逆元，就是4x%7&#x3D;&#x3D;1,x就是此逆元。 逆元的几种求法  扩展欧几里得 递推 费马小定理（求!x的">
+<meta property="og:description" content="P1880 [NOI1995] 石子合并 一道区间dp题目。 用 d[i][j] 表示从 i 到 j 的最大&#x2F;最小得分，那么依次枚举长度 len，坐标 i 和 j，三层循环就可以 dp递推求得最值了。 （如果没有环的话） 不要着急，我们将序列复制一遍接到后面做一遍即可。 1234567891011121314151617181920212223242526272829303132333435363">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-13T02:32:21.584Z">
+<meta property="article:modified_time" content="2024-08-13T08:39:40.225Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723521714335),
+    lastupdate: new Date(1723541454637),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2699,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/求逆元[非公开][草稿]/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1880 [NOI1995] 石子合并/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2720,7 +2722,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        求逆元[非公开][草稿]
+        P1880 [NOI1995] 石子合并
       </h1>
       <div class='new-meta-box'>
         
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
       </span>
     
   </div>
@@ -2761,7 +2763,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T16:39:40+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 13, 2024</p>
@@ -2779,7 +2781,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>
       <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="lc-pv" data-title="求逆元[非公开][草稿]" data-path="/2022/04/30/%E6%B1%82%E9%80%86%E5%85%83%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/">
+      <span id="lc-pv" data-title="P1880 [NOI1995] 石子合并" data-path="/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
         <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       </span>
       
@@ -2801,87 +2803,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><strong>逆元</strong></p>
-<p>逆元是个啥？x的逆元就是x的倒数（误</p>
-<p>在数论意义下（正整数），逆元b是指a*b&amp;mod==1的数。而这个b不一定唯一。同时，，如果mod不同，b也是不同的。所以可以说a有无数个逆元。</p>
-<p>当a&gt;mod时，它莫得逆元；当a和mod不互质时，a不一定有逆元。</p>
-<p>例如，求4在mod7意义下的逆元，就是4x%7==1,x就是此逆元。</p>
-<p><strong>逆元的几种求法</strong></p>
-<ol>
-<li>扩展欧几里得</li>
-<li>递推</li>
-<li>费马小定理（求!x的逆元）</li>
-</ol>
-<p><strong>扩展欧几里得</strong></p>
-<p>我们知道扩欧的递推式是y=xx-a/b*y</p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-typedef </span><span style="color: #0000ff;">long</span> <span style="color: #0000ff;">long</span><span style="color: #000000;"> ll;
-ll exgcd(ll a,ll b,ll </span>&amp;x,ll &amp;<span style="color: #000000;">y)
-{
-    ll t;
-    </span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">b){
-        x</span>=<span style="color: #800080;">1</span>,y=<span style="color: #800080;">0</span>;<span style="color: #0000ff;">return</span><span style="color: #000000;"> a;
-    }
-    </span><span style="color: #0000ff;">else</span><span style="color: #000000;">{
-        t</span>=exgcd(b,a%b,x,y);
-        <span style="color: #0000ff;">int</span> xx=<span style="color: #000000;">x;
-        x</span>=<span style="color: #000000;">y;
-        y</span>=xx-a/b*<span style="color: #000000;">y;
-        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> t;
-    }
-}
-<p><span style="color: #0000ff;">int</span><span style="color: #000000;"> inv(ll a,ll p)
-{
-ll d,x,y;
-d</span>=<span style="color: #000000;">exgcd(a,p,x,y);
-</span><span style="color: #0000ff;">return</span> d==<span style="color: #800080;">1</span>?(x+p)%p:-<span style="color: #800080;">1</span><span style="color: #000000;">;
-}</span></p>
-<p><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> a,b;
-cin</span>&gt;&gt;a&gt;&gt;<span style="color: #000000;">b;
-cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
-</span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></p></span></pre><p></p>
-</div>
-<p><strong>递推求1~n的逆元</strong></p>
-<p>网上有人比我讲的清楚得多。我们来看看这个推导（支持原创）</p>
-<p><img src="./img/2027395-20200511215214071-135956469.png" class="lazyload" data-srcset="./img/2027395-20200511215214071-135956469.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="470" height="272"></p>
-<p><img src="./img/2027395-20200511220207436-1737515103.png" class="lazyload" data-srcset="./img/2027395-20200511220207436-1737515103.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="558" height="615"></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>所以我们理解了之后我们直接使用即可。</p>
-<p>核心公式：inv[i]=(mod-mod/i)*inv[mod%i]%mod;</p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std; 
-</span><span style="color: #0000ff;">int</span> inv[<span style="color: #800080;">20</span>],n=<span style="color: #800080;">10</span>,MOD=<span style="color: #800080;">7</span><span style="color: #000000;">;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-    inv[</span><span style="color: #800080;">1</span>]=<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">2</span>;i&lt;=n;i++<span style="color: #000000;">)
-    {
-        </span><span style="color: #0000ff;">if</span>(i&gt;=MOD)<span style="color: #0000ff;">break</span>;<span style="color: #008000;">//</span><span style="color: #008000;">大于MOD的莫得逆元 </span>
-        inv[i]=(MOD-MOD/i)*inv[MOD%i]%MOD;<span style="color: #008000;">//</span><span style="color: #008000;">重点要考！ </span>
-<span style="color: #000000;">    }
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
-    {
-        cout</span>&lt;&lt;inv[i]&lt;&lt;<span style="color: #800000;">"</span><span style="color: #800000;">\n</span><span style="color: #800000;">"</span><span style="color: #000000;">;
-    }
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
-</div>
-<p>&nbsp;</p>
-<p><strong>求0!~x!的逆元</strong></p>
-<p>首先我们知道费马小定理a<sup>p-1</sup>=a(mod p),可得a*a<sup>p-2</sup>=1(mod p).所以a<sup>p-2</sup>即为a在mod p意义下的逆元。<span style="text-decoration: line-through;">然而这并没有什么用因为这个时间复杂度显而易见。</span></p>
-<p>其实还是有一点用的因为可以利用这个逆元推出0~x!的逆元。</p>
-<p>我们假设有逆元x使得a! x=1(mod p),则(a-1)!*ax=1(mod p)</p>
-<p>所以(i-1)!的逆元为ix%p。x就是inv[i]，即inv[i-1]=(inv[i]*i)%mod;</p>
-<p>那么我们先用费马小定理求出!n的逆元然后倒推回去就可以辣！</p>
-<p>倒推公式：inv[i]=(inv[i+1]*(i+1))%MOD;</p>
-<p>用费马小定理时，记得用快速幂不然会有不好的事情发生。</p>
+    <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1880">P1880 [NOI1995] 石子合并</a></p>
+<p>一道区间dp题目。</p>
+<p>用 <code>d[i][j]</code> 表示从 <code>i</code> 到 <code>j</code> 的最大/最小得分，那么依次枚举长度 <code>len</code>，坐标 <code>i</code> 和 <code>j</code>，三层循环就可以 <code>dp</code>递推求得最值了。</p>
+<p>（如果没有环的话）</p>
+<p>不要着急，我们将序列复制一遍接到后面做一遍即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;ctype.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">1</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))&#123;</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)w=<span class="number">-1</span>;</span><br><span class="line">		c=<span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> x*w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">105</span>*<span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> a[maxn],sum[maxn],d[maxn][maxn],d2[maxn][maxn];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> n=<span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)a[i]=a[i+n]=<span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=(n+n);i++)sum[i]=sum[i<span class="number">-1</span>]+a[i];<span class="comment">//前缀和 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> len=<span class="number">2</span>;len&lt;=n;len++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,j=i+len<span class="number">-1</span>;i&lt;n+n <span class="keyword">and</span> j&lt;n+n ;i++,j=i+len<span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			d[i][j]=INF;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> k=i;k&lt;j;k++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(d[i][j]&gt;d[i][k]+d[k<span class="number">+1</span>][j]+sum[j]-sum[i<span class="number">-1</span>])</span><br><span class="line">				d[i][j]=d[i][k]+d[k<span class="number">+1</span>][j]+sum[j]-sum[i<span class="number">-1</span>];</span><br><span class="line">				<span class="keyword">if</span>(d2[i][j]&lt;d2[i][k]+d2[k<span class="number">+1</span>][j]+sum[j]-sum[i<span class="number">-1</span>])</span><br><span class="line">				d2[i][j]=d2[i][k]+d2[k<span class="number">+1</span>][j]+sum[j]-sum[i<span class="number">-1</span>];</span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="type">int</span> ans1=INF,ans2=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)ans1=<span class="built_in">min</span>(ans1,d[i][i+n<span class="number">-1</span>]),ans2=<span class="built_in">max</span>(ans2,d2[i][i+n<span class="number">-1</span>]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n%d\n&quot;</span>,ans1,ans2);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果数据再大一点的话，需要用到平行四边形优化。</p>
+<hr>
+<p>扩展：这道题的数据范围是 <svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="7.768ex" height="1.819ex" role="img" focusable="false" viewBox="0 -666 3433.6 804" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJX-1-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-1-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-1-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(877.8,0)"><use data-c="2264" xlink:href="#MJX-1-TEX-N-2264"></use></g><g data-mml-node="mn" transform="translate(1933.6,0)"><use data-c="31" xlink:href="#MJX-1-TEX-N-31"></use><use data-c="30" xlink:href="#MJX-1-TEX-N-30" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-1-TEX-N-30" transform="translate(1000,0)"></use></g></g></g></svg> ,而我们给它还扩充到了 <svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="7.768ex" height="1.819ex" role="img" focusable="false" viewBox="0 -666 3433.6 804" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-2-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-2-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJX-2-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-2-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-2-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(877.8,0)"><use data-c="2264" xlink:href="#MJX-2-TEX-N-2264"></use></g><g data-mml-node="mn" transform="translate(1933.6,0)"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use><use data-c="30" xlink:href="#MJX-2-TEX-N-30" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-2-TEX-N-30" transform="translate(1000,0)"></use></g></g></g></svg>。那么如果n更大呢？比如 <svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="10.031ex" height="1.844ex" role="img" focusable="false" viewBox="0 -677 4433.6 815" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-3-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-3-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJX-3-TEX-N-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path id="MJX-3-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-3-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(877.8,0)"><use data-c="2264" xlink:href="#MJX-3-TEX-N-2264"></use></g><g data-mml-node="mn" transform="translate(1933.6,0)"><use data-c="34" xlink:href="#MJX-3-TEX-N-34"></use><use data-c="30" xlink:href="#MJX-3-TEX-N-30" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-3-TEX-N-30" transform="translate(1000,0)"></use><use data-c="30" xlink:href="#MJX-3-TEX-N-30" transform="translate(1500,0)"></use><use data-c="30" xlink:href="#MJX-3-TEX-N-30" transform="translate(2000,0)"></use></g></g></g></svg>？</p>
+<p>这里有一道题目<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5569">P5569 [SDOI2008] 石子合并</a></p>
+<p>是的我们没法再用 40000*40000 的 DP 做了。</p>
+<p>有兴趣可以去看题解。</p>
+
   </div>
   
   
@@ -2905,7 +2839,7 @@ cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T16:39:40+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 13, 2024</p>
@@ -2917,8 +2851,8 @@ cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DP/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>DP</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI DP</span>
 
 
         
@@ -2931,7 +2865,7 @@ cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://starcried.github.io/2022/04/30/%E6%B1%82%E9%80%86%E5%85%83[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/&title=求逆元[非公开][草稿] - StarCried 的狼窝&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://starcried.github.io/2022/04/30/P1880%20[NOI1995]%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/&title=P1880 [NOI1995] 石子合并 - StarCried 的狼窝&summary="
           
           >
           
@@ -2943,7 +2877,7 @@ cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://starcried.github.io/2022/04/30/%E6%B1%82%E9%80%86%E5%85%83[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/&title=求逆元[非公开][草稿] - StarCried 的狼窝&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://starcried.github.io/2022/04/30/P1880%20[NOI1995]%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/&title=P1880 [NOI1995] 石子合并 - StarCried 的狼窝&summary="
           
           >
           
@@ -2978,18 +2912,25 @@ cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>石子合并</p>
-          <p class='content'>https://www.luogu.com.cn/problem/P1880
-一道区间dp题目。
-用d[i][j]表示从i到j的最大/最小得分，那么依次枚举长度len，坐标i和j，三层循环就可以...</p>
+        <a class='prev' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2490 [SDOI2011]黑白棋</p>
+          <p class='content'>P2490 [SDOI2011]黑白棋
+题意
+一个  的棋盘上，A 可以移动白色棋子，B 可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动 1 到  个棋子。
+每当移动某...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'>树状数组[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>详解请跳转
-树状数组，是和线段树相提并论（并不）的一种数据存储形式。对于一个数组，我们要是只是进行一些简单的区间修改或查询的话，因为树状数组很好的运用了它的特性，常数要比线段树小很多。但是如果进...</p>
+        <a class='next' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/'>
+          <p class='title'>P2476-记忆化搜索<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>链接
+##DP？
+我们看看，这个状态似乎有亿点点多。
+我们看看数据范围，数量不超过5，颜色数不超过15.
+15维DP显然不靠谱。
+那么我们就思考一下……个数？
+记忆化搜索可ac：
+1234567...</p>
         </a>
       
     </div>
@@ -3005,7 +2946,7 @@ cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/04/30/%E6%B1%82%E9%80%86%E5%85%83%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 给小狼留言</p>
     
@@ -3050,12 +2991,12 @@ cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
           <li><a class="flat-box"
             title="/categories/C/" href="/categories/C/"
             active-action="action-categoriesC"
-            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(127)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(114)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
@@ -3080,12 +3021,12 @@ cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
             active-action="action-categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(16)</div></a></li>
+            ><div class='name'>算法</div><div class='badge'>(22)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
             active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>题解</div><div class='badge'>(6)</div></a></li>
         
       </ul>
     </div>
@@ -4252,7 +4193,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4535,7 +4476,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/求逆元[非公开][草稿]/","name":"求逆元[非公开][草稿]"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"求逆元[非公开][草稿]","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%B1%82%E9%80%86%E5%85%83[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%B1%82%E9%80%86%E5%85%83[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T02:32:21.584Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/P1880 [NOI1995] 石子合并/","name":"P1880 [NOI1995] 石子合并"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"P1880 [NOI1995] 石子合并","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/P1880%20[NOI1995]%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/P1880%20[NOI1995]%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T08:39:40.225Z","articleSection":"题解","keywords":"博客园,OI,DP","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

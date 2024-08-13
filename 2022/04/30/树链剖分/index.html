@@ -48,20 +48,22 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>树链剖分 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,树链剖分,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="树链剖分">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;chinhhh&#x2F;p&#x2F;7965433.html&lt;-详解 洛谷P3384&lt;-模板 如果我会告诉你我不小心把%写成了*调了一个多小时吗 适用范围 在一棵树上+-点权&#x2F;边权然后多次提问的问题等 原理 将一棵树剖分成若干条链，在链上通过数据结构维护。 照本宣科 将一个点的子树中最大的那个做为重儿子，其他的叫做轻儿子，对于所有点的重儿子连的链称为重链">
+<meta property="og:description" content="P3384 【模板】重链剖分&#x2F;树链剖分 适用问题 对一个给定的树，维护（修改、查询）其节点点权&#x2F;边权，操作可  次处理（如路径、子树）。 实现 将一棵树剖分成若干条链，每一条链通过区间数据结构维护。 将一个点的子树中最大的那个做为重儿子，其他的叫做轻儿子，对于所有点的重儿子连的链称为重链。我们将重链作为主链，将轻儿子构成的其他轻链加在重链的后面。很明显，对于每一条链，它的节点都是相连的（废话）。对">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-13T02:32:21.582Z">
+<meta property="article:modified_time" content="2024-08-13T08:57:39.572Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="树链剖分">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723521714335),
+    lastupdate: new Date(1723541454637),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
       </span>
     
   </div>
@@ -2761,7 +2763,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T16:57:39+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 13, 2024</p>
@@ -2801,285 +2803,41 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><a href="https://www.cnblogs.com/chinhhh/p/7965433.html" target="_blank">https://www.cnblogs.com/chinhhh/p/7965433.html</a>&lt;-详解</p>
-<p><a href="https://www.luogu.com.cn/problem/P3384" target="_blank">洛谷P3384</a>&lt;-模板</p>
-<p><span style="text-decoration: line-through;">如果我会告诉你我不小心把%写成了*调了一个多小时吗</span></p>
-<p><strong>适用范围</strong></p>
-<p>在一棵树上+-点权/边权然后多次提问的问题<strong>等</strong></p>
-<p><strong>原理</strong></p>
-<p>将一棵树剖分成若干条链，在链上通过数据结构维护。</p>
-<p><strong>照本宣科</strong></p>
-<p>将一个点的子树中最大的那个做为重儿子，其他的叫做轻儿子，对于所有点的重儿子连的链称为重链。我们将重链作为主链，将轻儿子构成的其他轻链加在重链的后面。很明显，<strong>对于每一条链，它的节点都是相连的</strong>（废话）。<strong>对于每一个子树，它的所有的节点都排在子树根的后面</strong>。</p>
-<p>所以我们就把一个树成功地<span style="text-decoration: line-through;">退化</span>成了一条链。</p>
-<p>因为这条链有如上我所说的几个性质，题目要求如果是能在链上连续维护的（如求子树权值和，求任意两点间距离和），我们就可以用数据结构维护它了，比如<strong>线段树。</strong></p>
-<p><strong>构造</strong></p>
-<p>首先我们需要两次dfs。</p>
-<p><strong>dfs1</strong></p>
+    <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3384">P3384 【模板】重链剖分/树链剖分</a></p>
+<h2 id="适用问题"><a href="#适用问题" class="headerlink" title="适用问题"></a>适用问题</h2>
+<p>对一个给定的树，维护（修改、查询）其节点点权/边权，操作可 <svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.112ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3585.7 1000" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path id="MJX-1-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-1-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path id="MJX-1-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path id="MJX-1-TEX-N-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path><path id="MJX-1-TEX-N-2061" d=""></path><path id="MJX-1-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D442" xlink:href="#MJX-1-TEX-I-1D442"></use></g><g data-mml-node="mo" transform="translate(763,0)"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(1152,0)"><use data-c="6C" xlink:href="#MJX-1-TEX-N-6C"></use><use data-c="6F" xlink:href="#MJX-1-TEX-N-6F" transform="translate(278,0)"></use><use data-c="67" xlink:href="#MJX-1-TEX-N-67" transform="translate(778,0)"></use></g><g data-mml-node="mo" transform="translate(2430,0)"><use data-c="2061" xlink:href="#MJX-1-TEX-N-2061"></use></g><g data-mml-node="mi" transform="translate(2596.7,0)"><use data-c="1D45B" xlink:href="#MJX-1-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(3196.7,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g></g></g></svg> 次处理（如路径、子树）。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2>
+<p>将一棵树剖分成若干条链，每一条链通过区间数据结构维护。</p>
+<p>将一个点的子树中最大的那个做为重儿子，其他的叫做轻儿子，对于所有点的重儿子连的链称为重链。我们将重链作为主链，将轻儿子构成的其他轻链加在重链的后面。很明显，对于每一条链，它的节点都是相连的（废话）。对于每一个子树，它的所有的节点都排在子树根的后面。</p>
+<p>所以我们就把一个树成功地拆解成了一条链。</p>
+<p>因为这条链有如上我所说的几个性质，题目要求如果是能在链上连续维护的（如求子树权值和，求任意两点间距离和），我们就可以用数据结构维护它了，比如线段树。</p>
+<p>由于树的重心的性质，一次操作拆成了 <svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.112ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3585.7 1000" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-2-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path id="MJX-2-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-2-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path id="MJX-2-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path id="MJX-2-TEX-N-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path><path id="MJX-2-TEX-N-2061" d=""></path><path id="MJX-2-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-2-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D442" xlink:href="#MJX-2-TEX-I-1D442"></use></g><g data-mml-node="mo" transform="translate(763,0)"><use data-c="28" xlink:href="#MJX-2-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(1152,0)"><use data-c="6C" xlink:href="#MJX-2-TEX-N-6C"></use><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F" transform="translate(278,0)"></use><use data-c="67" xlink:href="#MJX-2-TEX-N-67" transform="translate(778,0)"></use></g><g data-mml-node="mo" transform="translate(2430,0)"><use data-c="2061" xlink:href="#MJX-2-TEX-N-2061"></use></g><g data-mml-node="mi" transform="translate(2596.7,0)"><use data-c="1D45B" xlink:href="#MJX-2-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(3196.7,0)"><use data-c="29" xlink:href="#MJX-2-TEX-N-29"></use></g></g></g></svg> 次修改。</p>
+<h3 id="剖分部分"><a href="#剖分部分" class="headerlink" title="剖分部分"></a>剖分部分</h3>
+<p>首先我们需要两次 dfs。</p>
+<h4 id="dfs1"><a href="#dfs1" class="headerlink" title="dfs1"></a>dfs1</h4>
 <p>用于建树，顺便记录每个节点的父亲 和 该点的深度 和 它的子树的大小 和 它的重儿子。</p>
-<p>fa[]父亲节点 dep[]深度 siz[]子树大小 son[]重儿子（重儿子为子树大者）</p>
-<div class="cnblogs_code">
-<pre><span style="color: #0000ff;">void</span> dfs1(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span> f,<span style="color: #0000ff;">int</span><span style="color: #000000;"> depth)
-{
-    siz[x]</span>=<span style="color: #800080;">1</span>; dep[x]=depth; fa[x]=<span style="color: #000000;">f;
-    </span><span style="color: #0000ff;">int</span> maxson=-<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=head[x];i;i=<span style="color: #000000;">e[i].nxt)
-    {
-        </span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">e[i].to;
-        </span><span style="color: #0000ff;">if</span>(u==f)<span style="color: #0000ff;">continue</span><span style="color: #000000;">;
-        dfs1(u,x,depth</span>+<span style="color: #800080;">1</span><span style="color: #000000;">);
-        siz[x]</span>+=<span style="color: #000000;">siz[u];
-        </span><span style="color: #0000ff;">if</span>(siz[u]&gt;maxson)son[x]=u,maxson=<span style="color: #000000;">siz[u];
-    }
-}</span></pre>
-</div>
-<p><strong>dfs2</strong></p>
-<p>用于将一个树<span style="text-decoration: line-through;">退化</span>成链，记录节点在链的编号 和 节点的链首节点 和 链上节点的权值。</p>
-<p>cnt时间戳 id[]编号 top[]链首节点 a[]原值 w[]链上的值（便于维护）</p>
-<div class="cnblogs_code">
-<pre><span style="color: #0000ff;">void</span> dfs2(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> topf)
-{
-    id[x]</span>=++<span style="color: #000000;">cnt;
-    w[cnt]</span>=<span style="color: #000000;">a[x];
-    top[x]</span>=<span style="color: #000000;">topf;
-    </span><span style="color: #0000ff;">if</span>(!son[x])<span style="color: #0000ff;">return</span><span style="color: #000000;">;
-    dfs2(son[x],topf);
-    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=head[x];i;i=<span style="color: #000000;">e[i].nxt)
-    {
-        </span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">e[i].to;
-        </span><span style="color: #0000ff;">if</span>(u==fa[x]||u==son[x])<span style="color: #0000ff;">continue</span><span style="color: #000000;">;
-        dfs2(u,u);
-    }
-}</span></pre>
-</div>
-<p>&nbsp;</p>
-<p><strong>求两点间距离</strong></p>
+<p><code>fa[]</code> 父亲节点 <code>dep[]</code> 深度 <code>siz[]</code> 子树大小 <code>son[]</code> 重儿子（重儿子为子树大者）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs1</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> f,<span class="type">int</span> depth)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    siz[x]=<span class="number">1</span>; dep[x]=depth; fa[x]=f;</span><br><span class="line">    <span class="type">int</span> maxson=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(R <span class="type">int</span> i=head[x];i;i=e[i].nxt)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u=e[i].to;</span><br><span class="line">        <span class="keyword">if</span>(u==f)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs1</span>(u,x,depth<span class="number">+1</span>);</span><br><span class="line">        siz[x]+=siz[u];</span><br><span class="line">        <span class="keyword">if</span>(siz[u]&gt;maxson)son[x]=u,maxson=siz[u];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="dfs2"><a href="#dfs2" class="headerlink" title="dfs2"></a>dfs2</h4>
+<p>用于将一个树退化成链，记录节点在链的编号 和 节点的链首节点 和 链上节点的权值。</p>
+<p><code>cnt</code> 时间戳 <code>id[]</code> 编号 <code>top[]</code> 链首节点 <code>a[]</code> 原值 <code>w[]</code> 链上的值（便于维护）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs2</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> topf)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    id[x]=++cnt;</span><br><span class="line">    w[cnt]=a[x];</span><br><span class="line">    top[x]=topf;</span><br><span class="line">    <span class="keyword">if</span>(!son[x])<span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">dfs2</span>(son[x],topf);</span><br><span class="line">    <span class="keyword">for</span>(R <span class="type">int</span> i=head[x];i;i=e[i].nxt)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u=e[i].to;</span><br><span class="line">        <span class="keyword">if</span>(u==fa[x]||u==son[x])<span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs2</span>(u,u);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="求两点间距离"><a href="#求两点间距离" class="headerlink" title="求两点间距离"></a>求两点间距离</h3>
 <p>要求两点间距离：</p>
-<p>若两点在一条链上（top[x]==top[y]）我们直接求两点间的距离即可。</p>
-<p>若两点不在一条链上，那么求更深的那个点x到此刻链首top[x]的距离，然后令x=fa[top[x]]，即可将x更新到新链上。重复操作，每次只将深度更大的点向上更新。最终两点会处于同一条链（重链或轻链，最远是重链）上，然后再加上两点间的和就可以了。</p>
+<p>若两点在一条链上（<code>top[x]==top[y]</code>）我们直接求两点间的距离即可。</p>
+<p>若两点不在一条链上，那么求更深的那个点 <code>x</code> 到此刻链首 <code>top[x]</code> 的距离，然后令 <code>x=fa[top[x]]</code>，即可将 <code>x</code> 更新到新链上。重复操作，每次只将深度更大的点向上更新。最终两点会处于同一条链（重链或轻链，最远是重链）上，然后再加上两点间的和就可以了。</p>
 <p>用线段树维护。</p>
-<div class="cnblogs_code">
-<pre>inline <span style="color: #0000ff;">int</span> queryrange(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> y)
-{
-    </span><span style="color: #0000ff;">int</span> ans=<span style="color: #800080;">0</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span>(top[x]!=<span style="color: #000000;">top[y]){
-        </span><span style="color: #0000ff;">if</span>(dep[top[x]]&lt;<span style="color: #000000;">dep[top[y]])swap(x,y);
-        res</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
-        st.query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[top[x]],id[x]);
-        ans</span>=(ans+res)%<span style="color: #000000;">mod;
-        x</span>=<span style="color: #000000;">fa[top[x]];
-    }
-    </span><span style="color: #0000ff;">if</span>(dep[x]&gt;<span style="color: #000000;">dep[y])swap(x,y);
-    res</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
-    st.query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[x],id[y]);
-    ans</span>=(ans+res)%<span style="color: #000000;">mod;
-    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> ans;
-}</span></pre>
-</div>
-<p><strong>更新两点间距离</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">queryrange</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(top[x]!=top[y])&#123;</span><br><span class="line">        <span class="keyword">if</span>(dep[top[x]]&lt;dep[top[y]])<span class="built_in">swap</span>(x,y);</span><br><span class="line">        res=<span class="number">0</span>;</span><br><span class="line">        st.<span class="built_in">query</span>(<span class="number">1</span>,id[top[x]],id[x]);</span><br><span class="line">        ans=(ans+res)%mod;</span><br><span class="line">        x=fa[top[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dep[x]&gt;dep[y])<span class="built_in">swap</span>(x,y);</span><br><span class="line">    res=<span class="number">0</span>;</span><br><span class="line">    st.<span class="built_in">query</span>(<span class="number">1</span>,id[x],id[y]);</span><br><span class="line">    ans=(ans+res)%mod;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更新两点间距离</p>
 <p>和上面是一样的，分成若干条链更新就可以了。</p>
-<div class="cnblogs_code">
-<pre>inline <span style="color: #0000ff;">void</span> updaterange(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span> y,<span style="color: #0000ff;">int</span><span style="color: #000000;"> k){
-    k</span>%=<span style="color: #000000;">mod;
-    </span><span style="color: #0000ff;">while</span>(top[x]!=<span style="color: #000000;">top[y]){
-        </span><span style="color: #0000ff;">if</span>(dep[top[x]]&lt;<span style="color: #000000;">dep[top[y]])swap(x,y);
-        st.update(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[top[x]],id[x],k);
-        x</span>=<span style="color: #000000;">fa[top[x]];
-    }
-    </span><span style="color: #0000ff;">if</span>(dep[x]&gt;<span style="color: #000000;">dep[y])swap(x,y);
-    st.update(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[x],id[y],k);
-}</span></pre>
-</div>
-<p><strong>更新/查询子树权值（和）</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">updaterange</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">    k%=mod;</span><br><span class="line">    <span class="keyword">while</span>(top[x]!=top[y])&#123;</span><br><span class="line">        <span class="keyword">if</span>(dep[top[x]]&lt;dep[top[y]])<span class="built_in">swap</span>(x,y);</span><br><span class="line">        st.<span class="built_in">update</span>(<span class="number">1</span>,id[top[x]],id[x],k);</span><br><span class="line">        x=fa[top[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dep[x]&gt;dep[y])<span class="built_in">swap</span>(x,y);</span><br><span class="line">    st.<span class="built_in">update</span>(<span class="number">1</span>,id[x],id[y],k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更新/查询子树权值（和）</p>
 <p>如上，子树节点在链上一定是在根的后面并且连续的。</p>
-<p>所以要更新以x为根节点的所有子树结点，就更新id[x]~id[x]+size[x]-1的范围即可。</p>
-<p>（代码放在代码里）</p>
-<p><strong>例题（在上面）</strong></p>
-<p>当然要根据题目需要做各种修改，这真的只是一个板子。</p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;algorithm&gt;<span style="color: #000000;">
-#include</span>&lt;ctype.h&gt;
-<span style="color: #0000ff;">#define</span> R register
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-inline </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> read()
-{
-    </span><span style="color: #0000ff;">int</span> x=<span style="color: #800080;">0</span>,w=<span style="color: #800080;">0</span>;<span style="color: #0000ff;">char</span> c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(!isdigit(c))w|=c==<span style="color: #800000;">'</span><span style="color: #800000;">-</span><span style="color: #800000;">'</span>,c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(isdigit(c))x=(x&lt;&lt;<span style="color: #800080;">3</span>)+(x&lt;&lt;<span style="color: #800080;">1</span>)+(c^<span style="color: #800080;">48</span>),c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">return</span> w?-<span style="color: #000000;">x:x;
-}
-</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=1e5+<span style="color: #800080;">5</span>,maxm=1e5+<span style="color: #800080;">5</span><span style="color: #000000;">;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> n,m,root,mod,fa[maxn],dep[maxn],son[maxn],siz[maxn],top[maxn],id[maxn],a[maxn],w[maxn];
-</span><span style="color: #0000ff;">struct</span><span style="color: #000000;"> Edge{
-    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> to,nxt;
-}e[maxn</span>*<span style="color: #800080;">2</span><span style="color: #000000;">];
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> ecnt,head[maxn];
-inline </span><span style="color: #0000ff;">void</span> addedge(<span style="color: #0000ff;">int</span> <span style="color: #0000ff;">from</span>,<span style="color: #0000ff;">int</span><span style="color: #000000;"> to)
-{
-    e[</span>++ecnt]=(Edge){to,head[<span style="color: #0000ff;">from</span>]};head[<span style="color: #0000ff;">from</span>]=<span style="color: #000000;">ecnt;
-    e[</span>++ecnt]=(Edge){<span style="color: #0000ff;">from</span>,head[to]};head[to]=<span style="color: #000000;">ecnt;
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> res;
-</span><span style="color: #0000ff;">struct</span><span style="color: #000000;"> SegmentTree{
-    </span><span style="color: #0000ff;">#define</span> ls (ro&lt;&lt;1)
-    <span style="color: #0000ff;">#define</span> rs (ro&lt;&lt;1|1)
-<pre><code>&lt;span style="color: #0000ff;"&gt;struct&lt;/span&gt;&lt;span style="color: #000000;"&gt; tree{
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; l,r,val,tag;
-}e[maxn&lt;/span&gt;&amp;lt;&amp;lt;&lt;span style="color: #800080;"&gt;2&lt;/span&gt;&lt;span style="color: #000000;"&gt;];
-inline &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt; push_up(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; ro)
-{
-    e[ro].val&lt;/span&gt;=(e[ls].val+e[rs].val)%&lt;span style="color: #000000;"&gt;mod;
-}
-inline &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt; push_down(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; ro)
-{
-    e[ls].tag&lt;/span&gt;+=&lt;span style="color: #000000;"&gt;e[ro].tag;
-    e[rs].tag&lt;/span&gt;+=&lt;span style="color: #000000;"&gt;e[ro].tag;
-    e[ls].val&lt;/span&gt;+=e[ro].tag*(e[ls].r-e[ls].l+&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;);
-    e[rs].val&lt;/span&gt;+=e[ro].tag*(e[rs].r-e[rs].l+&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;);
-    e[ls].val&lt;/span&gt;%=&lt;span style="color: #000000;"&gt;mod;
-    e[rs].val&lt;/span&gt;%=&lt;span style="color: #000000;"&gt;mod;
-    e[ro].tag&lt;/span&gt;=&lt;span style="color: #800080;"&gt;0&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-}
-&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt; build(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; ro,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; l,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; r)
-{
-    e[ro].l&lt;/span&gt;=l;e[ro].r=&lt;span style="color: #000000;"&gt;r;
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(l==r){e[ro].val=w[l]%mod;&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt; ;}
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mid=(l+r)&amp;gt;&amp;gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-    build(ls,l,mid);build(rs,mid&lt;/span&gt;+&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;,r);
-    push_up(ro);
-}
-&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt; update(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; ro,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; l,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; r,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; k)
-{
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(e[ro].l&amp;gt;=l and e[ro].r&amp;lt;=&lt;span style="color: #000000;"&gt;r){
-        e[ro].tag&lt;/span&gt;+=&lt;span style="color: #000000;"&gt;k;
-        e[ro].val&lt;/span&gt;+=k*(e[ro].r-e[ro].l+&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;);
-        e[ro].val&lt;/span&gt;%=&lt;span style="color: #000000;"&gt;mod;
-        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-    }
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mid=(e[ro].l+e[ro].r)&amp;gt;&amp;gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;&lt;span style="color: #000000;"&gt;(e[ro].tag)push_down(ro);
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(l&amp;lt;=&lt;span style="color: #000000;"&gt;mid)update(ls,l,r,k);
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(r&amp;gt;&lt;span style="color: #000000;"&gt;mid)update(rs,l,r,k);
-    push_up(ro);
-}
-&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt; query(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; ro,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; l,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; r)
-{
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(e[ro].l&amp;gt;=l and e[ro].r&amp;lt;=&lt;span style="color: #000000;"&gt;r){
-        res&lt;/span&gt;+=e[ro].val;res%=mod;&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-    }
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;&lt;span style="color: #000000;"&gt;(e[ro].tag)push_down(ro);
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mid=(e[ro].l+e[ro].r)&amp;gt;&amp;gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(l&amp;lt;=&lt;span style="color: #000000;"&gt;mid)query(ls,l,r);
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(r&amp;gt;&lt;span style="color: #000000;"&gt;mid)query(rs,l,r);
-}
-&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;#undef&lt;/span&gt; ls
-&lt;span style="color: #0000ff;"&gt;#undef&lt;/span&gt; rs&lt;span style="color: #000000;"&gt;
-</code></pre>
-<p>}st;</p>
-<p><span style="color: #0000ff;">void</span> dfs1(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span> f,<span style="color: #0000ff;">int</span><span style="color: #000000;"> depth)
-{
-siz[x]</span>=<span style="color: #800080;">1</span>; dep[x]=depth; fa[x]=<span style="color: #000000;">f;
-</span><span style="color: #0000ff;">int</span> maxson=-<span style="color: #800080;">1</span><span style="color: #000000;">;
-</span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=head[x];i;i=<span style="color: #000000;">e[i].nxt)
-{
-</span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">e[i].to;
-</span><span style="color: #0000ff;">if</span>(u==f)<span style="color: #0000ff;">continue</span><span style="color: #000000;">;
-dfs1(u,x,depth</span>+<span style="color: #800080;">1</span><span style="color: #000000;">);
-siz[x]</span>+=<span style="color: #000000;">siz[u];
-</span><span style="color: #0000ff;">if</span>(siz[u]&gt;maxson)son[x]=u,maxson=<span style="color: #000000;">siz[u];
-}
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> cnt;
-</span><span style="color: #0000ff;">void</span> dfs2(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> topf)
-{
-id[x]</span>=++<span style="color: #000000;">cnt;
-w[cnt]</span>=<span style="color: #000000;">a[x];
-top[x]</span>=<span style="color: #000000;">topf;
-</span><span style="color: #0000ff;">if</span>(!son[x])<span style="color: #0000ff;">return</span><span style="color: #000000;">;
-dfs2(son[x],topf);
-</span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=head[x];i;i=<span style="color: #000000;">e[i].nxt)
-{
-</span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">e[i].to;
-</span><span style="color: #0000ff;">if</span>(u==fa[x]||u==son[x])<span style="color: #0000ff;">continue</span><span style="color: #000000;">;
-dfs2(u,u);
-}
-}
-inline </span><span style="color: #0000ff;">void</span> updaterange(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span> y,<span style="color: #0000ff;">int</span><span style="color: #000000;"> k){
-k</span>%=<span style="color: #000000;">mod;
-</span><span style="color: #0000ff;">while</span>(top[x]!=<span style="color: #000000;">top[y]){
-</span><span style="color: #0000ff;">if</span>(dep[top[x]]&lt;<span style="color: #000000;">dep[top[y]])swap(x,y);
-st.update(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[top[x]],id[x],k);
-x</span>=<span style="color: #000000;">fa[top[x]];
-}
-</span><span style="color: #0000ff;">if</span>(dep[x]&gt;<span style="color: #000000;">dep[y])swap(x,y);
-st.update(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[x],id[y],k);
-}
-inline </span><span style="color: #0000ff;">int</span> queryrange(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> y)
-{
-</span><span style="color: #0000ff;">int</span> ans=<span style="color: #800080;">0</span><span style="color: #000000;">;
-</span><span style="color: #0000ff;">while</span>(top[x]!=<span style="color: #000000;">top[y]){
-</span><span style="color: #0000ff;">if</span>(dep[top[x]]&lt;<span style="color: #000000;">dep[top[y]])swap(x,y);
-res</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
-st.query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[top[x]],id[x]);
-ans</span>=(ans+res)%<span style="color: #000000;">mod;
-x</span>=<span style="color: #000000;">fa[top[x]];
-}
-</span><span style="color: #0000ff;">if</span>(dep[x]&gt;<span style="color: #000000;">dep[y])swap(x,y);
-res</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
-st.query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[x],id[y]);
-ans</span>=(ans+res)%<span style="color: #000000;">mod;
-</span><span style="color: #0000ff;">return</span><span style="color: #000000;"> ans;
-}</span></p>
-<p>inline <span style="color: #0000ff;">void</span><span style="color: #000000;"> debug()
-{
-</span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
-{
-res</span>=<span style="color: #800080;">0</span>;st.query(<span style="color: #800080;">1</span><span style="color: #000000;">,id[i],id[i]);
-printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d </span><span style="color: #800000;">"</span><span style="color: #000000;">,res);
-}
-}</span></p>
-<p><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-n</span>=read(),m=read(),root=read(),mod=<span style="color: #000000;">read();
-</span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++)a[i]=<span style="color: #000000;">read();
-</span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;n;i++<span style="color: #000000;">)addedge(read(),read());
-dfs1(root,</span><span style="color: #800080;">0</span>,<span style="color: #800080;">1</span><span style="color: #000000;">);
-dfs2(root,root);
-st.build(</span><span style="color: #800080;">1</span>,<span style="color: #800080;">1</span><span style="color: #000000;">,n);
-</span><span style="color: #0000ff;">while</span>(m--<span style="color: #000000;">)
-{
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> a,b,c;
-</span><span style="color: #0000ff;">switch</span><span style="color: #000000;">(read())
-{
-</span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">1</span><span style="color: #000000;">):{
-a</span>=read(),b=read(),c=<span style="color: #000000;">read();
-updaterange(a,b,c);
-</span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
-}
-</span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">2</span><span style="color: #000000;">):{
-a</span>=read(),b=<span style="color: #000000;">read();
-printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,queryrange(a,b));
-</span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
-}
-</span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">3</span><span style="color: #000000;">):{
-</span><span style="color: #0000ff;">int</span> a=read(),b=<span style="color: #000000;">read();
-st.update(</span><span style="color: #800080;">1</span>,id[a],id[a]+siz[a]-<span style="color: #800080;">1</span><span style="color: #000000;">,b);
-</span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
-}
-</span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">4</span><span style="color: #000000;">):{
-</span><span style="color: #0000ff;">int</span> a=read();res=<span style="color: #800080;">0</span><span style="color: #000000;">;
-st.query(</span><span style="color: #800080;">1</span>,id[a],id[a]+siz[a]-<span style="color: #800080;">1</span><span style="color: #000000;">);
-printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,res);
-</span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
-}
-}
-}
-</span><span style="color: #008000;">//</span><span style="color: #008000;">debug();</span>
-<span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></p></pre><p></p>
-</div>
-<p>&nbsp;</p>
+<p>所以要更新以 <code>x</code> 为根节点的所有子树结点，就更新 <code>id[x]~id[x]+size[x]-1</code> 的范围即可。</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2>
+<p>当然要根据题目需要做各种修改。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c)) w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) x=x*<span class="number">10</span>+c-<span class="string">&#x27;0&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e5</span><span class="number">+10</span>,maxm=<span class="number">1e5</span><span class="number">+10</span>;</span><br><span class="line">	<span class="type">int</span> n,m,root,mod;</span><br><span class="line">	<span class="type">int</span> fa[maxn],dep[maxn],son[maxn],siz[maxn],top[maxn],dfn[maxn],a[maxn],w[maxn];</span><br><span class="line">	<span class="type">int</span> ecnt,head[maxn],to[maxn&lt;&lt;<span class="number">1</span>],nxt[maxn&lt;&lt;<span class="number">1</span>];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">addedge</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">		to[++ecnt]=b,nxt[ecnt]=head[a],head[a]=ecnt;</span><br><span class="line">		to[++ecnt]=a,nxt[ecnt]=head[b],head[b]=ecnt;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">SegmentTree</span>&#123;</span><br><span class="line">		<span class="meta">#<span class="keyword">define</span> ls (ro&lt;&lt;1)</span></span><br><span class="line">		<span class="meta">#<span class="keyword">define</span> rs (ro&lt;&lt;1|1)</span></span><br><span class="line">		<span class="meta">#<span class="keyword">define</span> mid ((l+r)&gt;&gt;1)</span></span><br><span class="line">		<span class="type">int</span> val[maxn&lt;&lt;<span class="number">2</span>],tag[maxn&lt;&lt;<span class="number">2</span>];</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> ro)</span></span>&#123;val[ro]=(val[ls]+val[rs])%mod;&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> ro,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">			tag[ls]+=tag[ro],val[ls]=(val[ls]+(mid-l<span class="number">+1</span>)*tag[ro])%mod;</span><br><span class="line">			tag[rs]+=tag[ro],val[rs]=(val[rs]+(r-mid)*tag[ro])%mod;</span><br><span class="line">			tag[ro]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">const</span> <span class="type">int</span> &amp;ro=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;l=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;r=n)</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(l==r) <span class="keyword">return</span> val[ro]=w[l]%mod,<span class="built_in">void</span>();</span><br><span class="line">			<span class="built_in">build</span>(ls,l,mid),<span class="built_in">build</span>(rs,mid<span class="number">+1</span>,r);</span><br><span class="line">			<span class="built_in">pushup</span>(ro);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> k,<span class="type">const</span> <span class="type">int</span> &amp;ro=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;l=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;r=n)</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(x==l <span class="keyword">and</span> y==r) <span class="keyword">return</span> tag[ro]+=k,val[ro]=(val[ro]+k*(r-l<span class="number">+1</span>))%mod,<span class="built_in">void</span>();</span><br><span class="line">			<span class="keyword">if</span>(tag[ro]) <span class="built_in">pushdown</span>(ro,l,r);</span><br><span class="line">			<span class="keyword">if</span>(y&lt;=mid) <span class="built_in">update</span>(x,y,k,ls,l,mid);</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(x&gt;mid) <span class="built_in">update</span>(x,y,k,rs,mid<span class="number">+1</span>,r);</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">update</span>(x,mid,k,ls,l,mid),<span class="built_in">update</span>(mid<span class="number">+1</span>,y,k,rs,mid<span class="number">+1</span>,r);</span><br><span class="line">			<span class="built_in">pushup</span>(ro);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">const</span> <span class="type">int</span> &amp;ro=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;l=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;r=n)</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(x==l <span class="keyword">and</span> y==r) <span class="keyword">return</span> val[ro];</span><br><span class="line">			<span class="keyword">if</span>(tag[ro]) <span class="built_in">pushdown</span>(ro,l,r);</span><br><span class="line">			<span class="keyword">if</span>(y&lt;=mid) <span class="keyword">return</span> <span class="built_in">query</span>(x,y,ls,l,mid);</span><br><span class="line">			<span class="keyword">if</span>(x&gt;mid) <span class="keyword">return</span> <span class="built_in">query</span>(x,y,rs,mid<span class="number">+1</span>,r);</span><br><span class="line">			<span class="keyword">return</span> (<span class="built_in">query</span>(x,mid,ls,l,mid)+<span class="built_in">query</span>(mid<span class="number">+1</span>,y,rs,mid<span class="number">+1</span>,r))%mod;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="meta">#<span class="keyword">undef</span> ls</span></span><br><span class="line">		<span class="meta">#<span class="keyword">undef</span> rs</span></span><br><span class="line">		<span class="meta">#<span class="keyword">undef</span> mid</span></span><br><span class="line">	&#125;st;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">dfs1</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> Fa)</span></span>&#123;</span><br><span class="line">		fa[x]=Fa,siz[x]=<span class="number">1</span>,dep[x]=dep[Fa]<span class="number">+1</span>;</span><br><span class="line">		<span class="type">int</span> mx=<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> u,i=head[x];i;i=nxt[i]) <span class="keyword">if</span>((u=to[i])!=Fa)&#123;</span><br><span class="line">			<span class="built_in">dfs1</span>(u,x);</span><br><span class="line">			siz[x]+=siz[u];</span><br><span class="line">			<span class="keyword">if</span>(siz[u]&gt;mx) son[x]=u,mx=siz[u];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">dfs2</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> topf)</span></span>&#123;</span><br><span class="line">		w[dfn[x]=++dfn[<span class="number">0</span>]]=a[x];</span><br><span class="line">		top[x]=topf;</span><br><span class="line">		<span class="keyword">if</span>(!son[x]) <span class="keyword">return</span>;</span><br><span class="line">		<span class="built_in">dfs2</span>(son[x],topf);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> u,i=head[x];i;i=nxt[i]) <span class="keyword">if</span>((u=to[i])!=fa[x] <span class="keyword">and</span> u!=son[x]) <span class="built_in">dfs2</span>(u,u);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(top[x]!=top[y])&#123;</span><br><span class="line">			<span class="keyword">if</span>(dep[top[x]]&lt;dep[top[y]]) <span class="built_in">swap</span>(x,y);</span><br><span class="line">			st.<span class="built_in">update</span>(dfn[top[x]],dfn[x],k);</span><br><span class="line">			x=fa[top[x]];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(dep[x]&gt;dep[y])<span class="built_in">swap</span>(x,y);</span><br><span class="line">		st.<span class="built_in">update</span>(dfn[x],dfn[y],k);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">		<span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(top[x]!=top[y])&#123;</span><br><span class="line">			<span class="keyword">if</span>(dep[top[x]]&lt;dep[top[y]]) <span class="built_in">swap</span>(x,y);</span><br><span class="line">			ans=(ans+st.<span class="built_in">query</span>(dfn[top[x]],dfn[x]))%mod;</span><br><span class="line">			x=fa[top[x]];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(dep[x]&gt;dep[y])<span class="built_in">swap</span>(x,y);</span><br><span class="line">		ans=(ans+st.<span class="built_in">query</span>(dfn[x],dfn[y]))%mod;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>(),root=<span class="built_in">read</span>(),mod=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) a[i]=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++) <span class="built_in">addedge</span>(<span class="built_in">read</span>(),<span class="built_in">read</span>());</span><br><span class="line">		<span class="built_in">dfs1</span>(root,root),<span class="built_in">dfs2</span>(root,root);</span><br><span class="line">		st.<span class="built_in">build</span>();</span><br><span class="line">		<span class="keyword">while</span>(m--)&#123;</span><br><span class="line">			<span class="type">int</span> a,b,c;</span><br><span class="line">			<span class="keyword">switch</span>(<span class="built_in">read</span>())&#123;</span><br><span class="line">				<span class="keyword">case</span> <span class="number">1</span>:&#123;</span><br><span class="line">					a=<span class="built_in">read</span>(),b=<span class="built_in">read</span>(),c=<span class="built_in">read</span>()%mod;</span><br><span class="line">					<span class="built_in">update</span>(a,b,c);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">case</span> <span class="number">2</span>:&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">query</span>(<span class="built_in">read</span>(),<span class="built_in">read</span>()));</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">case</span> <span class="number">3</span>:&#123;</span><br><span class="line">					a=<span class="built_in">read</span>(),b=<span class="built_in">read</span>();</span><br><span class="line">					st.<span class="built_in">update</span>(dfn[a],dfn[a]+siz[a]<span class="number">-1</span>,b);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">case</span> <span class="number">4</span>:&#123;</span><br><span class="line">					a=<span class="built_in">read</span>();</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,st.<span class="built_in">query</span>(dfn[a],dfn[a]+siz[a]<span class="number">-1</span>));</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
   </div>
   
   
@@ -3103,7 +2861,7 @@ printf(</span><span style="color: #800000;">"</span><span style="color: #800000;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T16:57:39+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 13, 2024</p>
@@ -3115,8 +2873,8 @@ printf(</span><span style="color: #800000;">"</span><span style="color: #800000;
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>树链剖分</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 树链剖分</span>
 
 
         
@@ -3176,22 +2934,22 @@ printf(</span><span style="color: #800000;">"</span><span style="color: #800000;
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%A0%91%E5%BD%A2%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>树形分治算法</p>
-          <p class='content'>点分治
-点分治是一种树形分治的算法，它选择当前连通块一个重心，将树分成多个连通块进行处理，然后对每个连通块进行分治递归。
-树的重心
-树上的一个点，满足它的儿子的  的最大值最小。
-可以证明，一个...</p>
+        <a class='prev' href='/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>模拟退火</p>
+          <p class='content'>算法介绍
+模拟退火是一种最优化随机化算法。什么叫随机化算法？就是抽奖抽正解
+一般用于求解最优解，即最优化问题，而且一般比较适合于小数据的最优解和大数据的近似最优解。
+算法步骤
+每次迭代都随机选择...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86/'>
-          <p class='title'>树上差分<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>差分
-如果去看我的树状数组的博客的话就懂了，就是记录相邻节点值的差值。这样一来，前缀和就相当于原值了。
-树上差分
-树上差分基本上就是差分在树上的实现。因为差分的原理，我们先将所有点的权值改变成差...</p>
+        <a class='next' href='/2022/04/30/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/'>
+          <p class='title'>类欧几里得算法<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>类欧几里得算法之所以得名是因为其算法复杂度证明与扩展欧几里得算法类似。
+我认为类欧更偏向于是一种思想。
+其主要思想就是寻找可以简便计算的边界，然后通过化式子将不同情况化为边界递归计算。
+通过几个...</p>
         </a>
       
     </div>
@@ -3252,12 +3010,12 @@ printf(</span><span style="color: #800000;">"</span><span style="color: #800000;
           <li><a class="flat-box"
             title="/categories/C/" href="/categories/C/"
             active-action="action-categoriesC"
-            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(127)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(114)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
@@ -3282,12 +3040,12 @@ printf(</span><span style="color: #800000;">"</span><span style="color: #800000;
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
             active-action="action-categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(16)</div></a></li>
+            ><div class='name'>算法</div><div class='badge'>(22)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
             active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>题解</div><div class='badge'>(6)</div></a></li>
         
       </ul>
     </div>
@@ -3304,9 +3062,19 @@ printf(</span><span style="color: #800000;">"</span><span style="color: #800000;
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E9%97%AE%E9%A2%98"><span class="toc-text">适用问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%96%E5%88%86%E9%83%A8%E5%88%86"><span class="toc-text">剖分部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dfs1"><span class="toc-text">dfs1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dfs2"><span class="toc-text">dfs2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E4%B8%A4%E7%82%B9%E9%97%B4%E8%B7%9D%E7%A6%BB"><span class="toc-text">求两点间距离</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-text">模板</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4454,7 +4222,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4737,7 +4505,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/树链剖分/","name":"树链剖分"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"树链剖分","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T02:32:21.582Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/树链剖分/","name":"树链剖分"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"树链剖分","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T08:57:39.572Z","articleSection":"算法","keywords":"博客园,OI,树链剖分","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 
