@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://StarCried.github.io/2022/04/30/模拟退火[非公开][草稿]/"/>
+  <link rel="canonical" href="https://StarCried.github.io/2022/04/30/p1903 数颜色 维护队列/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -47,21 +47,23 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>模拟退火[非公开][草稿] - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <title>P1903 数颜色 维护队列 - StarCried 的狼窝</title>
+  <meta name="keywords" content="博客园,OI,分块,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="模拟退火[非公开][草稿]">
-<meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/index.html">
+<meta property="og:title" content="P1903 数颜色 维护队列">
+<meta property="og:url" content="https://starcried.github.io/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="模拟退火（SA） 模拟退火是一种随机化算法。什么叫随机化算法？就是抽奖抽正解 一般用于求解最优解，而且一般比较适合于小数据的最优解和大数据的近似最优解，总之就是解题的一个万能挂，但不一定正确。 模拟退火的主要步骤：  先初始化温度，当前解和当前答案 如果温度小于最终温度，跳到第7步；否则跳3 重复执行4~5步L次 由当前解生成一个临时的新解，并计算新的答案 判断是否接受该临时解，接受则更新解和答案">
+<meta property="og:description" content="莫队算法的待修版本，增加一个时间的维度进行分块。  P1903 [国家集训队] 数颜色 &#x2F; 维护队列 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-09T01:34:51.491Z">
+<meta property="article:modified_time" content="2024-08-13T02:32:21.504Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="分块">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723448298241),
+    lastupdate: new Date(1723516355413),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2699,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/模拟退火[非公开][草稿]/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1903 数颜色 维护队列/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2720,7 +2722,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        模拟退火[非公开][草稿]
+        P1903 数颜色 维护队列
       </h1>
       <div class='new-meta-box'>
         
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
       </span>
     
   </div>
@@ -2761,10 +2763,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 13, 2024</p>
   </a>
 </div>
 
@@ -2779,7 +2781,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>
       <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="lc-pv" data-title="模拟退火[非公开][草稿]" data-path="/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/">
+      <span id="lc-pv" data-title="P1903 数颜色 维护队列" data-path="/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/">
         <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
       </span>
       
@@ -2801,66 +2803,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><strong>模拟退火（SA）</strong></p>
-<p>模拟退火是一种随机化算法。什么叫随机化算法？<span style="text-decoration: line-through;">就是抽奖抽正解</span></p>
-<p>一般用于求解最优解，而且一般比较适合于小数据的最优解和大数据的<strong>近似</strong>最优解，<s>总之就是解题的一个万能挂，但不一定正确</s>。</p>
-<p>模拟退火的主要步骤：</p>
-<ol>
-<li>先初始化温度，当前解和当前答案</li>
-<li>如果温度小于最终温度，跳到第7步；否则跳3</li>
-<li>重复执行4~5步L次</li>
-<li>由当前解生成一个临时的新解，并计算新的答案</li>
-<li>判断是否接受该临时解，接受则更新解和答案，不接受则回退到上个解</li>
-<li>降温，跳2</li>
-<li>结束</li>
-</ol>
-<p>对于差解的判断和 这个解有多差 以及 当前温度 有关，解越差我们越不想要它，接受它的概率就小一些；贪心往往会在开始的时候陷入局部最优解，我们就要在开始的时候跳出局部最优，也就是通过走向较差的解，所 以开始的时候接受差解的概率要大一些，快结束的时候我们需要稳定在当前的最优解，接受差解的概率就小一些，所以我们模拟物理的退火原理，温度从高逐渐降低，对于接受差解概率的计算公式e^(delta/T)来说，新解答案的差异值为分子delta，是个负数（如果正数取负就行），答案越差，delta绝对值越大，指数越小，概率也越小；温度越低，指数越小，概率也越小，这就符合了我们求解的需要。</p>
-<p>爬山算法好像是查询变优秀速度最大的地方并逼近最优值。我们先来看一个简单的单调的问题。</p>
-<p>注意下方的定义：</p>
-<ul>
-<li>delta表示退火的速度</li>
-<li>eps表示极低值。退火时是tempetare*delta当然达不到0</li>
-<li>T表示初始温度</li>
-<li>srand(seed)表示以seed为种子生成的随机数。引用于cstdlib库。当你想完全随机时可令seed=time(0)，time()函数引用于ctime库。生成完了后，用rand()得到这些值</li>
-<li>exp(x)表示e^x，引用于cmath库</li>
-</ul>
-<p>模拟退火的中心公式是在随机出的解差于最优解时，有一定几率跳出该解，并且这个几率会随着次数变小，即：</p>
-<div class="cnblogs_code">
-<pre>rand()&lt;exp((ans-newans)/t) * RAND_MAX</pre>
-</div>
-<p>&nbsp;</p>
-<p><a href="http://poj.org/problem?id=2420" target="_blank">P2420</a></p>
-<div class="cnblogs_code">
-<pre>#include&lt;ctype.h&gt;<span style="color: #000000;">
-#include</span>&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;algorithm&gt;<span style="color: #000000;">
-#include</span>&lt;cstring&gt;<span style="color: #000000;">
-#include</span>&lt;ctime&gt;<span style="color: #000000;">
-#include</span>&lt;cmath&gt;<span style="color: #000000;">
-#include</span>&lt;utility&gt;
-<span style="color: #0000ff;">#define</span> eps 1e-10
-<span style="color: #0000ff;">#define</span> INF 1e19
-<span style="color: #0000ff;">#define</span> delta 0.98
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-inline </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> read()
-{
-    </span><span style="color: #0000ff;">int</span> x=<span style="color: #800080;">0</span>,w=<span style="color: #800080;">0</span>;<span style="color: #0000ff;">char</span> c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(!isdigit(c))w|=c==<span style="color: #800000;">'</span><span style="color: #800000;">-</span><span style="color: #800000;">'</span>,c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(isdigit(c))x=(x&lt;&lt;<span style="color: #800080;">3</span>)+(x&lt;&lt;<span style="color: #800080;">1</span>)+(c^<span style="color: #800080;">48</span>),c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">return</span> w?-<span style="color: #000000;">x:x;
-}
-</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=2e5+<span style="color: #800080;">10</span><span style="color: #000000;">; 
-typedef pair</span>&lt;<span style="color: #0000ff;">double</span>,<span style="color: #0000ff;">double</span>&gt;<span style="color: #000000;"> pairr;
-pair </span>&lt;<span style="color: #0000ff;">double</span>,<span style="color: #0000ff;">double</span>&gt;<span style="color: #000000;"> p[maxn];
-</span><span style="color: #0000ff;">int</span> dx[]={<span style="color: #800080;">0</span>,<span style="color: #800080;">0</span>,<span style="color: #800080;">1</span>,-<span style="color: #800080;">1</span>},dy[]={<span style="color: #800080;">1</span>,-<span style="color: #800080;">1</span>,<span style="color: #800080;">0</span>,<span style="color: #800080;">0</span><span style="color: #000000;">};
-
-<p>inline </span><span style="color: #0000ff;">double</span><span style="color: #000000;"> dist(pairr a,pairr b)<br>{<br>    </span><span style="color: #0000ff;">return</span> sqrt((a.first-b.first)<em>(a.first-b.first)+(a.second-b.second)</em>(a.second-<span style="color: #000000;">b.second));<br>}</p>
-<p>inline </span><span style="color: #0000ff;">double</span> getsum(pairr p[],<span style="color: #0000ff;">int</span><span style="color: #000000;"> n,pairr z)<br>{<br>    </span><span style="color: #0000ff;">double</span> ans&#x3D;<span style="color: #800080;">0</span><span style="color: #000000;">;<br>    </span><span style="color: #0000ff;">while</span>(n–) ans+&#x3D;<span style="color: #000000;">dist(p[n],z);<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> ans;<br>}</p>
-<p></span><span style="color: #0000ff;">double</span> search(pairr p[],<span style="color: #0000ff;">int</span><span style="color: #000000;"> n)<br>{<br>    pairr s</span>&#x3D;p[<span style="color: #800080;">0</span><span style="color: #000000;">];<br>    </span><span style="color: #0000ff;">double</span> t&#x3D;<span style="color: #800080;">100000</span><span style="color: #000000;">;<br>    </span><span style="color: #0000ff;">double</span> ans&#x3D;<span style="color: #000000;">INF;<br>    </span><span style="color: #0000ff;">while</span>(t&gt;<span style="color: #000000;">eps)<br>    {<br>        </span><span style="color: #0000ff;">bool</span> flag&#x3D;<span style="color: #800080;">1</span><span style="color: #000000;">;<br>        </span><span style="color: #0000ff;">while</span><span style="color: #000000;">(flag)<br>        {<br>            flag</span>&#x3D;<span style="color: #800080;">0</span><span style="color: #000000;">;<br>            </span><span style="color: #0000ff;">for</span>(register <span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">0</span>;i&lt;<span style="color: #800080;">4</span>;i++<span style="color: #000000;">)<br>            {<br>                pairr z;<br>                z.first</span>&#x3D;s.first+dx[i]<em><span style="color: #000000;">t;<br>                z.second</span>&#x3D;s.second+dy[i]</em><span style="color: #000000;">t;<br>                </span><span style="color: #0000ff;">double</span> tp&#x3D;<span style="color: #000000;">getsum(p,n,z);<br>                </span><span style="color: #0000ff;">if</span>(ans&gt;tp)ans&#x3D;tp,s&#x3D;z,flag&#x3D;<span style="color: #800080;">1</span><span style="color: #000000;">;<br>            }<br>        }<br>        t</span>*&#x3D;<span style="color: #000000;">delta;<br>    }<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> ans;<br>}</p>
-<p></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    </span><span style="color: #0000ff;">int</span> n&#x3D;<span style="color: #000000;">read();<br>    </span><span style="color: #0000ff;">for</span>(register <span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">0</span>;i&lt;n;i++)p[i]&#x3D;<span style="color: #000000;">make_pair(read(),read());<br>    printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%.0f</span><span style="color: #800000;">“</span><span style="color: #000000;">,search(p,n));<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>}</span></pre></p>
-</div>
-<p>&nbsp;</p>
+    <p>莫队算法的待修版本，增加一个时间的维度进行分块。</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1903">P1903 [国家集训队] 数颜色 &#x2F; 维护队列</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line">ll <span class="type">const</span> MAXN = <span class="number">1000010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">x</span> &#123;</span><br><span class="line">	ll where, val;</span><br><span class="line">&#125; xiu[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">c</span> &#123;</span><br><span class="line">	ll l, r, pre, id;</span><br><span class="line">&#125; cha[MAXN];</span><br><span class="line"></span><br><span class="line">ll xiugai = <span class="number">0</span>, chaxun = <span class="number">0</span>, N, M, a[MAXN], kuai[MAXN];</span><br><span class="line">ll color[MAXN], ans, ooo[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">st</span><span class="params">(c, c)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(ll &amp;x)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">read</span>(N);<span class="built_in">read</span>(M);</span><br><span class="line">	ll tem = <span class="built_in">pow</span>(N, <span class="number">0.75</span>);</span><br><span class="line">	<span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= N; i++) &#123;</span><br><span class="line">		<span class="built_in">read</span>(a[i]);</span><br><span class="line">		kuai[i] = (i<span class="number">-1</span>)/tem<span class="number">+1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= M; i++) &#123;</span><br><span class="line">		<span class="type">char</span> opt[<span class="number">5</span>];</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, opt);</span><br><span class="line">		<span class="keyword">if</span> (opt[<span class="number">0</span>] == <span class="string">&#x27;Q&#x27;</span>) &#123;</span><br><span class="line">			chaxun++;</span><br><span class="line">			<span class="built_in">read</span>(cha[chaxun].l);<span class="built_in">read</span>(cha[chaxun].r);</span><br><span class="line">			cha[chaxun].id = chaxun;</span><br><span class="line">			cha[chaxun].pre = xiugai;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			++xiugai;</span><br><span class="line">			<span class="built_in">read</span>(xiu[xiugai].where);<span class="built_in">read</span>(xiu[xiugai].val);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(cha<span class="number">+1</span>, cha+chaxun<span class="number">+1</span>, st);</span><br><span class="line">	ll l = <span class="number">1</span>, r = <span class="number">0</span>, now = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= chaxun; i++) &#123;</span><br><span class="line">		<span class="keyword">while</span> (cha[i].l &lt; l) &#123;</span><br><span class="line">			<span class="comment">//ope(l-1, 1);</span></span><br><span class="line">			ans += (++color[a[l<span class="number">-1</span>]]) == <span class="number">1</span>;</span><br><span class="line">			l--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (cha[i].l &gt; l) &#123;</span><br><span class="line">			<span class="comment">//ope(l, -1);</span></span><br><span class="line">			ans -= (--color[a[l]] == <span class="number">0</span>); </span><br><span class="line">			l++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (cha[i].r &lt; r) &#123;</span><br><span class="line">			<span class="comment">//ope(r, -1);</span></span><br><span class="line">			ans -= (--color[a[r]] == <span class="number">0</span>);</span><br><span class="line">			r--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (cha[i].r &gt; r) &#123;</span><br><span class="line">			<span class="comment">//ope(r+1, 1);</span></span><br><span class="line">			ans += (++color[a[r<span class="number">+1</span>]] == <span class="number">1</span>);</span><br><span class="line">			r++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (now &lt; cha[i].pre) &#123;</span><br><span class="line">			now++;</span><br><span class="line">			<span class="keyword">if</span> (xiu[now].where &gt;= cha[i].l &amp;&amp; xiu[now].where &lt;= cha[i].r) &#123;</span><br><span class="line">				<span class="keyword">if</span> (--color[a[xiu[now].where]] == <span class="number">0</span>) ans--;</span><br><span class="line">				<span class="keyword">if</span> (++color[xiu[now].val] == <span class="number">1</span>) ans++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">swap</span>(a[xiu[now].where], xiu[now].val);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (now &gt; cha[i].pre) &#123;</span><br><span class="line">			<span class="keyword">if</span> (xiu[now].where &gt;= cha[i].l &amp;&amp; xiu[now].where &lt;= cha[i].r) &#123;</span><br><span class="line">				<span class="keyword">if</span> (--color[a[xiu[now].where]] == <span class="number">0</span>) ans--;</span><br><span class="line">				<span class="keyword">if</span> (++color[xiu[now].val] == <span class="number">1</span>) ans++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">swap</span>(a[xiu[now].where], xiu[now].val);</span><br><span class="line">			now--;</span><br><span class="line">		&#125;</span><br><span class="line">		ooo[cha[i].id] = ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= chaxun; i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ooo[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">st</span><span class="params">(c a, c b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (kuai[a.l] ^ kuai[b.l]) ? kuai[a.l] &lt; kuai[b.l] : ((kuai[a.r] ^ kuai[b.r]) ? kuai[a.r] &lt; kuai[b.r] : a.pre &lt; b.pre);</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(ll &amp;x)</span> </span>&#123;</span><br><span class="line">	<span class="type">char</span> s = <span class="built_in">getchar</span>();</span><br><span class="line">	x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (s &lt; <span class="string">&#x27;0&#x27;</span> || s &gt; <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">		s = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (s &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; s &lt;= <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">		x = <span class="number">10</span> * x + (s - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">		s = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
   
   
@@ -2884,10 +2830,10 @@ pair </span>&lt;<span style="color: #0000ff;">double</span>,<span style="color: 
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-09T09:34:51+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 9, 2024</p>
+    <p>更新于：Aug 13, 2024</p>
   </a>
 </div>
 
@@ -2896,8 +2842,8 @@ pair </span>&lt;<span style="color: #0000ff;">double</span>,<span style="color: 
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%88%86%E5%9D%97/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>分块</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 分块</span>
 
 
         
@@ -2910,7 +2856,7 @@ pair </span>&lt;<span style="color: #0000ff;">double</span>,<span style="color: 
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://starcried.github.io/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/&title=模拟退火[非公开][草稿] - StarCried 的狼窝&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://starcried.github.io/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/&title=P1903 数颜色 维护队列 - StarCried 的狼窝&summary="
           
           >
           
@@ -2922,7 +2868,7 @@ pair </span>&lt;<span style="color: #0000ff;">double</span>,<span style="color: 
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://starcried.github.io/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/&title=模拟退火[非公开][草稿] - StarCried 的狼窝&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://starcried.github.io/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/&title=P1903 数颜色 维护队列 - StarCried 的狼窝&summary="
           
           >
           
@@ -2957,23 +2903,24 @@ pair </span>&lt;<span style="color: #0000ff;">double</span>,<span style="color: 
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E7%A1%AC%E5%B8%81%E9%97%AE%E9%A2%98%EF%BC%88%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85%EF%BC%89-%E5%AE%B9%E6%96%A5%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>硬币问题（无限背包）-容斥[非公开][草稿]</p>
-          <p class='content'>
-#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;cmath&gt;
-using namespace std;
-const...</p>
+        <a class='prev' href='/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P1414 又是毕业季II</p>
+          <p class='content'>P1414 又是毕业季II
+数论题，主要在于推演。
+洛谷的《又是毕业季I》更好玩
+发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个c数组为...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/'>
-          <p class='title'>树链剖分<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>https://www.cnblogs.com/chinhhh/p/7965433.html&lt;-详解
-洛谷P3384&lt;-模板
-如果我会告诉你我不小心把%写成了*调了一个多小时吗
-适用...</p>
+        <a class='next' href='/2022/04/30/P2014%E9%80%89%E8%AF%BE/'>
+          <p class='title'>P2014选课<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>洛谷P2014选课
+一道树形DP题。
+f[i][j]表示i个点选j门课程的最大学分。
+递推方程：
+
+for(int a=n;a&gt;0;a--)//总共选择多少
+    for(int b=0...</p>
         </a>
       
     </div>
@@ -2989,7 +2936,7 @@ const...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 给小狼留言</p>
     
@@ -3039,7 +2986,7 @@ const...</p>
           <li><a class="flat-box"
             title="/categories/OI/" href="/categories/OI/"
             active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(135)</div></a></li>
+            ><div class='name'>OI</div><div class='badge'>(127)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
@@ -3064,12 +3011,12 @@ const...</p>
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
             active-action="action-categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(11)</div></a></li>
+            ><div class='name'>算法</div><div class='badge'>(16)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
             active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>题解</div><div class='badge'>(4)</div></a></li>
         
       </ul>
     </div>
@@ -3783,6 +3730,33 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+   <script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal("#l_main .reveal", {
+      distance: "32px",
+      duration: "800",
+      interval: "20",
+      scale: "1",
+      easing: "ease-out",
+    });
+  }
+  function init_scrollrebeal() {
+    if (typeof ScrollReveal == "undefined") {
+      volantis.requestAnimationFrame(init_scrollrebeal);
+    } else {
+      pjax_scrollrebeal();
+    }
+  }
+  volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/scrollreveal/dist/scrollreveal.min.js");
+  document.addEventListener("DOMContentLoaded", init_scrollrebeal);
+  volantis.pjax.push(
+    pjax_scrollrebeal,
+    "pjax_scrollrebeal",
+    (setRequestAnimationFrame = false)
+  );
+</script>
+
+
 
 
   <script>
@@ -4211,7 +4185,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4308,6 +4282,60 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
+
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+
 
 </pjax>
 
@@ -4440,7 +4468,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/模拟退火[非公开][草稿]/","name":"模拟退火[非公开][草稿]"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"模拟退火[非公开][草稿]","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-09T01:34:51.491Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/P1903 数颜色 维护队列/","name":"P1903 数颜色 维护队列"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"P1903 数颜色 维护队列","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T02:32:21.504Z","articleSection":"题解","keywords":"博客园,OI,分块","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 
