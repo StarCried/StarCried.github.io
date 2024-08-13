@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2851,26 +2851,54 @@ inline </span><span style="color: #0000ff;">void</span> addedge(<span style="col
 inline </span><span style="color: #0000ff;">void</span> dijkstra(<span style="color: #0000ff;">int</span> start,<span style="color: #0000ff;">int</span><span style="color: #000000;"> end)
 {
 
-<pre><code>memset(dis,&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;0x3f3f3f3f&lt;/span&gt;,&lt;span style=&quot;color: #0000ff;&quot;&gt;sizeof&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; dis);
-priority_queue&lt;/span&gt;&amp;lt;pii,vector&amp;lt;pii &amp;gt;,greater&amp;lt;pii &amp;gt; &amp;gt;&lt;span style=&quot;color: #000000;&quot;&gt; q;
-q.push(make_pair(&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;,start)),dis[start]=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;while&lt;/span&gt;(!&lt;span style=&quot;color: #000000;&quot;&gt;q.empty())
-&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; u=&lt;span style=&quot;color: #000000;&quot;&gt;q.top().second;q.pop();
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(vis[u])&lt;span style=&quot;color: #0000ff;&quot;&gt;continue&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    vis[u]&lt;/span&gt;=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; i=head[u];i;i=&lt;span style=&quot;color: #000000;&quot;&gt;nxt[i])
-    &#123;
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; v=t[i],w=&lt;span style=&quot;color: #000000;&quot;&gt;val[i];
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(dis[v]&amp;gt;=dis[u]+&lt;span style=&quot;color: #000000;&quot;&gt;w)
-        &#123;
-            dis[v]&lt;/span&gt;=dis[u]+&lt;span style=&quot;color: #000000;&quot;&gt;w;
-            q.push(make_pair(dis[v],v));
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-<p>}<br></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    </span><span style="color: #0000ff;">int</span> v&#x3D;<span style="color: #800080;">1</span><span style="color: #000000;">;<br>    n</span>&#x3D;read()-<span style="color: #800080;">1</span>,m&#x3D;read()-<span style="color: #800080;">1</span><span style="color: #000000;">;<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++<span style="color: #000000;">)<br>        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j&#x3D;<span style="color: #800080;">1</span>;j&lt;&#x3D;m;j++<span style="color: #000000;">)<br>            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> k&#x3D;<span style="color: #800080;">0</span>;k&lt;<span style="color: #800080;">2</span>;k++<span style="color: #000000;">)<br>                node[i][j][k]</span>&#x3D;v++<span style="color: #000000;">;<br>    </span><span style="color: #0000ff;">int</span> start&#x3D;v++,end&#x3D;<span style="color: #000000;">v;<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j&#x3D;<span style="color: #800080;">1</span>;j&lt;&#x3D;m;j++)addedge(start,node[<span style="color: #800080;">1</span>][j][<span style="color: #800080;">0</span><span style="color: #000000;">],read());<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n-<span style="color: #800080;">1</span>;i++<span style="color: #000000;">)<br>        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j&#x3D;<span style="color: #800080;">1</span>;j&lt;&#x3D;m;j++<span style="color: #000000;">)<br>            addedge(node[i][j][</span><span style="color: #800080;">1</span>],node[i+<span style="color: #800080;">1</span>][j][<span style="color: #800080;">0</span><span style="color: #000000;">],read());<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j&#x3D;<span style="color: #800080;">1</span>;j&lt;&#x3D;m;j++)addedge(end,node[n][j][<span style="color: #800080;">1</span><span style="color: #000000;">],read());<br>    </span><span style="color: #008000;">&#x2F;<em></span><span style="color: #008000;">横行</span><span style="color: #008000;"></em>&#x2F;</span><br>    <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++<span style="color: #000000;">)<br>        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j&#x3D;<span style="color: #800080;">1</span>;j&lt;&#x3D;m+<span style="color: #800080;">1</span>;j++<span style="color: #000000;">)<br>            </span><span style="color: #0000ff;">if</span>(j&#x3D;&#x3D;<span style="color: #800080;">1</span>)addedge(end,node[i][j][<span style="color: #800080;">1</span><span style="color: #000000;">],read());<br>            </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span>(j&#x3D;&#x3D;m+<span style="color: #800080;">1</span>)addedge(start,node[i][j-<span style="color: #800080;">1</span>][<span style="color: #800080;">0</span><span style="color: #000000;">],read());<br>            </span><span style="color: #0000ff;">else</span> addedge(node[i][j-<span style="color: #800080;">1</span>][<span style="color: #800080;">0</span>],node[i][j][<span style="color: #800080;">1</span><span style="color: #000000;">],read());<br>    </span><span style="color: #008000;">&#x2F;<em></span><span style="color: #008000;">纵行</span><span style="color: #008000;"></em>&#x2F;</span><br>    <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++<span style="color: #000000;">)<br>        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j&#x3D;<span style="color: #800080;">1</span>;j&lt;&#x3D;m;j++<span style="color: #000000;">)<br>            addedge(node[i][j][</span><span style="color: #800080;">0</span>],node[i][j][<span style="color: #800080;">1</span><span style="color: #000000;">],read());<br>    </span><span style="color: #008000;">&#x2F;<em></span><span style="color: #008000;">斜行</span><span style="color: #008000;"></em>&#x2F;</span><span style="color: #000000;"><br>    dijkstra(start,end);<br>    printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">“</span><span style="color: #000000;">,dis[end]);<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>}</span></pre></p>
+    memset(dis,</span><span style="color: #800080;">0x3f3f3f3f</span>,<span style="color: #0000ff;">sizeof</span><span style="color: #000000;"> dis);
+    priority_queue</span>&lt;pii,vector&lt;pii &gt;,greater&lt;pii &gt; &gt;<span style="color: #000000;"> q;
+    q.push(make_pair(</span><span style="color: #800080;">0</span>,start)),dis[start]=<span style="color: #800080;">0</span><span style="color: #000000;">;
+    </span><span style="color: #0000ff;">while</span>(!<span style="color: #000000;">q.empty())
+    {
+        </span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">q.top().second;q.pop();
+        </span><span style="color: #0000ff;">if</span>(vis[u])<span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+        vis[u]</span>=<span style="color: #800080;">1</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=head[u];i;i=<span style="color: #000000;">nxt[i])
+        {
+            </span><span style="color: #0000ff;">int</span> v=t[i],w=<span style="color: #000000;">val[i];
+            </span><span style="color: #0000ff;">if</span>(dis[v]&gt;=dis[u]+<span style="color: #000000;">w)
+            {
+                dis[v]</span>=dis[u]+<span style="color: #000000;">w;
+                q.push(make_pair(dis[v],v));
+            }
+        }
+    }
+}
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+{
+    </span><span style="color: #0000ff;">int</span> v=<span style="color: #800080;">1</span><span style="color: #000000;">;
+    n</span>=read()-<span style="color: #800080;">1</span>,m=read()-<span style="color: #800080;">1</span><span style="color: #000000;">;
+    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m;j++<span style="color: #000000;">)
+            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> k=<span style="color: #800080;">0</span>;k&lt;<span style="color: #800080;">2</span>;k++<span style="color: #000000;">)
+                node[i][j][k]</span>=v++<span style="color: #000000;">;
+    </span><span style="color: #0000ff;">int</span> start=v++,end=<span style="color: #000000;">v;
+    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m;j++)addedge(start,node[<span style="color: #800080;">1</span>][j][<span style="color: #800080;">0</span><span style="color: #000000;">],read());
+    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n-<span style="color: #800080;">1</span>;i++<span style="color: #000000;">)
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m;j++<span style="color: #000000;">)
+            addedge(node[i][j][</span><span style="color: #800080;">1</span>],node[i+<span style="color: #800080;">1</span>][j][<span style="color: #800080;">0</span><span style="color: #000000;">],read());
+    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m;j++)addedge(end,node[n][j][<span style="color: #800080;">1</span><span style="color: #000000;">],read());
+    </span><span style="color: #008000;">/*</span><span style="color: #008000;">横行</span><span style="color: #008000;">*/</span>
+    <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m+<span style="color: #800080;">1</span>;j++<span style="color: #000000;">)
+            </span><span style="color: #0000ff;">if</span>(j==<span style="color: #800080;">1</span>)addedge(end,node[i][j][<span style="color: #800080;">1</span><span style="color: #000000;">],read());
+            </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span>(j==m+<span style="color: #800080;">1</span>)addedge(start,node[i][j-<span style="color: #800080;">1</span>][<span style="color: #800080;">0</span><span style="color: #000000;">],read());
+            </span><span style="color: #0000ff;">else</span> addedge(node[i][j-<span style="color: #800080;">1</span>][<span style="color: #800080;">0</span>],node[i][j][<span style="color: #800080;">1</span><span style="color: #000000;">],read());
+    </span><span style="color: #008000;">/*</span><span style="color: #008000;">纵行</span><span style="color: #008000;">*/</span>
+    <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m;j++<span style="color: #000000;">)
+            addedge(node[i][j][</span><span style="color: #800080;">0</span>],node[i][j][<span style="color: #800080;">1</span><span style="color: #000000;">],read()); 
+    </span><span style="color: #008000;">/*</span><span style="color: #008000;">斜行</span><span style="color: #008000;">*/</span><span style="color: #000000;">
+    dijkstra(start,end);
+    printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,dis[end]);
+    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}</span></pre>
 </div>
 <p>好了，以上只是针对bzoj1001的问题的解法。实际上，这个问题还有一些通用的解法（只不过出题人不想让大家用加强了数据）</p>
 <p>不过上一道题我们也可以用下面的方式求出网络的最小割。</p>
@@ -2926,57 +2954,61 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
         </span><span style="color: #0000ff;">if</span>(dep[end]==-<span style="color: #800080;">1</span>)<span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
         </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">1</span><span style="color: #000000;">;
     }
-    
-<pre><code>&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; DFS(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; x,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; flow)
-&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(x==end)&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; flow;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; used=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; i=cur[x];i;i=&lt;span style=&quot;color: #000000;&quot;&gt;nxt[i])
-    &#123;
-        cur[x]&lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt;i;
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; u=&lt;span style=&quot;color: #000000;&quot;&gt;t[i];
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(val[i] and dep[u]==dep[x]+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;)
-        &#123;
-            &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; w=DFS(u,min(val[i],flow-&lt;span style=&quot;color: #000000;&quot;&gt;used));
-            used&lt;/span&gt;+=&lt;span style=&quot;color: #000000;&quot;&gt;w;
-            val[i]&lt;/span&gt;-=&lt;span style=&quot;color: #000000;&quot;&gt;w;
-            val[i&lt;/span&gt;^&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;]+=&lt;span style=&quot;color: #000000;&quot;&gt;w;
-            &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(used==flow)&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; flow;
-        &#125;
-    &#125;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(!used)dep[x]=-&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; used;
-&#125;
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; build()
-&#123;
-    n&lt;/span&gt;=read(),m=&lt;span style=&quot;color: #000000;&quot;&gt;read();
-    cnt&lt;/span&gt;=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; i=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;;i&amp;lt;=n;i++&lt;span style=&quot;color: #000000;&quot;&gt;)
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; j=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;;j&amp;lt;=m;j++&lt;span style=&quot;color: #000000;&quot;&gt;)
-            mapp[i][j]&lt;/span&gt;=++&lt;span style=&quot;color: #000000;&quot;&gt;cnt;
-    start&lt;/span&gt;=++cnt,end=++&lt;span style=&quot;color: #000000;&quot;&gt;cnt;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; zp,i=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;;i&amp;lt;=n;i++&lt;span style=&quot;color: #000000;&quot;&gt;)
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; j=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;;j&amp;lt;=m;j++&lt;span style=&quot;color: #000000;&quot;&gt;)
-            &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;((zp=read())==&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;)addedge(start,mapp[i][j],INF);
-            &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;else&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(zp==&lt;span style=&quot;color: #800080;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;)addedge(mapp[i][j],end,INF);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; i=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;;i&amp;lt;=n;i++&lt;span style=&quot;color: #000000;&quot;&gt;)
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; j=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;;j&amp;lt;=m;j++&lt;span style=&quot;color: #000000;&quot;&gt;)
-            &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; k=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;;k&amp;lt;&lt;span style=&quot;color: #800080;&quot;&gt;4&lt;/span&gt;;k++&lt;span style=&quot;color: #000000;&quot;&gt;)
-            &#123;
-                &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; xx=i+fx[k],yy=j+&lt;span style=&quot;color: #000000;&quot;&gt;fy[k];
-                &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(xx&amp;lt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt; or xx&amp;gt;n or yy&amp;lt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt; or yy&amp;gt;m)&lt;span style=&quot;color: #0000ff;&quot;&gt;continue&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-                addedge(mapp[i][j],mapp[xx][yy],&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;);
-            &#125;
-&#125;
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; work()
-&#123;
-    build();
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; ans=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;while&lt;/span&gt;(BFS())ans+=&lt;span style=&quot;color: #000000;&quot;&gt;DFS(start,INF);
-    printf(&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;%d\n&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;,ans);
-&#125;
-</code></pre>
-<p>}<br></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    star::work();<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>}</span></pre></p>
+
+    </span><span style="color: #0000ff;">int</span> DFS(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> flow)
+    {
+        </span><span style="color: #0000ff;">if</span>(x==end)<span style="color: #0000ff;">return</span><span style="color: #000000;"> flow;
+        </span><span style="color: #0000ff;">int</span> used=<span style="color: #800080;">0</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=cur[x];i;i=<span style="color: #000000;">nxt[i])
+        {
+            cur[x]</span>=<span style="color: #000000;">i;
+            </span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">t[i];
+            </span><span style="color: #0000ff;">if</span>(val[i] and dep[u]==dep[x]+<span style="color: #800080;">1</span><span style="color: #000000;">)
+            {
+                </span><span style="color: #0000ff;">int</span> w=DFS(u,min(val[i],flow-<span style="color: #000000;">used));
+                used</span>+=<span style="color: #000000;">w;
+                val[i]</span>-=<span style="color: #000000;">w;
+                val[i</span>^<span style="color: #800080;">1</span>]+=<span style="color: #000000;">w;
+                </span><span style="color: #0000ff;">if</span>(used==flow)<span style="color: #0000ff;">return</span><span style="color: #000000;"> flow;
+            }
+        }
+        </span><span style="color: #0000ff;">if</span>(!used)dep[x]=-<span style="color: #800080;">1</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> used;
+    }
+    inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> build()
+    {
+        n</span>=read(),m=<span style="color: #000000;">read();
+        cnt</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
+            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m;j++<span style="color: #000000;">)
+                mapp[i][j]</span>=++<span style="color: #000000;">cnt;
+        start</span>=++cnt,end=++<span style="color: #000000;">cnt;
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> zp,i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
+            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m;j++<span style="color: #000000;">)
+                </span><span style="color: #0000ff;">if</span>((zp=read())==<span style="color: #800080;">1</span><span style="color: #000000;">)addedge(start,mapp[i][j],INF);
+                </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span>(zp==<span style="color: #800080;">2</span><span style="color: #000000;">)addedge(mapp[i][j],end,INF);
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
+            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=m;j++<span style="color: #000000;">)
+                </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> k=<span style="color: #800080;">0</span>;k&lt;<span style="color: #800080;">4</span>;k++<span style="color: #000000;">)
+                {
+                    </span><span style="color: #0000ff;">int</span> xx=i+fx[k],yy=j+<span style="color: #000000;">fy[k];
+                    </span><span style="color: #0000ff;">if</span>(xx&lt;<span style="color: #800080;">1</span> or xx&gt;n or yy&lt;<span style="color: #800080;">1</span> or yy&gt;m)<span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+                    addedge(mapp[i][j],mapp[xx][yy],</span><span style="color: #800080;">1</span><span style="color: #000000;">);
+                }
+    }
+    inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> work()
+    {
+        build();
+        </span><span style="color: #0000ff;">int</span> ans=<span style="color: #800080;">0</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">while</span>(BFS())ans+=<span style="color: #000000;">DFS(start,INF);
+        printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,ans);
+    }
+}
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+{
+    star::work();
+    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}</span></pre>
 </div>
 <p>&nbsp;</p>
   </div>
@@ -3075,18 +3107,22 @@ inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E7%BD%91%E7%BB%9C%E6%B5%81dinic/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>最大网络流dinic</p>
+        <a class='prev' href='/2022/04/30/%E6%9C%80%E4%BC%98%E6%AF%94%E7%8E%87%E7%94%9F%E6%88%90%E6%A0%91%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>最优比率生成树[非公开][草稿]</p>
+          <p class='content'>就是在树上的0/1分数规划啦~
+我们只需要每次生成最小生成树即可。不过因为这个所谓权值不是简单的距离最小，我们用prim算法搞它。
+POJ2728
+花费比最大问题。
+&nbsp;</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E7%BD%91%E7%BB%9C%E6%B5%81dinic/'>
+          <p class='title'>最大网络流dinic<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>
 初始化flow（最大流量）为INF（极大值），建边（正向弧和反向弧）
 bfs寻找增广路看看有没有路，顺便进行深度标号。如果没有路直接结束输出flow。
 如果有，我们按照深度dfs。dfs时注意...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-POJ3041-P1129/'>
-          <p class='title'>最小覆盖问题-POJ3041-P1129<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>POJ3041这道题正解对于像我这种蒟蒻来说比较难以想到。我们发现每次覆盖的只是一条线上的所有点。那么我们可以把它想象成一个二分图，两个集合分别是横轴和纵轴。想一想，这实际上是不是就是x轴轴和纵...</p>
         </a>
       
     </div>
@@ -3339,7 +3375,7 @@ bfs寻找增广路看看有没有路，顺便进行深度标号。如果没有�
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4351,7 +4387,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

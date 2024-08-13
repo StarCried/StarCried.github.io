@@ -55,7 +55,7 @@
 <meta property="og:title" content="P5147-数学-随机数生成器">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P5147-%E6%95%B0%E5%AD%A6-%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P5147-数学-随机数生成器（洛谷第一篇题解说这是高一数学题，新高二感觉到被吊打） 我们设work(x)的期望值为$f_x$ 注意$f_1$是边界。不过对下列式子没有影响。原因参照必修的数列 那么$\displaystyle f_n&#x3D;1+\frac{1}{n}\sum_{i&#x3D;1}^{n}f_i$ 移项得到$\displaystyle f_n&#x3D;\frac{n}{n-1">
+<meta property="og:description" content="P5147-数学-随机数生成器（洛谷第一篇题解说这是高一数学题，新高二感觉到被吊打） 我们设work(x)的期望值为$f_x$ 注意$f_1$是边界。不过对下列式子没有影响。原因参照必修的数列 那么$\displaystyle fn&#x3D;1+\frac{1}{n}\sum{i&#x3D;1}^{n}f_i$ 移项得到$\displaystyle fn&#x3D;\frac{n}{n-1}+\frac{1}{n-1}\su">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2804,19 +2804,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <h2 id="P5147-数学-随机数生成器"><a href="#P5147-数学-随机数生成器" class="headerlink" title="P5147-数学-随机数生成器"></a>P5147-数学-随机数生成器</h2><p>（洛谷第一篇题解说这是高一数学题，新高二感觉到被吊打）</p>
 <p>我们设work(x)的期望值为$f_x$</p>
 <p>注意$f_1$是边界。不过对下列式子没有影响。原因参照必修的数列</p>
-<p>那么$\displaystyle f_n&#x3D;1+\frac{1}{n}\sum_{i&#x3D;1}^{n}f_i$</p>
-<p>移项得到$\displaystyle f_n&#x3D;\frac{n}{n-1}+\frac{1}{n-1}\sum_{i&#x3D;1}^{n-1}f_i$</p>
-<p>记$S_x$为$\sum_{i&#x3D;1}^{x}$</p>
+<p>那么$\displaystyle f<em>n=1+\frac{1}{n}\sum</em>{i=1}^{n}f_i$</p>
+<p>移项得到$\displaystyle f<em>n=\frac{n}{n-1}+\frac{1}{n-1}\sum</em>{i=1}^{n-1}f_i$</p>
+<p>记$S<em>x$为$\sum</em>{i=1}^{x}$</p>
 <p>原式即为</p>
-<p>$\displaystyle f_n&#x3D;\frac{n}{n-1}+\frac{1}{n-1}S_{n-1}$</p>
+<p>$\displaystyle f<em>n=\frac{n}{n-1}+\frac{1}{n-1}S</em>{n-1}$</p>
 <p>通过高一的数学知识化简一下</p>
-<p>$\displaystyle f_n&#x3D;1+\sum_{i&#x3D;1}^{n-1}\frac{1}{i}$</p>
+<p>$\displaystyle f<em>n=1+\sum</em>{i=1}^{n-1}\frac{1}{i}$</p>
 <p>发现这玩意就是个（伪）调和级数加1.</p>
 <p>推出了通项公式！可以$O(1)$求解了……吗？</p>
 <p>看看n的范围然后会发现直接求后面这堆东西会死人的。</p>
 <p>但是，调和级数我们还是懂的。当n趋近于正无穷时，后面这堆东西近似于调和级数。那么我们把它就当做是好了。</p>
-<h3 id="欧拉常数"><a href="#欧拉常数" class="headerlink" title="欧拉常数"></a>欧拉常数</h3><p>$\gamma&#x3D;0.57721 56649 01532 86060 65120 90082 40243 10421 59335$</p>
-<p><img src="/./img/1fc00fbe3e3341b6a9746f881788f665.svg" class="lazyload" data-srcset="/./img/1fc00fbe3e3341b6a9746f881788f665.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h3 id="欧拉常数"><a href="#欧拉常数" class="headerlink" title="欧拉常数"></a>欧拉常数</h3><p>$\gamma=0.57721 56649 01532 86060 65120 90082 40243 10421 59335$</p>
+<p><img src="./img/1fc00fbe3e3341b6a9746f881788f665.svg" class="lazyload" data-srcset="./img/1fc00fbe3e3341b6a9746f881788f665.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>我们知道了欧拉常数，然后就解决了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">double</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">if</span>(n&lt;<span class="number">100000</span>)<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)ans+=<span class="number">1.0</span>/i;<span class="comment">//范围较小时会有较大误差，暴力即可</span></span><br><span class="line">	<span class="keyword">else</span> ans=<span class="built_in">log</span>(n)<span class="number">+0.577215664901532</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%.5f&quot;</span>,n==<span class="number">1</span>?<span class="number">0</span>:ans<span class="number">+1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2916,15 +2916,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P4293%20%5BWC2010%5D%E8%83%BD%E9%87%8F%E5%9C%BA/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P4293 [WC2010]能量场</p>
-          <p class='content'>P4293 [WC2010]能量场题意给你 $n$ 个粒子，每个粒子有两个权值 $m_i,c_i$ 每个相邻有序对 $(a,b)$ 会产生 $m_am_b(c_a-c_b)$ 的贡献。现让你处理...</p>
+        <a class='prev' href='/2022/04/30/P4774-%E5%B1%A0%E9%BE%99%E5%8B%87%E5%A3%AB-%E6%89%A9%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P4774-屠龙勇士-扩展中国剩余定理</p>
+          <p class='content'>屠龙勇士
+很久很久以前，巨龙突然出现，带来了灾难带走公主又消失不见。王国十分危险，世间谁最勇敢，一位英雄出现……
+
+学习于该大佬博客
+那么你就是这位英雄，不过不同的是，你面对的是一群巨龙，虽然巨...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P5110%20%E5%9D%97%E9%80%9F%E9%80%92%E6%8E%A8-%E5%85%89%E9%80%9F%E5%B9%82%E3%80%81%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E9%80%9A%E9%A1%B9/'>
-          <p class='title'>P5110 块速递推-光速幂、斐波那契数列通项<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P5110 块速递推题意多次询问，求数列$$a_i&#x3D;\begin{cases}233a_{i-1}+666a_{i-2} &amp; i&gt;1\0 &amp; i&#x3D;0\1...</p>
+        <a class='next' href='/2022/04/30/P4827%20%5B%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F%5D%20Crash%20%E7%9A%84%E6%96%87%E6%98%8E%E4%B8%96%E7%95%8C/'>
+          <p class='title'>P4827 [国家集训队] Crash 的文明世界<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P4827 [国家集训队] Crash 的文明世界题意求出对于树上每个点 $x$ 的 $\sum_{u=1}^ndis(x,u)^k$。所有边长为 1。
+思路根据斯特林反演：
+
+m^n=\sum...</p>
         </a>
       
     </div>
@@ -3187,7 +3194,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4199,7 +4206,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

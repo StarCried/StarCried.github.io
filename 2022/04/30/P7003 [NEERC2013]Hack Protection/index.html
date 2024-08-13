@@ -55,7 +55,7 @@
 <meta property="og:title" content="P7003 [NEERC2013]Hack Protection">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P7003%20[NEERC2013]Hack%20Protection/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P7003 [NEERC2013]Hack Protection题意给定一个序列 $a$ ，求有多少个区间满足区间内的数的异或和等于与的和的值。 思路首先我们求一个异或前缀和 $s$，对于每一个区间 $[l,r]$ ，它的贡献为区间内按位与的和等于 $s_r \bigoplus s_{l-1}$ 的段的个数。 设 $x$ 为某个区间的按位与的和，上面的也就是：$$s_r \bigoplus s_{">
+<meta property="og:description" content="P7003 [NEERC2013]Hack Protection题意给定一个序列 $a$ ，求有多少个区间满足区间内的数的异或和等于与的和的值。 思路首先我们求一个异或前缀和 $s$，对于每一个区间 $[l,r]$ ，它的贡献为区间内按位与的和等于 $sr \bigoplus s{l-1}$ 的段的个数。 设 $x$ 为某个区间的按位与的和，上面的也就是：  s_r \bigoplus s_{l-">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2802,8 +2802,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <h2 id="P7003-NEERC2013-Hack-Protection"><a href="#P7003-NEERC2013-Hack-Protection" class="headerlink" title="P7003 [NEERC2013]Hack Protection"></a>P7003 [NEERC2013]Hack Protection</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定一个序列 $a$ ，求有多少个区间满足区间内的数的异或和等于与的和的值。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先我们求一个异或前缀和 $s$，对于每一个区间 $[l,r]$ ，它的贡献为区间内按位与的和等于 $s_r \bigoplus s_{l-1}$ 的段的个数。</p>
-<p>设 $x$ 为某个区间的按位与的和，上面的也就是：<br>$$<br>s_r \bigoplus s_{l-1}&#x3D;x\ \Leftrightarrow \ s_r&#x3D;x \bigoplus s_{l-1}<br>$$<br>发现，如果我们固定 $x$ 和 $s_{l-1}$ ，那么 $s_r$ 就是固定的，我们就可以求区间内与 $s_r$ 相等的数的个数来统计答案。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先我们求一个异或前缀和 $s$，对于每一个区间 $[l,r]$ ，它的贡献为区间内按位与的和等于 $s<em>r \bigoplus s</em>{l-1}$ 的段的个数。</p>
+<p>设 $x$ 为某个区间的按位与的和，上面的也就是：</p>
+<script type="math/tex; mode=display">
+s_r \bigoplus s_{l-1}=x\ \Leftrightarrow \ s_r=x \bigoplus s_{l-1}</script><p>发现，如果我们固定 $x$ 和 $s_{l-1}$ ，那么 $s_r$ 就是固定的，我们就可以求区间内与 $s_r$ 相等的数的个数来统计答案。</p>
 <p>考虑枚举 $l$ ，发现，对于往后按位与的过程，$x$ (与上文定义相同)最多会变化 $\log$ 次，我们就可以将其分为这么多段，然后在 $s$ 中求与 $s_r$ 相等的数的个数就可以了。</p>
 <p>求每一段的按位与结果，可以记录变成 0 的那一位是什么，或者直接 st 表查询都行。</p>
 <p>对于最后一个问题，我们可以用主席树，或者简单地离散化加 <code>vector</code> 上二分即可。</p>
@@ -2905,15 +2907,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P7362 [eJOI 2020 Day2] XOR Sort</p>
-          <p class='content'>P7362 [eJOI 2020 Day2] XOR Sort题意给你一个长度为 $n$ 的序列，每次操作可以将一个数异或上相邻的一个数，求将序列改为严格单调递增序列或严格单调不降序列的操作次数...</p>
+        <a class='prev' href='/2022/04/30/P5658%20%E6%8B%AC%E5%8F%B7%E6%A0%91/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5658 括号树</p>
+          <p class='content'>P5658 括号树NOIp2019我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
+于是今天我克服心理阴影来写这道题。
+树形结构因为这是一个树，所有优秀的性质这个题都有。并且题目仅...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P7324%20%5BWC2021%5D%20%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/'>
-          <p class='title'>P7324 [WC2021] 表达式求值<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P7324 [WC2021] 表达式求值闲话WC2021 我只得了 20 分，三道题总共 20 分。我是下场了突然后知后觉这件事的，主要原因是我开了 C++11，然后 T1 T2 都没分了。在洛...</p>
+        <a class='next' href='/2022/04/30/P6982%20%5BNEERC2015%5DJump/'>
+          <p class='title'>P6982 [NEERC2015]Jump<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P6982 [NEERC2015]Jump题意给你一个未知的 01 串，每次可以输出询问一个 01 串，如果该串中正确的个数刚好等于 $n$ 或者 $n/2$ ，将会返回相应的答案，否则会返回 ...</p>
         </a>
       
     </div>
@@ -3176,7 +3180,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4188,7 +4192,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2808,10 +2808,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>由于概念部分较深入，本文不会对线性代数的基础知识做过多介绍，而是着重于行列式的计算。</p>
 <h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>行列式（Determinant）是一个线性代数里的数学概念。它可以被看做是有向面积或体积的概念在一般的欧几里得空间中的推广。或者说，在 n 维欧几里得空间中，行列式描述的是一个线性变换对“体积”所造成的影响。</p>
 <p>形式上讲，行列式是一个函数，接受一个矩阵作为输入，输出一个标量。对于一个$n\times n$的矩阵$A$，它的行列式的值记为：</p>
-<p>$$\det(A)&#x3D;\begin{vmatrix}a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\vdots &amp; \vdots &amp; \ddots &amp; \vdots\a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}\end{vmatrix}$$</p>
-<p>其中$a_{ij}$表示矩阵$A$的第$i$行第$j$列元素。</p>
+<script type="math/tex; mode=display">\det(A)=\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{n1} & a_{n2} & \cdots & a_{nn}\end{vmatrix}</script><p>其中$a_{ij}$表示矩阵$A$的第$i$行第$j$列元素。</p>
 <p>行列式的定义有很多种。以下是一个通过展开式的定义：</p>
-<p>设 $R$ 是交换环，$A &#x3D; (a_{i, j})$ 是 $R$ 上的 $n \times n$ 矩阵。则 $A$ 的\textbf{行列式}定义为<br>$$<br>    \det (A) &#x3D;<br>    \sum_{\sigma \in \mathfrak{S}<em>n}<br>    (-1)^{\sigma} ,<br>    a</em>{1, \sigma(1)} \cdots a_{n, \sigma(n)},<br>$$<br>其中 $\mathfrak{S}_n$ 是 $n$ 元置换群，$(-1)^\sigma$ 是 $\sigma$ 的符号（偶置换为 $+1$, 奇置换为 $-1$）。</p>
+<p>设 $R$ 是交换环，$A = (a_{i, j})$ 是 $R$ 上的 $n \times n$ 矩阵。则 $A$ 的\textbf{行列式}定义为</p>
+<script type="math/tex; mode=display">
+    \det (A) =
+    \sum_{\sigma \in \mathfrak{S}_n}
+    (-1)^{\sigma} \,
+    a_{1, \sigma(1)} \cdots a_{n, \sigma(n)},</script><p>其中 $\mathfrak{S}_n$ 是 $n$ 元置换群，$(-1)^\sigma$ 是 $\sigma$ 的符号（偶置换为 $+1$, 奇置换为 $-1$）。</p>
 <p>仅从如上定义我们无法知道如何计算行列式。除了二阶、三阶行列式可以快速计算外，一般的行列式的计算需要借助于高斯消元法。该方法需要用到一些行列式的性质。</p>
 <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ol>
 <li>行列式与其转置行列式值相等。</li>
@@ -2823,7 +2827,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h2 id="高斯消元法"><a href="#高斯消元法" class="headerlink" title="高斯消元法"></a>高斯消元法</h2><p>高斯消元法（Gauss Elimination）是一种数值计算方法，它可以用来求解线性方程组和行列式。其基本思想是将矩阵化简为上三角矩阵，然后化为对角矩阵。化简的基本操作是将一行减去另一行乘以一个非零数，使得本行某一列的元素被消为 0。时间复杂度为 $O(n^3)$。</p>
 <p>以下为数据为浮点数时的代码。若有模数，求逆元即可。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">Gauss</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="type">int</span> x=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i;j&lt;=n <span class="keyword">and</span> !x;j++) <span class="keyword">if</span>(a[j][i]) x=j;</span><br><span class="line">        <span class="keyword">if</span>(!x) <span class="keyword">return</span> (<span class="type">void</span>)<span class="built_in">puts</span>(<span class="string">&quot;No Solution&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span>(a[i]!=a[x]) <span class="built_in">swap</span>(a[i],a[x]),ans=-ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) <span class="keyword">if</span>(j!=i)&#123;</span><br><span class="line">            <span class="type">double</span> tmp=a[j][i]/a[i][i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i;k&lt;=n<span class="number">+1</span>;k++) a[j][k]-=a[i][k]*tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        ans*=a[i][i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>若模数不为质数，也可以通过辗转相除法消元。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">Gauss</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i<span class="number">+1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(a[j][i])&#123;</span><br><span class="line">                <span class="type">long</span> <span class="type">long</span> t=a[i][i]/a[j][i];</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=i;k&lt;=n;k++) a[i][k]=(a[i][k]-t*a[j][k]%mod+mod)%mod;</span><br><span class="line">                <span class="built_in">swap</span>(a[i],a[j]);</span><br><span class="line">                ans=-ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=(ans*a[i][i]%mod+mod)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2923,12 +2926,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>随机数生成</p>
-          <p class='content'>我知道是伪随机数生成啦你不要再说啦
-mt19937c++11 加入。
-定义一个名叫 rd 的随机数生成器（括号内为种子）。
-12mt19937 rd(std::chrono::system_cl...</p>
+        <a class='prev' href='/2022/04/30/%E9%87%8D%E8%BE%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>重边[非公开][草稿]</p>
+          <p class='content'>什么是重边？
+就是无向图连接两个点间不止一条道路。这个时候就相当于形成了一个环。这个玩意在图论题中很难受。vector存它的话会很难受，一般用链式前向星。
+在tarjan等算法中记得去重边。</p>
         </a>
       
       
@@ -3201,7 +3203,7 @@ $E(X_t)&lt;\infty,\fora...</p>
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4213,7 +4215,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

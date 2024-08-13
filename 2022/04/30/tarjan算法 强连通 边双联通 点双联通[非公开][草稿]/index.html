@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2808,7 +2808,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>点双联通：删去图中任何一个点图仍联通（不具有传递性）</p>
 </li>
 </ul>
-<p><img src="/./img/bcc-0.svg" class="lazyload" data-srcset="/./img/bcc-0.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="./img/bcc-0.svg" class="lazyload" data-srcset="./img/bcc-0.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <p>此图为边双连通图但非点双联通图。</p>
 <ul>
 <li><p>割点：如果删去一个点将会把图分成两个或两个以上的图，那么这个点就是割点。如上图 B 点。</p>
@@ -2821,12 +2821,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 </ul>
 <p>Tarjan</p>
-<p>tarjan是基于DFS的一种算法，可以求解有向图&#x2F;无向图的割点和桥，能够对图进行缩点、寻找必经点、割点、桥、最小公共祖先等问题。</p>
+<p>tarjan是基于DFS的一种算法，可以求解有向图/无向图的割点和桥，能够对图进行缩点、寻找必经点、割点、桥、最小公共祖先等问题。</p>
 <p>（大概是这样）</p>
 <p>割点</p>
 <p>桥</p>
 <p>原理</p>
-<p>时间戳 dfn就是搜索到这个点的次序，可以理解为编号，可以用来判定祖先和是否被访问。<br>搜索树 就是路径啦~<br>追溯值 low用于记录从当前节点 x 作为搜索树的根节点出发，能够访问到的所有节点中，时间戳最小的值。<br>归属 belong，就是tarjan访问完形成强联通分量之后把每个属于该强联通分量的点标记属于该强联通分量。每多一个强联通分量_n++,belong[i]&#x3D;_n。<br>大小 siz 就是该强联通分量的大小。<br>等等，按需任取<br>求割点</p>
+<p>时间戳 dfn就是搜索到这个点的次序，可以理解为编号，可以用来判定祖先和是否被访问。<br>搜索树 就是路径啦~<br>追溯值 low用于记录从当前节点 x 作为搜索树的根节点出发，能够访问到的所有节点中，时间戳最小的值。<br>归属 belong，就是tarjan访问完形成强联通分量之后把每个属于该强联通分量的点标记属于该强联通分量。每多一个强联通分量_n++,belong[i]=_n。<br>大小 siz 就是该强联通分量的大小。<br>等等，按需任取<br>求割点</p>
 <p>我们寻思，如果一个点是割点，它有什么性质？对了，我们很容易就想到它的low肯定是大于等于dfn的。为什么呢？如果这个点x用tarjanDFS到了一个点是他的祖先，即使把这个点删掉也不会影响路重新回到它本身，说明它不符合割点的定义。</p>
 <p>于是我们可以得到程序（讲解在程序中）</p>
 <p>这里以洛谷P3388模板为例</p>
@@ -2928,13 +2928,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/static/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>static</p>
-          <p class='content'>工程代码员请看详解
-static
-adj.静止的;固定的;无活力的;静电的;静电干扰的
-就是静态的意思啦~
-当我们在一个函数内部普通地定义一个变量时，相当于在程序中进栈，出函数就会被清除，程序也...</p>
+        <a class='prev' href='/2022/04/30/set%20%E5%92%8C%20multiset%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>set 和 multiset[非公开][草稿]</p>
+          <p class='content'>set和multiset都是stl中的容器，可以按照特定的顺序将元素存储。
+区别
+set不允许元素重复，而multiset可以。
+详细用法
+c.insert()为插入元素</p>
         </a>
       
       
@@ -3209,7 +3209,7 @@ transform有两种使用方法
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4221,7 +4221,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

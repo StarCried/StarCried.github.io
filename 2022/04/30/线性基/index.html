@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2805,16 +2805,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元素个数有限，就称向量空间为有限维向量空间，将元素的个数称作向量空间的维数。<br>同样的，线性基是一种特殊的基，它通常会在异或运算中出现，它的意义是：通过原集合S的某一个最小子集S1使得S1内元素相互异或得到的值域与原集合S相互异或得到的值域相同。</p>
 </blockquote>
 <p>上文来自百度百科。</p>
-<p>###线性基中的“基”<br>个人理解，线性基的“线性”表示的是数列，即用一个数列表示另一个数列。而“基”表示的是一种类似于向量的思想。因为原数列中的每个数都是不同的，那么它们每个数就分别对应一些线性基的异或和——和向量的表示方式有异曲同工之处。</p>
+<h3 id="线性基中的“基”"><a href="#线性基中的“基”" class="headerlink" title="线性基中的“基”"></a>线性基中的“基”</h3><p>个人理解，线性基的“线性”表示的是数列，即用一个数列表示另一个数列。而“基”表示的是一种类似于向量的思想。因为原数列中的每个数都是不同的，那么它们每个数就分别对应一些线性基的异或和——和向量的表示方式有异曲同工之处。</p>
 <p>大概理解了思想后，我们来理解它的构造。线性基是一个数列，其大小为原数列的最大数的二进制位数（所以是longlong的话大概最好开65位）。它的每一位是原数列中的一个数。有可能含有多个零。</p>
-<p>###线性基的性质</p>
-<ol>
+<h3 id="线性基的性质"><a href="#线性基的性质" class="headerlink" title="线性基的性质"></a>线性基的性质</h3><ol>
 <li>可以用线性基中任意个数异或和表示原数列中的所有数（或者说是原数列中任意数的异或和，表达其实是等价的）</li>
 <li>线性基中的任意数的异或和不可能为0（除非你用0异或0，然而并不算做线性基内部的数）</li>
 <li>线性基是满足性质1的最小集合</li>
 </ol>
 <p>俺不会证明XD</p>
-<p>###线性基的构造<br>每插入一个数，我们从<strong>最高位向下</strong>遍历（注意这里是指二进制位数），找到第一个线性基上没有的插入并跳出，如果已经有数则与之异或（保证线性基的所有性质）：<br><code>inline void insert(ll x)&#123;     for(ll i=62;i+1;i--)&#123;         if(!(x&gt;&gt;i))continue;         if(!p[i])&#123;             p[i]=x;             break;         &#125;         x^=p[i];     &#125; &#125;</code><br>###线性基的应用<br>####查询异或和最小值<br>最小值就是p的最小的值啦~因为它任意异或一个比它大的线性基的数一定都比它大。<br>####查询异或和最大值<br>既然能由任何数异或得到原数列任意异或和的值，我们再次从上向下遍历，每异或后的值大于原答案，就取这个值。<br><code>inline ll find()&#123;     ll ans=0;     for(ll i=63;i&gt;=0;i--)         if((ans^p[i])&gt;ans)             ans^=p[i];     return ans; &#125;</code><br>说起来你可能不信：这玩意还支持删除！</p>
+<h3 id="线性基的构造"><a href="#线性基的构造" class="headerlink" title="线性基的构造"></a>线性基的构造</h3><p>每插入一个数，我们从<strong>最高位向下</strong>遍历（注意这里是指二进制位数），找到第一个线性基上没有的插入并跳出，如果已经有数则与之异或（保证线性基的所有性质）：<br><code>inline void insert(ll x)&#123;
+    for(ll i=62;i+1;i--)&#123;
+        if(!(x&gt;&gt;i))continue;
+        if(!p[i])&#123;
+            p[i]=x;
+            break;
+        &#125;
+        x^=p[i];
+    &#125;
+&#125;</code></p>
+<h3 id="线性基的应用"><a href="#线性基的应用" class="headerlink" title="线性基的应用"></a>线性基的应用</h3><h4 id="查询异或和最小值"><a href="#查询异或和最小值" class="headerlink" title="查询异或和最小值"></a>查询异或和最小值</h4><p>最小值就是p的最小的值啦~因为它任意异或一个比它大的线性基的数一定都比它大。</p>
+<h4 id="查询异或和最大值"><a href="#查询异或和最大值" class="headerlink" title="查询异或和最大值"></a>查询异或和最大值</h4><p>既然能由任何数异或得到原数列任意异或和的值，我们再次从上向下遍历，每异或后的值大于原答案，就取这个值。<br><code>inline ll find()&#123;
+    ll ans=0;
+    for(ll i=63;i&gt;=0;i--)
+        if((ans^p[i])&gt;ans)
+            ans^=p[i];
+    return ans;
+&#125;</code><br>说起来你可能不信：这玩意还支持删除！</p>
 
   </div>
   
@@ -2912,20 +2928,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E7%BA%A6%E6%95%B0%E5%92%8C%E5%AE%9A%E7%90%86%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>约数和定理[非公开][草稿]</p>
-          <p class='content'>##约数和定理
-
-对于一个大于1正整数n可以分解质因数：n&#x3D;p1^a1p2^a2p3^a3…pk^ak,则由约数个数定理可知n的正约数有(a₁+1)(a₂+1)(a₃+1)…(ak+1...</p>
+        <a class='prev' href='/2022/04/30/%E7%A1%AC%E5%B8%81%E9%97%AE%E9%A2%98%EF%BC%88%E6%97%A0%E9%99%90%E8%83%8C%E5%8C%85%EF%BC%89-%E5%AE%B9%E6%96%A5%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>硬币问题（无限背包）-容斥[非公开][草稿]</p>
+          <p class='content'>
+#include&lt;iostream&gt;
+include&lt;/span&gt;&lt;cstdio&gt;include&lt;/span&gt;&lt;cmath&gt;usin...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/'>
-          <p class='title'>笛卡尔树<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>笛卡尔树
-笛卡尔树（Cartesian tree）是一种树形数据结构，每个节点都是一个区间，树的根节点表示整个区间，左儿子表示区间的左半部分，右儿子表示区间的右半部分。
+        <a class='next' href='/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B%20%E6%AC%A7%E6%8B%89%E7%AD%9B/'>
+          <p class='title'>线性筛 欧拉筛<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>线性筛
 
-笛卡尔树可以通过单调栈...</p>
+int prime[maxl];
+bool mark[maxl];
+int tot;
+inline void oula()
+{
+    for(int i=2;i&lt;=maxl;i...</p>
         </a>
       
     </div>
@@ -3038,9 +3058,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9F%BA%E4%B8%AD%E7%9A%84%E2%80%9C%E5%9F%BA%E2%80%9D"><span class="toc-text">线性基中的“基”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9F%BA%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">线性基的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9F%BA%E7%9A%84%E6%9E%84%E9%80%A0"><span class="toc-text">线性基的构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9F%BA%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">线性基的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%BC%82%E6%88%96%E5%92%8C%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="toc-text">查询异或和最小值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%BC%82%E6%88%96%E5%92%8C%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="toc-text">查询异或和最大值</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -3178,7 +3208,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4190,7 +4220,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

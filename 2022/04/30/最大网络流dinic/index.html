@@ -55,7 +55,7 @@
 <meta property="og:title" content="最大网络流dinic">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%9C%80%E5%A4%A7%E7%BD%91%E7%BB%9C%E6%B5%81dinic/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="初始化flow（最大流量）为INF（极大值），建边（正向弧和反向弧） bfs寻找增广路看看有没有路，顺便进行深度标号。如果没有路直接结束输出flow。 如果有，我们按照深度dfs。dfs时注意在给正向弧减权时给反向弧加权。 ans+&#x3D;flow,重复2到4步骤，直到无路可走。 输出结束~  以上就是网络流全部内容（误 概念什么的就不讲啦~ 下面来仔细分析板子代码。  初始化ans&#x3D;0，构建边 di">
+<meta property="og:description" content="初始化flow（最大流量）为INF（极大值），建边（正向弧和反向弧） bfs寻找增广路看看有没有路，顺便进行深度标号。如果没有路直接结束输出flow。 如果有，我们按照深度dfs。dfs时注意在给正向弧减权时给反向弧加权。 ans+&#x3D;flow,重复2到4步骤，直到无路可走。 输出结束~&lt;&#x2F;ol&gt; 以上就是网络流全部内容（误 概念什么的就不讲啦~ 下面来仔细分析板子代码。  初始化an">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,13 +2801,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <ol>
-<li>初始化flow（最大流量）为INF（极大值），建边（正向弧和反向弧）</li>
-<li>bfs寻找增广路看看有没有路，顺便进行深度标号。如果没有路直接结束输出flow。</li>
-<li>如果有，我们按照深度dfs。dfs时注意在给正向弧减权时给反向弧加权。</li>
-<li>ans+=flow,重复2到4步骤，直到无路可走。</li>
-<li>输出结束~</li>
-</ol>
+    <p><ol></p>
+<p><li>初始化flow（最大流量）为INF（极大值），建边（正向弧和反向弧）</li></p>
+<p><li>bfs寻找增广路看看有没有路，顺便进行深度标号。如果没有路直接结束输出flow。</li></p>
+<p><li>如果有，我们按照深度dfs。dfs时注意在给正向弧减权时给反向弧加权。</li></p>
+<p><li>ans+=flow,重复2到4步骤，直到无路可走。</li></p>
+<p><li>输出结束~</li><br>&lt;/ol&gt;</p>
 <p>以上就是网络流全部内容（误</p>
 <p>概念什么的就不讲啦~</p>
 <p>下面来仔细分析板子代码。</p>
@@ -3137,16 +3136,8 @@ signed main()
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>最大权闭合子图</p>
-          <p class='content'>最大权闭合子图闭合子图定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。
-最大权闭合子图给有向图的点加一个点权，能得到的点权最大的闭合子图。
-网络流...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E2%80%94%E2%80%94bzoj1001%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90%EF%BC%8C%E6%B4%9B%E8%B0%B7P2598/'>
-          <p class='title'>最大流最小割——bzoj1001狼抓兔子，洛谷P2598<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E2%80%94%E2%80%94bzoj1001%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90%EF%BC%8C%E6%B4%9B%E8%B0%B7P2598/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>最大流最小割——bzoj1001狼抓兔子，洛谷P2598</p>
           <p class='content'>前置知识
 平面图
 平面图就是平面上任意边都不相交的图。（自己瞎画的不算XD）
@@ -3154,6 +3145,15 @@ signed main()
 
 &nbsp;
 &nbsp;比如说这个图，我们发现平面图肯定会把平面分成不同的区域（感觉像拓扑图），并把这些...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E8%A6%86%E7%9B%96/'>
+          <p class='title'>最小路径覆盖<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>最小路径覆盖路径覆盖路径覆盖指一个路径的集合中所有路径点集的并集为原图点集。最小路径覆盖使路径集合大小最小。
+路径覆盖分为可否重复选点两种。可重复选点在建模中加大流量即可。
+网络流模型
+建超级源...</p>
         </a>
       
     </div>
@@ -3406,7 +3406,7 @@ signed main()
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4418,7 +4418,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

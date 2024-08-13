@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2924,63 +2924,163 @@ inline </span><span style="color: #0000ff;">void</span> addedge(<span style="col
 </span><span style="color: #0000ff;">struct</span><span style="color: #000000;"> SegmentTree{
     </span><span style="color: #0000ff;">#define</span> ls (ro&lt;&lt;1)
     <span style="color: #0000ff;">#define</span> rs (ro&lt;&lt;1|1)
-    
-<pre><code>&lt;span style=&quot;color: #0000ff;&quot;&gt;struct&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; tree&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; l,r,val,tag;
-&#125;e[maxn&lt;/span&gt;&amp;lt;&amp;lt;&lt;span style=&quot;color: #800080;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;];
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; push_up(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; ro)
-&#123;
-    e[ro].val&lt;/span&gt;=(e[ls].val+e[rs].val)%&lt;span style=&quot;color: #000000;&quot;&gt;mod;
-&#125;
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; push_down(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; ro)
-&#123;
-    e[ls].tag&lt;/span&gt;+=&lt;span style=&quot;color: #000000;&quot;&gt;e[ro].tag;
-    e[rs].tag&lt;/span&gt;+=&lt;span style=&quot;color: #000000;&quot;&gt;e[ro].tag;
-    e[ls].val&lt;/span&gt;+=e[ro].tag*(e[ls].r-e[ls].l+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;);
-    e[rs].val&lt;/span&gt;+=e[ro].tag*(e[rs].r-e[rs].l+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;);
-    e[ls].val&lt;/span&gt;%=&lt;span style=&quot;color: #000000;&quot;&gt;mod;
-    e[rs].val&lt;/span&gt;%=&lt;span style=&quot;color: #000000;&quot;&gt;mod;
-    e[ro].tag&lt;/span&gt;=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-&#125;
-&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; build(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; ro,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; l,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; r)
-&#123;
-    e[ro].l&lt;/span&gt;=l;e[ro].r=&lt;span style=&quot;color: #000000;&quot;&gt;r;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(l==r)&#123;e[ro].val=w[l]%mod;&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; ;&#125;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; mid=(l+r)&amp;gt;&amp;gt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    build(ls,l,mid);build(rs,mid&lt;/span&gt;+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;,r);
-    push_up(ro);
-&#125;
-&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; update(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; ro,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; l,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; r,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; k)
-&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(e[ro].l&amp;gt;=l and e[ro].r&amp;lt;=&lt;span style=&quot;color: #000000;&quot;&gt;r)&#123;
-        e[ro].tag&lt;/span&gt;+=&lt;span style=&quot;color: #000000;&quot;&gt;k;
-        e[ro].val&lt;/span&gt;+=k*(e[ro].r-e[ro].l+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;);
-        e[ro].val&lt;/span&gt;%=&lt;span style=&quot;color: #000000;&quot;&gt;mod;
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &#125;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; mid=(e[ro].l+e[ro].r)&amp;gt;&amp;gt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;(e[ro].tag)push_down(ro);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(l&amp;lt;=&lt;span style=&quot;color: #000000;&quot;&gt;mid)update(ls,l,r,k);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(r&amp;gt;&lt;span style=&quot;color: #000000;&quot;&gt;mid)update(rs,l,r,k);
-    push_up(ro);
-&#125;
-&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; query(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; ro,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; l,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; r)
-&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(e[ro].l&amp;gt;=l and e[ro].r&amp;lt;=&lt;span style=&quot;color: #000000;&quot;&gt;r)&#123;
-        res&lt;/span&gt;+=e[ro].val;res%=mod;&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &#125;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;(e[ro].tag)push_down(ro);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; mid=(e[ro].l+e[ro].r)&amp;gt;&amp;gt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(l&amp;lt;=&lt;span style=&quot;color: #000000;&quot;&gt;mid)query(ls,l,r);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(r&amp;gt;&lt;span style=&quot;color: #000000;&quot;&gt;mid)query(rs,l,r);
-&#125;
-&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;#undef&lt;/span&gt; ls
-&lt;span style=&quot;color: #0000ff;&quot;&gt;#undef&lt;/span&gt; rs&lt;span style=&quot;color: #000000;&quot;&gt;
-</code></pre>
-<p>}st;</p>
-<p></span><span style="color: #0000ff;">void</span> dfs1(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span> f,<span style="color: #0000ff;">int</span><span style="color: #000000;"> depth)<br>{<br>    siz[x]</span>&#x3D;<span style="color: #800080;">1</span>; dep[x]&#x3D;depth; fa[x]&#x3D;<span style="color: #000000;">f;<br>    </span><span style="color: #0000ff;">int</span> maxson&#x3D;-<span style="color: #800080;">1</span><span style="color: #000000;">;<br>    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i&#x3D;head[x];i;i&#x3D;<span style="color: #000000;">e[i].nxt)<br>    {<br>        </span><span style="color: #0000ff;">int</span> u&#x3D;<span style="color: #000000;">e[i].to;<br>        </span><span style="color: #0000ff;">if</span>(u&#x3D;&#x3D;f)<span style="color: #0000ff;">continue</span><span style="color: #000000;">;<br>        dfs1(u,x,depth</span>+<span style="color: #800080;">1</span><span style="color: #000000;">);<br>        siz[x]</span>+&#x3D;<span style="color: #000000;">siz[u];<br>        </span><span style="color: #0000ff;">if</span>(siz[u]&gt;maxson)son[x]&#x3D;u,maxson&#x3D;<span style="color: #000000;">siz[u];<br>    }<br>}<br></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> cnt;<br></span><span style="color: #0000ff;">void</span> dfs2(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> topf)<br>{<br>    id[x]</span>&#x3D;++<span style="color: #000000;">cnt;<br>    w[cnt]</span>&#x3D;<span style="color: #000000;">a[x];<br>    top[x]</span>&#x3D;<span style="color: #000000;">topf;<br>    </span><span style="color: #0000ff;">if</span>(!son[x])<span style="color: #0000ff;">return</span><span style="color: #000000;">;<br>    dfs2(son[x],topf);<br>    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i&#x3D;head[x];i;i&#x3D;<span style="color: #000000;">e[i].nxt)<br>    {<br>        </span><span style="color: #0000ff;">int</span> u&#x3D;<span style="color: #000000;">e[i].to;<br>        </span><span style="color: #0000ff;">if</span>(u&#x3D;&#x3D;fa[x]||u&#x3D;&#x3D;son[x])<span style="color: #0000ff;">continue</span><span style="color: #000000;">;<br>        dfs2(u,u);<br>    }<br>}<br>inline </span><span style="color: #0000ff;">void</span> updaterange(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span> y,<span style="color: #0000ff;">int</span><span style="color: #000000;"> k){<br>    k</span>%&#x3D;<span style="color: #000000;">mod;<br>    </span><span style="color: #0000ff;">while</span>(top[x]!&#x3D;<span style="color: #000000;">top[y]){<br>        </span><span style="color: #0000ff;">if</span>(dep[top[x]]&lt;<span style="color: #000000;">dep[top[y]])swap(x,y);<br>        st.update(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[top[x]],id[x],k);<br>        x</span>&#x3D;<span style="color: #000000;">fa[top[x]];<br>    }<br>    </span><span style="color: #0000ff;">if</span>(dep[x]&gt;<span style="color: #000000;">dep[y])swap(x,y);<br>    st.update(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[x],id[y],k);<br>}<br>inline </span><span style="color: #0000ff;">int</span> queryrange(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> y)<br>{<br>    </span><span style="color: #0000ff;">int</span> ans&#x3D;<span style="color: #800080;">0</span><span style="color: #000000;">;<br>    </span><span style="color: #0000ff;">while</span>(top[x]!&#x3D;<span style="color: #000000;">top[y]){<br>        </span><span style="color: #0000ff;">if</span>(dep[top[x]]&lt;<span style="color: #000000;">dep[top[y]])swap(x,y);<br>        res</span>&#x3D;<span style="color: #800080;">0</span><span style="color: #000000;">;<br>        st.query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[top[x]],id[x]);<br>        ans</span>&#x3D;(ans+res)%<span style="color: #000000;">mod;<br>        x</span>&#x3D;<span style="color: #000000;">fa[top[x]];<br>    }<br>    </span><span style="color: #0000ff;">if</span>(dep[x]&gt;<span style="color: #000000;">dep[y])swap(x,y);<br>    res</span>&#x3D;<span style="color: #800080;">0</span><span style="color: #000000;">;<br>    st.query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[x],id[y]);<br>    ans</span>&#x3D;(ans+res)%<span style="color: #000000;">mod;<br>    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> ans;<br>}</p>
-<p>inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> debug()<br>{<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++<span style="color: #000000;">)<br>    {<br>        res</span>&#x3D;<span style="color: #800080;">0</span>;st.query(<span style="color: #800080;">1</span><span style="color: #000000;">,id[i],id[i]);<br>        printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%d </span><span style="color: #800000;">“</span><span style="color: #000000;">,res);<br>    }<br>}</p>
-<p></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    n</span>&#x3D;read(),m&#x3D;read(),root&#x3D;read(),mod&#x3D;<span style="color: #000000;">read();<br>    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++)a[i]&#x3D;<span style="color: #000000;">read();<br>    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;n;i++<span style="color: #000000;">)addedge(read(),read());<br>    dfs1(root,</span><span style="color: #800080;">0</span>,<span style="color: #800080;">1</span><span style="color: #000000;">);<br>    dfs2(root,root);<br>    st.build(</span><span style="color: #800080;">1</span>,<span style="color: #800080;">1</span><span style="color: #000000;">,n);<br>    </span><span style="color: #0000ff;">while</span>(m–<span style="color: #000000;">)<br>    {<br>        </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> a,b,c;<br>        </span><span style="color: #0000ff;">switch</span><span style="color: #000000;">(read())<br>        {<br>            </span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">1</span><span style="color: #000000;">):{<br>                a</span>&#x3D;read(),b&#x3D;read(),c&#x3D;<span style="color: #000000;">read();<br>                updaterange(a,b,c);<br>                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;<br>            }<br>            </span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">2</span><span style="color: #000000;">):{<br>                a</span>&#x3D;read(),b&#x3D;<span style="color: #000000;">read();<br>                printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">“</span><span style="color: #000000;">,queryrange(a,b));<br>                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;<br>            }<br>            </span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">3</span><span style="color: #000000;">):{<br>                </span><span style="color: #0000ff;">int</span> a&#x3D;read(),b&#x3D;<span style="color: #000000;">read();<br>                st.update(</span><span style="color: #800080;">1</span>,id[a],id[a]+siz[a]-<span style="color: #800080;">1</span><span style="color: #000000;">,b);<br>                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;<br>            }<br>            </span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">4</span><span style="color: #000000;">):{<br>                </span><span style="color: #0000ff;">int</span> a&#x3D;read();res&#x3D;<span style="color: #800080;">0</span><span style="color: #000000;">;<br>                st.query(</span><span style="color: #800080;">1</span>,id[a],id[a]+siz[a]-<span style="color: #800080;">1</span><span style="color: #000000;">);<br>                printf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">“</span><span style="color: #000000;">,res);<br>                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;<br>            }<br>        }<br>    }<br>    </span><span style="color: #008000;">&#x2F;&#x2F;</span><span style="color: #008000;">debug();</span><br>    <span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>}</span></pre></p>
+
+    <span style="color: #0000ff;">struct</span><span style="color: #000000;"> tree{
+        </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> l,r,val,tag;
+    }e[maxn</span>&lt;&lt;<span style="color: #800080;">2</span><span style="color: #000000;">];
+    inline </span><span style="color: #0000ff;">void</span> push_up(<span style="color: #0000ff;">int</span><span style="color: #000000;"> ro)
+    {
+        e[ro].val</span>=(e[ls].val+e[rs].val)%<span style="color: #000000;">mod;
+    }
+    inline </span><span style="color: #0000ff;">void</span> push_down(<span style="color: #0000ff;">int</span><span style="color: #000000;"> ro)
+    {
+        e[ls].tag</span>+=<span style="color: #000000;">e[ro].tag;
+        e[rs].tag</span>+=<span style="color: #000000;">e[ro].tag;
+        e[ls].val</span>+=e[ro].tag*(e[ls].r-e[ls].l+<span style="color: #800080;">1</span><span style="color: #000000;">);
+        e[rs].val</span>+=e[ro].tag*(e[rs].r-e[rs].l+<span style="color: #800080;">1</span><span style="color: #000000;">);
+        e[ls].val</span>%=<span style="color: #000000;">mod;
+        e[rs].val</span>%=<span style="color: #000000;">mod;
+        e[ro].tag</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
+    }
+    </span><span style="color: #0000ff;">void</span> build(<span style="color: #0000ff;">int</span> ro,<span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span><span style="color: #000000;"> r)
+    {
+        e[ro].l</span>=l;e[ro].r=<span style="color: #000000;">r;
+        </span><span style="color: #0000ff;">if</span>(l==r){e[ro].val=w[l]%mod;<span style="color: #0000ff;">return</span><span style="color: #000000;"> ;}
+        </span><span style="color: #0000ff;">int</span> mid=(l+r)&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">;
+        build(ls,l,mid);build(rs,mid</span>+<span style="color: #800080;">1</span><span style="color: #000000;">,r);
+        push_up(ro);
+    }
+    </span><span style="color: #0000ff;">void</span> update(<span style="color: #0000ff;">int</span> ro,<span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span> r,<span style="color: #0000ff;">int</span><span style="color: #000000;"> k)
+    {
+        </span><span style="color: #0000ff;">if</span>(e[ro].l&gt;=l and e[ro].r&lt;=<span style="color: #000000;">r){
+            e[ro].tag</span>+=<span style="color: #000000;">k;
+            e[ro].val</span>+=k*(e[ro].r-e[ro].l+<span style="color: #800080;">1</span><span style="color: #000000;">);
+            e[ro].val</span>%=<span style="color: #000000;">mod;
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #0000ff;">int</span> mid=(e[ro].l+e[ro].r)&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(e[ro].tag)push_down(ro);
+        </span><span style="color: #0000ff;">if</span>(l&lt;=<span style="color: #000000;">mid)update(ls,l,r,k);
+        </span><span style="color: #0000ff;">if</span>(r&gt;<span style="color: #000000;">mid)update(rs,l,r,k);
+        push_up(ro);
+    }
+    </span><span style="color: #0000ff;">void</span> query(<span style="color: #0000ff;">int</span> ro,<span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span><span style="color: #000000;"> r)
+    {
+        </span><span style="color: #0000ff;">if</span>(e[ro].l&gt;=l and e[ro].r&lt;=<span style="color: #000000;">r){
+            res</span>+=e[ro].val;res%=mod;<span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(e[ro].tag)push_down(ro);
+        </span><span style="color: #0000ff;">int</span> mid=(e[ro].l+e[ro].r)&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">if</span>(l&lt;=<span style="color: #000000;">mid)query(ls,l,r);
+        </span><span style="color: #0000ff;">if</span>(r&gt;<span style="color: #000000;">mid)query(rs,l,r);
+    }
+    </span><span style="color: #0000ff;">#undef</span> ls
+    <span style="color: #0000ff;">#undef</span> rs<span style="color: #000000;">
+}st;
+
+</span><span style="color: #0000ff;">void</span> dfs1(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span> f,<span style="color: #0000ff;">int</span><span style="color: #000000;"> depth)
+{
+    siz[x]</span>=<span style="color: #800080;">1</span>; dep[x]=depth; fa[x]=<span style="color: #000000;">f;
+    </span><span style="color: #0000ff;">int</span> maxson=-<span style="color: #800080;">1</span><span style="color: #000000;">;
+    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=head[x];i;i=<span style="color: #000000;">e[i].nxt)
+    {
+        </span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">e[i].to;
+        </span><span style="color: #0000ff;">if</span>(u==f)<span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+        dfs1(u,x,depth</span>+<span style="color: #800080;">1</span><span style="color: #000000;">);
+        siz[x]</span>+=<span style="color: #000000;">siz[u];
+        </span><span style="color: #0000ff;">if</span>(siz[u]&gt;maxson)son[x]=u,maxson=<span style="color: #000000;">siz[u];
+    }
+}
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> cnt;
+</span><span style="color: #0000ff;">void</span> dfs2(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> topf)
+{
+    id[x]</span>=++<span style="color: #000000;">cnt;
+    w[cnt]</span>=<span style="color: #000000;">a[x];
+    top[x]</span>=<span style="color: #000000;">topf;
+    </span><span style="color: #0000ff;">if</span>(!son[x])<span style="color: #0000ff;">return</span><span style="color: #000000;">;
+    dfs2(son[x],topf);
+    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=head[x];i;i=<span style="color: #000000;">e[i].nxt)
+    {
+        </span><span style="color: #0000ff;">int</span> u=<span style="color: #000000;">e[i].to;
+        </span><span style="color: #0000ff;">if</span>(u==fa[x]||u==son[x])<span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+        dfs2(u,u);
+    }
+}
+inline </span><span style="color: #0000ff;">void</span> updaterange(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span> y,<span style="color: #0000ff;">int</span><span style="color: #000000;"> k){
+    k</span>%=<span style="color: #000000;">mod;
+    </span><span style="color: #0000ff;">while</span>(top[x]!=<span style="color: #000000;">top[y]){
+        </span><span style="color: #0000ff;">if</span>(dep[top[x]]&lt;<span style="color: #000000;">dep[top[y]])swap(x,y);
+        st.update(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[top[x]],id[x],k);
+        x</span>=<span style="color: #000000;">fa[top[x]];
+    }
+    </span><span style="color: #0000ff;">if</span>(dep[x]&gt;<span style="color: #000000;">dep[y])swap(x,y);
+    st.update(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[x],id[y],k);
+}
+inline </span><span style="color: #0000ff;">int</span> queryrange(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> y)
+{
+    </span><span style="color: #0000ff;">int</span> ans=<span style="color: #800080;">0</span><span style="color: #000000;">;
+    </span><span style="color: #0000ff;">while</span>(top[x]!=<span style="color: #000000;">top[y]){
+        </span><span style="color: #0000ff;">if</span>(dep[top[x]]&lt;<span style="color: #000000;">dep[top[y]])swap(x,y);
+        res</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
+        st.query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[top[x]],id[x]);
+        ans</span>=(ans+res)%<span style="color: #000000;">mod;
+        x</span>=<span style="color: #000000;">fa[top[x]];
+    }
+    </span><span style="color: #0000ff;">if</span>(dep[x]&gt;<span style="color: #000000;">dep[y])swap(x,y);
+    res</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
+    st.query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,id[x],id[y]);
+    ans</span>=(ans+res)%<span style="color: #000000;">mod;
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> ans;
+}
+
+inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> debug()
+{
+    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
+    {
+        res</span>=<span style="color: #800080;">0</span>;st.query(<span style="color: #800080;">1</span><span style="color: #000000;">,id[i],id[i]);
+        printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d </span><span style="color: #800000;">"</span><span style="color: #000000;">,res);
+    }
+}
+
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+{
+    n</span>=read(),m=read(),root=read(),mod=<span style="color: #000000;">read();
+    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++)a[i]=<span style="color: #000000;">read();
+    </span><span style="color: #0000ff;">for</span>(R <span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;n;i++<span style="color: #000000;">)addedge(read(),read());
+    dfs1(root,</span><span style="color: #800080;">0</span>,<span style="color: #800080;">1</span><span style="color: #000000;">);
+    dfs2(root,root);
+    st.build(</span><span style="color: #800080;">1</span>,<span style="color: #800080;">1</span><span style="color: #000000;">,n);
+    </span><span style="color: #0000ff;">while</span>(m--<span style="color: #000000;">)
+    {
+        </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> a,b,c;
+        </span><span style="color: #0000ff;">switch</span><span style="color: #000000;">(read())
+        {
+            </span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">1</span><span style="color: #000000;">):{
+                a</span>=read(),b=read(),c=<span style="color: #000000;">read();
+                updaterange(a,b,c);
+                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
+            }
+            </span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">2</span><span style="color: #000000;">):{
+                a</span>=read(),b=<span style="color: #000000;">read();
+                printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,queryrange(a,b));
+                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
+            }
+            </span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">3</span><span style="color: #000000;">):{
+                </span><span style="color: #0000ff;">int</span> a=read(),b=<span style="color: #000000;">read();
+                st.update(</span><span style="color: #800080;">1</span>,id[a],id[a]+siz[a]-<span style="color: #800080;">1</span><span style="color: #000000;">,b);
+                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
+            }
+            </span><span style="color: #0000ff;">case</span>(<span style="color: #800080;">4</span><span style="color: #000000;">):{
+                </span><span style="color: #0000ff;">int</span> a=read();res=<span style="color: #800080;">0</span><span style="color: #000000;">;
+                st.query(</span><span style="color: #800080;">1</span>,id[a],id[a]+siz[a]-<span style="color: #800080;">1</span><span style="color: #000000;">);
+                printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,res);
+                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">;
+            }
+        }
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">debug();</span>
+    <span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}</span></pre>
 </div>
 <p>&nbsp;</p>
   </div>
@@ -3079,19 +3179,20 @@ inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>模拟退火</p>
-          <p class='content'>算法介绍模拟退火是一种最优化随机化算法。什么叫随机化算法？就是抽奖抽正解
-一般用于求解最优解，即最优化问题，而且一般比较适合于小数据的最优解和大数据的近似最优解。
-算法步骤每次迭代都随机选择一个...</p>
+        <a class='prev' href='/2022/04/30/%E6%B1%82%E6%9C%80%E5%B0%8F%E5%85%AC%E5%9B%A0%E6%95%B0%E5%92%8C%E6%9C%80%E5%A4%A7%E5%85%AC%E5%80%8D%E6%95%B0/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>求最小公因数和最大公倍数</p>
+          <p class='content'>今天从算法竞赛的书上看到求这两个东西的方法，稍微记一下。
+根据欧几里得算法，即著名的辗转相除法：
+gcd(a,b)=gcd(b,a%b)，边界条件为当b=0时,gcd(a,b)=a;
+（扩展欧几...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%B1%82%E9%80%86%E5%85%83%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'>求逆元[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>逆元
-逆元是个啥？x的逆元就是x的倒数（误
-在数论意义下（正整数），逆元b是指a*b&amp;mod==1的数。而这个b不一定唯一。同时，，如果mod不同，b也是不同的。所以可以说a有无数个逆元...</p>
+        <a class='next' href='/2022/04/30/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/'>
+          <p class='title'>石子合并<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>https://www.luogu.com.cn/problem/P1880
+一道区间dp题目。
+用d[i][j]表示从i到j的最大/最小得分，那么依次枚举长度len，坐标i和j，三层循环就可以...</p>
         </a>
       
     </div>
@@ -3344,7 +3445,7 @@ inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4356,7 +4457,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

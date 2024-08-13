@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2823,18 +2823,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>正确性显然，因为只有这一种情况。而且由于把边变成点异常好写，很快样例全过。</p>
 <p>测样例的时候 RE 了，不过开了无限栈就过了。下场后问同学没人遇到过这种情况。</p>
 <p>期望得分：100</p>
-<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>打眼一看，这不就是行列式定义&#x2F; LGV 引理模板吗。但是想不出来每行个数不同怎么做（其实之前和 fgf 做过的一道 CF 题有涉及，直接计算路径方案数再求行列式即可。这里就看出来我和人家的差距了），于是想试一试先分别求行列式后把答案乘起来。</p>
+<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>打眼一看，这不就是行列式定义/ LGV 引理模板吗。但是想不出来每行个数不同怎么做（其实之前和 fgf 做过的一道 CF 题有涉及，直接计算路径方案数再求行列式即可。这里就看出来我和人家的差距了），于是想试一试先分别求行列式后把答案乘起来。</p>
 <p>乘起来后发现答案对了，过了样例就没管了。（我太勇了！）</p>
 <p>正确性当时没考虑，实际上两个行列式的答案设为偶数方案减奇数方案，利用乘法分配律就发现两个行列式相乘结果是什么了。但是如果我知道这个我不就会了正解了嘛……</p>
 <p>期望得分：75</p>
 <h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>打眼一看，很快注意到了题目给定的图的任意三点间联通的性质。但是没有遇到过这个 trick，不可能想出正解了。</p>
 <p>最开始我把题目要求的看成了最大边数，结果暴力结果不对，以为是我写挂了，浪费了一个小时调错误的程序，血亏。注意到时已经剩不到半个小时了。</p>
-<p>赶紧改对之后去写树的部分分。一看就知道是个外向树，因为 $k$ 很小以为是分类讨论，在实现的时候发现好像可以建虚树跑传递闭包，写了一会挂了。因为没时间了就留下 $k&#x3D;0$ 的暴力匆匆结束，也没造数据测试。</p>
+<p>赶紧改对之后去写树的部分分。一看就知道是个外向树，因为 $k$ 很小以为是分类讨论，在实现的时候发现好像可以建虚树跑传递闭包，写了一会挂了。因为没时间了就留下 $k=0$ 的暴力匆匆结束，也没造数据测试。</p>
 <p>期望得分：36</p>
 <hr>
 <p>考完了，等待的时候非常焦虑，因为我手太慢一个也没对拍。值得一提的是，考试的时候我脑子里一直在循环 Undertale 的 <em>Your Best Nightmare</em> 的后半段。</p>
 <p>成绩出来了，和期望有些偏差，不过还能接受：</p>
-<p>$90+75+36&#x3D;201$</p>
+<p>$90+75+36=201$</p>
 <p>T1 不知道怎么挂了 10 分。本来我以为是空间炸了的问题，但是重测了一下还是 RE 了（评测结果里显示的是 WA），不过问题不大也就没管。</p>
 <p>D2 在场上突然想到可能是我在访问作为根节点的链首的时候访问了父亲，因为我的线段树写法访问不可能到达的区间就会无限递归。</p>
 <h2 id="7-27"><a href="#7-27" class="headerlink" title="7.27"></a>7.27</h2><p>社会活动是不可能了。台风过去，外面天气好了点。下午有嘉年华，也没去。</p>
@@ -2850,15 +2850,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>然后就是使劲瞪，发现第二个字符操作很有性质，仿佛两个操作能找出来些什么……但是，这时候时间所剩无几，我没办法专心致志的思考了，状态极差。本着打比赛的原则，尽可能多得分，去看 T3。</p>
 <p>期望得分：35</p>
 <h3 id="T3-1"><a href="#T3-1" class="headerlink" title="T3"></a>T3</h3><p>最开始就看了题面，好像能用解释中的容斥得到一点分数。</p>
-<p>但是时间不多，这个时候我想 $3^{2n}$ 枚举。但是即使这样的时间也不够。干脆最后写 $n&#x3D;1$ 的第一档部分分了。</p>
+<p>但是时间不多，这个时候我想 $3^{2n}$ 枚举。但是即使这样的时间也不够。干脆最后写 $n=1$ 的第一档部分分了。</p>
 <p>基本上就是弃了。</p>
 <p>期望得分：8</p>
 <hr>
 <p>下考后听说都不太会写，但都写了 T3 容斥。我只能寄希望于我的 T1 乱搞能多拿点分……</p>
 <p>事实上，也真的只有 T1 帮我拿了点分。</p>
-<p>$44+0+0&#x3D;44$</p>
+<p>$44+0+0=44$</p>
 <p>后面两个题全部白给是我没想到的，我的心情简直直接跌入谷底。说实话，今天确实状态不好，题我也确实不会，但是连暴力分都写挂也实在难以接受。</p>
-<p>最终总成绩 $100+201+44&#x3D;345$。</p>
+<p>最终总成绩 $100+201+44=345$。</p>
 <p>等待成绩出来的时候，有人说银牌线 $350$，我害怕极了。隔壁学校有个第一天低我将近 $50$ 第二天直接反超的我的。烦透了。</p>
 <p>不过，事在人为。如果我有银牌，那么我一定会去冲清华北大。如果没有，那就把这次失败当成一次教训。无论怎样，我都会接受。其实这些心理准备我是早都想好了的，只不过当事情真的来临的时候，还是会有些情绪波动。毕竟今天的分数实在出乎意料。</p>
 <p>总而言之，还是学艺不精。一年多来，我一路靠着自己的执念、教练和同学们的帮助（无论是否退役）挺过来，即使教练不看好我，即使有多少次想过放弃，现在都是历史了。183 名，就是我最终的结果。这个名次恰到好处，虽然没有惬意的高三生活，但我本来渴求的也就是这些了。</p>
@@ -3241,7 +3241,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4253,7 +4253,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2807,7 +2807,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h4 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h4><p>第一眼看着就挺简单，考虑了一下发现对于每个区域增加个数时单调，但是没完全考虑。于是便写出了三分两个单调方向相反函数的和的垃圾。离谱的是，样例全过了，于是花了四十分钟直接就过了没管。</p>
 <h4 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h4><p>一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了很久都不会，准备先读完其他题。</p>
 <h4 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h4><p>感觉就 CF Div2 CD 难度的样子，仔细思索了一下，发现只要确定了两个起始点后面的都是向左右扩张，贪心之后，也就是确定好的。而起始点只有两个，大力模拟两遍即可。</p>
-<h4 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h4><p>一眼网络流，没别的想法了（没想到对偶图最短路）。本来只是想得 $k&#x3D;2$ 的分数的，就没去想其他分数，发现 $k&#x3D;2$ 就是网络流。我记得我国赛前专门训练过一段时间 dinic，于是凭着一点记忆就写出来了，竟然没写挂。不过因为期间又在 T2 上耗费了许多时间，并且建图方式反复横跳了好几次（因为要多组数据忘了前向星怎么删边了，后来想起来又写回来了），耗费了一个小时，最后很紧张地把 $k&#x3D;2$ 调过了。其实再多给我点时间我把其他边加上就能多得好多分。</p>
+<h4 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h4><p>一眼网络流，没别的想法了（没想到对偶图最短路）。本来只是想得 $k=2$ 的分数的，就没去想其他分数，发现 $k=2$ 就是网络流。我记得我国赛前专门训练过一段时间 dinic，于是凭着一点记忆就写出来了，竟然没写挂。不过因为期间又在 T2 上耗费了许多时间，并且建图方式反复横跳了好几次（因为要多组数据忘了前向星怎么删边了，后来想起来又写回来了），耗费了一个小时，最后很紧张地把 $k=2$ 调过了。其实再多给我点时间我把其他边加上就能多得好多分。</p>
 <hr>
 <p>比赛打完第二天，lwc 跑过来给我说我爆零了，然后他直接没影了，留我一个人一脸懵逼。下课之后赶忙跑去机房，结果没人。一上午浑浑噩噩，像丢了魂，无心听课。</p>
 <p>然后，突然意识到，为什么我会变成这个样子。</p>
@@ -2830,10 +2830,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>“为了看看我是不是真的有上 xgdfz 的实力。”</p>
 <p>最后没被录上。<del>看来是没有</del></p>
 <hr>
-<p>2021&#x2F;10&#x2F;30 补记</p>
+<p>2021/10/30 补记</p>
 <p>最终成绩</p>
-<p>$$ 90+0+100+25&#x3D;215 $$</p>
-<p>T1 我直接震惊拿了 90 分是没想到的。CCF 的数据还是一如既往的水。</p>
+<script type="math/tex; mode=display">90+0+100+25=215</script><p>T1 我直接震惊拿了 90 分是没想到的。CCF 的数据还是一如既往的水。</p>
 <p>心里还是挺高兴的。能看到自己<del>宝刀未老</del>，说明我这一年没有白白度过。</p>
 
   </div>
@@ -2932,23 +2931,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P2015/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2015</p>
-          <p class='content'>二叉苹果树
-
- 1 #include&lt;iostream&gt;
- 2 #include&lt;cstdio&gt;
- 3 #include&lt;algorithm&gt;
- 4 #inc...</p>
+        <a class='prev' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Dirichlet卷积和莫比乌斯反演[非公开][草稿]</p>
+          <p class='content'>
+非全面讲解，仅供记录笔记
+Dirichlet卷积(f\ast g)(n)=\sum_{d\mid n}f(d)g(\frac{n}{d})\varepsilon =\mu \ast 1 \if...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/'>
-          <p class='title'>P2491 消防 P1099 树网的核<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P2491 消防&#x2F;P1099 树网的核双倍经验，双倍快乐。
-题意在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。
-输出这个最小的值。
-做法Define:以下$s...</p>
+        <a class='next' href='/2022/04/30/GCD%20SUM/'>
+          <p class='title'>GCD SUM<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>GCD SUM求
+
+\sum_{i=1}^n\sum_{j=1}^n\gcd(i,j)将原式变换得到
+
+\sum_{d=1}^nd\sum_{i=1}^{\lfloor\frac{n}{d}\r...</p>
         </a>
       
     </div>
@@ -3211,7 +3208,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4223,7 +4220,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

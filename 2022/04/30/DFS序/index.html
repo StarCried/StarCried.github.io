@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2814,9 +2814,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-</div>
-<p>当然，dfs序也可以变无向图为线性结构，就是把图变成一个生成树。</p>
-<p>tarjan就是基于这个算法达到的。</p>
+<p>&lt;/div&gt;</p>
+<p><p>当然，dfs序也可以变无向图为线性结构，就是把图变成一个生成树。</p></p>
+<p><p>tarjan就是基于这个算法达到的。</p></p>
 <div class="cnblogs_code">
 <pre>#include&lt;iostream&gt;<span style="color: #000000;">
 #include</span>&lt;cstdio&gt;<span style="color: #000000;">
@@ -2829,10 +2829,37 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     gh(</span><span style="color: #0000ff;">int</span> _v,<span style="color: #0000ff;">int</span><span style="color: #000000;"> _w):v(_v),w(_w){}
 };
 
-<p>vector</span>&lt;gh&gt; g[<span style="color: #800080;">100</span><span style="color: #000000;">];<br></span><span style="color: #0000ff;">int</span> k,d[<span style="color: #800080;">1000</span><span style="color: #000000;">],n;</p>
-<p></span><span style="color: #0000ff;">int</span> sech(<span style="color: #0000ff;">int</span><span style="color: #000000;">);</p>
-<p></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    freopen(</span><span style="color: #800000;">“</span><span style="color: #800000;">dfs.in</span><span style="color: #800000;">“</span>,<span style="color: #800000;">“</span><span style="color: #800000;">r</span><span style="color: #800000;">“</span><span style="color: #000000;">,stdin);<br>    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> x,y,z;<br>    cin </span>&gt;&gt;<span style="color: #000000;"> n;<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++<span style="color: #000000;">)<br>    {<br>        scanf(</span><span style="color: #800000;">“</span><span style="color: #800000;">%d%d%d</span><span style="color: #800000;">“</span>,&amp;x,&amp;y,&amp;<span style="color: #000000;">z);<br>        g[x].push_back(y);<br>        g[y].push_back(x);<br>    }<br>    sech(</span><span style="color: #800080;">1</span><span style="color: #000000;">);<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n+<span style="color: #800080;">1</span>;i++<span style="color: #000000;">)<br>    cout</span>&lt;&lt;<span style="color: #000000;">d[i];<br>}</p>
-<p></span><span style="color: #0000ff;">int</span> sech(<span style="color: #0000ff;">int</span><span style="color: #000000;"> u)<br>{<br>    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> v;<br>    d[u]</span>&#x3D;++<span style="color: #000000;">k;<br>    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j&#x3D;<span style="color: #800080;">0</span>;j&lt;g[u].size();j++<span style="color: #000000;">)<br>    {<br>        v</span>&#x3D;<span style="color: #000000;">g[u][j];<br>        </span><span style="color: #0000ff;">if</span>(d[v]&#x3D;&#x3D;<span style="color: #800080;">0</span><span style="color: #000000;">) sech(v);<br>    }<br>}<br /></span></pre></p>
+vector</span>&lt;gh&gt; g[<span style="color: #800080;">100</span><span style="color: #000000;">];
+</span><span style="color: #0000ff;">int</span> k,d[<span style="color: #800080;">1000</span><span style="color: #000000;">],n;
+
+</span><span style="color: #0000ff;">int</span> sech(<span style="color: #0000ff;">int</span><span style="color: #000000;">);
+
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+{
+    freopen(</span><span style="color: #800000;">"</span><span style="color: #800000;">dfs.in</span><span style="color: #800000;">"</span>,<span style="color: #800000;">"</span><span style="color: #800000;">r</span><span style="color: #800000;">"</span><span style="color: #000000;">,stdin);
+    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> x,y,z;
+    cin </span>&gt;&gt;<span style="color: #000000;"> n;
+    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
+    {
+        scanf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d%d%d</span><span style="color: #800000;">"</span>,&amp;x,&amp;y,&amp;<span style="color: #000000;">z);
+        g[x].push_back(y);
+        g[y].push_back(x);
+    }
+    sech(</span><span style="color: #800080;">1</span><span style="color: #000000;">);
+    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n+<span style="color: #800080;">1</span>;i++<span style="color: #000000;">)
+    cout</span>&lt;&lt;<span style="color: #000000;">d[i];
+}
+
+</span><span style="color: #0000ff;">int</span> sech(<span style="color: #0000ff;">int</span><span style="color: #000000;"> u)
+{
+    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> v;
+    d[u]</span>=++<span style="color: #000000;">k;
+    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">0</span>;j&lt;g[u].size();j++<span style="color: #000000;">)
+    {
+        v</span>=<span style="color: #000000;">g[u][j];
+        </span><span style="color: #0000ff;">if</span>(d[v]==<span style="color: #800080;">0</span><span style="color: #000000;">) sech(v);
+    }
+}<br /></span></pre>
 </div>
   </div>
   
@@ -2930,17 +2957,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF833B-线段树优化DP</p>
-          <p class='content'>CF833B-线段树优化DP题意将一个长为$n$的序列分成$k$段，每段贡献为其中不同数字的个数，求最大贡献和。
-思路此处感谢@gxy001 聚铑的精彩讲解
-先考虑暴力DP，可以想到一个时空复杂...</p>
+        <a class='prev' href='/2022/04/30/Guass%E6%B6%88%E5%85%83%E6%80%BB%E7%BB%93/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Guass消元总结</p>
+          <p class='content'>Guass消元约旦·高斯消元法 求线性方程组我们用一个$n*(n+1)$的矩阵存储线性方程组各项系数和零次项系数。
+
+每一次找到一个未知数系数最大的方程，交换当前行方程和该方程，并将其他行该未知...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/GCD%20SUM/'>
-          <p class='title'>GCD SUM<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>GCD SUM求$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n\gcd(i,j)$$将原式变换得到$$\sum_{d&#x3D;1}^nd\sum_{i&#x3D;1}...</p>
+        <a class='next' href='/2022/04/30/LCT(Link-Cut-Tree)/'>
+          <p class='title'>LCT(Link-Cut-Tree)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>LCT(Link-Cut-Tree)LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
+
+查询、修改链上的信息
+
+随意指定原树的根（即换根）
+
+动态连边、删边
+
+合并两棵树、分...</p>
         </a>
       
     </div>
@@ -3193,7 +3228,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4205,7 +4240,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

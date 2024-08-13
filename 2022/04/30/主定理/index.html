@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2806,38 +2806,57 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>为了计算时间复杂度，我们通常会估计算法的操作单元数量，每个单元执行的时间都是相同的。因此，总运行时间和算法的操作单元数量最多相差一个常量系数。</p>
 <p>相同大小的不同输入值仍可能造成算法的执行时间不同，因此我们通常使用算法的最坏情况复杂度（时间复杂度上界），记为 $T(n)$ ，定义为任何大小的输入 $n$ 所需的最大执行时间。另一种较少使用的方法是平均情况复杂度，通常有特别指定才会使用（如用于随机算法）。</p>
 <p>对 Bachmann–Landau 符号描述如下：</p>
-<p>$f(n)&#x3D;O(g(n))$ 表示 $g$ 是 $f$ 的上界；</p>
-<p>$f(n)&#x3D;\Omega(g(n))$ 表示 $g$ 是 $f$ 的下界；</p>
-<p>$f(n)&#x3D;\Theta(g(n))$ 表示 $g$ 是 $f$ 的上界和下界。</p>
+<p>$f(n)=O(g(n))$ 表示 $g$ 是 $f$ 的上界；</p>
+<p>$f(n)=\Omega(g(n))$ 表示 $g$ 是 $f$ 的下界；</p>
+<p>$f(n)=\Theta(g(n))$ 表示 $g$ 是 $f$ 的上界和下界。</p>
 <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>在算法中，假设有递归关系式：</p>
-<p>$$<br>    T(n)&#x3D;aT\left(\frac nb\right)+f(n),\ a\geq 1,b&gt;1<br>$$</p>
-<p>其中，$n$ 为问题规模，$a$ 为子问题数量，$\frac nb$ 为每个子问题的规模（假设每个子问题规模基本一致），$f(n)$ 为递归以外的计算。</p>
+<script type="math/tex; mode=display">
+    T(n)=aT\left(\frac nb\right)+f(n),\ a\geq 1,b>1</script><p>其中，$n$ 为问题规模，$a$ 为子问题数量，$\frac nb$ 为每个子问题的规模（假设每个子问题规模基本一致），$f(n)$ 为递归以外的计算。</p>
 <ul>
-<li><p>情况1： 若 $\exists \epsilon &gt;0$ ，有 $f(n)&#x3D;O(n^{\log_ba-\epsilon})$ ，则 $T(n)&#x3D;\Theta(n^{\log_ba})$</p>
+<li><p>情况1： 若 $\exists \epsilon &gt;0$ ，有 $f(n)=O(n^{\log_ba-\epsilon})$ ，则 $T(n)=\Theta(n^{\log_ba})$</p>
 </li>
-<li><p>情况2： 若 $\exists \epsilon \geq0 $，有 $f(n)&#x3D;\Theta(n^{\log_ba}\log^\epsilon n)$ ，则 $T(n)&#x3D;\Theta(n^{\log_ba}\log^{\epsilon+1}n)$</p>
+<li><p>情况2： 若 $\exists \epsilon \geq0 $，有 $f(n)=\Theta(n^{\log_ba}\log^\epsilon n)$ ，则 $T(n)=\Theta(n^{\log_ba}\log^{\epsilon+1}n)$</p>
 </li>
-<li><p>情况3： 若 $\exists \epsilon &gt;0,c&lt;1$ ，有 $f(n)&#x3D;\Omega(n^{\log_ba+\epsilon}),af\left(\frac nb\right)\leq cf(n)$ ，则 $T(n)&#x3D;\Theta(f(n))$</p>
+<li><p>情况3： 若 $\exists \epsilon &gt;0,c&lt;1$ ，有 $f(n)=\Omega(n^{\log_ba+\epsilon}),af\left(\frac nb\right)\leq cf(n)$ ，则 $T(n)=\Theta(f(n))$</p>
 </li>
 </ul>
 <h1 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h1><p>设总复杂度为 $T(n)$，有</p>
-<p>$$ T(n)&#x3D;\sum_{i&#x3D;0}^{\log_bn}a^i f\left(\frac n{b^i}\right) $$</p>
-<p>将上述三种情况分别代入得 $T(n)$ 得</p>
+<script type="math/tex; mode=display">T(n)=\sum_{i=0}^{\log_bn}a^i f\left(\frac n{b^i}\right)</script><p>将上述三种情况分别代入得 $T(n)$ 得</p>
 <ul>
 <li>情况1：</li>
 </ul>
-<p>$$<br>    \begin{aligned}<br>    T(n)&amp;&#x3D;O(\sum_{i&#x3D;0}^{\log_bn}a^i\left(\frac n{b^i}\right)^{\log_ba-\epsilon})\<br>    &amp;&#x3D;O(n^{\log_ba-\epsilon}\sum_{i&#x3D;0}^{\log_bn}\left(\frac a{b^{\log_ba&#x3D;\epsilon}}\right)^i)\<br>    &amp;&#x3D;O(n^{\log_ba-\epsilon}\sum_{i&#x3D;0}^{\log_bn}b^{\epsilon j})\<br>    &amp;&#x3D;O(n^{\log_ba-\epsilon}\left(\frac{n^\epsilon-1}{b^\epsilon-1}\right))\<br>    &amp;&#x3D;O(n^{\log_ba})<br>    \end{aligned}<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+    \begin{aligned}
+    T(n)&=O(\sum_{i=0}^{\log_bn}a^i\left(\frac n{b^i}\right)^{\log_ba-\epsilon})\\
+    &=O(n^{\log_ba-\epsilon}\sum_{i=0}^{\log_bn}\left(\frac a{b^{\log_ba=\epsilon}}\right)^i)\\
+    &=O(n^{\log_ba-\epsilon}\sum_{i=0}^{\log_bn}b^{\epsilon j})\\
+    &=O(n^{\log_ba-\epsilon}\left(\frac{n^\epsilon-1}{b^\epsilon-1}\right))\\
+    &=O(n^{\log_ba})
+    \end{aligned}</script><ul>
 <li>情况2：</li>
 </ul>
-<p>$$<br>\begin{aligned}<br>T(n) &amp; &#x3D;\Theta\left(\sum_{i&#x3D;0}^{\log_b n} a^i\left(\frac{n}{b^i}\right)^{\log <em>b a} \log ^k\left(\frac{n}{b^i}\right)\right) \<br>&amp; &#x3D;\Theta\left(\sum</em>{i&#x3D;0}^{\log_b n} a^i\left(\frac{n^{\log _b a}}{b^{i^{\log _b a}}}\right)\left(\log n-\log b^i\right)^k\right) \<br>&amp; &#x3D;\Theta\left(n^{\log <em>b a} \sum</em>{i&#x3D;0}^{\log_b n}\left(\frac{a}{b^{\log _b a}}\right)^i\left(\log ^k n-\log ^k b^i\right)\right) \<br>&amp; &#x3D;\Theta\left(n^{\log <em>b a} \sum</em>{i&#x3D;0}^{\log_b n} \log ^k n-\log ^k b^i\right) \<br>&amp; &#x3D;\Theta\left(n^{\log _b a}\left(\log <em>b n \cdot \log ^k n-\sum</em>{i&#x3D;0}^{\log_b n} \log ^k b^i\right)\right) \<br>&amp; &#x3D;\Theta\left(\log _b n \cdot \log ^k n \cdot n^{\log _b a}-n^{\log <em>b a} \sum</em>{i&#x3D;0}^{\log_b n} \log ^k b^i\right)\<br>&amp; &#x3D;\Theta\left(n^{\log _b a}\log ^{k+1} n\right)<br>\end{aligned}\<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+\begin{aligned}
+T(n) & =\Theta\left(\sum_{i=0}^{\log_b n} a^i\left(\frac{n}{b^i}\right)^{\log _b a} \log ^k\left(\frac{n}{b^i}\right)\right) \\
+& =\Theta\left(\sum_{i=0}^{\log_b n} a^i\left(\frac{n^{\log _b a}}{b^{i^{\log _b a}}}\right)\left(\log n-\log b^i\right)^k\right) \\
+& =\Theta\left(n^{\log _b a} \sum_{i=0}^{\log_b n}\left(\frac{a}{b^{\log _b a}}\right)^i\left(\log ^k n-\log ^k b^i\right)\right) \\
+& =\Theta\left(n^{\log _b a} \sum_{i=0}^{\log_b n} \log ^k n-\log ^k b^i\right) \\
+& =\Theta\left(n^{\log _b a}\left(\log _b n \cdot \log ^k n-\sum_{i=0}^{\log_b n} \log ^k b^i\right)\right) \\
+& =\Theta\left(\log _b n \cdot \log ^k n \cdot n^{\log _b a}-n^{\log _b a} \sum_{i=0}^{\log_b n} \log ^k b^i\right)\\
+& =\Theta\left(n^{\log _b a}\log ^{k+1} n\right)
+\end{aligned}\\</script><ul>
 <li>情况3：</li>
 </ul>
-<p>$$<br>\begin{aligned}<br>    &amp;af(\frac nb)\leq cf(n)\<br>    &amp;\Rightarrow a^if(\frac nb)\leq c^if(n)\<br>    &amp;\Rightarrow T(n)\leq \sum_{i&#x3D;0}^{\log_b n}c^if(n)\<br>    &amp;\Rightarrow T(n)\leq f(n)\sum_{i&#x3D;0}^\infty c^i\<br>    &amp;\Rightarrow T(n)\leq \left(\frac 1{1-c}\right)f(n)\<br>    &amp;\Rightarrow T(n)&#x3D;O(f(n))<br>\end{aligned}<br>$$</p>
-<p>又由于 $f(n)&#x3D;\Omega(n^{\log_ba+\epsilon})$，$T(n)&#x3D;\Omega(f(n))$，因此</p>
-<p>$$T(n)&#x3D;\Theta(f(n))$$</p>
-<p>综上，定理得证。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    &af(\frac nb)\leq cf(n)\\
+    &\Rightarrow a^if(\frac nb)\leq c^if(n)\\
+    &\Rightarrow T(n)\leq \sum_{i=0}^{\log_b n}c^if(n)\\
+    &\Rightarrow T(n)\leq f(n)\sum_{i=0}^\infty c^i\\
+    &\Rightarrow T(n)\leq \left(\frac 1{1-c}\right)f(n)\\
+    &\Rightarrow T(n)=O(f(n))
+\end{aligned}</script><p>又由于 $f(n)=\Omega(n^{\log_ba+\epsilon})$，$T(n)=\Omega(f(n))$，因此</p>
+<script type="math/tex; mode=display">T(n)=\Theta(f(n))</script><p>综上，定理得证。</p>
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><p>一般的递归算法都可以用主定理分析时间复杂度。如大多数分治算法等。下面给出一个具体的问题作为实例。</p>
 <p><strong>最小圆覆盖问题</strong> ：给定平面上的 $n$ 个点，求出一个最小的一圆包围所有的点。</p>
 <p>对于一个答案，一定有至少两个点在圆上。若不然，则圆可以继续缩小。因此我们只需要找到两个点（作为直径）或三个点即可确定一个最小圆覆盖。</p>
@@ -2850,9 +2869,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ol>
 <p>可以证明，这样一定能获得一个最小圆覆盖。</p>
 <p>设三个循环的复杂度分别为 $T_1(n),T_2(n),T_3(n)$。现在考虑第一层循环，即加入一个点的循环。由于最多只有三个点在最小覆盖圆上，且我们的点是随机加入的，理论上每个点其之前点确定的最小覆盖圆上的概率是相同的，因此点 $p_i$ 在加入时在当前圆外并调用下层循环的概率是 $\frac 3i$。第二层调用类似。因此计算时间复杂度为</p>
-<p>$$<br>    \begin{aligned}<br>        &amp;T_1(n)&#x3D;\sum_{i&#x3D;1}^n\frac 3iT_2(i)+O(n)\<br>        &amp;T_2(n)&#x3D;\sum_{i&#x3D;1}^n\frac 3iT_3(i)+O(n)\<br>        &amp;T_3(n)&#x3D;O(n)<br>    \end{aligned}<br>$$</p>
-<p>其中两点及三点确定一个圆可由公式推出，计算量固定可视为常数。</p>
-<p>这里每一层对上一层实际上是有 $n$ 个规模为 $1$ 的子问题。由主定理得，最终算法的时间复杂度为 $T_1(n)&#x3D;O(n)$。</p>
+<script type="math/tex; mode=display">
+    \begin{aligned}
+        &T_1(n)=\sum_{i=1}^n\frac 3iT_2(i)+O(n)\\
+        &T_2(n)=\sum_{i=1}^n\frac 3iT_3(i)+O(n)\\
+        &T_3(n)=O(n)
+    \end{aligned}</script><p>其中两点及三点确定一个圆可由公式推出，计算量固定可视为常数。</p>
+<p>这里每一层对上一层实际上是有 $n$ 个规模为 $1$ 的子问题。由主定理得，最终算法的时间复杂度为 $T_1(n)=O(n)$。</p>
 <hr>
 <p>PS:tex 写多了感觉不会写 markdown 了……</p>
 
@@ -2952,16 +2975,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>二项式反演</p>
-          <p class='content'>二项式反演$$g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_{i&#x3D;0}^n(-1...</p>
+        <a class='prev' href='/2022/04/30/unique/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>unique</p>
+          <p class='content'>unique
+unique一般先用sort将要处理的序列排序，因为unique只会&ldquo;删除&rdquo;相邻的重复元素。
+我们定义一个数列a[]={1,3,3,4,5,6,6,7}(a...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/'>
-          <p class='title'>分数规划<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>问题描述有 $n$ 个物品，每种物品两个权值 $a_i$，$b_i$，求一组 $w_i\in{0,1}$，使得
-$$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\...</p>
+        <a class='next' href='/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/'>
+          <p class='title'>二项式反演<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>二项式反演
+g_n=\sum_{i=0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n=\sum_{i=0}^n(-1)^i\binom ni g_i\\
+g_...</p>
         </a>
       
     </div>
@@ -3224,7 +3250,7 @@ $$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\...</p>
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4236,7 +4262,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 

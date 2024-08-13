@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723516355413),
+    lastupdate: new Date(1723520380826),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2809,7 +2809,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               <ul><li>124 默认封面背景</li><li>274 打赏组件</li><li>589 qrcode</li><li>807 视差壁纸</li><li>1237 cursor settings</li><li>Live2D</li></ul>
               </div>
             </details>
-
 <h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><p>博客可以像搭建访问量较大的网站一样实现。一般来说，搭建网站需要购买服务器、域名、备案、购买云服务器等一系列繁琐的流程，如果要制作静态网页还需要自己手搓或者利用 WordPress 等 CMS 系统。而用 GitHub Pages 和 Hexo 搭建博客，可以快速搭建个人博客，而且不需要购买服务器、域名、备案等繁琐的流程。</p>
 <p>Github Pages 是 Github 提供的静态页面托管服务，可以直接将静态网页托管到 Github Pages 仓库中，然后通过域名访问。相较于其他静态页面托管服务，Github Pages 免费、稳定、安全，但是在国内访问和加载资源较慢，适合个人博客。</p>
 <p>理论上说，你完全可以自己手搓 HTML 页面和脚本完成博客。但对于像我这样的新手或者重点在成果而非过程的人来说，使用现成的框架和工具可以节省大量时间。Hexo 是一个基于 Node.js 的静态博客框架，它可以快速生成静态网页，并且可以用 Git 部署到 GitHub Pages。</p>
@@ -2817,17 +2816,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="安装配置-Git"><a href="#安装配置-Git" class="headerlink" title="安装配置 Git"></a>安装配置 Git</h3><p>从 <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git 官网</a> 下载安装。</p>
 <p>因为 Git 是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识。在命令行输入如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;user_name&quot;</span>   <span class="comment"># user_name填入GitHub用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;user_email&quot;</span> <span class="comment"># user_email填入GitHub注册的邮箱</span></span><br></pre></td></tr></table></figure>
-
 <p>查看已设置的用户名和邮箱，在命令行输入如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-
 <p>配置 SSH key:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;user.email&quot;</span> <span class="comment"># user.email为GitHub上注册的邮箱</span></span><br></pre></td></tr></table></figure>
-
 <p>三个默认设置就可以，不需要密码。在 C 盘 <code>/Users/your_user_name/.ssh</code> 目录下找到 <code>id_rsa.pub</code> 公钥文件，复制里面的内容，在 <a target="_blank" rel="noopener" href="https://github.com/settings/keys">GitHub_Settings_keys</a> 上新建添加 SSH key。</p>
 <p>输入以下命令检测是否配置成功：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
 <p>如果出现 <code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 字样，则配置成功。</p>
 <blockquote>
 <p>如果返回 <code>Connection closed by 20.205.243.166 port 22</code>，有可能是代理的问题。请关闭你的代理清除缓存（重启）并重试。</p>
@@ -2836,17 +2831,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>我用 Package Manager 安装 Node.js 遇到了问题，可选择使用 Prebuilt Installer 安装。</p>
 <h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>在命令行中输入以下命令安装 Hexo：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
 <p>创建一个文件夹作为你的博客配置文件夹所在位置，并在其中打开命令行。输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
 <p>即可创建你的博客项目。其中 <code>blog</code> 是你的博客文件夹名。之后所有的操作都在 <code>blog</code> 文件夹中进行。</p>
 <h3 id="配置-Hexo"><a href="#配置-Hexo" class="headerlink" title="配置 Hexo"></a>配置 Hexo</h3><p>安装 hexo-deployer-git 插件，用于部署到 GitHub Pages。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
 <p>编辑<strong>根目录</strong>下的 <code>_config.yml</code> 文件，配置你的 <code>deploy</code> 部分站点信息。</p>
 <figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:StarCried/StarCried.github.io.git</span>  <span class="comment">#你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-
 <p>现在你已经搭建好了你的博客，可以进行本地预览和部署。</p>
 <blockquote>
 <p>如果你本地预览正常而部署后静态资源未加载（比如主题格式混乱），请检查你的 <code>_config.yml</code> 文件中的 <code>url</code> 和 <code>deploy</code> 部分是否正确。</p>
@@ -2854,7 +2845,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>除了 <code>deploy</code> 部分，你还需要配置其他部分，包括 <code>site</code> 等。</p>
 <h3 id="使用-Hexo"><a href="#使用-Hexo" class="headerlink" title="使用 Hexo"></a>使用 Hexo</h3><p>Hexo 有以下常用命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init     <span class="comment"># 创建一个新的 Hexo 站点</span></span><br><span class="line">hexo clean    <span class="comment"># 清除缓存文件</span></span><br><span class="line">hexo generate <span class="comment"># 生成静态文件</span></span><br><span class="line">hexo deploy   <span class="comment"># 部署到 GitHub Pages</span></span><br><span class="line">hexo server   <span class="comment"># 启动本地预览服务器</span></span><br><span class="line">hexo new &lt;layout&gt; &lt;title&gt;  <span class="comment"># 创建新文章</span></span><br></pre></td></tr></table></figure>
-
 <p>Hexo 的工作流程是，在项目中进行主题配置（<code>_config.yml</code> 文件），用 <code>hexo new</code> 命令创建新文章、在 <code>_posts</code> 文件夹中编写文章后，运行 <code>hexo generate</code> 命令生成静态文件（要部署到 Github Pages 的文件，在 <code>.deply_git</code> 文件夹中），然后运行 <code>hexo deploy</code> 命令部署到 GitHub Pages。</p>
 <h2 id="美化博客"><a href="#美化博客" class="headerlink" title="美化博客"></a>美化博客</h2><p>Hexo 官方提供了丰富的主题，你可以在 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">官方主题发布页</a> 中查看。注意，大多数主题是由社区提供的，其配置方式和插件支持等千差万别，请根据自己的需求选择适合的主题。我是用的是 <a target="_blank" rel="noopener" href="https://volantis.js.org/">volantis</a> 主题，阅读文档以自定义美化。</p>
 <h3 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h3><p>参考 <a target="_blank" rel="noopener" href="https://volantis.js.org/v6/getting-started/">官方文档</a> 安装主题。</p>
@@ -2871,7 +2861,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>待更新。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://mumaxu.github.io/2018/12/09/GitHub-Hexo-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">GitHub-Hexo-从零开始搭建个人博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190?ydreferer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8=">GitHub Pages + Hexo搭建个人博客网站，史上最全教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190?ydreferer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8%3D">GitHub Pages + Hexo搭建个人博客网站，史上最全教程</a></li>
 <li><a target="_blank" rel="noopener" href="https://volantis.js.org/">volantis 官方文档</a></li>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">hexo 官方文档</a></li>
 </ul>
@@ -3252,7 +3242,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
 </div>
         
       
@@ -4264,7 +4254,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 
