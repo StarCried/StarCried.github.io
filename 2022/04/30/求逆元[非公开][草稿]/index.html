@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723520380826),
+    lastupdate: new Date(1723521714335),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2832,26 +2832,24 @@ ll exgcd(ll a,ll b,ll </span>&amp;x,ll &amp;<span style="color: #000000;">y)
         </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> t;
     }
 }
-
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> inv(ll a,ll p)
+<p><span style="color: #0000ff;">int</span><span style="color: #000000;"> inv(ll a,ll p)
 {
-    ll d,x,y;
-    d</span>=<span style="color: #000000;">exgcd(a,p,x,y);
-    </span><span style="color: #0000ff;">return</span> d==<span style="color: #800080;">1</span>?(x+p)%p:-<span style="color: #800080;">1</span><span style="color: #000000;">;
-}
-
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+ll d,x,y;
+d</span>=<span style="color: #000000;">exgcd(a,p,x,y);
+</span><span style="color: #0000ff;">return</span> d==<span style="color: #800080;">1</span>?(x+p)%p:-<span style="color: #800080;">1</span><span style="color: #000000;">;
+}</span></p>
+<p><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
 {
-    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> a,b;
-    cin</span>&gt;&gt;a&gt;&gt;<span style="color: #000000;">b;
-    cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> a,b;
+cin</span>&gt;&gt;a&gt;&gt;<span style="color: #000000;">b;
+cout</span>&lt;&lt;<span style="color: #000000;">inv(a,b);
+</span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}</span></p></span></pre><p></p>
 </div>
 <p><strong>递推求1~n的逆元</strong></p>
 <p>网上有人比我讲的清楚得多。我们来看看这个推导（支持原创）</p>
-<p><img src="./img/2027395-20200511215214071-135956469.png" class="lazyload" data-srcset="./img/2027395-20200511215214071-135956469.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="470" height="272" /></p>
-<p><img src="./img/2027395-20200511220207436-1737515103.png" class="lazyload" data-srcset="./img/2027395-20200511220207436-1737515103.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="558" height="615" /></p>
+<p><img src="./img/2027395-20200511215214071-135956469.png" class="lazyload" data-srcset="./img/2027395-20200511215214071-135956469.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="470" height="272"></p>
+<p><img src="./img/2027395-20200511220207436-1737515103.png" class="lazyload" data-srcset="./img/2027395-20200511220207436-1737515103.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="558" height="615"></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>所以我们理解了之后我们直接使用即可。</p>
@@ -2980,19 +2978,18 @@ ll exgcd(ll a,ll b,ll </span>&amp;x,ll &amp;<span style="color: #000000;">y)
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>模拟退火</p>
-          <p class='content'>算法介绍模拟退火是一种最优化随机化算法。什么叫随机化算法？就是抽奖抽正解
-一般用于求解最优解，即最优化问题，而且一般比较适合于小数据的最优解和大数据的近似最优解。
-算法步骤每次迭代都随机选择一个...</p>
+        <a class='prev' href='/2022/04/30/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>石子合并</p>
+          <p class='content'>https://www.luogu.com.cn/problem/P1880
+一道区间dp题目。
+用d[i][j]表示从i到j的最大/最小得分，那么依次枚举长度len，坐标i和j，三层循环就可以...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%A0%91%E5%BD%A2%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/'>
-          <p class='title'>树形分治算法<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>点分治点分治是一种树形分治的算法，它选择当前连通块一个重心，将树分成多个连通块进行处理，然后对每个连通块进行分治递归。
-树的重心树上的一个点，满足它的儿子的 $size$ 的最大值最小。
-可以证...</p>
+        <a class='next' href='/2022/04/30/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'>树状数组[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>详解请跳转
+树状数组，是和线段树相提并论（并不）的一种数据存储形式。对于一个数组，我们要是只是进行一些简单的区间修改或查询的话，因为树状数组很好的运用了它的特性，常数要比线段树小很多。但是如果进...</p>
         </a>
       
     </div>
@@ -3245,15 +3242,13 @@ ll exgcd(ll a,ll b,ll </span>&amp;x,ll &amp;<span style="color: #000000;">y)
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
-</div>
+          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
-
+        [Copyright ©Star_Cried since 2024 XXX](/)
         </div>
       
     
@@ -4257,7 +4252,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
   let index = 0;
   let IntervalParallax = null;
 

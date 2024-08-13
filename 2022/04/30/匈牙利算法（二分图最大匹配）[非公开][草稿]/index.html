@@ -55,7 +55,7 @@
 <meta property="og:title" content="匈牙利算法（二分图最大匹配）[非公开][草稿]">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="无用的文字 又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了&hellip;&hellip; 二分图 二分图就是一个图被分成两个图一个图G，其中的点被分成A,B两组，且A&cup;B​&#x3D;G，A&cap;B&#x3D;&empty;。这两个点集A,B分别称为左部和右部，其中的点分别被称为左部点和右部点。 这个概念只是用来判断一道题的适用算法的。 匈牙利">
+<meta property="og:description" content="无用的文字 又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了…… 二分图 二分图就是一个图被分成两个图一个图G，其中的点被分成A,B两组，且A∪B​&#x3D;G，A∩B&#x3D;∅。这两个点集A,B分别称为左部和右部，其中的点分别被称为左部点和右部点。 这个概念只是用来判断一道题的适用算法的。 匈牙利算法 匈牙利算法是用来寻找最大匹配的一个算法。 prep">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723520380826),
+    lastupdate: new Date(1723521714335),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2802,28 +2802,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p><em>无用的文字</em></p>
-<p><em>又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了&hellip;&hellip;</em></p>
+<p><em>又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……</em></p>
 <p><strong>二分图</strong></p>
-<p>二分图就是<span style="text-decoration: line-through;">一个图被分成两个图</span>一个图G，其中的点被分成A,B两组，且A<span class="katex"><span class="katex-html"><span class="base"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mbin">&cup;B<span class="mspace"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s">​<span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mrel">=G，A<span class="mspace"><span class="base"><span class="strut"><span class="mord mathdefault"><span class="katex"><span class="katex-mathml"><span class="katex-html"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mbin">&cap;B<span class="mspace"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mrel">=<span class="mspace"><span class="base"><span class="strut"><span class="mord">&empty;。这两个点集A,B分别称为左部和右部，其中的点分别被称为左部点和右部点。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>二分图就是<span style="text-decoration: line-through;">一个图被分成两个图</span>一个图G，其中的点被分成A,B两组，且A<span class="katex"><span class="katex-html"><span class="base"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mbin">∪B<span class="mspace"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s">​<span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mrel">=G，A<span class="mspace"><span class="base"><span class="strut"><span class="mord mathdefault"><span class="katex"><span class="katex-mathml"><span class="katex-html"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mbin">∩B<span class="mspace"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mrel">=<span class="mspace"><span class="base"><span class="strut"><span class="mord">∅。这两个点集A,B分别称为左部和右部，其中的点分别被称为左部点和右部点。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
 <p><span class="katex"><span class="katex-html"><span class="base"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mbin"><span class="mspace"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mrel"><span class="mspace"><span class="base"><span class="strut"><span class="mord mathdefault"><span class="katex"><span class="katex-mathml"><span class="katex-html"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mbin"><span class="mspace"><span class="base"><span class="strut"><span class="mord"><span class="mord mathdefault"><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="pstrut"><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="vlist-s"><span class="vlist-r"><span class="vlist"><span class="mspace"><span class="mrel"><span class="mspace"><span class="base"><span class="strut"><span class="mord">这个概念只是用来判断一道题的适用算法的。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
 <p><strong>匈牙利算法</strong></p>
 <p>匈牙利算法是用来寻找最大匹配的一个算法。</p>
 <p><strong>prepare</strong></p>
 <ul>
 <li>
-<p align="left"><strong>交替路：</strong>从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边...形成的路径叫交替路。<strong><br /></strong></p>
-
-
-<p>&lt;/li&gt;</p>
+<p align="left"><strong>交替路：</strong>从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边...形成的路径叫交替路。<strong><br></strong></p>
+</li>
 <li><strong>增广路</strong>：从一个未匹配点出发，走交替路，如果途径另一个未匹配点（出发的点不算），则这条交替路称为增广路（agumenting path）。</li>
-
-
-<p>&lt;/ul&gt;</p>
+</ul>
 <p><span style="text-decoration: line-through;">我太懒了就想存个板子思路讲清就行了吧图解什么的看看<a href="https://www.cnblogs.com/shenben/p/5573788.html" target="_blank">别的大佬的</a>就行了</span></p>
 <p><span style="text-decoration: line-through;">因为挺简单的XD</span></p>
 <p>可以通过DFS或BFS实现。<span style="text-decoration: line-through;">当然我只会DFS</span></p>
 <p>问题类型分为最大匹配和最优匹配。</p>
-<div class="cnblogs_code" onclick="cnblogs_code_show('acc544dd-90f2-42b1-89e8-8200d6c8f056')"><img src="./img/ContractedBlock.gif" class="lazyload" data-srcset="./img/ContractedBlock.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="code_img_closed_acc544dd-90f2-42b1-89e8-8200d6c8f056" class="code_img_closed lazyload" /><img src="./img/ExpandedBlockStart.gif" class="lazyload" data-srcset="./img/ExpandedBlockStart.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="code_img_opened_acc544dd-90f2-42b1-89e8-8200d6c8f056" class="code_img_opened lazyload" style="display: none;" />
+<div class="cnblogs_code" onclick="cnblogs_code_show('acc544dd-90f2-42b1-89e8-8200d6c8f056')"><img src="./img/ContractedBlock.gif" class="lazyload" data-srcset="./img/ContractedBlock.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="code_img_closed_acc544dd-90f2-42b1-89e8-8200d6c8f056" class="code_img_closed lazyload"><img src="./img/ExpandedBlockStart.gif" class="lazyload" data-srcset="./img/ExpandedBlockStart.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id="code_img_opened_acc544dd-90f2-42b1-89e8-8200d6c8f056" class="code_img_opened lazyload" style="display: none;">
 <div id="cnblogs_code_open_acc544dd-90f2-42b1-89e8-8200d6c8f056" class="cnblogs_code_hide">
 <pre><span style="color: #008000;">//</span><span style="color: #008000;">匈牙利算法代码实现；
 </span><span style="color: #008000;">//</span><span style="color: #008000;">二分图最大匹配；
@@ -2985,25 +2981,30 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E5%8A%A8%E6%80%81%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%93%E7%BB%83/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>动态逆序对专练</p>
-          <p class='content'>就是三倍经验
-题意维护一个序列，每次修改后求出当前序列逆序对个数。
-思路题目让我们求出
+        <a class='prev' href='/2022/04/30/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>分数规划</p>
+          <p class='content'>问题描述
+有  个物品，每种物品两个权值 ，，求一组 ，使得
 
-\sum_{i=1}^n\sum_{j=i+1}^n[a_i>a_j]也就是让我们求出满足
+最大（或最小）。
+有可能包含其他限制。
+二分法
+显然答案是单调的。对一个答案 ，有
 
-pos_i...</p>
+因此可以对该权值  进行贪心对答案进行检查。...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/'>
-          <p class='title'>基数排序<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>算法描述基数排序（又叫做桶排序）是一种非比较排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行排序。
-基数排序的步骤如下：
-
-找出最大数，确定位数。
-确定每个位数的范围，并统...</p>
+        <a class='next' href='/2022/04/30/%E5%8E%9F%E6%A0%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'>原根[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>定义
+设m是正整数，a是整数，若a模m的阶等于φ(m)，则称a为模m的一个原根。
+阶是什么呢？阶就是使
+注意，一个正整数有原根的充要条件是
+欧拉定理
+若正整数n,a互素，则
+aφn=
+例如要求1...</p>
         </a>
       
     </div>
@@ -3256,15 +3257,13 @@ pos_i...</p>
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
-</div>
+          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
-
+        [Copyright ©Star_Cried since 2024 XXX](/)
         </div>
       
     
@@ -4268,7 +4267,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
   let index = 0;
   let IntervalParallax = null;
 

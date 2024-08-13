@@ -55,7 +55,7 @@
 <meta property="og:title" content="bzoj2118">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/bzoj2118/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="2118: 墨墨的等式Time Limit: 10 Sec&nbsp;&nbsp;Memory Limit: 259 MBSubmit: 2390&nbsp;&nbsp;Solved: 937[Submit][Status][Discuss]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;center&gt; Description  墨墨突然对等式很感兴">
+<meta property="og:description" content="2118: 墨墨的等式 Time Limit: 10 Sec&nbsp;&nbsp;Memory Limit: 259 MBSubmit: 2390&nbsp;&nbsp;Solved: 937[Submit][Status][Discuss] Description  墨墨突然对等式很感兴趣，他正在研究a1x1+a2x2+…+anxn&#x3D;B存在非负整数解的条件，他要求你编写一个程序，给定N、{a">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723520380826),
+    lastupdate: new Date(1723521714335),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,42 +2801,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><center></p>
-<p><h2>2118: 墨墨的等式</h2><br><span class="green">Time Limit: 10 Sec&nbsp;&nbsp;<span class="green">Memory Limit: 259 MB<br /><span class="green">Submit: 2390&nbsp;&nbsp;<span class="green">Solved: 937<br />[<a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/submitpage.php?id=2118">Submit</a>][<a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/problemstatus.php?id=2118">Status</a>][<a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/bbs.php?id=2118">Discuss</a>]</span>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/center&gt;</p>
-<p><h2>Description</h2></p>
-<p><div class="content"></p>
-<p>墨墨突然对等式很感兴趣，他正在研究a1x1+a2x2+&hellip;+anxn=B存在非负整数解的条件，他要求你编写一个程序，给定N、{an}、以及B的取值范围，求出有多少B可以使等式存在非负整数解。</p>
-
-
-
-
-<p>&lt;/div&gt;</p>
-<p><h2>Input</h2></p>
-<p><div class="content"></p>
+    <center>
+<h2 id="2118-墨墨的等式"><a href="#2118-墨墨的等式" class="headerlink" title="2118: 墨墨的等式"></a>2118: 墨墨的等式</h2>
+<span class="green">Time Limit: 10 Sec&nbsp;&nbsp;<span class="green">Memory Limit: 259 MB<br><span class="green">Submit: 2390&nbsp;&nbsp;<span class="green">Solved: 937<br>[<a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/submitpage.php?id=2118">Submit</a>][<a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/problemstatus.php?id=2118">Status</a>][<a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/bbs.php?id=2118">Discuss</a>]</span></span></span></span></center>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2>
+<div class="content">
+<p>墨墨突然对等式很感兴趣，他正在研究a1x1+a2x2+…+anxn=B存在非负整数解的条件，他要求你编写一个程序，给定N、{an}、以及B的取值范围，求出有多少B可以使等式存在非负整数解。</p>
+</div>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2>
+<div class="content">
 <p>输入的第一行包含3个正整数，分别表示N、BMin、BMax分别表示数列的长度、B的下界、B的上界。输入的第二行包含N个整数，即数列{an}的值。</p>
-
-
-
-
-<p>&lt;/div&gt;</p>
-<p><h2>Output</h2></p>
-<p><div class="content"></p>
+</div>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2>
+<div class="content">
 <p>输出一个整数，表示有多少b可以使等式存在非负整数解。</p>
-
-
-
-
-<p>&lt;/div&gt;</p>
-<p><h2>Sample Input</h2></p>
-<p><div class="content"><span class="sampledata">2 5 10<br />
-3 5<br />
-</span></div></p>
-<p><h2>Sample Output</h2></p>
+</div>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2>
+<div class="content"><span class="sampledata">2 5 10<br>
+3 5<br>
+</span></div>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2>
 <p>
-
-<span class="sampledata">5</span></p>
-<h2>HINT</h2>
-<p>对于100%的数据，N&le;12，0&le;ai&le;5*10^5，1&le;BMin&le;BMax&le;10^12。</p>
+</p><p><span class="sampledata">5</span></p><p></p>
+<h2 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h2>
+<p>对于100%的数据，N≤12，0≤ai≤5*10^5，1≤BMin≤BMax≤10^12。</p>
 <p><strong><span class="sampledata">分析</span></strong></p>
 <p><span class="sampledata">我们发现这已经不是简单的数论题了！（我开始并没有发现）对于这种无限取的背包问题，可以转化为取mod最短路的问题。具体怎么想呢？</span></p>
 <p><span class="sampledata">首先我们将a排序（因为这道题n比较小其实可以不用但是这样更优秀）考虑对于a1，对于所有能够取到的数x，都有x+a1*k（k任意）一定会被取到。所以我们就可以把所有能够取到的数%a1，发现结果属于0~a1-1中的一个，那么我们就把每一个0~a1看做一个集合包括所有能够取到的数%a1=该值。</span></p>
@@ -3036,8 +3024,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[省选联考 2020 A B 卷] 冰火战士</p>
           <p class='content'>对树状数组的理解加深了！
-转化题意动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
-思路首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温...</p>
+转化题意
+动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
+思路
+首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们...</p>
         </a>
       
       
@@ -3168,7 +3158,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">2118: 墨墨的等式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">HINT</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2118-%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F"><span class="toc-text">2118: 墨墨的等式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HINT"><span class="toc-text">HINT</span></a></li></ol>
     </div>
   </section>
 
@@ -3308,15 +3298,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
-</div>
+          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
-
+        [Copyright ©Star_Cried since 2024 XXX](/)
         </div>
       
     
@@ -4320,7 +4308,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
   let index = 0;
   let IntervalParallax = null;
 

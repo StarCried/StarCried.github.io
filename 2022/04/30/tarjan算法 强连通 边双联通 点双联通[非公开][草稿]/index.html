@@ -55,7 +55,7 @@
 <meta property="og:title" content="tarjan算法 强连通 边双联通 点双联通[非公开][草稿]">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/tarjan%E7%AE%97%E6%B3%95%20%E5%BC%BA%E8%BF%9E%E9%80%9A%20%E8%BE%B9%E5%8F%8C%E8%81%94%E9%80%9A%20%E7%82%B9%E5%8F%8C%E8%81%94%E9%80%9A[%E9%9D%9E%E5%85%AC%E5%BC%80][%E8%8D%89%E7%A8%BF]/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="概念在无向图中：  边双联通：删去图中任何一条边图仍联通  点双联通：删去图中任何一个点图仍联通（不具有传递性）    此图为边双连通图但非点双联通图。  割点：如果删去一个点将会把图分成两个或两个以上的图，那么这个点就是割点。如上图 B 点。  桥：如果删去一个边将会把图分成两个图，那么这个边就是桥。  点双连通分量：不存在割点的极大连通分量。  边双连通分量：不存在桥的极大连通分量。   Ta">
+<meta property="og:description" content="概念 在无向图中：   边双联通：删去图中任何一条边图仍联通   点双联通：删去图中任何一个点图仍联通（不具有传递性）    此图为边双连通图但非点双联通图。   割点：如果删去一个点将会把图分成两个或两个以上的图，那么这个点就是割点。如上图 B 点。   桥：如果删去一个边将会把图分成两个图，那么这个边就是桥。   点双连通分量：不存在割点的极大连通分量。   边双连通分量：不存在桥的极大连通分">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723520380826),
+    lastupdate: new Date(1723521714335),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,23 +2801,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>在无向图中：</p>
+    <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1>
+<p>在无向图中：</p>
 <ul>
-<li><p>边双联通：删去图中任何一条边图仍联通</p>
+<li>
+<p>边双联通：删去图中任何一条边图仍联通</p>
 </li>
-<li><p>点双联通：删去图中任何一个点图仍联通（不具有传递性）</p>
+<li>
+<p>点双联通：删去图中任何一个点图仍联通（不具有传递性）</p>
 </li>
 </ul>
 <p><img src="./img/bcc-0.svg" class="lazyload" data-srcset="./img/bcc-0.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <p>此图为边双连通图但非点双联通图。</p>
 <ul>
-<li><p>割点：如果删去一个点将会把图分成两个或两个以上的图，那么这个点就是割点。如上图 B 点。</p>
+<li>
+<p>割点：如果删去一个点将会把图分成两个或两个以上的图，那么这个点就是割点。如上图 B 点。</p>
 </li>
-<li><p>桥：如果删去一个边将会把图分成两个图，那么这个边就是桥。</p>
+<li>
+<p>桥：如果删去一个边将会把图分成两个图，那么这个边就是桥。</p>
 </li>
-<li><p>点双连通分量：不存在割点的极大连通分量。</p>
+<li>
+<p>点双连通分量：不存在割点的极大连通分量。</p>
 </li>
-<li><p>边双连通分量：不存在桥的极大连通分量。</p>
+<li>
+<p>边双连通分量：不存在桥的极大连通分量。</p>
 </li>
 </ul>
 <p>Tarjan</p>
@@ -2826,11 +2833,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>割点</p>
 <p>桥</p>
 <p>原理</p>
-<p>时间戳 dfn就是搜索到这个点的次序，可以理解为编号，可以用来判定祖先和是否被访问。<br>搜索树 就是路径啦~<br>追溯值 low用于记录从当前节点 x 作为搜索树的根节点出发，能够访问到的所有节点中，时间戳最小的值。<br>归属 belong，就是tarjan访问完形成强联通分量之后把每个属于该强联通分量的点标记属于该强联通分量。每多一个强联通分量_n++,belong[i]=_n。<br>大小 siz 就是该强联通分量的大小。<br>等等，按需任取<br>求割点</p>
+<p>时间戳 dfn就是搜索到这个点的次序，可以理解为编号，可以用来判定祖先和是否被访问。
+搜索树 就是路径啦~
+追溯值 low用于记录从当前节点 x 作为搜索树的根节点出发，能够访问到的所有节点中，时间戳最小的值。
+归属 belong，就是tarjan访问完形成强联通分量之后把每个属于该强联通分量的点标记属于该强联通分量。每多一个强联通分量_n++,belong[i]=_n。
+大小 siz 就是该强联通分量的大小。
+等等，按需任取
+求割点</p>
 <p>我们寻思，如果一个点是割点，它有什么性质？对了，我们很容易就想到它的low肯定是大于等于dfn的。为什么呢？如果这个点x用tarjanDFS到了一个点是他的祖先，即使把这个点删掉也不会影响路重新回到它本身，说明它不符合割点的定义。</p>
 <p>于是我们可以得到程序（讲解在程序中）</p>
 <p>这里以洛谷P3388模板为例</p>
-<p> 求桥</p>
+<p>求桥</p>
 
   </div>
   
@@ -2928,18 +2941,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/set%20%E5%92%8C%20multiset%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>set 和 multiset[非公开][草稿]</p>
-          <p class='content'>set和multiset都是stl中的容器，可以按照特定的顺序将元素存储。
-区别
-set不允许元素重复，而multiset可以。
-详细用法
-c.insert()为插入元素</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/transform%E5%92%8Ctolower/'>
-          <p class='title'>transform和tolower<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/2022/04/30/transform%E5%92%8Ctolower/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>transform和tolower</p>
           <p class='content'>transform:&lt;algorithm&gt;
 tolower:&lt;ctype.h&gt;
 transform有两种使用方法
@@ -2947,6 +2950,16 @@ transform有两种使用方法
 
 源目标起始迭代器地址
 源目标结束迭代...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/static/'>
+          <p class='title'>static<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>工程代码员请看详解
+static
+adj.静止的;固定的;无活力的;静电的;静电干扰的
+就是静态的意思啦~
+当我们在一个函数内部普通地定义一个变量时，相当于在程序中进栈，出函数就会被清除，程序也...</p>
         </a>
       
     </div>
@@ -3209,15 +3222,13 @@ transform有两种使用方法
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
-</div>
+          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
-
+        [Copyright ©Star_Cried since 2024 XXX](/)
         </div>
       
     
@@ -4221,7 +4232,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
   let index = 0;
   let IntervalParallax = null;
 

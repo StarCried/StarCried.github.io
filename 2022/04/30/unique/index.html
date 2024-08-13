@@ -55,7 +55,7 @@
 <meta property="og:title" content="unique">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/unique/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="unique unique一般先用sort将要处理的序列排序，因为unique只会&ldquo;删除&rdquo;相邻的重复元素。 我们定义一个数列a[]&#x3D;{1,3,3,4,5,6,6,7}(a.begin为a首元素的迭代器，a.end同理）  unique(a.begin(),a.end())或者unique(a,a+a.size())，数组变为{1,3,4,5,6,7,6,7}. unique">
+<meta property="og:description" content="unique unique一般先用sort将要处理的序列排序，因为unique只会“删除”相邻的重复元素。 我们定义一个数列a[]&#x3D;{1,3,3,4,5,6,6,7}(a.begin为a首元素的迭代器，a.end同理）  unique(a.begin(),a.end())或者unique(a,a+a.size())，数组变为{1,3,4,5,6,7,6,7}. unique(a.begin(),a">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723520380826),
+    lastupdate: new Date(1723521714335),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2802,13 +2802,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p><a href="https://www.cnblogs.com/wangkundentisy/p/9033782.html" target="_blank">unique</a></p>
-<p>unique一般先用sort将要处理的序列排序，因为unique只会&ldquo;删除&rdquo;相邻的重复元素。</p>
+<p>unique一般先用sort将要处理的序列排序，因为unique只会“删除”相邻的重复元素。</p>
 <p>我们定义一个数列a[]={1,3,3,4,5,6,6,7}(a.begin为a首元素的迭代器，a.end同理）</p>
 <ol>
 <li>unique(a.begin(),a.end())或者unique(a,a+a.size())，数组变为{1,3,4,5,6,7,6,7}.</li>
-<li>unique(a.begin(),a.end(),cmp) ，这里的cmp是自定义bool函数，假如他return b==a+1,即下一个元素比该元素大1时才&lsquo;相等&rsquo;，数组变为{1,3,3,5,7,6,6,7}.</li>
+<li>unique(a.begin(),a.end(),cmp) ，这里的cmp是自定义bool函数，假如他return b==a+1,即下一个元素比该元素大1时才‘相等’，数组变为{1,3,3,5,7,6,6,7}.</li>
 </ol>
-<p>这个和sort的格式类似。相信我们都发现了：unique函数会将重复元素用下一位元素&lsquo;顶替&rsquo;，而未处理的元素值并不会改变。</p>
+<p>这个和sort的格式类似。相信我们都发现了：unique函数会将重复元素用下一位元素‘顶替’，而未处理的元素值并不会改变。</p>
 <p>unique函数的返回值是更新完的序列的end（迭代器）。</p>
 <p><strong>实践是检验真理的唯一标准</strong></p>
 <div class="cnblogs_code">
@@ -2928,18 +2928,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/kruskal%E9%87%8D%E6%9E%84%E6%A0%91-NOI2018%E5%BD%92%E7%A8%8B%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>kruskal重构树-NOI2018归程[非公开][草稿]</p>
-          <p class='content'>这是NOI2018第一题，在洛谷上评分已经被降到了紫题。
-kruskal重构树：
-kruskal重构树是什么呢？大家一定都知道kruskal吧，那么kruskal重构树是什么呢？大家一起跟小编来...</p>
+        <a class='prev' href='/2022/04/30/static/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>static</p>
+          <p class='content'>工程代码员请看详解
+static
+adj.静止的;固定的;无活力的;静电的;静电干扰的
+就是静态的意思啦~
+当我们在一个函数内部普通地定义一个变量时，相当于在程序中进栈，出函数就会被清除，程序也...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/'>
-          <p class='title'>主定理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>定义主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
-时间复杂度相关定义在计算机科学中，算法的时间复杂度（time complexi...</p>
+        <a class='next' href='/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/'>
+          <p class='title'>中国剩余定理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
+
+#中国剩余定理
+即求多个同余方程的解。
+举个栗子。求一个数x，使得：
+
+设M=3511=165, a1...</p>
         </a>
       
     </div>
@@ -3192,15 +3200,13 @@ kruskal重构树是什么呢？大家一定都知道kruskal吧，那么kruskal�
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
-</div>
+          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
-
+        [Copyright ©Star_Cried since 2024 XXX](/)
         </div>
       
     
@@ -4204,7 +4210,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
   let index = 0;
   let IntervalParallax = null;
 

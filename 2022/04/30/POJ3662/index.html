@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723520380826),
+    lastupdate: new Date(1723521714335),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2806,7 +2806,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><span style="text-decoration: line-through;">一开始理解错题意以为是分层图求最短路径，结果写完发现k太大了发现事情没有那么简单（讨厌英语题面！）</span></p>
 <p>说一下解法吧，二分答案，尽量小，每次二分完跑最短路径，但是要重置边权。即把比答案小的边改为0，比答案大的改为1，若最短路径比k大，就加答案；反之亦然。</p>
 <p>（还好都有最短路径算没白写）</p>
-<p>唯一的一点技巧：最初想着每次找完mid把所有边的权值改一下，觉得太麻烦了，那么就每次dijkstra加点的时候判断一下吧！（反正又占不了多少时间&hellip;&hellip;吧）</p>
+<p>唯一的一点技巧：最初想着每次找完mid把所有边的权值改一下，觉得太麻烦了，那么就每次dijkstra加点的时候判断一下吧！（反正又占不了多少时间……吧）</p>
 <div class="cnblogs_code">
 <pre>#include&lt;iostream&gt;<span style="color: #000000;">
 #include</span>&lt;vector&gt;<span style="color: #000000;">
@@ -2851,37 +2851,37 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
             }
         }
     }
-
-    inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> work()
-    {
-        n</span>=read(),m=read(),k=<span style="color: #000000;">read();
-        </span><span style="color: #0000ff;">int</span> mlen=<span style="color: #800080;">0</span><span style="color: #000000;">;
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> a,b,c,i=<span style="color: #800080;">1</span>;i&lt;=m;i++<span style="color: #000000;">)
-        {
-            a</span>=read(),b=read(),c=<span style="color: #000000;">read();
-            mlen</span>=<span style="color: #000000;">max(mlen,c);
-            addedge(a,b,c);
-            addedge(b,a,c);
-        }
-        </span><span style="color: #0000ff;">int</span> l=<span style="color: #800080;">0</span>,r=<span style="color: #000000;">mlen;
-        </span><span style="color: #0000ff;">while</span>(l&lt;<span style="color: #000000;">r){
-            </span><span style="color: #0000ff;">int</span> mid=l+r&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">;
-            dijkstra(mid);
-            </span><span style="color: #0000ff;">if</span>(dis[n]==<span style="color: #800080;">0x3f3f3f3f</span><span style="color: #000000;">){
-                printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">-1\n</span><span style="color: #800000;">"</span>);<span style="color: #0000ff;">return</span><span style="color: #000000;">;
-            }
-            </span><span style="color: #0000ff;">if</span>(dis[n]&gt;k)l=mid+<span style="color: #800080;">1</span><span style="color: #000000;">;
-            </span><span style="color: #0000ff;">else</span> r=<span style="color: #000000;">mid;
-        }
-        printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,l);
-    }
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+<pre><code>inline &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt;&lt;span style="color: #000000;"&gt; work()
 {
-    star::work();
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+    n&lt;/span&gt;=read(),m=read(),k=&lt;span style="color: #000000;"&gt;read();
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mlen=&lt;span style="color: #800080;"&gt;0&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;for&lt;/span&gt;(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; a,b,c,i=&lt;span style="color: #800080;"&gt;1&lt;/span&gt;;i&amp;lt;=m;i++&lt;span style="color: #000000;"&gt;)
+    {
+        a&lt;/span&gt;=read(),b=read(),c=&lt;span style="color: #000000;"&gt;read();
+        mlen&lt;/span&gt;=&lt;span style="color: #000000;"&gt;max(mlen,c);
+        addedge(a,b,c);
+        addedge(b,a,c);
+    }
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; l=&lt;span style="color: #800080;"&gt;0&lt;/span&gt;,r=&lt;span style="color: #000000;"&gt;mlen;
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;while&lt;/span&gt;(l&amp;lt;&lt;span style="color: #000000;"&gt;r){
+        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mid=l+r&amp;gt;&amp;gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+        dijkstra(mid);
+        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(dis[n]==&lt;span style="color: #800080;"&gt;0x3f3f3f3f&lt;/span&gt;&lt;span style="color: #000000;"&gt;){
+            printf(&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;&lt;span style="color: #800000;"&gt;-1\n&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;);&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+        }
+        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(dis[n]&amp;gt;k)l=mid+&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;else&lt;/span&gt; r=&lt;span style="color: #000000;"&gt;mid;
+    }
+    printf(&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;&lt;span style="color: #800000;"&gt;%d\n&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;&lt;span style="color: #000000;"&gt;,l);
 }
-</span><span style="color: #008000;">/*</span><span style="color: #008000;">
+</code></pre>
+<p>}
+<span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+{
+star::work();
+</span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}
+</span><span style="color: #008000;">/<em></em></span><em><span style="color: #008000;">
 5 7 1
 1 2 5
 3 1 4
@@ -2890,7 +2890,7 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
 5 2 9
 3 4 7
 4 5 6
-</span><span style="color: #008000;">*/</span></pre>
+</span><span style="color: #008000;"></span></em>/</p></span></pre><p></p>
 </div>
 <p>&nbsp;</p>
   </div>
@@ -2989,18 +2989,19 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/POJ3268-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84-%E5%8F%8D%E5%90%91%E5%AD%98%E8%BE%B9/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>POJ3268-最短路径-反向存边</p>
-          <p class='content'>因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次dijkstra，一次正向从x开始dijkstra，再将边全部反向存再来一次。
-因为是板子题比较良心n比较小，我们就可以用矩阵来存储啦。如...</p>
+        <a class='prev' href='/2022/04/30/POJ3615-Floyd/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>POJ3615-Floyd</p>
+          <p class='content'>http://poj.org/problem?id=3615
+因为只需要求所在路径的最大高度的最小值，而且n&lt;=300,我们可以用floyd跑。
+g[i][j]=min(g[i][j],m...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/POJ3187%20Backward%20Digit%20Sums/'>
-          <p class='title'>POJ3187 Backward Digit Sums<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Backward Digit Sums
-好熟悉的题目&hellip;&hellip;但是忘了是怎么做的&hellip;&hellip;好像是随机排列？
-反正都是暴力，看了下网上的题解，好像也没有...</p>
+        <a class='next' href='/2022/04/30/Splay/'>
+          <p class='title'>Splay<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>学习自该博客
+（dalao讲得真好，我只为了记忆写重点）
+Splay是一种数据结构，用于在线调整二叉排序树的操作，用于让树平衡（空树或任意节点的左右两个子树的深度差的绝对值不超过1）转换根节点或...</p>
         </a>
       
     </div>
@@ -3253,15 +3254,13 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
-</div>
+          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
-
+        [Copyright ©Star_Cried since 2024 XXX](/)
         </div>
       
     
@@ -4265,7 +4264,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
   let index = 0;
   let IntervalParallax = null;
 

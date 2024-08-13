@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723520380826),
+    lastupdate: new Date(1723521714335),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2810,85 +2810,84 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 #include</span>&lt;ctype.h&gt;<span style="color: #000000;">
 #include</span>&lt;cstring&gt;
 <span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-
-</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=<span style="color: #800080;">50005</span><span style="color: #000000;">;
+<p><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=<span style="color: #800080;">50005</span><span style="color: #000000;">;
 inline </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> read()
 {
-    </span><span style="color: #0000ff;">int</span> x=<span style="color: #800080;">0</span>,w=<span style="color: #800080;">0</span>;<span style="color: #0000ff;">char</span> c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(!isdigit(c))w|=c==<span style="color: #800000;">'</span><span style="color: #800000;">-</span><span style="color: #800000;">'</span>,c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(isdigit(c))x=(x&lt;&lt;<span style="color: #800080;">3</span>)+(x&lt;&lt;<span style="color: #800080;">1</span>)+(c^<span style="color: #800080;">48</span>),c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">return</span> w?-<span style="color: #000000;">x:x;
+</span><span style="color: #0000ff;">int</span> x=<span style="color: #800080;">0</span>,w=<span style="color: #800080;">0</span>;<span style="color: #0000ff;">char</span> c=<span style="color: #000000;">getchar();
+</span><span style="color: #0000ff;">while</span>(!isdigit(c))w|=c==<span style="color: #800000;">'</span><span style="color: #800000;">-</span><span style="color: #800000;">'</span>,c=<span style="color: #000000;">getchar();
+</span><span style="color: #0000ff;">while</span>(isdigit(c))x=(x&lt;&lt;<span style="color: #800080;">3</span>)+(x&lt;&lt;<span style="color: #800080;">1</span>)+(c^<span style="color: #800080;">48</span>),c=<span style="color: #000000;">getchar();
+</span><span style="color: #0000ff;">return</span> w?-<span style="color: #000000;">x:x;
 }
 </span><span style="color: #0000ff;">struct</span><span style="color: #000000;"> SegmentTree
 {
-    </span><span style="color: #0000ff;">struct</span><span style="color: #000000;"> Node{
-        </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> l,r;
-        </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> mx,mn;
-        </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> tagmx,tagmn;
-    }e[</span><span style="color: #800080;">4</span>*<span style="color: #000000;">maxn];
-    </span><span style="color: #0000ff;">#define</span> ls (ro&lt;&lt;1)
-    <span style="color: #0000ff;">#define</span> rs (ro&lt;&lt;1|1)
-    <span style="color: #0000ff;">#define</span> INF 0x3f3f3f3f
-
-    <span style="color: #0000ff;">int</span><span style="color: #000000;"> maxx,minn;
-    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> n,m;
-    </span><span style="color: #0000ff;">void</span> build(<span style="color: #0000ff;">int</span> ro,<span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span><span style="color: #000000;"> r)
-    {
-        e[ro].l</span>=l,e[ro].r=<span style="color: #000000;">r;
-        e[ro].mn</span>=INF,e[ro].mx=-<span style="color: #000000;">INF;
-        </span><span style="color: #0000ff;">if</span>(l==r)<span style="color: #0000ff;">return</span><span style="color: #000000;"> ;
-        </span><span style="color: #0000ff;">int</span> mid=(l+r)&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">;
-        build(ls,l,mid);
-        build(rs,mid</span>+<span style="color: #800080;">1</span><span style="color: #000000;">,r);
-    }
-    </span><span style="color: #0000ff;">void</span> insert(<span style="color: #0000ff;">int</span> ro,<span style="color: #0000ff;">int</span> i,<span style="color: #0000ff;">int</span><span style="color: #000000;"> k)
-    {
-        </span><span style="color: #0000ff;">if</span>(e[ro].l==<span style="color: #000000;">e[ro].r){
-            e[ro].mx</span>=e[ro].mn=k;<span style="color: #0000ff;">return</span><span style="color: #000000;">;
-        }
-        e[ro].mn</span>=<span style="color: #000000;">min(e[ro].mn,k);
-        e[ro].mx</span>=<span style="color: #000000;">max(e[ro].mx,k);
-        </span><span style="color: #0000ff;">int</span> mid=(e[ro].l+e[ro].r)&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">;
-        </span><span style="color: #0000ff;">if</span>(i&lt;=<span style="color: #000000;">mid)insert(ls,i,k);
-        </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> insert(rs,i,k);
-    }
-    </span><span style="color: #0000ff;">void</span> query(<span style="color: #0000ff;">int</span> ro,<span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span><span style="color: #000000;"> r)
-    {
-        </span><span style="color: #0000ff;">if</span>(e[ro].mn&gt;=minn and e[ro].mx&lt;=maxx)<span style="color: #0000ff;">return</span><span style="color: #000000;"> ;
-        </span><span style="color: #0000ff;">if</span>(e[ro].l==l and e[ro].r==<span style="color: #000000;">r){
-            minn</span>=<span style="color: #000000;">min(minn,e[ro].mn);
-            maxx</span>=<span style="color: #000000;">max(maxx,e[ro].mx);
-            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
-        }
-        </span><span style="color: #0000ff;">int</span> mid=(e[ro].l+e[ro].r)&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">;
-        </span><span style="color: #0000ff;">if</span>(r&lt;=<span style="color: #000000;">mid)query(ls,l,r);
-        </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span>(l&gt;<span style="color: #000000;">mid)query(rs,l,r);
-        </span><span style="color: #0000ff;">else</span> {query(ls,l,mid);query(rs,mid+<span style="color: #800080;">1</span><span style="color: #000000;">,r);}
-    }
-    inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> getans()
-    {
-        n</span>=read();m=<span style="color: #000000;">read();
-        build(</span><span style="color: #800080;">1</span>,<span style="color: #800080;">1</span><span style="color: #000000;">,n);
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++<span style="color: #000000;">)
-            insert(</span><span style="color: #800080;">1</span><span style="color: #000000;">,i,read());
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=m;i++<span style="color: #000000;">)
-        {
-            maxx</span>=-INF,minn=<span style="color: #000000;">INF;
-            </span><span style="color: #0000ff;">int</span> l=read(),r=<span style="color: #000000;">read();
-            query(</span><span style="color: #800080;">1</span><span style="color: #000000;">,l,r);
-            printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span>,maxx-<span style="color: #000000;">minn);
-        }
-        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> ;
-    }
-    </span><span style="color: #0000ff;">#undef</span> ls
-    <span style="color: #0000ff;">#undef</span> rs
-    <span style="color: #0000ff;">#undef</span> INF<span style="color: #000000;">
-}st;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+</span><span style="color: #0000ff;">struct</span><span style="color: #000000;"> Node{
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> l,r;
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> mx,mn;
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> tagmx,tagmn;
+}e[</span><span style="color: #800080;">4</span>*<span style="color: #000000;">maxn];
+</span><span style="color: #0000ff;">#define</span> ls (ro&lt;&lt;1)
+<span style="color: #0000ff;">#define</span> rs (ro&lt;&lt;1|1)
+<span style="color: #0000ff;">#define</span> INF 0x3f3f3f3f</p>
+<pre><code>&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; maxx,minn;
+&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; n,m;
+&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt; build(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; ro,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; l,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; r)
 {
-    st.getans();
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
+    e[ro].l&lt;/span&gt;=l,e[ro].r=&lt;span style="color: #000000;"&gt;r;
+    e[ro].mn&lt;/span&gt;=INF,e[ro].mx=-&lt;span style="color: #000000;"&gt;INF;
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(l==r)&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt; ;
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mid=(l+r)&amp;gt;&amp;gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+    build(ls,l,mid);
+    build(rs,mid&lt;/span&gt;+&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;,r);
+}
+&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt; insert(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; ro,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; i,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; k)
+{
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(e[ro].l==&lt;span style="color: #000000;"&gt;e[ro].r){
+        e[ro].mx&lt;/span&gt;=e[ro].mn=k;&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+    }
+    e[ro].mn&lt;/span&gt;=&lt;span style="color: #000000;"&gt;min(e[ro].mn,k);
+    e[ro].mx&lt;/span&gt;=&lt;span style="color: #000000;"&gt;max(e[ro].mx,k);
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mid=(e[ro].l+e[ro].r)&amp;gt;&amp;gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(i&amp;lt;=&lt;span style="color: #000000;"&gt;mid)insert(ls,i,k);
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;else&lt;/span&gt;&lt;span style="color: #000000;"&gt; insert(rs,i,k);
+}
+&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt; query(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; ro,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; l,&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt;&lt;span style="color: #000000;"&gt; r)
+{
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(e[ro].mn&amp;gt;=minn and e[ro].mx&amp;lt;=maxx)&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt; ;
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(e[ro].l==l and e[ro].r==&lt;span style="color: #000000;"&gt;r){
+        minn&lt;/span&gt;=&lt;span style="color: #000000;"&gt;min(minn,e[ro].mn);
+        maxx&lt;/span&gt;=&lt;span style="color: #000000;"&gt;max(maxx,e[ro].mx);
+        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+    }
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mid=(e[ro].l+e[ro].r)&amp;gt;&amp;gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(r&amp;lt;=&lt;span style="color: #000000;"&gt;mid)query(ls,l,r);
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;else&lt;/span&gt; &lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(l&amp;gt;&lt;span style="color: #000000;"&gt;mid)query(rs,l,r);
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;else&lt;/span&gt; {query(ls,l,mid);query(rs,mid+&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;,r);}
+}
+inline &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt;&lt;span style="color: #000000;"&gt; getans()
+{
+    n&lt;/span&gt;=read();m=&lt;span style="color: #000000;"&gt;read();
+    build(&lt;/span&gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;,&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;,n);
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;for&lt;/span&gt;(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; i=&lt;span style="color: #800080;"&gt;1&lt;/span&gt;;i&amp;lt;=n;i++&lt;span style="color: #000000;"&gt;)
+        insert(&lt;/span&gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;,i,read());
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;for&lt;/span&gt;(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; i=&lt;span style="color: #800080;"&gt;1&lt;/span&gt;;i&amp;lt;=m;i++&lt;span style="color: #000000;"&gt;)
+    {
+        maxx&lt;/span&gt;=-INF,minn=&lt;span style="color: #000000;"&gt;INF;
+        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; l=read(),r=&lt;span style="color: #000000;"&gt;read();
+        query(&lt;/span&gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;,l,r);
+        printf(&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;&lt;span style="color: #800000;"&gt;%d\n&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;,maxx-&lt;span style="color: #000000;"&gt;minn);
+    }
+    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt; ;
+}
+&lt;/span&gt;&lt;span style="color: #0000ff;"&gt;#undef&lt;/span&gt; ls
+&lt;span style="color: #0000ff;"&gt;#undef&lt;/span&gt; rs
+&lt;span style="color: #0000ff;"&gt;#undef&lt;/span&gt; INF&lt;span style="color: #000000;"&gt;
+</code></pre>
+<p>}st;
+<span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+{
+st.getans();
+</span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}</span></p></span></pre><p></p>
 </div>
 <p>用一下结构体~</p>
   </div>
@@ -2987,19 +2986,20 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/Splay/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Splay</p>
-          <p class='content'>学习自该博客
-（dalao讲得真好，我只为了记忆写重点）
-Splay是一种数据结构，用于在线调整二叉排序树的操作，用于让树平衡（空树或任意节点的左右两个子树的深度差的绝对值不超过1）转换根节点或...</p>
+        <a class='prev' href='/2022/04/30/POJ3187%20Backward%20Digit%20Sums/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>POJ3187 Backward Digit Sums</p>
+          <p class='content'>Backward Digit Sums
+好熟悉的题目……但是忘了是怎么做的……好像是随机排列？
+反正都是暴力，看了下网上的题解，好像也没有更好的正解了。有想法的告诉我一下蟹蟹~
+题意
+我们可以用...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/POJ3615-Floyd/'>
-          <p class='title'>POJ3615-Floyd<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>http://poj.org/problem?id=3615
-因为只需要求所在路径的最大高度的最小值，而且n&lt;=300,我们可以用floyd跑。
-g[i][j]=min(g[i][j],m...</p>
+        <a class='next' href='/2022/04/30/POJ3268-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84-%E5%8F%8D%E5%90%91%E5%AD%98%E8%BE%B9/'>
+          <p class='title'>POJ3268-最短路径-反向存边<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次dijkstra，一次正向从x开始dijkstra，再将边全部反向存再来一次。
+因为是板子题比较良心n比较小，我们就可以用矩阵来存储啦。如...</p>
         </a>
       
     </div>
@@ -3252,15 +3252,13 @@ g[i][j]=min(g[i][j],m...</p>
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
-</div>
+          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
-
+        [Copyright ©Star_Cried since 2024 XXX](/)
         </div>
       
     
@@ -4264,7 +4262,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
   let index = 0;
   let IntervalParallax = null;
 

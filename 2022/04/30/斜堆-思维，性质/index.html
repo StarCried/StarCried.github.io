@@ -55,7 +55,7 @@
 <meta property="og:title" content="斜堆-思维，性质">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%96%9C%E5%A0%86-%E6%80%9D%E7%BB%B4%EF%BC%8C%E6%80%A7%E8%B4%A8/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="斜堆斜堆是个很有趣的东西。而且它有一些很有意思的性质。 斜堆的大概就是每次往堆里面插入一个元素的操作非常“有趣”。插入的节点从根节点开始。如果插入的元素值比所在根小，它会将根“挤下去”，即替代原先的根的位置，将原先的根连到它的左子树上。如果所在根节点为空，它直接插入到此节点上。如果插入的元素比根大，那么它就会先交换所在根的两个子树，然后再递归到原先根的左子树进行插入，直到它比所在根小或者所在根为空">
+<meta property="og:description" content="斜堆 斜堆是个很有趣的东西。而且它有一些很有意思的性质。 斜堆的大概就是每次往堆里面插入一个元素的操作非常“有趣”。插入的节点从根节点开始。如果插入的元素值比所在根小，它会将根“挤下去”，即替代原先的根的位置，将原先的根连到它的左子树上。如果所在根节点为空，它直接插入到此节点上。如果插入的元素比根大，那么它就会先交换所在根的两个子树，然后再递归到原先根的左子树进行插入，直到它比所在根小或者所在根为">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723520380826),
+    lastupdate: new Date(1723521714335),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,7 +2801,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="斜堆"><a href="#斜堆" class="headerlink" title="斜堆"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2475">斜堆</a></h2><p>斜堆是个很有趣的东西。而且它有一些很有意思的性质。</p>
+    <h2><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2475">斜堆</a></h2>
+<p>斜堆是个很有趣的东西。而且它有一些很有意思的性质。</p>
 <p>斜堆的大概就是每次往堆里面插入一个元素的操作非常“有趣”。插入的节点从根节点开始。如果插入的元素值比所在根小，它会将根“挤下去”，即替代原先的根的位置，将原先的根连到它的<strong>左子树</strong>上。如果所在根节点为空，它直接插入到此节点上。如果插入的元素比根大，那么它就会<strong>先交换所在根的两个子树</strong>，然后再递归到原先根的左子树进行插入，直到它比所在根小或者所在根为空。</p>
 <p>我们知道根是一个二叉树。根据斜堆的定义，我们可以大概推测它的几个明显的性质：</p>
 <ol>
@@ -2810,7 +2811,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ol>
 <p>根据以上性质，我们可以得出“斜堆上任意一个节点若有右子树必定有左子树”的结论。证明显然。</p>
 <p>然后，我们就会发现几个不得了的性质：</p>
-<ol>
+<ol start="3">
 <li>对于一个斜堆，它最后插入的节点一定在它的最左边的链上。</li>
 <li>若有一个节点没有右子树，并且它的左子节点拥有左节点，那么这个节点必定是最后插入的节点。</li>
 <li>对于没有符合性质4的节点的斜堆，它最后插入的节点一定是最左边链的最深端点。</li>
@@ -2915,20 +2916,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>扫描线</p>
-          <p class='content'>我的第一篇博客就是扫描线。虽然那时候什么也不懂，也非常幼稚，甚至不知扫描线的原理是如何，只是一门心思地去做，就像面对未知的生活。
-扫描线处理矩阵面积之和的问题，当然它们会有互相覆盖而不能直接加起...</p>
+        <a class='prev' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>扩展欧拉定理</p>
+          <p class='content'>欧拉定理
+欧拉定理：若  与  互质，则有
+
+我们可以发现费马小定理其实就是欧拉定理的特殊情况。
+证明的话，构造一个与  互质的数列操作，利用剩余系证明
+扩展欧拉定理
+扩展欧拉定理为
+
+证明请上...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'>斜率优化[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>&lt;-点我进入大佬博客
-&nbsp;
-斜率优化，适用于一些dp方程为类似
-f[i]=min(a[i]&lowast;b[j]+c[j]+d[i]) ,其中b单调递增
-的问题。通过大佬的博客可...</p>
+        <a class='next' href='/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/'>
+          <p class='title'>扫描线<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>我的第一篇博客就是扫描线。虽然那时候什么也不懂，也非常幼稚，甚至不知扫描线的原理是如何，只是一门心思地去做，就像面对未知的生活。
+扫描线处理矩阵面积之和的问题，当然它们会有互相覆盖而不能直接加起...</p>
         </a>
       
     </div>
@@ -3051,7 +3056,7 @@ f[i]=min(a[i]&lowast;b[j]+c[j]+d[i]) ,其中b单调递增
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%9C%E5%A0%86"><span class="toc-text">斜堆</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">斜堆</span></a></li></ol>
     </div>
   </section>
 
@@ -3191,15 +3196,13 @@ f[i]=min(a[i]&lowast;b[j]+c[j]+d[i]) ,其中b单调递增
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。&lt;/span&gt;</p>
-</div>
+          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
-
+        [Copyright ©Star_Cried since 2024 XXX](/)
         </div>
       
     
@@ -4203,7 +4206,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp"];
   let index = 0;
   let IntervalParallax = null;
 
