@@ -50,12 +50,12 @@
   <title>KMP算法 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。   问题：求a字符串与b字符串中子串相同的串首位置。   暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。   KMP主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP算法">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/KMP%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。 问题：求a字符串与b字符串中子串相同的串首位置。 暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。 KMP主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可以直接将前缀跳至该子串的位置。复杂度">
+<meta property="og:description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。   问题：求a字符串与b字符串中子串相同的串首位置。   暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。   KMP主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,14 +2801,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。</p>
-<p><strong>问题</strong><strong>：</strong>求a字符串与b字符串中子串相同的串首位置。</p>
-<p>暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。</p>
-<p><strong>KMP主要思想：</strong>如果一个字符串的子串与前缀相等，那么在查找时就可以直接将前缀跳至该子串的位置。复杂度O(n)。</p>
-<p>nxt[x]记录x位置字符在查询串中的跳转位置。</p>
-<p>eg:对于串abaabacac:</p>
-<p>&nbsp;a b a a b a c a c</p>
-<p>-1 0 0 1 1 2 3 0 1</p>
+    <p>
+KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为
+Knuth-Morria-Pratt 算法，简称 KMP 算法。
+</p>
+<p>
+<strong>问题</strong><strong>：</strong>求a字符串与b字符串中子串相同的串首位置。
+</p>
+<p>
+暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。
+</p>
+<p>
+<strong>KMP主要思想：</strong>如果一个字符串的子串与前缀相等，那么在查找时就可以直接将前缀跳至该子串的位置。复杂度O(n)。
+</p>
+<p>
+nxt[x]记录x位置字符在查询串中的跳转位置。
+</p>
+<p>
+eg:对于串abaabacac:
+</p>
+<p>
+ a b a a b a c a c
+</p>
+<p>
+-1 0 0 1 1 2 3 0 1
+</p>
 <div class="cnblogs_code">
 <pre>inline <span style="color: #0000ff;">void</span><span style="color: #000000;"> getnxt()
 {
@@ -2821,9 +2838,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
 }</span></pre>
 </div>
-<p>查询时跳转即可。</p>
-<p>模拟一下就知道啦~</p>
-<p>全代码：</p>
+<p>
+查询时跳转即可。
+</p>
+<p>
+模拟一下就知道啦~
+</p>
+<p>
+全代码：
+</p>
 <div class="cnblogs_code">
 <pre>#include&lt;iostream&gt;<span style="color: #000000;">
 #include</span>&lt;cstdio&gt;<span style="color: #000000;">
@@ -2861,8 +2884,12 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
     </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
 }</span></pre>
 </div>
-<p>&nbsp;<strong>例题</strong></p>
-<p><a href="https://www.luogu.com.cn/problem/P3375" target="_blank">洛谷P3375</a></p>
+<p>
+ <strong>例题</strong>
+</p>
+<p>
+<a href="https://www.luogu.com.cn/problem/P3375" target="_blank">洛谷P3375</a>
+</p>
 <div class="cnblogs_code">
 <pre>#include&lt;iostream&gt;<span style="color: #000000;">
 #include</span>&lt;cstdio&gt;<span style="color: #000000;">
@@ -2907,7 +2934,10 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
     </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
 }</span></pre>
 </div>
-<p>&nbsp;</p>
+<p>
+ 
+</p>
+
   </div>
   
   
@@ -3004,24 +3034,28 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Dirichlet卷积和莫比乌斯反演[非公开][草稿]</p>
-          <p class='content'>
-非全面讲解，仅供记录笔记#Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsilon &#x3...</p>
+        <a class='prev' href='/2022/04/30/LCT(Link-Cut-Tree)/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>LCT(Link-Cut-Tree)</p>
+          <p class='content'>LCT(Link-Cut-Tree)
+LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
+
+查询、修改链上的信息
+随意指定原树的根（即换根）
+动态连边、删边
+合并两...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/LCT(Link-Cut-Tree)/'>
-          <p class='title'>LCT(Link-Cut-Tree)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>LCT(Link-Cut-Tree)LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
+        <a class='next' href='/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/'>
+          <p class='title'>P1040 加分二叉树<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+https://www.luogu.com.cn/problem/P1040
 
-查询、修改链上的信息
 
-随意指定原树的根（即换根）
+n很小，可以树形dp或者区间dp。
 
-动态连边、删边
 
-合并两棵树、分...</p>
+设fij为从i到j的最大加分值，则有f[i][j]=ma...</p>
         </a>
       
     </div>
@@ -3274,7 +3308,9 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4286,7 +4322,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

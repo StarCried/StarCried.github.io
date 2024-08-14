@@ -50,12 +50,12 @@
   <title>P2476-记忆化搜索 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="链接 ##DP？ 我们看看，这个状态似乎有亿点点多。 我们看看数据范围，数量不超过5，颜色数不超过15. 15维DP显然不靠谱。 那么我们就思考一下……个数？ 记忆化搜索可ac： 1234567891011121314151617181920212223242526272829303132#include&lt;iostream&gt;#include&lt;cstdio&gt;#inclu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P2476-记忆化搜索">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="链接##DP？我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.15维DP显然不靠谱。那么我们就思考一下……个数？记忆化搜索可ac： 1234567891011121314151617181920212223242526272829303132#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;alg">
+<meta property="og:description" content="链接 ##DP？ 我们看看，这个状态似乎有亿点点多。 我们看看数据范围，数量不超过5，颜色数不超过15. 15维DP显然不靠谱。 那么我们就思考一下……个数？ 记忆化搜索可ac： 1234567891011121314151617181920212223242526272829303132#include&lt;iostream&gt;#include&lt;cstdio&gt;#inclu">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,8 +2801,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2476">链接</a><br>##DP？<br>我们看看，这个状态似乎有亿点点多。<br>我们看看数据范围，数量不超过5，颜色数不超过15.<br>15维DP显然不靠谱。<br>那么我们就思考一下……个数？<br>记忆化搜索可ac：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line">const ll maxn=16,mod=1e9+7;</span><br><span class="line">ll f[maxn][maxn][maxn][maxn][maxn][6],b[6];</span><br><span class="line"></span><br><span class="line">ll dfs(ll a,ll b,ll c,ll d,ll e,ll last)&#123;</span><br><span class="line">	if(f[a][b][c][d][e][last]!=-1)return f[a][b][c][d][e][last];</span><br><span class="line">	if(a+b+c+d+e==0)return 1;</span><br><span class="line">	ll ans=0;</span><br><span class="line">	if(a)ans+=(a-(last==2))*dfs(a-1,b,c,d,e,1);</span><br><span class="line">	if(b)ans+=(b-(last==3))*dfs(a+1,b-1,c,d,e,2);</span><br><span class="line">	if(c)ans+=(c-(last==4))*dfs(a,b+1,c-1,d,e,3);</span><br><span class="line">	if(d)ans+=(d-(last==5))*dfs(a,b,c+1,d-1,e,4);</span><br><span class="line">	if(e)ans+=e*dfs(a,b,c,d+1,e-1,5);</span><br><span class="line">	ans%=mod;</span><br><span class="line">	f[a][b][c][d][e][last]=ans;</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	memset(f,-1,sizeof f);</span><br><span class="line">	int k;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;k);</span><br><span class="line">	for(int a,i=1;i&lt;=k;i++)scanf(&quot;%d&quot;,&amp;a),b[a]++;</span><br><span class="line">	printf(&quot;%lld&quot;,dfs(b[1],b[2],b[3],b[4],b[5],0));</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2476">链接</a> ##DP？
+我们看看，这个状态似乎有亿点点多。
+我们看看数据范围，数量不超过5，颜色数不超过15. 15维DP显然不靠谱。
+那么我们就思考一下……个数？ 记忆化搜索可ac： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line">const ll maxn=16,mod=1e9+7;</span><br><span class="line">ll f[maxn][maxn][maxn][maxn][maxn][6],b[6];</span><br><span class="line"></span><br><span class="line">ll dfs(ll a,ll b,ll c,ll d,ll e,ll last)&#123;</span><br><span class="line">	if(f[a][b][c][d][e][last]!=-1)return f[a][b][c][d][e][last];</span><br><span class="line">	if(a+b+c+d+e==0)return 1;</span><br><span class="line">	ll ans=0;</span><br><span class="line">	if(a)ans+=(a-(last==2))*dfs(a-1,b,c,d,e,1);</span><br><span class="line">	if(b)ans+=(b-(last==3))*dfs(a+1,b-1,c,d,e,2);</span><br><span class="line">	if(c)ans+=(c-(last==4))*dfs(a,b+1,c-1,d,e,3);</span><br><span class="line">	if(d)ans+=(d-(last==5))*dfs(a,b,c+1,d-1,e,4);</span><br><span class="line">	if(e)ans+=e*dfs(a,b,c,d+1,e-1,5);</span><br><span class="line">	ans%=mod;</span><br><span class="line">	f[a][b][c][d][e][last]=ans;</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	memset(f,-1,sizeof f);</span><br><span class="line">	int k;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;k);</span><br><span class="line">	for(int a,i=1;i&lt;=k;i++)scanf(&quot;%d&quot;,&amp;a),b[a]++;</span><br><span class="line">	printf(&quot;%lld&quot;,dfs(b[1],b[2],b[3],b[4],b[5],0));</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
   </div>
   
   
@@ -2899,21 +2902,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P1903 数颜色 维护队列</p>
-          <p class='content'>莫队算法的待修版本，增加一个时间的维度进行分块。
-
-P1903 [国家集训队] 数颜色 &#x2F; 维护队列
-12345678910111213141516171819202122232425...</p>
+        <a class='prev' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P3203 弹飞绵羊-分块</p>
+          <p class='content'>P3203 弹飞绵羊-分块
+观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。
+对于修改，重构整个块内信息即可。
+时间复杂度正确...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/'>
-          <p class='title'>P3203 弹飞绵羊-分块<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P3203 弹飞绵羊-分块观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。
-对于修改，重构整个块内信息即可。
-时间复杂度正确的一批
-...</p>
+        <a class='next' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/'>
+          <p class='title'>P2490 [SDOI2011]黑白棋<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P2490 [SDOI2011]黑白棋
+题意
+一个 \(1*n\) 的棋盘上，A
+可以移动白色棋子，B
+可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动
+1 到...</p>
         </a>
       
     </div>
@@ -3166,7 +3171,9 @@ P1903 [国家集训队] 数颜色 &#x2F; 维护队列
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4178,7 +4185,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -50,12 +50,12 @@
   <title>CF175E Power Defence - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="CF175E Power Defence 题意 一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。 其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有\(k\)个寒冰塔覆盖，敌人速度变为\(\frac{1}{k+1}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF175E Power Defence">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/CF175E%20Power%20Defence/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="CF175E Power Defence题意一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。 其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有$k$个寒冰塔覆盖，敌人速度变为$\frac{1}{k+1}$。 敌人初始速">
+<meta property="og:description" content="CF175E Power Defence 题意 一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。 其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有\(k\)个寒冰塔覆盖，敌人速度变为\(\frac{1}{k+1}">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,22 +2801,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="CF175E-Power-Defence"><a href="#CF175E-Power-Defence" class="headerlink" title="CF175E Power Defence"></a>CF175E Power Defence</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。</p>
-<p>其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有$k$个寒冰塔覆盖，敌人速度变为$\frac{1}{k+1}$。</p>
+    <h2 id="cf175e-power-defence">CF175E Power Defence</h2>
+<h3 id="题意">题意</h3>
+<p>一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。</p>
+<p>其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有<span
+class="math inline">\(k\)</span>个寒冰塔覆盖，敌人速度变为<span
+class="math inline">\(\frac{1}{k+1}\)</span>。</p>
 <p>敌人初始速度为1格每秒，攻击塔的伤害值也是以秒计算的。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先有几个基本结论：</p>
+<h3 id="思路">思路</h3>
+<p>首先有几个基本结论：</p>
 <ul>
 <li>若没有寒冰塔，整场游戏答案固定。</li>
-<li>若有寒冰塔，让所有塔<strong>挤在一起必不会更劣</strong>。这里对<strong>挤在一起</strong>的定义是：所有塔至少有一端上下对齐，且左右两端距离最大不超过$\lceil \frac{n}{2}\rceil$。</li>
+<li>若有寒冰塔，让所有塔<strong>挤在一起必不会更劣</strong>。这里对<strong>挤在一起</strong>的定义是：所有塔至少有一端上下对齐，且左右两端距离最大不超过<span
+class="math inline">\(\lceil \frac{n}{2}\rceil\)</span>。</li>
 <li>寒冰塔的能力实际上是<strong>将范围内基础伤害增加一倍</strong>。注意这里的伤害是忽略其他寒冰塔效果的。</li>
 </ul>
 <p>发现序列长度很短，排列的方式也很有限，于是我们就有了一个大胆的想法：模拟退火。</p>
 <p>然后便是裸的模拟退火算法：随机出来两个位置进行交换，统计答案，若答案大于当前答案，接受之；否则以当前温度的概率接受之。参数调整得好的话多做几次便可。</p>
-<p>然后是统计答案。我有一个$n^2$的想法：扫描序列，每扫到一个寒冰塔就再次扫描整个序列的攻击塔，计算出两个塔间相交的范围乘上该塔攻击力加入答案即可，当然最后别忘了加上不计算寒冰塔的基础伤害。正确性也显然，因为显然寒冰塔的贡献是可以对于每个其他攻击塔单独计算的。</p>
+<p>然后是统计答案。我有一个<span
+class="math inline">\(n^2\)</span>的想法：扫描序列，每扫到一个寒冰塔就再次扫描整个序列的攻击塔，计算出两个塔间相交的范围乘上该塔攻击力加入答案即可，当然最后别忘了加上不计算寒冰塔的基础伤害。正确性也显然，因为显然寒冰塔的贡献是可以对于每个其他攻击塔单独计算的。</p>
 <p>具体实现我耍了个小聪明：将所有炮塔放进一个数组中，这样交换的时候就不用分上下位置了。统计答案的时候计算出该塔的实际位置就行。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> T 10000</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> eps 0.99</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> kb 1.38e-23</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endt 1e-12</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 1e19</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">45</span>;</span><br><span class="line">	<span class="type">int</span> n1,n2,n3,d1,d2,n,a[maxn],m;</span><br><span class="line">	<span class="type">double</span> r1,r2,r3,res,ans;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">double</span> <span class="title">getsum</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="type">double</span> sum=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]!=<span class="number">3</span>)<span class="keyword">continue</span>;</span><br><span class="line">			<span class="type">int</span> x=i;</span><br><span class="line">			<span class="keyword">if</span>(x&gt;m)x-=m;</span><br><span class="line">			<span class="type">double</span> L3=x-r3,R3=x+r3;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(a[j]==<span class="number">3</span>)<span class="keyword">continue</span>;</span><br><span class="line">				<span class="type">int</span> y=j,t=a[j];</span><br><span class="line">				<span class="keyword">if</span>(y&gt;m)y-=m;</span><br><span class="line">				<span class="keyword">if</span>(t==<span class="number">1</span>)&#123;</span><br><span class="line">					<span class="type">double</span> L1=y-r1,R1=y+r1;</span><br><span class="line">					sum+=<span class="built_in">max</span>(<span class="number">0.0</span>,d1*(<span class="built_in">min</span>(R1,R3)-<span class="built_in">max</span>(L1,L3)));</span><br><span class="line">				&#125;<span class="keyword">else</span> <span class="keyword">if</span>(t==<span class="number">2</span>)&#123;</span><br><span class="line">					<span class="type">double</span> L2=y-r2,R2=y+r2;</span><br><span class="line">					sum+=<span class="built_in">max</span>(<span class="number">0.0</span>,d2*(<span class="built_in">min</span>(R2,R3)-<span class="built_in">max</span>(L2,L3)));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res+sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="type">double</span> t=T;</span><br><span class="line">		<span class="type">double</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(t&gt;endt)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> xx=<span class="built_in">rand</span>()%n<span class="number">+1</span>,yy=<span class="built_in">rand</span>()%n<span class="number">+1</span>;</span><br><span class="line">			<span class="keyword">while</span>(a[xx]==a[yy])xx=<span class="built_in">rand</span>()%n<span class="number">+1</span>,yy=<span class="built_in">rand</span>()%n<span class="number">+1</span>;</span><br><span class="line">			<span class="built_in">swap</span>(a[xx],a[yy]);</span><br><span class="line">			<span class="type">double</span> zp=<span class="built_in">getsum</span>();</span><br><span class="line">			<span class="keyword">if</span>(zp&gt;ans)&#123;</span><br><span class="line">				ans=zp;</span><br><span class="line">				star::ans=<span class="built_in">max</span>(star::ans,ans);</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">rand</span>()&lt;<span class="built_in">exp</span>((ans-zp)/t/kb) * RAND_MAX)<span class="built_in">swap</span>(a[xx],a[yy]);</span><br><span class="line">			<span class="keyword">else</span> ans=zp;</span><br><span class="line">			t*=eps;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n1=<span class="built_in">read</span>(),n2=<span class="built_in">read</span>(),n3=<span class="built_in">read</span>();</span><br><span class="line">		r1=<span class="built_in">read</span>();</span><br><span class="line">		r1=<span class="built_in">sqrt</span>(r1*r1<span class="number">-1</span>);</span><br><span class="line">		r2=<span class="built_in">read</span>();</span><br><span class="line">		r2=<span class="built_in">sqrt</span>(r2*r2<span class="number">-1</span>);</span><br><span class="line">		r3=<span class="built_in">read</span>();</span><br><span class="line">		r3=<span class="built_in">sqrt</span>(r3*r3<span class="number">-1</span>);</span><br><span class="line">		d1=<span class="built_in">read</span>(),d2=<span class="built_in">read</span>();</span><br><span class="line">		res=<span class="number">2</span>*n1*r1*d1<span class="number">+2</span>*n2*r2*d2;</span><br><span class="line">		<span class="keyword">if</span>(n3==<span class="number">0</span>)<span class="keyword">return</span> (<span class="type">void</span>)<span class="built_in">printf</span>(<span class="string">&quot;%.10lf&quot;</span>,res);</span><br><span class="line">		n=n1+n2+n3;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="keyword">if</span>(n1) a[i]=<span class="number">1</span>,n1--;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(n2) a[i]=<span class="number">2</span>,n2--;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(n3) a[i]=<span class="number">3</span>,n3--;</span><br><span class="line">		m=n/<span class="number">2</span><span class="number">+1</span>;</span><br><span class="line">		n=m*<span class="number">2</span>;</span><br><span class="line">		<span class="built_in">random_shuffle</span>(a<span class="number">+1</span>,a<span class="number">+1</span>+n);</span><br><span class="line">		<span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line"><span class="comment">//		while((double)clock()/CLOCKS_PER_SEC&lt;2.7)</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++)</span><br><span class="line">			<span class="built_in">solve</span>();</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%.10lf\n&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这题正解是DP，爆搜也能过。</p>
+<h3 id="总结">总结</h3>
+<p>这题正解是DP，爆搜也能过。</p>
 <p>codeforces的题目，如果我现场写模拟退火的话一定当场去世。毕竟我因为一些奇怪的原因交了好多回。</p>
 <p><del>所以骗骗分还是可以的</del></p>
 <p>by ysr</p>
@@ -2919,18 +2926,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF459E-DP/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF459E-DP</p>
-          <p class='content'>CF459E-DP核心代码15行
-思路观察数据范围，我们建m层分层图跑最短路想到DP。
-DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？
-发现DP值一定从边权小于当前点的位置转移而...</p>
+        <a class='prev' href='/2022/04/30/CF1166E%20The%20LCMs%20Must%20be%20Large/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF1166E The LCMs Must be Large</p>
+          <p class='content'>CF1166E The LCMs Must be
+Large
+思维好题，结论好题。
+题意
+一个长度为 \(n\)
+的未知长度的序列，有 \(m\)
+个限制，每个限制形如给定一个集合 ...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/CF494D%20Birthday/'>
-          <p class='title'>CF494D Birthday<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>CF494D Birthday题意一个1为根的带边权有根树，每次询问给定两个点 $u,v$ 求 $\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in S(v)}d(...</p>
+        <a class='next' href='/2022/04/30/CF1032G%20Chattering/'>
+          <p class='title'>CF1032G Chattering<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+CF1032G Chattering
+
+
+题意
+
+
+思路
+
+
+对于每一个位置，它转移的范围是确定的。
+
+
+对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间...</p>
         </a>
       
     </div>
@@ -3053,7 +3076,7 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CF175E-Power-Defence"><span class="toc-text">CF175E Power Defence</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cf175e-power-defence"><span class="toc-text">CF175E Power Defence</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3193,7 +3216,9 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4205,7 +4230,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

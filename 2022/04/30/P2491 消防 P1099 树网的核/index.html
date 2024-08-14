@@ -50,12 +50,12 @@
   <title>P2491 消防 P1099 树网的核 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="P2491 消防&#x2F;P1099 树网的核 双倍经验，双倍快乐。 题意 在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。 输出这个最小的值。 做法 Define:以下\(s\)指链或链长。  证明一下\(s\)一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到\(s\)的距离大于现在所处支链的最大距离。所以\(s\)不在直径上一定不优。 于是我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P2491 消防 P1099 树网的核">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P2491 消防&#x2F;P1099 树网的核双倍经验，双倍快乐。 题意在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。 输出这个最小的值。 做法Define:以下$s$指链或链长。  证明一下$s$一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到$s$的距离大于现在所处支链的最大距离。所以$s$不在直径上一定不优。 于是我们找到直径并记录下直径上的所有点。">
+<meta property="og:description" content="P2491 消防&#x2F;P1099 树网的核 双倍经验，双倍快乐。 题意 在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。 输出这个最小的值。 做法 Define:以下\(s\)指链或链长。  证明一下\(s\)一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到\(s\)的距离大于现在所处支链的最大距离。所以\(s\)不在直径上一定不优。 于是我">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,24 +2801,52 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="P2491-消防-P1099-树网的核"><a href="#P2491-消防-P1099-树网的核" class="headerlink" title="P2491 消防&#x2F;P1099 树网的核"></a>P2491 消防&#x2F;P1099 树网的核</h2><p>双倍经验，双倍快乐。</p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。</p>
+    <h2 id="p2491-消防p1099-树网的核">P2491 消防/P1099 树网的核</h2>
+<p>双倍经验，双倍快乐。</p>
+<h3 id="题意">题意</h3>
+<p>在一个树上选择一段总长度不超过<span
+class="math inline">\(s\)</span>的链使所有点到该链距离的最大值最小。</p>
 <p>输出这个最小的值。</p>
-<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p><strong>Define</strong>:以下$s$指链或链长。</p>
-<ol>
-<li>证明一下$s$一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到$s$的距离大于现在所处支链的最大距离。所以$s$不在直径上一定不优。</li>
+<h3 id="做法">做法</h3>
+<p><strong>Define</strong>:以下<span
+class="math inline">\(s\)</span>指链或链长。</p>
+<ol type="1">
+<li>证明一下<span
+class="math inline">\(s\)</span>一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到<span
+class="math inline">\(s\)</span>的距离大于现在所处支链的最大距离。所以<span
+class="math inline">\(s\)</span>不在直径上一定不优。</li>
 <li>于是我们找到直径并记录下直径上的所有点。</li>
-<li>然后，我们枚举直径上的每一个长度小于$s$的最长区间（最长原因显然，因为长度越短答案肯定不会更优），并计算此时的答案，对于每一个区间的答案取min即可。</li>
-<li>考虑计算每个区间的答案。我们把直径拉出来，用两个指针$l$和$r$从左向右遍历这个直径，$s$即为$l$到$r$。考虑此时这个区间的答案即为$l$到$r$中每个点$i$的子树中最深的点的距离（我们设为$h_i$）（注意这里的子树是不包括直径的，即子树中所有的点都属于支链）和$l$到直径左端点的距离（设为$ls$）和$r$到直径右端点的距离（设为$rt$）的最大值。原因显然。</li>
-<li>那么我们可以预处理出$h_i$，并在遍历直径的时候用单调队列维护$h$的最大值，然后用这个值与$ls$和$rt$的最大值更新答案（取最小值）即可。</li>
+<li>然后，我们枚举直径上的每一个长度小于<span
+class="math inline">\(s\)</span>的最长区间（最长原因显然，因为长度越短答案肯定不会更优），并计算此时的答案，对于每一个区间的答案取min即可。</li>
+<li>考虑计算每个区间的答案。我们把直径拉出来，用两个指针<span
+class="math inline">\(l\)</span>和<span
+class="math inline">\(r\)</span>从左向右遍历这个直径，<span
+class="math inline">\(s\)</span>即为<span
+class="math inline">\(l\)</span>到<span
+class="math inline">\(r\)</span>。考虑此时这个区间的答案即为<span
+class="math inline">\(l\)</span>到<span
+class="math inline">\(r\)</span>中每个点<span
+class="math inline">\(i\)</span>的子树中最深的点的距离（我们设为<span
+class="math inline">\(h_i\)</span>）（注意这里的子树是不包括直径的，即子树中所有的点都属于支链）和<span
+class="math inline">\(l\)</span>到直径左端点的距离（设为<span
+class="math inline">\(ls\)</span>）和<span
+class="math inline">\(r\)</span>到直径右端点的距离（设为<span
+class="math inline">\(rt\)</span>）的最大值。原因显然。</li>
+<li>那么我们可以预处理出<span
+class="math inline">\(h_i\)</span>，并在遍历直径的时候用单调队列维护<span
+class="math inline">\(h\)</span>的最大值，然后用这个值与<span
+class="math inline">\(ls\)</span>和<span
+class="math inline">\(rt\)</span>的最大值更新答案（取最小值）即可。</li>
 </ol>
-<h3 id="一些疑问"><a href="#一些疑问" class="headerlink" title="一些疑问"></a>一些疑问</h3><ul>
-<li><p>当存在多条直径时，区间似乎一定包括重心并尽量使重心居中。然而这并没有什么卵用，并且一样可以用上面的方法做，不会造成影响。</p>
-</li>
-<li><p>$s$的左右两端一定在端点上。既是，$s$是可以为一个点的。</p>
-</li>
+<h3 id="一些疑问">一些疑问</h3>
+<ul>
+<li><p>当存在多条直径时，区间似乎一定包括重心并尽量使重心居中。然而这并没有什么卵用，并且一样可以用上面的方法做，不会造成影响。</p></li>
+<li><p><span
+class="math inline">\(s\)</span>的左右两端一定在端点上。既是，<span
+class="math inline">\(s\)</span>是可以为一个点的。</p></li>
 </ul>
-<h3 id="具体实现和代码"><a href="#具体实现和代码" class="headerlink" title="具体实现和代码"></a>具体实现和代码</h3><ul>
+<h3 id="具体实现和代码">具体实现和代码</h3>
+<ul>
 <li>求直径时两次DFS即可。然后发现记录的d数组刚好可以用来当做前缀和（只是使代码略显凌乱罢了）</li>
 <li>单调队列似乎要特殊记录一下链首的位置而不能用head代替，否则无法记录区间长（或者只是我没有想到更好的处理方法）</li>
 <li>求深度DFS或BFS.</li>
@@ -2923,24 +2951,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P3203 弹飞绵羊-分块</p>
-          <p class='content'>P3203 弹飞绵羊-分块观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。
-对于修改，重构整个块内信息即可。
-时间复杂度正确的一批
-...</p>
+        <a class='prev' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P3209-平面图判定</p>
+          <p class='content'>##平面图
+平面图就是所有点的连边不相交的图。（当然是在你尽量想让它不相交的情况下）。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P2014%E9%80%89%E8%AF%BE/'>
-          <p class='title'>P2014选课<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>洛谷P2014选课
-一道树形DP题。
-f[i][j]表示i个点选j门课程的最大学分。
-递推方程：
+        <a class='next' href='/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/'>
+          <p class='title'>P3214 [HNOI2011]卡农<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P3214 [HNOI2011]卡农
+题意
+在集合 \(\{1,2,\cdots,n\}\) 中选出
+\(m\) 个非空子集满足：
 
-for(int a=n;a&gt;0;a--)//总共选择多少
-    for(int b=0...</p>
+不存在完全相同的两个集合；
+每个元素在所有集合中...</p>
         </a>
       
     </div>
@@ -3063,7 +3089,7 @@ for(int a=n;a&gt;0;a--)//总共选择多少
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P2491-%E6%B6%88%E9%98%B2-P1099-%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8"><span class="toc-text">P2491 消防&#x2F;P1099 树网的核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95"><span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE"><span class="toc-text">一些疑问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%E5%92%8C%E4%BB%A3%E7%A0%81"><span class="toc-text">具体实现和代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p2491-%E6%B6%88%E9%98%B2p1099-%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8"><span class="toc-text">P2491 消防&#x2F;P1099 树网的核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95"><span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE"><span class="toc-text">一些疑问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%E5%92%8C%E4%BB%A3%E7%A0%81"><span class="toc-text">具体实现和代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3203,7 +3229,9 @@ for(int a=n;a&gt;0;a--)//总共选择多少
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4215,7 +4243,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

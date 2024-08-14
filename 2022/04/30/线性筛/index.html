@@ -50,12 +50,12 @@
   <title>线性筛 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="线性筛 闲话 之前写的总结不忍直视（总结了个寂寞），今天突然要用到约数和结果不会筛，于是爬来写博客。 性质  时间复杂度线性 理论上所有积性函数都可以筛（推式子）  用法 对于需要筛的积性函数，我们需要讨论三种数时它的取值或者转移。  当 \(i\) 为素数时，此时函数的值一般可以快速得到； 当 \(i\mod p&#x3D;0\) 时； 当 \(i\mod p\ne 0\) 时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性筛">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="线性筛闲话之前写的总结不忍直视（总结了个寂寞），今天突然要用到约数和结果不会筛，于是爬来写博客。 性质 时间复杂度线性 理论上所有积性函数都可以筛（推式子）  用法对于需要筛的积性函数，我们需要讨论三种数时它的取值或者转移。  当 $i$ 为素数时，此时函数的值一般可以快速得到； 当 $i\mod p&#x3D;0$ 时； 当 $i\mod p\ne 0$ 时。  对于不同数论函数当然每处的转移都">
+<meta property="og:description" content="线性筛 闲话 之前写的总结不忍直视（总结了个寂寞），今天突然要用到约数和结果不会筛，于是爬来写博客。 性质  时间复杂度线性 理论上所有积性函数都可以筛（推式子）  用法 对于需要筛的积性函数，我们需要讨论三种数时它的取值或者转移。  当 \(i\) 为素数时，此时函数的值一般可以快速得到； 当 \(i\mod p&#x3D;0\) 时； 当 \(i\mod p\ne 0\) 时">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,38 +2801,78 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="线性筛"><a href="#线性筛" class="headerlink" title="线性筛"></a>线性筛</h1><h3 id="闲话"><a href="#闲话" class="headerlink" title="闲话"></a>闲话</h3><p>之前写的总结不忍直视（总结了个寂寞），今天突然要用到约数和结果不会筛，于是爬来写博客。</p>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ul>
+    <h1 id="线性筛">线性筛</h1>
+<h3 id="闲话">闲话</h3>
+<p>之前写的总结不忍直视（总结了个寂寞），今天突然要用到约数和结果不会筛，于是爬来写博客。</p>
+<h2 id="性质">性质</h2>
+<ul>
 <li>时间复杂度线性</li>
 <li>理论上所有积性函数都可以筛（推式子）</li>
 </ul>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>对于需要筛的积性函数，我们需要讨论三种数时它的取值或者转移。</p>
-<ol>
-<li>当 $i$ 为素数时，此时函数的值一般可以快速得到；</li>
-<li>当 $i\mod p&#x3D;0$ 时；</li>
-<li>当 $i\mod p\ne 0$ 时。</li>
+<h2 id="用法">用法</h2>
+<p>对于需要筛的积性函数，我们需要讨论三种数时它的取值或者转移。</p>
+<ol type="1">
+<li>当 <span class="math inline">\(i\)</span>
+为素数时，此时函数的值一般可以快速得到；</li>
+<li>当 <span class="math inline">\(i\mod p=0\)</span> 时；</li>
+<li>当 <span class="math inline">\(i\mod p\ne 0\)</span> 时。</li>
 </ol>
 <p>对于不同数论函数当然每处的转移都不同了。</p>
-<p><strong>下文所有标号位置对应以上三种情况，并设 $tmp&#x3D;i*p$</strong></p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="约数个数和"><a href="#约数个数和" class="headerlink" title="约数个数和"></a>约数个数和</h3><p>根据算术基本定理(?)，设数 $n$ 的约数个数和为 $d_n$，有：<br>$$<br>n&#x3D;\prod_{p_i\mid n \and p_i\mathrm{\ is\ a\ prime}}p_i^{g_i}\<br>d_n&#x3D;\prod g_i+1<br>$$<br>要筛 $d$ 我们还需要一个 $g$ 来表示该数的最小素因子的数量，以便进行第二条转移。</p>
-<ol>
-<li>$g_i&#x3D;1,d_i&#x3D;2$。</li>
-<li>此时枚举数 $i$ 的最小约数已经之前被更新过了并且一定是当前正在枚举的 $p$ ，则 $g_{tmp}&#x3D;g_i+1$。对于 $d_{tmp}$，根据上述公式，那我们就从 $d_i$ 进行转移，更新最小约数的贡献，即除掉更改的贡献乘上正确的，即 $d_{tmp}&#x3D;d_i*\frac{g_{tmp}+1}{g_i+1}$。</li>
-<li>此时枚举的 $p$ 是最小的素因子，那么根据公式，$g_{tmp}&#x3D;1,d_{tmp}&#x3D;d_i*2$。</li>
+<p><strong>下文所有标号位置对应以上三种情况，并设 <span
+class="math inline">\(tmp=i*p\)</span></strong></p>
+<h2 id="例子">例子</h2>
+<h3 id="约数个数和">约数个数和</h3>
+<p>根据算术基本定理(?)，设数 <span class="math inline">\(n\)</span>
+的约数个数和为 <span class="math inline">\(d_n\)</span>，有： <span
+class="math display">\[
+n=\prod_{p_i\mid n \and p_i\mathrm{\ is\ a\ prime}}p_i^{g_i}\\
+d_n=\prod g_i+1
+\]</span> 要筛 <span class="math inline">\(d\)</span> 我们还需要一个
+<span class="math inline">\(g\)</span>
+来表示该数的最小素因子的数量，以便进行第二条转移。</p>
+<ol type="1">
+<li><span class="math inline">\(g_i=1,d_i=2\)</span>。</li>
+<li>此时枚举数 <span class="math inline">\(i\)</span>
+的最小约数已经之前被更新过了并且一定是当前正在枚举的 <span
+class="math inline">\(p\)</span> ，则 <span
+class="math inline">\(g_{tmp}=g_i+1\)</span>。对于 <span
+class="math inline">\(d_{tmp}\)</span>，根据上述公式，那我们就从 <span
+class="math inline">\(d_i\)</span>
+进行转移，更新最小约数的贡献，即除掉更改的贡献乘上正确的，即 <span
+class="math inline">\(d_{tmp}=d_i*\frac{g_{tmp}+1}{g_i+1}\)</span>。</li>
+<li>此时枚举的 <span class="math inline">\(p\)</span>
+是最小的素因子，那么根据公式，<span
+class="math inline">\(g_{tmp}=1,d_{tmp}=d_i*2\)</span>。</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">d[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!mark[i]) p[++tot]=i,d[i]=<span class="number">2</span>,g[i]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>,tmp;j&lt;=tot <span class="built_in">and</span> (tmp=i*p[j])&lt;=n;j++)&#123;</span><br><span class="line">        mark[tmp]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(i%p[j]==<span class="number">0</span>)&#123;</span><br><span class="line">            g[tmp]=g[i]<span class="number">+1</span>;</span><br><span class="line">            d[tmp]=d[i]/(g[i]<span class="number">+1</span>)*(g[tmp]<span class="number">+1</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        g[tmp]=<span class="number">1</span>;</span><br><span class="line">        d[tmp]=d[i]*[g[tmp]<span class="number">+1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="约数和"><a href="#约数和" class="headerlink" title="约数和"></a>约数和</h3><p>根据算术基本定理(?)，已知 $\sigma$ 为约数和，有：<br>$$<br>\sigma_n&#x3D;\prod_{p_i\mid n\and p_i\mathrm{\ is\ a\ prime}}\sum_{j&#x3D;0}^{a_i}p_i^j<br>$$</p>
-<p>注意这里的 $a$ 与上文的 $g$ 表示意义相同，为每个素数的个数。我们定义 $g$ 为最小的 $p$ 的 $\sum_{j&#x3D;0}p^j$。</p>
-<ol>
-<li>$g_i&#x3D;\sigma_i&#x3D;i+1$</li>
-<li>根据 $g$ 的定义，我们要更新 $g$ 就相当于给原来的 $g$ 乘上 $p$ 并加 1。对于 $\sigma$，和上面的转移类似，我们从 $i$ 转移即可。$\sigma_{tmp}&#x3D;\sigma_i*\frac{g_{tmp}}{g_i}$。</li>
+<h3 id="约数和">约数和</h3>
+<p>根据算术基本定理(?)，已知 <span class="math inline">\(\sigma\)</span>
+为约数和，有： <span class="math display">\[
+\sigma_n=\prod_{p_i\mid n\and p_i\mathrm{\ is\ a\
+prime}}\sum_{j=0}^{a_i}p_i^j
+\]</span></p>
+<p>注意这里的 <span class="math inline">\(a\)</span> 与上文的 <span
+class="math inline">\(g\)</span>
+表示意义相同，为每个素数的个数。我们定义 <span
+class="math inline">\(g\)</span> 为最小的 <span
+class="math inline">\(p\)</span> 的 <span
+class="math inline">\(\sum_{j=0}p^j\)</span>。</p>
+<ol type="1">
+<li><span class="math inline">\(g_i=\sigma_i=i+1\)</span></li>
+<li>根据 <span class="math inline">\(g\)</span> 的定义，我们要更新 <span
+class="math inline">\(g\)</span> 就相当于给原来的 <span
+class="math inline">\(g\)</span> 乘上 <span
+class="math inline">\(p\)</span> 并加 1。对于 <span
+class="math inline">\(\sigma\)</span>，和上面的转移类似，我们从 <span
+class="math inline">\(i\)</span> 转移即可。<span
+class="math inline">\(\sigma_{tmp}=\sigma_i*\frac{g_{tmp}}{g_i}\)</span>。</li>
 <li>此时我们计算上一个新的质数的贡献即可，和上面类似。</li>
 </ol>
-<p>代码中 $\sigma$ 用 $f$ 代替。</p>
+<p>代码中 <span class="math inline">\(\sigma\)</span> 用 <span
+class="math inline">\(f\)</span> 代替。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">f[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!mark[i]) p[++tot]=i,g[i]=f[i]=i<span class="number">+1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>,tmp;j&lt;=tot <span class="built_in">and</span> (tmp=i*p[j])&lt;=n;j++)&#123;</span><br><span class="line">        mark[tmp]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(i%p[j]==<span class="number">0</span>)&#123;</span><br><span class="line">            g[tmp]=g[i]*p[j]<span class="number">+1</span>;</span><br><span class="line">            f[tmp]=f[i]/g[i]*g[tmp];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        g[tmp]=p[j]<span class="number">+1</span>;</span><br><span class="line">        f[tmp]=f[i]*f[p[j]];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果要使用线性筛来筛积性函数，大多要表示成枚举所有质因数来统计贡献的形式才可以推出式子。更多技巧待耕。</p>
+<h2 id="总结">总结</h2>
+<p>如果要使用线性筛来筛积性函数，大多要表示成枚举所有质因数来统计贡献的形式才可以推出式子。更多技巧待耕。</p>
 
   </div>
   
@@ -2930,18 +2970,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%BB%B4%E6%8A%A4%E5%8D%95%E8%B0%83%E6%A0%88%20%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E%E5%BA%8F%E5%88%97/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>线段树维护单调栈 单调递增序列</p>
-          <p class='content'>线段树维护单调栈&#x2F;单调递增序列线段树在维护区间时可以维护一个单调栈。
-P4198 楼房重建题意：维护全局最大上升序列大小。
-更新线段树当前节点存储整个区间的最大值，对于该题，左子树的区...</p>
+        <a class='prev' href='/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B%20%E6%AC%A7%E6%8B%89%E7%AD%9B/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>线性筛 欧拉筛</p>
+          <p class='content'>
+线性筛
+
+
+int prime[maxl];
+bool mark[maxl];
+int tot;
+inline void oula()
+{
+    for(int i=2;i...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E7%BA%BF%E6%AE%B5%E6%A0%91%E6%87%92%E6%A0%87%E8%AE%B0/'>
-          <p class='title'>线段树懒标记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>懒标记线段树要做到其 $O(\log n)$ 的更新和查询，就需要用到懒标记。
-懒标记的作用是，当我们对线段树的某些节点（区间）进行更新时，我们并不立即更新这些节点的值，而是将这些更新操作延迟到...</p>
+        <a class='next' href='/2022/04/30/%E7%BA%BF%E6%80%A7%E5%9F%BA/'>
+          <p class='title'>线性基<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元...</p>
         </a>
       
     </div>
@@ -3204,7 +3251,9 @@ P4198 楼房重建题意：维护全局最大上升序列大小。
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4216,7 +4265,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

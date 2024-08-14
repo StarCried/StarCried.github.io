@@ -50,12 +50,12 @@
   <title>Tarjan判断为什么不能把dfn写成low - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="Tarjan，我相信大多数人是这么写的：   void tarjan(int x) {     dfn[x]&#x3D;low[x]&#x3D;++cnt;     st.push(x),vis[x]&#x3D;1;     for(int i&#x3D;head[x];i;i&#x3D;nxt[i])     {         int u&#x3D;to[i];         if(!dfn[u])         {">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tarjan判断为什么不能把dfn写成low">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/Tarjan%E5%88%A4%E6%96%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E6%8A%8Adfn%E5%86%99%E6%88%90low/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="Tarjan，我相信大多数人是这么写的：  void tarjan(int x) {     dfn[x]&#x3D;low[x]&#x3D;++cnt;     st.push(x),vis[x]&#x3D;1;     for(int i&#x3D;head[x];i;i&#x3D;nxt[i])     {         int u&#x3D;to[i];         if(!dfn[u])         {             tarj">
+<meta property="og:description" content="Tarjan，我相信大多数人是这么写的：   void tarjan(int x) {     dfn[x]&#x3D;low[x]&#x3D;++cnt;     st.push(x),vis[x]&#x3D;1;     for(int i&#x3D;head[x];i;i&#x3D;nxt[i])     {         int u&#x3D;to[i];         if(!dfn[u])         {">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,7 +2801,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>Tarjan，我相信大多数人是这么写的：</p>
+    <p>
+Tarjan，我相信大多数人是这么写的：
+</p>
 <div class="cnblogs_code">
 <pre><span style="color: #0000ff;">void</span> tarjan(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x)
 {
@@ -2820,12 +2822,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </span><span style="color: #008000;">//</span><span style="color: #008000;">......</span>
 }</pre>
 </div>
-<p>那么，在else句中，为什么是low[x]=min(low[x],dfn[u])而非low[x]=min(low[x],low[u])呢？</p>
-<p>我们来观察这样一个图：</p>
-<p><img src="./img/2027395-20200717090443911-385306812.png" class="lazyload" data-srcset="./img/2027395-20200717090443911-385306812.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" loading="lazy" /></p>
-<p>（画图工具画的有点难看）</p>
-<p>很明显，③是割点。如果从1开始Tarjan，我们发现，如果用dfn更新，那么1、2、3在同一个强连通分量，即low=1。而4、5的low则是3.这样是正确的。</p>
-<p>但如果用low更新的话，4、5的low全部都将更新为1.因为当5查询到3时，若用low更新5的low，5的low就被更新为3的low&mdash;&mdash;1.这显然是错误的。</p>
+<p>
+那么，在else句中，为什么是low[x]=min(low[x],dfn[u])而非low[x]=min(low[x],low[u])呢？
+</p>
+<p>
+我们来观察这样一个图：
+</p>
+<p>
+<img src="./img/2027395-20200717090443911-385306812.png" class="lazyload" data-srcset="./img/2027395-20200717090443911-385306812.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" loading="lazy" />
+</p>
+<p>
+（画图工具画的有点难看）
+</p>
+<p>
+很明显，③是割点。如果从1开始Tarjan，我们发现，如果用dfn更新，那么1、2、3在同一个强连通分量，即low=1。而4、5的low则是3.这样是正确的。
+</p>
+<p>
+但如果用low更新的话，4、5的low全部都将更新为1.因为当5查询到3时，若用low更新5的low，5的low就被更新为3的low——1.这显然是错误的。
+</p>
+
   </div>
   
   
@@ -2924,17 +2939,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/04/30/POJ3268%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>POJ3268[非公开][草稿]</p>
-          <p class='content'>Silver Cow Party
+          <p class='content'>
+Silver Cow
+Party
+
+
 题意：求有向图一个点与其他所有点往返最短路径的最大值。
-思路：主要就是往返有问题，因为又是有向图，所以我们只得乖乖跑两遍。我们考虑n&lt;=1000，lwc曾...</p>
+
+
+思路：主要就是往返有问题，因为又是有向图，所以我们只得乖乖跑两遍。我们考虑n&...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/Splay/'>
-          <p class='title'>Splay<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>学习自该博客
-（dalao讲得真好，我只为了记忆写重点）
-Splay是一种数据结构，用于在线调整二叉排序树的操作，用于让树平衡（空树或任意节点的左右两个子树的深度差的绝对值不超过1）转换根节点或...</p>
+        <a class='next' href='/2022/04/30/P6753%20%5BBalticOI%202013%20Day1%5D%20Ball%20Machine/'>
+          <p class='title'>P6753 [BalticOI 2013 Day1] Ball Machine<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P6753 [BalticOI 2013
+Day1] Ball Machine
+题意
+给你一个树，每次从根节点放一个求，如果其子节点有空这个球会向下滚，若有多个节点为空则找儿子中以子树内编...</p>
         </a>
       
     </div>
@@ -3187,7 +3209,9 @@ Splay是一种数据结构，用于在线调整二叉排序树的操作，用于
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4199,7 +4223,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

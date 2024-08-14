@@ -50,12 +50,12 @@
   <title>主定理 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="定义 主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。 时间复杂度相关定义 在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大 \(O\) 符">
 <meta property="og:type" content="article">
 <meta property="og:title" content="主定理">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="定义主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。 时间复杂度相关定义在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大 $O$ 符号表述，不包括这个函数">
+<meta property="og:description" content="定义 主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。 时间复杂度相关定义 在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大 \(O\) 符">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,59 +2801,164 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。</p>
-<h2 id="时间复杂度相关定义"><a href="#时间复杂度相关定义" class="headerlink" title="时间复杂度相关定义"></a>时间复杂度相关定义</h2><p>在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大 $O$ 符号表述，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可被称为是渐近的，亦即考察输入值大小趋近无穷时的情况。例如，如果一个算法对于任何大小为 $n$ 的输入，它至多需要 $5n^3 + 3n$ 的时间运行完毕，那么它的渐近时间复杂度是 $O(n^3)$。</p>
+    <h1 id="定义">定义</h1>
+<p>主定理（Master
+Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。</p>
+<h2 id="时间复杂度相关定义">时间复杂度相关定义</h2>
+<p>在计算机科学中，算法的时间复杂度（time
+complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大
+<span class="math inline">\(O\)</span>
+符号表述，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可被称为是渐近的，亦即考察输入值大小趋近无穷时的情况。例如，如果一个算法对于任何大小为
+<span class="math inline">\(n\)</span> 的输入，它至多需要 <span
+class="math inline">\(5n^3 + 3n\)</span>
+的时间运行完毕，那么它的渐近时间复杂度是 <span
+class="math inline">\(O(n^3)\)</span>。</p>
 <p>为了计算时间复杂度，我们通常会估计算法的操作单元数量，每个单元执行的时间都是相同的。因此，总运行时间和算法的操作单元数量最多相差一个常量系数。</p>
-<p>相同大小的不同输入值仍可能造成算法的执行时间不同，因此我们通常使用算法的最坏情况复杂度（时间复杂度上界），记为 $T(n)$ ，定义为任何大小的输入 $n$ 所需的最大执行时间。另一种较少使用的方法是平均情况复杂度，通常有特别指定才会使用（如用于随机算法）。</p>
+<p>相同大小的不同输入值仍可能造成算法的执行时间不同，因此我们通常使用算法的最坏情况复杂度（时间复杂度上界），记为
+<span class="math inline">\(T(n)\)</span> ，定义为任何大小的输入 <span
+class="math inline">\(n\)</span>
+所需的最大执行时间。另一种较少使用的方法是平均情况复杂度，通常有特别指定才会使用（如用于随机算法）。</p>
 <p>对 Bachmann–Landau 符号描述如下：</p>
-<p>$f(n)&#x3D;O(g(n))$ 表示 $g$ 是 $f$ 的上界；</p>
-<p>$f(n)&#x3D;\Omega(g(n))$ 表示 $g$ 是 $f$ 的下界；</p>
-<p>$f(n)&#x3D;\Theta(g(n))$ 表示 $g$ 是 $f$ 的上界和下界。</p>
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>在算法中，假设有递归关系式：</p>
-<p>$$<br>    T(n)&#x3D;aT\left(\frac nb\right)+f(n),\ a\geq 1,b&gt;1<br>$$</p>
-<p>其中，$n$ 为问题规模，$a$ 为子问题数量，$\frac nb$ 为每个子问题的规模（假设每个子问题规模基本一致），$f(n)$ 为递归以外的计算。</p>
+<p><span class="math inline">\(f(n)=O(g(n))\)</span> 表示 <span
+class="math inline">\(g\)</span> 是 <span
+class="math inline">\(f\)</span> 的上界；</p>
+<p><span class="math inline">\(f(n)=\Omega(g(n))\)</span> 表示 <span
+class="math inline">\(g\)</span> 是 <span
+class="math inline">\(f\)</span> 的下界；</p>
+<p><span class="math inline">\(f(n)=\Theta(g(n))\)</span> 表示 <span
+class="math inline">\(g\)</span> 是 <span
+class="math inline">\(f\)</span> 的上界和下界。</p>
+<h1 id="内容">内容</h1>
+<p>在算法中，假设有递归关系式：</p>
+<p><span class="math display">\[
+    T(n)=aT\left(\frac nb\right)+f(n),\ a\geq 1,b&gt;1
+\]</span></p>
+<p>其中，<span class="math inline">\(n\)</span> 为问题规模，<span
+class="math inline">\(a\)</span> 为子问题数量，<span
+class="math inline">\(\frac nb\)</span>
+为每个子问题的规模（假设每个子问题规模基本一致），<span
+class="math inline">\(f(n)\)</span> 为递归以外的计算。</p>
 <ul>
-<li><p>情况1： 若 $\exists \epsilon &gt;0$ ，有 $f(n)&#x3D;O(n^{\log_ba-\epsilon})$ ，则 $T(n)&#x3D;\Theta(n^{\log_ba})$</p>
-</li>
-<li><p>情况2： 若 $\exists \epsilon \geq0 $，有 $f(n)&#x3D;\Theta(n^{\log_ba}\log^\epsilon n)$ ，则 $T(n)&#x3D;\Theta(n^{\log_ba}\log^{\epsilon+1}n)$</p>
-</li>
-<li><p>情况3： 若 $\exists \epsilon &gt;0,c&lt;1$ ，有 $f(n)&#x3D;\Omega(n^{\log_ba+\epsilon}),af\left(\frac nb\right)\leq cf(n)$ ，则 $T(n)&#x3D;\Theta(f(n))$</p>
-</li>
+<li><p>情况1： 若 <span class="math inline">\(\exists \epsilon
+&gt;0\)</span> ，有 <span
+class="math inline">\(f(n)=O(n^{\log_ba-\epsilon})\)</span> ，则 <span
+class="math inline">\(T(n)=\Theta(n^{\log_ba})\)</span></p></li>
+<li><p>情况2： 若 $ $，有 <span
+class="math inline">\(f(n)=\Theta(n^{\log_ba}\log^\epsilon n)\)</span>
+，则 <span
+class="math inline">\(T(n)=\Theta(n^{\log_ba}\log^{\epsilon+1}n)\)</span></p></li>
+<li><p>情况3： 若 <span class="math inline">\(\exists \epsilon
+&gt;0,c&lt;1\)</span> ，有 <span
+class="math inline">\(f(n)=\Omega(n^{\log_ba+\epsilon}),af\left(\frac
+nb\right)\leq cf(n)\)</span> ，则 <span
+class="math inline">\(T(n)=\Theta(f(n))\)</span></p></li>
 </ul>
-<h1 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h1><p>设总复杂度为 $T(n)$，有</p>
-<p>$$ T(n)&#x3D;\sum_{i&#x3D;0}^{\log_bn}a^i f\left(\frac n{b^i}\right) $$</p>
-<p>将上述三种情况分别代入得 $T(n)$ 得</p>
+<h1 id="证明">证明</h1>
+<p>设总复杂度为 <span class="math inline">\(T(n)\)</span>，有</p>
+<p><span class="math display">\[ T(n)=\sum_{i=0}^{\log_bn}a^i
+f\left(\frac n{b^i}\right) \]</span></p>
+<p>将上述三种情况分别代入得 <span class="math inline">\(T(n)\)</span>
+得</p>
 <ul>
 <li>情况1：</li>
 </ul>
-<p>$$<br>    \begin{aligned}<br>    T(n)&amp;&#x3D;O(\sum_{i&#x3D;0}^{\log_bn}a^i\left(\frac n{b^i}\right)^{\log_ba-\epsilon})\<br>    &amp;&#x3D;O(n^{\log_ba-\epsilon}\sum_{i&#x3D;0}^{\log_bn}\left(\frac a{b^{\log_ba&#x3D;\epsilon}}\right)^i)\<br>    &amp;&#x3D;O(n^{\log_ba-\epsilon}\sum_{i&#x3D;0}^{\log_bn}b^{\epsilon j})\<br>    &amp;&#x3D;O(n^{\log_ba-\epsilon}\left(\frac{n^\epsilon-1}{b^\epsilon-1}\right))\<br>    &amp;&#x3D;O(n^{\log_ba})<br>    \end{aligned}<br>$$</p>
+<p><span class="math display">\[
+    \begin{aligned}
+    T(n)&amp;=O(\sum_{i=0}^{\log_bn}a^i\left(\frac
+n{b^i}\right)^{\log_ba-\epsilon})\\
+    &amp;=O(n^{\log_ba-\epsilon}\sum_{i=0}^{\log_bn}\left(\frac
+a{b^{\log_ba=\epsilon}}\right)^i)\\
+    &amp;=O(n^{\log_ba-\epsilon}\sum_{i=0}^{\log_bn}b^{\epsilon j})\\
+    &amp;=O(n^{\log_ba-\epsilon}\left(\frac{n^\epsilon-1}{b^\epsilon-1}\right))\\
+    &amp;=O(n^{\log_ba})
+    \end{aligned}
+\]</span></p>
 <ul>
 <li>情况2：</li>
 </ul>
-<p>$$<br>\begin{aligned}<br>T(n) &amp; &#x3D;\Theta\left(\sum_{i&#x3D;0}^{\log_b n} a^i\left(\frac{n}{b^i}\right)^{\log <em>b a} \log ^k\left(\frac{n}{b^i}\right)\right) \<br>&amp; &#x3D;\Theta\left(\sum</em>{i&#x3D;0}^{\log_b n} a^i\left(\frac{n^{\log _b a}}{b^{i^{\log _b a}}}\right)\left(\log n-\log b^i\right)^k\right) \<br>&amp; &#x3D;\Theta\left(n^{\log <em>b a} \sum</em>{i&#x3D;0}^{\log_b n}\left(\frac{a}{b^{\log _b a}}\right)^i\left(\log ^k n-\log ^k b^i\right)\right) \<br>&amp; &#x3D;\Theta\left(n^{\log <em>b a} \sum</em>{i&#x3D;0}^{\log_b n} \log ^k n-\log ^k b^i\right) \<br>&amp; &#x3D;\Theta\left(n^{\log _b a}\left(\log <em>b n \cdot \log ^k n-\sum</em>{i&#x3D;0}^{\log_b n} \log ^k b^i\right)\right) \<br>&amp; &#x3D;\Theta\left(\log _b n \cdot \log ^k n \cdot n^{\log _b a}-n^{\log <em>b a} \sum</em>{i&#x3D;0}^{\log_b n} \log ^k b^i\right)\<br>&amp; &#x3D;\Theta\left(n^{\log _b a}\log ^{k+1} n\right)<br>\end{aligned}\<br>$$</p>
+<p><span class="math display">\[
+\begin{aligned}
+T(n) &amp; =\Theta\left(\sum_{i=0}^{\log_b n}
+a^i\left(\frac{n}{b^i}\right)^{\log _b a} \log
+^k\left(\frac{n}{b^i}\right)\right) \\
+&amp; =\Theta\left(\sum_{i=0}^{\log_b n} a^i\left(\frac{n^{\log _b
+a}}{b^{i^{\log _b a}}}\right)\left(\log n-\log b^i\right)^k\right) \\
+&amp; =\Theta\left(n^{\log _b a} \sum_{i=0}^{\log_b
+n}\left(\frac{a}{b^{\log _b a}}\right)^i\left(\log ^k n-\log ^k
+b^i\right)\right) \\
+&amp; =\Theta\left(n^{\log _b a} \sum_{i=0}^{\log_b n} \log ^k n-\log ^k
+b^i\right) \\
+&amp; =\Theta\left(n^{\log _b a}\left(\log _b n \cdot \log ^k
+n-\sum_{i=0}^{\log_b n} \log ^k b^i\right)\right) \\
+&amp; =\Theta\left(\log _b n \cdot \log ^k n \cdot n^{\log _b a}-n^{\log
+_b a} \sum_{i=0}^{\log_b n} \log ^k b^i\right)\\
+&amp; =\Theta\left(n^{\log _b a}\log ^{k+1} n\right)
+\end{aligned}\\
+\]</span></p>
 <ul>
 <li>情况3：</li>
 </ul>
-<p>$$<br>\begin{aligned}<br>    &amp;af(\frac nb)\leq cf(n)\<br>    &amp;\Rightarrow a^if(\frac nb)\leq c^if(n)\<br>    &amp;\Rightarrow T(n)\leq \sum_{i&#x3D;0}^{\log_b n}c^if(n)\<br>    &amp;\Rightarrow T(n)\leq f(n)\sum_{i&#x3D;0}^\infty c^i\<br>    &amp;\Rightarrow T(n)\leq \left(\frac 1{1-c}\right)f(n)\<br>    &amp;\Rightarrow T(n)&#x3D;O(f(n))<br>\end{aligned}<br>$$</p>
-<p>又由于 $f(n)&#x3D;\Omega(n^{\log_ba+\epsilon})$，$T(n)&#x3D;\Omega(f(n))$，因此</p>
-<p>$$T(n)&#x3D;\Theta(f(n))$$</p>
+<p><span class="math display">\[
+\begin{aligned}
+    &amp;af(\frac nb)\leq cf(n)\\
+    &amp;\Rightarrow a^if(\frac nb)\leq c^if(n)\\
+    &amp;\Rightarrow T(n)\leq \sum_{i=0}^{\log_b n}c^if(n)\\
+    &amp;\Rightarrow T(n)\leq f(n)\sum_{i=0}^\infty c^i\\
+    &amp;\Rightarrow T(n)\leq \left(\frac 1{1-c}\right)f(n)\\
+    &amp;\Rightarrow T(n)=O(f(n))
+\end{aligned}
+\]</span></p>
+<p>又由于 <span
+class="math inline">\(f(n)=\Omega(n^{\log_ba+\epsilon})\)</span>，<span
+class="math inline">\(T(n)=\Omega(f(n))\)</span>，因此</p>
+<p><span class="math display">\[T(n)=\Theta(f(n))\]</span></p>
 <p>综上，定理得证。</p>
-<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><p>一般的递归算法都可以用主定理分析时间复杂度。如大多数分治算法等。下面给出一个具体的问题作为实例。</p>
-<p><strong>最小圆覆盖问题</strong> ：给定平面上的 $n$ 个点，求出一个最小的一圆包围所有的点。</p>
+<h1 id="应用">应用</h1>
+<p>一般的递归算法都可以用主定理分析时间复杂度。如大多数分治算法等。下面给出一个具体的问题作为实例。</p>
+<p><strong>最小圆覆盖问题</strong> ：给定平面上的 <span
+class="math inline">\(n\)</span>
+个点，求出一个最小的一圆包围所有的点。</p>
 <p>对于一个答案，一定有至少两个点在圆上。若不然，则圆可以继续缩小。因此我们只需要找到两个点（作为直径）或三个点即可确定一个最小圆覆盖。</p>
-<p>我们用到随机增量法，即将给出的点以随机的顺序进行遍历。${p_i}$ 为加入的点集。设前 $i-1$ 个点确定的最小覆盖圆为 $C$，此时加入 $p_i$：</p>
-<ol>
-<li><p>若 $p_i$ 在 $C$ 内，则最小覆盖圆不变。</p>
-</li>
-<li><p>若 $p_i$ 在 $C$ 外，则其一定在新确定的最小覆盖圆上。此时遍历前 $i-1$ 个点。设当前遍历到 $p_j$，则将 $p_i,p_j$ 确定的圆设为当前最小覆盖圆，并遍历前 $j-1$ 个点，若有点 $p_k$ 在圆外，则将 $p_i,p_j,p_k$ 确定的圆设为当前最小覆盖圆。</p>
-</li>
+<p>我们用到随机增量法，即将给出的点以随机的顺序进行遍历。<span
+class="math inline">\(\{p_i\}\)</span> 为加入的点集。设前 <span
+class="math inline">\(i-1\)</span> 个点确定的最小覆盖圆为 <span
+class="math inline">\(C\)</span>，此时加入 <span
+class="math inline">\(p_i\)</span>：</p>
+<ol type="1">
+<li><p>若 <span class="math inline">\(p_i\)</span> 在 <span
+class="math inline">\(C\)</span> 内，则最小覆盖圆不变。</p></li>
+<li><p>若 <span class="math inline">\(p_i\)</span> 在 <span
+class="math inline">\(C\)</span>
+外，则其一定在新确定的最小覆盖圆上。此时遍历前 <span
+class="math inline">\(i-1\)</span> 个点。设当前遍历到 <span
+class="math inline">\(p_j\)</span>，则将 <span
+class="math inline">\(p_i,p_j\)</span>
+确定的圆设为当前最小覆盖圆，并遍历前 <span
+class="math inline">\(j-1\)</span> 个点，若有点 <span
+class="math inline">\(p_k\)</span> 在圆外，则将 <span
+class="math inline">\(p_i,p_j,p_k\)</span>
+确定的圆设为当前最小覆盖圆。</p></li>
 </ol>
 <p>可以证明，这样一定能获得一个最小圆覆盖。</p>
-<p>设三个循环的复杂度分别为 $T_1(n),T_2(n),T_3(n)$。现在考虑第一层循环，即加入一个点的循环。由于最多只有三个点在最小覆盖圆上，且我们的点是随机加入的，理论上每个点其之前点确定的最小覆盖圆上的概率是相同的，因此点 $p_i$ 在加入时在当前圆外并调用下层循环的概率是 $\frac 3i$。第二层调用类似。因此计算时间复杂度为</p>
-<p>$$<br>    \begin{aligned}<br>        &amp;T_1(n)&#x3D;\sum_{i&#x3D;1}^n\frac 3iT_2(i)+O(n)\<br>        &amp;T_2(n)&#x3D;\sum_{i&#x3D;1}^n\frac 3iT_3(i)+O(n)\<br>        &amp;T_3(n)&#x3D;O(n)<br>    \end{aligned}<br>$$</p>
+<p>设三个循环的复杂度分别为 <span
+class="math inline">\(T_1(n),T_2(n),T_3(n)\)</span>。现在考虑第一层循环，即加入一个点的循环。由于最多只有三个点在最小覆盖圆上，且我们的点是随机加入的，理论上每个点其之前点确定的最小覆盖圆上的概率是相同的，因此点
+<span class="math inline">\(p_i\)</span>
+在加入时在当前圆外并调用下层循环的概率是 <span
+class="math inline">\(\frac
+3i\)</span>。第二层调用类似。因此计算时间复杂度为</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        &amp;T_1(n)=\sum_{i=1}^n\frac 3iT_2(i)+O(n)\\
+        &amp;T_2(n)=\sum_{i=1}^n\frac 3iT_3(i)+O(n)\\
+        &amp;T_3(n)=O(n)
+    \end{aligned}
+\]</span></p>
 <p>其中两点及三点确定一个圆可由公式推出，计算量固定可视为常数。</p>
-<p>这里每一层对上一层实际上是有 $n$ 个规模为 $1$ 的子问题。由主定理得，最终算法的时间复杂度为 $T_1(n)&#x3D;O(n)$。</p>
-<hr>
+<p>这里每一层对上一层实际上是有 <span class="math inline">\(n\)</span>
+个规模为 <span class="math inline">\(1\)</span>
+的子问题。由主定理得，最终算法的时间复杂度为 <span
+class="math inline">\(T_1(n)=O(n)\)</span>。</p>
+<hr />
 <p>PS:tex 写多了感觉不会写 markdown 了……</p>
 
   </div>
@@ -2952,17 +3057,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>二项式反演</p>
-          <p class='content'>二项式反演$$\begin{aligned}g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_...</p>
+        <a class='prev' href='/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>中国剩余定理</p>
+          <p class='content'>
+“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
+
+#中国剩余定理 即求多个同余方程的解。
+举个栗子。求一个数x，使得： \[\begin{cas...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/'>
-          <p class='title'>分层图<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ 所以又在网上找着看了看写一篇博客备忘。
-学习笔记真的很有用！
-分层图这个很容易理解，来源就是在一些最短路的问题上题目又加了...</p>
+        <a class='next' href='/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/'>
+          <p class='title'>二项式反演<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>二项式反演
+\[
+\begin{aligned}
+g_n=\sum_{i=0}^n(-1)^i\binom ni f_i\Leftrightarrow
+f_n=\sum_{i=0}^n(...</p>
         </a>
       
     </div>
@@ -3225,7 +3336,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4237,7 +4350,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

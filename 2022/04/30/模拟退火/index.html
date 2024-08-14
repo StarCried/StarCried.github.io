@@ -50,12 +50,12 @@
   <title>模拟退火 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,随机化,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="算法介绍 模拟退火是一种最优化随机化算法。什么叫随机化算法？就是抽奖抽正解 一般用于求解最优解，即最优化问题，而且一般比较适合于小数据的最优解和大数据的近似最优解。 算法步骤 每次迭代都随机选择一个解，然后模拟退火得到该解的邻域最优解，如果邻域最优解比当前解更优，则接受该邻域最优解小，则更新当前解为该解。 模拟退火步骤如下：  先初始化温度，当前解和当前答案 如果温度小于最终温度，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模拟退火">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="算法介绍模拟退火是一种最优化随机化算法。什么叫随机化算法？就是抽奖抽正解 一般用于求解最优解，即最优化问题，而且一般比较适合于小数据的最优解和大数据的近似最优解。 算法步骤每次迭代都随机选择一个解，然后模拟退火得到该解的邻域最优解，如果邻域最优解比当前解更优，则接受该邻域最优解小，则更新当前解为该解。 模拟退火步骤如下：  先初始化温度，当前解和当前答案 如果温度小于最终温度，跳到第7步结束；否则">
+<meta property="og:description" content="算法介绍 模拟退火是一种最优化随机化算法。什么叫随机化算法？就是抽奖抽正解 一般用于求解最优解，即最优化问题，而且一般比较适合于小数据的最优解和大数据的近似最优解。 算法步骤 每次迭代都随机选择一个解，然后模拟退火得到该解的邻域最优解，如果邻域最优解比当前解更优，则接受该邻域最优解小，则更新当前解为该解。 模拟退火步骤如下：  先初始化温度，当前解和当前答案 如果温度小于最终温度，">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,11 +2803,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h2><p>模拟退火是一种最优化随机化算法。什么叫随机化算法？<del>就是抽奖抽正解</del></p>
+    <h2 id="算法介绍">算法介绍</h2>
+<p>模拟退火是一种最优化随机化算法。什么叫随机化算法？<del>就是抽奖抽正解</del></p>
 <p>一般用于求解最优解，即最优化问题，而且一般比较适合于小数据的最优解和大数据的近似最优解。</p>
-<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>每次迭代都随机选择一个解，然后模拟退火得到该解的邻域最优解，如果邻域最优解比当前解更优，则接受该邻域最优解小，则更新当前解为该解。</p>
+<h2 id="算法步骤">算法步骤</h2>
+<p>每次迭代都随机选择一个解，然后模拟退火得到该解的邻域最优解，如果邻域最优解比当前解更优，则接受该邻域最优解小，则更新当前解为该解。</p>
 <p>模拟退火步骤如下：</p>
-<ol>
+<ol type="1">
 <li>先初始化温度，当前解和当前答案</li>
 <li>如果温度小于最终温度，跳到第7步结束；否则跳3</li>
 <li>重复执行4~5步若干次</li>
@@ -2816,13 +2818,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>降温，跳2</li>
 <li>结束</li>
 </ol>
-<p>对于差解的判断和当前温度有关，解越差我们越不想要它，接受它的概率就小一些；贪心往往会在开始的时候陷入局部最优解，我们就要在开始的时候跳出局部最优，也就是通过走向较差的解，所以开始的时候接受差解的概率要大一些；快结束的时候我们需要稳定在当前的最优解，接受差解的概率就小一些，所以我们模拟物理的退火原理，温度从高逐渐降低，对于接受差解概率的计算公式 <code>e^(delta/T)</code> 来说，新解答案的差异值为分子 <code>delta</code>，是个负数（如果正数取负就行），答案越差，<code>delta</code> 绝对值越大，指数越小，概率也越小；温度越低，指数越小，概率也越小，这就符合了我们求解的需要。</p>
+<p>对于差解的判断和当前温度有关，解越差我们越不想要它，接受它的概率就小一些；贪心往往会在开始的时候陷入局部最优解，我们就要在开始的时候跳出局部最优，也就是通过走向较差的解，所以开始的时候接受差解的概率要大一些；快结束的时候我们需要稳定在当前的最优解，接受差解的概率就小一些，所以我们模拟物理的退火原理，温度从高逐渐降低，对于接受差解概率的计算公式
+<code>e^(delta/T)</code> 来说，新解答案的差异值为分子
+<code>delta</code>，是个负数（如果正数取负就行），答案越差，<code>delta</code>
+绝对值越大，指数越小，概率也越小；温度越低，指数越小，概率也越小，这就符合了我们求解的需要。</p>
 <p>代码中定义如下：</p>
 <ul>
 <li><code>delta</code> 表示退火的速度</li>
-<li><code>eps</code> 表示极低值。退火时是 <code>tempetare*delta</code> 当然达不到 0</li>
+<li><code>eps</code> 表示极低值。退火时是 <code>tempetare*delta</code>
+当然达不到 0</li>
 <li><code>T</code>表示初始温度</li>
-<li><code>srand(seed)</code> 表示以 <code>seed</code> 为种子生成的随机数。引用于 <code>cstdlib</code> 库。当你想完全随机时可令 <code>seed=time(0)</code>，<code>time()</code> 函数引用于 <code>ctime</code> 库。生成完了后，用 <code>rand()</code> 得到这些值<br> <code>exp(x)</code> 表示 <code>e^x</code>，引用于 <code>cmath</code> 库</li>
+<li><code>srand(seed)</code> 表示以 <code>seed</code>
+为种子生成的随机数。引用于 <code>cstdlib</code> 库。当你想完全随机时可令
+<code>seed=time(0)</code>，<code>time()</code> 函数引用于
+<code>ctime</code> 库。生成完了后，用 <code>rand()</code> 得到这些值
+<code>exp(x)</code> 表示 <code>e^x</code>，引用于 <code>cmath</code>
+库</li>
 </ul>
 <p>模拟退火的中心公式是在随机出的解差于最优解时，有一定几率跳出该解，并且这个几率会随着次数变小，即：</p>
 <p><code>rand()&lt;exp((ans-newans)/t) * RAND_MAX</code></p>
@@ -2925,19 +2936,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%9D%83%E5%80%BC%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%A5%97%E5%BA%8F%E5%88%97%E7%BA%BF%E6%AE%B5%E6%A0%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>权值线段树套序列线段树</p>
-          <p class='content'>【模板】权值线段树套序列线段树P3380 【模板】二逼平衡树（树套树）
-主要思路如下：
-外层为权值线段树，内层为动态开点线段树，也就是每个权值线段树上的节点开一个动态开点线段树。
-外层的权值线段...</p>
+        <a class='prev' href='/2022/04/30/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>类欧几里得算法</p>
+          <p class='content'>类欧几里得算法之所以得名是因为其算法复杂度证明与扩展欧几里得算法类似。
+我认为类欧更偏向于是一种思想。
+其主要思想就是寻找可以简便计算的边界，然后通过化式子将不同情况化为边界递归计算。
+通...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86/'>
-          <p class='title'>树上差分<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>差分记录相邻节点值的差值。这样一来，前缀和就相当于原值了。
-树上差分树上差分基本上就是差分在树上的实现。因为差分的原理，我们先将所有点的权值改变成差分值，再更改一段区间内的所有值时，只需要更改首...</p>
+        <a class='next' href='/2022/04/30/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/'>
+          <p class='title'>笛卡尔树<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>笛卡尔树
+
+笛卡尔树（Cartesian
+tree）是一种树形数据结构，每个节点都是一个区间，树的根节点表示整个区间，左儿子表示区间的左半部分，右儿子表示区间的右半部分。
+
+笛卡尔树可...</p>
         </a>
       
     </div>
@@ -3200,7 +3215,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4212,7 +4229,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

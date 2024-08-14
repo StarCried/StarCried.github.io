@@ -50,12 +50,12 @@
   <title>中国剩余定理 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》  #中国剩余定理 即求多个同余方程的解。 举个栗子。求一个数x，使得： \[\begin{cases} x≡2(mod 3)\\ x≡3(mod 5)\\ x≡2(mod 11)\end{cases}\] 设M&#x3D;3511&#x3D;165, a1&#x3D;3,a2&#x3D;5,a3&#x3D;11, M1&#x3D;M&#x2F;a1&#x3D;55 M">
 <meta property="og:type" content="article">
 <meta property="og:title" content="中国剩余定理">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》  #中国剩余定理即求多个同余方程的解。 举个栗子。求一个数x，使得：$$\begin{cases}x≡2(mod 3)\x≡3(mod 5)\x≡2(mod 11)\end{cases}$$ 设M&#x3D;3511&#x3D;165, a1&#x3D;3,a2&#x3D;5,a3&#x3D;11, M1&amp;#">
+<meta property="og:description" content="“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》  #中国剩余定理 即求多个同余方程的解。 举个栗子。求一个数x，使得： \[\begin{cases} x≡2(mod 3)\\ x≡3(mod 5)\\ x≡2(mod 11)\end{cases}\] 设M&#x3D;3511&#x3D;165, a1&#x3D;3,a2&#x3D;5,a3&#x3D;11, M1&#x3D;M&#x2F;a1&#x3D;55 M">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2804,24 +2804,50 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <blockquote>
 <p>“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》</p>
 </blockquote>
-<p>#中国剩余定理<br>即求多个同余方程的解。</p>
-<p>举个栗子。求一个数x，使得：<br>$$\begin{cases}<br>x≡2(mod 3)\<br>x≡3(mod 5)\<br>x≡2(mod 11)\end{cases}$$</p>
-<p>设M&#x3D;3<em>5</em>11&#x3D;165, a1&#x3D;3,a2&#x3D;5,a3&#x3D;11,</p>
-<p>M1&#x3D;M&#x2F;a1&#x3D;55</p>
-<p>M2&#x3D;M&#x2F;a2&#x3D;33</p>
-<p>M3&#x3D;M&#x2F;a3&#x3D;15</p>
+<p>#中国剩余定理 即求多个同余方程的解。</p>
+<p>举个栗子。求一个数x，使得： <span
+class="math display">\[\begin{cases}
+x≡2(mod 3)\\
+x≡3(mod 5)\\
+x≡2(mod 11)\end{cases}\]</span></p>
+<p>设M=3<em>5</em>11=165, a1=3,a2=5,a3=11,</p>
+<p>M1=M/a1=55</p>
+<p>M2=M/a2=33</p>
+<p>M3=M/a3=15</p>
 <p>然后我们再求a的逆元c。（扩展欧几里得）</p>
-<p>然后结果就是(a1<em>M1</em>c1 + a2<em>M2</em>c2 + a3<em>M3</em>c3)%M</p>
+<p>然后结果就是(a1<em>M1</em>c1 + a2<em>M2</em>c2 +
+a3<em>M3</em>c3)%M</p>
 <p>当然，我们要求的不仅仅是符合3个数的要求。于是我们就可以得到代码：</p>
-<p>（变量名和以上有出入）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">void exgcd(ll a,ll b,ll &amp;d,ll &amp;x,ll &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">    if(!b)d=a,x=1,y=0;</span><br><span class="line">    else&#123;</span><br><span class="line">        exgcd(b,a%b,d,y,x);</span><br><span class="line">        y-=(a/b)*x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll China(int n,ll *m,ll*a)</span><br><span class="line">&#123;</span><br><span class="line">    ll M=1,d,y,x=0;</span><br><span class="line">    for(int i=0;i&lt;n;i++)M*=m[i];</span><br><span class="line">    for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        ll w=M/m[i];</span><br><span class="line">        exgcd(m[i],w,d,d,y);</span><br><span class="line">        x=(x+y*w*a[i])%M;</span><br><span class="line">    &#125;</span><br><span class="line">    return (x+M)%M;</span><br><span class="line">&#125;</span><br><span class="line">ll m[15],a[15];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    for(int i=0;i&lt;n;i++)</span><br><span class="line">    scanf(&quot;%lld%lld&quot;,&amp;m[i],&amp;a[i]);</span><br><span class="line">    printf(&quot;%lld&quot;,China(n,m,a));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上是中国剩余定理的内容（CRT）</p>
-<p>#扩展中国剩余定理（exCRT)<br>简单来说就是对于每两个同余方程，我们可以把它们合并成一个同余方程，并在每次计入一个新的同余方程的时候得到新的解。我们理性地思考一下，如：<br>$$\begin{cases}<br>x≡y_1(mod  m_1)\<br>x≡y_2(mod  m_2)\<br>…\<br>x≡y_n(mod m_n)<br>\end{cases}$$<br>$$M&#x3D;LCM_{i−1}^{k−1}mi$$<br>其中$m_1,m_2,m_3…m_n$为不一定两两互质的整数,求x的最小非负整数解.<br>假设前n-1项已经求出解为x，那么对于第n个式子：<br>$$x+tM≡y_n(mod m_n)$$<br>M和yn、mn是已知的，我们只需exgcd求出x和t就行了。</p>
-<hr>
-<p>或者我们把<strong>合并</strong>感性理解一下，假设原来只有一个同余方程<br>$$x≡y_1(mod  m_1)\Rightarrow x+k_1m_1&#x3D;y_1$$<br>我们再加入一个方程<br>$$x≡y_2(mod  m_2)\Rightarrow x+k_2m_2&#x3D;y_2$$<br>两者相减，得到<br>$$k_1m_1-k_2m_2&#x3D;y_1-y_2$$<br>再用exgcd解得$k_1$和$k_2$即可。那么要求x的值回代即可。</p>
-<p>那么对于一个新加入的式子就有：<br>$$-k_1m_1+y_1+tm_3&#x3D;k_3m_3+y_3$$<br>（k1、m1和y1表示上次的x，用②式表示也可以）发现新的未知数是t和k3，重新用exgcd求解即可。</p>
-<p>当然这里只写了三个式子。想要更多同余方程组的解？请多次exgcd。这个思维和上面的思维是等价的。<br><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4777">洛谷P4777</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;cctype&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">inline ll read()</span><br><span class="line">&#123;</span><br><span class="line">	bool w=0;ll x=0;char c=getchar();</span><br><span class="line">	while(!isdigit(c))w|=c==&#x27;-&#x27;,c=getchar();</span><br><span class="line">	while(isdigit(c))x=(x&lt;&lt;3)+(x&lt;&lt;1)+(c^48),c=getchar();</span><br><span class="line">	return w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line">namespace star</span><br><span class="line">&#123;</span><br><span class="line">	const ll maxn=1e5+100;</span><br><span class="line">	ll y[maxn],m[maxn],n;</span><br><span class="line">	inline void exgcd(ll a,ll b,ll &amp;x,ll &amp;y,ll &amp;d)&#123;</span><br><span class="line">		if(!b)d=a,x=1,y=0;</span><br><span class="line">		else exgcd(b,a%b,y,x,d),y-=x*(a/b);</span><br><span class="line">	&#125;</span><br><span class="line">	ll mul(ll a,ll b,ll mod)&#123;</span><br><span class="line">		ll res=0;</span><br><span class="line">		while(b)&#123;</span><br><span class="line">			if(b&amp;1)res=(res+a)%mod;</span><br><span class="line">			a=(a+a)%mod;</span><br><span class="line">			b&gt;&gt;=1;</span><br><span class="line">		&#125;</span><br><span class="line">		return res;</span><br><span class="line">	&#125;</span><br><span class="line">	inline ll excrt()</span><br><span class="line">	&#123;</span><br><span class="line">		ll xx,yy,k;</span><br><span class="line">  		ll M=m[1],ans=y[1];</span><br><span class="line">		for(int i=2;i&lt;=n;i++)</span><br><span class="line">    	      &#123;</span><br><span class="line">			ll a=M,b=m[i],c=(y[i]-ans%b+b)%b;//x≡y(mod m)，ans为上一次的解。</span><br><span class="line">   			ll gcd;</span><br><span class="line">			exgcd(a,b,xx,yy,gcd);//tM+km=y-x,c是常数项，xx和yy分别表示t和k</span><br><span class="line">			ll bg=b/gcd;//这个是为了exgcd的最后一个步骤，求解出最小非负整数解</span><br><span class="line">   			if(c%gcd!=0) return -1;</span><br><span class="line">			xx=mul(xx,c/gcd,bg);</span><br><span class="line">			ans+=xx*M;</span><br><span class="line">			M*=bg;//M为前k个m的lcm</span><br><span class="line"> 			ans=(ans%M+M)%M;</span><br><span class="line">		&#125;</span><br><span class="line">		return (ans%M+M)%M;</span><br><span class="line">	&#125;</span><br><span class="line">	inline void cried()</span><br><span class="line">	&#123;</span><br><span class="line">		n=read();</span><br><span class="line">		for(int i=1;i&lt;=n;i++)m[i]=read(),y[i]=read();</span><br><span class="line">		printf(&quot;%lld\n&quot;,excrt()); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	star::cried();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（变量名和以上有出入） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">void exgcd(ll a,ll b,ll &amp;d,ll &amp;x,ll &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">    if(!b)d=a,x=1,y=0;</span><br><span class="line">    else&#123;</span><br><span class="line">        exgcd(b,a%b,d,y,x);</span><br><span class="line">        y-=(a/b)*x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll China(int n,ll *m,ll*a)</span><br><span class="line">&#123;</span><br><span class="line">    ll M=1,d,y,x=0;</span><br><span class="line">    for(int i=0;i&lt;n;i++)M*=m[i];</span><br><span class="line">    for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        ll w=M/m[i];</span><br><span class="line">        exgcd(m[i],w,d,d,y);</span><br><span class="line">        x=(x+y*w*a[i])%M;</span><br><span class="line">    &#125;</span><br><span class="line">    return (x+M)%M;</span><br><span class="line">&#125;</span><br><span class="line">ll m[15],a[15];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    for(int i=0;i&lt;n;i++)</span><br><span class="line">    scanf(&quot;%lld%lld&quot;,&amp;m[i],&amp;a[i]);</span><br><span class="line">    printf(&quot;%lld&quot;,China(n,m,a));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+以上是中国剩余定理的内容（CRT）</p>
+<p>#扩展中国剩余定理（exCRT)
+简单来说就是对于每两个同余方程，我们可以把它们合并成一个同余方程，并在每次计入一个新的同余方程的时候得到新的解。我们理性地思考一下，如：
+<span class="math display">\[\begin{cases}
+x≡y_1(mod  m_1)\\
+x≡y_2(mod  m_2)\\
+...\\
+x≡y_n(mod m_n)
+\end{cases}\]</span> <span
+class="math display">\[M=LCM_{i−1}^{k−1}mi\]</span> 其中<span
+class="math inline">\(m_1,m_2,m_3...m_n\)</span>为不一定两两互质的整数,求x的最小非负整数解.
+假设前n-1项已经求出解为x，那么对于第n个式子： <span
+class="math display">\[x+tM≡y_n(mod m_n)\]</span>
+M和yn、mn是已知的，我们只需exgcd求出x和t就行了。</p>
+<hr />
+<p>或者我们把<strong>合并</strong>感性理解一下，假设原来只有一个同余方程
+<span class="math display">\[x≡y_1(mod  m_1)\Rightarrow
+x+k_1m_1=y_1\]</span> 我们再加入一个方程 <span
+class="math display">\[x≡y_2(mod  m_2)\Rightarrow x+k_2m_2=y_2\]</span>
+两者相减，得到 <span
+class="math display">\[k_1m_1-k_2m_2=y_1-y_2\]</span> 再用exgcd解得<span
+class="math inline">\(k_1\)</span>和<span
+class="math inline">\(k_2\)</span>即可。那么要求x的值回代即可。</p>
+<p>那么对于一个新加入的式子就有： <span
+class="math display">\[-k_1m_1+y_1+tm_3=k_3m_3+y_3\]</span>
+（k1、m1和y1表示上次的x，用②式表示也可以）发现新的未知数是t和k3，重新用exgcd求解即可。</p>
+<p>当然这里只写了三个式子。想要更多同余方程组的解？请多次exgcd。这个思维和上面的思维是等价的。
+<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4777">洛谷P4777</a>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;cctype&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">inline ll read()</span><br><span class="line">&#123;</span><br><span class="line">	bool w=0;ll x=0;char c=getchar();</span><br><span class="line">	while(!isdigit(c))w|=c==&#x27;-&#x27;,c=getchar();</span><br><span class="line">	while(isdigit(c))x=(x&lt;&lt;3)+(x&lt;&lt;1)+(c^48),c=getchar();</span><br><span class="line">	return w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line">namespace star</span><br><span class="line">&#123;</span><br><span class="line">	const ll maxn=1e5+100;</span><br><span class="line">	ll y[maxn],m[maxn],n;</span><br><span class="line">	inline void exgcd(ll a,ll b,ll &amp;x,ll &amp;y,ll &amp;d)&#123;</span><br><span class="line">		if(!b)d=a,x=1,y=0;</span><br><span class="line">		else exgcd(b,a%b,y,x,d),y-=x*(a/b);</span><br><span class="line">	&#125;</span><br><span class="line">	ll mul(ll a,ll b,ll mod)&#123;</span><br><span class="line">		ll res=0;</span><br><span class="line">		while(b)&#123;</span><br><span class="line">			if(b&amp;1)res=(res+a)%mod;</span><br><span class="line">			a=(a+a)%mod;</span><br><span class="line">			b&gt;&gt;=1;</span><br><span class="line">		&#125;</span><br><span class="line">		return res;</span><br><span class="line">	&#125;</span><br><span class="line">	inline ll excrt()</span><br><span class="line">	&#123;</span><br><span class="line">		ll xx,yy,k;</span><br><span class="line">  		ll M=m[1],ans=y[1];</span><br><span class="line">		for(int i=2;i&lt;=n;i++)</span><br><span class="line">    	      &#123;</span><br><span class="line">			ll a=M,b=m[i],c=(y[i]-ans%b+b)%b;//x≡y(mod m)，ans为上一次的解。</span><br><span class="line">   			ll gcd;</span><br><span class="line">			exgcd(a,b,xx,yy,gcd);//tM+km=y-x,c是常数项，xx和yy分别表示t和k</span><br><span class="line">			ll bg=b/gcd;//这个是为了exgcd的最后一个步骤，求解出最小非负整数解</span><br><span class="line">   			if(c%gcd!=0) return -1;</span><br><span class="line">			xx=mul(xx,c/gcd,bg);</span><br><span class="line">			ans+=xx*M;</span><br><span class="line">			M*=bg;//M为前k个m的lcm</span><br><span class="line"> 			ans=(ans%M+M)%M;</span><br><span class="line">		&#125;</span><br><span class="line">		return (ans%M+M)%M;</span><br><span class="line">	&#125;</span><br><span class="line">	inline void cried()</span><br><span class="line">	&#123;</span><br><span class="line">		n=read();</span><br><span class="line">		for(int i=1;i&lt;=n;i++)m[i]=read(),y[i]=read();</span><br><span class="line">		printf(&quot;%lld\n&quot;,excrt()); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	star::cried();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
   </div>
   
@@ -2919,18 +2945,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>分数规划</p>
-          <p class='content'>问题描述有 $n$ 个物品，每种物品两个权值 $a_i$，$b_i$，求一组 $w_i\in{0,1}$，使得
-$$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\...</p>
+        <a class='prev' href='/2022/04/30/unique/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>unique</p>
+          <p class='content'>
+unique
+
+
+unique一般先用sort将要处理的序列排序，因为unique只会“删除”相邻的重复元素。
+
+
+我们定义一个数列a[]={1,3,3,4,5,6,6,7}(a...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E5%8A%A8%E6%80%81%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%93%E7%BB%83/'>
-          <p class='title'>动态逆序对专练<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>就是三倍经验
-题意维护一个序列，每次修改后求出当前序列逆序对个数。
-思路题目让我们求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;i+1}^n[a_i&gt;a_j]$$也就...</p>
+        <a class='next' href='/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/'>
+          <p class='title'>主定理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>定义
+主定理（Master
+Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
+时间复杂度相关定义
+在计算机科学中，算法的时间复杂度（time
+c...</p>
         </a>
       
     </div>
@@ -3183,7 +3218,9 @@ $$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\...</p>
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4195,7 +4232,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

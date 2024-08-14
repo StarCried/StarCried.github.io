@@ -50,12 +50,12 @@
   <title>线段树维护单调栈 单调递增序列 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="线段树维护单调栈&#x2F;单调递增序列 线段树在维护区间时可以维护一个单调栈。 P4198 楼房重建 题意：维护全局最大上升序列大小。 更新 线段树当前节点存储整个区间的最大值，对于该题，左子树的区间答案可以直接继承，然后用左子树区间的最大值查询右子树的答案并记录在该节点上。 123456void update(const int &amp;x,const double &amp;k,cons">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线段树维护单调栈 单调递增序列">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%BB%B4%E6%8A%A4%E5%8D%95%E8%B0%83%E6%A0%88%20%E5%8D%95%E8%B0%83%E9%80%92%E5%A2%9E%E5%BA%8F%E5%88%97/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="线段树维护单调栈&#x2F;单调递增序列线段树在维护区间时可以维护一个单调栈。 P4198 楼房重建题意：维护全局最大上升序列大小。 更新线段树当前节点存储整个区间的最大值，对于该题，左子树的区间答案可以直接继承，然后用左子树区间的最大值查询右子树的答案并记录在该节点上。 123456void update(const int &amp;x,const double &amp;k,const in">
+<meta property="og:description" content="线段树维护单调栈&#x2F;单调递增序列 线段树在维护区间时可以维护一个单调栈。 P4198 楼房重建 题意：维护全局最大上升序列大小。 更新 线段树当前节点存储整个区间的最大值，对于该题，左子树的区间答案可以直接继承，然后用左子树区间的最大值查询右子树的答案并记录在该节点上。 123456void update(const int &amp;x,const double &amp;k,cons">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,17 +2801,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="线段树维护单调栈-单调递增序列"><a href="#线段树维护单调栈-单调递增序列" class="headerlink" title="线段树维护单调栈&#x2F;单调递增序列"></a>线段树维护单调栈&#x2F;单调递增序列</h1><p>线段树在维护区间时可以维护一个单调栈。</p>
-<h2 id="P4198-楼房重建"><a href="#P4198-楼房重建" class="headerlink" title="P4198 楼房重建"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4198">P4198 楼房重建</a></h2><p>题意：维护全局最大上升序列大小。</p>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>线段树当前节点存储整个区间的最大值，对于该题，左子树的区间答案可以直接继承，然后用左子树区间的最大值查询右子树的答案并记录在该节点上。</p>
+    <h1 id="线段树维护单调栈单调递增序列">线段树维护单调栈/单调递增序列</h1>
+<p>线段树在维护区间时可以维护一个单调栈。</p>
+<h2 id="p4198-楼房重建"><a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4198">P4198 楼房重建</a></h2>
+<p>题意：维护全局最大上升序列大小。</p>
+<h3 id="更新">更新</h3>
+<p>线段树当前节点存储整个区间的最大值，对于该题，左子树的区间答案可以直接继承，然后用左子树区间的最大值查询右子树的答案并记录在该节点上。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">const</span> <span class="type">int</span> &amp;x,<span class="type">const</span> <span class="type">double</span> &amp;k,<span class="type">const</span> <span class="type">int</span> &amp;ro=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;l=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;r=n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==r) <span class="keyword">return</span> ans[ro]=<span class="number">1</span>,mx[ro]=k,<span class="built_in">void</span>();</span><br><span class="line">    x&lt;=mid?<span class="built_in">update</span>(x,k,ls,l,mid):<span class="built_in">update</span>(x,k,rs,mid<span class="number">+1</span>,r);</span><br><span class="line">    mx[ro]=<span class="built_in">max</span>(mx[ls],mx[rs]);</span><br><span class="line">    ans[ro]=ans[ls]+<span class="built_in">query</span>(mx[ls],rs,mid<span class="number">+1</span>,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>其中，查询右区间比传的值大的节点个数的查询方式如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">const</span> <span class="type">double</span> &amp;k,<span class="type">const</span> <span class="type">int</span> &amp;ro=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;l=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;r=n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(mx[ro]&lt;=k) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(l==r) <span class="keyword">return</span> mx[ro]&gt;k;</span><br><span class="line">    <span class="keyword">if</span>(mx[ls]&lt;=k) <span class="keyword">return</span> <span class="built_in">query</span>(k,rs,mid<span class="number">+1</span>,r);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">query</span>(k,ls,l,mid)+ans[ro]-ans[ls];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="P4425-转盘"><a href="#P4425-转盘" class="headerlink" title="P4425 转盘"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4425">P4425 转盘</a></h2><p>维护后缀答案最小值。比较值为原序列，答案维护最小值。</p>
+<h2 id="p4425-转盘"><a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4425">P4425 转盘</a></h2>
+<p>维护后缀答案最小值。比较值为原序列，答案维护最小值。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">const</span> <span class="type">int</span> &amp;x,<span class="type">const</span> <span class="type">int</span> &amp;ro=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;l=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;r=n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==r) <span class="keyword">return</span> mx[ro]=a[x],<span class="built_in">void</span>();</span><br><span class="line">    x&lt;=mid?<span class="built_in">update</span>(x,ls,l,mid):<span class="built_in">update</span>(x,rs,mid<span class="number">+1</span>,r);</span><br><span class="line">    mx[ro]=<span class="built_in">max</span>(mx[ls],mx[rs]);</span><br><span class="line">    mn[ro]=<span class="built_in">query</span>(mx[rs],ls,l,mid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">const</span> <span class="type">int</span> &amp;k,<span class="type">const</span> <span class="type">int</span> &amp;ro=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;l=<span class="number">1</span>,<span class="type">const</span> <span class="type">int</span> &amp;r=n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==r) <span class="keyword">return</span> mx[ro]&gt;k?k+l:INF;</span><br><span class="line">    <span class="keyword">return</span> k&lt;mx[rs]?<span class="built_in">min</span>(mn[ro],<span class="built_in">query</span>(k,rs,mid<span class="number">+1</span>,r)):<span class="built_in">query</span>(k,ls,l,mid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2913,18 +2916,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2022/04/30/%E7%BA%BF%E6%80%A7%E5%9F%BA/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>线性基</p>
           <p class='content'>
-基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元素...</p>
+基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B/'>
-          <p class='title'>线性筛<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>线性筛闲话之前写的总结不忍直视（总结了个寂寞），今天突然要用到约数和结果不会筛，于是爬来写博客。
-性质
-时间复杂度线性
-理论上所有积性函数都可以筛（推式子）
-
-用法对于需要筛的积性函数，我们需要...</p>
+        <a class='next' href='/2022/04/30/%E7%BA%BF%E6%AE%B5%E6%A0%91%E6%87%92%E6%A0%87%E8%AE%B0/'>
+          <p class='title'>线段树懒标记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>懒标记
+线段树要做到其 \(O(\log n)\)
+的更新和查询，就需要用到懒标记。
+懒标记的作用是，当我们对线段树的某些节点（区间）进行更新时，我们并不立即更新这些节点的值，而是将这些更...</p>
         </a>
       
     </div>
@@ -3047,7 +3048,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P4198-%E6%A5%BC%E6%88%BF%E9%87%8D%E5%BB%BA"><span class="toc-text">P4198 楼房重建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0"><span class="toc-text">更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P4425-%E8%BD%AC%E7%9B%98"><span class="toc-text">P4425 转盘</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p4198-%E6%A5%BC%E6%88%BF%E9%87%8D%E5%BB%BA"><span class="toc-text">P4198 楼房重建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0"><span class="toc-text">更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p4425-%E8%BD%AC%E7%9B%98"><span class="toc-text">P4425 转盘</span></a></li></ol>
     </div>
   </section>
 
@@ -3187,7 +3188,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4199,7 +4202,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

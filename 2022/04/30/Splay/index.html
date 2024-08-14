@@ -50,12 +50,12 @@
   <title>Splay - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="学习自该博客   （dalao讲得真好，我只为了记忆写重点）   Splay是一种数据结构，用于在线调整二叉排序树的操作，用于让树平衡（空树或任意节点的左右两个子树的深度差的绝对值不超过1）转换根节点或者其他操作。   二叉排序树，左子树任意一个点的值小于根节点，右子树任意一个点大于根节点的树。很显然，如果你想把一群点构造成这样一个树，你可以构造出许多不同的、满足关系的树。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Splay">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/Splay/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="学习自该博客 （dalao讲得真好，我只为了记忆写重点） Splay是一种数据结构，用于在线调整二叉排序树的操作，用于让树平衡（空树或任意节点的左右两个子树的深度差的绝对值不超过1）转换根节点或者其他操作。 二叉排序树，左子树任意一个点的值小于根节点，右子树任意一个点大于根节点的树。很显然，如果你想把一群点构造成这样一个树，你可以构造出许多不同的、满足关系的树。 （以下所有图片来自网上） 比如下面">
+<meta property="og:description" content="学习自该博客   （dalao讲得真好，我只为了记忆写重点）   Splay是一种数据结构，用于在线调整二叉排序树的操作，用于让树平衡（空树或任意节点的左右两个子树的深度差的绝对值不超过1）转换根节点或者其他操作。   二叉排序树，左子树任意一个点的值小于根节点，右子树任意一个点大于根节点的树。很显然，如果你想把一群点构造成这样一个树，你可以构造出许多不同的、满足关系的树。">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723607271264),
+    lastupdate: new Date(1723615944597),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2801,21 +2801,59 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>学习自<a href="https://www.cnblogs.com/lazy-people/p/9326556.html" target="_blank">该博客</a></p>
-<p>（dalao讲得真好，我只为了记忆写重点）</p>
-<p>Splay是一种数据结构，用于在线调整<strong>二叉排序树</strong>的操作，用于让树平衡（<span style="font-size: 13px;">空树或<span>任意节点的左右两个子树的深度差的绝对值不超过1）转换根节点或者其他操作。</span></span></p>
-<p><span style="font-size: 13px;"><span>二叉排序树，左子树任意一个点的值小于根节点，右子树任意一个点大于根节点的树。很显然，如果你想把一群点构造成这样一个树，你可以构造出许多不同的、满足关系的树。</span></span></p>
-<p><span style="font-size: 13px;"><span>（以下所有图片来自网上）</span></span></p>
-<p><span style="font-size: 13px;"><span>比如下面两个树就是等价的：</span></span></p>
-<p><span style="font-size: 13px;"><span>不平衡　　　　　　　　　　　　　　　　　　　　　　　平衡</span></span></p>
-<p><span style="font-size: 16px;"><img src="./img/5b51de0fc614a.png" class="lazyload" data-srcset="./img/5b51de0fc614a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="300" height="300" /><img src="./img/2027395-20200717081229037-2086508455.png" class="lazyload" data-srcset="./img/2027395-20200717081229037-2086508455.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" loading="lazy" /></span></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><span style="font-size: 13px;">那么Splay要怎么旋转呢？大概是把要旋转的点更改到它的父亲节点的位置。我们发现，要满足关系，如果原来的点在父节点的右子树，旋转后父节点就连接在该节点的左子树上。反之亦然。大概是这样的：</span></p>
-<p>&nbsp;</p>
-<p><span style="font-size: 16px;"><span style="font-size: 13px;"><img src="./img/2027395-20200717111442781-2049876344.gif" class="lazyload" data-srcset="./img/2027395-20200717111442781-2049876344.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" loading="lazy" /><img src="./img/2027395-20200717111451171-1802829172.gif" class="lazyload" data-srcset="./img/2027395-20200717111451171-1802829172.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" loading="lazy" /></span></span></p>
-<p>差不多就是这样。</p>
-<p>可以用结构体或者数组记录节点信息。我就写个结构体吧因为dalao的是用数组的。</p>
+    <p>
+学习自<a href="https://www.cnblogs.com/lazy-people/p/9326556.html" target="_blank">该博客</a>
+</p>
+<p>
+（dalao讲得真好，我只为了记忆写重点）
+</p>
+<p>
+Splay是一种数据结构，用于在线调整<strong>二叉排序树</strong>的操作，用于让树平衡（<span
+style="font-size: 13px;">空树或<span>任意节点的左右两个子树的深度差的绝对值不超过1）转换根节点或者其他操作。</span></span>
+</p>
+<p>
+<span
+style="font-size: 13px;"><span>二叉排序树，左子树任意一个点的值小于根节点，右子树任意一个点大于根节点的树。很显然，如果你想把一群点构造成这样一个树，你可以构造出许多不同的、满足关系的树。</span></span>
+</p>
+<p>
+<span
+style="font-size: 13px;"><span>（以下所有图片来自网上）</span></span>
+</p>
+<p>
+<span
+style="font-size: 13px;"><span>比如下面两个树就是等价的：</span></span>
+</p>
+<p>
+<span
+style="font-size: 13px;"><span>不平衡　　　　　　　　　　　　　　　　　　　　　　　平衡</span></span>
+</p>
+<p>
+<span
+style="font-size: 16px;"><img src="./img/5b51de0fc614a.png" class="lazyload" data-srcset="./img/5b51de0fc614a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="300" height="300" /><img src="./img/2027395-20200717081229037-2086508455.png" class="lazyload" data-srcset="./img/2027395-20200717081229037-2086508455.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" loading="lazy" /></span>
+</p>
+<p>
+ 
+</p>
+<p>
+ 
+</p>
+<p>
+<span
+style="font-size: 13px;">那么Splay要怎么旋转呢？大概是把要旋转的点更改到它的父亲节点的位置。我们发现，要满足关系，如果原来的点在父节点的右子树，旋转后父节点就连接在该节点的左子树上。反之亦然。大概是这样的：</span>
+</p>
+<p>
+ 
+</p>
+<p>
+<span style="font-size: 16px;"><span
+style="font-size: 13px;"><img src="./img/2027395-20200717111442781-2049876344.gif" class="lazyload" data-srcset="./img/2027395-20200717111442781-2049876344.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" loading="lazy" /><img src="./img/2027395-20200717111451171-1802829172.gif" class="lazyload" data-srcset="./img/2027395-20200717111451171-1802829172.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" loading="lazy" /></span></span>
+</p>
+<p>
+差不多就是这样。
+</p>
+<p>
+可以用结构体或者数组记录节点信息。我就写个结构体吧因为dalao的是用数组的。
+</p>
 <div class="cnblogs_code">
 <pre><span style="color: #0000ff;">struct</span><span style="color: #000000;"> tree{
         </span><span style="color: #0000ff;">int</span> val,fa,son[<span style="color: #800080;">2</span><span style="color: #000000;">],cnt,siz;
@@ -2825,7 +2863,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class="cnblogs_code">
 <pre><span style="color: #0000ff;">int</span> siz,root;<span style="color: #008000;">//</span><span style="color: #008000;">siz时间戳,root根节点（因为splay会更改根节点）</span></pre>
 </div>
-<p>插入时用三种情况：空树，直接插入；查询到权相同的点，cnt++；没有查询到点，向下插入新点。</p>
+<p>
+插入时用三种情况：空树，直接插入；查询到权相同的点，cnt++；没有查询到点，向下插入新点。
+</p>
 <div class="cnblogs_code">
 <pre>    inline <span style="color: #0000ff;">void</span> insert(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x)
     {
@@ -2862,7 +2902,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         }
     }</span></pre>
 </div>
-<p>如果没有重复的值，你也可以直接dfs建树。</p>
+<p>
+如果没有重复的值，你也可以直接dfs建树。
+</p>
 <div class="cnblogs_code">
 <pre><span style="color: #0000ff;">int</span> build_tree(<span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span> r,<span style="color: #0000ff;">int</span><span style="color: #000000;"> f){
     </span><span style="color: #0000ff;">if</span>(l &gt; r)<span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
@@ -2879,7 +2921,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> now;
 }</span></pre>
 </div>
-<p>那么我们刚才说了那么久的旋转代码如下：</p>
+<p>
+那么我们刚才说了那么久的旋转代码如下：
+</p>
 <div class="cnblogs_code">
 <pre>inline <span style="color: #0000ff;">void</span> rotate(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x)
     {
@@ -2894,13 +2938,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(ff)
             e[ff].son[e[ff].son[</span><span style="color: #800080;">1</span>]==f]=<span style="color: #000000;">x;
         
-<pre><code>    update(f);
-    update(x);
-&#125;&lt;/span&gt;&lt;/pre&gt;
-</code></pre>
+        update(f);
+        update(x);
+    }</span></pre>
 </div>
-<p>这里有个问题：如果连续的两条边方向相同，若只是将底部的点向上旋转会单旋使树失衡。那么我们只要在旋转之前把父节点旋转一下就好了。具体的图请看dalao博客（不想复制以防侵权）</p>
-<p>goal是旋转的目标点，旋转后x节点会在goal的子节点。</p>
+<p>
+这里有个问题：如果连续的两条边方向相同，若只是将底部的点向上旋转会单旋使树失衡。那么我们只要在旋转之前把父节点旋转一下就好了。具体的图请看dalao博客（不想复制以防侵权）
+</p>
+<p>
+goal是旋转的目标点，旋转后x节点会在goal的子节点。
+</p>
 <div class="cnblogs_code">
 <pre>inline <span style="color: #0000ff;">void</span> splay(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> goal){
     </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i;(i=e[x].fa)!=<span style="color: #000000;">goal;rotate(x))
@@ -2912,7 +2959,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </span><span style="color: #0000ff;">if</span>(goal==<span style="color: #800080;">0</span>) root=<span style="color: #000000;">x;
 }</span></pre>
 </div>
-<p>查询：查询点的位置，我们按从小到大查询。发现因为子树的siz是全部小于节点的，所以如果x（要查询的数）&lt;=siz[son[0]]，我们往左查询；否则x-=siz[son[0]]，跳到右子树重复查询，直到x==0，返回查到的点就ok了。</p>
+<p>
+查询：查询点的位置，我们按从小到大查询。发现因为子树的siz是全部小于节点的，所以如果x（要查询的数）&lt;=siz[son[0]]，我们往左查询；否则x-=siz[son[0]]，跳到右子树重复查询，直到x==0，返回查到的点就ok了。
+</p>
 <div class="cnblogs_code">
 <pre>inline <span style="color: #0000ff;">int</span> find(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x)
 {
@@ -2929,7 +2978,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
 }</span></pre>
 </div>
-<p>查询前驱和后继，就是查询和这个点左右最近的两个点，先把它变为根节点，再查询左子树的最右节点和右子树最左节点：</p>
+<p>
+查询前驱和后继，就是查询和这个点左右最近的两个点，先把它变为根节点，再查询左子树的最右节点和右子树最左节点：
+</p>
 <div class="cnblogs_code">
 <pre><span style="color: #0000ff;">int</span> findpre(<span style="color: #0000ff;">int</span> x)<span style="color: #008000;">//</span><span style="color: #008000;">注意x是编号而不是值,这个查前驱</span>
 <span style="color: #000000;">{<br />　　splay(x,0)；    //注意变成根节点。如果不是那么下面都是假的
@@ -2938,18 +2989,39 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> now;
 }</span></pre>
 </div>
-<p>后缀一样（当然是相反）。</p>
-<p>删除有点麻烦留坑待填.</p>
-<p>大概的思路：</p>
+<p>
+后缀一样（当然是相反）。
+</p>
+<p>
+删除有点麻烦留坑待填.
+</p>
+<p>
+大概的思路：
+</p>
 <ol>
-<li>if节点有多个数，即cnt&gt;1，直接减去就好了。</li>
-<li>else if节点没有子树，直接删掉就好了。</li>
-<li>else if只有左子树，用左儿子替代之。</li>
-<li>else if只有右子树，用右儿子替代之。</li>
-<li>else if左右子树都有，我们把它的前驱作为新根，把它splay一下，然后把原来点的右儿子连成它的右儿子就OK了。</li>
+<li>
+if节点有多个数，即cnt&gt;1，直接减去就好了。
+</li>
+<li>
+else if节点没有子树，直接删掉就好了。
+</li>
+<li>
+else if只有左子树，用左儿子替代之。
+</li>
+<li>
+else if只有右子树，用右儿子替代之。
+</li>
+<li>
+else
+if左右子树都有，我们把它的前驱作为新根，把它splay一下，然后把原来点的右儿子连成它的右儿子就OK了。
+</li>
 </ol>
-<p>写个例题吧：</p>
-<p><a href="https://www.luogu.com.cn/problem/P3391" target="_blank">P3391文艺平衡树</a></p>
+<p>
+写个例题吧：
+</p>
+<p>
+<a href="https://www.luogu.com.cn/problem/P3391" target="_blank">P3391文艺平衡树</a>
+</p>
 <div class="cnblogs_code">
 <pre>#include&lt;iostream&gt;<span style="color: #000000;">
 #include</span>&lt;cstdio&gt;<span style="color: #000000;">
@@ -2973,94 +3045,160 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
         </span><span style="color: #0000ff;">int</span> son[<span style="color: #800080;">2</span><span style="color: #000000;">],siz,fa,tag,cnt,val;
     }e[maxn];
     
-<pre><code>inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;bool&lt;/span&gt; which(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; x)&#123;&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt; e[e[x].fa].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;]==&lt;span style=&quot;color: #000000;&quot;&gt;x;&#125;
-
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; update(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; x)&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(!x)&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    e[x].siz&lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt;e[x].cnt;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(e[x].son[&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;])e[x].siz+=e[e[x].son[&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;]].siz;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(e[x].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;])e[x].siz+=e[e[x].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;]].siz;
-&#125;
-
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; pushdown(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; x)&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;(x and e[x].tag)&#123;
-        e[e[x].son[&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;]].tag^=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-        e[e[x].son[&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;]].tag^=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-        e[x].tag&lt;/span&gt;=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-        swap(e[x].son[&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;],e[x].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;]);
-    &#125;
-&#125;
-
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; rotate(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; x)
-&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; f=e[x].fa,ff=e[f].fa;&lt;span style=&quot;color: #008000;&quot;&gt;//&lt;/span&gt;&lt;span style=&quot;color: #008000;&quot;&gt;记录父节点和祖父节点 &lt;/span&gt;
-</code></pre>
-<p><span style="color: #000000;">        pushdown(x),pushdown(f);<br>        </span><span style="color: #0000ff;">bool</span> w&#x3D;which(x);<span style="color: #008000;">&#x2F;&#x2F;</span><span style="color: #008000;">splay[自动]旋转的奥秘，得到x的位置<br>        </span><span style="color: #008000;">&#x2F;&#x2F;</span><span style="color: #008000;">以下旋转共6步，就是分别记录三个点间的关系，便于记忆 </span><br>        e[f].son[w]&#x3D;e[x].son[w^<span style="color: #800080;">1</span><span style="color: #000000;">];<br>        e[e[f].son[w]].fa</span>&#x3D;<span style="color: #000000;">f;<br>        e[f].fa</span>&#x3D;<span style="color: #000000;">x;<br>        e[x].son[w</span>^<span style="color: #800080;">1</span>]&#x3D;<span style="color: #000000;">f;<br>        e[x].fa</span>&#x3D;<span style="color: #000000;">ff;<br>        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(ff)<br>            e[ff].son[e[ff].son[</span><span style="color: #800080;">1</span>]&#x3D;&#x3D;f]&#x3D;<span style="color: #000000;">x;</p>
-<pre><code>    update(f);
-    update(x);
-&#125;
-
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; splay(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; x,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; goal)&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; i;(i=e[x].fa)!=&lt;span style=&quot;color: #000000;&quot;&gt;goal;rotate(x))
-    &#123;
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(e[i].fa!=&lt;span style=&quot;color: #000000;&quot;&gt;goal)&#123;
-            rotate(which(x)&lt;/span&gt;==which(i)?&lt;span style=&quot;color: #000000;&quot;&gt;i:x);
-        &#125;
-    &#125;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(goal==&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;) root=&lt;span style=&quot;color: #000000;&quot;&gt;x;
-&#125;
-
-&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; build_tree(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; l,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; r,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; f)&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(l &amp;gt; r)&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt; &lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; mid=l+r&amp;gt;&amp;gt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; now=++&lt;span style=&quot;color: #000000;&quot;&gt;siz;
-    e[now].fa&lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt;f;
-    e[now].son[&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;]=e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;]=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-    e[now].cnt&lt;/span&gt;++&lt;span style=&quot;color: #000000;&quot;&gt;;
-    e[now].val&lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt;a[mid];
-    e[now].siz&lt;/span&gt;++&lt;span style=&quot;color: #000000;&quot;&gt;;
-    e[now].son[&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;]=build_tree(l,mid-&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;,now);
-    e[now].son[&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;]=build_tree(mid+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;,r,now);
-    update(now);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; now;
-&#125;
-
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; find(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; x)
-&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; now=&lt;span style=&quot;color: #000000;&quot;&gt;root;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;while&lt;/span&gt;(&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;)
-    &#123;
+    inline </span><span style="color: #0000ff;">bool</span> which(<span style="color: #0000ff;">int</span> x){<span style="color: #0000ff;">return</span> e[e[x].fa].son[<span style="color: #800080;">1</span>]==<span style="color: #000000;">x;}
+    
+    inline </span><span style="color: #0000ff;">void</span> update(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x){
+        </span><span style="color: #0000ff;">if</span>(!x)<span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        e[x].siz</span>=<span style="color: #000000;">e[x].cnt;
+        </span><span style="color: #0000ff;">if</span>(e[x].son[<span style="color: #800080;">0</span>])e[x].siz+=e[e[x].son[<span style="color: #800080;">0</span><span style="color: #000000;">]].siz;
+        </span><span style="color: #0000ff;">if</span>(e[x].son[<span style="color: #800080;">1</span>])e[x].siz+=e[e[x].son[<span style="color: #800080;">1</span><span style="color: #000000;">]].siz;
+    }
+    
+    inline </span><span style="color: #0000ff;">void</span> pushdown(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x){
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(x and e[x].tag){
+            e[e[x].son[</span><span style="color: #800080;">0</span>]].tag^=<span style="color: #800080;">1</span><span style="color: #000000;">;
+            e[e[x].son[</span><span style="color: #800080;">1</span>]].tag^=<span style="color: #800080;">1</span><span style="color: #000000;">;
+            e[x].tag</span>=<span style="color: #800080;">0</span><span style="color: #000000;">;
+            swap(e[x].son[</span><span style="color: #800080;">0</span>],e[x].son[<span style="color: #800080;">1</span><span style="color: #000000;">]);
+        }
+    }
+    
+    inline </span><span style="color: #0000ff;">void</span> rotate(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x)
+    {
+        </span><span style="color: #0000ff;">int</span> f=e[x].fa,ff=e[f].fa;<span style="color: #008000;">//</span><span style="color: #008000;">记录父节点和祖父节点 </span>
+<span style="color: #000000;">        pushdown(x),pushdown(f);
+        </span><span style="color: #0000ff;">bool</span> w=which(x);<span style="color: #008000;">//</span><span style="color: #008000;">splay[自动]旋转的奥秘，得到x的位置
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">以下旋转共6步，就是分别记录三个点间的关系，便于记忆 </span>
+        e[f].son[w]=e[x].son[w^<span style="color: #800080;">1</span><span style="color: #000000;">];
+        e[e[f].son[w]].fa</span>=<span style="color: #000000;">f;
+        e[f].fa</span>=<span style="color: #000000;">x;
+        e[x].son[w</span>^<span style="color: #800080;">1</span>]=<span style="color: #000000;">f;
+        e[x].fa</span>=<span style="color: #000000;">ff;
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(ff)
+            e[ff].son[e[ff].son[</span><span style="color: #800080;">1</span>]==f]=<span style="color: #000000;">x;
+        
+        update(f);
+        update(x);
+    }
+    
+    inline </span><span style="color: #0000ff;">void</span> splay(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> goal){
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i;(i=e[x].fa)!=<span style="color: #000000;">goal;rotate(x))
+        {
+            </span><span style="color: #0000ff;">if</span>(e[i].fa!=<span style="color: #000000;">goal){
+                rotate(which(x)</span>==which(i)?<span style="color: #000000;">i:x);
+            }
+        }
+        </span><span style="color: #0000ff;">if</span>(goal==<span style="color: #800080;">0</span>) root=<span style="color: #000000;">x;
+    }
+    
+    </span><span style="color: #0000ff;">int</span> build_tree(<span style="color: #0000ff;">int</span> l,<span style="color: #0000ff;">int</span> r,<span style="color: #0000ff;">int</span><span style="color: #000000;"> f){
+        </span><span style="color: #0000ff;">if</span>(l &gt; r)<span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">int</span> mid=l+r&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">int</span> now=++<span style="color: #000000;">siz;
+        e[now].fa</span>=<span style="color: #000000;">f;
+        e[now].son[</span><span style="color: #800080;">0</span>]=e[now].son[<span style="color: #800080;">1</span>]=<span style="color: #800080;">0</span><span style="color: #000000;">;
+        e[now].cnt</span>++<span style="color: #000000;">;
+        e[now].val</span>=<span style="color: #000000;">a[mid];
+        e[now].siz</span>++<span style="color: #000000;">;
+        e[now].son[</span><span style="color: #800080;">0</span>]=build_tree(l,mid-<span style="color: #800080;">1</span><span style="color: #000000;">,now);
+        e[now].son[</span><span style="color: #800080;">1</span>]=build_tree(mid+<span style="color: #800080;">1</span><span style="color: #000000;">,r,now);
+        update(now);
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> now;
+    }
+    
+    inline </span><span style="color: #0000ff;">int</span> find(<span style="color: #0000ff;">int</span><span style="color: #000000;"> x)
+    {
+        </span><span style="color: #0000ff;">int</span> now=<span style="color: #000000;">root;
+        </span><span style="color: #0000ff;">while</span>(<span style="color: #800080;">1</span><span style="color: #000000;">)
+        {
+            pushdown(now);
+            </span><span style="color: #0000ff;">if</span>(x&lt;=e[e[now].son[<span style="color: #800080;">0</span>]].siz)    now=e[now].son[<span style="color: #800080;">0</span><span style="color: #000000;">];
+            </span><span style="color: #0000ff;">else</span><span style="color: #000000;">{
+                x</span>-=e[e[now].son[<span style="color: #800080;">0</span>]].siz+<span style="color: #800080;">1</span><span style="color: #000000;">;
+                </span><span style="color: #0000ff;">if</span>(!x)<span style="color: #0000ff;">return</span><span style="color: #000000;"> now;
+                now</span>=e[now].son[<span style="color: #800080;">1</span><span style="color: #000000;">];
+            }
+        }
+    }
+    
+    inline </span><span style="color: #0000ff;">void</span> reverse(<span style="color: #0000ff;">int</span> x,<span style="color: #0000ff;">int</span><span style="color: #000000;"> y)
+    {
+        </span><span style="color: #0000ff;">int</span> l=find(x-<span style="color: #800080;">1</span>),r=find(y+<span style="color: #800080;">1</span><span style="color: #000000;">);
+        splay(l,</span><span style="color: #800080;">0</span><span style="color: #000000;">);
+        splay(r,l);
+        </span><span style="color: #0000ff;">int</span> pos=e[root].son[<span style="color: #800080;">1</span><span style="color: #000000;">];
+        pos</span>=e[pos].son[<span style="color: #800080;">0</span><span style="color: #000000;">];
+        e[pos].tag</span>^=<span style="color: #800080;">1</span><span style="color: #000000;">;
+    }
+    
+    inline </span><span style="color: #0000ff;">void</span> dfs(<span style="color: #0000ff;">int</span><span style="color: #000000;"> now){
         pushdown(now);
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(x&amp;lt;=e[e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;]].siz)    now=e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;];
-        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;else&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&#123;
-            x&lt;/span&gt;-=e[e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;]].siz+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-            &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(!x)&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; now;
-            now&lt;/span&gt;=e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;];
-        &#125;
-    &#125;
-&#125;
-
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; reverse(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; x,&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; y)
-&#123;
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; l=find(x-&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;),r=find(y+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;);
-    splay(l,&lt;/span&gt;&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;);
-    splay(r,l);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; pos=e[root].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;];
-    pos&lt;/span&gt;=e[pos].son[&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;];
-    e[pos].tag&lt;/span&gt;^=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
-&#125;
-
-inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt; dfs(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; now)&#123;
-    pushdown(now);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;])dfs(e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;]);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(e[now].val!=INF and e[now].val!=-INF)printf(&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;%d &lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;,e[now].val);
-    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;])dfs(e[now].son[&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;]);
-&#125;
-</code></pre>
-<p></span><span style="color: #008000;">&#x2F;<em></span><span style="color: #008000;"><br>    inline void insert(int x)<br>    {<br>        if(siz&#x3D;&#x3D;0){<br>            siz++;<br>            e[siz].son[1]&#x3D;e[siz].son[0]&#x3D;e[siz].fa&#x3D;0;<br>            e[siz].siz&#x3D;e[siz].cnt&#x3D;1;<br>            root &#x3D; 1;<br>            e[siz].val&#x3D;x;<br>            return;<br>        }<br>        int now&#x3D;root,f&#x3D;0;<br>        while(1){<br>            if(e[now].val&#x3D;&#x3D;x){<br>                e[now].cnt++;<br>                update(now);<br>                update(f);<br>                splay(now,0);<br>                break;<br>            }<br>            f&#x3D;now;<br>            now&#x3D;son[now][x&gt;e[now].val];<br>            if(!now){<br>                siz++;<br>                e[siz].son[1]&#x3D;e[siz].son[0]&#x3D;0;<br>                e[siz].fa&#x3D;f;<br>                e[siz].siz&#x3D;e[siz].cnt&#x3D;1;<br>                e[f].son[x&gt;e[now].val]&#x3D;siz;<br>                e[siz].val&#x3D;x;<br>                update(f);<br>                splay(siz,0);<br>                break;<br>            }<br>        }<br>    }<br></span><span style="color: #008000;"></em>&#x2F;</span><span style="color: #000000;"><br>    inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> work()<br>    {<br>        n</span>&#x3D;read(),m&#x3D;<span style="color: #000000;">read();<br>        a[</span><span style="color: #800080;">1</span>]&#x3D;-INF,a[n+<span style="color: #800080;">2</span>]&#x3D;<span style="color: #000000;">INF;<br>        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;n;i++)a[i+<span style="color: #800080;">1</span>]&#x3D;<span style="color: #000000;">i;<br>        root</span>&#x3D;build_tree(<span style="color: #800080;">1</span>,n+<span style="color: #800080;">2</span>,<span style="color: #800080;">0</span><span style="color: #000000;">);<br>        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i&#x3D;<span style="color: #800080;">1</span>;i&lt;&#x3D;m;i++<span style="color: #000000;">){<br>            </span><span style="color: #0000ff;">int</span> x&#x3D;read(),y&#x3D;<span style="color: #000000;">read();<br>            reverse(x</span>+<span style="color: #800080;">1</span>,y+<span style="color: #800080;">1</span><span style="color: #000000;">);<br>        }<br>        dfs(root);<br>    }<br>}<br></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    star::work();<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>}</span></pre></p>
+        </span><span style="color: #0000ff;">if</span>(e[now].son[<span style="color: #800080;">0</span>])dfs(e[now].son[<span style="color: #800080;">0</span><span style="color: #000000;">]);
+        </span><span style="color: #0000ff;">if</span>(e[now].val!=INF and e[now].val!=-INF)printf(<span style="color: #800000;">"</span><span style="color: #800000;">%d </span><span style="color: #800000;">"</span><span style="color: #000000;">,e[now].val);
+        </span><span style="color: #0000ff;">if</span>(e[now].son[<span style="color: #800080;">1</span>])dfs(e[now].son[<span style="color: #800080;">1</span><span style="color: #000000;">]);
+    }
+</span><span style="color: #008000;">/*</span><span style="color: #008000;">
+    inline void insert(int x)
+    {
+        if(siz==0){
+            siz++;
+            e[siz].son[1]=e[siz].son[0]=e[siz].fa=0;
+            e[siz].siz=e[siz].cnt=1;
+            root = 1;
+            e[siz].val=x;
+            return;
+        }
+        int now=root,f=0;
+        while(1){
+            if(e[now].val==x){
+                e[now].cnt++;
+                update(now);
+                update(f);
+                splay(now,0);
+                break;
+            }
+            f=now;
+            now=son[now][x&gt;e[now].val];
+            if(!now){
+                siz++;
+                e[siz].son[1]=e[siz].son[0]=0;
+                e[siz].fa=f;
+                e[siz].siz=e[siz].cnt=1;
+                e[f].son[x&gt;e[now].val]=siz;
+                e[siz].val=x;
+                update(f);
+                splay(siz,0);
+                break;
+            }
+        }
+    }
+</span><span style="color: #008000;">*/</span><span style="color: #000000;">
+    inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> work()
+    {
+        n</span>=read(),m=<span style="color: #000000;">read();
+        a[</span><span style="color: #800080;">1</span>]=-INF,a[n+<span style="color: #800080;">2</span>]=<span style="color: #000000;">INF;
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=n;i++)a[i+<span style="color: #800080;">1</span>]=<span style="color: #000000;">i;
+        root</span>=build_tree(<span style="color: #800080;">1</span>,n+<span style="color: #800080;">2</span>,<span style="color: #800080;">0</span><span style="color: #000000;">);
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=m;i++<span style="color: #000000;">){
+            </span><span style="color: #0000ff;">int</span> x=read(),y=<span style="color: #000000;">read();
+            reverse(x</span>+<span style="color: #800080;">1</span>,y+<span style="color: #800080;">1</span><span style="color: #000000;">);
+        }
+        dfs(root);
+    }
+}
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+{
+    star::work();
+    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}</span></pre>
 </div>
-<p>好长丫~~~</p>
-<p>&nbsp;注意，每次更新完都splay是必要的，这会更新所有节点的siz值，否则是假的。</p>
+<p>
+好长丫~~~
+</p>
+<p>
+ 注意，每次更新完都splay是必要的，这会更新所有节点的siz值，否则是假的。
+</p>
+
   </div>
   
   
@@ -3157,23 +3295,30 @@ inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/Tarjan%E5%88%A4%E6%96%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E6%8A%8Adfn%E5%86%99%E6%88%90low/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Tarjan判断为什么不能把dfn写成low</p>
-          <p class='content'>Tarjan，我相信大多数人是这么写的：
+        <a class='prev' href='/2022/04/30/POJ3662/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>POJ3662</p>
+          <p class='content'>
+poj3662
 
-void tarjan(int x)
-{
-    dfn[x]=low[x]=++cnt;
-    st.push(x),vis[x]=1;
-    ...</p>
+
+大意：n个点p条边的无向图，求在删去k条边后使1和n号点联通路径上的最长边最小值。
+
+
+一开始理解错题意以为是分层图求最短路径，结果写完发现k太大了发现事情没...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/bzoj4636-%E5%9C%A8%E7%BA%BF%E7%BA%BF%E6%AE%B5%E6%A0%91%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'>bzoj4636-在线线段树[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>动态线段树
-动态线段树和线段树不太一样，主要是因为它是动态的，用于处理一些区间较大的问题。这样的话就不可以用朴素写法的ls和rs了。我们需要一个时间戳记录每个点并在询问时dfs线段树。
-&nbsp;</p>
+        <a class='next' href='/2022/04/30/POJ3268%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'>POJ3268[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+Silver Cow
+Party
+
+
+题意：求有向图一个点与其他所有点往返最短路径的最大值。
+
+
+思路：主要就是往返有问题，因为又是有向图，所以我们只得乖乖跑两遍。我们考虑n&...</p>
         </a>
       
     </div>
@@ -3426,7 +3571,9 @@ void tarjan(int x)
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4438,7 +4585,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 
