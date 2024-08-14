@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723541454637),
+    lastupdate: new Date(1723607271264),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2731,16 +2731,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5110 块速递推
-题意
-多次询问，求数列
-
-的第  项在  意义下的值的异或和。
-思路
-首先这个数列是一个广义斐波那契数列。对于广义斐波那契数列，我们一般是用矩阵快速幂求的。
-但是，这个题的询问次数是  。
-所以我们就必须用  的方法处理询问。于是，一个自诩光速幂的东西登场了。
-实际上，光速幂就是在  的时间复杂度内预处理，然后  查询。具体来讲，我们可以预处理出转移矩阵的 、、、 和 ...
+        P5110 块速递推题意多次询问，求数列$$a_i&#x3D;\begin{cases}233a_{i-1}+666a_{i-2} &amp; i&gt;1\0 &amp; i&#x3D;0\1 &amp; i&#x3D;1\\end{cases}$$的第 $n$ 项在 $\mod 1e9+7$ 意义下的值的异或和。
+思路首先这个数列是一个广义斐波那契数列。对于广义斐波那契数列，我们一般是用...
       
     
   </div>
@@ -2777,7 +2769,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5296 [北京省选集训2019]生成树计数/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2375 [NOI2014]动物园/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2795,24 +2787,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/"  itemprop="url">
-        P5296 [北京省选集训2019]生成树计数
+      <a href="/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/"  itemprop="url">
+        P2375 [NOI2014]动物园
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5296 [北京省选集训2019]生成树计数
-题意
-求一个带权无向图所有生成树边权和的  次方的和。
-思路
-首先有一个结论： 的 EGF 卷  的 EGF 等于  的 EGF。即：
-
-证明如下：
-
-然后又有一个结论：度数矩阵减去邻接矩阵的余子式的行列式的值是图所有生成树边权积的和。其中，度数矩阵表示与其相连的边权的和，邻接矩阵为边权。这是矩阵树定理。
-于是，我们将边权化为生成函数，然后利用...
+        P2375 [NOI2014]动物园
+为什么复制题目连字体大小一块复制过来了（雾）
+我竟然会做NOI的题目辣~\(≧▽≦)/~（看的题解
+总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。
+我们发现，这个所谓的num数组和nxt有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。
+于是在标记nxt时同时也可以把num标...
       
     
   </div>
@@ -2833,78 +2821,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5042 丢失的题面/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5042%20%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%A2%98%E9%9D%A2/"  itemprop="url">
-        P5042 丢失的题面
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P5042 丢失的题面
-顺序：10 - 1 - 7 - 8 - 9 - 4 - 5 - 6 - 2 - 3
-Point 10
-读入，特判，输出。
-读入的英文意思是让选手输出自己的程序本身，这个题的确存在，但是这题并没有 SPJ ，所以特判一下输出输出文件就好了。
-C++ 的atoi函数可以让读入的字符串变成数字以完成其他点的任务。
-Point 1
-我和其他聚铑做这个点的过程就十分有趣了。
-开...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P5042%20%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%A2%98%E9%9D%A2/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2946,13 +2863,10 @@ Point 1
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5350 序列
-题意
-维护一个序列，支持区间求和、赋值、加值、复制、交换、翻转操作，其中交换和复制操作保证两段区间长度相等且不交。答案对  取模。
-思路
-对于区间求和、赋值、加值、交换、翻转操作我们都可以很轻松地使用平衡树进行维护。所以现在的难点就在于复制操作：如何复制一段区间？
+        P5350 序列题意维护一个序列，支持区间求和、赋值、加值、复制、交换、翻转操作，其中交换和复制操作保证两段区间长度相等且不交。答案对 $1e9+7$ 取模。
+思路对于区间求和、赋值、加值、交换、翻转操作我们都可以很轻松地使用平衡树进行维护。所以现在的难点就在于复制操作：如何复制一段区间？
 如果我们暴力复制的话，每次我们不得不将被复制的子树扫一遍进行复制，这是肯定不行的。
-于是我们使用可持久化平衡树...
+于是我们使用可持久...
       
     
   </div>
@@ -2989,7 +2903,7 @@ Point 1
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5658 括号树/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5296 [北京省选集训2019]生成树计数/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3007,25 +2921,16 @@ Point 1
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5658%20%E6%8B%AC%E5%8F%B7%E6%A0%91/"  itemprop="url">
-        P5658 括号树
+      <a href="/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        P5296 [北京省选集训2019]生成树计数
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5658 括号树
-NOIp2019
-我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
-于是今天我克服心理阴影来写这道题。
-树形结构
-因为这是一个树，所有优秀的性质这个题都有。并且题目仅仅是问从1开始到所有点的答案，所以我们就可以依靠树的性质来做。
-首先，对于一个节点，我们给它记录几个值：
-
-表示i的贡献（只是i的贡献，并不包括从根节点到i路径上点的贡献）
-
-那么我们发现这个l...
+        P5296 [北京省选集训2019]生成树计数题意求一个带权无向图所有生成树边权和的 $k$ 次方的和。
+思路首先有一个结论：$a^i$ 的 EGF 卷 $b^i$ 的 EGF 等于 $(a+b)^i$ 的 EGF。即：$$F(a)&#x3D;\sum_{i&#x3D;0}\frac{a^ix^i}{i!}\F(a+b)&#x3D;F(a)*F(b)$$证明如下：$$(a+b)^k&#x3D...
       
     
   </div>
@@ -3046,7 +2951,7 @@ NOIp2019
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P5658%20%E6%8B%AC%E5%8F%B7%E6%A0%91/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3062,7 +2967,7 @@ NOIp2019
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4827 [国家集训队] Crash 的文明世界/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5468 [NOI2019] 回家路线/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3080,27 +2985,17 @@ NOIp2019
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4827%20%5B%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F%5D%20Crash%20%E7%9A%84%E6%96%87%E6%98%8E%E4%B8%96%E7%95%8C/"  itemprop="url">
-        P4827 [国家集训队] Crash 的文明世界
+      <a href="/2022/04/30/P5468%20%5BNOI2019%5D%20%E5%9B%9E%E5%AE%B6%E8%B7%AF%E7%BA%BF/"  itemprop="url">
+        P5468 [NOI2019] 回家路线
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4827 [国家集训队] Crash 的文明世界
-题意
-求出对于树上每个点  的 。所有边长为 1。
-思路
-根据斯特林反演：
-
-可以得到：
-
-我们只需要 Dp 一边维护后面的组合数部分的值就行了。最后一步是为了推出转移式，设  为 ，则有：
-
-再进行一步换根最后代回原式得出答案即可。
-实现
-12345678910111213141516171819202122232425262728293...
+        P5468 [NOI2019] 回家路线斜率优化入门（指我写的东西而不是这道题）
+题意$n$ 个节点，有 $m$ 趟列车，车 $i$ 从 $p_i$ 时刻至 $q_i$ 时刻从 $x_i$ 地到 $y_i$ 地。猫猫需要只坐列车从 $1$ 节点到达 $n$ 节点。
+设猫猫在一个地方等待的时间为 $t$，那么代价为 $At^2+Bt+C$，其中 $A\ B\ C$ 为给定非负常数，总代价为所有...
       
     
   </div>
@@ -3121,78 +3016,7 @@ NOIp2019
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P4827%20%5B%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F%5D%20Crash%20%E7%9A%84%E6%96%87%E6%98%8E%E4%B8%96%E7%95%8C/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5311 [Ynoi2011] 成都七中/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/"  itemprop="url">
-        P5311 [Ynoi2011] 成都七中
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P5311 [Ynoi2011] 成都七中
-题意
-给你一棵  个节点的树，每个节点有一种颜色，有  次查询操作。
-查询操作给定参数 ，需输出：
-将树中编号在  内的所有节点保留， 所在连通块中颜色种类数。
-每次查询操作独立。
-思路
-考虑点分树的思想。假设我们已经建出点分树，对于每一个分治中心，我们应该维护什么东西？
-我们从分治中心开始遍历，记录遍历到每个点路径上编号的最小值和最大值。很显然，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P5468%20%5BNOI2019%5D%20%E5%9B%9E%E5%AE%B6%E8%B7%AF%E7%BA%BF/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3235,12 +3059,10 @@ NOIp2019
     
       
         P5471- K-D tree优化建图-弹跳
-
 优化建图是一种思想。
 
-题意
-有个城市分布在小鸟岛上，有个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹弓只能把小鸟弹飞到一块固定的矩形范围内的城市，同时小鸟会在空中滞留的时间。闪电黄的家在1号城市，追求速度的它想知道，若只使用弹弓出行，它从家到其他所有城市的最短时间花费是多少。
-抱歉魔改了题面，但是这个题意真的太像愤怒的小鸟了好吗...
+题意有$n$个城市分布在小鸟岛上，有$m$个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹弓只能把小鸟弹飞到一块固定的矩形范围内的城市，同时小鸟会在空中滞留$t_i$的时间。闪电黄的家在1号城市，追求速度的它想知道，若只使用弹弓出行，它从家到其他所有城市的最短时间花费是多少。
+抱歉魔改了题面，但是这个题意真的太...
       
     
   </div>
@@ -3277,7 +3099,7 @@ NOIp2019
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5468 [NOI2019] 回家路线/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5311 [Ynoi2011] 成都七中/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3295,25 +3117,20 @@ NOIp2019
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5468%20%5BNOI2019%5D%20%E5%9B%9E%E5%AE%B6%E8%B7%AF%E7%BA%BF/"  itemprop="url">
-        P5468 [NOI2019] 回家路线
+      <a href="/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/"  itemprop="url">
+        P5311 [Ynoi2011] 成都七中
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5468 [NOI2019] 回家路线
-斜率优化入门（指我写的东西而不是这道题）
-题意
- 个节点，有  趟列车，车  从  时刻至  时刻从  地到  地。猫猫需要只坐列车从  节点到达  节点。
-设猫猫在一个地方等待的时间为 ，那么代价为 ，其中  为给定非负常数，总代价为所有代价总和与到达时间的和。求最小代价。
-思路
-设  为走  趟列车前的最小代价，有转移方程：
-
-最终代价即为：
-
-...
+        P5311 [Ynoi2011] 成都七中题意给你一棵 $n$ 个节点的树，每个节点有一种颜色，有 $m$ 次查询操作。
+查询操作给定参数 $l\ r\ x$，需输出：
+将树中编号在 $[l,r]$ 内的所有节点保留，$x$ 所在连通块中颜色种类数。
+每次查询操作独立。
+思路考虑点分树的思想。假设我们已经建出点分树，对于每一个分治中心，我们应该维护什么东西？
+我们从分治中心开始遍历，记录遍历...
       
     
   </div>
@@ -3334,7 +3151,7 @@ NOIp2019
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P5468%20%5BNOI2019%5D%20%E5%9B%9E%E5%AE%B6%E8%B7%AF%E7%BA%BF/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3350,7 +3167,7 @@ NOIp2019
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5591 小猪佩奇学数学/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5147-数学-随机数生成器/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3368,36 +3185,19 @@ NOIp2019
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5591%20%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E5%AD%A6%E6%95%B0%E5%AD%A6/"  itemprop="url">
-        P5591 小猪佩奇学数学
+      <a href="/2022/04/30/P5147-%E6%95%B0%E5%AD%A6-%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8/"  itemprop="url">
+        P5147-数学-随机数生成器
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5591 小猪佩奇学数学
-知识点
-二项式定理
-
-单位根反演
-
-证明：
-
-题意
-求
-
-
-思路
-一看到前面这个形式容易想到二项式定理，但是后面这个  不好处理。
-观察一下数据范围发现  较小，考虑使用单位根反演，我们将柿子往这边化：
-
-代入得到
-
-上式中  是  等于零的情况，此时  全为 1，公比为 1，不适用等比数列求和公式，我们单独算一下。由 ，有
-
-代码
-123456789101112...
+        P5147-数学-随机数生成器（洛谷第一篇题解说这是高一数学题，新高二感觉到被吊打）
+我们设work(x)的期望值为$f_x$
+注意$f_1$是边界。不过对下列式子没有影响。原因参照必修的数列
+那么$\displaystyle f_n&#x3D;1+\frac{1}{n}\sum_{i&#x3D;1}^{n}f_i$
+移项得到$\displaystyle f_n&#x3D;\frac{n}{...
       
     
   </div>
@@ -3418,7 +3218,140 @@ NOIp2019
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P5591%20%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E5%AD%A6%E6%95%B0%E5%AD%A6/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P5147-%E6%95%B0%E5%AD%A6-%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6106 [Ynoi2010] Self Adjusting Top Tree/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/"  itemprop="url">
+        P6106 [Ynoi2010] Self Adjusting Top Tree
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P6106 [Ynoi2010] Self Adjusting Top Tree题意给出平面直角坐标系上若干不与坐标轴平行的处于第一象限的互不相交的线段，多次询问平面中一个第一象限的矩形与这些线段相交部分的长度长度和与所有线段长度和的比值。给出的所有坐标 $\in[1,10^6]$。
+思路假设所有线段的斜率都是正的，考虑将询问差分成四个前缀矩形。我们只需要考虑统计若干斜率为正的互不相交的线段...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/OI/">OI</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5658 括号树/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P5658%20%E6%8B%AC%E5%8F%B7%E6%A0%91/"  itemprop="url">
+        P5658 括号树
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P5658 括号树NOIp2019我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
+于是今天我克服心理阴影来写这道题。
+树形结构因为这是一个树，所有优秀的性质这个题都有。并且题目仅仅是问从1开始到所有点的答案，所以我们就可以依靠树的性质来做。
+首先，对于一个节点，我们给它记录几个值：
+
+$lst_i$表示i的贡献（只是i的贡献，并不包括从根节点到i路径上点的贡献）
+那么我们发现...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/OI/">OI</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P5658%20%E6%8B%AC%E5%8F%B7%E6%A0%91/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3745,13 +3678,15 @@ NOIp2019
     
       
         
-          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+</div>
         
       
     
       
         <div class='copyright'>
-        [Copyright ©Star_Cried since 2024 XXX](/)
+        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
+
         </div>
       
     
@@ -4755,7 +4690,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

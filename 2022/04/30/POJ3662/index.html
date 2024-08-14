@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723541454637),
+    lastupdate: new Date(1723607271264),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2806,7 +2806,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><span style="text-decoration: line-through;">一开始理解错题意以为是分层图求最短路径，结果写完发现k太大了发现事情没有那么简单（讨厌英语题面！）</span></p>
 <p>说一下解法吧，二分答案，尽量小，每次二分完跑最短路径，但是要重置边权。即把比答案小的边改为0，比答案大的改为1，若最短路径比k大，就加答案；反之亦然。</p>
 <p>（还好都有最短路径算没白写）</p>
-<p>唯一的一点技巧：最初想着每次找完mid把所有边的权值改一下，觉得太麻烦了，那么就每次dijkstra加点的时候判断一下吧！（反正又占不了多少时间……吧）</p>
+<p>唯一的一点技巧：最初想着每次找完mid把所有边的权值改一下，觉得太麻烦了，那么就每次dijkstra加点的时候判断一下吧！（反正又占不了多少时间&hellip;&hellip;吧）</p>
 <div class="cnblogs_code">
 <pre>#include&lt;iostream&gt;<span style="color: #000000;">
 #include</span>&lt;vector&gt;<span style="color: #000000;">
@@ -2851,46 +2851,32 @@ inline </span><span style="color: #0000ff;">int</span><span style="color: #00000
             }
         }
     }
-<pre><code>inline &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;void&lt;/span&gt;&lt;span style="color: #000000;"&gt; work()
-{
-    n&lt;/span&gt;=read(),m=read(),k=&lt;span style="color: #000000;"&gt;read();
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mlen=&lt;span style="color: #800080;"&gt;0&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;for&lt;/span&gt;(&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; a,b,c,i=&lt;span style="color: #800080;"&gt;1&lt;/span&gt;;i&amp;lt;=m;i++&lt;span style="color: #000000;"&gt;)
-    {
-        a&lt;/span&gt;=read(),b=read(),c=&lt;span style="color: #000000;"&gt;read();
-        mlen&lt;/span&gt;=&lt;span style="color: #000000;"&gt;max(mlen,c);
+    
+<pre><code>inline &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; work()
+&#123;
+    n&lt;/span&gt;=read(),m=read(),k=&lt;span style=&quot;color: #000000;&quot;&gt;read();
+    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; mlen=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
+    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;for&lt;/span&gt;(&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; a,b,c,i=&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;;i&amp;lt;=m;i++&lt;span style=&quot;color: #000000;&quot;&gt;)
+    &#123;
+        a&lt;/span&gt;=read(),b=read(),c=&lt;span style=&quot;color: #000000;&quot;&gt;read();
+        mlen&lt;/span&gt;=&lt;span style=&quot;color: #000000;&quot;&gt;max(mlen,c);
         addedge(a,b,c);
         addedge(b,a,c);
-    }
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; l=&lt;span style="color: #800080;"&gt;0&lt;/span&gt;,r=&lt;span style="color: #000000;"&gt;mlen;
-    &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;while&lt;/span&gt;(l&amp;lt;&lt;span style="color: #000000;"&gt;r){
-        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;int&lt;/span&gt; mid=l+r&amp;gt;&amp;gt;&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
+    &#125;
+    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; l=&lt;span style=&quot;color: #800080;&quot;&gt;0&lt;/span&gt;,r=&lt;span style=&quot;color: #000000;&quot;&gt;mlen;
+    &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;while&lt;/span&gt;(l&amp;lt;&lt;span style=&quot;color: #000000;&quot;&gt;r)&#123;
+        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;int&lt;/span&gt; mid=l+r&amp;gt;&amp;gt;&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
         dijkstra(mid);
-        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(dis[n]==&lt;span style="color: #800080;"&gt;0x3f3f3f3f&lt;/span&gt;&lt;span style="color: #000000;"&gt;){
-            printf(&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;&lt;span style="color: #800000;"&gt;-1\n&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;);&lt;span style="color: #0000ff;"&gt;return&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-        }
-        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;if&lt;/span&gt;(dis[n]&amp;gt;k)l=mid+&lt;span style="color: #800080;"&gt;1&lt;/span&gt;&lt;span style="color: #000000;"&gt;;
-        &lt;/span&gt;&lt;span style="color: #0000ff;"&gt;else&lt;/span&gt; r=&lt;span style="color: #000000;"&gt;mid;
-    }
-    printf(&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;&lt;span style="color: #800000;"&gt;%d\n&lt;/span&gt;&lt;span style="color: #800000;"&gt;"&lt;/span&gt;&lt;span style="color: #000000;"&gt;,l);
-}
+        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(dis[n]==&lt;span style=&quot;color: #800080;&quot;&gt;0x3f3f3f3f&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;)&#123;
+            printf(&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;-1\n&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;);&lt;span style=&quot;color: #0000ff;&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
+        &#125;
+        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;if&lt;/span&gt;(dis[n]&amp;gt;k)l=mid+&lt;span style=&quot;color: #800080;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;;
+        &lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;else&lt;/span&gt; r=&lt;span style=&quot;color: #000000;&quot;&gt;mid;
+    &#125;
+    printf(&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;%d\n&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt;,l);
+&#125;
 </code></pre>
-<p>}
-<span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-star::work();
-</span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}
-</span><span style="color: #008000;">/<em></em></span><em><span style="color: #008000;">
-5 7 1
-1 2 5
-3 1 4
-2 4 8
-3 2 3
-5 2 9
-3 4 7
-4 5 6
-</span><span style="color: #008000;"></span></em>/</p></span></pre><p></p>
+<p>}<br></span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()<br>{<br>    star::work();<br>    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;<br>}<br></span><span style="color: #008000;">&#x2F;<em></span><span style="color: #008000;"><br>5 7 1<br>1 2 5<br>3 1 4<br>2 4 8<br>3 2 3<br>5 2 9<br>3 4 7<br>4 5 6<br></span><span style="color: #008000;"></em>&#x2F;</span></pre></p>
 </div>
 <p>&nbsp;</p>
   </div>
@@ -2989,22 +2975,19 @@ star::work();
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/POJ3048/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>POJ3048</p>
-          <p class='content'>素数筛，数据范围不大，直接暴力筛。
-坑：有个数据是 1 1，答案是1.差点没把我卡去世。
-我的三观哪去了。
-
-#include&lt;iostream&gt;
-#include&lt;cstdi...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/POJ3615-Floyd/'>
-          <p class='title'>POJ3615-Floyd<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/2022/04/30/POJ3615-Floyd/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>POJ3615-Floyd</p>
           <p class='content'>http://poj.org/problem?id=3615
 因为只需要求所在路径的最大高度的最小值，而且n&lt;=300,我们可以用floyd跑。
 g[i][j]=min(g[i][j],m...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/POJ3268%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
+          <p class='title'>POJ3268[非公开][草稿]<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Silver Cow Party
+题意：求有向图一个点与其他所有点往返最短路径的最大值。
+思路：主要就是往返有问题，因为又是有向图，所以我们只得乖乖跑两遍。我们考虑n&lt;=1000，lwc曾...</p>
         </a>
       
     </div>
@@ -3257,13 +3240,15 @@ g[i][j]=min(g[i][j],m...</p>
     
       
         
-          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+</div>
         
       
     
       
         <div class='copyright'>
-        [Copyright ©Star_Cried since 2024 XXX](/)
+        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
+
         </div>
       
     
@@ -4267,7 +4252,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723541454637),
+    lastupdate: new Date(1723607271264),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2733,12 +2733,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        概念
-在无向图中：
-
+        概念在无向图中：
 
 边双联通：删去图中任何一条边图仍联通
-
 
 点双联通：删去图中任何一个点图仍联通（不具有传递性）
 
@@ -2746,17 +2743,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 此图为边双连通图但非点双联通图。
 
-
 割点：如果删去一个点将会把图分成两个或两个以上的图，那么这个点就是割点。如上图 B 点。
-
 
 桥：如果删去一个边将会把图分成两个图，那么这个边就是桥。
 
-
 点双连通分量：不存在割点的极大连通分量。
 
+边双连通分量：不存在桥的极大连通分量。
 
-边双连通分量：不存在桥的极大...
+...
       
     
   </div>
@@ -2793,7 +2788,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/unique/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/transform和tolower/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2811,20 +2806,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/unique/"  itemprop="url">
-        unique
+      <a href="/2022/04/30/transform%E5%92%8Ctolower/"  itemprop="url">
+        transform和tolower
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        unique
-unique一般先用sort将要处理的序列排序，因为unique只会“删除”相邻的重复元素。
-我们定义一个数列a[]={1,3,3,4,5,6,6,7}(a.begin为a首元素的迭代器，a.end同理）
+        transform:&lt;algorithm&gt;
+tolower:&lt;ctype.h&gt;
+transform有两种使用方法
+第一种（参数）：
 
-unique(a.begin(),a.end())或者unique(a,a+a.size())，数组变为{1,3,4,5,6,7,6,7}.
-unique(a.begin(...
+源目标起始迭代器地址
+源目标结束迭代器地址
+输出迭代器地址
+自定义函数符（一元函数）
+
+例如某一个题：(也就是我这里将两个函数相提并论的原因）
+将字符串不分辨大小写进行比较：
+
+string S,T;
+int main()
+{
+   w...
       
     
   </div>
@@ -2845,7 +2851,7 @@ unique(a.begin(...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/unique/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/transform%E5%92%8Ctolower/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2887,10 +2893,8 @@ unique(a.begin(...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        定义
-主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
-时间复杂度相关定义
-在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大  符号表述，不包括这个...
+        定义主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
+时间复杂度相关定义在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大 $O$ 符号表述，不包括这...
       
     
   </div>
@@ -2956,16 +2960,10 @@ unique(a.begin(...
         
 “有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
 
-#中国剩余定理
-即求多个同余方程的解。
-举个栗子。求一个数x，使得：
-
-设M=3511=165, a1=3,a2=5,a3=11,
-M1=M/a1=55
-M2=M/a2=33
-M3=M/a3=15
-然后我们再求a的逆元c。（扩展欧几里得）
-然后结果就是(a1M1c1 + a2M2c2 + a3M3c3...
+#中国剩余定理即求多个同余方程的解。
+举个栗子。求一个数x，使得：$$\begin{cases}x≡2(mod 3)\x≡3(mod 5)\x≡2(mod 11)\end{cases}$$
+设M&#x3D;3511&#x3D;165, a1&#x3D;3,a2&#x3D;5,a3&#x3D;11,
+M...
       
     
   </div>
@@ -2987,82 +2985,6 @@ M3=M/a3=15
       
         <div>
           <a class='readmore' href='/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/原根[非公开][草稿]/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%8E%9F%E6%A0%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/"  itemprop="url">
-        原根[非公开][草稿]
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        定义
-设m是正整数，a是整数，若a模m的阶等于φ(m)，则称a为模m的一个原根。
-阶是什么呢？阶就是使
-注意，一个正整数有原根的充要条件是
-欧拉定理
-若正整数n,a互素，则
-aφn=
-例如要求10的原根，
-φ10=4
-1^4=1
-2^4mod 10=6
-3^4mod 10=1
-但是这样枚举太暴力了。
-我们可以求出x-1的所有的质因子，对于任何a∈[2,x-1],只需要检验a(x-1)/pi ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E5%8E%9F%E6%A0%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3105,13 +3027,11 @@ aφn=
     
       
         无用的文字
-又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……
+又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了&hellip;&hellip;
 二分图
-二分图就是一个图被分成两个图一个图G，其中的点被分成A,B两组，且A∪B​=G，A∩B=∅。这两个点集A,B分别称为左部和右部，其中的点分别被称为左部点和右部点。
+二分图就是一个图被分成两个图一个图G，其中的点被分成A,B两组，且A&cup;B​=G，A&cap;B=&empty;。这两个点集A,B分别称为左部和右部，其中的点分别被称为左部点和右部点。
 这个概念只是用来判断一道题的适用算法的。
-匈牙利算法
-匈牙利算法是用来寻找最大匹配的一个算法。
-p...
+...
       
     
   </div>
@@ -3133,6 +3053,82 @@ p...
       
         <div>
           <a class='readmore' href='/2022/04/30/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/原根[非公开][草稿]/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E5%8E%9F%E6%A0%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/"  itemprop="url">
+        原根[非公开][草稿]
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        定义
+设m是正整数，a是整数，若a模m的阶等于&phi;(m)，则称a为模m的一个原根。
+阶是什么呢？阶就是使
+注意，一个正整数有原根的充要条件是
+欧拉定理
+若正整数n,a互素，则
+a&phi;n=
+例如要求10的原根，
+&phi;10=4
+1^4=1
+2^4mod 10=6
+3^4mod 10=1
+但是这样枚举太暴力了。
+我们可以求出x-1的所有的质因子，对于任何a&isin;[2,x-1...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/OI/">OI</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E5%8E%9F%E6%A0%B9%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3174,12 +3170,9 @@ p...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        很简单的事情被搞得很复杂，踩了很多坑……以及莫名其妙的错误。
-本来碰壁了之后会一拖再拖。昨天新冠阳性难受了一整天，晚上退烧了，不想学数学就想搞搞这个，第二天早上就弄好了。果然这种东西需要的最重要的是耐心和时间。
-教程
-搞了好久才找到这篇博客重新搞了一遍。博主基本上是手把手教了，很新，而且有链接可以直接跳转引用的位置去看。
-用的是 Nginx, MySQL, php7.4, php-fpm。
-...
+        很简单的事情被搞得很复杂，踩了很多坑……以及莫名其妙的错误。本来碰壁了之后会一拖再拖。昨天新冠阳性难受了一整天，晚上退烧了，不想学数学就想搞搞这个，第二天早上就弄好了。果然这种东西需要的最重要的是耐心和时间。
+教程搞了好久才找到这篇博客重新搞了一遍。博主基本上是手把手教了，很新，而且有链接可以直接跳转引用的位置去看。用的是 Nginx, MySQL, php7.4, php-fpm。
+下面是...
       
     
   </div>
@@ -3242,9 +3235,8 @@ p...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        斜堆
-斜堆是个很有趣的东西。而且它有一些很有意思的性质。
-斜堆的大概就是每次往堆里面插入一个元素的操作非常“有趣”。插入的节点从根节点开始。如果插入的元素值比所在根小，它会将根“挤下去”，即替代原先的根的位置，将原先的根连到它的左子树上。如果所在根节点为空，它直接插入到此节点上。如果插入的元素比根大，那么它就会先交换所在根的两个子树，然后再递归到原先根的左子树进行插入，直到它比所在根小或者所...
+        斜堆斜堆是个很有趣的东西。而且它有一些很有意思的性质。
+斜堆的大概就是每次往堆里面插入一个元素的操作非常“有趣”。插入的节点从根节点开始。如果插入的元素值比所在根小，它会将根“挤下去”，即替代原先的根的位置，将原先的根连到它的左子树上。如果所在根节点为空，它直接插入到此节点上。如果插入的元素比根大，那么它就会先交换所在根的两个子树，然后再递归到原先根的左子树进行插入，直到它比所在根小或者所在...
       
     
   </div>
@@ -3310,12 +3302,11 @@ p...
         &lt;-点我进入大佬博客
 &nbsp;
 斜率优化，适用于一些dp方程为类似
-f[i]=min(a[i]∗b[j]+c[j]+d[i]) ,其中b单调递增
+f[i]=min(a[i]&lowast;b[j]+c[j]+d[i]) ,其中b单调递增
 的问题。通过大佬的博客可以得证有k&gt;j时，k的决策是优于j的，即斜率式
-a[i]∗b[j]+c[j]+d[i]&gt;=a[i]∗b[k]+c[k]+d[i]，j&lt;k
+a[i]&lowast;b[j]+c[j]+d[i]&gt;=a[i]&lowast;b[k]+c[k]+d[i]，j&lt;k
 &nbsp;
-最后可以得到
-slope(i,j)=(c[k...
+最...
       
     
   </div>
@@ -3731,13 +3722,15 @@ POJ2728
     
       
         
-          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+</div>
         
       
     
       
         <div class='copyright'>
-        [Copyright ©Star_Cried since 2024 XXX](/)
+        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
+
         </div>
       
     
@@ -4741,7 +4734,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

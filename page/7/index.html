@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723541454637),
+    lastupdate: new Date(1723607271264),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2704,6 +2704,77 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4169-CDQ分治 K-D tree（三维偏序）-天使玩偶/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P4169-CDQ%E5%88%86%E6%B2%BB%20K-D%20tree%EF%BC%88%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%EF%BC%89-%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6/"  itemprop="url">
+        P4169-CDQ分治 K-D tree（三维偏序）-天使玩偶
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P4169-CDQ分治&#x2F;K-D tree（三维偏序）-天使玩偶这是一篇两种做法都有的题解
+题外话我写吐了……
+本着不看题解的原则，没写（不会）K-D tree，就写了个cdq分治的做法。下面是我的写题步骤：
+
+想着树状数组维护不了区间最值，于是写了线段树，因为一个**的错误调了几个小时；
+
+cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂了；
+
+加上另外两个方向，正确性终于...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/OI/">OI</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P4169-CDQ%E5%88%86%E6%B2%BB%20K-D%20tree%EF%BC%88%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%EF%BC%89-%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3312 数表/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -2730,20 +2801,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P3312 数表
-题意
-求出
-
-其中  表示约数和。
-思路/推导
-考虑没有  的限制的情况。
-
-考虑加入  的限制。将询问按照  大小离线，然后用一个树状数组维护  的前缀和即可。
-具体是将线性筛出的所有数的约数和从小到大进行排序，在从小到大查询的时候进行更新。
-不会筛  的可以看我的另一篇博客
-时间复杂度瓶颈在于查询，需要用到数论分块，为 。
-代码
-12345678910111213141...
+        P3312 数表题意求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^m\sigma(\gcd(i,j))[\sigma(\gcd(i,j))\le a]$$其中 $\sigma$ 表示约数和。
+思路&#x2F;推导考虑没有 $a$ 的限制的情况。$$\begin{aligned}ans&amp;&#x3D;\sum_{d&#x3D;1}^{\min(n,m)}\si...
       
     
   </div>
@@ -2780,7 +2839,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3643 [APIO2016]划艇/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4180 [BJWC2010]严格次小生成树/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2798,22 +2857,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/"  itemprop="url">
-        P3643 [APIO2016]划艇
+      <a href="/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"  itemprop="url">
+        P4180 [BJWC2010]严格次小生成树
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P3643 [APIO2016]划艇
-题意
-一个合法序列可表示为一个长度为  的序列，其中第  个数可以为 0 或  中一个整数，且满足所有不为零的数组成的子序列严格上升。求合法序列方案数。
-思路
-朴素动态规划做法为，设  表示第  个数不为零且数量为  的方案数，则
-
-但是第二维枚举太多。考虑优化。
-首先，我们考虑一段区间，按照上面的方式递推需要依次枚举数量再枚举  个数的方案进行转移，不...
+        P4180 [BJWC2010]严格次小生成树P4180
+题意求出一个无向联通图的严格次小生成树。严格次小生成树的定义为边权和大于最小生成树的边权和但不存在另一棵生成树的边权和在最小生成树和严格次小生成树之间（不相等）。
+思路先求出一颗最小生成树，发现严格次小生成树一定是其断了一条边并加了一条边且边权和的增加量最小。
+那么我们继续在最小生成树上做。对于每一条不是最小生成树上的边，求出其两端两...
       
     
   </div>
@@ -2834,147 +2889,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3214 [HNOI2011]卡农/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/"  itemprop="url">
-        P3214 [HNOI2011]卡农
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P3214 [HNOI2011]卡农
-题意
-在集合  中选出  个非空子集满足：
-
-不存在完全相同的两个集合；
-每个元素在所有集合中出现次数之和为偶数。
-
-思路
-考虑转移，利用容斥方法进行 Dp。设  表示选了  个集合满足条件的方案数：
-
-首先，如果确定了前  个集合，那么为了满足上面第二个限制这个位置选的集合一定是固定的。前  个集合的选择方案数是 。
-上面的方案中有选择了空集的方案。选...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4168-蒲公英-分块/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4168-%E8%92%B2%E5%85%AC%E8%8B%B1-%E5%88%86%E5%9D%97/"  itemprop="url">
-        P4168-蒲公英-分块
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        蒲公英
-暴力分块思想。分块的思想与莫队相同。它能将时间和空间复杂度均摊XD
-belong表示所属区块，num维护区间颜色出现次数，maxx维护区间max值。查询时只需要比较两端的区块即可。
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P4168-%E8%92%B2%E5%85%AC%E8%8B%B1-%E5%88%86%E5%9D%97/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3016,19 +2931,12 @@ belong表示所属区块，num维护区间颜色出现次数，maxx维护区间m
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4293 [WC2010]能量场
-题意
-给你  个粒子，每个粒子有两个权值  每个相邻有序对  会产生  的贡献。现让你处理两个问题：
+        P4293 [WC2010]能量场题意给你 $n$ 个粒子，每个粒子有两个权值 $m_i,c_i$ 每个相邻有序对 $(a,b)$ 会产生 $m_am_b(c_a-c_b)$ 的贡献。现让你处理两个问题：
 
 找出一个有序对使贡献最大。
 找出一个序列成环后贡献和最大。
 
-思路
-我们将贡献转化一下：
-
-那么这就形成了一个叉积的形式。即将每个点  转化为  的向量。
-那么第一问就等价于求叉积最大的两个向量。具体怎么求后面再说。
-那么第二问就是将若干个向量依次首尾相...
+思路我们将贡献转化一下：$$m_am_b(c_a-c_b)&#x3D;m_ac_am_b-m_bc_bm_a$$那么这就形成...
       
     
   </div>
@@ -3050,77 +2958,6 @@ belong表示所属区块，num维护区间颜色出现次数，maxx维护区间m
       
         <div>
           <a class='readmore' href='/2022/04/30/P4293%20%5BWC2010%5D%E8%83%BD%E9%87%8F%E5%9C%BA/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4074 [WC2013]糖果公园/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4074%20%5BWC2013%5D%E7%B3%96%E6%9E%9C%E5%85%AC%E5%9B%AD/"  itemprop="url">
-        P4074 [WC2013]糖果公园
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P4074 [WC2013]糖果公园
-Tag：树上带修莫队
-题意：树上每个点有一种糖果，求
-其中c为糖果种类，其为出现次数。
-思路
-离线树上带修莫队。
-先进行树上分块。分块内的询问按照出发点、终止点、询问id优先级依次递减排序。
-对于树上莫队，其实就是在欧拉序上莫队。因为欧拉序的性质，即每个节点子树内的节点一定会经过两次，我们就可以用一个括号序列的方式在莫队时消除子树内无用节点的影响。
-具体...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/OI/">OI</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P4074%20%5BWC2013%5D%E7%B3%96%E6%9E%9C%E5%85%AC%E5%9B%AD/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3162,15 +2999,13 @@ Tag：树上带修莫队
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4334 [COI2007] Policija
-题意
-一个无重边的无向图，每次询问删掉一条边或删掉一个点后两个点是否联通。
-思路
-连通性问题，我们可以考虑使用广义圆方树解决。
+        P4334 [COI2007] Policija题意一个无重边的无向图，每次询问删掉一条边或删掉一个点后两个点是否联通。
+思路连通性问题，我们可以考虑使用广义圆方树解决。
 
 对于删掉一个点的情况：
 
-我们先跑 tarjan 建出圆方树。如何判断两点在删去一个点后在树上的连通性？当且仅当被删去的点在两点间的路径上。根据圆方树的性质，如果被删点在一个点双连通分量中，它是符合上面的判断条件的...
+我们先跑 tarjan 建出圆方树。如何判断两点在删去一个点后在树上的连通性？当且仅当被删去的点在两点间的路径上。根据圆方树的性质，如果被删点在一个点双连通分量中，它是符合上面的判断条件的。
+所...
       
     
   </div>
@@ -3207,7 +3042,7 @@ Tag：树上带修莫队
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4169-CDQ分治 K-D tree（三维偏序）-天使玩偶/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4168-蒲公英-分块/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3225,28 +3060,16 @@ Tag：树上带修莫队
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4169-CDQ%E5%88%86%E6%B2%BB%20K-D%20tree%EF%BC%88%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%EF%BC%89-%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6/"  itemprop="url">
-        P4169-CDQ分治 K-D tree（三维偏序）-天使玩偶
+      <a href="/2022/04/30/P4168-%E8%92%B2%E5%85%AC%E8%8B%B1-%E5%88%86%E5%9D%97/"  itemprop="url">
+        P4168-蒲公英-分块
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4169-CDQ分治/K-D tree（三维偏序）-天使玩偶
-这是一篇两种做法都有的题解
-题外话
-我写吐了……
-本着不看题解的原则，没写（不会）K-D tree，就写了个cdq分治的做法。下面是我的写题步骤：
-
-
-想着树状数组维护不了区间最值，于是写了线段树，因为一个**的错误调了几个小时；
-
-
-cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂了；
-
-
-加上另外两个方向，正确性终于...
+        蒲公英暴力分块思想。分块的思想与莫队相同。它能将时间和空间复杂度均摊XDbelong表示所属区块，num维护区间颜色出现次数，maxx维护区间max值。查询时只需要比较两端的区块即可。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565...
       
     
   </div>
@@ -3267,7 +3090,71 @@ cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P4169-CDQ%E5%88%86%E6%B2%BB%20K-D%20tree%EF%BC%88%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%EF%BC%89-%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P4168-%E8%92%B2%E5%85%AC%E8%8B%B1-%E5%88%86%E5%9D%97/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3643 [APIO2016]划艇/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/"  itemprop="url">
+        P3643 [APIO2016]划艇
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P3643 [APIO2016]划艇题意一个合法序列可表示为一个长度为 $n$ 的序列，其中第 $i$ 个数可以为 0 或 $[l_i,r_i]$ 中一个整数，且满足所有不为零的数组成的子序列严格上升。求合法序列方案数。
+思路朴素动态规划做法为，设 $f_{ij}$ 表示第 $i$ 个数不为零且数量为 $j$ 的方案数，则$$ans&#x3D;\sum_{i&#x3D;1}^n\sum_{j...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/OI/">OI</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3351,6 +3238,74 @@ cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5042 丢失的题面/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P5042%20%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%A2%98%E9%9D%A2/"  itemprop="url">
+        P5042 丢失的题面
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P5042 丢失的题面顺序：10 - 1 - 7 - 8 - 9 - 4 - 5 - 6 - 2 - 3
+Point 10读入，特判，输出。
+读入的英文意思是让选手输出自己的程序本身，这个题的确存在，但是这题并没有 SPJ ，所以特判一下输出输出文件就好了。
+C++ 的atoi函数可以让读入的字符串变成数字以完成其他点的任务。
+Point 1我和其他聚铑做这个点的过程就十分有趣了。
+开始，我...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/OI/">OI</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P5042%20%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%A2%98%E9%9D%A2/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4494 [HAOI2018]反色游戏/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -3377,12 +3332,9 @@ cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4494 [HAOI2018]反色游戏
-题意
-给你一个无向图，图上每个点是黑色或者白色。你可以将一条边的两个端点颜色取反。问你有多少种方法每个边至多取反一次使得图上全变成白色的点。
-思路
-若任意一个连通块黑色点的个数为奇数那么无解。
-先考虑树的情况。发现如果是树，并且黑点个数为偶数，有且仅有一种方式达到目标。然后发现，对于一个无向图，它的任意一个生成树若有解，那么其他非树边无论是否取反都有...
+        P4494 [HAOI2018]反色游戏题意给你一个无向图，图上每个点是黑色或者白色。你可以将一条边的两个端点颜色取反。问你有多少种方法每个边至多取反一次使得图上全变成白色的点。
+思路若任意一个连通块黑色点的个数为奇数那么无解。
+先考虑树的情况。发现如果是树，并且黑点个数为偶数，有且仅有一种方式达到目标。然后发现，对于一个无向图，它的任意一个生成树若有解，那么其他非树边无论是否取反都有且仅有...
       
     
   </div>
@@ -3730,13 +3682,15 @@ cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂�
     
       
         
-          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+</div>
         
       
     
       
         <div class='copyright'>
-        [Copyright ©Star_Cried since 2024 XXX](/)
+        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
+
         </div>
       
     
@@ -4740,7 +4694,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

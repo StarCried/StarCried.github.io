@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723541454637),
+    lastupdate: new Date(1723607271264),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2747,19 +2747,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        欧拉定理
-欧拉定理：若  与  互质，则有
-
-我们可以发现费马小定理其实就是欧拉定理的特殊情况。
-证明的话，构造一个与  互质的数列操作，利用剩余系证明
-扩展欧拉定理
-扩展欧拉定理为
-
-证明请上面传送门
-在程序上的体现就是加一个判断：如果 ，我们把  的模数加上一个  即可。
-于是我们就能做掉P5091
-输入幂数时取模即可。
-123456789101112131415161718192021...
+        欧拉定理欧拉定理：若 $a$ 与 $m$ 互质，则有$$a^{\varphi(m)}\equiv1(\mod m)$$我们可以发现费马小定理其实就是欧拉定理的特殊情况。
+证明的话，构造一个与 $m$ 互质的数列操作，利用剩余系证明
+扩展欧拉定理扩展欧拉定理为$$a^b\equiv \begin{cases}a^{b\mod\varphi(p)},&amp;\gcd(a,p)&#x3D;1\a...
       
     
   </div>
@@ -2822,15 +2812,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        贝祖定理
-如果 、 是整数，那么一定存在整数 、 使得 。
-换句话说，如果  有解，那么  一定是  的若干倍。（可以来判断一个这样的式子有没有解）
-有一个直接的应用就是 如果  有解，那么 。
-然而这并不能告诉我们x,y解是多少。
-扩展欧几里得（exgcd）
-首先对  一定有一个解 。但是我们的  和  不一定满足该条件。不过我们可以辗转相除直到满足条件，然后回代：
-
-1234567891...
+        贝祖定理如果 $a$、$b$ 是整数，那么一定存在整数 $x$、$y$ 使得 $ax+by&#x3D;\gcd(a,b)$。
+换句话说，如果 $ax+by&#x3D;m$ 有解，那么 $m$ 一定是 $\gcd(a,b)$ 的若干倍。（可以来判断一个这样的式子有没有解）
+有一个直接的应用就是 如果 $ax+by&#x3D;1$ 有解，那么 $gcd(a,b)&#x3D;1$。
+然而这并不能告...
       
     
   </div>
@@ -2898,16 +2883,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 其主要思想就是寻找可以简便计算的边界，然后通过化式子将不同情况化为边界递归计算。
 通过几个具体的例子，可以更好地理解其思想。
 
-P5170 【模板】类欧几里得算法
-推导
-
-
-
-
-
-
-代码
-123456789101112131415161718192021222324252627282930...
+P5170 【模板】类欧几里得算法推导$$f(a,b,c,n)&#x3D;\sum_{i&#x3D;0}^n \lfloor\frac{ai+b}{c}\rflo...
       
     
   </div>
@@ -2970,21 +2946,11 @@ P5170 【模板】类欧几里得算法
   <div class='md article-desc' itemprop="articleBody">
     
       
-        逆元
-求一个数的逆元，就是说这个数乘以它的逆元恰好等于1。在  内，设 , 互质，则  的逆元记作 ，定义为 ，使得 。
- 是素数时，逆元唯一存在。
- 是合数时，逆元可能不存在。
-求逆元
-扩展欧几里得
-适用于  不为素数的情况。
-解方程组 ，解得的  即为  的逆元。
-费马小定理
-费马小定理：若  为素数，则对于任意整数 ，有
-
-那么
-
-递推
-inv[i]=(mod-mod/i)*inv[m...
+        逆元求一个数的逆元，就是说这个数乘以它的逆元恰好等于1。在 $\mathbb{Z}_p$ 内，设 $a$,$b$ 互质，则 $a$ 的逆元记作 $a^-1$，定义为 $b$，使得 $ab&#x3D;1$。
+$p$ 是素数时，逆元唯一存在。
+$p$ 是合数时，逆元可能不存在。
+求逆元扩展欧几里得适用于 $p$ 不为素数的情况。
+解方程组 $ax+py&#x3D;1$，解得的 $x$ 即为 $a...
       
     
   </div>
@@ -3047,12 +3013,10 @@ inv[i]=(mod-mod/i)*inv[m...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        费马小定理
-对于任何互质数 ,有
-
-应用
-求逆元：
-
+        费马小定理对于任何互质数 $a,p$,有
+$$a^{p-1}&#x3D;1\pmod p$$
+应用求逆元：
+$$a^{p-2}&#x3D;a^{-1}\pmod p$$
 
       
     
@@ -3381,13 +3345,15 @@ inv[i]=(mod-mod/i)*inv[m...
     
       
         
-          <div><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></div>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+</div>
         
       
     
       
         <div class='copyright'>
-        [Copyright ©Star_Cried since 2024 XXX](/)
+        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
+
         </div>
       
     
@@ -4391,7 +4357,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 
