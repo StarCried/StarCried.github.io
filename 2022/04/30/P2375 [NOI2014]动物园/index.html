@@ -48,20 +48,22 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>P2375 [NOI2014]动物园 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,字符串,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="P2375 [NOI2014]动物园   为什么复制题目连字体大小一块复制过来了（雾）   我竟然会做NOI的题目辣(≧▽≦)&#x2F;（看的题解   总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。   我们发现，这个所谓的num数组和nxt有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。">
+  <meta name="description" content="P2375 [NOI2014]动物园 我竟然会做NOI的题目辣(≧▽≦)&#x2F;（看的题解 总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。 我们发现，这个所谓的 num 数组和 nxt 有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。 于是在标记 nxt 时同时也可以把 num 标记。原理是，nxt 记录的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P2375 [NOI2014]动物园">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P2375 [NOI2014]动物园   为什么复制题目连字体大小一块复制过来了（雾）   我竟然会做NOI的题目辣(≧▽≦)&#x2F;（看的题解   总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。   我们发现，这个所谓的num数组和nxt有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。">
+<meta property="og:description" content="P2375 [NOI2014]动物园 我竟然会做NOI的题目辣(≧▽≦)&#x2F;（看的题解 总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。 我们发现，这个所谓的 num 数组和 nxt 有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。 于是在标记 nxt 时同时也可以把 num 标记。原理是，nxt 记录的">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-13T02:32:21.505Z">
+<meta property="article:modified_time" content="2024-08-15T08:35:49.919Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723615944597),
+    lastupdate: new Date(1723740728779),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
       </span>
     
   </div>
@@ -2761,10 +2763,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-15T16:35:49+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2024</p>
+    <p>更新于：Aug 15, 2024</p>
   </a>
 </div>
 
@@ -2801,88 +2803,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 class="lfe-h1" data-v-52820d90>
-<a href="https://www.luogu.com.cn/problem/P2375" target="_blank">P2375
-[NOI2014]动物园</a>
-</h1>
-<p>
-<span
-style="text-decoration: line-through;">为什么复制题目连字体大小一块复制过来了（雾）</span>
-</p>
-<p>
-我竟然会做NOI的题目辣<sub>(≧▽≦)/</sub>（<span
-style="text-decoration: line-through;">看的题解</span>
-</p>
-<p>
-总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。
-</p>
-<p>
-我们发现，这个所谓的num数组和nxt有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。
-</p>
-<p>
-于是在标记nxt时同时也可以把num标记。原理是，nxt记录的是该字符串相同的前缀字符个数，num[i]记录的是当前字符作为从0到i的子串内后缀与前缀相同的子串的子串的数目。我们发现，其实他就是num[j]+1，j就是nxt[i]！可以举几个例子模拟一下。
-</p>
-<p>
-这样一来查询的时候也很方便了。
-</p>
-<p>
-问题来了，怎么去重呢？如果j已经到i&lt;&lt;1的时候，我们将j挪到nxt[j]就好了，直到j&lt;i/2。因为上面我们记录的num数组的特性，如果有重叠此时的值就相当于在nxt[j]的时候的没有重叠的串的num数。模拟一下也很好理解的。
-</p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;algorithm&gt;<span style="color: #000000;">
-#include</span>&lt;cstring&gt;
-<span style="color: #0000ff;">#define</span> mod 1000000007 
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-typedef </span><span style="color: #0000ff;">long</span> <span style="color: #0000ff;">long</span><span style="color: #000000;"> ll;
-</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=1e6+<span style="color: #800080;">5</span><span style="color: #000000;">;
-</span><span style="color: #0000ff;">char</span><span style="color: #000000;"> a[maxn];
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> nxt[maxn],len,num[maxn];
-inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> getnxt()
-{
-    </span><span style="color: #0000ff;">int</span> k=-<span style="color: #800080;">1</span>,j=<span style="color: #800080;">0</span><span style="color: #000000;">;
-    nxt[</span><span style="color: #800080;">0</span>]=-<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span>(j&lt;<span style="color: #000000;">len)
-    {
-        </span><span style="color: #0000ff;">if</span>(k==-<span style="color: #800080;">1</span> or a[j]==a[k])nxt[++j]=++k,num[j]=num[k]+<span style="color: #800080;">1</span><span style="color: #000000;">;
-        </span><span style="color: #0000ff;">else</span> k=<span style="color: #000000;">nxt[k];
-    }
-}
-inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> kmp()
-{
-    </span><span style="color: #0000ff;">int</span> j=<span style="color: #800080;">0</span>,i=<span style="color: #800080;">1</span><span style="color: #000000;">;
-    ll ans</span>=<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span>(i&lt;<span style="color: #000000;">len)
-    {
-        </span><span style="color: #0000ff;">if</span>(j==-<span style="color: #800080;">1</span> or a[j]==<span style="color: #000000;">a[i]){
-            j</span>++,i++<span style="color: #000000;">;
-            </span><span style="color: #0000ff;">while</span>((j&lt;&lt;<span style="color: #800080;">1</span>)&gt;=(i+<span style="color: #800080;">1</span>))j=<span style="color: #000000;">nxt[j];
-            ans</span>=(ans*(ll)(num[j]+<span style="color: #800080;">1</span>))%<span style="color: #000000;">mod;
-        }
-        </span><span style="color: #0000ff;">else</span> j=<span style="color: #000000;">nxt[j];
-    }
-    printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%lld\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,ans);
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-    </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> t;
-    scanf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d</span><span style="color: #800000;">"</span>,&amp;<span style="color: #000000;">t);
-    </span><span style="color: #0000ff;">while</span>(t--<span style="color: #000000;">)
-    {
-        scanf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%s</span><span style="color: #800000;">"</span>,&amp;<span style="color: #000000;">a);
-        len</span>=<span style="color: #000000;">strlen(a);
-        memset(nxt,</span><span style="color: #800080;">0</span>,<span style="color: #0000ff;">sizeof</span><span style="color: #000000;"> nxt);
-        num[</span><span style="color: #800080;">0</span>]=<span style="color: #800080;">0</span>,num[<span style="color: #800080;">1</span>]=<span style="color: #800080;">1</span><span style="color: #000000;">;
-        getnxt();
-        kmp();
-    }
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
-</div>
-<p>
- 
-</p>
+    <h2 id="p2375-noi2014动物园"><a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2375">P2375
+[NOI2014]动物园</a></h2>
+<p>我竟然会做NOI的题目辣<sub>(≧▽≦)/</sub>（<del>看的题解</del></p>
+<p>总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。</p>
+<p>我们发现，这个所谓的 <code>num</code> 数组和 <code>nxt</code>
+有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。</p>
+<p>于是在标记 <code>nxt</code> 时同时也可以把 <code>num</code>
+标记。原理是，<code>nxt</code>
+记录的是该字符串相同的前缀字符个数，<code>num[i]</code>
+记录的是当前字符作为从 <span class="math inline">\(0\)</span> 到 <span
+class="math inline">\(i\)</span>
+的子串内后缀与前缀相同的子串的子串的数目。我们发现，其实他就是
+<code>num[j]+1</code>，<code>j</code> 就是
+<code>nxt[i]</code>！可以举几个例子模拟一下。</p>
+<p>这样一来查询的时候也很方便了。</p>
+<p>问题来了，怎么去重呢？如果 <code>j</code> 已经到
+<code>i&lt;&lt;1</code> 的时候，我们将 <code>j</code> 挪到
+<code>nxt[j]</code> 就好了，直到 <code>j&lt;i/2</code>
+。因为上面我们记录的 <code>num</code>
+数组的特性，如果有重叠此时的值就相当于在 <code>nxt[j]</code>
+的时候的没有重叠的串的 <code>num</code> 数。模拟一下也很好理解的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> mod 1000000007 </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e6</span><span class="number">+5</span>;</span><br><span class="line"><span class="type">char</span> a[maxn];</span><br><span class="line"><span class="type">int</span> nxt[maxn],len,num[maxn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getnxt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k=<span class="number">-1</span>,j=<span class="number">0</span>;</span><br><span class="line">    nxt[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;len)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span> <span class="keyword">or</span> a[j]==a[k])nxt[++j]=++k,num[j]=num[k]<span class="number">+1</span>;</span><br><span class="line">        <span class="keyword">else</span> k=nxt[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">kmp</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">0</span>,i=<span class="number">1</span>;</span><br><span class="line">    ll ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;len)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">-1</span> <span class="keyword">or</span> a[j]==a[i])&#123;</span><br><span class="line">            j++,i++;</span><br><span class="line">            <span class="keyword">while</span>((j&lt;&lt;<span class="number">1</span>)&gt;=(i<span class="number">+1</span>))j=nxt[j];</span><br><span class="line">            ans=(ans*(ll)(num[j]<span class="number">+1</span>))%mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> j=nxt[j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,&amp;a);</span><br><span class="line">        len=<span class="built_in">strlen</span>(a);</span><br><span class="line">        <span class="built_in">memset</span>(nxt,<span class="number">0</span>,<span class="keyword">sizeof</span> nxt);</span><br><span class="line">        num[<span class="number">0</span>]=<span class="number">0</span>,num[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">getnxt</span>();</span><br><span class="line">        <span class="built_in">kmp</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2907,10 +2850,10 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-15T16:35:49+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2024</p>
+    <p>更新于：Aug 15, 2024</p>
   </a>
 </div>
 
@@ -2919,8 +2862,8 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>字符串</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 字符串</span>
 
 
         
@@ -2980,31 +2923,24 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P2014%E9%80%89%E8%AF%BE/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2014选课</p>
-          <p class='content'>
-洛谷P2014选课
-
-
-一道树形DP题。
-
-
-f[i][j]表示i个点选j门课程的最大学分。
-
-
-递推方程：
-
-
-for(int a=n;a&gt;0;a--)//总...</p>
+        <a class='prev' href='/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P1880 [NOI1995] 石子合并</p>
+          <p class='content'>P1880 [NOI1995]
+石子合并
+一道区间dp题目。
+用 d[i][j] 表示从 i 到 j
+的最大/最小得分，那么依次枚举长度 len，坐标 i
+和 j，三层循环就可以 dp...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/'>
-          <p class='title'>P3203 弹飞绵羊-分块<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P3203 弹飞绵羊-分块
-观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。
-对于修改，重构整个块内信息即可。
-时间复杂度正确...</p>
+        <a class='next' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/'>
+          <p class='title'>P2476-记忆化搜索<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P2476-记忆化搜索
+DP?
+我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.
+15维DP显然不靠谱。
+那么我们就思考一下……状态个数？发现记忆化搜...</p>
         </a>
       
     </div>
@@ -3068,39 +3004,34 @@ for(int a=n;a&gt;0;a--)//总...</p>
             ><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/OI/" href="/categories/OI/"
-            active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(114)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(36)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
             active-action="action-categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(22)</div></a></li>
+            ><div class='name'>算法</div><div class='badge'>(38)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
             active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>题解</div><div class='badge'>(67)</div></a></li>
         
       </ul>
     </div>
@@ -3127,7 +3058,8 @@ for(int a=n;a&gt;0;a--)//总...</p>
 
 
     <div class='content'>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p2375-noi2014%E5%8A%A8%E7%89%A9%E5%9B%AD"><span class="toc-text">P2375
+[NOI2014]动物园</span></a></li></ol>
     </div>
   </section>
 
@@ -4281,7 +4213,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4564,7 +4496,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/P2375 [NOI2014]动物园/","name":"P2375 [NOI2014]动物园"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"P2375 [NOI2014]动物园","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T02:32:21.505Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/P2375 [NOI2014]动物园/","name":"P2375 [NOI2014]动物园"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"P2375 [NOI2014]动物园","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T08:35:49.919Z","articleSection":"题解","keywords":"博客园,OI,字符串","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

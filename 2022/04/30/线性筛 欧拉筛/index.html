@@ -48,20 +48,22 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>线性筛 欧拉筛 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,数论,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="线性筛   int prime[maxl]; bool mark[maxl]; int tot; inline void oula() {     for(int i&#x3D;2;i&lt;&#x3D;maxl;i++)     {         if(!mark[i])prime[++tot]&#x3D;i;         for(int j&#x3D;1;j&lt;&#x3D;tot and i+prime[j">
+  <meta name="description" content="线性筛 欧拉筛 线性筛（又称欧拉筛）是一种线性求素数的筛法，可以在 \(O(n)\) 的时间内找出 \(n\) 以内的所有素数。 线性筛的基本思想是，对于 \(i\) 从 \(2\) 到 \(n\) 的每个数，如果它不是素数，则枚举已筛出的每个素数，若其非 \(i\) 的因子，则将 \(i\) 乘上该素数的积标记为已被筛掉。直到枚举到 \(i\) 的最小质因子。这样，当 \(i\) 到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性筛 欧拉筛">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B%20%E6%AC%A7%E6%8B%89%E7%AD%9B/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="线性筛   int prime[maxl]; bool mark[maxl]; int tot; inline void oula() {     for(int i&#x3D;2;i&lt;&#x3D;maxl;i++)     {         if(!mark[i])prime[++tot]&#x3D;i;         for(int j&#x3D;1;j&lt;&#x3D;tot and i+prime[j">
+<meta property="og:description" content="线性筛 欧拉筛 线性筛（又称欧拉筛）是一种线性求素数的筛法，可以在 \(O(n)\) 的时间内找出 \(n\) 以内的所有素数。 线性筛的基本思想是，对于 \(i\) 从 \(2\) 到 \(n\) 的每个数，如果它不是素数，则枚举已筛出的每个素数，若其非 \(i\) 的因子，则将 \(i\) 乘上该素数的积标记为已被筛掉。直到枚举到 \(i\) 的最小质因子。这样，当 \(i\) 到">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-13T02:32:21.587Z">
+<meta property="article:modified_time" content="2024-08-15T03:17:29.670Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723615944597),
+    lastupdate: new Date(1723740728779),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
       </span>
     
   </div>
@@ -2761,10 +2763,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-15T11:17:29+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2024</p>
+    <p>更新于：Aug 15, 2024</p>
   </a>
 </div>
 
@@ -2801,136 +2803,120 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>
-线性筛
-</p>
-<div class="cnblogs_code">
-<pre><span style="color: #0000ff;">int</span><span style="color: #000000;"> prime[maxl];
-</span><span style="color: #0000ff;">bool</span><span style="color: #000000;"> mark[maxl];
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> tot;
-inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> oula()
-{
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">2</span>;i&lt;=maxl;i++<span style="color: #000000;">)
-    {
-        </span><span style="color: #0000ff;">if</span>(!mark[i])prime[++tot]=<span style="color: #000000;">i;
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=tot and i+prime[j]&lt;=maxl;j++<span style="color: #000000;">){
-            mark[i</span>*prime[j]]=<span style="color: #800080;">1</span><span style="color: #000000;">;
-            </span><span style="color: #0000ff;">if</span>(i%prime[j]==<span style="color: #800080;">0</span>)<span style="color: #0000ff;">break</span><span style="color: #000000;">;
-        }
-    }
-}</span></pre>
-</div>
-<p>
-最后一行代码是为了保证不重复。
-</p>
-<p>
-可以顺便求欧拉函数的φ值。欧拉函数的值φx是x以内与x互素的数的个数。φ是积性函数，性质如下：
-</p>
-<p>
-若n是素数，φn=n-1。
-</p>
-<p>
-若n是质数p的k次幂：
-</p>
-<p>
-φn=p<sup>k</sup>-p<sup>k-1</sup>=(p-1)p<sup>k-1</sup>
-</p>
-<p>
-若m与n互质：
-</p>
-<p>
-φ(mn)=φm*φn
-</p>
-<p>
-若要求单个数的phi值：
-</p>
-<p>
-<a href="http://hzwer.com/3470.html" target="_blank">BZOJ2705</a>
-</p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;cmath&gt;
-<span style="color: #0000ff;">#define</span> ll long long
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-ll n,ans;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> m;
-ll phi(ll x)
-{
-    ll t</span>=<span style="color: #000000;">x;
-    </span><span style="color: #0000ff;">for</span>(ll i=<span style="color: #800080;">2</span>;i&lt;=m;i++<span style="color: #000000;">)
-        </span><span style="color: #0000ff;">if</span>(x%i==<span style="color: #800080;">0</span><span style="color: #000000;">)
-        {
-            t</span>=t/i*(i-<span style="color: #800080;">1</span><span style="color: #000000;">);
-            </span><span style="color: #0000ff;">while</span>(x%i==<span style="color: #800080;">0</span>)x/=<span style="color: #000000;">i;
-        }
-    </span><span style="color: #0000ff;">if</span>(x&gt;<span style="color: #800080;">1</span>)t=t/x*(x-<span style="color: #800080;">1</span><span style="color: #000000;">);
-    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> t;
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-    scanf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%lld</span><span style="color: #800000;">"</span>,&amp;<span style="color: #000000;">n);
-    m</span>=<span style="color: #000000;">sqrt(n);
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=m;i++<span style="color: #000000;">)
-        </span><span style="color: #0000ff;">if</span>(n%i==<span style="color: #800080;">0</span><span style="color: #000000;">)
-        {
-            ans</span>+=(ll)i*phi(n/<span style="color: #000000;">i);
-            </span><span style="color: #0000ff;">if</span>(i*i&lt;n)ans+=(ll)(n/i)*<span style="color: #000000;">phi(i);  
-        }
-    printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%lld</span><span style="color: #800000;">"</span><span style="color: #000000;">,ans);
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
-</div>
-<p>
-如要算出范围内所有的phi值：
-</p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;algorithm&gt;<span style="color: #000000;">
-#include</span>&lt;cstring&gt;<span style="color: #000000;">
-#include</span>&lt;cmath&gt;
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-typedef </span><span style="color: #0000ff;">long</span> <span style="color: #0000ff;">long</span><span style="color: #000000;"> ll;
-</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=<span style="color: #000000;">1e8;
-inline </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> read()
-{
-    </span><span style="color: #0000ff;">int</span> x=<span style="color: #800080;">0</span>;<span style="color: #0000ff;">char</span> c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(!isdigit(c))c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">while</span>(isdigit(c))x=(x&lt;&lt;<span style="color: #800080;">3</span>)+(x&lt;&lt;<span style="color: #800080;">1</span>)+(c^<span style="color: #800080;">48</span>),c=<span style="color: #000000;">getchar();
-    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> x; 
-}
-</span><span style="color: #0000ff;">int</span> phi[maxn],prime[maxn&gt;&gt;<span style="color: #800080;">1</span><span style="color: #000000;">],tot,n,ans;
-</span><span style="color: #0000ff;">bool</span><span style="color: #000000;"> mark[maxn];
-inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> oula()
-{
-    phi[</span><span style="color: #800080;">1</span>]=<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">2</span>;i&lt;=n;i++<span style="color: #000000;">)
-    {
-        </span><span style="color: #0000ff;">if</span>(!<span style="color: #000000;">mark[i])
-        {
-            prime[</span>++tot]=<span style="color: #000000;">i;
-            phi[i]</span>=i-<span style="color: #800080;">1</span><span style="color: #000000;">;
-        }
-        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=<span style="color: #800080;">1</span>;j&lt;=tot and i*prime[j]&lt;=n;j++<span style="color: #000000;">)
-        {
-            mark[i</span>*prime[j]]=<span style="color: #800080;">1</span><span style="color: #000000;">;
-            </span><span style="color: #0000ff;">if</span>(i%prime[j]==<span style="color: #800080;">0</span>)phi[i*prime[j]]=phi[i]*<span style="color: #000000;">prime[j];
-            </span><span style="color: #0000ff;">else</span> phi[i*prime[j]]=phi[i]*(prime[j]-<span style="color: #800080;">1</span><span style="color: #000000;">);<br />　　　　　　　if(i%prime[j])break;
-        }
-    }
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-    n</span>=read()；<br />　　 int m=<span style="color: #000000;">read();
-    oula();
-    </span><span style="color: #0000ff;">while</span>(m--)printf(<span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span><span style="color: #000000;">,prime[read()]);
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
-</div>
-<p>
- 注意φ1=1.
-</p>
+    <h2 id="线性筛-欧拉筛">线性筛 欧拉筛</h2>
+<p>线性筛（又称欧拉筛）是一种线性求素数的筛法，可以在 <span
+class="math inline">\(O(n)\)</span> 的时间内找出 <span
+class="math inline">\(n\)</span> 以内的所有素数。</p>
+<p>线性筛的基本思想是，对于 <span class="math inline">\(i\)</span> 从
+<span class="math inline">\(2\)</span> 到 <span
+class="math inline">\(n\)</span>
+的每个数，如果它不是素数，则枚举已筛出的每个素数，若其非 <span
+class="math inline">\(i\)</span> 的因子，则将 <span
+class="math inline">\(i\)</span>
+乘上该素数的积标记为已被筛掉。直到枚举到 <span
+class="math inline">\(i\)</span> 的最小质因子。这样，当 <span
+class="math inline">\(i\)</span> 到 <span
+class="math inline">\(n\)</span>
+遍历完成时，所有没有被标记的数都是素数。并且每个数都被枚举到一遍。</p>
+<p>线性筛的实现可以用一个数组 <code>mark</code>
+标记是否被筛掉，用一个数组 <code>prime</code> 保存素数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> prime[maxl];</span><br><span class="line"><span class="type">bool</span> mark[maxl];</span><br><span class="line"><span class="type">int</span> tot;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">oula</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=maxl;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!mark[i])prime[++tot]=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=tot <span class="keyword">and</span> i+prime[j]&lt;=maxl;j++)&#123;</span><br><span class="line">            mark[i*prime[j]]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="应用">应用</h2>
+<p>根据欧拉筛的特点，每个合数只会被枚举到一次，被枚举到的时候已知其最小质因子。因此，我们可以同时求出积性函数的值。</p>
+<blockquote>
+<p>积性函数：<span class="math inline">\(f(n)\)</span> 满足 <span
+class="math inline">\(f(1)=1\)</span> 且 <span
+class="math inline">\(\forall x,y\in \mathbb{N}^*,\gcd(x,y)=1\Rightarrow
+f(xy)=f(x)f(y)\)</span></p>
+</blockquote>
+<blockquote>
+<p>完全积性函数：<span class="math inline">\(f(n)\)</span> 满足 <span
+class="math inline">\(f(1)=1\)</span> 且 <span
+class="math inline">\(\forall x,y\in \mathbb{N}^*,\Rightarrow
+f(xy)=f(x)f(y)\)</span></p>
+</blockquote>
+<h3 id="欧拉函数">欧拉函数</h3>
+<p>欧拉函数 <span class="math inline">\(\varphi (x)\)</span> 是 <span
+class="math inline">\(x\)</span> 以内与 <span
+class="math inline">\(x\)</span> 互素的数的个数。为积性函数。</p>
+<ul>
+<li><p>若 <span class="math inline">\(n\)</span> 是素数，<span
+class="math inline">\(\varphi(n)=n-1\)</span>。</p></li>
+<li><p>若 <span class="math inline">\(n\)</span> 等于质数 <span
+class="math inline">\(p\)</span> 的 <span
+class="math inline">\(k\)</span> 次幂，<span
+class="math inline">\(\varphi(n)=p^k-p^{k-1}=(p-1)p^{k-1}\)</span></p></li>
+</ul>
+<p>若要求单个数的phi值：</p>
+<p><a target="_blank" rel="noopener" href="http://hzwer.com/3470.html">BZOJ2705</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,ans;</span><br><span class="line"><span class="type">int</span> m;</span><br><span class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll t=x;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">2</span>;i&lt;=m;i++)</span><br><span class="line">        <span class="keyword">if</span>(x%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            t=t/i*(i<span class="number">-1</span>);</span><br><span class="line">            <span class="keyword">while</span>(x%i==<span class="number">0</span>)x/=i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>)t=t/x*(x<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">    m=<span class="built_in">sqrt</span>(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        <span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ans+=(ll)i*<span class="built_in">phi</span>(n/i);</span><br><span class="line">            <span class="keyword">if</span>(i*i&lt;n)ans+=(ll)(n/i)*<span class="built_in">phi</span>(i);  </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如要算出范围内所有的phi值：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e8</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> x; </span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> phi[maxn],prime[maxn&gt;&gt;<span class="number">1</span>],tot,n,ans;</span><br><span class="line"><span class="type">bool</span> mark[maxn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">oula</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!mark[i])</span><br><span class="line">        &#123;</span><br><span class="line">            prime[++tot]=i;</span><br><span class="line">            phi[i]=i<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=tot <span class="keyword">and</span> i*prime[j]&lt;=n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            mark[i*prime[j]]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)phi[i*prime[j]]=phi[i]*prime[j];</span><br><span class="line">            <span class="keyword">else</span> phi[i*prime[j]]=phi[i]*(prime[j]<span class="number">-1</span>);</span><br><span class="line">　　　　　　　<span class="keyword">if</span>(i%prime[j])<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n=<span class="built_in">read</span>()；</span><br><span class="line">　　 <span class="type">int</span> m=<span class="built_in">read</span>();</span><br><span class="line">    <span class="built_in">oula</span>();</span><br><span class="line">    <span class="keyword">while</span>(m--)<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,prime[<span class="built_in">read</span>()]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="mobius函数">mobius函数</h3>
+<p>莫比乌斯函数 <span class="math inline">\(\mu(x)\)</span>：</p>
+<p><span class="math display">\[
+\mu(x)=\begin{cases}
+0,&amp;\frac x{p_1}\mod p_1 = 0\\
+-\mu(\frac x{p_1}) , &amp; \text{otherwise}
+\end{cases}
+\]</span></p>
+<p>其中 <span class="math inline">\(p_1\)</span> 是 <span
+class="math inline">\(x\)</span> 的最小质因子。</p>
+<p>可以看出，若 <span class="math inline">\(x\)</span>
+有多个相同质因子，则 <span class="math inline">\(\mu(x)=0\)</span>。否则
+<span class="math inline">\(\mu(x)=(-1)^r\)</span>，其中 <span
+class="math inline">\(r\)</span> 是 <span
+class="math inline">\(x\)</span> 的质因子个数。</p>
+<h3 id="约数个数和">约数个数和</h3>
+<p>根据算术基本定理，设数 <span class="math inline">\(n\)</span>
+的约数个数和为 <span class="math inline">\(d_n\)</span>，有： <span
+class="math display">\[
+n=\prod_{p_i\mid n, p_i\mathrm{\ is\ a\ prime}}p_i^{g_i}\\
+d_n=\prod g_i+1
+\]</span> 要筛 <span class="math inline">\(d\)</span> 我们还需要一个
+<span class="math inline">\(g\)</span>
+来表示该数的最小素因子的数量，以便进行第二条转移。</p>
+<ol type="1">
+<li><span class="math inline">\(g_i=1,d_i=2\)</span>。</li>
+<li>此时枚举数 <span class="math inline">\(i\)</span>
+的最小约数已经之前被更新过了并且一定是当前正在枚举的 <span
+class="math inline">\(p\)</span> ，则 <span
+class="math inline">\(g_{tmp}=g_i+1\)</span>。对于 <span
+class="math inline">\(d_{tmp}\)</span>，根据上述公式，那我们就从 <span
+class="math inline">\(d_i\)</span>
+进行转移，更新最小约数的贡献，即除掉更改的贡献乘上正确的，即 <span
+class="math inline">\(d_{tmp}=d_i*\frac{g_{tmp}+1}{g_i+1}\)</span>。</li>
+<li>此时枚举的 <span class="math inline">\(p\)</span>
+是最小的素因子，那么根据公式，<span
+class="math inline">\(g_{tmp}=1,d_{tmp}=d_i*2\)</span>。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">d[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!mark[i]) p[++tot]=i,d[i]=<span class="number">2</span>,g[i]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>,tmp;j&lt;=tot <span class="built_in">and</span> (tmp=i*p[j])&lt;=n;j++)&#123;</span><br><span class="line">        mark[tmp]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(i%p[j]==<span class="number">0</span>)&#123;</span><br><span class="line">            g[tmp]=g[i]<span class="number">+1</span>;</span><br><span class="line">            d[tmp]=d[i]/(g[i]<span class="number">+1</span>)*(g[tmp]<span class="number">+1</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        g[tmp]=<span class="number">1</span>;</span><br><span class="line">        d[tmp]=d[i]*[g[tmp]<span class="number">+1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="约数和">约数和</h3>
+<p>根据算术基本定理，已知 <span class="math inline">\(\sigma\)</span>
+为约数和，有： <span class="math display">\[
+\sigma_n=\prod_{p_i\mid n, p_i\mathrm{\ is\ a\
+prime}}\sum_{j=0}^{a_i}p_i^j
+\]</span></p>
+<p>注意这里的 <span class="math inline">\(a\)</span> 与上文的 <span
+class="math inline">\(g\)</span>
+表示意义相同，为每个素数的个数。我们定义 <span
+class="math inline">\(g\)</span> 为最小的 <span
+class="math inline">\(p\)</span> 的 <span
+class="math inline">\(\sum_{j=0}p^j\)</span>。</p>
+<ol type="1">
+<li><span class="math inline">\(g_i=\sigma_i=i+1\)</span></li>
+<li>根据 <span class="math inline">\(g\)</span> 的定义，我们要更新 <span
+class="math inline">\(g\)</span> 就相当于给原来的 <span
+class="math inline">\(g\)</span> 乘上 <span
+class="math inline">\(p\)</span> 并加 1。对于 <span
+class="math inline">\(\sigma\)</span>，和上面的转移类似，我们从 <span
+class="math inline">\(i\)</span> 转移即可。<span
+class="math inline">\(\sigma_{tmp}=\sigma_i*\frac{g_{tmp}}{g_i}\)</span>。</li>
+<li>此时我们计算上一个新的质数的贡献即可，和上面类似。</li>
+</ol>
+<p>代码中 <span class="math inline">\(\sigma\)</span> 用 <span
+class="math inline">\(f\)</span> 代替。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">f[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!mark[i]) p[++tot]=i,g[i]=f[i]=i<span class="number">+1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>,tmp;j&lt;=tot <span class="built_in">and</span> (tmp=i*p[j])&lt;=n;j++)&#123;</span><br><span class="line">        mark[tmp]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(i%p[j]==<span class="number">0</span>)&#123;</span><br><span class="line">            g[tmp]=g[i]*p[j]<span class="number">+1</span>;</span><br><span class="line">            f[tmp]=f[i]/g[i]*g[tmp];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        g[tmp]=p[j]<span class="number">+1</span>;</span><br><span class="line">        f[tmp]=f[i]*f[p[j]];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2955,10 +2941,10 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-15T11:17:29+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2024</p>
+    <p>更新于：Aug 15, 2024</p>
   </a>
 </div>
 
@@ -2967,8 +2953,8 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E8%AE%BA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数论</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 数论</span>
 
 
         
@@ -3028,26 +3014,20 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E7%BA%A6%E6%95%B0%E5%92%8C%E5%AE%9A%E7%90%86%5B%E9%9D%9E%E5%85%AC%E5%BC%80%5D%5B%E8%8D%89%E7%A8%BF%5D/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>约数和定理[非公开][草稿]</p>
-          <p class='content'>##约数和定理 &gt;
-对于一个大于1正整数n可以分解质因数：n=p1a1p2^a2p3a3…pk^ak,
-则由约数个数定理可知n的正约数有(a₁+1)(a₂+1)(a₃+1)…(ak+1...</p>
+        <a class='prev' href='/2022/04/30/%E7%BA%BF%E6%80%A7%E5%9F%BA/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>线性基</p>
+          <p class='content'>定义
+
+基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B/'>
-          <p class='title'>线性筛<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>线性筛
-闲话
-之前写的总结不忍直视（总结了个寂寞），今天突然要用到约数和结果不会筛，于是爬来写博客。
-性质
-
-时间复杂度线性
-理论上所有积性函数都可以筛（推式子）
-
-用法
-对于...</p>
+        <a class='next' href='/2022/04/30/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/'>
+          <p class='title'>类欧几里得算法<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>类欧几里得算法之所以得名是因为其算法复杂度证明与扩展欧几里得算法类似。
+我认为类欧更偏向于是一种思想。
+其主要思想就是寻找可以简便计算的边界，然后通过化式子将不同情况化为边界递归计算。
+通...</p>
         </a>
       
     </div>
@@ -3111,39 +3091,34 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
             ><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/OI/" href="/categories/OI/"
-            active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(114)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(36)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
             active-action="action-categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(22)</div></a></li>
+            ><div class='name'>算法</div><div class='badge'>(38)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
             active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>题解</div><div class='badge'>(67)</div></a></li>
         
       </ul>
     </div>
@@ -3160,9 +3135,19 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%AD%9B-%E6%AC%A7%E6%8B%89%E7%AD%9B"><span class="toc-text">线性筛 欧拉筛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-text">应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0"><span class="toc-text">欧拉函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mobius%E5%87%BD%E6%95%B0"><span class="toc-text">mobius函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0%E5%92%8C"><span class="toc-text">约数个数和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E6%95%B0%E5%92%8C"><span class="toc-text">约数和</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4314,7 +4299,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4597,7 +4582,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/线性筛 欧拉筛/","name":"线性筛 欧拉筛"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"线性筛 欧拉筛","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B%20%E6%AC%A7%E6%8B%89%E7%AD%9B/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B%20%E6%AC%A7%E6%8B%89%E7%AD%9B/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T02:32:21.587Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/线性筛 欧拉筛/","name":"线性筛 欧拉筛"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"线性筛 欧拉筛","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B%20%E6%AC%A7%E6%8B%89%E7%AD%9B/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E7%BA%BF%E6%80%A7%E7%AD%9B%20%E6%AC%A7%E6%8B%89%E7%AD%9B/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T03:17:29.670Z","articleSection":"算法","keywords":"博客园,OI,数论","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

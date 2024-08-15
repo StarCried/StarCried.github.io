@@ -48,20 +48,22 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>CF1032G Chattering - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,ST表,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="CF1032G Chattering   题意   思路   对于每一个位置，它转移的范围是确定的。   对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。   于是这个就可以倍增进行转移。   如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增">
+  <meta name="description" content="CF1032G Chattering 思路 对于每一个位置，它转移的范围是确定的。 对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。 于是这个就可以倍增进行转移。 如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST表做到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF1032G Chattering">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/CF1032G%20Chattering/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="CF1032G Chattering   题意   思路   对于每一个位置，它转移的范围是确定的。   对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。   于是这个就可以倍增进行转移。   如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增">
+<meta property="og:description" content="CF1032G Chattering 思路 对于每一个位置，它转移的范围是确定的。 对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。 于是这个就可以倍增进行转移。 如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST表做到">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-13T02:32:21.475Z">
+<meta property="article:modified_time" content="2024-08-15T07:43:42.289Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="ST表">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723615944597),
+    lastupdate: new Date(1723740728779),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
       </span>
     
   </div>
@@ -2761,10 +2763,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-15T15:43:42+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2024</p>
+    <p>更新于：Aug 15, 2024</p>
   </a>
 </div>
 
@@ -2801,133 +2803,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2>
-CF1032G Chattering
-</h2>
-<h3>
-<a target="_blank" rel="noopener" href='https://www.luogu.com.cn/problem/CF1032G'>题意</a>
-</h3>
-<h3>
-思路
-</h3>
-<p>
-对于每一个位置，它转移的范围是确定的。
-</p>
-<p>
-对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。
-</p>
-<p>
-于是这个就可以倍增进行转移。
-</p>
-<p>
-如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST表做到
-<span class="MathJax_SVG" tabindex="-1"
-style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.74ex" height="2.66ex" viewBox="0 -832 2041 1145.2" role="img" focusable="false" style="vertical-align: -0.728ex;"><defs><path stroke-width="0" id="E13-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E13-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E13-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E13-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E13-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E13-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E13-MJMAIN-31" x="1152" y="0"></use><use xlink:href="#E13-MJMAIN-29" x="1652" y="0"></use></g></svg></span><script type="math/tex"></script>
-查询。
-</p>
-<p>
-于是时间复杂度就变成了 <span class="MathJax_SVG" tabindex="-1"
-style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9.3ex" height="2.66ex" viewBox="0 -832 4004 1145.2" role="img" focusable="false" style="vertical-align: -0.728ex;"><defs><path stroke-width="0" id="E29-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E29-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E29-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E29-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path stroke-width="0" id="E29-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path stroke-width="0" id="E29-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path stroke-width="0" id="E29-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E29-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E29-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E29-MJMATHI-6E" x="1152" y="0"></use><use xlink:href="#E29-MJMATHI-6C" x="1752" y="0"></use><use xlink:href="#E29-MJMATHI-6F" x="2050" y="0"></use><use xlink:href="#E29-MJMATHI-67" x="2535" y="0"></use><use xlink:href="#E29-MJMATHI-6E" x="3015" y="0"></use><use xlink:href="#E29-MJMAIN-29" x="3615" y="0"></use></g></svg></span><script type="math/tex"></script>
-的。
-</p>
-<p>
-这个转移的思想和<a target="_blank" rel="noopener" href='https://www.luogu.com.cn/problem/AT2538'>ATcoder的一道题</a>比较像。
-</p>
-<h3>
-实现
-</h3>
+    <h2 id="cf1032g-chattering"><a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1032G">CF1032G
+Chattering</a></h2>
+<h3 id="思路">思路</h3>
+<p>对于每一个位置，它转移的范围是确定的。</p>
+<p>对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。</p>
+<p>于是这个就可以倍增进行转移。</p>
+<p>如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST表做到
+<span class="math inline">\(O(1)\)</span> 查询。</p>
+<p>于是时间复杂度就变成了 <span class="math inline">\(O(n\log
+n)\)</span> 。</p>
+<p>这个转移的思想和 <a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/AT2538">ATcoder的一道题</a>。</p>
+<h3 id="实现">实现</h3>
 <ul>
-<li>
-题目是一个环，所以我们需要将序列延长成三倍，然后在中间段查询。
-</li>
-<li>
-倍增时，若倍增到的左右端点距离已经超过 <span class="MathJax_SVG"
-tabindex="-1"
-style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.394ex" height="1.455ex" viewBox="0 -520.7 600 626.5" role="img" focusable="false" style="vertical-align: -0.246ex;"><defs><path stroke-width="0" id="E31-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E31-MJMATHI-6E" x="0" y="0"></use></g></svg></span><script type="math/tex"></script>
-说明使完全覆盖，不优。
-</li>
-<li>
-最后需要将答案加一，因为第一次的时间并未算上。当 <span
-class="MathJax_SVG" tabindex="-1"
-style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.394ex" height="1.455ex" viewBox="0 -520.7 600 626.5" role="img" focusable="false" style="vertical-align: -0.246ex;"><defs><path stroke-width="0" id="E31-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E31-MJMATHI-6E" x="0" y="0"></use></g></svg></span><script type="math/tex"></script>
-为 1 时，不需要传播，答案为 0。
-</li>
+<li>题目是一个环，所以我们需要将序列延长成三倍，然后在中间段查询。</li>
+<li>倍增时，若倍增到的左右端点距离已经超过 <span
+class="math inline">\(n\)</span> 说明使完全覆盖，不优。</li>
+<li>最后需要将答案加一，因为第一次的时间并未算上。当 <span
+class="math inline">\(n\)</span> 为 1 时，不需要传播，答案为 0。</li>
 </ul>
-<h3>
-代码
-</h3>
-<pre><code class='language-cpp' lang='cpp'>#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-#include&lt;cctype&gt;
-#include&lt;algorithm&gt;
-#include&lt;cmath&gt;
-using namespace std;
-inline int read()&#123;
-    int w=0,x=0;char c=getchar();
-    while(!isdigit(c))w|=c==&#39;-&#39;,c=getchar();
-    while(isdigit(c))x=(x&lt;&lt;3)+(x&lt;&lt;1)+(c^48),c=getchar();
-    return w?-x:x;
-&#125;
-namespace star
-&#123;
-    const int maxn=3e5+10;
-    int n,a[maxn];
-    int log[maxn];
-    int l[20][maxn],r[20][maxn];
-    struct RMQ&#123;
-        int st[maxn][20],val[maxn];
-        int op;
-        inline int MAX(int x,int y)&#123;
-            return val[x]&gt;val[y]?x:y;
-        &#125;
-        inline void build(int *b,int n,int _op)&#123;
-            op=_op;
-            for(int i=1;i&lt;=n;i++) st[i][0]=i,val[i]=op*b[i];
-            for(int j=1;j&lt;=log[n];j++)
-                for(int i=1;i&lt;=n;i++)
-                    st[i][j]=MAX(st[i][j-1],st[i+(1&lt;&lt;(j-1))][j-1]);
-        &#125;
-        inline int query(int l,int r)&#123;
-            int k=log[r-l+1];
-            return MAX(st[l][k],st[r-(1&lt;&lt;k)+1][k]);
-        &#125;
-    &#125;L,R;
-    inline void work()&#123;
-        n=read();
-        if(n==1)return (void)puts(&quot;0&quot;);
-        for(int i=2;i&lt;=3*n;i++) log[i]=log[i&gt;&gt;1]+1;
-        for(int i=1;i&lt;=n;i++) a[i]=a[i+n]=a[i+n+n]=read();
-        for(int i=0;i&lt;=log[3*n];i++) l[i][1]=1,r[i][n*3]=3*n;
-        for(int i=1;i&lt;=3*n;i++) l[0][i]=max(1,i-a[i]),r[0][i]=min(n*3,i+a[i]);
-        L.build(l[0],3*n,-1),R.build(r[0],3*n,1);
-        for(int l1,r1,j=1;j&lt;=log[3*n];j++)
-            for(int i=1;i&lt;=3*n;i++)&#123;
-                l1=L.query(l[j-1][i],r[j-1][i]);
-                r1=R.query(l[j-1][i],r[j-1][i]);
-                l[j][i]=min(l[j-1][l1],l[j-1][r1]);
-                r[j][i]=max(r[j-1][l1],r[j-1][r1]);
-            &#125;
-        for(int i=n+1;i&lt;=n&lt;&lt;1;i++)&#123;
-            int u=i,v=i,ans=0;
-            for(int j=log[n*3];~j;j--)
-                if(max(r[j][u],r[j][v])-min(l[j][u],l[j][v])+1&lt;n)&#123;
-                    int su=L.query(l[j][u],r[j][v]),sv=R.query(l[j][u],r[j][v]);
-                    u=su,v=sv;
-                    ans+=(1&lt;&lt;j);
-                &#125;
-            printf(&quot;%d &quot;,ans+1);
-        &#125;
-    &#125;
-&#125;
-signed main()&#123;
-    star::work();
-    return 0;
-&#125;
-</code></pre>
-<p>
- 
-</p>
+<h3 id="代码">代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">3e5</span><span class="number">+10</span>;</span><br><span class="line">	<span class="type">int</span> n,a[maxn];</span><br><span class="line">	<span class="type">int</span> log[maxn];</span><br><span class="line">	<span class="type">int</span> l[<span class="number">20</span>][maxn],r[<span class="number">20</span>][maxn];</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">RMQ</span>&#123;</span><br><span class="line">		<span class="type">int</span> st[maxn][<span class="number">20</span>],val[maxn];</span><br><span class="line">		<span class="type">int</span> op;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">MAX</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> val[x]&gt;val[y]?x:y;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> *b,<span class="type">int</span> n,<span class="type">int</span> _op)</span></span>&#123;</span><br><span class="line">			op=_op;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) st[i][<span class="number">0</span>]=i,val[i]=op*b[i];</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=log[n];j++)</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">					st[i][j]=<span class="built_in">MAX</span>(st[i][j<span class="number">-1</span>],st[i+(<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>))][j<span class="number">-1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">			<span class="type">int</span> k=log[r-l<span class="number">+1</span>];</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">MAX</span>(st[l][k],st[r-(<span class="number">1</span>&lt;&lt;k)<span class="number">+1</span>][k]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;L,R;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">1</span>)<span class="keyword">return</span> (<span class="type">void</span>)<span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">3</span>*n;i++) log[i]=log[i&gt;&gt;<span class="number">1</span>]<span class="number">+1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) a[i]=a[i+n]=a[i+n+n]=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=log[<span class="number">3</span>*n];i++) l[i][<span class="number">1</span>]=<span class="number">1</span>,r[i][n*<span class="number">3</span>]=<span class="number">3</span>*n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">3</span>*n;i++) l[<span class="number">0</span>][i]=<span class="built_in">max</span>(<span class="number">1</span>,i-a[i]),r[<span class="number">0</span>][i]=<span class="built_in">min</span>(n*<span class="number">3</span>,i+a[i]);</span><br><span class="line">		L.<span class="built_in">build</span>(l[<span class="number">0</span>],<span class="number">3</span>*n,<span class="number">-1</span>),R.<span class="built_in">build</span>(r[<span class="number">0</span>],<span class="number">3</span>*n,<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> l1,r1,j=<span class="number">1</span>;j&lt;=log[<span class="number">3</span>*n];j++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">3</span>*n;i++)&#123;</span><br><span class="line">				l1=L.<span class="built_in">query</span>(l[j<span class="number">-1</span>][i],r[j<span class="number">-1</span>][i]);</span><br><span class="line">				r1=R.<span class="built_in">query</span>(l[j<span class="number">-1</span>][i],r[j<span class="number">-1</span>][i]);</span><br><span class="line">				l[j][i]=<span class="built_in">min</span>(l[j<span class="number">-1</span>][l1],l[j<span class="number">-1</span>][r1]);</span><br><span class="line">				r[j][i]=<span class="built_in">max</span>(r[j<span class="number">-1</span>][l1],r[j<span class="number">-1</span>][r1]);</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=n<span class="number">+1</span>;i&lt;=n&lt;&lt;<span class="number">1</span>;i++)&#123;</span><br><span class="line">			<span class="type">int</span> u=i,v=i,ans=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=log[n*<span class="number">3</span>];~j;j--)</span><br><span class="line">				<span class="keyword">if</span>(<span class="built_in">max</span>(r[j][u],r[j][v])-<span class="built_in">min</span>(l[j][u],l[j][v])<span class="number">+1</span>&lt;n)&#123;</span><br><span class="line">					<span class="type">int</span> su=L.<span class="built_in">query</span>(l[j][u],r[j][v]),sv=R.<span class="built_in">query</span>(l[j][u],r[j][v]);</span><br><span class="line">					u=su,v=sv;</span><br><span class="line">					ans+=(<span class="number">1</span>&lt;&lt;j);</span><br><span class="line">				&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,ans<span class="number">+1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2952,10 +2850,10 @@ signed main()&#123;
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-15T15:43:42+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2024</p>
+    <p>更新于：Aug 15, 2024</p>
   </a>
 </div>
 
@@ -2964,8 +2862,8 @@ signed main()&#123;
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ST%E8%A1%A8/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>ST表</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI ST表</span>
 
 
         
@@ -3025,22 +2923,24 @@ signed main()&#123;
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF175E%20Power%20Defence/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF175E Power Defence</p>
-          <p class='content'>CF175E Power Defence
+        <a class='prev' href='/2022/04/30/AT2304%20Cleaning/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>AT2304 Cleaning</p>
+          <p class='content'>AT2304 Cleaning
 题意
-一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害...</p>
+一个树上每个节点有一些石子，每次只能选取两个叶子节点并将路径间的所有点上的石子数量减1，问是否能将所有石子取完。
+思路
+设 \(f_x\) 表示从 ...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/CF404D-DP%E3%80%90%E6%88%90%E5%B0%B1%E8%BE%BE%E6%88%90%E3%80%91/'>
-          <p class='title'>CF404D-DP【成就达成】<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>CF404D-DP
-正经的东西
-
+        <a class='next' href='/2022/04/30/AT2390%20Games%20on%20DAG/'>
+          <p class='title'>AT2390 Games on DAG<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>AT2390 Games on DAG
 题意
-给定一个字符串，只包含'0','1','2','*','?'五种字符，其中'?'可被替换为其他任何一种，求使序列符合扫雷地图定义的方案数。
-一个...</p>
+\(1,2\)
+号点各一个石头，每次沿边移动一个石头，不能动者输。求所有连边子集中先手胜的情况。
+思路
+发现对于两个石头的 SG 函数是独...</p>
         </a>
       
     </div>
@@ -3104,39 +3004,34 @@ signed main()&#123;
             ><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/OI/" href="/categories/OI/"
-            active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(114)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(36)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
             active-action="action-categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(22)</div></a></li>
+            ><div class='name'>算法</div><div class='badge'>(38)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
             active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>题解</div><div class='badge'>(67)</div></a></li>
         
       </ul>
     </div>
@@ -3163,17 +3058,8 @@ signed main()&#123;
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">
-CF1032G Chattering
-</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
-题意
-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
-思路
-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
-实现
-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">
-代码
-</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cf1032g-chattering"><span class="toc-text">CF1032G
+Chattering</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4327,7 +4213,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4610,7 +4496,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/CF1032G Chattering/","name":"CF1032G Chattering"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CF1032G Chattering","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/CF1032G%20Chattering/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/CF1032G%20Chattering/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T02:32:21.475Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/CF1032G Chattering/","name":"CF1032G Chattering"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CF1032G Chattering","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/CF1032G%20Chattering/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/CF1032G%20Chattering/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T07:43:42.289Z","articleSection":"题解","keywords":"博客园,OI,ST表","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

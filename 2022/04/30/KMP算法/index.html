@@ -48,20 +48,22 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>KMP算法 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,StarCried, 微光, OI, ACM, 博客, 日常">
+  <meta name="keywords" content="博客园,OI,字符串,StarCried, 微光, OI, ACM, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。   问题：求a字符串与b字符串中子串相同的串首位置。   暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。   KMP主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可">
+  <meta name="description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。 问题：求 a 字符串与 b 字符串中子串相同的串首位置。 暴力就不说了，设 a 长 \(m\)，b 长 \(n\)，每次枚举比对每个字符，复杂度 \(O(nm)\)。 KMP 主要思想：如果一个字符串的子串与前">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP算法">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/KMP%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。   问题：求a字符串与b字符串中子串相同的串首位置。   暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。   KMP主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可">
+<meta property="og:description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。 问题：求 a 字符串与 b 字符串中子串相同的串首位置。 暴力就不说了，设 a 长 \(m\)，b 长 \(n\)，每次枚举比对每个字符，复杂度 \(O(nm)\)。 KMP 主要思想：如果一个字符串的子串与前">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-13T02:32:21.493Z">
+<meta property="article:modified_time" content="2024-08-15T08:12:54.224Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
+<meta property="article:tag" content="OI">
+<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
   <style>
@@ -1890,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723615944597),
+    lastupdate: new Date(1723740728779),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2739,10 +2741,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/OI/">OI</a>
+    <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/OI/" itemprop="url"><span itemprop="name">OI</span></a>
+        <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
       </span>
     
   </div>
@@ -2761,10 +2763,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-15T16:12:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2024</p>
+    <p>更新于：Aug 15, 2024</p>
   </a>
 </div>
 
@@ -2801,142 +2803,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>
-KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为
-Knuth-Morria-Pratt 算法，简称 KMP 算法。
-</p>
-<p>
-<strong>问题</strong><strong>：</strong>求a字符串与b字符串中子串相同的串首位置。
-</p>
-<p>
-暴力就不说了，设a长m，b长n，每次枚举比对每个字符，复杂度O(nm)。
-</p>
-<p>
-<strong>KMP主要思想：</strong>如果一个字符串的子串与前缀相等，那么在查找时就可以直接将前缀跳至该子串的位置。复杂度O(n)。
-</p>
-<p>
-nxt[x]记录x位置字符在查询串中的跳转位置。
-</p>
-<p>
-eg:对于串abaabacac:
-</p>
-<p>
- a b a a b a c a c
-</p>
-<p>
--1 0 0 1 1 2 3 0 1
-</p>
-<div class="cnblogs_code">
-<pre>inline <span style="color: #0000ff;">void</span><span style="color: #000000;"> getnxt()
-{
-    </span><span style="color: #0000ff;">int</span> j=<span style="color: #800080;">0</span>,k=-<span style="color: #800080;">1</span><span style="color: #000000;">;
-    nxt[</span><span style="color: #800080;">0</span>]=-<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span>(j&lt;s.length()-<span style="color: #800080;">1</span><span style="color: #000000;">)
-    {
-        </span><span style="color: #0000ff;">if</span>(k==-<span style="color: #800080;">1</span>||s[j]==s[k])nxt[++j]=++<span style="color: #000000;">k;
-        </span><span style="color: #0000ff;">else</span> k=<span style="color: #000000;">nxt[k];
-    }
-}</span></pre>
-</div>
-<p>
-查询时跳转即可。
-</p>
-<p>
-模拟一下就知道啦~
-</p>
-<p>
-全代码：
-</p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;<span style="color: #0000ff;">string</span>&gt;<span style="color: #000000;">
-#include</span>&lt;cstring&gt;<span style="color: #000000;">
-#include</span>&lt;algorithm&gt;
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-</span><span style="color: #0000ff;">string</span><span style="color: #000000;"> s,t;
-</span><span style="color: #0000ff;">int</span> nxt[<span style="color: #800080;">1000</span><span style="color: #000000;">];
-inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> getnxt()
-{
-    </span><span style="color: #0000ff;">int</span> j=<span style="color: #800080;">0</span>,k=-<span style="color: #800080;">1</span><span style="color: #000000;">;
-    nxt[</span><span style="color: #800080;">0</span>]=-<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span>(j&lt;s.length()-<span style="color: #800080;">1</span><span style="color: #000000;">)
-    {
-        </span><span style="color: #0000ff;">if</span>(k==-<span style="color: #800080;">1</span>||s[j]==s[k])nxt[++j]=++<span style="color: #000000;">k;
-        </span><span style="color: #0000ff;">else</span> k=<span style="color: #000000;">nxt[k];
-    }
-}
-inline </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> indexkmp()
-{
-    </span><span style="color: #0000ff;">int</span> i=<span style="color: #800080;">0</span>,j=<span style="color: #800080;">0</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span>(i&lt;s.length() and j&lt;t.length())<span style="color: #008000;">//</span><span style="color: #008000;">如果比完了就退出来了 </span>
-        <span style="color: #0000ff;">if</span>(i==-<span style="color: #800080;">1</span> or s[i]==t[j])i++,j++<span style="color: #000000;">;
-        </span><span style="color: #0000ff;">else</span> i=<span style="color: #000000;">nxt[i];
-    </span><span style="color: #0000ff;">if</span>(i&gt;=s.length())<span style="color: #0000ff;">return</span> j-<span style="color: #000000;">s.length();
-    </span><span style="color: #0000ff;">return</span> -<span style="color: #800080;">1</span><span style="color: #000000;">;
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-    std::ios::sync_with_stdio(</span><span style="color: #0000ff;">false</span><span style="color: #000000;">);
-    cin</span>&gt;&gt;s&gt;&gt;<span style="color: #000000;">t;
-    getnxt();
-    cout</span>&lt;&lt;<span style="color: #000000;">indexkmp()+1;
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
-</div>
-<p>
- <strong>例题</strong>
-</p>
-<p>
-<a href="https://www.luogu.com.cn/problem/P3375" target="_blank">洛谷P3375</a>
-</p>
-<div class="cnblogs_code">
-<pre>#include&lt;iostream&gt;<span style="color: #000000;">
-#include</span>&lt;cstdio&gt;<span style="color: #000000;">
-#include</span>&lt;<span style="color: #0000ff;">string</span>&gt;<span style="color: #000000;">
-#include</span>&lt;cstring&gt;
-<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
-</span><span style="color: #0000ff;">const</span> <span style="color: #0000ff;">int</span> maxn=1e6+<span style="color: #800080;">5</span><span style="color: #000000;">;
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> nxt[maxn];
-</span><span style="color: #0000ff;">char</span><span style="color: #000000;"> a[maxn],b[maxn];
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> lena,lenb;
-inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> getnxt()
-{
-    </span><span style="color: #0000ff;">int</span> k=-<span style="color: #800080;">1</span>,j=<span style="color: #800080;">0</span><span style="color: #000000;">;
-    nxt[</span><span style="color: #800080;">0</span>]=-<span style="color: #800080;">1</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span>(j&lt;<span style="color: #000000;">lena)
-        </span><span style="color: #0000ff;">if</span>(k==-<span style="color: #800080;">1</span> or a[k]==<span style="color: #000000;">a[j])
-        nxt[</span>++j]=++<span style="color: #000000;">k;
-        </span><span style="color: #0000ff;">else</span> k=<span style="color: #000000;">nxt[k];
-}
-inline </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> indexkmp()
-{
-    </span><span style="color: #0000ff;">int</span> j=<span style="color: #800080;">0</span>,i=<span style="color: #800080;">0</span><span style="color: #000000;">;
-    </span><span style="color: #0000ff;">while</span>(j&lt;lena and i&lt;<span style="color: #000000;">lenb)
-        </span><span style="color: #0000ff;">if</span>(j==-<span style="color: #800080;">1</span> or a[j]==<span style="color: #000000;">b[i]){
-            i</span>++,j++<span style="color: #000000;">;
-            </span><span style="color: #0000ff;">if</span>(j==<span style="color: #000000;">lena){
-                printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d\n</span><span style="color: #800000;">"</span>,i-lena+<span style="color: #800080;">1</span><span style="color: #000000;">);
-                j</span>=<span style="color: #000000;">nxt[j];
-            }
-        }
-        </span><span style="color: #0000ff;">else</span> j=<span style="color: #000000;">nxt[j];
-}
-</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
-{
-    scanf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%s\n%s</span><span style="color: #800000;">"</span>,&amp;b,&amp;<span style="color: #000000;">a);
-    lena</span>=<span style="color: #000000;">strlen(a);
-    lenb</span>=<span style="color: #000000;">strlen(b);
-    getnxt();
-    indexkmp();
-    </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=<span style="color: #800080;">1</span>;i&lt;=lena;i++<span style="color: #000000;">)
-    printf(</span><span style="color: #800000;">"</span><span style="color: #800000;">%d </span><span style="color: #800000;">"</span><span style="color: #000000;">,nxt[i]);
-    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
-}</span></pre>
-</div>
-<p>
- 
-</p>
+    <p>KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt
+三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。</p>
+<p>问题：求 a 字符串与 b 字符串中子串相同的串首位置。</p>
+<p>暴力就不说了，设 a 长 <span class="math inline">\(m\)</span>，b 长
+<span class="math inline">\(n\)</span>，每次枚举比对每个字符，复杂度
+<span class="math inline">\(O(nm)\)</span>。</p>
+<p>KMP
+主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可以直接将前缀跳至该子串的位置。复杂度
+<span class="math inline">\(O(n)\)</span>。</p>
+<p><code>nxt[x]</code> 记录x位置字符在查询串中的跳转位置。</p>
+<p>eg:对于串abaabacac:</p>
+<p>a b a a b a c a c</p>
+<p>-1 0 0 1 1 2 3 0 1</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getnxt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">0</span>,k=<span class="number">-1</span>;</span><br><span class="line">    nxt[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;s.<span class="built_in">length</span>()<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span>||s[j]==s[k])nxt[++j]=++k;</span><br><span class="line">        <span class="keyword">else</span> k=nxt[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查询时跳转即可。</p>
+<p>模拟一下就知道啦~</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">string s,t;</span><br><span class="line"><span class="type">int</span> nxt[<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getnxt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">0</span>,k=<span class="number">-1</span>;</span><br><span class="line">    nxt[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;s.<span class="built_in">length</span>()<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span>||s[j]==s[k])nxt[++j]=++k;</span><br><span class="line">        <span class="keyword">else</span> k=nxt[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">indexkmp</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;s.<span class="built_in">length</span>() <span class="keyword">and</span> j&lt;t.<span class="built_in">length</span>())<span class="comment">//如果比完了就退出来了 </span></span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">-1</span> <span class="keyword">or</span> s[i]==t[j])i++,j++;</span><br><span class="line">        <span class="keyword">else</span> i=nxt[i];</span><br><span class="line">    <span class="keyword">if</span>(i&gt;=s.<span class="built_in">length</span>())<span class="keyword">return</span> j-s.<span class="built_in">length</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin&gt;&gt;s&gt;&gt;t;</span><br><span class="line">    <span class="built_in">getnxt</span>();</span><br><span class="line">    cout&lt;&lt;<span class="built_in">indexkmp</span>()<span class="number">+1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="例题">例题</h3>
+<p>洛谷P3375</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e6</span><span class="number">+5</span>;</span><br><span class="line"><span class="type">int</span> nxt[maxn];</span><br><span class="line"><span class="type">char</span> a[maxn],b[maxn];</span><br><span class="line"><span class="type">int</span> lena,lenb;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getnxt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k=<span class="number">-1</span>,j=<span class="number">0</span>;</span><br><span class="line">    nxt[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;lena)</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span> <span class="keyword">or</span> a[k]==a[j])</span><br><span class="line">        nxt[++j]=++k;</span><br><span class="line">        <span class="keyword">else</span> k=nxt[k];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">indexkmp</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">0</span>,i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;lena <span class="keyword">and</span> i&lt;lenb)</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">-1</span> <span class="keyword">or</span> a[j]==b[i])&#123;</span><br><span class="line">            i++,j++;</span><br><span class="line">            <span class="keyword">if</span>(j==lena)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i-lena<span class="number">+1</span>);</span><br><span class="line">                j=nxt[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> j=nxt[j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s\n%s&quot;</span>,&amp;b,&amp;a);</span><br><span class="line">    lena=<span class="built_in">strlen</span>(a);</span><br><span class="line">    lenb=<span class="built_in">strlen</span>(b);</span><br><span class="line">    <span class="built_in">getnxt</span>();</span><br><span class="line">    <span class="built_in">indexkmp</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=lena;i++)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,nxt[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2961,10 +2847,10 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-13T10:32:21+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-15T16:12:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2024</p>
+    <p>更新于：Aug 15, 2024</p>
   </a>
 </div>
 
@@ -2973,8 +2859,8 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div>
-  <span hidden itemprop="keywords">博客园</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>字符串</p></a></div>
+  <span hidden itemprop="keywords">博客园 OI 字符串</span>
 
 
         
@@ -3034,28 +2920,26 @@ inline </span><span style="color: #0000ff;">void</span><span style="color: #0000
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/LCT(Link-Cut-Tree)/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>LCT(Link-Cut-Tree)</p>
-          <p class='content'>LCT(Link-Cut-Tree)
-LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
+        <a class='prev' href='/2022/04/30/Guass%E6%B6%88%E5%85%83%E6%80%BB%E7%BB%93/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Guass消元总结</p>
+          <p class='content'>Guass消元
+约旦·高斯消元法 求线性方程组
+我们用一个\(n*(n+1)\)的矩阵存储线性方程组各项系数和零次项系数。
+
+每一次找到一个未知数系数最大的方程，交换当前行方程和该方程，...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/LCT(Link-Cut-Tree)/'>
+          <p class='title'>LCT(Link-Cut-Tree)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
 
 查询、修改链上的信息
 随意指定原树的根（即换根）
 动态连边、删边
-合并两...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/'>
-          <p class='title'>P1040 加分二叉树<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-https://www.luogu.com.cn/problem/P1040
-
-
-n很小，可以树形dp或者区间dp。
-
-
-设fij为从i到j的最大加分值，则有f[i][j]=ma...</p>
+合并两棵树、分离一棵树
+动态维护连通性
+等...</p>
         </a>
       
     </div>
@@ -3119,39 +3003,34 @@ n很小，可以树形dp或者区间dp。
             ><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/OI/" href="/categories/OI/"
-            active-action="action-categoriesOI"
-            ><div class='name'>OI</div><div class='badge'>(114)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
             active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>微光</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
             active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(36)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
             active-action="action-categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(22)</div></a></li>
+            ><div class='name'>算法</div><div class='badge'>(38)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
             active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>题解</div><div class='badge'>(67)</div></a></li>
         
       </ul>
     </div>
@@ -3168,9 +3047,19 @@ n很小，可以树形dp或者区间dp。
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4322,7 +4211,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4605,7 +4494,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/OI/","name":"OI"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/KMP算法/","name":"KMP算法"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"KMP算法","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/KMP%E7%AE%97%E6%B3%95/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/KMP%E7%AE%97%E6%B3%95/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-13T02:32:21.493Z","articleSection":"OI","keywords":"博客园","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/KMP算法/","name":"KMP算法"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"KMP算法","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/KMP%E7%AE%97%E6%B3%95/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/KMP%E7%AE%97%E6%B3%95/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T08:12:54.224Z","articleSection":"算法","keywords":"博客园,OI,字符串","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 
