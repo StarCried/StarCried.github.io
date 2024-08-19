@@ -59,7 +59,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2024-08-06T12:11:51.000Z">
-<meta property="article:modified_time" content="2024-08-15T16:52:02.365Z">
+<meta property="article:modified_time" content="2024-08-19T01:10:06.182Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1723740728779),
+    lastupdate: new Date(1724034360595),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2761,10 +2761,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-16T00:52:02+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-19T09:10:06+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 16, 2024</p>
+    <p>更新于：Aug 19, 2024</p>
   </a>
 </div>
 
@@ -2843,9 +2843,9 @@ HTML 页面，无法获取到文章的 Markdown 格式。</li>
 xml
 文件发现，现在的文件格式和之前有较大出入，代码字符串匹配的方式无法识别。</li>
 <li>MetaWeblog。<a
-target="_blank" rel="noopener" href="https://github.com/yikolemon/cnblogs-click-backup-util">cnblogs-click-backup-util</a>利用多博客同步的
-API
-接口的工具，理论上可行。但我不知为何在验证部分失败了。(后收到回复为<a
+target="_blank" rel="noopener" href="https://github.com/yikolemon/cnblogs-click-backup-util">cnblogs-click-backup-util</a>
+利用多博客同步的 API
+接口的工具，理论上可行。但我不知为何在验证部分失败了。(在我发帖询问后作者及时更新并回复我问题为<a
 target="_blank" rel="noopener" href="https://github.com/yikolemon/cnblogs-click-backup-util/issues/1#event-13805089572">用户名和博客地址不同</a>，没有继续尝试)</li>
 <li>博主端爬虫。<a
 target="_blank" rel="noopener" href="https://github.com/Charles94jp/cnblogs-blogger-downloader">cnblogs-blogger-downloader</a>，感谢这位作者的开源。该工具利用
@@ -2856,8 +2856,8 @@ Cookie 访问博客园后台，将文章按分类导出，直接导出源码。�
 <p>将 Markdown 文件放在一个目录下，用脚本添加 Hexo 的 Front-Matter
 头信息，再放入 Hexo 的 <code>_posts</code> 文件夹即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义要添加的前缀模板</span></span><br><span class="line">prefix_template = <span class="string">&quot;&quot;&quot;---</span></span><br><span class="line"><span class="string">title: &#123;title&#125;</span></span><br><span class="line"><span class="string">categories: [OI]</span></span><br><span class="line"><span class="string">date: 2022-04-30 00:00:00</span></span><br><span class="line"><span class="string">tags: [博客园]</span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义目标文件夹</span></span><br><span class="line">folder_path = <span class="string">&#x27;./cnblog/ALL&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历文件夹中的所有文件</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(folder_path):</span><br><span class="line">    <span class="keyword">if</span> filename.endswith(<span class="string">&#x27;.md&#x27;</span>):</span><br><span class="line">        file_path = os.path.join(folder_path, filename)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">            content = file.read()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取文件名（不包括扩展名）</span></span><br><span class="line">        title = os.path.splitext(filename)[<span class="number">0</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 生成带有文件名的前缀</span></span><br><span class="line">        prefix = prefix_template.<span class="built_in">format</span>(title=title)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 添加前缀</span></span><br><span class="line">        new_content = prefix + content</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 写回文件</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">            file.write(new_content)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;前缀已成功添加到所有.md文件中。&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="后记">后记</h2>
-<p>我将所有博客进行了导入，并对所有文章进行了删改整理。</p>
+<h3 id="手动修改">手动修改</h3>
+<p>刚才的下载和导入过程没有给博客自动添加头信息，如日期、分类和标签等。需要手动修改。在此过程中顺手对文章进行了删改整理。（这其实是最耗时的步骤）</p>
 <ul>
 <li>非 Markdown
 格式的文章，由于其基本都是早期文章，内容不精，进行删改转换格式。</li>
@@ -2865,9 +2865,10 @@ Cookie 访问博客园后台，将文章按分类导出，直接导出源码。�
 <li>对大多数文章进行了格式调整。有空修改内容。</li>
 <li>图片引用原地址，等挂了再修改。</li>
 <li>所有导入文章添加了<code>博客园</code>的 tag，方便分类。</li>
-<li>所有导入文章的日期默认为
-2022-04-30，之后会对日记内容时间进行修改。</li>
+<li>所有 OI 竞赛算法题目相关的日期默认为
+2022-04-30，日记日期为博客园发布日期。</li>
 </ul>
+<p>至此，博客园的文章全部迁移到 Github Pages 完成。</p>
 
   </div>
   
@@ -2892,10 +2893,10 @@ Cookie 访问博客园后台，将文章按分类导出，直接导出源码。�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-16T00:52:02+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-08-19T09:10:06+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 16, 2024</p>
+    <p>更新于：Aug 19, 2024</p>
   </a>
 </div>
 
@@ -2965,12 +2966,18 @@ Cookie 访问博客园后台，将文章按分类导出，直接导出源码。�
   
     <div class="prev-next">
       
+        <a class='prev' href='/2024/08/19/%E6%97%A5%E8%AE%B0-2024-08-19/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>日记 2024-08-19</p>
+          <p class='content'>最开心的事，是和最亲近的人一起去做一件浪漫的事，比如在草地上打滚。
+如果感到难受，迷茫，疑惑，应该去发发疯，比如一个人来一次无准备的骑车，把自己累到回去倒头就睡，然后发现其实没有什么事是真正困...</p>
+        </a>
+      
       
         <a class='next' href='/2024/08/01/%E5%88%A9%E7%94%A8-Github-pages-%E5%92%8C-hexo-%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/'>
           <p class='title'>利用 Github pages 和 hexo 搭建自己的博客<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>前言
 Hello world!
-这是我的第一篇博客文章，记录这个博客是如何搭建的。由于我并非专业人士，仅记录我的搭建过程和遇到的问题，并且不详细解释每一步的操作。如有疑问，请访问参考部分。...</p>
+这是我在新博客的第一篇博客文章，记录这个博客是如何搭建的。由于我并非专业人士，仅简略记录我的搭建过程和遇到的问题，并且不详细解释每一步的操作。如有疑问，请访问...</p>
         </a>
       
     </div>
@@ -3034,9 +3041,9 @@ Hello world!
             ><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E5%BE%AE%E5%85%89/" href="/categories/%E5%BE%AE%E5%85%89/"
-            active-action="action-categoriesE5BEAEE58589"
-            ><div class='name'>微光</div><div class='badge'>(3)</div></a></li>
+            title="/categories/Furry/" href="/categories/Furry/"
+            active-action="action-categoriesFurry"
+            ><div class='name'>Furry</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
@@ -3051,7 +3058,7 @@ Hello world!
           <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(37)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(38)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -3088,7 +3095,7 @@ Hello world!
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB"><span class="toc-text">博客迁移</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%8D%9A%E5%AE%A2"><span class="toc-text">下载博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E5%8D%9A%E5%AE%A2"><span class="toc-text">导入博客</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB"><span class="toc-text">博客迁移</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%8D%9A%E5%AE%A2"><span class="toc-text">下载博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E5%8D%9A%E5%AE%A2"><span class="toc-text">导入博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E4%BF%AE%E6%94%B9"><span class="toc-text">手动修改</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4242,7 +4249,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4525,7 +4532,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/教程/","name":"教程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2024/08/06/博客园-Cnblogs-迁移到-Github-Pages/","name":"博客园 Cnblogs 迁移到 Github Pages"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"博客园 Cnblogs 迁移到 Github Pages","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2024/08/06/%E5%8D%9A%E5%AE%A2%E5%9B%AD-Cnblogs-%E8%BF%81%E7%A7%BB%E5%88%B0-Github-Pages/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2024/08/06/%E5%8D%9A%E5%AE%A2%E5%9B%AD-Cnblogs-%E8%BF%81%E7%A7%BB%E5%88%B0-Github-Pages/","wordCount":0,"datePublished":"2024-08-06T12:11:51.000Z","dateModified":"2024-08-15T16:52:02.365Z","articleSection":"教程","keywords":"blog","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/教程/","name":"教程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2024/08/06/博客园-Cnblogs-迁移到-Github-Pages/","name":"博客园 Cnblogs 迁移到 Github Pages"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"博客园 Cnblogs 迁移到 Github Pages","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2024/08/06/%E5%8D%9A%E5%AE%A2%E5%9B%AD-Cnblogs-%E8%BF%81%E7%A7%BB%E5%88%B0-Github-Pages/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2024/08/06/%E5%8D%9A%E5%AE%A2%E5%9B%AD-Cnblogs-%E8%BF%81%E7%A7%BB%E5%88%B0-Github-Pages/","wordCount":0,"datePublished":"2024-08-06T12:11:51.000Z","dateModified":"2024-08-19T01:10:06.182Z","articleSection":"教程","keywords":"blog","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 
