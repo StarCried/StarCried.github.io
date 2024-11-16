@@ -48,14 +48,14 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>鞅的停时定理 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,OI,数学,StarCried, 微光, OI, ACM, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="前言 该内容算法竞赛涉及不多，属于较深概率论内容。 鞅的停时定理 “鞅”，martingale 用来指一类随机过程，定义如下：  鞅是一种离散时间的随机过程 \(X_0,X_1,\cdots\) 满足：  \(E(X_t)&lt;\infty,\forall t\geq0\) \(E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t\)   根据定义可以得到">
+  <meta name="keywords" content="博客园,OI,数学,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
+  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="鞅的停时定理">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="前言 该内容算法竞赛涉及不多，属于较深概率论内容。 鞅的停时定理 “鞅”，martingale 用来指一类随机过程，定义如下：  鞅是一种离散时间的随机过程 \(X_0,X_1,\cdots\) 满足：  \(E(X_t)&lt;\infty,\forall t\geq0\) \(E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t\)   根据定义可以得到">
+<meta property="og:description" content="前言该内容算法竞赛涉及不多，属于较深概率论内容。 鞅的停时定理“鞅”，martingale 用来指一类随机过程，定义如下：  鞅是一种离散时间的随机过程 $X_0,X_1,\cdots$ 满足：  $E(X_t)&lt;\infty,\forall t\geq0$ $E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t$   根据定义可以得到 $E(X_t)&#x3D;X_">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1885,14 +1885,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.debug = "env"; // 调试模式
+  volantis.debug = "false"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    debug: "env",
+    debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1728892721820),
+    lastupdate: new Date(1731774785315),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
     <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
   </span>
   
 
@@ -2803,143 +2803,52 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="前言">前言</h2>
-<p>该内容算法竞赛涉及不多，属于较深概率论内容。</p>
-<h1 id="鞅的停时定理">鞅的停时定理</h1>
-<p>“鞅”，<em>martingale</em> 用来指一类随机过程，定义如下：</p>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>该内容算法竞赛涉及不多，属于较深概率论内容。</p>
+<h1 id="鞅的停时定理"><a href="#鞅的停时定理" class="headerlink" title="鞅的停时定理"></a>鞅的停时定理</h1><p>“鞅”，<em>martingale</em> 用来指一类随机过程，定义如下：</p>
 <blockquote>
-<p>鞅是一种离散时间的随机过程 <span
-class="math inline">\(X_0,X_1,\cdots\)</span> 满足：</p>
+<p>鞅是一种离散时间的随机过程 $X_0,X_1,\cdots$ 满足：</p>
 <ul>
-<li><span class="math inline">\(E(X_t)&lt;\infty,\forall
-t\geq0\)</span></li>
-<li><span class="math inline">\(E(X_{t+1}\mid X_0,\cdots
-X_t)=X_t\)</span></li>
+<li>$E(X_t)&lt;\infty,\forall t\geq0$</li>
+<li>$E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t$</li>
 </ul>
 </blockquote>
-<p>根据定义可以得到 <span
-class="math inline">\(E(X_t)=X_0\)</span>。</p>
-<h2 id="停时定理">停时定理</h2>
-<p>设 <span class="math inline">\(t\)</span> 为鞅过程 <span
-class="math inline">\({X_0,X_1,\cdots}\)</span>
-的停时，当下面三个条件之一成立时，有 <span
-class="math inline">\(E(X_t)=X_0\)</span>：</p>
+<p>根据定义可以得到 $E(X_t)&#x3D;X_0$。</p>
+<h2 id="停时定理"><a href="#停时定理" class="headerlink" title="停时定理"></a>停时定理</h2><p>设 $t$ 为鞅过程 ${X_0,X_1,\cdots}$ 的停时，当下面三个条件之一成立时，有 $E(X_t)&#x3D;X_0$：</p>
 <ul>
-<li><span class="math inline">\(t\)</span> 几乎必然有界；</li>
-<li><span class="math inline">\(\mid X_{i+1}-X_i\mid\)</span>
-一致有界，<span class="math inline">\(E(t)\)</span> 有限；</li>
-<li><span class="math inline">\(X_i\)</span> 一致有界，<span
-class="math inline">\(t\)</span> 几乎必然有限。</li>
+<li>$t$ 几乎必然有界；</li>
+<li>$\mid X_{i+1}-X_i\mid$ 一致有界，$E(t)$ 有限；</li>
+<li>$X_i$ 一致有界，$t$ 几乎必然有限。</li>
 </ul>
 <p>名词解释：</p>
 <ul>
-<li><span class="math inline">\(a\in R\cup{\infty}\)</span> 有限：<span
-class="math inline">\(\mid a\mid &lt;\infty\)</span>；</li>
-<li><span class="math inline">\(a\in R\cup{\infty}\)</span> 有界：<span
-class="math inline">\(\exists l,r\in  R,a\in[l,r]\)</span>；</li>
-<li><span class="math inline">\(a_i\in R\cup{\infty}\)</span>
-一致有界：<span class="math inline">\(\forall i,\exists l,r\in
-R,a_i\in[l,r]\)</span>；</li>
-<li>事件 <span class="math inline">\(A\)</span> 几乎必然发生：<span
-class="math inline">\(P(A)=1\)</span>。</li>
+<li>$a\in R\cup{\infty}$ 有限：$\mid a\mid &lt;\infty$；</li>
+<li>$a\in R\cup{\infty}$ 有界：$\exists l,r\in  R,a\in[l,r]$；</li>
+<li>$a_i\in R\cup{\infty}$ 一致有界：$\forall i,\exists l,r\in R,a_i\in[l,r]$；</li>
+<li>事件 $A$ 几乎必然发生：$P(A)&#x3D;1$。</li>
 </ul>
-<h2 id="势能函数">势能函数</h2>
-<p>对于随机时间序列 <span
-class="math inline">\({A_0,A_1,\cdots}\)</span>，<span
-class="math inline">\(t\)</span> 为其停时，终止状态为 <span
-class="math inline">\(A_t\)</span>，求 <span
-class="math inline">\(E(t)\)</span>。</p>
-<p>构造势能函数 <span class="math inline">\(\Phi(A)\)</span>，满足：</p>
+<h2 id="势能函数"><a href="#势能函数" class="headerlink" title="势能函数"></a>势能函数</h2><p>对于随机时间序列 ${A_0,A_1,\cdots}$，$t$ 为其停时，终止状态为 $A_t$，求 $E(t)$。</p>
+<p>构造势能函数 $\Phi(A)$，满足：</p>
 <ul>
-<li><span class="math inline">\(E(\Phi(A_{n+1})-\Phi(A_n)\mid
-A_0,A_1,\cdots,A_n)=-1\)</span>；</li>
-<li><span class="math inline">\(\Phi(A_t)\)</span> 为常数。</li>
+<li>$E(\Phi(A_{n+1})-\Phi(A_n)\mid A_0,A_1,\cdots,A_n)&#x3D;-1$；</li>
+<li>$\Phi(A_t)$ 为常数。</li>
 </ul>
-<p>构造序列 <span class="math inline">\(X_i=\Phi(A_i)+i\)</span>，则
-<span class="math inline">\(E(X_{n+1}-X_n\mid
-X_0,X_1,\cdots,X_n)=0\)</span>，即 <span
-class="math inline">\({X_0,X_1,\cdots}\)</span> 是鞅。</p>
-<p>根据停时定理，我们可以得到 <span
-class="math inline">\(E(X_t)=E(X_0)\)</span>，即 <span
-class="math inline">\(E(t)=E(\Phi(A_0))-\Phi(A_t)\)</span>。</p>
-<h2 id="cf1479e-school-clubs">CF1479E School Clubs</h2>
-<h3 id="题意">题意</h3>
-<p>有 <span class="math inline">\(n\)</span> 个学生和 <span
-class="math inline">\(m\)</span> 个组，每个人在一个组里面，第 <span
-class="math inline">\(i\)</span> 个组的人数为 <span
-class="math inline">\(a_i\)</span>。</p>
-<p>现在，每天有一个学生（<span class="math inline">\(n\)</span>
-个学生中随机的一个）会：</p>
-<ol type="1">
+<p>构造序列 $X_i&#x3D;\Phi(A_i)+i$，则 $E(X_{n+1}-X_n\mid X_0,X_1,\cdots,X_n)&#x3D;0$，即 ${X_0,X_1,\cdots}$ 是鞅。</p>
+<p>根据停时定理，我们可以得到 $E(X_t)&#x3D;E(X_0)$，即 $E(t)&#x3D;E(\Phi(A_0))-\Phi(A_t)$。</p>
+<h2 id="CF1479E-School-Clubs"><a href="#CF1479E-School-Clubs" class="headerlink" title="CF1479E School Clubs"></a>CF1479E School Clubs</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有 $n$ 个学生和 $m$ 个组，每个人在一个组里面，第 $i$ 个组的人数为 $a_i$。</p>
+<p>现在，每天有一个学生（$n$ 个学生中随机的一个）会：</p>
+<ol>
 <li>有一半的概率他会脱离这个组，并且成立一个新的组。</li>
-<li>有一半的概率他会脱离这个组，并且进入一个已经成立的组。他进入第 <span
-class="math inline">\(i\)</span> 个组的概率为 <span
-class="math inline">\(\frac {a_i}
-n\)</span>，他可能会回到原来的组。</li>
+<li>有一半的概率他会脱离这个组，并且进入一个已经成立的组。他进入第 $i$ 个组的概率为 $\frac {a_i} n$，他可能会回到原来的组。</li>
 </ol>
-<p>求第一次出现所有学生在同一个组的期望天数，对 <span
-class="math inline">\(998244353\)</span> 取模。</p>
-<p><span class="math inline">\(n\leq 4\times10^8\)</span></p>
-<h3 id="思路">思路</h3>
-<p>设 <span class="math inline">\(\phi(A)\)</span> 为状态 <span
-class="math inline">\(A\)</span> 的势能，构造使得 <span
-class="math inline">\(\phi(A_t)-1=\phi(A_{t+1})\)</span>，设 <span
-class="math inline">\(f(x)\)</span> 为学生数量为 <span
-class="math inline">\(x\)</span> 的组的势能函数，则有： <span
-class="math display">\[
-\begin{aligned}\phi(A_t)-1&amp;=\phi(A_{t+1})\\
-\phi(A_t)-1&amp;=\sum_i\frac {a_i}n(\frac
-12(\phi(A_t)-f(a_i)+f(a_i-1)+f(1))+\frac{a_i}{2n}\phi(A_t)+\sum_{j\ne
-i}\frac {a_j}{2n}(\phi(A_t)-f(a_i)-f(a_j)+f(a_i-1)+f(a_j+1)))\\
--1&amp;=\sum_i\frac {a_i}{2n}(-f(a_i)+f(a_i-1)+f(1)+\sum_{j\ne i}\frac
-{a_j}{n}(-f(a_i)-f(a_j)+f(a_i-1)+f(a_j+1)))\\
--1&amp;=-\sum_i\frac {a_i}{2n}f(a_i)+\sum_i\frac
-{a_i}{2n}f(a_i-1)+\sum_i\frac {a_i}{2n}f(1)-\sum_i\frac
-{a_i}{2n}\sum_{j\ne i}\frac {a_j}{n}f(a_i)-\sum_i\frac
-{a_i}{2n}\sum_{j\ne i}\frac {a_j}{n}f(a_j)+\sum_i\frac
-{a_i}{2n}\sum_{j\ne i}\frac {a_j}{n}f(a_i-1)+\sum_i\frac
-{a_i}{2n}\sum_{j\ne i}\frac {a_j}{n}f(a_j+1)\\
--\sum_i\frac{a_i}n&amp;=\sum_i\frac {a_i}{2n}f(1)-\sum_i\frac
-{3na_i-2a^2_i}{2n^2}f(a_i)+\sum_i\frac
-{2na_i-a^2_i}{2n^2}f(a_i-1)+\sum_i\frac {na_i-a^2_i}{2n^2}f(a_i+1)\\
--\frac xn&amp;=\frac
-x{2n}f(1)-\frac{3nx-2x^2}{2n^2}f(x)+\frac{2nx-x^2}{2n^2}f(x-1)+\frac{nx-x^2}{2n^2}f(x+1)\\
-\end{aligned}
-\]</span></p>
-<p>因为我们需要的只是初始状态与停时的势能差，那么将势能具体设为什么都无所谓，所以为了消去常数项我们可以设
-<span class="math inline">\(f(1)=-2\)</span>，则： <span
-class="math display">\[
-\begin{aligned}0&amp;=-\frac{3nx-2x^2}{2n^2}f(x)+\frac{2nx-x^2}{2n^2}f(x-1)+\frac{nx-x^2}{2n^2}f(x+1)\\
-f(x+1)&amp;=\frac
-{2n^2}{nx-x^2}(\frac{3nx-2x^2}{2n^2}f(x)-\frac{2nx-x^2}{2n^2}f(x-1))\\
-f(x+1)&amp;=\frac{3n-2x}{n-x}f(x)-\frac{2n-x}{n-x}f(x-1)\\
-\end{aligned}
-\]</span></p>
-<p>发现 <span class="math inline">\(\phi(A_t)=f(n)\)</span>
-（表示局面为只有一个人数为 <span class="math inline">\(n\)</span>
-的组）是个常数（知道 <span class="math inline">\(f(0)\)</span> 和 <span
-class="math inline">\(f(1)\)</span>
-可以被表示），那么可以用停时定理。</p>
+<p>求第一次出现所有学生在同一个组的期望天数，对 $998244353$ 取模。</p>
+<p>$n\leq 4\times10^8$</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>设 $\phi(A)$ 为状态 $A$ 的势能，构造使得 $\phi(A_t)-1&#x3D;\phi(A_{t+1})$，设 $f(x)$ 为学生数量为 $x$ 的组的势能函数，则有：<br>$$<br>\begin{aligned}\phi(A_t)-1&amp;&#x3D;\phi(A_{t+1})\<br>\phi(A_t)-1&amp;&#x3D;\sum_i\frac {a_i}n(\frac 12(\phi(A_t)-f(a_i)+f(a_i-1)+f(1))+\frac{a_i}{2n}\phi(A_t)+\sum_{j\ne i}\frac {a_j}{2n}(\phi(A_t)-f(a_i)-f(a_j)+f(a_i-1)+f(a_j+1)))\<br>-1&amp;&#x3D;\sum_i\frac {a_i}{2n}(-f(a_i)+f(a_i-1)+f(1)+\sum_{j\ne i}\frac {a_j}{n}(-f(a_i)-f(a_j)+f(a_i-1)+f(a_j+1)))\<br>-1&amp;&#x3D;-\sum_i\frac {a_i}{2n}f(a_i)+\sum_i\frac {a_i}{2n}f(a_i-1)+\sum_i\frac {a_i}{2n}f(1)-\sum_i\frac {a_i}{2n}\sum_{j\ne i}\frac {a_j}{n}f(a_i)-\sum_i\frac {a_i}{2n}\sum_{j\ne i}\frac {a_j}{n}f(a_j)+\sum_i\frac {a_i}{2n}\sum_{j\ne i}\frac {a_j}{n}f(a_i-1)+\sum_i\frac {a_i}{2n}\sum_{j\ne i}\frac {a_j}{n}f(a_j+1)\<br>-\sum_i\frac{a_i}n&amp;&#x3D;\sum_i\frac {a_i}{2n}f(1)-\sum_i\frac {3na_i-2a^2_i}{2n^2}f(a_i)+\sum_i\frac {2na_i-a^2_i}{2n^2}f(a_i-1)+\sum_i\frac {na_i-a^2_i}{2n^2}f(a_i+1)\<br>-\frac xn&amp;&#x3D;\frac x{2n}f(1)-\frac{3nx-2x^2}{2n^2}f(x)+\frac{2nx-x^2}{2n^2}f(x-1)+\frac{nx-x^2}{2n^2}f(x+1)\<br>\end{aligned}<br>$$</p>
+<p>因为我们需要的只是初始状态与停时的势能差，那么将势能具体设为什么都无所谓，所以为了消去常数项我们可以设 $f(1)&#x3D;-2$，则：<br>$$<br>\begin{aligned}0&amp;&#x3D;-\frac{3nx-2x^2}{2n^2}f(x)+\frac{2nx-x^2}{2n^2}f(x-1)+\frac{nx-x^2}{2n^2}f(x+1)\<br>f(x+1)&amp;&#x3D;\frac {2n^2}{nx-x^2}(\frac{3nx-2x^2}{2n^2}f(x)-\frac{2nx-x^2}{2n^2}f(x-1))\<br>f(x+1)&amp;&#x3D;\frac{3n-2x}{n-x}f(x)-\frac{2n-x}{n-x}f(x-1)\<br>\end{aligned}<br>$$</p>
+<p>发现 $\phi(A_t)&#x3D;f(n)$ （表示局面为只有一个人数为 $n$ 的组）是个常数（知道 $f(0)$ 和 $f(1)$ 可以被表示），那么可以用停时定理。</p>
 <p>观察数据范围发现没法存下线性求逆元，也没法每次快速幂求。那怎么办呢？</p>
-<p>官方题解的做法将 <span class="math inline">\(f\)</span>
-进行差分然后利用快速阶乘算法计算，即： <span class="math display">\[
-\begin{aligned}g(x)=f(x+1)-f(x)\\
-g(x)=\frac{2n-x}{n-x}g(x-1)\\
-g(x)=g(0)\prod_{i=1}^x\frac{2n-i}{n-i}\\
-f(x)=-2\sum_{i=0}^{x-1}\prod_{j=1}^i\frac{2n-j}{n-j}
-\end{aligned}
-\]</span></p>
-<p>实际上我们可以直接对对于这个式子 <span
-class="math inline">\(f(x+1)=\frac{3n-2x}{n-x}f(x)-\frac{2n-x}{n-x}f(x-1)\)</span>
-线性递推。因为我们要求的是 <span
-class="math inline">\(E(\phi(A_t))\)</span> 和 <span
-class="math inline">\(\phi(A_0)=\sum_if(a_i)\)</span>，所以我们只在算
-<span class="math inline">\(m\)</span> 个 <span
-class="math inline">\(f(a_i)\)</span> 和 <span
-class="math inline">\(f(n)\)</span>
-的时候快速幂，递推的时候分别维护分子和分母即可。如果你拥有优秀的常数即可通过。</p>
-<h3 id="代码">代码</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c)) w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">pow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="type">int</span> ans=<span class="number">1</span>;<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=<span class="number">1ll</span>*a*a%mod) <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=<span class="number">1ll</span>*ans*a%mod; <span class="keyword">return</span> ans;&#125;</span><br><span class="line"><span class="type">int</span> n,m,a[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	m=<span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) n+=a[i]=<span class="built_in">read</span>();</span><br><span class="line">	std::<span class="built_in">sort</span>(a<span class="number">+1</span>,a+m<span class="number">+1</span>);</span><br><span class="line">	<span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> s1=<span class="number">0</span>,d1=mod<span class="number">-2</span>,s2=<span class="number">1</span>,d2=<span class="number">1</span>,p1,p2,j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(j&lt;=m&amp;&amp;a[j]==<span class="number">1</span>)ans=(ans+mod<span class="number">-2</span>)%mod,++j;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">		p2=<span class="number">1ll</span>*(n-i)*d2%mod*s2%mod;</span><br><span class="line">		p1=((<span class="number">3ll</span>*n<span class="number">-2</span>*i)*d1%mod*s2+(mod<span class="number">-1ll</span>)*(<span class="number">2ll</span>*n-i)%mod*s1%mod*d2)%mod;</span><br><span class="line">		<span class="keyword">while</span>(j&lt;=m&amp;&amp;a[j]==i<span class="number">+1</span>)ans=(ans<span class="number">+1ll</span>*p1*<span class="built_in">pow</span>(p2,mod<span class="number">-2</span>))%mod,++j;</span><br><span class="line">		s1=d1,s2=d2,d1=p1,d2=p2;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,(ans+(mod<span class="number">-1ll</span>)*d1%mod*<span class="built_in">pow</span>(d2,mod<span class="number">-2</span>))%mod);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>官方题解的做法将 $f$ 进行差分然后利用快速阶乘算法计算，即：<br>$$<br>\begin{aligned}g(x)&#x3D;f(x+1)-f(x)\<br>g(x)&#x3D;\frac{2n-x}{n-x}g(x-1)\<br>g(x)&#x3D;g(0)\prod_{i&#x3D;1}^x\frac{2n-i}{n-i}\<br>f(x)&#x3D;-2\sum_{i&#x3D;0}^{x-1}\prod_{j&#x3D;1}^i\frac{2n-j}{n-j}<br>\end{aligned}<br>$$</p>
+<p>实际上我们可以直接对对于这个式子 $f(x+1)&#x3D;\frac{3n-2x}{n-x}f(x)-\frac{2n-x}{n-x}f(x-1)$ 线性递推。因为我们要求的是 $E(\phi(A_t))$ 和 $\phi(A_0)&#x3D;\sum_if(a_i)$，所以我们只在算 $m$ 个 $f(a_i)$ 和 $f(n)$ 的时候快速幂，递推的时候分别维护分子和分母即可。如果你拥有优秀的常数即可通过。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c)) w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">pow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="type">int</span> ans=<span class="number">1</span>;<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=<span class="number">1ll</span>*a*a%mod) <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=<span class="number">1ll</span>*ans*a%mod; <span class="keyword">return</span> ans;&#125;</span><br><span class="line"><span class="type">int</span> n,m,a[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	m=<span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) n+=a[i]=<span class="built_in">read</span>();</span><br><span class="line">	std::<span class="built_in">sort</span>(a<span class="number">+1</span>,a+m<span class="number">+1</span>);</span><br><span class="line">	<span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> s1=<span class="number">0</span>,d1=mod<span class="number">-2</span>,s2=<span class="number">1</span>,d2=<span class="number">1</span>,p1,p2,j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(j&lt;=m&amp;&amp;a[j]==<span class="number">1</span>)ans=(ans+mod<span class="number">-2</span>)%mod,++j;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">		p2=<span class="number">1ll</span>*(n-i)*d2%mod*s2%mod;</span><br><span class="line">		p1=((<span class="number">3ll</span>*n<span class="number">-2</span>*i)*d1%mod*s2+(mod<span class="number">-1ll</span>)*(<span class="number">2ll</span>*n-i)%mod*s1%mod*d2)%mod;</span><br><span class="line">		<span class="keyword">while</span>(j&lt;=m&amp;&amp;a[j]==i<span class="number">+1</span>)ans=(ans<span class="number">+1ll</span>*p1*<span class="built_in">pow</span>(p2,mod<span class="number">-2</span>))%mod,++j;</span><br><span class="line">		s1=d1,s2=d2,d1=p1,d2=p2;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,(ans+(mod<span class="number">-1ll</span>)*d1%mod*<span class="built_in">pow</span>(d2,mod<span class="number">-2</span>))%mod);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -3037,19 +2946,19 @@ class="math inline">\(f(n)\)</span>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>随机数生成</p>
-          <p class='content'>我知道是伪随机数生成啦
-可以用 srand(time(0)) 和 rand()
-函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。
-下面的方法可以生成指定范围的...</p>
+        <a class='prev' href='/2022/04/30/%E8%AF%BB%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>读入、输出优化</p>
+          <p class='content'>关闭流同步1std::ios::sync_with_stdio(false);
+
+关闭输入输出流与标准输入输出（scanf printf）的同步，加快流速度，但关闭后不可混用。
+整形快读从标准输...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F/'>
-          <p class='title'>高斯消元求行列式<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言
-我原在博客园上发表的这篇文章是阅读排行榜最高的一篇。然而，作为一个刚学竞赛的学生写的东西，它的质量实在堪忧。行列式又是一个及其重要、基础和困难的概念，无论对于大学数学还是高中竞赛。因此，...</p>
+        <a class='next' href='/2022/04/30/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/'>
+          <p class='title'>归并排序<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>算法描述运用了分治的思想，将一个数组分成几乎相等的两份，分别将两段中第一个最小的数拿出来放在一个临时数组中，直到全部取完。因为是递归的，所以每一段的数列都是排序好的。
+1234567891011...</p>
         </a>
       
     </div>
@@ -3115,12 +3024,22 @@ class="math inline">\(f(n)\)</span>
           <li><a class="flat-box"
             title="/categories/Furry/" href="/categories/Furry/"
             active-action="action-categoriesFurry"
-            ><div class='name'>Furry</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Furry</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
-            active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
+            title="/categories/Marathon/" href="/categories/Marathon/"
+            active-action="action-categoriesMarathon"
+            ><div class='name'>Marathon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Web/" href="/categories/Web/"
+            active-action="action-categoriesWeb"
+            ><div class='name'>Web</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%88%9B%E4%BD%9C/" href="/categories/%E5%88%9B%E4%BD%9C/"
+            active-action="action-categoriesE5889BE4BD9C"
+            ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
@@ -3128,14 +3047,9 @@ class="math inline">\(f(n)\)</span>
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%97%85%E8%A1%8C/" href="/categories/%E6%97%85%E8%A1%8C/"
-            active-action="action-categoriesE69785E8A18C"
-            ><div class='name'>旅行</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(39)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(40)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -3172,7 +3086,7 @@ class="math inline">\(f(n)\)</span>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86"><span class="toc-text">停时定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%BF%E8%83%BD%E5%87%BD%E6%95%B0"><span class="toc-text">势能函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cf1479e-school-clubs"><span class="toc-text">CF1479E School Clubs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86"><span class="toc-text">停时定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%BF%E8%83%BD%E5%87%BD%E6%95%B0"><span class="toc-text">势能函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1479E-School-Clubs"><span class="toc-text">CF1479E School Clubs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4324,7 +4238,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4607,7 +4521,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/鞅的停时定理/","name":"鞅的停时定理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"鞅的停时定理","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T03:35:07.273Z","articleSection":"数学","keywords":"博客园,OI,数学","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/鞅的停时定理/","name":"鞅的停时定理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"鞅的停时定理","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T03:35:07.273Z","articleSection":"数学","keywords":"博客园,OI,数学","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

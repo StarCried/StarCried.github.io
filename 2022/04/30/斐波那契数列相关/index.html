@@ -48,14 +48,14 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>斐波那契数列相关 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,OI,数学,StarCried, 微光, OI, ACM, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="斐波那契数列 \(F(0)&#x3D;F(1)&#x3D;1\) 或 \(F(1)&#x3D;F(2)&#x3D;1\)，\(F(i)&#x3D;F(i-1)+F(i-2)\). 广义斐波那契数列在转移时有系数且首两项给定。 求法 注意到斐波那契数列的转移为一个矩阵乘 \[ \begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix} \begin{bmatrix} 1&amp;1\\ 1&amp;0">
+  <meta name="keywords" content="博客园,OI,数学,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
+  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="斐波那契数列相关">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="斐波那契数列 \(F(0)&#x3D;F(1)&#x3D;1\) 或 \(F(1)&#x3D;F(2)&#x3D;1\)，\(F(i)&#x3D;F(i-1)+F(i-2)\). 广义斐波那契数列在转移时有系数且首两项给定。 求法 注意到斐波那契数列的转移为一个矩阵乘 \[ \begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix} \begin{bmatrix} 1&amp;1\\ 1&amp;0">
+<meta property="og:description" content="斐波那契数列$F(0)&#x3D;F(1)&#x3D;1$ 或 $F(1)&#x3D;F(2)&#x3D;1$，$F(i)&#x3D;F(i-1)+F(i-2)$. 广义斐波那契数列在转移时有系数且首两项给定。 求法注意到斐波那契数列的转移为一个矩阵乘$$\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}\begin{bmatrix}1&amp;1\1&amp;">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1885,14 +1885,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.debug = "env"; // 调试模式
+  volantis.debug = "false"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    debug: "env",
+    debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1728892721820),
+    lastupdate: new Date(1731774785315),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
     <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
   </span>
   
 
@@ -2803,127 +2803,64 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="斐波那契数列">斐波那契数列</h2>
-<p><span class="math inline">\(F(0)=F(1)=1\)</span> 或 <span
-class="math inline">\(F(1)=F(2)=1\)</span>，<span
-class="math inline">\(F(i)=F(i-1)+F(i-2)\)</span>.</p>
+    <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p>$F(0)&#x3D;F(1)&#x3D;1$ 或 $F(1)&#x3D;F(2)&#x3D;1$，$F(i)&#x3D;F(i-1)+F(i-2)$.</p>
 <p>广义斐波那契数列在转移时有系数且首两项给定。</p>
-<h3 id="求法">求法</h3>
-<p>注意到斐波那契数列的转移为一个矩阵乘 <span class="math display">\[
-\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}
-\begin{bmatrix}
-1&amp;1\\
-1&amp;0
-\end{bmatrix}
-\]</span> 当然广义斐波那契数列的转移就是把转移矩阵的系数换了一下。</p>
+<h3 id="求法"><a href="#求法" class="headerlink" title="求法"></a>求法</h3><p>注意到斐波那契数列的转移为一个矩阵乘<br>$$<br>\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}<br>\begin{bmatrix}<br>1&amp;1\<br>1&amp;0<br>\end{bmatrix}<br>$$<br>当然广义斐波那契数列的转移就是把转移矩阵的系数换了一下。</p>
 <p>所以我们可以通过矩阵快速幂快速求得所求项数。</p>
-<p>给出<a
-target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1349">广义斐波那契数列</a>的矩阵乘代码：</p>
+<p>给出<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1349">广义斐波那契数列</a>的矩阵乘代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> mod;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">mat</span>&#123;</span><br><span class="line">		<span class="type">int</span> a[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">set</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span> a);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">zero</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="built_in">set</span>();a[<span class="number">0</span>][<span class="number">0</span>]=a[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="type">int</span>* <span class="keyword">operator</span> [] (<span class="type">const</span> <span class="type">int</span> x)&#123;<span class="keyword">return</span> a[x];&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="type">const</span> <span class="type">int</span>* <span class="keyword">operator</span> [] (<span class="type">const</span> <span class="type">int</span> x) <span class="type">const</span> &#123;<span class="keyword">return</span> a[x];&#125;</span><br><span class="line">		<span class="keyword">inline</span> mat <span class="keyword">operator</span> * (<span class="type">const</span> mat &amp;b)<span class="type">const</span>&#123;</span><br><span class="line">			mat ans;</span><br><span class="line">			ans.<span class="built_in">set</span>();</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;<span class="number">2</span>;j++)</span><br><span class="line">					<span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;<span class="number">2</span>;k++)</span><br><span class="line">					ans[i][j]=(ans[i][j]+a[i][k]*b[k][j]%mod)%mod;</span><br><span class="line">			<span class="keyword">return</span> ans;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;now,pow;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> mat <span class="title">fpow</span><span class="params">(mat a,<span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">		mat ans;</span><br><span class="line">		ans.<span class="built_in">zero</span>();</span><br><span class="line">		<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=a*a)<span class="keyword">if</span>(b&amp;<span class="number">1</span>)ans=ans*a;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="type">int</span> p=<span class="built_in">read</span>(),q=<span class="built_in">read</span>(),a1=<span class="built_in">read</span>(),a2=<span class="built_in">read</span>(),n=<span class="built_in">read</span>();</span><br><span class="line">		mod=<span class="built_in">read</span>();</span><br><span class="line">		now[<span class="number">0</span>][<span class="number">1</span>]=a1,now[<span class="number">0</span>][<span class="number">0</span>]=a2,pow[<span class="number">0</span>][<span class="number">0</span>]=p,pow[<span class="number">1</span>][<span class="number">0</span>]=q,pow[<span class="number">0</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,(now*<span class="built_in">fpow</span>(pow,n<span class="number">-1</span>))[<span class="number">0</span>][<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="性质">性质</h3>
-<p>斐波那契数具有很多神奇的性质，<del>虽然有些不太常用</del></p>
+
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>斐波那契数具有很多神奇的性质，<del>虽然有些不太常用</del></p>
 <ul>
 <li>齐肯多夫定理：任何正整数可以表示为若干个不连续的斐波那契数之和。</li>
 </ul>
 <p>于是我们可以引出来一个叫做<strong>斐波那契进制</strong>的东西。</p>
-<p>简单来说，因为任何数都可以被若干个斐波那契数的和表示，我们就可以把这个数用01串表示。其中第i位表示是否含有<span
-class="math inline">\(F[i]\)</span>。</p>
-<p>更形式化地讲，从大到小枚举斐波那契数，每当$ F[i]<span
-class="math inline">\(不小于当前数就将此位置为1并减去该\)</span>
-F[i]$，根据定理最后一定会被减完，即被一个01串表示。</p>
+<p>简单来说，因为任何数都可以被若干个斐波那契数的和表示，我们就可以把这个数用01串表示。其中第i位表示是否含有$F[i]$。</p>
+<p>更形式化地讲，从大到小枚举斐波那契数，每当$ F[i]$不小于当前数就将此位置为1并减去该$ F[i]$，根据定理最后一定会被减完，即被一个01串表示。</p>
 <p>因为斐波那契数的增长速度很快，所以这个串并不会很长。</p>
 <p>我们来看个毒瘤题：</p>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6791">P6791 [SNOI2020]
-取石子</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6791">P6791 [SNOI2020] 取石子</a></p>
 <p>对于这个LCA的毒瘤题本身<del>我并不会</del>没什么好说的，<del>没有发现打表之外的解法</del></p>
-<p>通过打表我们可以发现，设<span
-class="math inline">\(a_i\)</span>表示还剩i颗石子时甲必胜此次至少要取的石子个数，那么
-<span class="math inline">\(a_i\)</span> 为 <span
-class="math inline">\(i\)</span> 在斐波那契进制下的 lowbit。</p>
+<p>通过打表我们可以发现，设$a_i$表示还剩i颗石子时甲必胜此次至少要取的石子个数，那么 $a_i$ 为 $i$ 在斐波那契进制下的 lowbit。</p>
 <p><del>所以这个题本身和斐波那契数就只有这么点关系</del></p>
 <p>对于题本身不予讨论。<del>我也不会证</del></p>
-<h4 id="斐波那契公约数">斐波那契公约数</h4>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1306">P1306</a></p>
-<p>我们需要证明<span
-class="math inline">\(F[\gcd(i,j)]=\gcd(F[i],F[j])\)</span>。</p>
-<p>其中<span class="math inline">\(F[0]=F[1]=1\)</span>。</p>
+<h4 id="斐波那契公约数"><a href="#斐波那契公约数" class="headerlink" title="斐波那契公约数"></a>斐波那契公约数</h4><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1306">P1306</a></p>
+<p>我们需要证明$F[\gcd(i,j)]&#x3D;\gcd(F[i],F[j])$。</p>
+<p>其中$F[0]&#x3D;F[1]&#x3D;1$。</p>
 <ul>
-<li>引理：<span class="math inline">\(\gcd(F[i],F[i-1])=1\)</span></li>
+<li>引理：$\gcd(F[i],F[i-1])&#x3D;1$</li>
 </ul>
-<p>证明： <span class="math display">\[
-\gcd(F[i],F[i-1])=\gcd(F[i]-F[i-1],F[i-1])=\gcd(F[i-1],F[i-2])=\dots=\gcd(F[2],F[1])=1
-\]</span> 即<span class="math inline">\(F[i]\)</span>与<span
-class="math inline">\(F[i-1]\)</span>互质。</p>
+<p>证明：<br>$$<br>\gcd(F[i],F[i-1])&#x3D;\gcd(F[i]-F[i-1],F[i-1])&#x3D;\gcd(F[i-1],F[i-2])&#x3D;\dots&#x3D;\gcd(F[2],F[1])&#x3D;1<br>$$<br>即$F[i]$与$F[i-1]$互质。</p>
 <ul>
-<li>引理：<span
-class="math inline">\(F[m+n]=F[m-1]F[n]+F[m]F[n+1]\)</span></li>
+<li>引理：$F[m+n]&#x3D;F[m-1]F[n]+F[m]F[n+1]$</li>
 </ul>
-<p>设<span
-class="math inline">\(F[n]=a,F[n+1]=b\)</span>,向下递推发现由<span
-class="math inline">\(a\)</span>和<span
-class="math inline">\(b\)</span>表达的<span
-class="math inline">\(F[i]\)</span>中其系数是斐波那契数。自己推推就知道了。</p>
+<p>设$F[n]&#x3D;a,F[n+1]&#x3D;b$,向下递推发现由$a$和$b$表达的$F[i]$中其系数是斐波那契数。自己推推就知道了。</p>
 <ul>
-<li><span
-class="math inline">\(F[\gcd(i,j)]=\gcd(F[i],F[j])\)</span></li>
+<li>$F[\gcd(i,j)]&#x3D;\gcd(F[i],F[j])$</li>
 </ul>
 <p>证明：</p>
-<p>不妨设<span class="math inline">\(i&lt;j\)</span>，则有 <span
-class="math display">\[
-\gcd(F[i],F[j])\\=\gcd(F[i],F[j-i-1]F[i]+F[j-i]F[i+1])\\=\gcd(F[i],F[j-i]F[i+1])\\=\gcd(F[i],F[j-i])
-\]</span> 即 <span class="math display">\[
-\gcd(F[i],F[j])=\gcd(F[i],F[j\mod i])
-\]</span> 递归求解，发现我们就是在对F的下标求gcd，也就是 <span
-class="math display">\[
-\gcd(F[i],F[j])=F[\gcd(i,j)] \\ \square
-\]</span></p>
+<p>不妨设$i&lt;j$，则有<br>$$<br>\gcd(F[i],F[j])\&#x3D;\gcd(F[i],F[j-i-1]F[i]+F[j-i]F[i+1])\&#x3D;\gcd(F[i],F[j-i]F[i+1])\&#x3D;\gcd(F[i],F[j-i])<br>$$<br>即<br>$$<br>\gcd(F[i],F[j])&#x3D;\gcd(F[i],F[j\mod i])<br>$$<br>递归求解，发现我们就是在对F的下标求gcd，也就是<br>$$<br>\gcd(F[i],F[j])&#x3D;F[\gcd(i,j)] \ \square<br>$$</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> mod=<span class="number">1e8</span>;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">mat</span>&#123;</span><br><span class="line">		<span class="type">int</span> a[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">		<span class="built_in">mat</span>()&#123;</span><br><span class="line">			<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span> a);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">zero</span><span class="params">()</span></span>&#123;</span><br><span class="line">			a[<span class="number">0</span>][<span class="number">0</span>]=a[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="type">int</span>* <span class="keyword">operator</span> [] (<span class="type">const</span> <span class="type">int</span> x)&#123;<span class="keyword">return</span> a[x];&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="type">const</span> <span class="type">int</span>* <span class="keyword">operator</span> [] (<span class="type">const</span> <span class="type">int</span> x) <span class="type">const</span> &#123;<span class="keyword">return</span> a[x];&#125;</span><br><span class="line">		<span class="keyword">inline</span> <span class="keyword">friend</span> mat <span class="keyword">operator</span> * (<span class="type">const</span> mat &amp;a,<span class="type">const</span> mat &amp;b)&#123;</span><br><span class="line">			mat ans;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;<span class="number">2</span>;j++)</span><br><span class="line">					<span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;<span class="number">2</span>;k++)</span><br><span class="line">					ans[i][j]=(ans[i][j]+a[i][k]*b[k][j]%mod)%mod;</span><br><span class="line">			<span class="keyword">return</span> ans;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;now,pow;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="keyword">return</span> b?<span class="built_in">gcd</span>(b,a%b):a;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> mat <span class="title">fpow</span><span class="params">(mat a,<span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">		mat ans;</span><br><span class="line">		ans.<span class="built_in">zero</span>();</span><br><span class="line">		<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=a*a)<span class="keyword">if</span>(b&amp;<span class="number">1</span>)ans=ans*a;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		now[<span class="number">0</span>][<span class="number">0</span>]=now[<span class="number">0</span>][<span class="number">1</span>]=pow[<span class="number">0</span>][<span class="number">0</span>]=pow[<span class="number">0</span>][<span class="number">1</span>]=pow[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,(now*<span class="built_in">fpow</span>(pow,<span class="built_in">gcd</span>(<span class="built_in">read</span>(),<span class="built_in">read</span>())<span class="number">-1</span>))[<span class="number">0</span>][<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />
+
+<hr>
 <ul>
-<li><span
-class="math inline">\(F[i-1]*F[i+2]-F[i]*F[i+1]=(-1)^i\)</span></li>
+<li>$F[i-1]*F[i+2]-F[i]*F[i+1]&#x3D;(-1)^i$</li>
 </ul>
-<p>还是设<span
-class="math inline">\(F[i]=a,F[i+1]=b\)</span>，然后<del>推来推去</del>，具体看<a
-target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/solution/P3986"><span
-class="citation" data-cites="浅色调">@浅色调</span> 的过程</a></p>
-<p>对于<a
-target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3986">P3986</a>，这个结论可以用来快速解决
-<span class="math inline">\(aF[i]+bF[i+1]=k\)</span> 而不用exgcd。</p>
-<p>即有通解 <span
-class="math inline">\(x=k*(-1)^iF[i-1],y=k*(-1)^{i+1}F[i-2]\)</span></p>
+<p>还是设$F[i]&#x3D;a,F[i+1]&#x3D;b$，然后<del>推来推去</del>，具体看<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/solution/P3986">@浅色调 的过程</a></p>
+<p>对于<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3986">P3986</a>，这个结论可以用来快速解决 $aF[i]+bF[i+1]&#x3D;k$ 而不用exgcd。</p>
+<p>即有通解 $x&#x3D;k*(-1)^iF[i-1],y&#x3D;k*(-1)^{i+1}F[i-2]$</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">100</span>,mod=<span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line">	<span class="type">int</span> N,f[maxn],ans;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="type">int</span> k=<span class="built_in">read</span>();</span><br><span class="line">		f[<span class="number">1</span>]=f[<span class="number">2</span>]=<span class="number">1</span>;ans=k<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(N=<span class="number">3</span>;(f[N]=f[N<span class="number">-1</span>]+f[N<span class="number">-2</span>])&lt;k;N++);</span><br><span class="line">		N--;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> x,y,j=<span class="number">2</span>;j&lt;=N;j++)&#123;</span><br><span class="line">			<span class="type">int</span> q=((j<span class="number">-1</span>)&amp;<span class="number">1</span>)?<span class="number">-1</span>:<span class="number">1</span>;</span><br><span class="line">			x=k*q*f[j<span class="number">+3</span>],y=-k*q*f[j<span class="number">+2</span>];</span><br><span class="line">			<span class="keyword">if</span>(x&lt;<span class="number">0</span>)&#123;</span><br><span class="line">				y-=((-x)/f[j<span class="number">+1</span>]<span class="number">+1</span>)*f[j];</span><br><span class="line">				<span class="keyword">if</span>(y&gt;<span class="number">0</span>)ans=(ans+(<span class="type">int</span>)<span class="built_in">ceil</span>(<span class="number">1.0</span>*y/f[j]))%mod;</span><br><span class="line">			&#125;<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">if</span>(y&lt;<span class="number">0</span>)&#123;</span><br><span class="line">				x-=((-y)/f[j]<span class="number">+1</span>)*f[j<span class="number">+1</span>];</span><br><span class="line">				<span class="keyword">if</span>(x&gt;<span class="number">0</span>)ans=(ans+(<span class="type">int</span>)<span class="built_in">ceil</span>(<span class="number">1.0</span>*x/f[j<span class="number">+1</span>]))%mod;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>PS: <span class="citation"
-data-cites="浅色调的题解对N多算了一次">@浅色调的题解对N多算了一次</span>，减掉即可。或者在第二遍
-<code>for</code> 循环内直接判掉 <code>break</code> 也行。</p>
-<hr />
-<h4 id="upd10.15">UPD10.15</h4>
-<ul>
+
+<p>PS: @浅色调的题解对N多算了一次，减掉即可。或者在第二遍 <code>for</code> 循环内直接判掉 <code>break</code> 也行。</p>
+<hr>
+<h4 id="UPD10-15"><a href="#UPD10-15" class="headerlink" title="UPD10.15"></a>UPD10.15</h4><ul>
 <li>给定一个长为n的序列，可在其中填1，求使1任意两个都不相邻的方案数。</li>
 </ul>
-<p>昨天看了一道叫做<a
-target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1539">01矩阵</a>的题目想到该问题，经询问
-luogu 聚铑们得到答案。</p>
+<p>昨天看了一道叫做<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1539">01矩阵</a>的题目想到该问题，经询问 luogu 聚铑们得到答案。</p>
 <p>首先，这玩意和斐波那契数有什么关系？</p>
-<p>考虑 DP，对于位置 <span class="math inline">\(i\)</span>,设 <span
-class="math inline">\(f[i][0],f[i][1]\)</span> 为前 <span
-class="math inline">\(i\)</span> 个数填完、<span
-class="math inline">\(i\)</span> 填 <span
-class="math inline">\(0\)</span> 或 <span
-class="math inline">\(1\)</span> 的方案数，则有转移 <span
-class="math display">\[
-f[i][0]=f[i-1][0]+f[i-1][1]\\
-f[i][1]=f[i-1][0]
-\]</span> 设<span
-class="math inline">\(g[i]\)</span>为到i的方案总数，则有 <span
-class="math display">\[
-g[i]=f[i][0]+f[i][1]\\
-g[i]=f[i-1][0]+f[i-1][1]+f[i-1][0]\\
-g[i]=g[i-1]+g[i-2]
-\]</span> 和斐波那契数列的转移相同。</p>
+<p>考虑 DP，对于位置 $i$,设 $f[i][0],f[i][1]$ 为前 $i$ 个数填完、$i$ 填 $0$ 或 $1$ 的方案数，则有转移<br>$$<br>f[i][0]&#x3D;f[i-1][0]+f[i-1][1]\<br>f[i][1]&#x3D;f[i-1][0]<br>$$<br>设$g[i]$为到i的方案总数，则有<br>$$<br>g[i]&#x3D;f[i][0]+f[i][1]\<br>g[i]&#x3D;f[i-1][0]+f[i-1][1]+f[i-1][0]\<br>g[i]&#x3D;g[i-1]+g[i-2]<br>$$<br>和斐波那契数列的转移相同。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4910">板子题</a></p>
-<h3 id="总结">总结</h3>
-<p>斐波那契数列性质很多。之后遇到新的我应该会补。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>斐波那契数列性质很多。之后遇到新的我应该会补。</p>
 <p>如果您凑巧看到了这里并知道一些相关题目请不吝赐教~</p>
 
   </div>
@@ -3022,20 +2959,22 @@ g[i]=g[i-1]+g[i-2]
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>扩展欧拉定理</p>
-          <p class='content'>欧拉定理
-欧拉定理：若 \(a\) 与 \(m\) 互质，则有 \[
-a^{\varphi(m)}\equiv1(\mod m)
-\] 我们可以发现费马小定理其实就是欧拉定理的特殊情况。...</p>
+        <a class='prev' href='/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>扫描线</p>
+          <p class='content'>
+我的第一篇洛谷博客就是扫描线。虽然那时候什么也不懂，也非常幼稚，甚至不知扫描线的原理是如何，只是一门心思地去做，就像面对未知的生活。
+
+扫描线处理矩阵面积之和的问题，当然它们会有互相覆盖而不能...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%96%9C%E5%A0%86/'>
-          <p class='title'>斜堆<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>斜堆
-斜堆是个很有趣的东西。而且它有一些很有意思的性质。
-斜堆的大概就是每次往堆里面插入一个元素的操作非常“有趣”。插入的节点从根节点开始。如果插入的元素值比所在根小，它会将根“挤下去”，即...</p>
+        <a class='next' href='/2022/04/30/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/'>
+          <p class='title'>斜率优化<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+这是之前博客园的草稿，写得不好，本来想直接删除了事。然而，斜率优化是一个很重要也很基础的优化问题，是需要学习掌握的。但我现在没有精力写一篇新的文章了。
+
+OI wiki: 斜率优化
+</p>
         </a>
       
     </div>
@@ -3101,12 +3040,22 @@ a^{\varphi(m)}\equiv1(\mod m)
           <li><a class="flat-box"
             title="/categories/Furry/" href="/categories/Furry/"
             active-action="action-categoriesFurry"
-            ><div class='name'>Furry</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Furry</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
-            active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
+            title="/categories/Marathon/" href="/categories/Marathon/"
+            active-action="action-categoriesMarathon"
+            ><div class='name'>Marathon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Web/" href="/categories/Web/"
+            active-action="action-categoriesWeb"
+            ><div class='name'>Web</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%88%9B%E4%BD%9C/" href="/categories/%E5%88%9B%E4%BD%9C/"
+            active-action="action-categoriesE5889BE4BD9C"
+            ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
@@ -3114,14 +3063,9 @@ a^{\varphi(m)}\equiv1(\mod m)
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%97%85%E8%A1%8C/" href="/categories/%E6%97%85%E8%A1%8C/"
-            active-action="action-categoriesE69785E8A18C"
-            ><div class='name'>旅行</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(39)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(40)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -3158,7 +3102,7 @@ a^{\varphi(m)}\equiv1(\mod m)
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97"><span class="toc-text">斐波那契数列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E6%B3%95"><span class="toc-text">求法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-text">性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%85%AC%E7%BA%A6%E6%95%B0"><span class="toc-text">斐波那契公约数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#upd10.15"><span class="toc-text">UPD10.15</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97"><span class="toc-text">斐波那契数列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E6%B3%95"><span class="toc-text">求法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-text">性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%85%AC%E7%BA%A6%E6%95%B0"><span class="toc-text">斐波那契公约数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UPD10-15"><span class="toc-text">UPD10.15</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4310,7 +4254,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4593,7 +4537,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/斐波那契数列相关/","name":"斐波那契数列相关"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"斐波那契数列相关","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T09:29:39.612Z","articleSection":"题解","keywords":"博客园,OI,数学","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/斐波那契数列相关/","name":"斐波那契数列相关"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"斐波那契数列相关","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T09:29:39.612Z","articleSection":"题解","keywords":"博客园,OI,数学","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

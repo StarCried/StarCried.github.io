@@ -48,14 +48,14 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>Dirichlet卷积和莫比乌斯反演 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,OI,数论,StarCried, 微光, OI, ACM, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="非全面讲解，仅供记录笔记  Dirichlet卷积 \[(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})\] \[\varepsilon &#x3D;\mu \ast 1 \iff \varepsilon(n) &#x3D; \sum_{d\mid n} \mu(d)\] 其中\(\varepsilon\)卷任何函数等于其函数本身。 莫比乌斯函数\(\mu\">
+  <meta name="keywords" content="博客园,OI,数论,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
+  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dirichlet卷积和莫比乌斯反演">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="非全面讲解，仅供记录笔记  Dirichlet卷积 \[(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})\] \[\varepsilon &#x3D;\mu \ast 1 \iff \varepsilon(n) &#x3D; \sum_{d\mid n} \mu(d)\] 其中\(\varepsilon\)卷任何函数等于其函数本身。 莫比乌斯函数\(\mu\">
+<meta property="og:description" content="非全面讲解，仅供记录笔记  Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsilon &#x3D;\mu \ast 1 \iff \varepsilon(n) &#x3D; \sum_{d\mid n} \mu(d)$$其中$\varepsilon$卷任何函数等于其函数本身。 莫比乌斯函数$\mu">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1885,14 +1885,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.debug = "env"; // 调试模式
+  volantis.debug = "false"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    debug: "env",
+    debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1728892721820),
+    lastupdate: new Date(1731774785315),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
     <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
   </span>
   
 
@@ -2806,55 +2806,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <blockquote>
 <p>非全面讲解，仅供记录笔记</p>
 </blockquote>
-<h2 id="dirichlet卷积">Dirichlet卷积</h2>
-<p><span class="math display">\[(f\ast g)(n)=\sum_{d\mid
-n}f(d)g(\frac{n}{d})\]</span> <span class="math display">\[\varepsilon
-=\mu \ast 1 \iff \varepsilon(n) = \sum_{d\mid n} \mu(d)\]</span>
-其中<span
-class="math inline">\(\varepsilon\)</span>卷任何函数等于其函数本身。</p>
-<h2 id="莫比乌斯函数mu">莫比乌斯函数<span
-class="math inline">\(\mu\)</span></h2>
-<h3 id="定义">定义</h3>
-<p><span
-class="math display">\[\mu(n)=\begin{cases}1&amp;n=0\\(-1)^k&amp;k为n的本质不同质因子个数\\0&amp;otherwise\\
-\end{cases}\]</span></p>
-<h3 id="性质">性质</h3>
-<ul>
-<li><span class="math display">\[\sum_{d\mid
-n}\mu(d)=\begin{cases}1&amp;n=1\\0&amp;n\neq 1\\
-\end{cases}\\]</span></li>
+<h2 id="Dirichlet卷积"><a href="#Dirichlet卷积" class="headerlink" title="Dirichlet卷积"></a>Dirichlet卷积</h2><p>$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$<br>$$\varepsilon &#x3D;\mu \ast 1 \iff \varepsilon(n) &#x3D; \sum_{d\mid n} \mu(d)$$<br>其中$\varepsilon$卷任何函数等于其函数本身。</p>
+<h2 id="莫比乌斯函数-mu"><a href="#莫比乌斯函数-mu" class="headerlink" title="莫比乌斯函数$\mu$"></a>莫比乌斯函数$\mu$</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>$$\mu(n)&#x3D;\begin{cases}1&amp;n&#x3D;0\(-1)^k&amp;k为n的本质不同质因子个数\0&amp;otherwise\ \end{cases}$$</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ul>
+<li>$$\sum_{d\mid n}\mu(d)&#x3D;\begin{cases}1&amp;n&#x3D;1\0&amp;n\neq 1\ \end{cases}$$</li>
 <li>积性函数，所以可以线性筛求得：</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getMu</span><span class="params">()</span></span>&#123;</span><br><span class="line">	mu[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=maxn;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!mark[i])prime[++tot]=i,mu[i]=<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=tot <span class="keyword">and</span> i*prime[j]&lt;=maxn;j++)&#123;</span><br><span class="line">			mark[i*prime[j]]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)&#123;</span><br><span class="line">				mu[i*prime[j]]=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			mu[i*prime[j]]=-mu[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="莫比乌斯反演">莫比乌斯反演</h2>
-<p>若有 <span class="math display">\[f(n) = \sum_{d\mid
-n}g(d)\]</span></p>
+
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>若有<br>$$f(n) &#x3D; \sum_{d\mid n}g(d)$$</p>
 <p>则有</p>
-<p><span class="math display">\[g(n)=\sum_{d\mid
-n}\mu(\frac{d}{n})f(d)\]</span></p>
+<p>$$g(n)&#x3D;\sum_{d\mid n}\mu(\frac{d}{n})f(d)$$</p>
 <p>正确性证明（卷积）：</p>
-<p>原问题即已知 <span class="math inline">\(f=g*1\)</span> 求证 <span
-class="math inline">\(g=f*\mu\)</span></p>
-<p>证明：<span class="math inline">\(f*\mu=g*1*\mu \implies f*\mu =
-g*\varepsilon \implies f*\mu=g\)</span></p>
+<p>原问题即已知 $f&#x3D;g<em>1$ 求证 $g&#x3D;f</em>\mu$</p>
+<p>证明：$f<em>\mu&#x3D;g</em>1<em>\mu \implies f</em>\mu &#x3D; g<em>\varepsilon \implies f</em>\mu&#x3D;g$</p>
 <p>得证。</p>
-<h3 id="反演结论">反演结论</h3>
-<p><span
-class="math display">\[[\gcd(i,j)=1]\iff\sum_{d\mid\gcd(i,j)}\mu(d)\]</span></p>
-<h2 id="例题">例题</h2>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2522">P2522 Problem
-b</a></p>
+<h3 id="反演结论"><a href="#反演结论" class="headerlink" title="反演结论"></a>反演结论</h3><p>$$[\gcd(i,j)&#x3D;1]\iff\sum_{d\mid\gcd(i,j)}\mu(d)$$</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2522">P2522 Problem b</a></p>
 <p>容斥原理，分别求四个从1开始的区间的个数合并即可。</p>
 <p>那么我们的问题就是处理单个区间的个数。</p>
-<p>求 <span
-class="math display">\[\sum_{i=1}^{n}\sum_{j=1}^{m}[\gcd(i,j)=k]\]</span>
-即 <span
-class="math display">\[\sum_{i=1}^{\frac{n}{k}}\sum_{j=1}^{\frac{m}{k}}[\gcd(i,j)=1]\]</span>
-即 <span
-class="math display">\[\sum_{i=1}^{\frac{n}{k}}\sum_{j=1}^{\frac{m}{k}}\sum_{d\mid
-\gcd(i,j)}\mu(d)\]</span> 即 <span
-class="math display">\[\sum_{d=1}^{min(\frac{n}{k},\frac{m}{k})}\mu(d)\lfloor\frac{n}{kd}\rfloor\lfloor\frac{m}{kd}\rfloor\]</span>
-然后数论分块求即可。</p>
+<p>求<br>$$\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{m}[\gcd(i,j)&#x3D;k]$$<br>即<br>$$\sum_{i&#x3D;1}^{\frac{n}{k}}\sum_{j&#x3D;1}^{\frac{m}{k}}[\gcd(i,j)&#x3D;1]$$<br>即<br>$$\sum_{i&#x3D;1}^{\frac{n}{k}}\sum_{j&#x3D;1}^{\frac{m}{k}}\sum_{d\mid \gcd(i,j)}\mu(d)$$<br>即<br>$$\sum_{d&#x3D;1}^{min(\frac{n}{k},\frac{m}{k})}\mu(d)\lfloor\frac{n}{kd}\rfloor\lfloor\frac{m}{kd}\rfloor$$<br>然后数论分块求即可。</p>
 
   </div>
   
@@ -2952,22 +2923,17 @@ class="math display">\[\sum_{d=1}^{min(\frac{n}{k},\frac{m}{k})}\mu(d)\lfloor\fr
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF896D Nephren Runs a Cinema</p>
-          <p class='content'>CF896D Nephren Runs a Cinema
-题意
-售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况
-\(n\) 名顾客后剩余钱...</p>
+        <a class='prev' href='/2022/04/30/GCD%20SUM/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>GCD SUM</p>
+          <p class='content'>GCD SUM求$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n\gcd(i,j)$$将原式变换得到$$\sum_{d&#x3D;1}^nd\sum_{i&#x3D;1}...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/GCD%20SUM/'>
-          <p class='title'>GCD SUM<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>GCD SUM
-求 \[
-\sum_{i=1}^n\sum_{j=1}^n\gcd(i,j)
-\] 将原式变换得到 \[
-\sum_{d=1}^nd\sum_{i=1}^{\lfloor...</p>
+        <a class='next' href='/2022/04/30/Guass%E6%B6%88%E5%85%83%E6%80%BB%E7%BB%93/'>
+          <p class='title'>Guass消元总结<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Guass消元约旦·高斯消元法 求线性方程组我们用一个$n*(n+1)$的矩阵存储线性方程组各项系数和零次项系数。
+
+每一次找到一个未知数系数最大的方程，交换当前行方程和该方程，并将其他行该未知...</p>
         </a>
       
     </div>
@@ -3033,12 +2999,22 @@ class="math display">\[\sum_{d=1}^{min(\frac{n}{k},\frac{m}{k})}\mu(d)\lfloor\fr
           <li><a class="flat-box"
             title="/categories/Furry/" href="/categories/Furry/"
             active-action="action-categoriesFurry"
-            ><div class='name'>Furry</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Furry</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
-            active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
+            title="/categories/Marathon/" href="/categories/Marathon/"
+            active-action="action-categoriesMarathon"
+            ><div class='name'>Marathon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Web/" href="/categories/Web/"
+            active-action="action-categoriesWeb"
+            ><div class='name'>Web</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%88%9B%E4%BD%9C/" href="/categories/%E5%88%9B%E4%BD%9C/"
+            active-action="action-categoriesE5889BE4BD9C"
+            ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
@@ -3046,14 +3022,9 @@ class="math display">\[\sum_{d=1}^{min(\frac{n}{k},\frac{m}{k})}\mu(d)\lfloor\fr
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%97%85%E8%A1%8C/" href="/categories/%E6%97%85%E8%A1%8C/"
-            active-action="action-categoriesE69785E8A18C"
-            ><div class='name'>旅行</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(39)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(40)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -3090,7 +3061,7 @@ class="math display">\[\sum_{d=1}^{min(\frac{n}{k},\frac{m}{k})}\mu(d)\lfloor\fr
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#dirichlet%E5%8D%B7%E7%A7%AF"><span class="toc-text">Dirichlet卷积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0mu"><span class="toc-text">莫比乌斯函数\(\mu\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-text">性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="toc-text">莫比乌斯反演</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94%E7%BB%93%E8%AE%BA"><span class="toc-text">反演结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dirichlet%E5%8D%B7%E7%A7%AF"><span class="toc-text">Dirichlet卷积</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0-mu"><span class="toc-text">莫比乌斯函数$\mu$</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8"><span class="toc-text">性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="toc-text">莫比乌斯反演</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94%E7%BB%93%E8%AE%BA"><span class="toc-text">反演结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li></ol>
     </div>
   </section>
 
@@ -4242,7 +4213,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4525,7 +4496,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/Dirichlet卷积和莫比乌斯反演/","name":"Dirichlet卷积和莫比乌斯反演"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Dirichlet卷积和莫比乌斯反演","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T07:54:09.374Z","articleSection":"数学","keywords":"博客园,OI,数论","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/数学/","name":"数学"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/Dirichlet卷积和莫比乌斯反演/","name":"Dirichlet卷积和莫比乌斯反演"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Dirichlet卷积和莫比乌斯反演","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T07:54:09.374Z","articleSection":"数学","keywords":"博客园,OI,数论","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

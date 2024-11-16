@@ -48,14 +48,14 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>最大权闭合子图 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,OI,网络流,StarCried, 微光, OI, ACM, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="最大权闭合子图 闭合子图 定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。 最大权闭合子图 给有向图的点加一个点权，能得到的点权最大的闭合子图。 网络流模型  将所有正点权的点的点权全部加入答案。接下来我们将原来正点权的点变成负点权。现在图上全是负点，我们需要尽量选最少点权使图符合条件。 设超级源点和超级汇点。 将超级源向所有原来是">
+  <meta name="keywords" content="博客园,OI,网络流,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
+  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="最大权闭合子图">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="最大权闭合子图 闭合子图 定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。 最大权闭合子图 给有向图的点加一个点权，能得到的点权最大的闭合子图。 网络流模型  将所有正点权的点的点权全部加入答案。接下来我们将原来正点权的点变成负点权。现在图上全是负点，我们需要尽量选最少点权使图符合条件。 设超级源点和超级汇点。 将超级源向所有原来是">
+<meta property="og:description" content="最大权闭合子图闭合子图定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。 最大权闭合子图给有向图的点加一个点权，能得到的点权最大的闭合子图。 网络流模型 将所有正点权的点的点权全部加入答案。接下来我们将原来正点权的点变成负点权。现在图上全是负点，我们需要尽量选最少点权使图符合条件。 设超级源点和超级汇点。 将超级源向所有原来是正点权的点连边，流量为其点">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1885,14 +1885,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.debug = "env"; // 调试模式
+  volantis.debug = "false"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    debug: "env",
+    debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1728892721820),
+    lastupdate: new Date(1731774785315),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
     <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
   </span>
   
 
@@ -2803,13 +2803,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="最大权闭合子图">最大权闭合子图</h1>
-<h3 id="闭合子图">闭合子图</h3>
-<p>定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。</p>
-<h3 id="最大权闭合子图-1">最大权闭合子图</h3>
-<p>给有向图的点加一个点权，能得到的点权最大的闭合子图。</p>
-<h2 id="网络流模型">网络流模型</h2>
-<ul>
+    <h1 id="最大权闭合子图"><a href="#最大权闭合子图" class="headerlink" title="最大权闭合子图"></a>最大权闭合子图</h1><h3 id="闭合子图"><a href="#闭合子图" class="headerlink" title="闭合子图"></a>闭合子图</h3><p>定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。</p>
+<h3 id="最大权闭合子图-1"><a href="#最大权闭合子图-1" class="headerlink" title="最大权闭合子图"></a>最大权闭合子图</h3><p>给有向图的点加一个点权，能得到的点权最大的闭合子图。</p>
+<h2 id="网络流模型"><a href="#网络流模型" class="headerlink" title="网络流模型"></a>网络流模型</h2><ul>
 <li>将所有正点权的点的点权全部加入答案。接下来我们将原来正点权的点变成负点权。现在图上全是负点，我们需要尽量选最少点权使图符合条件。</li>
 <li>设超级源点和超级汇点。</li>
 <li>将超级源向所有原来是正点权的点连边，流量为其点权绝对值。</li>
@@ -2819,33 +2815,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>最后用前面的答案减去最小割即可。</li>
 <li>如果需要构造方案，请看下例题。</li>
 </ul>
-<h2 id="p2762-太空飞行计划问题">P2762 太空飞行计划问题</h2>
-<h3 id="题意">题意</h3>
-<p>给你两个集合，一个集合所有元素有正点权，另一个有负点权，前一个集合的每一个元素有若干后一个集合的必选后继，要求若选择该元素后继必选，求能得到的最大点权和。</p>
-<h3 id="思路">思路</h3>
-<p>最大权闭合子图模板。将前一个集合的所有元素向其所有后继连边，就变成了一个有向图，然后用上述方法建模即可。</p>
-<h4 id="关于读入">关于读入</h4>
-<p>我使用了快读来读入换行符。其代码如下：</p>
+<h2 id="P2762-太空飞行计划问题"><a href="#P2762-太空飞行计划问题" class="headerlink" title="P2762 太空飞行计划问题"></a>P2762 太空飞行计划问题</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给你两个集合，一个集合所有元素有正点权，另一个有负点权，前一个集合的每一个元素有若干后一个集合的必选后继，要求若选择该元素后继必选，求能得到的最大点权和。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>最大权闭合子图模板。将前一个集合的所有元素向其所有后继连边，就变成了一个有向图，然后用上述方法建模即可。</p>
+<h4 id="关于读入"><a href="#关于读入" class="headerlink" title="关于读入"></a>关于读入</h4><p>我使用了快读来读入换行符。其代码如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="function"><span class="type">static</span> <span class="type">char</span> <span class="title">c</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c) <span class="keyword">and</span> c!=<span class="string">&#x27;\n&#x27;</span>) w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">if</span>(c==<span class="string">&#x27;\n&#x27;</span>)<span class="keyword">return</span> c=<span class="built_in">getchar</span>(),INF;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中，利用了 <code>static</code>
-来保证之前读入的字符能够重新判断。在这个函数中，如果读到换行符将会返回
-INF。</p>
-<h4 id="关于输出方案">关于输出方案</h4>
-<p>在这道题中，思考网络流建模方式即可得出，如果在最后一次 bfs
-中一个正点权的点可以到达，说明其没有被取消选择，即被选择了；如果一个负点权的点可以到达，说明其被选择了。</p>
+
+<p>其中，利用了 <code>static</code> 来保证之前读入的字符能够重新判断。在这个函数中，如果读到换行符将会返回 INF。</p>
+<h4 id="关于输出方案"><a href="#关于输出方案" class="headerlink" title="关于输出方案"></a>关于输出方案</h4><p>在这道题中，思考网络流建模方式即可得出，如果在最后一次 bfs 中一个正点权的点可以到达，说明其没有被取消选择，即被选择了；如果一个负点权的点可以到达，说明其被选择了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">105</span>,maxm=<span class="number">2600</span>,s=<span class="number">103</span>,t=<span class="number">104</span>,INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="function"><span class="type">static</span> <span class="type">char</span> <span class="title">c</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">		<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c) <span class="keyword">and</span> c!=<span class="string">&#x27;\n&#x27;</span>) w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">&#x27;\n&#x27;</span>)<span class="keyword">return</span> c=<span class="built_in">getchar</span>(),INF;</span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">		<span class="keyword">return</span> w?-x:x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> n,m,val[maxn],ans;</span><br><span class="line">	<span class="type">int</span> ecnt=<span class="number">1</span>,head[maxn],cur[maxn],to[maxm&lt;&lt;<span class="number">1</span>],nxt[maxm&lt;&lt;<span class="number">1</span>],w[maxm&lt;&lt;<span class="number">1</span>];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">addedge</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c)</span></span>&#123;</span><br><span class="line">		to[++ecnt]=b,nxt[ecnt]=head[a],head[a]=ecnt,w[ecnt]=c;</span><br><span class="line">		to[++ecnt]=a,nxt[ecnt]=head[b],head[b]=ecnt,w[ecnt]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> dep[maxn];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">memset</span>(dep,<span class="number">-1</span>,<span class="keyword">sizeof</span> dep);</span><br><span class="line">		<span class="type">static</span> <span class="type">int</span> q[maxn];</span><br><span class="line">		<span class="type">int</span> hd=<span class="number">0</span>,tl=<span class="number">1</span>;</span><br><span class="line">		q[tl]=s,dep[s]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(hd&lt;tl)&#123;</span><br><span class="line">			<span class="type">int</span> x=q[++hd];</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> u,i=head[x];i;i=nxt[i]) <span class="keyword">if</span>(dep[u=to[i]]==<span class="number">-1</span> <span class="keyword">and</span> w[i])</span><br><span class="line">				dep[u]=dep[x]<span class="number">+1</span>,q[++tl]=u;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> dep[t]!=<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> flow)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(x==t)<span class="keyword">return</span> flow;</span><br><span class="line">		<span class="type">int</span> used=<span class="number">0</span>,u;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span>&amp; i=cur[x];i;i=nxt[i]) <span class="keyword">if</span>(dep[u=to[i]]==dep[x]<span class="number">+1</span> <span class="keyword">and</span> w[i])&#123;</span><br><span class="line">			<span class="type">int</span> v=<span class="built_in">dfs</span>(u,<span class="built_in">min</span>(flow-used,w[i]));</span><br><span class="line">			used+=v,w[i]-=v,w[i^<span class="number">1</span>]+=v;</span><br><span class="line">			<span class="keyword">if</span>(used==flow) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> used;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">dinic</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">bfs</span>()) <span class="built_in">memcpy</span>(cur,head,<span class="keyword">sizeof</span> cur),ans+=<span class="built_in">dfs</span>(s,INF);</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		m=<span class="built_in">read</span>(),n=<span class="built_in">read</span>();<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> v,i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">			<span class="built_in">addedge</span>(s,i,v=<span class="built_in">read</span>());ans+=v;</span><br><span class="line">			<span class="keyword">while</span>((v=<span class="built_in">read</span>())!=INF) <span class="built_in">addedge</span>(i,v+m,INF);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">addedge</span>(i+m,t,<span class="built_in">read</span>());</span><br><span class="line">		ans-=<span class="built_in">dinic</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) <span class="keyword">if</span>(dep[i]!=<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,i);<span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">if</span>(dep[m+i]!=<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,i);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n%d\n&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="cf103e-buying-sets">CF103E Buying Sets</h2>
-<h3 id="题意-1">题意</h3>
-<p>有一个大小为 n 的全集，每个元素是一个数，有 n 个子集。题目保证任意 k
-个子集的并的大小 ⩾ k。</p>
+
+<h2 id="CF103E-Buying-Sets"><a href="#CF103E-Buying-Sets" class="headerlink" title="CF103E Buying Sets"></a>CF103E Buying Sets</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>有一个大小为 n 的全集，每个元素是一个数，有 n 个子集。题目保证任意 k 个子集的并的大小 ⩾ k。</p>
 <p>每个子集有一个可正可负的权值，你需要选出一些子集使得这些子集并的大小等于子集个数，且所选子集的权值和最小。可以为空集。</p>
-<h3 id="思路-1">思路</h3>
-<p>发现如果没有 <code>子集并的大小等于子集个数</code>
-的限制，将边权取负就是最大权闭合子图的模板。考虑怎么满足这个限制。</p>
-<p>我们把每个节点的点权加上一个巨大的偏移量 <span
-class="math inline">\(\Delta\)</span> 即可。</p>
-<p>原因是，如果跑最大流时要多选一个点的话，代价一定会变得很大。因为题目保证
-<code>任意 k 个子集的并的大小 ⩾ k</code>，而且可以选空集，所以我们可以这么干。</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>发现如果没有 <code>子集并的大小等于子集个数</code> 的限制，将边权取负就是最大权闭合子图的模板。考虑怎么满足这个限制。</p>
+<p>我们把每个节点的点权加上一个巨大的偏移量 $\Delta$ 即可。</p>
+<p>原因是，如果跑最大流时要多选一个点的话，代价一定会变得很大。因为题目保证 <code>任意 k 个子集的并的大小 ⩾ k</code>，而且可以选空集，所以我们可以这么干。</p>
 <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/record/39418512">早期代码</a></p>
 
   </div>
@@ -2944,23 +2927,18 @@ class="math inline">\(\Delta\)</span> 即可。</p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E8%A6%86%E7%9B%96/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>最小路径覆盖</p>
-          <p class='content'>路径覆盖
-路径覆盖指一个路径的集合中所有路径点集的并集为原图点集。最小路径覆盖使路径集合大小最小。
-路径覆盖分为可否重复选点两种。可重复选点在建模中加大流量即可。
-网络流模型
-
-建超级...</p>
+        <a class='prev' href='/2022/04/30/%E6%96%9C%E5%A0%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>斜堆</p>
+          <p class='content'>斜堆斜堆是个很有趣的东西。而且它有一些很有意思的性质。
+斜堆的大概就是每次往堆里面插入一个元素的操作非常“有趣”。插入的节点从根节点开始。如果插入的元素值比所在根小，它会将根“挤下去”，即替代原...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-POJ3041-P1129/'>
-          <p class='title'>最小覆盖问题-POJ3041-P1129<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>POJ3041
-这道题正解对于像我这种蒟蒻来说比较难以想到。
-我们发现每次覆盖的只是一条线上的所有点。那么我们可以把它想象成一个二分图，两个集合分别是横轴和纵轴。
-想一想，这实际上是不是就...</p>
+        <a class='next' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E7%BD%91%E7%BB%9C%E6%B5%81dinic/'>
+          <p class='title'>最大网络流dinic<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>算法介绍最大流问题是指在一个有向图中，从一个源点到一个汇点，最大化流量，使得所有边的容量都大于等于 0。
+dinic 算法是一种高效的求解最大流问题的算法，其时间复杂度为 $O(EV^2)$。
+...</p>
         </a>
       
     </div>
@@ -3026,12 +3004,22 @@ class="math inline">\(\Delta\)</span> 即可。</p>
           <li><a class="flat-box"
             title="/categories/Furry/" href="/categories/Furry/"
             active-action="action-categoriesFurry"
-            ><div class='name'>Furry</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Furry</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
-            active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
+            title="/categories/Marathon/" href="/categories/Marathon/"
+            active-action="action-categoriesMarathon"
+            ><div class='name'>Marathon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Web/" href="/categories/Web/"
+            active-action="action-categoriesWeb"
+            ><div class='name'>Web</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%88%9B%E4%BD%9C/" href="/categories/%E5%88%9B%E4%BD%9C/"
+            active-action="action-categoriesE5889BE4BD9C"
+            ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
@@ -3039,14 +3027,9 @@ class="math inline">\(\Delta\)</span> 即可。</p>
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%97%85%E8%A1%8C/" href="/categories/%E6%97%85%E8%A1%8C/"
-            active-action="action-categoriesE69785E8A18C"
-            ><div class='name'>旅行</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(39)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(40)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -3083,7 +3066,7 @@ class="math inline">\(\Delta\)</span> 即可。</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE"><span class="toc-text">闭合子图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE-1"><span class="toc-text">最大权闭合子图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%B5%81%E6%A8%A1%E5%9E%8B"><span class="toc-text">网络流模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p2762-%E5%A4%AA%E7%A9%BA%E9%A3%9E%E8%A1%8C%E8%AE%A1%E5%88%92%E9%97%AE%E9%A2%98"><span class="toc-text">P2762 太空飞行计划问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%AF%BB%E5%85%A5"><span class="toc-text">关于读入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BE%93%E5%87%BA%E6%96%B9%E6%A1%88"><span class="toc-text">关于输出方案</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cf103e-buying-sets"><span class="toc-text">CF103E Buying Sets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-1"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="toc-text">思路</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE"><span class="toc-text">闭合子图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE-1"><span class="toc-text">最大权闭合子图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%B5%81%E6%A8%A1%E5%9E%8B"><span class="toc-text">网络流模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P2762-%E5%A4%AA%E7%A9%BA%E9%A3%9E%E8%A1%8C%E8%AE%A1%E5%88%92%E9%97%AE%E9%A2%98"><span class="toc-text">P2762 太空飞行计划问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%AF%BB%E5%85%A5"><span class="toc-text">关于读入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BE%93%E5%87%BA%E6%96%B9%E6%A1%88"><span class="toc-text">关于输出方案</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF103E-Buying-Sets"><span class="toc-text">CF103E Buying Sets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-1"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="toc-text">思路</span></a></li></ol>
     </div>
   </section>
 
@@ -4235,7 +4218,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4518,7 +4501,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/最大权闭合子图/","name":"最大权闭合子图"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"最大权闭合子图","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T04:04:58.195Z","articleSection":"算法","keywords":"博客园,OI,网络流","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/算法/","name":"算法"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/最大权闭合子图/","name":"最大权闭合子图"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"最大权闭合子图","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T04:04:58.195Z","articleSection":"算法","keywords":"博客园,OI,网络流","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

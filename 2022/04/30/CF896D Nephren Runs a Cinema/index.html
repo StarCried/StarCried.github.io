@@ -48,14 +48,14 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>CF896D Nephren Runs a Cinema - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,OI,组合数学,多项式,StarCried, 微光, OI, ACM, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="CF896D Nephren Runs a Cinema 题意 售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况 \(n\) 名顾客后剩余钱数在 \(l\sim r\) 的方案数。 思路 这是我们一道模拟赛题。 解法 1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，用组合">
+  <meta name="keywords" content="博客园,OI,组合数学,多项式,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
+  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF896D Nephren Runs a Cinema">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="CF896D Nephren Runs a Cinema 题意 售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况 \(n\) 名顾客后剩余钱数在 \(l\sim r\) 的方案数。 思路 这是我们一道模拟赛题。 解法 1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，用组合">
+<meta property="og:description" content="CF896D Nephren Runs a Cinema题意售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况 $n$ 名顾客后剩余钱数在 $l\sim r$ 的方案数。 思路这是我们一道模拟赛题。 解法 1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，用组合数减去另外一个组合数然后乘上">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1886,14 +1886,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
-  volantis.debug = "env"; // 调试模式
+  volantis.debug = "false"; // 调试模式
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    debug: "env",
+    debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1728892721820),
+    lastupdate: new Date(1731774785315),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2708,7 +2708,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
     <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
   </span>
   
 
@@ -2804,34 +2804,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="cf896d-nephren-runs-a-cinema">CF896D Nephren Runs a Cinema</h2>
-<h3 id="题意">题意</h3>
-<p>售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况
-<span class="math inline">\(n\)</span> 名顾客后剩余钱数在 <span
-class="math inline">\(l\sim r\)</span> 的方案数。</p>
-<h3 id="思路">思路</h3>
-<p>这是我们一道模拟赛题。</p>
-<p>解法
-1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，用组合数减去另外一个组合数然后乘上所有顾客中选这些顾客的方案数即可。</p>
+    <h2 id="CF896D-Nephren-Runs-a-Cinema"><a href="#CF896D-Nephren-Runs-a-Cinema" class="headerlink" title="CF896D Nephren Runs a Cinema"></a>CF896D Nephren Runs a Cinema</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况 $n$ 名顾客后剩余钱数在 $l\sim r$ 的方案数。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这是我们一道模拟赛题。</p>
+<p>解法 1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，用组合数减去另外一个组合数然后乘上所有顾客中选这些顾客的方案数即可。</p>
 <p>解法 2：暴力动态规划。每次从至多三个方向转移。</p>
 <p>赛时我先想到第一个解法但是没想到枚举操作人数，以为不可做，于是想到了优化暴力的解法。</p>
-<p><strong>解法 3</strong>：解法 2 的优化。求出 <span
-class="math inline">\(F=(x^{-1}+1+x)^n\)</span> ，然后 <span
-class="math inline">\(f(x)-f(x+2)\)</span> 的第 <span
-class="math inline">\(l \sim r\)</span> 项的和即为答案。</p>
-<p><span class="math inline">\((x^{-1}+1+x)\)</span>
-表示三种转移方式，但是求出来的 <span class="math inline">\(F\)</span>
-显然不是正确答案，因为会有从负数幂的贡献是应该减掉的。</p>
-<p>那么我们就考虑减掉它，实际上和解法一相同，<span
-class="math inline">\(f(x)-f(x+2)\)</span>
-相当于减去了错解，那么减完之后就是答案了。</p>
-<p>因为每次要倍长多项式，使用快速幂一样的方式卷就可以了。根据主定理，时间复杂度
-<span class="math inline">\(O(n\log n)\)</span>。</p>
-<p>考场上有部分分，模数为 <span
-class="math inline">\(998244353\)</span>，那么正解只需要改成任意模数多项式乘法就行了。</p>
-<h3 id="代码">代码</h3>
-<p>注意，此代码不可 AC 此题，仅在模数为 <span
-class="math inline">\(998244353\)</span> 时正确。</p>
+<p><strong>解法 3</strong>：解法 2 的优化。求出 $F&#x3D;(x^{-1}+1+x)^n$ ，然后 $f(x)-f(x+2)$ 的第 $l \sim r$ 项的和即为答案。</p>
+<p>$(x^{-1}+1+x)$ 表示三种转移方式，但是求出来的 $F$ 显然不是正确答案，因为会有从负数幂的贡献是应该减掉的。</p>
+<p>那么我们就考虑减掉它，实际上和解法一相同，$f(x)-f(x+2)$ 相当于减去了错解，那么减完之后就是答案了。</p>
+<p>因为每次要倍长多项式，使用快速幂一样的方式卷就可以了。根据主定理，时间复杂度 $O(n\log n)$。</p>
+<p>考场上有部分分，模数为 $998244353$，那么正解只需要改成任意模数多项式乘法就行了。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>注意，此代码不可 AC 此题，仅在模数为 $998244353$ 时正确。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c)) w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">2e6</span><span class="number">+10</span>,mod=<span class="number">998244353</span>,ge=<span class="number">3</span>,gi=<span class="number">998244354</span>/<span class="number">3</span>;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">fpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="type">int</span> ans=<span class="number">1</span>;<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=<span class="number">1ll</span>*a*a%mod)<span class="keyword">if</span>(b&amp;<span class="number">1</span>)ans=<span class="number">1ll</span>*ans*a%mod;<span class="keyword">return</span> ans;&#125;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">NTT</span>&#123;</span><br><span class="line">		<span class="type">int</span> r[maxn],lim;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getr</span><span class="params">(<span class="type">int</span> li)</span></span>&#123;lim=li;<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;lim;i++) r[i]=(r[i&gt;&gt;<span class="number">1</span>]&gt;&gt;<span class="number">1</span>)|((i&amp;<span class="number">1</span>)*(lim&gt;&gt;<span class="number">1</span>));&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">operator</span> <span class="params">()</span> <span class="params">(<span class="type">int</span> *a,<span class="type">int</span> type)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;lim;i++) <span class="keyword">if</span>(i&lt;r[i]) <span class="built_in">swap</span>(a[i],a[r[i]]);</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> mid=<span class="number">1</span>;mid&lt;lim;mid&lt;&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="type">int</span> rt=<span class="built_in">fpow</span>(type==<span class="number">1</span>?ge:gi,(mod<span class="number">-1</span>)/(mid&lt;&lt;<span class="number">1</span>));</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> r=mid&lt;&lt;<span class="number">1</span>,j=<span class="number">0</span>;j&lt;lim;j+=r)&#123;</span><br><span class="line">					<span class="type">int</span> p=<span class="number">1</span>;</span><br><span class="line">					<span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;mid;k++,p=<span class="number">1ll</span>*p*rt%mod)&#123;</span><br><span class="line">						<span class="type">int</span> x=a[j+k],y=<span class="number">1ll</span>*p*a[j+k+mid]%mod;</span><br><span class="line">						a[j+k]=(x+y)%mod,a[j+k+mid]=(x-y+mod)%mod;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(type==<span class="number">-1</span>) <span class="keyword">for</span>(<span class="type">int</span> p=<span class="built_in">fpow</span>(lim,mod<span class="number">-2</span>),i=<span class="number">0</span>;i&lt;lim;i++) a[i]=<span class="number">1ll</span>*a[i]*p%mod;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;ntt;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">int</span> a[maxn],ans[maxn];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>();<span class="built_in">read</span>();</span><br><span class="line">		<span class="type">int</span> Lim=<span class="number">4</span>,lim=<span class="number">2</span>;</span><br><span class="line">		a[<span class="number">0</span>]=a[<span class="number">1</span>]=a[<span class="number">2</span>]=ans[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> x=n,Len=<span class="number">3</span>,len=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(x)&#123;</span><br><span class="line">			<span class="type">static</span> <span class="type">int</span> res[maxn],tmp[maxn];</span><br><span class="line">			<span class="keyword">if</span>(x&amp;<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;Lim;i++) res[i]=a[i];</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i=Lim;i&lt;Lim+lim;i++) res[i]=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;lim;i++) tmp[i]=ans[i];</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i=lim;i&lt;Lim+lim;i++) tmp[i]=<span class="number">0</span>;</span><br><span class="line">				len+=Len;lim=Lim;</span><br><span class="line">				<span class="keyword">while</span>(lim&lt;len) lim&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">				ntt.<span class="built_in">getr</span>(lim&lt;&lt;<span class="number">1</span>);</span><br><span class="line">				<span class="built_in">ntt</span>(res,<span class="number">1</span>),<span class="built_in">ntt</span>(tmp,<span class="number">1</span>);</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;lim&lt;&lt;<span class="number">1</span>;i++) tmp[i]=<span class="number">1ll</span>*res[i]*tmp[i]%mod;</span><br><span class="line">				<span class="built_in">ntt</span>(tmp,<span class="number">-1</span>);</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;lim;i++) ans[i]=tmp[i];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;Lim;i++) res[i]=a[i];</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=Lim;i&lt;Lim&lt;&lt;<span class="number">1</span>;i++) res[i]=<span class="number">0</span>;</span><br><span class="line">			Lim&lt;&lt;=<span class="number">1</span>;Len&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=Lim;i&lt;Lim&lt;&lt;<span class="number">1</span>;i++) res[i]=<span class="number">0</span>;</span><br><span class="line">			ntt.<span class="built_in">getr</span>(Lim&lt;&lt;<span class="number">1</span>);</span><br><span class="line">			<span class="built_in">ntt</span>(res,<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;Lim&lt;&lt;<span class="number">1</span>;i++) res[i]=<span class="number">1ll</span>*res[i]*res[i]%mod;</span><br><span class="line">			<span class="built_in">ntt</span>(res,<span class="number">-1</span>);</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;Lim;i++) a[i]=res[i];</span><br><span class="line">			x&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> l=<span class="built_in">read</span>(),r=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=n;i&lt;n&lt;&lt;<span class="number">1</span>;i++) ans[i]=(ans[i]-ans[i<span class="number">+2</span>]+mod)%mod;</span><br><span class="line">		<span class="type">int</span> Ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=n+l;i&lt;=n+r;i++) Ans=(Ans+ans[i])%mod;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,Ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2930,22 +2913,18 @@ class="math inline">\(998244353\)</span> 时正确。</p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF833B-线段树优化DP</p>
-          <p class='content'>CF833B-线段树优化DP题意将一个长为$n$的序列分成$k$段，每段贡献为其中不同数字的个数，求最大贡献和。$n\leq 35000,k\leq 50$。
-思路此处感谢@gxy001 聚铑的...</p>
+        <a class='prev' href='/2022/04/30/Dijkstra%20%E6%9C%80%E7%9F%AD%E8%B7%AF/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Dijkstra 最短路</p>
+          <p class='content'>我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra 或者 dijskra……
+我以后叫她迪杰克斯歘！
+dijkstra 是用来在有向图或者无向图中寻找任意两个点的最...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/'>
-          <p class='title'>Dirichlet卷积和莫比乌斯反演<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-非全面讲解，仅供记录笔记
-
-Dirichlet卷积
-\[(f\ast g)(n)=\sum_{d\mid
-n}f(d)g(\frac{n}{d})\] \[\varepsilon
-...</p>
+        <a class='next' href='/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/'>
+          <p class='title'>CF833B-线段树优化DP<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>CF833B-线段树优化DP题意将一个长为$n$的序列分成$k$段，每段贡献为其中不同数字的个数，求最大贡献和。$n\leq 35000,k\leq 50$。
+思路此处感谢@gxy001 聚铑的...</p>
         </a>
       
     </div>
@@ -3011,12 +2990,22 @@ n}f(d)g(\frac{n}{d})\] \[\varepsilon
           <li><a class="flat-box"
             title="/categories/Furry/" href="/categories/Furry/"
             active-action="action-categoriesFurry"
-            ><div class='name'>Furry</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Furry</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%95%99%E7%A8%8B/" href="/categories/%E6%95%99%E7%A8%8B/"
-            active-action="action-categoriesE69599E7A88B"
-            ><div class='name'>教程</div><div class='badge'>(3)</div></a></li>
+            title="/categories/Marathon/" href="/categories/Marathon/"
+            active-action="action-categoriesMarathon"
+            ><div class='name'>Marathon</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Web/" href="/categories/Web/"
+            active-action="action-categoriesWeb"
+            ><div class='name'>Web</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%88%9B%E4%BD%9C/" href="/categories/%E5%88%9B%E4%BD%9C/"
+            active-action="action-categoriesE5889BE4BD9C"
+            ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
@@ -3024,14 +3013,9 @@ n}f(d)g(\frac{n}{d})\] \[\varepsilon
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%97%85%E8%A1%8C/" href="/categories/%E6%97%85%E8%A1%8C/"
-            active-action="action-categoriesE69785E8A18C"
-            ><div class='name'>旅行</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(39)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(40)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -3068,7 +3052,7 @@ n}f(d)g(\frac{n}{d})\] \[\varepsilon
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cf896d-nephren-runs-a-cinema"><span class="toc-text">CF896D Nephren Runs a Cinema</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CF896D-Nephren-Runs-a-Cinema"><span class="toc-text">CF896D Nephren Runs a Cinema</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4220,7 +4204,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4503,7 +4487,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/CF896D Nephren Runs a Cinema/","name":"CF896D Nephren Runs a Cinema"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, OI, ACM, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CF896D Nephren Runs a Cinema","description":"StarCried 的狼窝，记录算法竞赛知识（OI, ACM）以及学习、工作、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T07:35:31.934Z","articleSection":"题解","keywords":"博客园,OI,组合数学,多项式","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/CF896D Nephren Runs a Cinema/","name":"CF896D Nephren Runs a Cinema"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CF896D Nephren Runs a Cinema","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2024-08-15T07:35:31.934Z","articleSection":"题解","keywords":"博客园,OI,组合数学,多项式","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 
