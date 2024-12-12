@@ -50,12 +50,12 @@
   <title>P3203 弹飞绵羊-分块 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,分块,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="P3203 弹飞绵羊-分块 观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。 对于修改，重构整个块内信息即可。 时间复杂度正确的一批 具体实现也挺简单。注意重构时从后往前贡献即可。 1234567891011121314151617181920212223242526272829303132333435363738394041">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P3203 弹飞绵羊-分块">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P3203 弹飞绵羊-分块观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。 对于修改，重构整个块内信息即可。 时间复杂度正确的一批 具体实现也挺简单。注意重构时从后往前贡献即可。 1234567891011121314151617181920212223242526272829303132333435363738394041424344">
+<meta property="og:description" content="P3203 弹飞绵羊-分块 观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。 对于修改，重构整个块内信息即可。 时间复杂度正确的一批 具体实现也挺简单。注意重构时从后往前贡献即可。 1234567891011121314151617181920212223242526272829303132333435363738394041">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,13 +2803,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="P3203-弹飞绵羊-分块"><a href="#P3203-弹飞绵羊-分块" class="headerlink" title="P3203 弹飞绵羊-分块"></a>P3203 弹飞绵羊-分块</h2><p>观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。</p>
+    <h2 id="p3203-弹飞绵羊-分块">P3203 弹飞绵羊-分块</h2>
+<p>观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。</p>
 <p>对于修改，重构整个块内信息即可。</p>
 <p><del>时间复杂度正确的一批</del></p>
 <p>具体实现也挺简单。注意重构时从后往前贡献即可。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">2e5</span><span class="number">+10</span>;</span><br><span class="line">	<span class="type">int</span> n,N,out[maxn],cos[maxn],a[maxn],belong[maxn],l[maxn],r[maxn];</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">sudo</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;<span class="keyword">for</span>(<span class="type">int</span> i=r;i&gt;=l;i--)<span class="keyword">if</span>(i+a[i]&gt;n <span class="keyword">or</span> belong[i+a[i]]!=belong[i])out[i]=i+a[i],cos[i]=<span class="number">1</span>;<span class="keyword">else</span> out[i]=out[i+a[i]],cos[i]=<span class="number">1</span>+cos[i+a[i]];&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>();</span><br><span class="line">		N=<span class="built_in">sqrt</span>(n);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			belong[i]=(i<span class="number">-1</span>)/N<span class="number">+1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(!l[belong[i]])l[belong[i]]=i;</span><br><span class="line">			r[belong[i]]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)a[i]=<span class="built_in">read</span>();</span><br><span class="line">		<span class="built_in">sudo</span>(<span class="number">1</span>,n);</span><br><span class="line">		<span class="type">int</span> q=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">while</span>(q--)&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">read</span>()==<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="type">int</span> sum=<span class="number">0</span>,pos=<span class="built_in">read</span>()<span class="number">+1</span>;</span><br><span class="line">				<span class="keyword">while</span>(pos&lt;=n)sum+=cos[pos],pos=out[pos];</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,sum);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="type">int</span> pos=<span class="built_in">read</span>()<span class="number">+1</span>;</span><br><span class="line">				a[pos]=<span class="built_in">read</span>();</span><br><span class="line">				<span class="built_in">sudo</span>(l[belong[pos]],r[belong[pos]]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
+<hr />
 <p>那我要是想知道最后弹飞前的点在哪呢？</p>
 <p>我们只需要在重构的时候记录一下从哪来的就好了。</p>
 <p>双倍经验：CF13E</p>
@@ -2911,23 +2911,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P3214 [HNOI2011]卡农</p>
-          <p class='content'>P3214 [HNOI2011]卡农题意在集合 ${1,2,\cdots,n}$ 中选出 $m$ 个非空子集满足：
-
-不存在完全相同的两个集合；
-每个元素在所有集合中出现次数之和为偶数。
-
-思路...</p>
+        <a class='prev' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2476-记忆化搜索</p>
+          <p class='content'>P2476-记忆化搜索
+DP?
+我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.
+15维DP显然不靠谱。
+那么我们就思考一下……状态个数？发现记忆化搜...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/'>
-          <p class='title'>P2491 消防 P1099 树网的核<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P2491 消防&#x2F;P1099 树网的核双倍经验，双倍快乐。
-题意在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。
-输出这个最小的值。
-做法Define:以下$s...</p>
+        <a class='next' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/'>
+          <p class='title'>P3209-平面图判定<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>平面图
+平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过...</p>
         </a>
       
     </div>
@@ -3011,6 +3008,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3055,7 +3057,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P3203-%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97"><span class="toc-text">P3203 弹飞绵羊-分块</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p3203-%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97"><span class="toc-text">P3203 弹飞绵羊-分块</span></a></li></ol>
     </div>
   </section>
 
@@ -4209,7 +4211,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

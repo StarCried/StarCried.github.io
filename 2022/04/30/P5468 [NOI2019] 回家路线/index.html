@@ -50,12 +50,12 @@
   <title>P5468 [NOI2019] 回家路线 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,优化,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="P5468 [NOI2019] 回家路线 斜率优化入门（指我写的东西而不是这道题） 题意 \(n\) 个节点，有 \(m\) 趟列车，车 \(i\) 从 \(p_i\) 时刻至 \(q_i\) 时刻从 \(x_i\) 地到 \(y_i\) 地。猫猫需要只坐列车从 \(1\) 节点到达 \(n\) 节点。 设猫猫在一个地方等待的时间为 \(t\)，那么代价为 \(At^2+Bt+C\)，其中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P5468 [NOI2019] 回家路线">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P5468%20[NOI2019]%20%E5%9B%9E%E5%AE%B6%E8%B7%AF%E7%BA%BF/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P5468 [NOI2019] 回家路线斜率优化入门（指我写的东西而不是这道题） 题意$n$ 个节点，有 $m$ 趟列车，车 $i$ 从 $p_i$ 时刻至 $q_i$ 时刻从 $x_i$ 地到 $y_i$ 地。猫猫需要只坐列车从 $1$ 节点到达 $n$ 节点。 设猫猫在一个地方等待的时间为 $t$，那么代价为 $At^2+Bt+C$，其中 $A\ B\ C$ 为给定非负常数，总代价为所有代价总">
+<meta property="og:description" content="P5468 [NOI2019] 回家路线 斜率优化入门（指我写的东西而不是这道题） 题意 \(n\) 个节点，有 \(m\) 趟列车，车 \(i\) 从 \(p_i\) 时刻至 \(q_i\) 时刻从 \(x_i\) 地到 \(y_i\) 地。猫猫需要只坐列车从 \(1\) 节点到达 \(n\) 节点。 设猫猫在一个地方等待的时间为 \(t\)，那么代价为 \(At^2+Bt+C\)，其中">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,15 +2803,68 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="P5468-NOI2019-回家路线"><a href="#P5468-NOI2019-回家路线" class="headerlink" title="P5468 [NOI2019] 回家路线"></a>P5468 [NOI2019] 回家路线</h2><p>斜率优化入门（指我写的东西而不是这道题）</p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>$n$ 个节点，有 $m$ 趟列车，车 $i$ 从 $p_i$ 时刻至 $q_i$ 时刻从 $x_i$ 地到 $y_i$ 地。猫猫需要只坐列车从 $1$ 节点到达 $n$ 节点。</p>
-<p>设猫猫在一个地方等待的时间为 $t$，那么代价为 $At^2+Bt+C$，其中 $A\ B\ C$ 为给定非负常数，总代价为所有代价总和与到达时间的和。求最小代价。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>设 $f_i$ 为走 $i$ 趟列车前的最小代价，有转移方程：<br>$$<br>f_i&#x3D;\min_{y_j&#x3D;x_i\land q_j\leq q_i}(f_j+A(p_i-q_j)^2+B(p_i-q_j)+C)<br>$$<br>最终代价即为：<br>$$<br>\min f_i+q_i<br>$$<br>对于第一个方程，不考虑其他限制，即为找到最优的 $j$ 更新 $i$，有：<br>$$<br>\begin{aligned}<br>f_i&amp;&#x3D;f_j+A(p_i-q_j)^2+B(p_i-q_j)+C\<br>f_i&amp;&#x3D;f_j+Ap_i^2+Aq_j^2-2Ap_iq_j+Bp_i-Bq_j+C\<br>f_j+Aq_j^2-Bq_j&amp;&#x3D;2Ap_iq_j+f_i-Ap_i^2-Bp_i-C<br>\end{aligned}<br>$$<br>对于已经更新过的 $j$，$f_j+Aq_j^2-Bq_j$ 是已知的。后半部分 $f_i-Ap_i^2-Bp_i-C$ 只有 $f_i$ 是未知的，也是我们要最优化的。</p>
-<p>那么我们可以将上式看做 $y&#x3D;kx+b$ 的形式，其中<br>$$<br>\begin{aligned}<br>&amp;y&#x3D;f_j+Aq_j^2-Bq_j\<br> &amp;x&#x3D;q_j\<br> &amp;k&#x3D;2Ap_i\<br> &amp;b&#x3D;f_i-Ap_i^2-Bp_i-C<br> \end{aligned}<br>$$<br>（常数其实可以属于任意一个位置，上述只是举例）</p>
-<p>那么我们可以将所有可以转移到的 $j$ 看做一个二维平面上的点，每次更新 $f_i$ 实际是对一个斜率找出经过其中一个点得到的最优的 $b$。那么显然只会选到前者构成的凸包上的点。很多题查询的斜率都是单调的，而且之后在凸包后方插入新的点，于是维护凸包的数组就变成了单调队列。否则的话，就是动态维护凸包并在凸包上二分。</p>
+    <h2 id="p5468-noi2019-回家路线">P5468 [NOI2019] 回家路线</h2>
+<p>斜率优化入门（指我写的东西而不是这道题）</p>
+<h3 id="题意">题意</h3>
+<p><span class="math inline">\(n\)</span> 个节点，有 <span
+class="math inline">\(m\)</span> 趟列车，车 <span
+class="math inline">\(i\)</span> 从 <span
+class="math inline">\(p_i\)</span> 时刻至 <span
+class="math inline">\(q_i\)</span> 时刻从 <span
+class="math inline">\(x_i\)</span> 地到 <span
+class="math inline">\(y_i\)</span> 地。猫猫需要只坐列车从 <span
+class="math inline">\(1\)</span> 节点到达 <span
+class="math inline">\(n\)</span> 节点。</p>
+<p>设猫猫在一个地方等待的时间为 <span
+class="math inline">\(t\)</span>，那么代价为 <span
+class="math inline">\(At^2+Bt+C\)</span>，其中 <span
+class="math inline">\(A\ B\ C\)</span>
+为给定非负常数，总代价为所有代价总和与到达时间的和。求最小代价。</p>
+<h3 id="思路">思路</h3>
+<p>设 <span class="math inline">\(f_i\)</span> 为走 <span
+class="math inline">\(i\)</span> 趟列车前的最小代价，有转移方程： <span
+class="math display">\[
+f_i=\min_{y_j=x_i\land q_j\leq q_i}(f_j+A(p_i-q_j)^2+B(p_i-q_j)+C)
+\]</span> 最终代价即为： <span class="math display">\[
+\min f_i+q_i
+\]</span> 对于第一个方程，不考虑其他限制，即为找到最优的 <span
+class="math inline">\(j\)</span> 更新 <span
+class="math inline">\(i\)</span>，有： <span class="math display">\[
+\begin{aligned}
+f_i&amp;=f_j+A(p_i-q_j)^2+B(p_i-q_j)+C\\
+f_i&amp;=f_j+Ap_i^2+Aq_j^2-2Ap_iq_j+Bp_i-Bq_j+C\\
+f_j+Aq_j^2-Bq_j&amp;=2Ap_iq_j+f_i-Ap_i^2-Bp_i-C
+\end{aligned}
+\]</span> 对于已经更新过的 <span class="math inline">\(j\)</span>，<span
+class="math inline">\(f_j+Aq_j^2-Bq_j\)</span> 是已知的。后半部分 <span
+class="math inline">\(f_i-Ap_i^2-Bp_i-C\)</span> 只有 <span
+class="math inline">\(f_i\)</span> 是未知的，也是我们要最优化的。</p>
+<p>那么我们可以将上式看做 <span class="math inline">\(y=kx+b\)</span>
+的形式，其中 <span class="math display">\[
+\begin{aligned}
+&amp;y=f_j+Aq_j^2-Bq_j\\
+&amp;x=q_j\\
+&amp;k=2Ap_i\\
+&amp;b=f_i-Ap_i^2-Bp_i-C
+\end{aligned}
+\]</span> （常数其实可以属于任意一个位置，上述只是举例）</p>
+<p>那么我们可以将所有可以转移到的 <span class="math inline">\(j\)</span>
+看做一个二维平面上的点，每次更新 <span
+class="math inline">\(f_i\)</span>
+实际是对一个斜率找出经过其中一个点得到的最优的 <span
+class="math inline">\(b\)</span>。那么显然只会选到前者构成的凸包上的点。很多题查询的斜率都是单调的，而且之后在凸包后方插入新的点，于是维护凸包的数组就变成了单调队列。否则的话，就是动态维护凸包并在凸包上二分。</p>
 <p>对于这道题，最优指最小，那么我们维护的是下凸包。</p>
-<p>斜率优化的部分已经完了。考虑加入 $y_j&#x3D;x_i, q_j\leq p_i$ 的限制怎么做。对于第一个限制，发现不同点互不影响，那么我们对每个点开一个单调队列，对于一个列车在它的 $x$ 位置查询就好了。对于第二个限制，我们将所有列车按照 $p$ 排序然后枚举时间，那么对于上面更新完的列车先不插入队列，当枚举时间到 $p$ 的时候再将其插入即可。这样就能满足所有限制，并且保证查询的斜率单调递增。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>好像不会炸 <code>long long</code> 的样子。</p>
+<p>斜率优化的部分已经完了。考虑加入 <span class="math inline">\(y_j=x_i,
+q_j\leq p_i\)</span>
+的限制怎么做。对于第一个限制，发现不同点互不影响，那么我们对每个点开一个单调队列，对于一个列车在它的
+<span class="math inline">\(x\)</span>
+位置查询就好了。对于第二个限制，我们将所有列车按照 <span
+class="math inline">\(p\)</span>
+排序然后枚举时间，那么对于上面更新完的列车先不插入队列，当枚举时间到
+<span class="math inline">\(p\)</span>
+的时候再将其插入即可。这样就能满足所有限制，并且保证查询的斜率单调递增。</p>
+<h3 id="代码">代码</h3>
+<p>好像不会炸 <code>long long</code> 的样子。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e6</span><span class="number">+10</span>;</span><br><span class="line">	<span class="type">int</span> n,T,m,A,B,C,st[maxn],ed[maxn],p[maxn],q[maxn],hd[maxn],tl[maxn];</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> f[maxn],x[maxn],y[maxn],ans=<span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; V[maxn],G[maxn],que[maxn];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>(),A=<span class="built_in">read</span>(),B=<span class="built_in">read</span>(),C=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) st[i]=<span class="built_in">read</span>(),ed[i]=<span class="built_in">read</span>(),p[i]=<span class="built_in">read</span>(),q[i]=<span class="built_in">read</span>(),T=<span class="built_in">max</span>(T,q[i]),G[p[i]].<span class="built_in">push_back</span>(i);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) hd[i]=<span class="number">0</span>,tl[i]=<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> t=<span class="number">0</span>;t&lt;=T;t++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:V[t])&#123;</span><br><span class="line">				<span class="type">int</span> e=ed[i];</span><br><span class="line">				<span class="keyword">while</span>(hd[e]&lt;tl[e] <span class="keyword">and</span> <span class="number">1ll</span>*(y[que[e][tl[e]]]-y[que[e][tl[e]<span class="number">-1</span>]])*(x[i]-x[que[e][tl[e]]])&gt;=<span class="number">1ll</span>*(y[i]-y[que[e][tl[e]]])*(x[que[e][tl[e]]]-x[que[e][tl[e]<span class="number">-1</span>]])) --tl[e];</span><br><span class="line">				<span class="keyword">if</span>(++tl[e]==que[e].<span class="built_in">size</span>()) que[e].<span class="built_in">push_back</span>(i);</span><br><span class="line">					<span class="keyword">else</span> que[e][tl[e]]=i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i:G[t])&#123;</span><br><span class="line">				<span class="type">int</span> e=st[i];</span><br><span class="line">				<span class="keyword">while</span>(hd[e]&lt;tl[e] <span class="built_in">and</span> (y[que[e][hd[e]<span class="number">+1</span>]]-y[que[e][hd[e]]])&lt;<span class="number">2ll</span>*A*p[i]*(x[que[e][hd[e]<span class="number">+1</span>]]-x[que[e][hd[e]]])) ++hd[e];</span><br><span class="line">				<span class="keyword">if</span>(hd[e]&gt;tl[e] <span class="keyword">and</span> st[i]!=<span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">				<span class="type">int</span> j=st[i]==<span class="number">1</span> <span class="keyword">and</span> hd[e]&gt;tl[e]?<span class="number">0</span>:que[e][hd[e]];</span><br><span class="line">				f[i]=f[j]<span class="number">+1ll</span>*A*(p[i]-q[j])*(p[i]-q[j])<span class="number">+1ll</span>*B*(p[i]-q[j])+C;</span><br><span class="line">				x[i]=q[i],y[i]=f[i]<span class="number">+1ll</span>*A*q[i]*q[i]<span class="number">-1ll</span>*B*q[i];</span><br><span class="line">				V[q[i]].<span class="built_in">push_back</span>(i);</span><br><span class="line">				<span class="keyword">if</span>(ed[i]==n) ans=<span class="built_in">min</span>(ans,f[i]+q[i]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2910,20 +2963,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5471- K-D tree优化建图-弹跳</p>
-          <p class='content'>P5471- K-D tree优化建图-弹跳
-优化建图是一种思想。
-
-题意有$n$个城市分布在小鸟岛上，有$m$个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹弓只能把小鸟弹飞到一块...</p>
+        <a class='prev' href='/2022/04/30/P5350%20%E5%BA%8F%E5%88%97/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5350 序列</p>
+          <p class='content'>P5350 序列
+题意
+维护一个序列，支持区间求和、赋值、加值、复制、交换、翻转操作，其中交换和复制操作保证两段区间长度相等且不交。答案对
+\(1e9+7\) 取模。
+思路
+对于区间求...</p>
         </a>
       
       
         <a class='next' href='/2022/04/30/P5658%20%E6%8B%AC%E5%8F%B7%E6%A0%91/'>
           <p class='title'>P5658 括号树<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P5658 括号树NOIp2019我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
+          <p class='content'>P5658 括号树
+NOIp2019
+我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
 于是今天我克服心理阴影来写这道题。
-树形结构因为这是一个树，所有优秀的性质这个题都有。并且题目仅...</p>
+树形结构
+因为这是一个树，所有优秀的性质这个题...</p>
         </a>
       
     </div>
@@ -3007,6 +3065,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3051,7 +3114,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P5468-NOI2019-%E5%9B%9E%E5%AE%B6%E8%B7%AF%E7%BA%BF"><span class="toc-text">P5468 [NOI2019] 回家路线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p5468-noi2019-%E5%9B%9E%E5%AE%B6%E8%B7%AF%E7%BA%BF"><span class="toc-text">P5468 [NOI2019] 回家路线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4205,7 +4268,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -50,12 +50,12 @@
   <title>P2491 消防 P1099 树网的核 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,图论,树,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="P2491 消防&#x2F;P1099 树网的核 双倍经验，双倍快乐。 题意 在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。 输出这个最小的值。 做法 Define:以下\(s\)指链或链长。  证明一下\(s\)一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到\(s\)的距离大于现在所处支链的最大距离。所以\(s\)不在直径上一定不优。 于是我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P2491 消防 P1099 树网的核">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P2491 消防&#x2F;P1099 树网的核双倍经验，双倍快乐。 题意在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。 输出这个最小的值。 做法Define:以下$s$指链或链长。  证明一下$s$一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到$s$的距离大于现在所处支链的最大距离。所以$s$不在直径上一定不优。 于是我们找到直径并记录下直径上的所有点。">
+<meta property="og:description" content="P2491 消防&#x2F;P1099 树网的核 双倍经验，双倍快乐。 题意 在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。 输出这个最小的值。 做法 Define:以下\(s\)指链或链长。  证明一下\(s\)一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到\(s\)的距离大于现在所处支链的最大距离。所以\(s\)不在直径上一定不优。 于是我">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1893,7 +1893,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2804,28 +2804,56 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="P2491-消防-P1099-树网的核"><a href="#P2491-消防-P1099-树网的核" class="headerlink" title="P2491 消防&#x2F;P1099 树网的核"></a>P2491 消防&#x2F;P1099 树网的核</h2><p>双倍经验，双倍快乐。</p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。</p>
+    <h2 id="p2491-消防p1099-树网的核">P2491 消防/P1099 树网的核</h2>
+<p>双倍经验，双倍快乐。</p>
+<h3 id="题意">题意</h3>
+<p>在一个树上选择一段总长度不超过<span
+class="math inline">\(s\)</span>的链使所有点到该链距离的最大值最小。</p>
 <p>输出这个最小的值。</p>
-<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p><strong>Define</strong>:以下$s$指链或链长。</p>
-<ol>
-<li>证明一下$s$一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到$s$的距离大于现在所处支链的最大距离。所以$s$不在直径上一定不优。</li>
+<h3 id="做法">做法</h3>
+<p><strong>Define</strong>:以下<span
+class="math inline">\(s\)</span>指链或链长。</p>
+<ol type="1">
+<li>证明一下<span
+class="math inline">\(s\)</span>一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到<span
+class="math inline">\(s\)</span>的距离大于现在所处支链的最大距离。所以<span
+class="math inline">\(s\)</span>不在直径上一定不优。</li>
 <li>于是我们找到直径并记录下直径上的所有点。</li>
-<li>然后，我们枚举直径上的每一个长度小于$s$的最长区间（最长原因显然，因为长度越短答案肯定不会更优），并计算此时的答案，对于每一个区间的答案取min即可。</li>
-<li>考虑计算每个区间的答案。我们把直径拉出来，用两个指针$l$和$r$从左向右遍历这个直径，$s$即为$l$到$r$。考虑此时这个区间的答案即为$l$到$r$中每个点$i$的子树中最深的点的距离（我们设为$h_i$）（注意这里的子树是不包括直径的，即子树中所有的点都属于支链）和$l$到直径左端点的距离（设为$ls$）和$r$到直径右端点的距离（设为$rt$）的最大值。原因显然。</li>
-<li>那么我们可以预处理出$h_i$，并在遍历直径的时候用单调队列维护$h$的最大值，然后用这个值与$ls$和$rt$的最大值更新答案（取最小值）即可。</li>
+<li>然后，我们枚举直径上的每一个长度小于<span
+class="math inline">\(s\)</span>的最长区间（最长原因显然，因为长度越短答案肯定不会更优），并计算此时的答案，对于每一个区间的答案取min即可。</li>
+<li>考虑计算每个区间的答案。我们把直径拉出来，用两个指针<span
+class="math inline">\(l\)</span>和<span
+class="math inline">\(r\)</span>从左向右遍历这个直径，<span
+class="math inline">\(s\)</span>即为<span
+class="math inline">\(l\)</span>到<span
+class="math inline">\(r\)</span>。考虑此时这个区间的答案即为<span
+class="math inline">\(l\)</span>到<span
+class="math inline">\(r\)</span>中每个点<span
+class="math inline">\(i\)</span>的子树中最深的点的距离（我们设为<span
+class="math inline">\(h_i\)</span>）（注意这里的子树是不包括直径的，即子树中所有的点都属于支链）和<span
+class="math inline">\(l\)</span>到直径左端点的距离（设为<span
+class="math inline">\(ls\)</span>）和<span
+class="math inline">\(r\)</span>到直径右端点的距离（设为<span
+class="math inline">\(rt\)</span>）的最大值。原因显然。</li>
+<li>那么我们可以预处理出<span
+class="math inline">\(h_i\)</span>，并在遍历直径的时候用单调队列维护<span
+class="math inline">\(h\)</span>的最大值，然后用这个值与<span
+class="math inline">\(ls\)</span>和<span
+class="math inline">\(rt\)</span>的最大值更新答案（取最小值）即可。</li>
 </ol>
-<h3 id="一些疑问"><a href="#一些疑问" class="headerlink" title="一些疑问"></a>一些疑问</h3><ul>
-<li><p>当存在多条直径时，区间似乎一定包括重心并尽量使重心居中。然而这并没有什么卵用，并且一样可以用上面的方法做，不会造成影响。</p>
-</li>
-<li><p>$s$的左右两端一定在端点上。既是，$s$是可以为一个点的。</p>
-</li>
+<h3 id="一些疑问">一些疑问</h3>
+<ul>
+<li><p>当存在多条直径时，区间似乎一定包括重心并尽量使重心居中。然而这并没有什么卵用，并且一样可以用上面的方法做，不会造成影响。</p></li>
+<li><p><span
+class="math inline">\(s\)</span>的左右两端一定在端点上。既是，<span
+class="math inline">\(s\)</span>是可以为一个点的。</p></li>
 </ul>
-<h3 id="具体实现和代码"><a href="#具体实现和代码" class="headerlink" title="具体实现和代码"></a>具体实现和代码</h3><ul>
+<h3 id="具体实现和代码">具体实现和代码</h3>
+<ul>
 <li>求直径时两次DFS即可。然后发现记录的d数组刚好可以用来当做前缀和（只是使代码略显凌乱罢了）</li>
 <li>单调队列似乎要特殊记录一下链首的位置而不能用head代替，否则无法记录区间长（或者只是我没有想到更好的处理方法）</li>
 <li>求深度DFS或BFS.</li>
-<li>时间复杂度 $O(n)$.</li>
+<li>时间复杂度 <span class="math inline">\(O(n)\)</span>.</li>
 </ul>
 <p>（学会了一个新单词diameter，意思是直径，重音在|a|上）</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">3e5</span><span class="number">+10</span>;</span><br><span class="line">	<span class="type">int</span> n,l;</span><br><span class="line">	<span class="type">int</span> ecnt,head[maxn],nxt[maxn&lt;&lt;<span class="number">1</span>],to[maxn&lt;&lt;<span class="number">1</span>],dis[maxn&lt;&lt;<span class="number">1</span>];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">addedge</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c)</span></span>&#123;</span><br><span class="line">		to[++ecnt]=b,nxt[ecnt]=head[a],head[a]=ecnt;dis[ecnt]=c;</span><br><span class="line">		to[++ecnt]=a,nxt[ecnt]=head[b],head[b]=ecnt;dis[ecnt]=c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> d[maxn],mx,fa[maxn],diam[maxn],tot,sum;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">dfs1</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> f,<span class="type">int</span> &amp;dia)</span></span>&#123;</span><br><span class="line">		fa[x]=f;</span><br><span class="line">		<span class="keyword">if</span>(mx&lt;d[x])</span><br><span class="line">			mx=d[x],dia=x;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=head[x];i;i=nxt[i])&#123;</span><br><span class="line">			<span class="type">int</span> u=to[i];</span><br><span class="line">			<span class="keyword">if</span>(u==f)<span class="keyword">continue</span>;</span><br><span class="line">			d[u]=d[x]+dis[i];</span><br><span class="line">			<span class="built_in">dfs1</span>(u,x,dia);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">diameter</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="type">int</span> dia,dia2;</span><br><span class="line">		<span class="built_in">dfs1</span>(<span class="number">1</span>,<span class="number">0</span>,dia);</span><br><span class="line">		mx=<span class="number">0</span>;d[dia]=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">dfs1</span>(dia,<span class="number">0</span>,dia2);</span><br><span class="line">		<span class="keyword">while</span>(dia2!=dia)&#123;</span><br><span class="line">			diam[++tot]=dia2;</span><br><span class="line">			dia2=fa[dia2];</span><br><span class="line">		&#125;</span><br><span class="line">		diam[++tot]=dia;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> h[maxn],dep[maxn],q[maxn],ans=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">dfs2</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> f)</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=head[x];i;i=nxt[i])&#123;</span><br><span class="line">			<span class="type">int</span> u=to[i];</span><br><span class="line">			<span class="keyword">if</span>(u==f)<span class="keyword">continue</span>;</span><br><span class="line">			<span class="built_in">dfs2</span>(u,x);</span><br><span class="line">			dep[x]=<span class="built_in">max</span>(dep[x],dep[u]+dis[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;tot;i++)&#123;</span><br><span class="line">			<span class="type">int</span> x=diam[i];</span><br><span class="line">			h[i]=<span class="number">0</span>;dep[x]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=head[x];j;j=nxt[j])&#123;</span><br><span class="line">				<span class="type">int</span> u=to[j];</span><br><span class="line">				<span class="keyword">if</span>(u==diam[i<span class="number">-1</span>] <span class="keyword">or</span> u==diam[i<span class="number">+1</span>])<span class="keyword">continue</span>;</span><br><span class="line">				<span class="built_in">dfs2</span>(u,x);</span><br><span class="line">				h[i]=<span class="built_in">max</span>(h[i],dep[u]+dis[j]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> s=<span class="number">1</span>,t=<span class="number">0</span>,ls=<span class="number">0</span>,rt=mx,from=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=tot;i++)&#123;</span><br><span class="line">			<span class="keyword">while</span>(s&lt;=t <span class="keyword">and</span> d[diam[from]]-d[diam[i]]&gt;l)from++,s+=(from&gt;q[s]),ls=(mx-d[diam[from]]);</span><br><span class="line">			<span class="keyword">while</span>(s&lt;=t <span class="keyword">and</span> h[i]&gt;h[q[t]])t--;</span><br><span class="line">			q[++t]=i;rt=d[diam[i]];</span><br><span class="line">			ans=<span class="built_in">min</span>(ans,<span class="built_in">max</span>(h[q[s]],<span class="built_in">max</span>(ls,rt)));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),l=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> a,b,c,i=<span class="number">1</span>;i&lt;n;i++)a=<span class="built_in">read</span>(),b=<span class="built_in">read</span>(),c=<span class="built_in">read</span>(),<span class="built_in">addedge</span>(a,b,c);</span><br><span class="line">		<span class="built_in">diameter</span>();</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2926,18 +2954,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P3203 弹飞绵羊-分块</p>
-          <p class='content'>P3203 弹飞绵羊-分块观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。
-对于修改，重构整个块内信息即可。
-时间复杂度正确的一批
-...</p>
+        <a class='prev' href='/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2014 选课</p>
+          <p class='content'>洛谷P2014选课
+一道树形DP题。
+f[i][j] 表示i个点选j门课程的最大学分。
+递推方程：
+1234for(int a=n;a&gt;0;a--)//总共选择多少    for(...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/'>
-          <p class='title'>P3209-平面图判定<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>平面图平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过其他...</p>
+        <a class='next' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/'>
+          <p class='title'>P2476-记忆化搜索<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P2476-记忆化搜索
+DP?
+我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.
+15维DP显然不靠谱。
+那么我们就思考一下……状态个数？发现记忆化搜...</p>
         </a>
       
     </div>
@@ -3021,6 +3054,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3065,7 +3103,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P2491-%E6%B6%88%E9%98%B2-P1099-%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8"><span class="toc-text">P2491 消防&#x2F;P1099 树网的核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95"><span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE"><span class="toc-text">一些疑问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%E5%92%8C%E4%BB%A3%E7%A0%81"><span class="toc-text">具体实现和代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p2491-%E6%B6%88%E9%98%B2p1099-%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8"><span class="toc-text">P2491 消防&#x2F;P1099 树网的核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95"><span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE"><span class="toc-text">一些疑问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%E5%92%8C%E4%BB%A3%E7%A0%81"><span class="toc-text">具体实现和代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4219,7 +4257,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -50,12 +50,12 @@
   <title>CF494D Birthday - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,DP,树,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="CF494D Birthday 题意 一个1为根的带边权有根树，每次询问给定两个点 \(u,v\) 求 \(\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in S(v)}d(u,x)^2\) 其中 \(d(u,v)\) 表示 \(u,v\) 简单路径长度， \(S(u)\) 表示 \(u\) 的子树内点的集合。 思路 考虑 \(u\) 在 \(v\) 内和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF494D Birthday">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/CF494D%20Birthday/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="CF494D Birthday题意一个1为根的带边权有根树，每次询问给定两个点 $u,v$ 求 $\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in S(v)}d(u,x)^2$ 其中 $d(u,v)$ 表示 $u,v$ 简单路径长度， $S(u)$ 表示 $u$ 的子树内点的集合。 思路考虑 $u$ 在 $v$ 内和在 $v$ 外的情况，发现可以通过每个点维护四个值">
+<meta property="og:description" content="CF494D Birthday 题意 一个1为根的带边权有根树，每次询问给定两个点 \(u,v\) 求 \(\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in S(v)}d(u,x)^2\) 其中 \(d(u,v)\) 表示 \(u,v\) 简单路径长度， \(S(u)\) 表示 \(u\) 的子树内点的集合。 思路 考虑 \(u\) 在 \(v\) 内和">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1893,7 +1893,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2804,11 +2804,37 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="CF494D-Birthday"><a href="#CF494D-Birthday" class="headerlink" title="CF494D Birthday"></a>CF494D Birthday</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>一个1为根的带边权有根树，每次询问给定两个点 $u,v$ 求 $\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in S(v)}d(u,x)^2$ 其中 $d(u,v)$ 表示 $u,v$ 简单路径长度， $S(u)$ 表示 $u$ 的子树内点的集合。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>考虑 $u$ 在 $v$ 内和在 $v$ 外的情况，发现可以通过每个点维护四个值——子树内所有点到其距离的和、子树内所有点到其距离的平方的和、所有点到其的距离和、所有点到其距离的平方和——来回答询问。</p>
+    <h2 id="cf494d-birthday">CF494D Birthday</h2>
+<h3 id="题意">题意</h3>
+<p>一个1为根的带边权有根树，每次询问给定两个点 <span
+class="math inline">\(u,v\)</span> 求 <span
+class="math inline">\(\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in
+S(v)}d(u,x)^2\)</span> 其中 <span class="math inline">\(d(u,v)\)</span>
+表示 <span class="math inline">\(u,v\)</span> 简单路径长度， <span
+class="math inline">\(S(u)\)</span> 表示 <span
+class="math inline">\(u\)</span> 的子树内点的集合。</p>
+<h3 id="思路">思路</h3>
+<p>考虑 <span class="math inline">\(u\)</span> 在 <span
+class="math inline">\(v\)</span> 内和在 <span
+class="math inline">\(v\)</span>
+外的情况，发现可以通过每个点维护四个值——子树内所有点到其距离的和、子树内所有点到其距离的平方的和、所有点到其的距离和、所有点到其距离的平方和——来回答询问。</p>
 <p>具体转移细节请自推，这里总结一个重点：</p>
-<p>设 $v$ 与 $u$ 两点，$f2[v]$ 为 $v$ 子树内距离平方的和，$f[v]$ 为 $v$ 子树内距离的和，$siz[v]$ 为 $v$ 子树大小，$w$ 为两点间距离，则 $v$ 子树内所有点到 $u$ 的距离的平方和为<br>$$<br>f2[v]+2*f[v]*w+siz[v]*w^2<br>$$<br>深度优先搜索两边换根处理出以上信息后分类讨论即可。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>请注意取模。</p>
+<p>设 <span class="math inline">\(v\)</span> 与 <span
+class="math inline">\(u\)</span> 两点，<span
+class="math inline">\(f2[v]\)</span> 为 <span
+class="math inline">\(v\)</span> 子树内距离平方的和，<span
+class="math inline">\(f[v]\)</span> 为 <span
+class="math inline">\(v\)</span> 子树内距离的和，<span
+class="math inline">\(siz[v]\)</span> 为 <span
+class="math inline">\(v\)</span> 子树大小，<span
+class="math inline">\(w\)</span> 为两点间距离，则 <span
+class="math inline">\(v\)</span> 子树内所有点到 <span
+class="math inline">\(u\)</span> 的距离的平方和为 <span
+class="math display">\[
+f2[v]+2*f[v]*w+siz[v]*w^2
+\]</span> 深度优先搜索两边换根处理出以上信息后分类讨论即可。</p>
+<h3 id="代码">代码</h3>
+<p>请注意取模。</p>
 <p>代码中的一些取模可以被优化。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e5</span><span class="number">+10</span>,mod=<span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">int</span> ecnt,head[maxn],to[maxn&lt;&lt;<span class="number">1</span>],nxt[maxn&lt;&lt;<span class="number">1</span>],v[maxn&lt;&lt;<span class="number">1</span>];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">addedge</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c)</span></span>&#123;</span><br><span class="line">		to[++ecnt]=b,nxt[ecnt]=head[a],head[a]=ecnt,v[ecnt]=c;</span><br><span class="line">		to[++ecnt]=a,nxt[ecnt]=head[b],head[b]=ecnt,v[ecnt]=c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">up</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;<span class="keyword">return</span> a&gt;=mod?a-mod:a;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">dn</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;<span class="keyword">return</span> a&lt;<span class="number">0</span>?a+mod:a;&#125;</span><br><span class="line">	<span class="type">int</span> f[maxn],f2[maxn],g[maxn],g2[maxn],dep[maxn],fa[maxn][<span class="number">21</span>],dis[maxn],siz[maxn];</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> father)</span></span>&#123;</span><br><span class="line">		fa[x][<span class="number">0</span>]=father;siz[x]=<span class="number">1</span>;</span><br><span class="line">		dep[x]=dep[father]<span class="number">+1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++) fa[x][i<span class="number">+1</span>]=fa[fa[x][i]][i];</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=head[x];i;i=nxt[i])&#123;</span><br><span class="line">			<span class="type">int</span> u=to[i];</span><br><span class="line">			<span class="keyword">if</span>(u==father)<span class="keyword">continue</span>;</span><br><span class="line">			dis[u]=dis[x]+v[i];</span><br><span class="line">			<span class="built_in">dfs</span>(u,x);</span><br><span class="line">			siz[x]+=siz[u];</span><br><span class="line">			f[x]=<span class="built_in">up</span>(f[x]+<span class="built_in">up</span>(f[u]+siz[u]*v[i]%mod))%mod;</span><br><span class="line">			f2[x]=((f2[x]+f2[u])%mod+(siz[u]*v[i]%mod*v[i]%mod<span class="number">+2</span>*v[i]*f[u]%mod)%mod)%mod;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">dfs2</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=head[x];i;i=nxt[i])&#123;</span><br><span class="line">			<span class="type">int</span> u=to[i];</span><br><span class="line">			<span class="keyword">if</span>(u==fa[x][<span class="number">0</span>])<span class="keyword">continue</span>;</span><br><span class="line">			g[u]=(g[x]+(n<span class="number">-2</span>*siz[u]+mod)%mod*v[i]%mod)%mod;</span><br><span class="line">			g2[u]=((f2[u]+(g2[x]-((f2[u]<span class="number">+2</span>*v[i]%mod*f[u]%mod)%mod+siz[u]*v[i]%mod*v[i]%mod)%mod+mod)%mod)%mod+((g[x]-f[u]+mod-siz[u]*v[i]%mod+mod)%mod*<span class="number">2</span>%mod*v[i]%mod+(n-siz[u])*v[i]%mod*v[i]%mod)%mod)%mod;</span><br><span class="line">			<span class="built_in">dfs2</span>(u);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">LCA</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(dep[x]&lt;dep[y])<span class="built_in">swap</span>(x,y);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">20</span>;~i;i--) <span class="keyword">if</span>(dep[fa[x][i]]&gt;=dep[y]) x=fa[x][i];</span><br><span class="line">		<span class="keyword">if</span>(x==y) <span class="keyword">return</span> x;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">20</span>;~i;i--) <span class="keyword">if</span>(fa[x][i]!=fa[y][i]) x=fa[x][i],y=fa[y][i];</span><br><span class="line">		<span class="keyword">return</span> fa[x][<span class="number">0</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> u,v,i=<span class="number">1</span>;i&lt;n;i++) u=<span class="built_in">read</span>(),v=<span class="built_in">read</span>(),<span class="built_in">addedge</span>(u,v,<span class="built_in">read</span>());</span><br><span class="line">		<span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">		g[<span class="number">1</span>]=f[<span class="number">1</span>],g2[<span class="number">1</span>]=f2[<span class="number">1</span>];</span><br><span class="line">		<span class="built_in">dfs2</span>(<span class="number">1</span>);</span><br><span class="line">		<span class="type">int</span> Q=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">while</span>(Q--)&#123;</span><br><span class="line">			<span class="type">int</span> y=<span class="built_in">read</span>(),x=<span class="built_in">read</span>(),lca=<span class="built_in">LCA</span>(x,y),d=dis[x]+dis[y]-dis[lca]*<span class="number">2</span>;</span><br><span class="line">			d%=mod;</span><br><span class="line">			<span class="keyword">if</span>(lca==x)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,(g2[y]<span class="number">-2</span>*((((g2[x]-f2[x]+mod)%mod<span class="number">+2</span>*d%mod*(g[x]-f[x]+mod)%mod)%mod+d*d%mod*(n-siz[x])%mod)%mod+mod)%mod+mod)%mod);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,((((f2[x]%mod<span class="number">+2</span>%mod*d%mod*f[x]%mod)%mod+d%mod*d%mod*siz[x]%mod)%mod*<span class="number">2</span>%mod-g2[y]%mod)%mod+mod)%mod);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2908,22 +2934,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF437D%20The%20Child%20and%20Zoo/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF437D The Child and Zoo</p>
-          <p class='content'>CF437D The Child and Zoo题意给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
+        <a class='prev' href='/2022/04/30/CF487E%20Tourists/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF487E Tourists</p>
+          <p class='content'>CF487E Tourists
+前排膜拜T神
+上面的话和这道题一点关系都没有
+题意
+给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
 思路
-首先，我们可以将点权转移到边权上，边权为两端点点权的较小值。正确性...</p>
+
+一眼圆...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/CF487E%20Tourists/'>
-          <p class='title'>CF487E Tourists<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>CF487E Tourists前排膜拜T神
-上面的话和这道题一点关系都没有
-题意给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
+        <a class='next' href='/2022/04/30/CF459E-DP/'>
+          <p class='title'>CF459E-DP<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>CF459E-DP
+核心代码15行
 思路
-一眼圆方树。
-——@gxy...</p>
+观察数据范围，我们建m层分层图跑最短路想到DP。
+DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？
+发现DP值一定从边权小于当前...</p>
         </a>
       
     </div>
@@ -3007,6 +3038,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3051,7 +3087,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CF494D-Birthday"><span class="toc-text">CF494D Birthday</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cf494d-birthday"><span class="toc-text">CF494D Birthday</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -4205,7 +4241,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

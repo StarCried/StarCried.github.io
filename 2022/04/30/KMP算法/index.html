@@ -50,12 +50,12 @@
   <title>KMP算法 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,字符串,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。 问题：求 a 字符串与 b 字符串中子串相同的串首位置。 暴力就不说了，设 a 长 \(m\)，b 长 \(n\)，每次枚举比对每个字符，复杂度 \(O(nm)\)。 KMP 主要思想：如果一个字符串的子串与前">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP算法">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/KMP%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。 问题：求 a 字符串与 b 字符串中子串相同的串首位置。 暴力就不说了，设 a 长 $m$，b 长 $n$，每次枚举比对每个字符，复杂度 $O(nm)$。 KMP 主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可以">
+<meta property="og:description" content="KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。 问题：求 a 字符串与 b 字符串中子串相同的串首位置。 暴力就不说了，设 a 长 \(m\)，b 长 \(n\)，每次枚举比对每个字符，复杂度 \(O(nm)\)。 KMP 主要思想：如果一个字符串的子串与前">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,21 +2803,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。</p>
+    <p>KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt
+三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。</p>
 <p>问题：求 a 字符串与 b 字符串中子串相同的串首位置。</p>
-<p>暴力就不说了，设 a 长 $m$，b 长 $n$，每次枚举比对每个字符，复杂度 $O(nm)$。</p>
-<p>KMP 主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可以直接将前缀跳至该子串的位置。复杂度 $O(n)$。</p>
+<p>暴力就不说了，设 a 长 <span class="math inline">\(m\)</span>，b 长
+<span class="math inline">\(n\)</span>，每次枚举比对每个字符，复杂度
+<span class="math inline">\(O(nm)\)</span>。</p>
+<p>KMP
+主要思想：如果一个字符串的子串与前缀相等，那么在查找时就可以直接将前缀跳至该子串的位置。复杂度
+<span class="math inline">\(O(n)\)</span>。</p>
 <p><code>nxt[x]</code> 记录x位置字符在查询串中的跳转位置。</p>
 <p>eg:对于串abaabacac:</p>
-<p> a b a a b a c a c</p>
+<p>a b a a b a c a c</p>
 <p>-1 0 0 1 1 2 3 0 1</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getnxt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">0</span>,k=<span class="number">-1</span>;</span><br><span class="line">    nxt[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;s.<span class="built_in">length</span>()<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span>||s[j]==s[k])nxt[++j]=++k;</span><br><span class="line">        <span class="keyword">else</span> k=nxt[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>查询时跳转即可。</p>
 <p>模拟一下就知道啦~</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">string s,t;</span><br><span class="line"><span class="type">int</span> nxt[<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getnxt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">0</span>,k=<span class="number">-1</span>;</span><br><span class="line">    nxt[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;s.<span class="built_in">length</span>()<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span>||s[j]==s[k])nxt[++j]=++k;</span><br><span class="line">        <span class="keyword">else</span> k=nxt[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">indexkmp</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;s.<span class="built_in">length</span>() <span class="keyword">and</span> j&lt;t.<span class="built_in">length</span>())<span class="comment">//如果比完了就退出来了 </span></span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">-1</span> <span class="keyword">or</span> s[i]==t[j])i++,j++;</span><br><span class="line">        <span class="keyword">else</span> i=nxt[i];</span><br><span class="line">    <span class="keyword">if</span>(i&gt;=s.<span class="built_in">length</span>())<span class="keyword">return</span> j-s.<span class="built_in">length</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin&gt;&gt;s&gt;&gt;t;</span><br><span class="line">    <span class="built_in">getnxt</span>();</span><br><span class="line">    cout&lt;&lt;<span class="built_in">indexkmp</span>()<span class="number">+1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>洛谷P3375</p>
+<h3 id="例题">例题</h3>
+<p>洛谷P3375</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e6</span><span class="number">+5</span>;</span><br><span class="line"><span class="type">int</span> nxt[maxn];</span><br><span class="line"><span class="type">char</span> a[maxn],b[maxn];</span><br><span class="line"><span class="type">int</span> lena,lenb;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">getnxt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k=<span class="number">-1</span>,j=<span class="number">0</span>;</span><br><span class="line">    nxt[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;lena)</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span> <span class="keyword">or</span> a[k]==a[j])</span><br><span class="line">        nxt[++j]=++k;</span><br><span class="line">        <span class="keyword">else</span> k=nxt[k];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">indexkmp</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">0</span>,i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;lena <span class="keyword">and</span> i&lt;lenb)</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">-1</span> <span class="keyword">or</span> a[j]==b[i])&#123;</span><br><span class="line">            i++,j++;</span><br><span class="line">            <span class="keyword">if</span>(j==lena)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i-lena<span class="number">+1</span>);</span><br><span class="line">                j=nxt[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> j=nxt[j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s\n%s&quot;</span>,&amp;b,&amp;a);</span><br><span class="line">    lena=<span class="built_in">strlen</span>(a);</span><br><span class="line">    lenb=<span class="built_in">strlen</span>(b);</span><br><span class="line">    <span class="built_in">getnxt</span>();</span><br><span class="line">    <span class="built_in">indexkmp</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=lena;i++)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,nxt[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2918,9 +2922,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/04/30/Guass%E6%B6%88%E5%85%83%E6%80%BB%E7%BB%93/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Guass消元总结</p>
-          <p class='content'>Guass消元约旦·高斯消元法 求线性方程组我们用一个$n*(n+1)$的矩阵存储线性方程组各项系数和零次项系数。
+          <p class='content'>Guass消元
+约旦·高斯消元法 求线性方程组
+我们用一个\(n*(n+1)\)的矩阵存储线性方程组各项系数和零次项系数。
 
-每一次找到一个未知数系数最大的方程，交换当前行方程和该方程，并将其他行该未知...</p>
+每一次找到一个未知数系数最大的方程，交换当前行方程和该方程，...</p>
         </a>
       
       
@@ -2929,18 +2935,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='content'>LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
 
 查询、修改链上的信息
-
 随意指定原树的根（即换根）
-
 动态连边、删边
-
 合并两棵树、分离一棵树
-
 动态维护连通性
-
-等
-
-...</p>
+等...</p>
         </a>
       
     </div>
@@ -3022,6 +3021,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             title="/categories/%E5%88%9B%E4%BD%9C/" href="/categories/%E5%88%9B%E4%BD%9C/"
             active-action="action-categoriesE5889BE4BD9C"
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
@@ -4222,7 +4226,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

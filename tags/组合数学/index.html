@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2751,9 +2751,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF896D Nephren Runs a Cinema题意售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况 $n$ 名顾客后剩余钱数在 $l\sim r$ 的方案数。
-思路这是我们一道模拟赛题。
-解法 1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，用组合数减去另外一个组合数然...
+        CF896D Nephren Runs a Cinema
+题意
+售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况
+\(n\) 名顾客后剩余钱数在 \(l\sim r\) 的方案数。
+思路
+这是我们一道模拟赛题。
+解法
+1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，...
       
     
   </div>
@@ -2817,11 +2822,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         P1447能量采集
+
 定义:(i,j)表示处于(i,j)的植物的贡献
 
-我们发现，点(i,j)与(0,0)的连线所过整点的数目为$\gcd(i,j)$
+我们发现，点(i,j)与(0,0)的连线所过整点的数目为\(\gcd(i,j)\)
 发现要是想记录每个点的答案并不好算。那么怎么好算呢？
-我们来找一找同一直线上的所有点答案的和的关系。先不考虑答案只考虑个数。发现，寻找一个点及其倍数的个数的和更加好算。而且，因为有n和m的限制，那么向下取整的答案一定就是其本身。考虑容斥，我们只...
+我们来找一找同一直线上的所有点答案的和的关系。先不考虑答案只考虑个数。发现，寻找一个点及其倍数的个数的和更加好算。而且，因为有n和m的限制，那么向下取整的答案一定就是其本身...
       
     
   </div>
@@ -2884,14 +2890,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P3214 [HNOI2011]卡农题意在集合 ${1,2,\cdots,n}$ 中选出 $m$ 个非空子集满足：
+        P3214 [HNOI2011]卡农
+题意
+在集合 \(\{1,2,\cdots,n\}\) 中选出
+\(m\) 个非空子集满足：
 
 不存在完全相同的两个集合；
 每个元素在所有集合中出现次数之和为偶数。
 
-思路考虑转移，利用容斥方法进行 Dp。设 $f_i$ 表示选了 $i$ 个集合满足条件的方案数：
+思路
+考虑转移，利用容斥方法进行 Dp。设 \(f_i\) 表示选了 \(i\) 个集合满足条件的方案数：
 
-首先，如果确定了前 $i-1$ 个集合，那么为了满足上面第二个限制这个位置选的集合一定是固定的。前 $i...
+首先，如果确定了前 \(i-1\)
+个集合，那么为了满...
       
     
   </div>
@@ -2954,8 +2965,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4827 [国家集训队] Crash 的文明世界题意求出对于树上每个点 $x$ 的 $\sum_{u&#x3D;1}^ndis(x,u)^k$。所有边长为 1。
-思路根据斯特林反演：$$m^n&#x3D;\sum_{j&#x3D;0}^n\begin{Bmatrix}n\j\end{Bmatrix}C_m^jj!$$可以得到：$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;...
+        P4827 [国家集训队] Crash
+的文明世界
+题意
+求出对于树上每个点 \(x\) 的 \(\sum_{u=1}^ndis(x,u)^k\)。所有边长为
+1。
+思路
+根据斯特林反演： \[
+m^n=\sum_{j=0}^n\begin{Bmatrix}n\\j\end{Bmatrix}C_m^jj!
+\] 可以得到： \[
+\sum_{i=1}^n\sum_{j=0}...
       
     
   </div>
@@ -3018,9 +3037,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5591 小猪佩奇学数学知识点二项式定理$$(x+1)^n&#x3D;\sum_{i&#x3D;0}^n\binom nix^i$$
-单位根反演$$[n\mid k]&#x3D;\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik}$$
-证明：$$[n\mid k]&#x3D;\begin{cases}\frac 1n\sum_{i&#x3D;0}^{n-1}...
+        P5591 小猪佩奇学数学
+知识点
+二项式定理
+\[
+(x+1)^n=\sum_{i=0}^n\binom nix^i
+\]
+单位根反演
+\[
+[n\mid k]=\frac 1n\sum_{i=0}^{n-1}\omega_n^{ik}
+\]
+证明： \[
+[n\mid k]=\begin{cases}\frac 1n\sum_{i=0}^{n-1}\omega_n^...
       
     
   </div>
@@ -3083,8 +3111,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6295 有标号 DAG 计数题意求 $n$ 个点有标号弱联通 DAG 数量。
-推导设 $f_i$ 表示 $i$ 个点有标号 DAG 数量（不保证弱联通），有：$$f(i)&#x3D;\sum_{j&#x3D;1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}$$意义为选至少 $j$ 个度数为零的点，向剩下的 $i-j$ 个点随便连有向边，容斥一下就得到了上式。...
+        P6295 有标号 DAG 计数
+题意
+求 \(n\) 个点有标号弱联通 DAG
+数量。
+推导
+设 \(f_i\) 表示 \(i\) 个点有标号 DAG
+数量（不保证弱联通），有： \[
+f(i)=\sum_{j=1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}
+\] 意义为选至少 \(j\)
+个度数为零的点，向剩下的 \(i-j\)
+个点随...
       
     
   </div>
@@ -3147,9 +3184,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P7324 [WC2021] 表达式求值闲话WC2021 我只得了 20 分，三道题总共 20 分。我是下场了突然后知后觉这件事的，主要原因是我开了 C++11，然后 T1 T2 都没分了。在洛谷上测本来能拿银牌的。T1 的乱搞能拿 48，还挺高的。
+        P7324 [WC2021] 表达式求值
+闲话
+WC2021 我只得了 20 分，三道题总共 20
+分。我是下场了突然后知后觉这件事的，主要原因是我开了 C++11，然后 T1 T2
+都没分了。在洛谷上测本来能拿银牌的。T1 的乱搞能拿 48，还挺高的。
 幸亏咱们陕西省选不看冬令营成绩。幸亏是在省选前犯的这个错误。告诫后人和自己，写题前一定要看编译选项，否则只能后悔莫及。
-T2 场上写的是不带问...
+T2 ...
       
     
   </div>
@@ -3302,6 +3343,11 @@ T2 场上写的是不带问...
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3344,7 +3390,7 @@ T2 场上写的是不带问...
 
 
     <div class='content'>
-      <a href="/tags/2-SAT/" style="font-size: 14.77px; color: #949494">2-SAT</a> <a href="/tags/3D-%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">3D 建模</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Adobe/" style="font-size: 14px; color: #999">Adobe</a> <a href="/tags/DP/" style="font-size: 20.92px; color: #6a6a6a">DP</a> <a href="/tags/Me/" style="font-size: 16.31px; color: #898989">Me</a> <a href="/tags/OI/" style="font-size: 23.23px; color: #5a5a5a">OI</a> <a href="/tags/ST%E8%A1%A8/" style="font-size: 14.77px; color: #949494">ST表</a> <a href="/tags/blog/" style="font-size: 15.54px; color: #8f8f8f">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BA%A4%E4%BA%92/" style="font-size: 14px; color: #999">交互</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">优化</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 14.77px; color: #949494">几何</a> <a href="/tags/%E5%88%86%E5%9D%97/" style="font-size: 17.08px; color: #848484">分块</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 15.54px; color: #8f8f8f">分治</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 14.77px; color: #949494">单调栈</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" style="font-size: 14.77px; color: #949494">博弈论</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 22.46px; color: #5f5f5f">图论</a> <a href="/tags/%E5%9C%86%E6%96%B9%E6%A0%91/" style="font-size: 14.77px; color: #949494">圆方树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" style="font-size: 14.77px; color: #949494">多项式</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.08px; color: #848484">字符串</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 14.77px; color: #949494">平衡树</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E5%BE%AE%E5%85%89/" style="font-size: 16.31px; color: #898989">微光</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14.77px; color: #949494">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 21.69px; color: #656565">数论</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.38px; color: #747474">树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" style="font-size: 14.77px; color: #949494">树链剖分</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.15px; color: #6f6f6f">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 15.54px; color: #8f8f8f">线性代数</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 17.85px; color: #7f7f7f">线段树</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" style="font-size: 18.62px; color: #7a7a7a">组合数学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 15.54px; color: #8f8f8f">网络流</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">读后感</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">随机化</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14.77px; color: #949494">高斯消元</a>
+      <a href="/tags/2-SAT/" style="font-size: 14.77px; color: #949494">2-SAT</a> <a href="/tags/3D-%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">3D 建模</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Adobe/" style="font-size: 14px; color: #999">Adobe</a> <a href="/tags/Courses/" style="font-size: 14px; color: #999">Courses</a> <a href="/tags/DP/" style="font-size: 20.92px; color: #6a6a6a">DP</a> <a href="/tags/Me/" style="font-size: 16.31px; color: #898989">Me</a> <a href="/tags/OI/" style="font-size: 23.23px; color: #5a5a5a">OI</a> <a href="/tags/ST%E8%A1%A8/" style="font-size: 14.77px; color: #949494">ST表</a> <a href="/tags/blog/" style="font-size: 15.54px; color: #8f8f8f">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BA%A4%E4%BA%92/" style="font-size: 14px; color: #999">交互</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">优化</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 14.77px; color: #949494">几何</a> <a href="/tags/%E5%88%86%E5%9D%97/" style="font-size: 17.08px; color: #848484">分块</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 15.54px; color: #8f8f8f">分治</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 14.77px; color: #949494">单调栈</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" style="font-size: 14.77px; color: #949494">博弈论</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 22.46px; color: #5f5f5f">图论</a> <a href="/tags/%E5%9C%86%E6%96%B9%E6%A0%91/" style="font-size: 14.77px; color: #949494">圆方树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" style="font-size: 14.77px; color: #949494">多项式</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.08px; color: #848484">字符串</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 14.77px; color: #949494">平衡树</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E5%BE%AE%E5%85%89/" style="font-size: 16.31px; color: #898989">微光</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14.77px; color: #949494">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 21.69px; color: #656565">数论</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.38px; color: #747474">树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" style="font-size: 14.77px; color: #949494">树链剖分</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.15px; color: #6f6f6f">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 15.54px; color: #8f8f8f">线性代数</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 17.85px; color: #7f7f7f">线段树</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" style="font-size: 18.62px; color: #7a7a7a">组合数学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 15.54px; color: #8f8f8f">网络流</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">读后感</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">随机化</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14.77px; color: #949494">高斯消元</a>
     </div>
   </section>
 
@@ -4496,7 +4542,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

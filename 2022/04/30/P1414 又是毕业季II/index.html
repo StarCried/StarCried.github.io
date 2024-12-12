@@ -50,12 +50,12 @@
   <title>P1414 又是毕业季II - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,数论,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="P1414 又是毕业季II 数论题，主要在于推演。 洛谷的《又是毕业季I》更好玩 发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个 \(c\) 数组为所有因子出现的次数。 因为让输出 \(1\sim n\) 所有的值，而且因子数 c[k-1]&gt;&#x3D;c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历到 c[i]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P1414 又是毕业季II">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P1414 又是毕业季II数论题，主要在于推演。 洛谷的《又是毕业季I》更好玩 发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个 $c$ 数组为所有因子出现的次数。 因为让输出 $1\sim n$ 所有的值，而且因子数 c[k-1]&gt;&#x3D;c[k]，我们就一定可以从因子数最高的 $c$ 向下遍历到 c[i] 更高的位置，即最大公约数i向下递">
+<meta property="og:description" content="P1414 又是毕业季II 数论题，主要在于推演。 洛谷的《又是毕业季I》更好玩 发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个 \(c\) 数组为所有因子出现的次数。 因为让输出 \(1\sim n\) 所有的值，而且因子数 c[k-1]&gt;&#x3D;c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历到 c[i]">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,10 +2803,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="P1414-又是毕业季II"><a href="#P1414-又是毕业季II" class="headerlink" title="P1414 又是毕业季II"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1414">P1414 又是毕业季II</a></h2><p>数论题，主要在于推演。</p>
+    <h2 id="p1414-又是毕业季ii"><a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1414">P1414
+又是毕业季II</a></h2>
+<p>数论题，主要在于推演。</p>
 <p><del>洛谷的《又是毕业季I》更好玩</del></p>
-<p>发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个 $c$ 数组为所有因子出现的次数。</p>
-<p>因为让输出 $1\sim n$ 所有的值，而且因子数 <code>c[k-1]&gt;=c[k]</code>，我们就一定可以从因子数最高的 $c$ 向下遍历到 <code>c[i]</code> 更高的位置，即最大公约数i向下递减，当第一次发现 <code>c[i]&gt;=i</code>，那么就肯定存在 <code>&gt;=i</code> 个数的因子是 <code>i</code>，符合题意。</p>
+<p>发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个
+<span class="math inline">\(c\)</span> 数组为所有因子出现的次数。</p>
+<p>因为让输出 <span class="math inline">\(1\sim n\)</span>
+所有的值，而且因子数
+<code>c[k-1]&gt;=c[k]</code>，我们就一定可以从因子数最高的 <span
+class="math inline">\(c\)</span> 向下遍历到 <code>c[i]</code>
+更高的位置，即最大公约数i向下递减，当第一次发现
+<code>c[i]&gt;=i</code>，那么就肯定存在 <code>&gt;=i</code> 个数的因子是
+<code>i</code>，符合题意。</p>
 <p>数论真有意思。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> c[<span class="number">1000005</span>],n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t=<span class="number">0</span>;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x;</span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line">        t=<span class="built_in">max</span>(t,x);</span><br><span class="line">        <span class="type">int</span> m=<span class="built_in">sqrt</span>(x);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">            <span class="keyword">if</span>(!(x%j))</span><br><span class="line">            &#123;</span><br><span class="line">                c[j]++;</span><br><span class="line">                <span class="keyword">if</span>(x!=j*j)c[x/j]++;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(c[t]&lt;i)t--;</span><br><span class="line">        cout&lt;&lt;t&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2906,21 +2916,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P1903 数颜色 维护队列</p>
-          <p class='content'>莫队算法的待修版本，增加一个时间的维度进行分块。
-
-P1903 [国家集训队] 数颜色 &#x2F; 维护队列
-12345678910111213141516171819202122232425...</p>
+        <a class='prev' href='/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P1040 加分二叉树</p>
+          <p class='content'>P1040 加分二叉树
+\(n\) 很小，可以树形 dp 或者区间 dp
+。
+设 f[i][j] 为从 \(i\)
+到 \(j\) 的最大加分值，则有
+f[i][j]=max(f[i]...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/'>
-          <p class='title'>P2476-记忆化搜索<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P2476-记忆化搜索DP?
-我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.
-15维DP显然不靠谱。
-那么我们就思考一下……状态个数？发现记忆化搜索可ac：...</p>
+        <a class='next' href='/2022/04/30/P1447%20%E8%83%BD%E9%87%8F%E9%87%87%E9%9B%86/'>
+          <p class='title'>P1447 能量采集<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P1447能量采集
+
+定义:(i,j)表示处于(i,j)的植物的贡献
+
+我们发现，点(i,j)与(0,0)的连线所过整点的数目为\(\gcd(i,j)\)
+发现要是想记录每个点的答案并...</p>
         </a>
       
     </div>
@@ -3004,6 +3018,11 @@ P1903 [国家集训队] 数颜色 &#x2F; 维护队列
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3048,7 +3067,8 @@ P1903 [国家集训队] 数颜色 &#x2F; 维护队列
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P1414-%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II"><span class="toc-text">P1414 又是毕业季II</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p1414-%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3ii"><span class="toc-text">P1414
+又是毕业季II</span></a></li></ol>
     </div>
   </section>
 
@@ -4202,7 +4222,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2733,12 +2733,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        问题描述有 $n$ 个物品，每种物品两个权值 $a_i$，$b_i$，求一组 $w_i\in{0,1}$，使得
-$$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i}$$
+        问题描述
+有 \(n\) 个物品，每种物品两个权值
+\(a_i\)，\(b_i\)，求一组 \(w_i\in\{0,1\}\)，使得
+\[
+\frac{\sum_{i=1}^n w_i\cdot a_i}{\sum_{i=1}^n w_i\cdot b_i}
+\]
 最大（或最小）。
 有可能包含其他限制。
-二分法显然答案是单调的。对一个答案 $mid$，有
-$$\begin{aligned}&amp...
+二分法
+显然答案是单调的。对一个答案 \(mid\)，有
+\[
+\...
       
     
   </div>
@@ -2801,12 +2807,16 @@ $$\begin{aligned}&amp...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        无用的文字又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……
-二分图最大匹配二分图二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。
-匈牙利算法匈牙利算法是用来寻找最大匹配的一个算法。
+        无用的文字
+又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……
+二分图最大匹配
+二分图
+二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。
+匈牙利算法
+匈牙利算法是用来寻找最大匹配的一个算法。
 
 交替路：从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边……形成的路径叫交替路。
-增广路：从一个未匹配点出发，走交替路，如果途...
+增广路：从一个未匹...
       
     
   </div>
@@ -2869,7 +2879,8 @@ $$\begin{aligned}&amp...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        算法描述基数排序（又叫做桶排序）是一种非比较排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行排序。
+        算法描述
+基数排序（又叫做桶排序）是一种非比较排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行排序。
 基数排序的步骤如下：
 
 找出最大数，确定位数。
@@ -2877,7 +2888,7 @@ $$\begin{aligned}&amp...
 位数从低到高按每个位数从小到大进行排序。
 输出排序后的数组。
 
-1234567891011121314151617181920212223242526272829303...
+123456789101112131415161718192021222324252...
       
     
   </div>
@@ -2940,7 +2951,8 @@ $$\begin{aligned}&amp...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        为了给同学讲课，做了一个平面几何入门的课件，保存在网上。平面几何入门奇怪的是明明是平面几何还写了一点三维的东西。应该叫计算几何的。
+        为了给同学讲课，做了一个平面几何入门的课件，保存在网上。 平面几何入门
+奇怪的是明明是平面几何还写了一点三维的东西。应该叫计算几何的。
 
       
     
@@ -3004,7 +3016,8 @@ $$\begin{aligned}&amp...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        并查集并查集是一种树型数据结构，用于处理一些动态集合的合并及查询问题。
+        并查集
+并查集是一种树型数据结构，用于处理一些动态集合的合并及查询问题。
 并查集的基本操作有：
 
 合并：将两个集合合并为一个集合。
@@ -3016,7 +3029,8 @@ $$\begin{aligned}&amp...
 最小生成树：计算最小生成树。
 路径压缩：减少树的高度。
 
-并查集优化并查集有两种启发式优化。第一种是路径压缩，即将每个节点的父节点压缩到根节点，总时间复杂度为 $O...
+并查集优化
+并查集有两种启发式优化。第一种是路径压缩，即将每个节点的父节点压...
       
     
   </div>
@@ -3038,6 +3052,71 @@ $$\begin{aligned}&amp...
       
         <div>
           <a class='readmore' href='/2022/04/30/%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/归并排序/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"  itemprop="url">
+        归并排序
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        算法描述
+运用了分治的思想，将一个数组分成几乎相等的两份，分别将两段中第一个最小的数拿出来放在一个临时数组中，直到全部取完。因为是递归的，所以每一段的数列都是排序好的。
+1234567891011121314void merge_sort(ll *A,ll *B,int x,int y)&#123;	if(y-x&lt;=1)return;	int mid=x+(y-x)/2;	int ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3079,10 +3158,14 @@ $$\begin{aligned}&amp...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        快速幂快速幂是在进行底数相同的乘法运算而幂数又极大的情况下使用的一种算法。
-将幂次做二进制拆分，然后从低位到高位维护幂次积，同时若该位为 1 乘入答案。
-模板P1226 【模板】快速幂
-12345678910111213141516171819202122#include&lt;iostream&gt;#include&lt;cstdio&gt;#define int unsigned lo...
+        快速幂
+快速幂是在进行底数相同的乘法运算而幂数又极大的情况下使用的一种算法。
+将幂次做二进制拆分，然后从低位到高位维护幂次积，同时若该位为 1
+乘入答案。
+模板
+P1226
+【模板】快速幂
+12345678910111213141516171819202122#include&lt;iostream&gt;#include&lt;cstdio&gt;#define int un...
       
     
   </div>
@@ -3104,71 +3187,6 @@ $$\begin{aligned}&amp...
       
         <div>
           <a class='readmore' href='/2022/04/30/%E5%BF%AB%E9%80%9F%E5%B9%82/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扩展欧拉定理/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/"  itemprop="url">
-        扩展欧拉定理
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        欧拉定理欧拉定理：若 $a$ 与 $m$ 互质，则有$$a^{\varphi(m)}\equiv1(\mod m)$$我们可以发现费马小定理其实就是欧拉定理的特殊情况。
-证明的话，构造一个与 $m$ 互质的数列操作，利用剩余系证明
-扩展欧拉定理扩展欧拉定理为$$a^b\equiv \begin{cases}a^{b\mod\varphi(p)},&amp;\gcd(a,p)&#x3D;1\a...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3210,10 +3228,13 @@ $$\begin{aligned}&amp...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        贝祖定理如果 $a$、$b$ 是整数，那么一定存在整数 $x$、$y$ 使得 $ax+by&#x3D;\gcd(a,b)$。
-换句话说，如果 $ax+by&#x3D;m$ 有解，那么 $m$ 一定是 $\gcd(a,b)$ 的若干倍。（可以来判断一个这样的式子有没有解）
-有一个直接的应用就是 如果 $ax+by&#x3D;1$ 有解，那么 $gcd(a,b)&#x3D;1$。
-然而这并不能告...
+        贝祖定理
+如果 \(a\)、\(b\) 是整数，那么一定存在整数 \(x\)、\(y\)
+使得 \(ax+by=\gcd(a,b)\)。
+换句话说，如果 \(ax+by=m\)
+有解，那么 \(m\) 一定是 \(\gcd(a,b)\)
+的若干倍。（可以来判断一个这样的式子有没有解）
+有一个直接的应用就是 如果 \(ax+by=1\) 有解，那么 \(gcd(a,b)=1\)。...
       
     
   </div>
@@ -3235,6 +3256,77 @@ $$\begin{aligned}&amp...
       
         <div>
           <a class='readmore' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97(exgcd)-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B%20%E6%B1%82%E9%80%86%E5%85%83/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扩展欧拉定理/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/"  itemprop="url">
+        扩展欧拉定理
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        欧拉定理
+欧拉定理：若 \(a\) 与 \(m\) 互质，则有 \[
+a^{\varphi(m)}\equiv1(\mod m)
+\] 我们可以发现费马小定理其实就是欧拉定理的特殊情况。
+证明的话，构造一个与 \(m\)
+互质的数列操作，利用剩余系证明
+扩展欧拉定理
+扩展欧拉定理为 \[
+a^b\equiv \begin{cases}a^{b\mod\varphi(p)},&...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3281,7 +3373,8 @@ $$\begin{aligned}&amp...
 
 扫描线处理矩阵面积之和的问题，当然它们会有互相覆盖而不能直接加起来。
 扫描线就是从下往上一次扫描“线”，然后用线将图分成多个区域，累加即可。用线段树记录横坐标此时扫描线处的长度。
-用 Xi 表示第 $i$ 条竖直的线（用来划分区间），用 line 结构体表...
+用 Xi 表示第 \(i\)
+条竖直的线（用来划分区间），用 l...
       
     
   </div>
@@ -3303,73 +3396,6 @@ $$\begin{aligned}&amp...
       
         <div>
           <a class='readmore' href='/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/斜率优化/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/"  itemprop="url">
-        斜率优化
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-这是之前博客园的草稿，写得不好，本来想直接删除了事。然而，斜率优化是一个很重要也很基础的优化问题，是需要学习掌握的。但我现在没有精力写一篇新的文章了。
-
-OI wiki: 斜率优化
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3522,6 +3548,11 @@ OI wiki: 斜率优化
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3564,7 +3595,7 @@ OI wiki: 斜率优化
 
 
     <div class='content'>
-      <a href="/tags/2-SAT/" style="font-size: 14.77px; color: #949494">2-SAT</a> <a href="/tags/3D-%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">3D 建模</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Adobe/" style="font-size: 14px; color: #999">Adobe</a> <a href="/tags/DP/" style="font-size: 20.92px; color: #6a6a6a">DP</a> <a href="/tags/Me/" style="font-size: 16.31px; color: #898989">Me</a> <a href="/tags/OI/" style="font-size: 23.23px; color: #5a5a5a">OI</a> <a href="/tags/ST%E8%A1%A8/" style="font-size: 14.77px; color: #949494">ST表</a> <a href="/tags/blog/" style="font-size: 15.54px; color: #8f8f8f">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BA%A4%E4%BA%92/" style="font-size: 14px; color: #999">交互</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">优化</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 14.77px; color: #949494">几何</a> <a href="/tags/%E5%88%86%E5%9D%97/" style="font-size: 17.08px; color: #848484">分块</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 15.54px; color: #8f8f8f">分治</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 14.77px; color: #949494">单调栈</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" style="font-size: 14.77px; color: #949494">博弈论</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 22.46px; color: #5f5f5f">图论</a> <a href="/tags/%E5%9C%86%E6%96%B9%E6%A0%91/" style="font-size: 14.77px; color: #949494">圆方树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" style="font-size: 14.77px; color: #949494">多项式</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.08px; color: #848484">字符串</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 14.77px; color: #949494">平衡树</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E5%BE%AE%E5%85%89/" style="font-size: 16.31px; color: #898989">微光</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14.77px; color: #949494">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 21.69px; color: #656565">数论</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.38px; color: #747474">树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" style="font-size: 14.77px; color: #949494">树链剖分</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.15px; color: #6f6f6f">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 15.54px; color: #8f8f8f">线性代数</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 17.85px; color: #7f7f7f">线段树</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" style="font-size: 18.62px; color: #7a7a7a">组合数学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 15.54px; color: #8f8f8f">网络流</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">读后感</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">随机化</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14.77px; color: #949494">高斯消元</a>
+      <a href="/tags/2-SAT/" style="font-size: 14.77px; color: #949494">2-SAT</a> <a href="/tags/3D-%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">3D 建模</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Adobe/" style="font-size: 14px; color: #999">Adobe</a> <a href="/tags/Courses/" style="font-size: 14px; color: #999">Courses</a> <a href="/tags/DP/" style="font-size: 20.92px; color: #6a6a6a">DP</a> <a href="/tags/Me/" style="font-size: 16.31px; color: #898989">Me</a> <a href="/tags/OI/" style="font-size: 23.23px; color: #5a5a5a">OI</a> <a href="/tags/ST%E8%A1%A8/" style="font-size: 14.77px; color: #949494">ST表</a> <a href="/tags/blog/" style="font-size: 15.54px; color: #8f8f8f">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BA%A4%E4%BA%92/" style="font-size: 14px; color: #999">交互</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">优化</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 14.77px; color: #949494">几何</a> <a href="/tags/%E5%88%86%E5%9D%97/" style="font-size: 17.08px; color: #848484">分块</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 15.54px; color: #8f8f8f">分治</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 14.77px; color: #949494">单调栈</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" style="font-size: 14.77px; color: #949494">博弈论</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 22.46px; color: #5f5f5f">图论</a> <a href="/tags/%E5%9C%86%E6%96%B9%E6%A0%91/" style="font-size: 14.77px; color: #949494">圆方树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" style="font-size: 14.77px; color: #949494">多项式</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.08px; color: #848484">字符串</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 14.77px; color: #949494">平衡树</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E5%BE%AE%E5%85%89/" style="font-size: 16.31px; color: #898989">微光</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14.77px; color: #949494">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 21.69px; color: #656565">数论</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.38px; color: #747474">树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" style="font-size: 14.77px; color: #949494">树链剖分</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.15px; color: #6f6f6f">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 15.54px; color: #8f8f8f">线性代数</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 17.85px; color: #7f7f7f">线段树</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" style="font-size: 18.62px; color: #7a7a7a">组合数学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 15.54px; color: #8f8f8f">网络流</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">读后感</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">随机化</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14.77px; color: #949494">高斯消元</a>
     </div>
   </section>
 
@@ -4716,7 +4747,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

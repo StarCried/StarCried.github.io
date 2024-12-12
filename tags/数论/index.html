@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2757,11 +2757,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF1166E The LCMs Must be Large思维好题，结论好题。
-题意一个长度为 $n$ 的未知长度的序列，有 $m$ 个限制，每个限制形如给定一个集合 $S$ ，使集合内元素的 $lcm$ 严格大于其补集元素的 $lcm$ 。问是否存在这一序列。
-思路要注意我们是要尽可能使序列有解。
-先给出结论：若所有集合两两间有交，则有解。否则一定无解。
-首先有一个结论：若 $A\sub...
+        CF1166E The LCMs Must be
+Large
+思维好题，结论好题。
+题意
+一个长度为 \(n\)
+的未知长度的序列，有 \(m\)
+个限制，每个限制形如给定一个集合 \(S\)
+，使集合内元素的 \(lcm\)
+严格大于其补集元素的 \(lcm\)
+。问是否存在这一序列。
+思路
+要注意我们是要尽可能使序列有解。
+先给出结论：若所有集合两两间有交，则有解...
       
     
   </div>
@@ -2783,69 +2791,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div>
           <a class='readmore' href='/2022/04/30/CF1166E%20The%20LCMs%20Must%20be%20Large/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/GCD SUM/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/GCD%20SUM/"  itemprop="url">
-        GCD SUM
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        GCD SUM求$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n\gcd(i,j)$$将原式变换得到$$\sum_{d&#x3D;1}^nd\sum_{i&#x3D;1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j&#x3D;1}^{\lfloor\frac{n}{d}\rfloor}[\gcd(i,j)&#x3D;1]$$别着急莫比乌斯反演...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/GCD%20SUM/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2890,8 +2835,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
 非全面讲解，仅供记录笔记
 
-Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsilon &#x3D;\mu \ast 1 \iff \varepsilon(n) &#x3D; \sum_{d\mid n} \mu(d)$$其中$\varepsilon$卷任何函数等于其函数本身。
-莫比乌斯函数$...
+Dirichlet卷积
+\[(f\ast g)(n)=\sum_{d\mid
+n}f(d)g(\frac{n}{d})\] \[\varepsilon
+=\mu \ast 1 \iff \varepsilon(n) = \sum_{d\mid n} \mu(d)\]
+其中\(\varepsilon\)卷任何函数等于其函数本身。
+莫比乌斯函数\(\...
       
     
   </div>
@@ -2913,6 +2862,75 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
       
         <div>
           <a class='readmore' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/GCD SUM/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/GCD%20SUM/"  itemprop="url">
+        GCD SUM
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        GCD SUM
+求 \[
+\sum_{i=1}^n\sum_{j=1}^n\gcd(i,j)
+\] 将原式变换得到 \[
+\sum_{d=1}^nd\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}[\gcd(i,j)=1]
+\] 别着急莫比乌斯反演，我们知道 \[
+\varph...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/GCD%20SUM/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2954,10 +2972,15 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1414 又是毕业季II数论题，主要在于推演。
+        P1414
+又是毕业季II
+数论题，主要在于推演。
 洛谷的《又是毕业季I》更好玩
-发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个 $c$ 数组为所有因子出现的次数。
-因为让输出 $1\sim n$ 所有的值，而且因子数 c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 $c$ 向下遍历到 c[i] 更高的位置，即最大公约数i...
+发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个
+\(c\) 数组为所有因子出现的次数。
+因为让输出 \(1\sim n\)
+所有的值，而且因子数
+c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历到 c[i...
       
     
   </div>
@@ -3020,8 +3043,16 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P3312 数表题意求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^m\sigma(\gcd(i,j))[\sigma(\gcd(i,j))\le a]$$其中 $\sigma$ 表示约数和。
-思路&#x2F;推导考虑没有 $a$ 的限制的情况。$$\begin{aligned}ans&amp;&#x3D;\sum_{d&#x3D;1}^{\min(n,m)}\si...
+        P3312 数表
+题意
+求出 \[
+\sum_{i=1}^n\sum_{j=1}^m\sigma(\gcd(i,j))[\sigma(\gcd(i,j))\le a]
+\] 其中 \(\sigma\)
+表示约数和。
+思路/推导
+考虑没有 \(a\) 的限制的情况。 \[
+\begin{aligned}
+ans&amp;=\sum_{d=1}^{\min(n,m)}\sigm...
       
     
   </div>
@@ -3088,7 +3119,8 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
 很久很久以前，巨龙突然出现，带来了灾难带走公主又消失不见。王国十分危险，世间谁最勇敢，一位英雄出现……
 
 学习于该大佬博客
-题意那么你就是这位英雄，不过不同的是，你面对的是一群巨龙，虽然巨龙都不会攻击；你每次使用的剑一打就爆，虽然每打死一条巨龙的奖励是一把新的剑；巨龙不会因为生命值降为负数而死亡，虽然巨龙会憨憨地回血然后把自己奶死；最重要的是你完成游戏不会获得公主的爱，只会获得参加ION8...
+题意
+那么你就是这位英雄，不过不同的是，你面对的是一群巨龙，虽然巨龙都不会攻击；你每次使用的剑一打就爆，虽然每打死一条巨龙的奖励是一把新的剑；巨龙不会因为生命值降为负数而死亡，虽然巨龙会憨憨地回血然后把自己奶死；最重要的是你完成游戏不会获得公主的爱，只会获得...
       
     
   </div>
@@ -3151,8 +3183,16 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5110 块速递推题意多次询问，求数列$$a_i&#x3D;\begin{cases}233a_{i-1}+666a_{i-2} &amp; i&gt;1\0 &amp; i&#x3D;0\1 &amp; i&#x3D;1\\end{cases}$$的第 $n$ 项在 $\mod 1e9+7$ 意义下的值的异或和。
-思路首先这个数列是一个广义斐波那契数列。对于广义斐波那契数列，我们一般是用...
+        P5110 块速递推
+题意
+多次询问，求数列 \[
+a_i=\begin{cases}233a_{i-1}+666a_{i-2} &amp; i&gt;1\\
+0 &amp; i=0\\
+1 &amp; i=1\\
+\end{cases}
+\] 的第 \(n\) 项在 \(\mod 1e9+7\) 意义下的值的异或和。
+思路
+首先这个数列是一个广义斐波那契数列。对于广义斐波...
       
     
   </div>
@@ -3215,8 +3255,11 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Description墨墨突然对等式很感兴趣，他正在研究 $a_1x_1+a_2x_2+…+a_nx_n&#x3D;B$ 存在非负整数解的条件，他要求你编写一个程序，给定 $N$、${a_n}$、以及 $B$ 的取值范围，求出有多少 $B$ 可以使等式存在非负整数解。
-Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B_{Max}$ 分别表示数列的长度、$B...
+        Description
+墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
+存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\{a_n\}\)、以及 \(B\) 的取值范围，求出有多少 \(B\) 可以使等式存在非负整数解。
+Input
+输入的第一行包含 3 个正整数，分别表示 \(N\)、\(B_{Min}\)、\(B...
       
     
   </div>
@@ -3282,9 +3325,13 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
         
 “有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
 
-中国剩余定理即求多个同余方程的解。
-举个栗子。求一个数x，使得：$$\begin{cases}x≡2\pmod 3\x≡3\pmod 5\x≡2\pmod {11}\end{cases}$$
-设 $M&#x3D;3511&#x3D;165$, $a1&#x3D;3$, $a2&#x3D;5$, $a3...
+中国剩余定理
+即求多个同余方程的解。
+举个栗子。求一个数x，使得： \[\begin{cases}
+x≡2\pmod 3\\
+x≡3\pmod 5\\
+x≡2\pmod {11}\end{cases}\]
+设 \(M=3*5*11=165\), \(a1=3\), \(a2=5\),...
       
     
   </div>
@@ -3321,7 +3368,7 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扩展欧拉定理/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扩展欧几里得(exgcd)-求解不定方程 求逆元/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3339,17 +3386,21 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/"  itemprop="url">
-        扩展欧拉定理
+      <a href="/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97(exgcd)-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B%20%E6%B1%82%E9%80%86%E5%85%83/"  itemprop="url">
+        扩展欧几里得(exgcd)-求解不定方程 求逆元
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        欧拉定理欧拉定理：若 $a$ 与 $m$ 互质，则有$$a^{\varphi(m)}\equiv1(\mod m)$$我们可以发现费马小定理其实就是欧拉定理的特殊情况。
-证明的话，构造一个与 $m$ 互质的数列操作，利用剩余系证明
-扩展欧拉定理扩展欧拉定理为$$a^b\equiv \begin{cases}a^{b\mod\varphi(p)},&amp;\gcd(a,p)&#x3D;1\a...
+        贝祖定理
+如果 \(a\)、\(b\) 是整数，那么一定存在整数 \(x\)、\(y\)
+使得 \(ax+by=\gcd(a,b)\)。
+换句话说，如果 \(ax+by=m\)
+有解，那么 \(m\) 一定是 \(\gcd(a,b)\)
+的若干倍。（可以来判断一个这样的式子有没有解）
+有一个直接的应用就是 如果 \(ax+by=1\) 有解，那么 \(gcd(a,b)=1\)。...
       
     
   </div>
@@ -3370,7 +3421,7 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97(exgcd)-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B%20%E6%B1%82%E9%80%86%E5%85%83/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3517,6 +3568,11 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3559,7 +3615,7 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
 
 
     <div class='content'>
-      <a href="/tags/2-SAT/" style="font-size: 14.77px; color: #949494">2-SAT</a> <a href="/tags/3D-%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">3D 建模</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Adobe/" style="font-size: 14px; color: #999">Adobe</a> <a href="/tags/DP/" style="font-size: 20.92px; color: #6a6a6a">DP</a> <a href="/tags/Me/" style="font-size: 16.31px; color: #898989">Me</a> <a href="/tags/OI/" style="font-size: 23.23px; color: #5a5a5a">OI</a> <a href="/tags/ST%E8%A1%A8/" style="font-size: 14.77px; color: #949494">ST表</a> <a href="/tags/blog/" style="font-size: 15.54px; color: #8f8f8f">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BA%A4%E4%BA%92/" style="font-size: 14px; color: #999">交互</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">优化</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 14.77px; color: #949494">几何</a> <a href="/tags/%E5%88%86%E5%9D%97/" style="font-size: 17.08px; color: #848484">分块</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 15.54px; color: #8f8f8f">分治</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 14.77px; color: #949494">单调栈</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" style="font-size: 14.77px; color: #949494">博弈论</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 22.46px; color: #5f5f5f">图论</a> <a href="/tags/%E5%9C%86%E6%96%B9%E6%A0%91/" style="font-size: 14.77px; color: #949494">圆方树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" style="font-size: 14.77px; color: #949494">多项式</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.08px; color: #848484">字符串</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 14.77px; color: #949494">平衡树</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E5%BE%AE%E5%85%89/" style="font-size: 16.31px; color: #898989">微光</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14.77px; color: #949494">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 21.69px; color: #656565">数论</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.38px; color: #747474">树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" style="font-size: 14.77px; color: #949494">树链剖分</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.15px; color: #6f6f6f">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 15.54px; color: #8f8f8f">线性代数</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 17.85px; color: #7f7f7f">线段树</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" style="font-size: 18.62px; color: #7a7a7a">组合数学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 15.54px; color: #8f8f8f">网络流</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">读后感</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">随机化</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14.77px; color: #949494">高斯消元</a>
+      <a href="/tags/2-SAT/" style="font-size: 14.77px; color: #949494">2-SAT</a> <a href="/tags/3D-%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">3D 建模</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Adobe/" style="font-size: 14px; color: #999">Adobe</a> <a href="/tags/Courses/" style="font-size: 14px; color: #999">Courses</a> <a href="/tags/DP/" style="font-size: 20.92px; color: #6a6a6a">DP</a> <a href="/tags/Me/" style="font-size: 16.31px; color: #898989">Me</a> <a href="/tags/OI/" style="font-size: 23.23px; color: #5a5a5a">OI</a> <a href="/tags/ST%E8%A1%A8/" style="font-size: 14.77px; color: #949494">ST表</a> <a href="/tags/blog/" style="font-size: 15.54px; color: #8f8f8f">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BA%A4%E4%BA%92/" style="font-size: 14px; color: #999">交互</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">优化</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 14.77px; color: #949494">几何</a> <a href="/tags/%E5%88%86%E5%9D%97/" style="font-size: 17.08px; color: #848484">分块</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 15.54px; color: #8f8f8f">分治</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 14.77px; color: #949494">单调栈</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" style="font-size: 14.77px; color: #949494">博弈论</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 22.46px; color: #5f5f5f">图论</a> <a href="/tags/%E5%9C%86%E6%96%B9%E6%A0%91/" style="font-size: 14.77px; color: #949494">圆方树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" style="font-size: 14.77px; color: #949494">多项式</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.08px; color: #848484">字符串</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 14.77px; color: #949494">平衡树</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E5%BE%AE%E5%85%89/" style="font-size: 16.31px; color: #898989">微光</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14.77px; color: #949494">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 21.69px; color: #656565">数论</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.38px; color: #747474">树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" style="font-size: 14.77px; color: #949494">树链剖分</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.15px; color: #6f6f6f">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 15.54px; color: #8f8f8f">线性代数</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 17.85px; color: #7f7f7f">线段树</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" style="font-size: 18.62px; color: #7a7a7a">组合数学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 15.54px; color: #8f8f8f">网络流</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">读后感</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">随机化</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14.77px; color: #949494">高斯消元</a>
     </div>
   </section>
 
@@ -4711,7 +4767,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 

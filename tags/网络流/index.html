@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733242729210),
+    lastupdate: new Date(1733986654917),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2743,12 +2743,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        最大权闭合子图闭合子图定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。
-最大权闭合子图给有向图的点加一个点权，能得到的点权最大的闭合子图。
+        最大权闭合子图
+闭合子图
+定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。
+最大权闭合子图
+给有向图的点加一个点权，能得到的点权最大的闭合子图。
 网络流模型
+
 将所有正点权的点的点权全部加入答案。接下来我们将原来正点权的点变成负点权。现在图上全是负点，我们需要尽量选最少点权使图符合条件。
 设超级源点和超级汇点。
-将超级源向所有原来是正点权的点连边，流量...
+将超级源向所有...
       
     
   </div>
@@ -2811,11 +2815,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        算法介绍最大流问题是指在一个有向图中，从一个源点到一个汇点，最大化流量，使得所有边的容量都大于等于 0。
-dinic 算法是一种高效的求解最大流问题的算法，其时间复杂度为 $O(EV^2)$。
-dinic 算法的基本思想是，通过增广路算法，找到一条从源点到汇点的增广路，然后通过深度优先搜索（DFS）算法，在增广路上进行流的增广，直到不能再增广为止。
+        算法介绍
+最大流问题是指在一个有向图中，从一个源点到一个汇点，最大化流量，使得所有边的容量都大于等于
+0。
+dinic 算法是一种高效的求解最大流问题的算法，其时间复杂度为 \(O(EV^2)\)。
+dinic
+算法的基本思想是，通过增广路算法，找到一条从源点到汇点的增广路，然后通过深度优先搜索（DFS）算法，在增广路上进行流的增广，直到不能再增广为止。
 步骤
-初始化 flow（最大流量）为 IN...
+
+初始化 fl...
       
     
   </div>
@@ -2878,13 +2886,15 @@ dinic 算法的基本思想是，通过增广路算法，找到一条从源点�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        路径覆盖路径覆盖指一个路径的集合中所有路径点集的并集为原图点集。最小路径覆盖使路径集合大小最小。
+        路径覆盖
+路径覆盖指一个路径的集合中所有路径点集的并集为原图点集。最小路径覆盖使路径集合大小最小。
 路径覆盖分为可否重复选点两种。可重复选点在建模中加大流量即可。
 网络流模型
-建超级源 $S$ 和超级汇 $T$，将每个点拆点。
-将 $S$ 向所有点 $i$ 连边，将所有点 $i’$ 向 $T$ 连边。
-对于原图边集，每一条边 $u$ 向 $v’$ 连边。
-选点不重的最小路径覆盖问题，上述所有边...
+
+建超级源 \(S\) 和超级汇 \(T\)，将每个点拆点。
+将 \(S\) 向所有点 \(i\) 连边，将所有点 \(i&#39;\) 向 \(T\) 连边。
+对于原图边集，每一条边 \(u\) 向
+...
       
     
   </div>
@@ -3037,6 +3047,11 @@ dinic 算法的基本思想是，通过增广路算法，找到一条从源点�
             ><div class='name'>创作</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE5ADA6E4B9A0"
+            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
             active-action="action-categoriesE695B0E5ADA6"
             ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
@@ -3079,7 +3094,7 @@ dinic 算法的基本思想是，通过增广路算法，找到一条从源点�
 
 
     <div class='content'>
-      <a href="/tags/2-SAT/" style="font-size: 14.77px; color: #949494">2-SAT</a> <a href="/tags/3D-%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">3D 建模</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Adobe/" style="font-size: 14px; color: #999">Adobe</a> <a href="/tags/DP/" style="font-size: 20.92px; color: #6a6a6a">DP</a> <a href="/tags/Me/" style="font-size: 16.31px; color: #898989">Me</a> <a href="/tags/OI/" style="font-size: 23.23px; color: #5a5a5a">OI</a> <a href="/tags/ST%E8%A1%A8/" style="font-size: 14.77px; color: #949494">ST表</a> <a href="/tags/blog/" style="font-size: 15.54px; color: #8f8f8f">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BA%A4%E4%BA%92/" style="font-size: 14px; color: #999">交互</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">优化</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 14.77px; color: #949494">几何</a> <a href="/tags/%E5%88%86%E5%9D%97/" style="font-size: 17.08px; color: #848484">分块</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 15.54px; color: #8f8f8f">分治</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 14.77px; color: #949494">单调栈</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" style="font-size: 14.77px; color: #949494">博弈论</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 22.46px; color: #5f5f5f">图论</a> <a href="/tags/%E5%9C%86%E6%96%B9%E6%A0%91/" style="font-size: 14.77px; color: #949494">圆方树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" style="font-size: 14.77px; color: #949494">多项式</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.08px; color: #848484">字符串</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 14.77px; color: #949494">平衡树</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E5%BE%AE%E5%85%89/" style="font-size: 16.31px; color: #898989">微光</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14.77px; color: #949494">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 21.69px; color: #656565">数论</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.38px; color: #747474">树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" style="font-size: 14.77px; color: #949494">树链剖分</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.15px; color: #6f6f6f">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 15.54px; color: #8f8f8f">线性代数</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 17.85px; color: #7f7f7f">线段树</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" style="font-size: 18.62px; color: #7a7a7a">组合数学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 15.54px; color: #8f8f8f">网络流</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">读后感</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">随机化</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14.77px; color: #949494">高斯消元</a>
+      <a href="/tags/2-SAT/" style="font-size: 14.77px; color: #949494">2-SAT</a> <a href="/tags/3D-%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">3D 建模</a> <a href="/tags/ACM/" style="font-size: 14px; color: #999">ACM</a> <a href="/tags/Adobe/" style="font-size: 14px; color: #999">Adobe</a> <a href="/tags/Courses/" style="font-size: 14px; color: #999">Courses</a> <a href="/tags/DP/" style="font-size: 20.92px; color: #6a6a6a">DP</a> <a href="/tags/Me/" style="font-size: 16.31px; color: #898989">Me</a> <a href="/tags/OI/" style="font-size: 23.23px; color: #5a5a5a">OI</a> <a href="/tags/ST%E8%A1%A8/" style="font-size: 14.77px; color: #949494">ST表</a> <a href="/tags/blog/" style="font-size: 15.54px; color: #8f8f8f">blog</a> <a href="/tags/exgcd/" style="font-size: 14px; color: #999">exgcd</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 14px; color: #999">二分</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 14px; color: #999">二分法</a> <a href="/tags/%E4%BA%A4%E4%BA%92/" style="font-size: 14px; color: #999">交互</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">优化</a> <a href="/tags/%E5%87%A0%E4%BD%95/" style="font-size: 14.77px; color: #949494">几何</a> <a href="/tags/%E5%88%86%E5%9D%97/" style="font-size: 17.08px; color: #848484">分块</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 15.54px; color: #8f8f8f">分治</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 14.77px; color: #949494">单调栈</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" style="font-size: 24px; color: #555">博客园</a> <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" style="font-size: 14.77px; color: #949494">博弈论</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 22.46px; color: #5f5f5f">图论</a> <a href="/tags/%E5%9C%86%E6%96%B9%E6%A0%91/" style="font-size: 14.77px; color: #949494">圆方树</a> <a href="/tags/%E5%A0%86/" style="font-size: 14px; color: #999">堆</a> <a href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" style="font-size: 14.77px; color: #949494">多项式</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.08px; color: #848484">字符串</a> <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" style="font-size: 14.77px; color: #949494">平衡树</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 14px; color: #999">并查集</a> <a href="/tags/%E5%BE%AE%E5%85%89/" style="font-size: 16.31px; color: #898989">微光</a> <a href="/tags/%E6%89%8B%E5%B7%A5/" style="font-size: 14px; color: #999">手工</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14.77px; color: #949494">搜索</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 16.31px; color: #898989">数学</a> <a href="/tags/%E6%95%B0%E8%AE%BA/" style="font-size: 21.69px; color: #656565">数论</a> <a href="/tags/%E6%9E%84%E9%80%A0/" style="font-size: 14px; color: #999">构造</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.38px; color: #747474">树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 14px; color: #999">树状数组</a> <a href="/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/" style="font-size: 14.77px; color: #949494">树链剖分</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 14px; color: #999">模拟</a> <a href="/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 20.15px; color: #6f6f6f">游记</a> <a href="/tags/%E7%82%B9%E5%88%86%E6%B2%BB/" style="font-size: 14px; color: #999">点分治</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 15.54px; color: #8f8f8f">线性代数</a> <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" style="font-size: 17.85px; color: #7f7f7f">线段树</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" style="font-size: 18.62px; color: #7a7a7a">组合数学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 15.54px; color: #8f8f8f">网络流</a> <a href="/tags/%E8%A7%82%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">观后感</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 14.77px; color: #949494">读后感</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a> <a href="/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/" style="font-size: 14px; color: #999">逆序对</a> <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/" style="font-size: 15.54px; color: #8f8f8f">随机化</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/" style="font-size: 14.77px; color: #949494">高斯消元</a>
     </div>
   </section>
 
@@ -4231,7 +4246,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 
