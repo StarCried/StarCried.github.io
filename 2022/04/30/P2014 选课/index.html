@@ -50,12 +50,12 @@
   <title>P2014 选课 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,DP,树,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="洛谷P2014选课 一道树形DP题。 f[i][j] 表示i个点选j门课程的最大学分。 递推方程： 1234for(int a&#x3D;n;a&gt;0;a--)&#x2F;&#x2F;总共选择多少    for(int b&#x3D;0;b&lt;a;b++)&#x2F;&#x2F;分别选择多少(b,a-b)        f[x][a]&#x3D;max(f[x][a],f[x][a-b]+f[u][b]);&#x2F;&#x2F;都不遍历0的原因是f[i][0]无论怎样">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="P2014 选课">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="洛谷P2014选课 一道树形DP题。 f[i][j] 表示i个点选j门课程的最大学分。 递推方程： 1234for(int a&#x3D;n;a&gt;0;a--)&#x2F;&#x2F;总共选择多少    for(int b&#x3D;0;b&lt;a;b++)&#x2F;&#x2F;分别选择多少(b,a-b)        f[x][a]&#x3D;max(f[x][a],f[x][a-b]+f[u][b]);&#x2F;&#x2F;都不遍历0的原因是f[i][0]无论怎样">
+<meta property="og:description" content="洛谷P2014选课 一道树形DP题。 f[i][j] 表示i个点选j门课程的最大学分。 递推方程： 1234for(int a&#x3D;n;a&gt;0;a--)&#x2F;&#x2F;总共选择多少    for(int b&#x3D;0;b&lt;a;b++)&#x2F;&#x2F;分别选择多少(b,a-b)        f[x][a]&#x3D;max(f[x][a],f[x][a-b]+f[u][b]);&#x2F;&#x2F;都不遍历0的原因是f[i][0]无论怎样都是0">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1893,7 +1893,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2804,14 +2804,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><a
-target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2014">洛谷P2014选课</a></p>
+    <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2014">洛谷P2014选课</a></p>
 <p>一道树形DP题。</p>
 <p><code>f[i][j]</code> 表示i个点选j门课程的最大学分。</p>
 <p>递推方程：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> a=n;a&gt;<span class="number">0</span>;a--)<span class="comment">//总共选择多少</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> b=<span class="number">0</span>;b&lt;a;b++)<span class="comment">//分别选择多少(b,a-b)</span></span><br><span class="line">        f[x][a]=<span class="built_in">max</span>(f[x][a],f[x][a-b]+f[u][b]);</span><br><span class="line"><span class="comment">//都不遍历0的原因是f[i][0]无论怎样都是0</span></span><br></pre></td></tr></table></figure>
-<p>我们可以证明在 <span class="math inline">\(j\leq
-m\)</span>时值都是正确的，剩下的不用管啦么的时间！</p>
+
+<p>我们可以证明在 $j\leq m$时值都是正确的，剩下的不用管啦么的时间！</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;ctype.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">305</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x,w=<span class="number">1</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)w=<span class="number">-1</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">    x=c-<span class="string">&#x27;0&#x27;</span>;c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+c-<span class="string">&#x27;0&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> x*w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">int</span> f[maxn][maxn];</span><br><span class="line">vector &lt;<span class="type">int</span>&gt;son[maxn];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    f[x][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;son[x].<span class="built_in">size</span>();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u=son[x][i];</span><br><span class="line">        <span class="built_in">dfs</span>(u);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> a=n;a&gt;<span class="number">0</span>;a--)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> b=<span class="number">0</span>;b&lt;a;b++)</span><br><span class="line">            f[x][a]=<span class="built_in">max</span>(f[x][a],f[x][a-b]+f[u][b]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>()<span class="number">+1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        son[<span class="built_in">read</span>()].<span class="built_in">push_back</span>(i); f[i][<span class="number">1</span>]=<span class="built_in">read</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>]=f[<span class="number">0</span>][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    n++;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,f[<span class="number">0</span>][m]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2910,26 +2909,20 @@ m\)</span>时值都是正确的，剩下的不用管啦么的时间！</p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2490 [SDOI2011]黑白棋</p>
-          <p class='content'>P2490 [SDOI2011]黑白棋
-题意
-一个 \(1*n\) 的棋盘上，A
-可以移动白色棋子，B
-可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动
-1 到...</p>
+        <a class='prev' href='/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2375 [NOI2014]动物园</p>
+          <p class='content'>P2375 [NOI2014]动物园我竟然会做NOI的题目辣(≧▽≦)&#x2F;（看的题解
+总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。
+我们发现，这个所谓...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/'>
-          <p class='title'>P2491 消防 P1099 树网的核<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P2491 消防/P1099 树网的核
-双倍经验，双倍快乐。
-题意
-在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。
-输出这个最小的值。
-做法
-Defin...</p>
+        <a class='next' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/'>
+          <p class='title'>P2476-记忆化搜索<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P2476-记忆化搜索DP?
+我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.
+15维DP显然不靠谱。
+那么我们就思考一下……状态个数？发现记忆化搜索可ac：...</p>
         </a>
       
     </div>
@@ -3192,9 +3185,7 @@ Defin...</p>
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4206,7 +4197,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

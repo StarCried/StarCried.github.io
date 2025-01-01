@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2705,7 +2705,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6845 [CEOI2019] Dynamic Diameter/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6106 [Ynoi2010] Self Adjusting Top Tree/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2723,22 +2723,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P6845%20%5BCEOI2019%5D%20Dynamic%20Diameter/"  itemprop="url">
-        P6845 [CEOI2019] Dynamic Diameter
+      <a href="/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/"  itemprop="url">
+        P6106 [Ynoi2010] Self Adjusting Top Tree
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6845 [CEOI2019] Dynamic
-Diameter
-题意
-一颗带权树，每次更改一条边的权，每次修改后求出最大直径。强制在线。
-思路
-\(O(n\log^2n)\) 的暴力做法。
-根据经典结论，对于两个点集的树上最大直径（权值非负），并集点集的树上最大直径的端点一定是原四个端点中的两个。
-那么我们就可以用线段树维护点集，合并时 \(O(\log n)\) 查询两点...
+        P6106 [Ynoi2010] Self Adjusting Top Tree题意给出平面直角坐标系上若干不与坐标轴平行的处于第一象限的互不相交的线段，多次询问平面中一个第一象限的矩形与这些线段相交部分的长度长度和与所有线段长度和的比值。给出的所有坐标 $\in[1,10^6]$。
+思路假设所有线段的斜率都是正的，考虑将询问差分成四个前缀矩形。我们只需要考虑统计若干斜率为正的互不相交的线段...
       
     
   </div>
@@ -2759,7 +2753,7 @@ Diameter
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P6845%20%5BCEOI2019%5D%20Dynamic%20Diameter/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2801,13 +2795,9 @@ Diameter
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P7324 [WC2021] 表达式求值
-闲话
-WC2021 我只得了 20 分，三道题总共 20
-分。我是下场了突然后知后觉这件事的，主要原因是我开了 C++11，然后 T1 T2
-都没分了。在洛谷上测本来能拿银牌的。T1 的乱搞能拿 48，还挺高的。
+        P7324 [WC2021] 表达式求值闲话WC2021 我只得了 20 分，三道题总共 20 分。我是下场了突然后知后觉这件事的，主要原因是我开了 C++11，然后 T1 T2 都没分了。在洛谷上测本来能拿银牌的。T1 的乱搞能拿 48，还挺高的。
 幸亏咱们陕西省选不看冬令营成绩。幸亏是在省选前犯的这个错误。告诫后人和自己，写题前一定要看编译选项，否则只能后悔莫及。
-T2 ...
+T2 场上写的是不带问...
       
     
   </div>
@@ -2829,146 +2819,6 @@ T2 ...
       
         <div>
           <a class='readmore' href='/2022/04/30/P7324%20%5BWC2021%5D%20%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P7362 [eJOI 2020 Day2] XOR Sort/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/"  itemprop="url">
-        P7362 [eJOI 2020 Day2] XOR Sort
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P7362 [eJOI 2020 Day2] XOR
-Sort
-题意
-给你一个长度为 \(n\)
-的序列，每次操作可以将一个数异或上相邻的一个数，求将序列改为严格单调递增序列或严格单调不降序列的操作次数的操作序列。
-注意，改为严格单调递增序列的数据 \(n\leq
-200\) 且每个数不相同，改为严格单调不降序列的数据 \(n\leq 1000\)。
-不要求操作次数最小，次数需...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P7473 [NOI Online 2021 入门组] 重力球/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P7473%20%5BNOI%20Online%202021%20%E5%85%A5%E9%97%A8%E7%BB%84%5D%20%E9%87%8D%E5%8A%9B%E7%90%83/"  itemprop="url">
-        P7473 [NOI Online 2021 入门组] 重力球
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P7473 [NOI Online 2021
-入门组] 重力球
-题意
-给你一个正方形平面，某些位置有障碍，对于平面上两个球，每次你可以改变重力方向使两个球下落到最底端，求使两个球位置重合的最小改变重力次数。障碍固定，多次询问两个球的位置。
-思路
-考虑最暴力的想法，总共有 \(n^4\)
-种状态，即两个球的坐标。
-考虑优化状态数，发现只有障碍物（边界）旁边（四联通）的位置才有用。...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P7473%20%5BNOI%20Online%202021%20%E5%85%A5%E9%97%A8%E7%BB%84%5D%20%E9%87%8D%E5%8A%9B%E7%90%83/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3010,17 +2860,9 @@ Sort
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P7003 [NEERC2013]Hack
-Protection
-题意
-给定一个序列 \(a\)
-，求有多少个区间满足区间内的数的异或和等于与的和的值。
-思路
-首先我们求一个异或前缀和 \(s\)，对于每一个区间 \([l,r]\) ，它的贡献为区间内按位与的和等于
-\(s_r \bigoplus s_{l-1}\)
-的段的个数。
-设 \(x\)
-为某个区间的按位与的和，...
+        P7003 [NEERC2013]Hack Protection题意给定一个序列 $a$ ，求有多少个区间满足区间内的数的异或和等于与的和的值。
+思路首先我们求一个异或前缀和 $s$，对于每一个区间 $[l,r]$ ，它的贡献为区间内按位与的和等于 $s_r \bigoplus s_{l-1}$ 的段的个数。
+设 $x$ 为某个区间的按位与的和，上面的也就是：$$s_r \bigoplus ...
       
     
   </div>
@@ -3088,8 +2930,8 @@ Protection
 （思维才是OI的重点）
 但是if您也不会，那就来听我瞎扯吧。
 首先，这个图是一个圈，只能连接邻点，使所有求的点联通。
-我们先不考虑环，那么就可以想出一个假的做法：用一个a数组记录入度和出度，出度为正，入度为负，用一个sum=0从0遍历每个点记录当前出入度，每次加ai，若sum大于0给答案加上1就行了。
-然后，我们来考虑环。我们发现。不管怎么...
+我们先不考虑环，那么就可以想出一个假的做法：用一个a数组记录入度和出度，出度为正，入度为负，用一个sum&#x3D;0从0遍历每个点记录当前出入度，每次加ai，若sum大于0给答案加上1就行了。
+然后，我们来考虑环。我们发现。不管怎么连...
       
     
   </div>
@@ -3111,77 +2953,6 @@ Protection
       
         <div>
           <a class='readmore' href='/2022/04/30/POJ1944/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/POJ3187 Backward Digit Sums/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/POJ3187%20Backward%20Digit%20Sums/"  itemprop="url">
-        POJ3187 Backward Digit Sums
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        POJ3187 Backward Digit
-Sums
-好熟悉的题目……但是忘了是怎么做的……好像是随机排列？
-反正都是暴力，看了下网上的题解，好像也没有更好的正解了。有想法的告诉我一下蟹蟹~
-题意
-我们可以用1~n这n个数字用类似杨辉三角的方法加起来，我们就可以把他们拆回去。这样的排列可能有多种，我们要它字典序最小的一种。
-思路
-\(n\)
-比较小，考虑排列所有可能一个个试...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/POJ3187%20Backward%20Digit%20Sums/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3223,14 +2994,10 @@ Sums
   <div class='md article-desc' itemprop="articleBody">
     
       
-        因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次
-dijkstra，一次正向从 \(x\) 开始
-dijkstra，再将边全部反向存再来一次。
-因为是板子题比较良心 \(n\)
-比较小，我们就可以用矩阵来存储啦。如果 \(n\)
-比较大的话，我的想法是再造一个图，同时反向存边。内存可能占用比较大但是想起来简单。
+        因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次 dijkstra，一次正向从 $x$ 开始 dijkstra，再将边全部反向存再来一次。
+因为是板子题比较良心 $n$ 比较小，我们就可以用矩阵来存储啦。如果 $n$ 比较大的话，我的想法是再造一个图，同时反向存边。内存可能占用比较大但是想起来简单。
 代码很短。
-12345678910111213141516...
+123456789101112131415161718192021222...
       
     
   </div>
@@ -3267,7 +3034,7 @@ dijkstra，再将边全部反向存再来一次。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/[省选联考 2020 A B 卷] 冰火战士/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P7362 [eJOI 2020 Day2] XOR Sort/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3285,21 +3052,17 @@ dijkstra，再将边全部反向存再来一次。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/"  itemprop="url">
-        [省选联考 2020 A B 卷] 冰火战士
+      <a href="/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/"  itemprop="url">
+        P7362 [eJOI 2020 Day2] XOR Sort
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        对树状数组的理解加深了！
-转化题意
-动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
-思路
-首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。
-再次阅读，发现冰系是一个（以温度为自变量的）单调不降序列，每次修改一个战士就是修改一段后缀。火系相反，修改前缀。
-深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述...
+        P7362 [eJOI 2020 Day2] XOR Sort题意给你一个长度为 $n$ 的序列，每次操作可以将一个数异或上相邻的一个数，求将序列改为严格单调递增序列或严格单调不降序列的操作次数的操作序列。
+注意，改为严格单调递增序列的数据 $n\leq 200$ 且每个数不相同，改为严格单调不降序列的数据 $n\leq 1000$。
+不要求操作次数最小，次数需不大于 $40000$，元素大...
       
     
   </div>
@@ -3320,7 +3083,204 @@ dijkstra，再将边全部反向存再来一次。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/POJ3187 Backward Digit Sums/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/POJ3187%20Backward%20Digit%20Sums/"  itemprop="url">
+        POJ3187 Backward Digit Sums
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        POJ3187 Backward Digit Sums
+好熟悉的题目……但是忘了是怎么做的……好像是随机排列？
+反正都是暴力，看了下网上的题解，好像也没有更好的正解了。有想法的告诉我一下蟹蟹~
+题意我们可以用1~n这n个数字用类似杨辉三角的方法加起来，我们就可以把他们拆回去。这样的排列可能有多种，我们要它字典序最小的一种。
+思路$n$ 比较小，考虑排列所有可能一个个试……这里用一下新东西。
+...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/POJ3187%20Backward%20Digit%20Sums/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P7473 [NOI Online 2021 入门组] 重力球/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P7473%20%5BNOI%20Online%202021%20%E5%85%A5%E9%97%A8%E7%BB%84%5D%20%E9%87%8D%E5%8A%9B%E7%90%83/"  itemprop="url">
+        P7473 [NOI Online 2021 入门组] 重力球
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P7473 [NOI Online 2021 入门组] 重力球题意给你一个正方形平面，某些位置有障碍，对于平面上两个球，每次你可以改变重力方向使两个球下落到最底端，求使两个球位置重合的最小改变重力次数。障碍固定，多次询问两个球的位置。
+思路考虑最暴力的想法，总共有 $n^4$ 种状态，即两个球的坐标。
+考虑优化状态数，发现只有障碍物（边界）旁边（四联通）的位置才有用。实际最大位置数为 $25...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P7473%20%5BNOI%20Online%202021%20%E5%85%A5%E9%97%A8%E7%BB%84%5D%20%E9%87%8D%E5%8A%9B%E7%90%83/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/bzoj2118 墨墨的等式/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/"  itemprop="url">
+        bzoj2118 墨墨的等式
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        Description墨墨突然对等式很感兴趣，他正在研究 $a_1x_1+a_2x_2+…+a_nx_n&#x3D;B$ 存在非负整数解的条件，他要求你编写一个程序，给定 $N$、${a_n}$、以及 $B$ 的取值范围，求出有多少 $B$ 可以使等式存在非负整数解。
+Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B_{Max}$ 分别表示数列的长度、$B...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3363,13 +3323,10 @@ dijkstra，再将边全部反向存再来一次。
     
       
         就是把字符串转变成一个树，每个节点连接下一个字符，用空间换时间。
-对于区分大小写或不区分的题目，只需要改变 ch[][26]
-的值就行了。
-ch[u][x] 表示 u 节点（标号决定）下一个
-x 字符节点的标号。
-如果题目让记录附加值，那就用 val[]
-在插入时记录一下就好了。
-1234567891011121314151617181920212223242526272829...
+对于区分大小写或不区分的题目，只需要改变 ch[][26] 的值就行了。
+ch[u][x] 表示 u 节点（标号决定）下一个 x 字符节点的标号。
+如果题目让记录附加值，那就用 val[] 在插入时记录一下就好了。
+12345678910111213141516171819202122232425262728293031323...
       
     
   </div>
@@ -3727,9 +3684,7 @@ x 字符节点的标号。
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4741,7 +4696,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

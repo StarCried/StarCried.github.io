@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,75 +2707,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5471- K-D tree优化建图-弹跳/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/"  itemprop="url">
-        P5471- K-D tree优化建图-弹跳
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P5471- K-D tree优化建图-弹跳
-
-优化建图是一种思想。
-
-题意
-有\(n\)个城市分布在小鸟岛上，有\(m\)个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹弓只能把小鸟弹飞到一块固定的矩形范围内的城市，同时小鸟会在空中滞留\(t_i\)的时间。闪电黄的家在1号城市，追求速度的它想知道，若只使用弹弓出行，它从家到其他所有城市的最短时间花费是多少。
-抱歉魔...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5350 序列/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -2802,13 +2733,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5350 序列
-题意
-维护一个序列，支持区间求和、赋值、加值、复制、交换、翻转操作，其中交换和复制操作保证两段区间长度相等且不交。答案对
-\(1e9+7\) 取模。
-思路
-对于区间求和、赋值、加值、交换、翻转操作我们都可以很轻松地使用平衡树进行维护。所以现在的难点就在于复制操作：如何复制一段区间？
-如果我们暴力复制的话，每次我们不得不将被复制的子树扫一遍进行复制，这是肯定不行的...
+        P5350 序列题意维护一个序列，支持区间求和、赋值、加值、复制、交换、翻转操作，其中交换和复制操作保证两段区间长度相等且不交。答案对 $1e9+7$ 取模。
+思路对于区间求和、赋值、加值、交换、翻转操作我们都可以很轻松地使用平衡树进行维护。所以现在的难点就在于复制操作：如何复制一段区间？
+如果我们暴力复制的话，每次我们不得不将被复制的子树扫一遍进行复制，这是肯定不行的。
+于是我们使用可持久...
       
     
   </div>
@@ -2871,11 +2799,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5468 [NOI2019] 回家路线
-斜率优化入门（指我写的东西而不是这道题）
-题意
-\(n\) 个节点，有 \(m\) 趟列车，车 \(i\) 从 \(p_i\) 时刻至 \(q_i\) 时刻从 \(x_i\) 地到 \(y_i\) 地。猫猫需要只坐列车从 \(1\) 节点到达 \(n\) 节点。
-设猫猫在一个地方等待的时间为 \(t\)，那么代价为 \(At^2+Bt+C\)...
+        P5468 [NOI2019] 回家路线斜率优化入门（指我写的东西而不是这道题）
+题意$n$ 个节点，有 $m$ 趟列车，车 $i$ 从 $p_i$ 时刻至 $q_i$ 时刻从 $x_i$ 地到 $y_i$ 地。猫猫需要只坐列车从 $1$ 节点到达 $n$ 节点。
+设猫猫在一个地方等待的时间为 $t$，那么代价为 $At^2+Bt+C$，其中 $A\ B\ C$ 为给定非负常数，总代价为所有...
       
     
   </div>
@@ -2938,15 +2864,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5658 括号树
-NOIp2019
-我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
+        P5658 括号树NOIp2019我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
 于是今天我克服心理阴影来写这道题。
-树形结构
-因为这是一个树，所有优秀的性质这个题都有。并且题目仅仅是问从1开始到所有点的答案，所以我们就可以依靠树的性质来做。
+树形结构因为这是一个树，所有优秀的性质这个题都有。并且题目仅仅是问从1开始到所有点的答案，所以我们就可以依靠树的性质来做。
 首先，对于一个节点，我们给它记录几个值：
 
-\(lst_i\)表示i的贡献（只是i的贡献，并不包括从根节点到i路径...
+$lst_i$表示i的贡献（只是i的贡献，并不包括从根节点到i路径上点的贡献）
+那么我们发现...
       
     
   </div>
@@ -3009,18 +2933,9 @@ NOIp2019
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5591 小猪佩奇学数学
-知识点
-二项式定理
-\[
-(x+1)^n=\sum_{i=0}^n\binom nix^i
-\]
-单位根反演
-\[
-[n\mid k]=\frac 1n\sum_{i=0}^{n-1}\omega_n^{ik}
-\]
-证明： \[
-[n\mid k]=\begin{cases}\frac 1n\sum_{i=0}^{n-1}\omega_n^...
+        P5591 小猪佩奇学数学知识点二项式定理$$(x+1)^n&#x3D;\sum_{i&#x3D;0}^n\binom nix^i$$
+单位根反演$$[n\mid k]&#x3D;\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik}$$
+证明：$$[n\mid k]&#x3D;\begin{cases}\frac 1n\sum_{i&#x3D;0}^{n-1}...
       
     
   </div>
@@ -3057,7 +2972,7 @@ NOIp2019
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6106 [Ynoi2010] Self Adjusting Top Tree/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5296 [北京省选集训2019]生成树计数/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3075,21 +2990,16 @@ NOIp2019
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/"  itemprop="url">
-        P6106 [Ynoi2010] Self Adjusting Top Tree
+      <a href="/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        P5296 [北京省选集训2019]生成树计数
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6106 [Ynoi2010] Self
-Adjusting Top Tree
-题意
-给出平面直角坐标系上若干不与坐标轴平行的处于第一象限的互不相交的线段，多次询问平面中一个第一象限的矩形与这些线段相交部分的长度长度和与所有线段长度和的比值。给出的所有坐标
-\(\in[1,10^6]\)。
-思路
-假设所有线段的斜率都是正的，考虑将询问差分成四个前缀矩形。我们只需要考虑统计若干斜...
+        P5296 [北京省选集训2019]生成树计数题意求一个带权无向图所有生成树边权和的 $k$ 次方的和。
+思路首先有一个结论：$a^i$ 的 EGF 卷 $b^i$ 的 EGF 等于 $(a+b)^i$ 的 EGF。即：$$F(a)&#x3D;\sum_{i&#x3D;0}\frac{a^ix^i}{i!}\F(a+b)&#x3D;F(a)*F(b)$$证明如下：$$(a+b)^k&#x3D...
       
     
   </div>
@@ -3110,80 +3020,7 @@ Adjusting Top Tree
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6295 有标号 DAG 计数/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P6295%20%E6%9C%89%E6%A0%87%E5%8F%B7%20DAG%20%E8%AE%A1%E6%95%B0/"  itemprop="url">
-        P6295 有标号 DAG 计数
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P6295 有标号 DAG 计数
-题意
-求 \(n\) 个点有标号弱联通 DAG
-数量。
-推导
-设 \(f_i\) 表示 \(i\) 个点有标号 DAG
-数量（不保证弱联通），有： \[
-f(i)=\sum_{j=1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}
-\] 意义为选至少 \(j\)
-个度数为零的点，向剩下的 \(i-j\)
-个点随...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P6295%20%E6%9C%89%E6%A0%87%E5%8F%B7%20DAG%20%E8%AE%A1%E6%95%B0/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3225,12 +3062,10 @@ f(i)=\sum_{j=1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6753 [BalticOI 2013
-Day1] Ball Machine
-题意
-给你一个树，每次从根节点放一个求，如果其子节点有空这个球会向下滚，若有多个节点为空则找儿子中以子树内编号的最小值为优先级从小到大找第一个为空的位置滚。
+        P6753 [BalticOI 2013 Day1] Ball Machine题意给你一个树，每次从根节点放一个求，如果其子节点有空这个球会向下滚，若有多个节点为空则找儿子中以子树内编号的最小值为优先级从小到大找第一个为空的位置滚。
 有两种操作，第一种插入若干个球，输出最后一个球到的节点编号；第二种删除一个位置，此时若有可以向下滚的球那么这个球就会滚，输出有多少个球滚了。
-保证...
+保证数据合法。
+思...
       
     
   </div>
@@ -3252,6 +3087,70 @@ Day1] Ball Machine
       
         <div>
           <a class='readmore' href='/2022/04/30/P6753%20%5BBalticOI%202013%20Day1%5D%20Ball%20Machine/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6295 有标号 DAG 计数/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P6295%20%E6%9C%89%E6%A0%87%E5%8F%B7%20DAG%20%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        P6295 有标号 DAG 计数
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P6295 有标号 DAG 计数题意求 $n$ 个点有标号弱联通 DAG 数量。
+推导设 $f_i$ 表示 $i$ 个点有标号 DAG 数量（不保证弱联通），有：$$f(i)&#x3D;\sum_{j&#x3D;1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}$$意义为选至少 $j$ 个度数为零的点，向剩下的 $i-j$ 个点随便连有向边，容斥一下就得到了上式。...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P6295%20%E6%9C%89%E6%A0%87%E5%8F%B7%20DAG%20%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3293,16 +3192,10 @@ Day1] Ball Machine
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6982 [NEERC2015]Jump
-题意
-给你一个未知的 01 串，每次可以输出询问一个 01
-串，如果该串中正确的个数刚好等于 \(n\)
-或者 \(n/2\)
-，将会返回相应的答案，否则会返回 0 。求出这个串。（询问次数不大于 \(n+500\)，\(n\leq
-1000\)）
-思路
-先无视询问次数，我们来想一下确定性算法怎么做。
-第一步，我们来试着找出 \(...
+        P6982 [NEERC2015]Jump题意给你一个未知的 01 串，每次可以输出询问一个 01 串，如果该串中正确的个数刚好等于 $n$ 或者 $n&#x2F;2$ ，将会返回相应的答案，否则会返回 0 。求出这个串。（询问次数不大于 $n+500$，$n\leq 1000$）
+思路先无视询问次数，我们来想一下确定性算法怎么做。
+第一步，我们来试着找出 $n&#x2F;2$ 正确的串。
+...
       
     
   </div>
@@ -3365,14 +3258,10 @@ Day1] Ball Machine
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6845 [CEOI2019] Dynamic
-Diameter
-题意
-一颗带权树，每次更改一条边的权，每次修改后求出最大直径。强制在线。
-思路
-\(O(n\log^2n)\) 的暴力做法。
+        P6845 [CEOI2019] Dynamic Diameter题意一颗带权树，每次更改一条边的权，每次修改后求出最大直径。强制在线。
+思路$O(n\log^2n)$ 的暴力做法。
 根据经典结论，对于两个点集的树上最大直径（权值非负），并集点集的树上最大直径的端点一定是原四个端点中的两个。
-那么我们就可以用线段树维护点集，合并时 \(O(\log n)\) 查询两点...
+那么我们就可以用线段树维护点集，合并时 $O(\log n)$ 查询两点间距离合并就可以做到 $O(...
       
     
   </div>
@@ -3394,6 +3283,70 @@ Diameter
       
         <div>
           <a class='readmore' href='/2022/04/30/P6845%20%5BCEOI2019%5D%20Dynamic%20Diameter/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6106 [Ynoi2010] Self Adjusting Top Tree/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/"  itemprop="url">
+        P6106 [Ynoi2010] Self Adjusting Top Tree
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P6106 [Ynoi2010] Self Adjusting Top Tree题意给出平面直角坐标系上若干不与坐标轴平行的处于第一象限的互不相交的线段，多次询问平面中一个第一象限的矩形与这些线段相交部分的长度长度和与所有线段长度和的比值。给出的所有坐标 $\in[1,10^6]$。
+思路假设所有线段的斜率都是正的，考虑将询问差分成四个前缀矩形。我们只需要考虑统计若干斜率为正的互不相交的线段...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3731,9 +3684,7 @@ Diameter
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4745,7 +4696,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

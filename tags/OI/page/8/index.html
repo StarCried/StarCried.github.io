@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/bzoj2118 墨墨的等式/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/[省选联考 2020 A B 卷] 冰火战士/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2725,19 +2725,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/"  itemprop="url">
-        bzoj2118 墨墨的等式
+      <a href="/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/"  itemprop="url">
+        [省选联考 2020 A B 卷] 冰火战士
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Description
-墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
-存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\{a_n\}\)、以及 \(B\) 的取值范围，求出有多少 \(B\) 可以使等式存在非负整数解。
-Input
-输入的第一行包含 3 个正整数，分别表示 \(N\)、\(B_{Min}\)、\(B...
+        对树状数组的理解加深了！
+转化题意动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
+思路首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。
+再次阅读，发现冰系是一个（以温度为自变量的）单调不降序列，每次修改一个战士就是修改一段后缀。火系相反，修改前缀。
+深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述题意。
+考虑二分...
       
     
   </div>
@@ -2758,7 +2759,7 @@ Input
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2800,15 +2801,13 @@ Input
   <div class='md article-desc' itemprop="articleBody">
     
       
-        矩阵树定理
-定义
+        矩阵树定理定义
+邻接矩阵：$A&#x3D;(a_{ij})$，其中 $a_{ij}$ 表示 $i$ 到 $j$ 有几条边相连。
+度数矩阵：$C&#x3D;(c_{ij})$，为对角矩阵，其中 $c_{ii}$ 表示 $i$ 的度数。
+基尔霍夫矩阵：$D&#x3D;C-A$。
+余子式：$M_{ij}$ 表示去掉第 $i$ 行第 $j$ 列后得到矩阵的行列式。
 
-邻接矩阵：\(A=(a_{ij})\)，其中
-\(a_{ij}\) 表示 \(i\) 到 \(j\) 有几条边相连。
-度数矩阵：\(C=(c_{ij})\)，为对角矩阵，其中 \(c_{ii}\) 表示 \(i\) 的度数。
-基尔霍夫矩阵：\(D=C-A\)。
-余子式：\(M_{ij}\) 表示去掉第 \(i\) 行第 \(j\) 列后得到矩阵的行列式。
-...
+定理无向图的生成树个数等于其基尔...
       
     
   </div>
@@ -2830,78 +2829,6 @@ Input
       
         <div>
           <a class='readmore' href='/2022/04/30/matrix-tree%E5%AE%9A%E7%90%86/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/中国剩余定理/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/"  itemprop="url">
-        中国剩余定理
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
-
-中国剩余定理
-即求多个同余方程的解。
-举个栗子。求一个数x，使得： \[\begin{cases}
-x≡2\pmod 3\\
-x≡3\pmod 5\\
-x≡2\pmod {11}\end{cases}\]
-设 \(M=3*5*11=165\), \(a1=3\), \(a2=5\),...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2943,13 +2870,7 @@ x≡2\pmod {11}\end{cases}\]
   <div class='md article-desc' itemprop="articleBody">
     
       
-        二项式反演
-\[
-\begin{aligned}
-g_n=\sum_{i=0}^n(-1)^i\binom ni f_i\Leftrightarrow
-f_n=\sum_{i=0}^n(-1)^i\binom ni g_i\\
-g_n=\sum_{i=0}^n\binom ni f_i\Leftrightarrow
-g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
+        二项式反演$$\begin{aligned}g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni g_i\g_n&#x3D;\sum_{i&#x3D;0}^n\binom ni f_i\Leftrightarrow g_n&#x3D;\sum...
       
     
   </div>
@@ -3012,13 +2933,8 @@ g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        主定理（Master
-Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
-时间复杂度相关定义
-在计算机科学中，算法的时间复杂度（time
-complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大
-\(O\)
-符号...
+        主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
+时间复杂度相关定义在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大 $O$ 符号表述，不包括这个函...
       
     
   </div>
@@ -3055,7 +2971,7 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/分层图/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/中国剩余定理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3073,21 +2989,20 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/"  itemprop="url">
-        分层图
+      <a href="/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/"  itemprop="url">
+        中国剩余定理
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        前言
-前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ
-所以又在网上找着看了看写一篇博客备忘。
-学习笔记真的很有用！
-分层图
-这个很容易理解，来源就是在一些最短路的问题上题目又加了比如说主角可以用传送宝石进行折跃之类的问题（针对），即可以选择k条边把这些边的边权变为零。
-怎么样解决呢？可以在原图的基础上多复制k个相同的图，并用k条边把图之间的边用0边权边相连。就...
+        
+“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
+
+中国剩余定理即求多个同余方程的解。
+举个栗子。求一个数x，使得：$$\begin{cases}x≡2\pmod 3\x≡3\pmod 5\x≡2\pmod {11}\end{cases}$$
+设 $M&#x3D;3511&#x3D;165$, $a1&#x3D;3$, $a2&#x3D;5$, $a3...
       
     
   </div>
@@ -3108,7 +3023,7 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3150,18 +3065,12 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        问题描述
-有 \(n\) 个物品，每种物品两个权值
-\(a_i\)，\(b_i\)，求一组 \(w_i\in\{0,1\}\)，使得
-\[
-\frac{\sum_{i=1}^n w_i\cdot a_i}{\sum_{i=1}^n w_i\cdot b_i}
-\]
+        问题描述有 $n$ 个物品，每种物品两个权值 $a_i$，$b_i$，求一组 $w_i\in{0,1}$，使得
+$$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i}$$
 最大（或最小）。
 有可能包含其他限制。
-二分法
-显然答案是单调的。对一个答案 \(mid\)，有
-\[
-\...
+二分法显然答案是单调的。对一个答案 $mid$，有
+$$\begin{aligned}&amp...
       
     
   </div>
@@ -3183,6 +3092,73 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
       
         <div>
           <a class='readmore' href='/2022/04/30/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/分层图/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/"  itemprop="url">
+        分层图
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        前言前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ 所以又在网上找着看了看写一篇博客备忘。
+学习笔记真的很有用！
+分层图这个很容易理解，来源就是在一些最短路的问题上题目又加了比如说主角可以用传送宝石进行折跃之类的问题（针对），即可以选择k条边把这些边的边权变为零。
+怎么样解决呢？可以在原图的基础上多复制k个相同的图，并用k条边把图之间的边用0边权边相连。就是：
+于是就有人...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3225,15 +3201,10 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
     
       
         就是三倍经验
-题意
-维护一个序列，每次修改后求出当前序列逆序对个数。
-思路
-题目让我们求出 \[
-\sum_{i=1}^n\sum_{j=i+1}^n[a_i&gt;a_j]
-\] 也就是让我们求出满足 \[
-pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
-\] 的点对数量。
-对于不修改的情况，这显然是一个三维偏序问题，用树状数组或归并处理都可以。...
+题意维护一个序列，每次修改后求出当前序列逆序对个数。
+思路题目让我们求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;i+1}^n[a_i&gt;a_j]$$也就是让我们求出满足$$pos_i&lt;pos_j&amp;&amp;a_i&gt;a_j$$的点对数量。
+对于不修改的情况，这显然是一个三维偏序问题，用树状数组或归并处理都可以。
+对于修改的情况，我们...
       
     
   </div>
@@ -3296,16 +3267,12 @@ pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
   <div class='md article-desc' itemprop="articleBody">
     
       
-        无用的文字
-又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……
-二分图最大匹配
-二分图
-二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。
-匈牙利算法
-匈牙利算法是用来寻找最大匹配的一个算法。
+        无用的文字又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……
+二分图最大匹配二分图二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。
+匈牙利算法匈牙利算法是用来寻找最大匹配的一个算法。
 
 交替路：从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边……形成的路径叫交替路。
-增广路：从一个未匹...
+增广路：从一个未匹配点出发，走交替路，如果途...
       
     
   </div>
@@ -3368,8 +3335,7 @@ pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
   <div class='md article-desc' itemprop="articleBody">
     
       
-        算法描述
-基数排序（又叫做桶排序）是一种非比较排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行排序。
+        算法描述基数排序（又叫做桶排序）是一种非比较排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行排序。
 基数排序的步骤如下：
 
 找出最大数，确定位数。
@@ -3377,7 +3343,7 @@ pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
 位数从低到高按每个位数从小到大进行排序。
 输出排序后的数组。
 
-123456789101112131415161718192021222324252...
+1234567891011121314151617181920212223242526272829303...
       
     
   </div>
@@ -3736,9 +3702,7 @@ pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4750,7 +4714,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

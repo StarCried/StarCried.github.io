@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2736,17 +2736,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
 
 查询、修改链上的信息
+
 随意指定原树的根（即换根）
+
 动态连边、删边
+
 合并两棵树、分离一棵树
+
 动态维护连通性
+
 等
 
-主要性质
 
+主要性质
 每一个Splay维护的是一条从上到下按在原树中深度严格递增的路径，且中序遍历Splay得到的每个点的深度序列严格递增。
 每个节点仅包含于一个splay中。
-边分为实边和虚边...
+边分为实边和虚边，实边记录 so...
       
     
   </div>
@@ -2809,15 +2814,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1040 加分二叉树
-\(n\) 很小，可以树形 dp 或者区间 dp
-。
-设 f[i][j] 为从 \(i\)
-到 \(j\) 的最大加分值，则有
-f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
-有一个小技巧，将 f[i][i-1] 全部设置为
-1，这样的话搜索到叶子就也可以按照通式 dp 了。
-对于输出前序遍历（根，左树，右树）我们再...
+        P1040 加分二叉树$n$ 很小，可以树形 dp 或者区间 dp 。
+设 f[i][j] 为从 $i$ 到 $j$ 的最大加分值，则有 f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
+有一个小技巧，将 f[i][i-1] 全部设置为 1，这样的话搜索到叶子就也可以按照通式 dp 了。
+对于输出前序遍历（根，左树，右树）我们再树形 dp 一下就行了。
+树形...
       
     
   </div>
@@ -2839,77 +2840,6 @@ f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
       
         <div>
           <a class='readmore' href='/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1414 又是毕业季II/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/"  itemprop="url">
-        P1414 又是毕业季II
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P1414
-又是毕业季II
-数论题，主要在于推演。
-洛谷的《又是毕业季I》更好玩
-发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个
-\(c\) 数组为所有因子出现的次数。
-因为让输出 \(1\sim n\)
-所有的值，而且因子数
-c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历到 c[i...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2952,12 +2882,11 @@ c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历�
     
       
         P1447能量采集
-
 定义:(i,j)表示处于(i,j)的植物的贡献
 
-我们发现，点(i,j)与(0,0)的连线所过整点的数目为\(\gcd(i,j)\)
+我们发现，点(i,j)与(0,0)的连线所过整点的数目为$\gcd(i,j)$
 发现要是想记录每个点的答案并不好算。那么怎么好算呢？
-我们来找一找同一直线上的所有点答案的和的关系。先不考虑答案只考虑个数。发现，寻找一个点及其倍数的个数的和更加好算。而且，因为有n和m的限制，那么向下取整的答案一定就是其本身...
+我们来找一找同一直线上的所有点答案的和的关系。先不考虑答案只考虑个数。发现，寻找一个点及其倍数的个数的和更加好算。而且，因为有n和m的限制，那么向下取整的答案一定就是其本身。考虑容斥，我们只...
       
     
   </div>
@@ -3022,9 +2951,8 @@ c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历�
       
         莫队算法的待修版本，增加一个时间的维度进行分块。
 
-P1903 [国家集训队]
-数颜色 / 维护队列
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757...
+P1903 [国家集训队] 数颜色 &#x2F; 维护队列
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475...
       
     
   </div>
@@ -3061,7 +2989,7 @@ P1903 [国家集训队]
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2375 [NOI2014]动物园/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1414 又是毕业季II/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3079,23 +3007,18 @@ P1903 [国家集训队]
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/"  itemprop="url">
-        P2375 [NOI2014]动物园
+      <a href="/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/"  itemprop="url">
+        P1414 又是毕业季II
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P2375
-[NOI2014]动物园
-我竟然会做NOI的题目辣(≧▽≦)/（看的题解
-总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。
-我们发现，这个所谓的 num 数组和 nxt
-有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。
-于是在标记 nxt 时同时也可以把 num
-标记。原理是，nxt
-...
+        P1414 又是毕业季II数论题，主要在于推演。
+洛谷的《又是毕业季I》更好玩
+发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个 $c$ 数组为所有因子出现的次数。
+因为让输出 $1\sim n$ 所有的值，而且因子数 c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 $c$ 向下遍历到 c[i] 更高的位置，即最大公约数i...
       
     
   </div>
@@ -3116,7 +3039,7 @@ P1903 [国家集训队]
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3158,15 +3081,12 @@ P1903 [国家集训队]
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1880 [NOI1995]
-石子合并
+        P1880 [NOI1995] 石子合并
 一道区间dp题目。
-用 d[i][j] 表示从 i 到 j
-的最大/最小得分，那么依次枚举长度 len，坐标 i
-和 j，三层循环就可以 dp递推求得最值了。
+用 d[i][j] 表示从 i 到 j 的最大&#x2F;最小得分，那么依次枚举长度 len，坐标 i 和 j，三层循环就可以 dp递推求得最值了。
 （如果没有环的话）
 不要着急，我们将序列复制一遍接到后面做一遍即可。
-12345678910111213141516171819202122232425262728293031...
+12345678910111213141516171819202122232425262728293031323...
       
     
   </div>
@@ -3203,7 +3123,7 @@ P1903 [国家集训队]
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2490 [SDOI2011]黑白棋/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2375 [NOI2014]动物园/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3221,23 +3141,18 @@ P1903 [国家集训队]
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/"  itemprop="url">
-        P2490 [SDOI2011]黑白棋
+      <a href="/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/"  itemprop="url">
+        P2375 [NOI2014]动物园
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P2490 [SDOI2011]黑白棋
-题意
-一个 \(1*n\) 的棋盘上，A
-可以移动白色棋子，B
-可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动
-1 到 \(d\) 个棋子。
-每当移动某一个棋子时，这个棋子不能跨越两边的棋子，当然也不可以出界。当谁不可以操作时，谁就失败了。
-思路
-显然可以将题意转化为一种 K-Nim 游戏，即在 \(\frac...
+        P2375 [NOI2014]动物园我竟然会做NOI的题目辣(≧▽≦)&#x2F;（看的题解
+总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。
+我们发现，这个所谓的 num 数组和 nxt 有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。
+于是在标记 nxt 时同时也可以把 num 标记。原理是，nxt 记录的是...
       
     
   </div>
@@ -3258,7 +3173,7 @@ P1903 [国家集训队]
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3304,7 +3219,7 @@ P1903 [国家集训队]
 一道树形DP题。
 f[i][j] 表示i个点选j门课程的最大学分。
 递推方程：
-1234for(int a=n;a&gt;0;a--)//总共选择多少    for(int b=0;b&lt;a;b++)//分别选择多少(b,a-b)        f[x][a]=max(f[x][a],f[x][a-b]+f[u][b]);//都不遍历0的原因是f[i][0]无...
+1234for(int a=n;a&gt;0;a--)//总共选择多少    for(int b=0;b&lt;a;b++)//分别选择多少(b,a-b)        f[x][a]=max(f[x][a],f[x][a-b]+f[u][b]);//都不遍历0的原因是f[i][0]无论怎样都...
       
     
   </div>
@@ -3341,7 +3256,7 @@ f[i][j] 表示i个点选j门课程的最大学分。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2491 消防 P1099 树网的核/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2476-记忆化搜索/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3359,24 +3274,19 @@ f[i][j] 表示i个点选j门课程的最大学分。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/"  itemprop="url">
-        P2491 消防 P1099 树网的核
+      <a href="/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/"  itemprop="url">
+        P2476-记忆化搜索
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P2491 消防/P1099 树网的核
-双倍经验，双倍快乐。
-题意
-在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。
-输出这个最小的值。
-做法
-Define:以下\(s\)指链或链长。
-
-证明一下\(s\)一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到\(s\)的距离大于现在所处支链的最大距离。所以\(s\)不在直径上一定不优。
-...
+        P2476-记忆化搜索DP?
+我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.
+15维DP显然不靠谱。
+那么我们就思考一下……状态个数？发现记忆化搜索可ac：
+1234567891011121314151617181920212223242526272829303132#include&lt;iostream&gt;#include&lt;cstdio&g...
       
     
   </div>
@@ -3397,7 +3307,72 @@ Define:以下\(s\)指链或链长。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2490 [SDOI2011]黑白棋/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/"  itemprop="url">
+        P2490 [SDOI2011]黑白棋
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P2490 [SDOI2011]黑白棋题意一个 $1*n$ 的棋盘上，A 可以移动白色棋子，B 可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动 1 到 $d$ 个棋子。
+每当移动某一个棋子时，这个棋子不能跨越两边的棋子，当然也不可以出界。当谁不可以操作时，谁就失败了。
+思路显然可以将题意转化为一种 K-Nim 游戏，即在 $\frac k2$ 堆石子中，每次可将 $...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3735,9 +3710,7 @@ Define:以下\(s\)指链或链长。
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4749,7 +4722,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

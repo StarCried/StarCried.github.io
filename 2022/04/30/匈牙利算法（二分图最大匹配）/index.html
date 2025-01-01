@@ -50,12 +50,12 @@
   <title>匈牙利算法（二分图最大匹配） - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,图论,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="无用的文字 又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了…… 二分图最大匹配 二分图 二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。 匈牙利算法 匈牙利算法是用来寻找最大匹配的一个算法。  交替路：从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边……形成的路径叫交替路。 增广路：从一个未匹配点出">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="匈牙利算法（二分图最大匹配）">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="无用的文字 又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了…… 二分图最大匹配 二分图 二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。 匈牙利算法 匈牙利算法是用来寻找最大匹配的一个算法。  交替路：从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边……形成的路径叫交替路。 增广路：从一个未匹配点出">
+<meta property="og:description" content="无用的文字又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了…… 二分图最大匹配二分图二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。 匈牙利算法匈牙利算法是用来寻找最大匹配的一个算法。  交替路：从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边……形成的路径叫交替路。 增广路：从一个未匹配点出发，走交替路，如果途径另一">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,35 +2803,75 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h3 id="无用的文字">无用的文字</h3>
-<p>又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……</p>
-<h2 id="二分图最大匹配">二分图最大匹配</h2>
-<h3 id="二分图">二分图</h3>
-<p>二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。</p>
-<h3 id="匈牙利算法">匈牙利算法</h3>
-<p>匈牙利算法是用来寻找最大匹配的一个算法。</p>
+    <h3 id="无用的文字"><a href="#无用的文字" class="headerlink" title="无用的文字"></a>无用的文字</h3><p>又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……</p>
+<h2 id="二分图最大匹配"><a href="#二分图最大匹配" class="headerlink" title="二分图最大匹配"></a>二分图最大匹配</h2><h3 id="二分图"><a href="#二分图" class="headerlink" title="二分图"></a>二分图</h3><p>二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。</p>
+<h3 id="匈牙利算法"><a href="#匈牙利算法" class="headerlink" title="匈牙利算法"></a>匈牙利算法</h3><p>匈牙利算法是用来寻找最大匹配的一个算法。</p>
 <ul>
 <li>交替路：从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边……形成的路径叫交替路。</li>
-<li>增广路：从一个未匹配点出发，走交替路，如果途径另一个未匹配点（出发的点不算），则这条交替路称为增广路（agumenting
-path）。</li>
+<li>增广路：从一个未匹配点出发，走交替路，如果途径另一个未匹配点（出发的点不算），则这条交替路称为增广路（agumenting path）。</li>
 </ul>
-<p>```cpp //匈牙利算法代码实现； //二分图最大匹配；
-//即左边的点和右边的点连线最多； //匈牙利算法主要用了增广路径比原路径多;
-/<em>因为原路径相当于从左边一点向右匹配，
-每次匹配后只有两点两两相配，增广路匹配数+1； 深搜即可 </em>/
-#include<iostream> #include<cstdio> #include<algorithm>
-#include<cstring> #include&lt;ctype.h&gt; using namespace std; int n,m;
-const int maxn=233; int a[maxn],mapp[maxn][maxn]; bool vis[maxn]; inline
-int read() { int x=0,w=1;char c=getchar(); while(!isdigit(c)){
-if(c=='-')w=-1; c=getchar(); }
-while(isdigit(c))x=(x&lt;&lt;3)+(x&lt;&lt;1)+(c^48),c=getchar(); return
-x*w; } bool match(int x)//x为左侧点标号 { for(int i=1;i&lt;=m;i++)
-if(mapp[x][i] and !vis[i]) { vis[i]=1; if(!a[i]||match(a[i])) { a[i]=x;
-return true; } } return false; } inline int hungary() { int ans=0;
-memset(a,0,sizeof a); for(int i=1;i&lt;=n;i++) { memset(vis,0,sizeof
-vis); if(match(i))ans++; } return ans; } int main() { n=read(),m=read();
-for(int i=1;i&lt;=n;i++) for(int j=1;j&lt;=m;j++)mapp[i][j]=read();
-printf("%d",hungary()); return 0; }</p>
+<pre><code class="cpp">//匈牙利算法代码实现；
+//二分图最大匹配；
+//即左边的点和右边的点连线最多；
+//匈牙利算法主要用了增广路径比原路径多;
+/*因为原路径相当于从左边一点向右匹配，
+每次匹配后只有两点两两相配，增广路匹配数+1； 
+深搜即可
+*/
+#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cstring&gt;
+#include&lt;ctype.h&gt;
+using namespace std;
+int n,m;
+const int maxn=233;
+int a[maxn],mapp[maxn][maxn];
+bool vis[maxn];
+inline int read()
+&#123;
+    int x=0,w=1;char c=getchar();
+    while(!isdigit(c))&#123;
+        if(c==&#39;-&#39;)w=-1;
+        c=getchar();
+    &#125;
+    while(isdigit(c))x=(x&lt;&lt;3)+(x&lt;&lt;1)+(c^48),c=getchar();
+    return x*w;
+&#125;
+bool match(int x)//x为左侧点标号
+&#123;
+    for(int i=1;i&lt;=m;i++)
+        if(mapp[x][i] and !vis[i])
+        &#123;
+            vis[i]=1;
+            if(!a[i]||match(a[i]))
+            &#123;
+                   a[i]=x;
+                   return true;
+               &#125;
+        &#125;
+    return false;
+&#125;
+inline int hungary()
+&#123;
+    int ans=0;
+    memset(a,0,sizeof a);
+    for(int i=1;i&lt;=n;i++)
+    &#123;
+        memset(vis,0,sizeof vis);
+        if(match(i))ans++;
+    &#125;
+    return ans;
+&#125;
+int main()
+&#123;
+    n=read(),m=read();
+    for(int i=1;i&lt;=n;i++)
+        for(int j=1;j&lt;=m;j++)mapp[i][j]=read();
+    printf(&quot;%d\n&quot;,hungary());
+    return 0;
+&#125;
+</code></pre>
 
   </div>
   
@@ -2932,23 +2972,18 @@ printf("%d",hungary()); return 0; }</p>
         <a class='prev' href='/2022/04/30/%E5%8A%A8%E6%80%81%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%93%E7%BB%83/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>动态逆序对专练</p>
           <p class='content'>就是三倍经验
-题意
-维护一个序列，每次修改后求出当前序列逆序对个数。
-思路
-题目让我们求出 \[
-\sum_{i=1}^n\sum_{j=i+1}^n[a_i&gt;a_j]
-\] ...</p>
+题意维护一个序列，每次修改后求出当前序列逆序对个数。
+思路题目让我们求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;i+1}^n[a_i&gt;a_j]$$也就...</p>
         </a>
       
       
         <a class='next' href='/2022/04/30/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/'>
           <p class='title'>基数排序<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>算法描述
-基数排序（又叫做桶排序）是一种非比较排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行排序。
+          <p class='content'>算法描述基数排序（又叫做桶排序）是一种非比较排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行排序。
 基数排序的步骤如下：
 
 找出最大数，确定位数。
-确定每个位数...</p>
+确定每个位数的范围，并统...</p>
         </a>
       
     </div>
@@ -3221,9 +3256,7 @@ printf("%d",hungary()); return 0; }</p>
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4235,7 +4268,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

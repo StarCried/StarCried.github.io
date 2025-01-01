@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2745,13 +2745,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        二项式反演
-\[
-\begin{aligned}
-g_n=\sum_{i=0}^n(-1)^i\binom ni f_i\Leftrightarrow
-f_n=\sum_{i=0}^n(-1)^i\binom ni g_i\\
-g_n=\sum_{i=0}^n\binom ni f_i\Leftrightarrow
-g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
+        二项式反演$$\begin{aligned}g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni g_i\g_n&#x3D;\sum_{i&#x3D;0}^n\binom ni f_i\Leftrightarrow g_n&#x3D;\sum...
       
     
   </div>
@@ -2814,15 +2808,9 @@ g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        斐波那契数列
-\(F(0)=F(1)=1\) 或 \(F(1)=F(2)=1\)，\(F(i)=F(i-1)+F(i-2)\).
+        斐波那契数列$F(0)&#x3D;F(1)&#x3D;1$ 或 $F(1)&#x3D;F(2)&#x3D;1$，$F(i)&#x3D;F(i-1)+F(i-2)$.
 广义斐波那契数列在转移时有系数且首两项给定。
-求法
-注意到斐波那契数列的转移为一个矩阵乘 \[
-\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}
-\begin{bmatrix}
-1&amp;1\\
-1&amp;...
+求法注意到斐波那契数列的转移为一个矩阵乘$$\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}\begin{bmatrix}1&amp;1\1&a...
       
     
   </div>
@@ -2885,12 +2873,12 @@ g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        定义
-这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率连续和断开。求所有连续序列和的期望。
+        定义这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率连续和断开。求所有连续序列和的期望。
 当然，对于以上期望长度的定义，我们只需要求出每个点存在的期望的和即可。但是题目永远不会这么简单。
 Osu!
+ Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长度。
 
-Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长...
+我们...
       
     
   </div>
@@ -2953,20 +2941,16 @@ Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        前言
-该内容算法竞赛涉及不多，属于较深概率论内容。
-鞅的停时定理
-“鞅”，martingale 用来指一类随机过程，定义如下：
+        前言该内容算法竞赛涉及不多，属于较深概率论内容。
+鞅的停时定理“鞅”，martingale 用来指一类随机过程，定义如下：
 
-鞅是一种离散时间的随机过程 \(X_0,X_1,\cdots\) 满足：
+鞅是一种离散时间的随机过程 $X_0,X_1,\cdots$ 满足：
 
-\(E(X_t)&lt;\infty,\forall
-t\geq0\)
-\(E(X_{t+1}\mid X_0,\cdots
-X_t)=X_t\)
+$E(X_t)&lt;\infty,\forall t\geq0$
+$E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t$
 
 
-根据定义可...
+根据定义可以得到 $E(X_t)&#x3D...
       
     
   </div>
@@ -3304,9 +3288,7 @@ X_t)=X_t\)
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4318,7 +4300,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

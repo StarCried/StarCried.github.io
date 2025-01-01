@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/[省选联考 2020 A B 卷] 冰火战士/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/bzoj2118 墨墨的等式/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2725,21 +2725,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/"  itemprop="url">
-        [省选联考 2020 A B 卷] 冰火战士
+      <a href="/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/"  itemprop="url">
+        bzoj2118 墨墨的等式
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        对树状数组的理解加深了！
-转化题意
-动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
-思路
-首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。
-再次阅读，发现冰系是一个（以温度为自变量的）单调不降序列，每次修改一个战士就是修改一段后缀。火系相反，修改前缀。
-深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述...
+        Description墨墨突然对等式很感兴趣，他正在研究 $a_1x_1+a_2x_2+…+a_nx_n&#x3D;B$ 存在非负整数解的条件，他要求你编写一个程序，给定 $N$、${a_n}$、以及 $B$ 的取值范围，求出有多少 $B$ 可以使等式存在非负整数解。
+Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B_{Max}$ 分别表示数列的长度、$B...
       
     
   </div>
@@ -2760,7 +2755,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2803,13 +2798,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         就是把字符串转变成一个树，每个节点连接下一个字符，用空间换时间。
-对于区分大小写或不区分的题目，只需要改变 ch[][26]
-的值就行了。
-ch[u][x] 表示 u 节点（标号决定）下一个
-x 字符节点的标号。
-如果题目让记录附加值，那就用 val[]
-在插入时记录一下就好了。
-1234567891011121314151617181920212223242526272829...
+对于区分大小写或不区分的题目，只需要改变 ch[][26] 的值就行了。
+ch[u][x] 表示 u 节点（标号决定）下一个 x 字符节点的标号。
+如果题目让记录附加值，那就用 val[] 在插入时记录一下就好了。
+12345678910111213141516171819202122232425262728293031323...
       
     
   </div>
@@ -2846,7 +2838,7 @@ x 字符节点的标号。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/bzoj2118 墨墨的等式/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/[省选联考 2020 A B 卷] 冰火战士/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2864,19 +2856,20 @@ x 字符节点的标号。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/"  itemprop="url">
-        bzoj2118 墨墨的等式
+      <a href="/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/"  itemprop="url">
+        [省选联考 2020 A B 卷] 冰火战士
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Description
-墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
-存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\{a_n\}\)、以及 \(B\) 的取值范围，求出有多少 \(B\) 可以使等式存在非负整数解。
-Input
-输入的第一行包含 3 个正整数，分别表示 \(N\)、\(B_{Min}\)、\(B...
+        对树状数组的理解加深了！
+转化题意动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
+思路首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。
+再次阅读，发现冰系是一个（以温度为自变量的）单调不降序列，每次修改一个战士就是修改一段后缀。火系相反，修改前缀。
+深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述题意。
+考虑二分...
       
     
   </div>
@@ -2897,7 +2890,7 @@ Input
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2940,15 +2933,10 @@ Input
     
       
         就是三倍经验
-题意
-维护一个序列，每次修改后求出当前序列逆序对个数。
-思路
-题目让我们求出 \[
-\sum_{i=1}^n\sum_{j=i+1}^n[a_i&gt;a_j]
-\] 也就是让我们求出满足 \[
-pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
-\] 的点对数量。
-对于不修改的情况，这显然是一个三维偏序问题，用树状数组或归并处理都可以。...
+题意维护一个序列，每次修改后求出当前序列逆序对个数。
+思路题目让我们求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;i+1}^n[a_i&gt;a_j]$$也就是让我们求出满足$$pos_i&lt;pos_j&amp;&amp;a_i&gt;a_j$$的点对数量。
+对于不修改的情况，这显然是一个三维偏序问题，用树状数组或归并处理都可以。
+对于修改的情况，我们...
       
     
   </div>
@@ -3011,15 +2999,9 @@ pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
   <div class='md article-desc' itemprop="articleBody">
     
       
-        斐波那契数列
-\(F(0)=F(1)=1\) 或 \(F(1)=F(2)=1\)，\(F(i)=F(i-1)+F(i-2)\).
+        斐波那契数列$F(0)&#x3D;F(1)&#x3D;1$ 或 $F(1)&#x3D;F(2)&#x3D;1$，$F(i)&#x3D;F(i-1)+F(i-2)$.
 广义斐波那契数列在转移时有系数且首两项给定。
-求法
-注意到斐波那契数列的转移为一个矩阵乘 \[
-\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}
-\begin{bmatrix}
-1&amp;1\\
-1&amp;...
+求法注意到斐波那契数列的转移为一个矩阵乘$$\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}\begin{bmatrix}1&amp;1\1&a...
       
     
   </div>
@@ -3041,74 +3023,6 @@ pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
       
         <div>
           <a class='readmore' href='/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/最小覆盖问题-POJ3041-P1129/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-POJ3041-P1129/"  itemprop="url">
-        最小覆盖问题-POJ3041-P1129
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        POJ3041
-这道题正解对于像我这种蒟蒻来说比较难以想到。
-我们发现每次覆盖的只是一条线上的所有点。那么我们可以把它想象成一个二分图，两个集合分别是横轴和纵轴。
-想一想，这实际上是不是就是x轴轴和纵轴的最大匹配？
-于是这就变成了一个板子匈牙利算法题目。
-1234567891011121314151617181920212223242526272829303132333435363...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-POJ3041-P1129/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3150,12 +3064,12 @@ pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
   <div class='md article-desc' itemprop="articleBody">
     
       
-        定义
-这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率连续和断开。求所有连续序列和的期望。
+        定义这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率连续和断开。求所有连续序列和的期望。
 当然，对于以上期望长度的定义，我们只需要求出每个点存在的期望的和即可。但是题目永远不会这么简单。
 Osu!
+ Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长度。
 
-Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长...
+我们...
       
     
   </div>
@@ -3177,6 +3091,70 @@ Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来�
       
         <div>
           <a class='readmore' href='/2022/04/30/%E6%9C%9F%E6%9C%9B%E9%95%BF%E5%BA%A6P1365,CF235B,P1654/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/最小覆盖问题-POJ3041-P1129/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-POJ3041-P1129/"  itemprop="url">
+        最小覆盖问题-POJ3041-P1129
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        POJ3041这道题正解对于像我这种蒟蒻来说比较难以想到。我们发现每次覆盖的只是一条线上的所有点。那么我们可以把它想象成一个二分图，两个集合分别是横轴和纵轴。想一想，这实际上是不是就是x轴轴和纵轴的最大匹配？于是这就变成了一个板子匈牙利算法题目。
+1234567891011121314151617181920212223242526272829303132333435363738394041...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-POJ3041-P1129/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3508,9 +3486,7 @@ Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来�
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4522,7 +4498,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

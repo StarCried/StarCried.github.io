@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2749,7 +2749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         AC来自一个大佬的名字，并不是写了就可以自动AC的意思 XD
 AC自动机是建立在trie树上的一种优化手段。trie在每次查询一个字符串时，如果在一个子树查不到就会回溯再查，效率会很低。我们考虑在给每个节点加一个如果查不到就跳转的指针fail，那么如果找不到的话直接跳转到fail就可以了。fail代表的是拥有该点的最大后缀的点的位置。
-那么怎么寻找这个fail呢？因为我们要寻找最大后缀，...
+那么怎么寻找这个fail呢？因为我们要寻找最大后缀，深度...
       
     
   </div>
@@ -2812,14 +2812,11 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF710F String Set Queries
-题意
-动态支持加入删除字符串和字符串匹配
-思路
-动态 AC自动机
+        CF710F String Set Queries题意动态支持加入删除字符串和字符串匹配
+思路动态 AC自动机
 先不考虑动态情况。对于加入一个字符串，直接插入到自动机即可。
-考虑删除。发现对于答案具有可减性，意思是对于同一个匹配串，答案可以表示为在自动机中匹配的答案减去删去的所有串匹配的答案。那我们考虑给所有删除的串也开一个
-AC 自动机，每次询问在两个自动机中匹配将答案...
+考虑删除。发现对于答案具有可减性，意思是对于同一个匹配串，答案可以表示为在自动机中匹配的答案减去删去的所有串匹配的答案。那我们考虑给所有删除的串也开一个 AC 自动机，每次询问在两个自动机中匹配将答案相减即可。
+现在考虑...
       
     
   </div>
@@ -2882,14 +2879,10 @@ AC 自动机，每次询问在两个自动机中匹配将答案...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt
-三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。
+        KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。
 问题：求 a 字符串与 b 字符串中子串相同的串首位置。
-暴力就不说了，设 a 长 \(m\)，b 长
-\(n\)，每次枚举比对每个字符，复杂度
-\(O(nm)\)。
-KMP
-主要思想：如果一个字符串的子...
+暴力就不说了，设 a 长 $m$，b 长 $n$，每次枚举比对每个字符，复杂度 $O(nm)$。
+KMP 主要思想：如果一个字符串的子串与前缀相等，那么在查找时...
       
     
   </div>
@@ -2952,15 +2945,10 @@ KMP
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P2375
-[NOI2014]动物园
-我竟然会做NOI的题目辣(≧▽≦)/（看的题解
+        P2375 [NOI2014]动物园我竟然会做NOI的题目辣(≧▽≦)&#x2F;（看的题解
 总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。
-我们发现，这个所谓的 num 数组和 nxt
-有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。
-于是在标记 nxt 时同时也可以把 num
-标记。原理是，nxt
-...
+我们发现，这个所谓的 num 数组和 nxt 有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。
+于是在标记 nxt 时同时也可以把 num 标记。原理是，nxt 记录的是...
       
     
   </div>
@@ -3024,13 +3012,10 @@ KMP
     
       
         就是把字符串转变成一个树，每个节点连接下一个字符，用空间换时间。
-对于区分大小写或不区分的题目，只需要改变 ch[][26]
-的值就行了。
-ch[u][x] 表示 u 节点（标号决定）下一个
-x 字符节点的标号。
-如果题目让记录附加值，那就用 val[]
-在插入时记录一下就好了。
-1234567891011121314151617181920212223242526272829...
+对于区分大小写或不区分的题目，只需要改变 ch[][26] 的值就行了。
+ch[u][x] 表示 u 节点（标号决定）下一个 x 字符节点的标号。
+如果题目让记录附加值，那就用 val[] 在插入时记录一下就好了。
+12345678910111213141516171819202122232425262728293031323...
       
     
   </div>
@@ -3368,9 +3353,7 @@ x 字符节点的标号。
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4382,7 +4365,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

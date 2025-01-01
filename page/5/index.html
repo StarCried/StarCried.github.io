@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2730,13 +2730,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF494D Birthday
-题意
-一个1为根的带边权有根树，每次询问给定两个点 \(u,v\) 求 \(\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in
-S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
-表示 \(u,v\) 简单路径长度， \(S(u)\) 表示 \(u\) 的子树内点的集合。
-思路
-考虑 \(u\) 在 \(v\)...
+        CF494D Birthday题意一个1为根的带边权有根树，每次询问给定两个点 $u,v$ 求 $\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in S(v)}d(u,x)^2$ 其中 $d(u,v)$ 表示 $u,v$ 简单路径长度， $S(u)$ 表示 $u$ 的子树内点的集合。
+思路考虑 $u$ 在 $v$ 内和在 $v$ 外的情况，发现可以通过每个点维护...
       
     
   </div>
@@ -2773,7 +2768,7 @@ S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF459E-DP/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF487E Tourists/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2791,23 +2786,23 @@ S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF459E-DP/"  itemprop="url">
-        CF459E-DP
+      <a href="/2022/04/30/CF487E%20Tourists/"  itemprop="url">
+        CF487E Tourists
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF459E-DP
-核心代码15行
+        CF487E Tourists前排膜拜T神
+上面的话和这道题一点关系都没有
+题意给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
 思路
-观察数据范围，我们建m层分层图跑最短路想到DP。
-DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？
-发现DP值一定从边权小于当前点的位置转移而来。
-这不就无后效性了？我们按边权将所有边排序即可。
-然后，枚举边，将DP值记录到点上，每次用起始点的dp值加1更新到达点的dp值。最后输出dp值最大的即可。
-然后，您会发现第一个...
+一眼圆方树。
+——@gxy001
+
+这种题只有在树上做才比较好处理这么多次询问。考虑广义圆方树，缩完点双连通分量后建立的方点和圆点。
+因为我们找的是最小值，所以必须将代表整个点双的方点的权值设为与其相连的所有圆点的权值的最小值...
       
     
   </div>
@@ -2828,77 +2823,7 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/CF459E-DP/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF896D Nephren Runs a Cinema/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/"  itemprop="url">
-        CF896D Nephren Runs a Cinema
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF896D Nephren Runs a Cinema
-题意
-售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况
-\(n\) 名顾客后剩余钱数在 \(l\sim r\) 的方案数。
-思路
-这是我们一道模拟赛题。
-解法
-1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF487E%20Tourists/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2940,14 +2865,11 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF710F String Set Queries
-题意
-动态支持加入删除字符串和字符串匹配
-思路
-动态 AC自动机
+        CF710F String Set Queries题意动态支持加入删除字符串和字符串匹配
+思路动态 AC自动机
 先不考虑动态情况。对于加入一个字符串，直接插入到自动机即可。
-考虑删除。发现对于答案具有可减性，意思是对于同一个匹配串，答案可以表示为在自动机中匹配的答案减去删去的所有串匹配的答案。那我们考虑给所有删除的串也开一个
-AC 自动机，每次询问在两个自动机中匹配将答案...
+考虑删除。发现对于答案具有可减性，意思是对于同一个匹配串，答案可以表示为在自动机中匹配的答案减去删去的所有串匹配的答案。那我们考虑给所有删除的串也开一个 AC 自动机，每次询问在两个自动机中匹配将答案相减即可。
+现在考虑...
       
     
   </div>
@@ -3010,14 +2932,12 @@ AC 自动机，每次询问在两个自动机中匹配将答案...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF833B-线段树优化DP
-题意
-将一个长为\(n\)的序列分成\(k\)段，每段贡献为其中不同数字的个数，求最大贡献和。\(n\leq 35000,k\leq 50\)。
-思路
-此处感谢@gxy001 聚铑的精彩讲解
-先考虑暴力DP，可以想到一个时空复杂度\(O(n^2k)\)的方法，即记录前i个数字分成了j段。我们现在来思考几个问题来优化这个操作：
+        CF833B-线段树优化DP题意将一个长为$n$的序列分成$k$段，每段贡献为其中不同数字的个数，求最大贡献和。$n\leq 35000,k\leq 50$。
+思路此处感谢@gxy001 聚铑的精彩讲解
+先考虑暴力DP，可以想到一个时空复杂度$O(n^2k)$的方法，即记录前i个数字分成了j段。我们现在来思考几个问题来优化这个操作：
 
-对于一个数字，它对那...
+对于一个数字，它对那些地方实际有贡献？
+每次分割出一个区...
       
     
   </div>
@@ -3054,7 +2974,7 @@ AC 自动机，每次询问在两个自动机中匹配将答案...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Dirichlet卷积和莫比乌斯反演/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF896D Nephren Runs a Cinema/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3072,23 +2992,17 @@ AC 自动机，每次询问在两个自动机中匹配将答案...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"  itemprop="url">
-        Dirichlet卷积和莫比乌斯反演
+      <a href="/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/"  itemprop="url">
+        CF896D Nephren Runs a Cinema
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-非全面讲解，仅供记录笔记
-
-Dirichlet卷积
-\[(f\ast g)(n)=\sum_{d\mid
-n}f(d)g(\frac{n}{d})\] \[\varepsilon
-=\mu \ast 1 \iff \varepsilon(n) = \sum_{d\mid n} \mu(d)\]
-其中\(\varepsilon\)卷任何函数等于其函数本身。
-莫比乌斯函数\(\...
+        CF896D Nephren Runs a Cinema题意售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况 $n$ 名顾客后剩余钱数在 $l\sim r$ 的方案数。
+思路这是我们一道模拟赛题。
+解法 1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，用组合数减去另外一个组合数然...
       
     
   </div>
@@ -3099,17 +3013,17 @@ n}f(d)g(\frac{n}{d})\] \[\varepsilon
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3151,14 +3065,11 @@ n}f(d)g(\frac{n}{d})\] \[\varepsilon
   <div class='md article-desc' itemprop="articleBody">
     
       
-        我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra
-或者 dijskra……
+        我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra 或者 dijskra……
 我以后叫她迪杰克斯歘！
-dijkstra
-是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。
-dijkstra
-的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。
-dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
+dijkstra 是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。
+dijkstra 的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。
+dis 数组代表由起点到其他点的最短路，初始化其为 $INF$ (不要过...
       
     
   </div>
@@ -3221,13 +3132,7 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        GCD SUM
-求 \[
-\sum_{i=1}^n\sum_{j=1}^n\gcd(i,j)
-\] 将原式变换得到 \[
-\sum_{d=1}^nd\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}[\gcd(i,j)=1]
-\] 别着急莫比乌斯反演，我们知道 \[
-\varph...
+        GCD SUM求$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n\gcd(i,j)$$将原式变换得到$$\sum_{d&#x3D;1}^nd\sum_{i&#x3D;1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j&#x3D;1}^{\lfloor\frac{n}{d}\rfloor}[\gcd(i,j)&#x3D;1]$$别着急莫比乌斯反演...
       
     
   </div>
@@ -3249,6 +3154,73 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
       
         <div>
           <a class='readmore' href='/2022/04/30/GCD%20SUM/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Dirichlet卷积和莫比乌斯反演/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"  itemprop="url">
+        Dirichlet卷积和莫比乌斯反演
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+非全面讲解，仅供记录笔记
+
+Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsilon &#x3D;\mu \ast 1 \iff \varepsilon(n) &#x3D; \sum_{d\mid n} \mu(d)$$其中$\varepsilon$卷任何函数等于其函数本身。
+莫比乌斯函数$...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3290,16 +3262,14 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Guass消元
-约旦·高斯消元法 求线性方程组
-我们用一个\(n*(n+1)\)的矩阵存储线性方程组各项系数和零次项系数。
+        Guass消元约旦·高斯消元法 求线性方程组我们用一个$n*(n+1)$的矩阵存储线性方程组各项系数和零次项系数。
 
 每一次找到一个未知数系数最大的方程，交换当前行方程和该方程，并将其他行该未知数的系数化为零。
 重复n次即可。
-最后第\(a[i][i]\)个数就是第i个未知数的系数，\(a[i][n+1]\)是等式右侧的数，用后者除以前者即可。
+最后第$a[i][i]$个数就是第i个未知数的系数，$a[i][n+1]$是等式右侧的数，用后者除以前者即可。
 
 
-当化第i个方程时...
+当化第i个方程时，若找到所有方程的最大值为零，即都...
       
     
   </div>
@@ -3362,14 +3332,10 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt
-三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。
+        KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。
 问题：求 a 字符串与 b 字符串中子串相同的串首位置。
-暴力就不说了，设 a 长 \(m\)，b 长
-\(n\)，每次枚举比对每个字符，复杂度
-\(O(nm)\)。
-KMP
-主要思想：如果一个字符串的子...
+暴力就不说了，设 a 长 $m$，b 长 $n$，每次枚举比对每个字符，复杂度 $O(nm)$。
+KMP 主要思想：如果一个字符串的子串与前缀相等，那么在查找时...
       
     
   </div>
@@ -3727,9 +3693,7 @@ KMP
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4741,7 +4705,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

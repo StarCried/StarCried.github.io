@@ -50,12 +50,12 @@
   <title>随机数生成 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,随机化,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="我知道是伪随机数生成啦 可以用 srand(time(0)) 和 rand() 函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。 下面的方法可以生成指定范围的随机数。如果修改分布，还可以得到符合特定分布的随机数。 mt19937 c++11 加入。 定义一个名叫 rd 的随机数生成器（括号内为种子）。 12mt19937 rd(std::chrono::">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机数生成">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="我知道是伪随机数生成啦 可以用 srand(time(0)) 和 rand() 函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。 下面的方法可以生成指定范围的随机数。如果修改分布，还可以得到符合特定分布的随机数。 mt19937 c++11 加入。 定义一个名叫 rd 的随机数生成器（括号内为种子）。 12mt19937 rd(std::chrono::">
+<meta property="og:description" content="我知道是伪随机数生成啦 可以用 srand(time(0)) 和 rand() 函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。 下面的方法可以生成指定范围的随机数。如果修改分布，还可以得到符合特定分布的随机数。 mt19937c++11 加入。 定义一个名叫 rd 的随机数生成器（括号内为种子）。 12mt19937 rd(std::chrono::system_c">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2804,26 +2804,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p><del>我知道是伪随机数生成啦</del></p>
-<p>可以用 <code>srand(time(0))</code> 和 <code>rand()</code>
-函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。</p>
+<p>可以用 <code>srand(time(0))</code> 和 <code>rand()</code> 函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。</p>
 <p>下面的方法可以生成指定范围的随机数。如果修改分布，还可以得到符合特定分布的随机数。</p>
-<h3 id="mt19937">mt19937</h3>
-<p>c++11 加入。</p>
+<h3 id="mt19937"><a href="#mt19937" class="headerlink" title="mt19937"></a>mt19937</h3><p>c++11 加入。</p>
 <p>定义一个名叫 <code>rd</code> 的随机数生成器（括号内为种子）。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">mt19937 <span class="title">rd</span><span class="params">(std::chrono::system_clock::now().time_since_epoch().count())</span></span>;</span><br><span class="line"><span class="function">mt19937 <span class="title">rd</span><span class="params">(std::random_device&#123;&#125;())</span></span>;</span><br></pre></td></tr></table></figure>
-<h3 id="uniform_int_distribution">uniform_int_distribution</h3>
-<p>定义一个名叫 <code>rand</code> 的整型随机分布（括号内为上下界）。</p>
+
+<h3 id="uniform-int-distribution"><a href="#uniform-int-distribution" class="headerlink" title="uniform_int_distribution"></a>uniform_int_distribution</h3><p>定义一个名叫 <code>rand</code> 的整型随机分布（括号内为上下界）。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">uniform_int_distribution&lt;<span class="type">int</span>&gt; <span class="title">rand</span><span class="params">(MN,MX)</span></span>;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>实数随机分布为 <code>uniform_real_distribution</code>。<br />
-</li>
-<li>不知道尖括号内不填对应类型会发生什么。<br />
-</li>
+<li>实数随机分布为 <code>uniform_real_distribution</code>。  </li>
+<li>不知道尖括号内不填对应类型会发生什么。  </li>
 <li>存在正态分布等其他分布，请百度。</li>
 </ul>
-<h2 id="生成固定范围的随机整数">生成固定范围的随机整数</h2>
-<p>假设定义了如上定义的 <code>rd</code> 和
-<code>rand</code>，使用方法为：</p>
+<h2 id="生成固定范围的随机整数"><a href="#生成固定范围的随机整数" class="headerlink" title="生成固定范围的随机整数"></a>生成固定范围的随机整数</h2><p>假设定义了如上定义的 <code>rd</code> 和 <code>rand</code>，使用方法为：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rand</span>(rd)</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2922,30 +2917,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>费马小定理</p>
-          <p class='content'>费马小定理
-对于任何互质数 \(a,p\),有
-\[
-a^{p-1}=1\pmod p
-\]
-应用
-求逆元：
-\[
-a^{p-2}=a^{-1}\pmod p
-\]
-</p>
+        <a class='prev' href='/2022/04/30/%E8%AF%BB%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>读入、输出优化</p>
+          <p class='content'>关闭流同步1std::ios::sync_with_stdio(false);
+
+关闭输入输出流与标准输入输出（scanf printf）的同步，加快流速度，但关闭后不可混用。
+整形快读从标准输...</p>
         </a>
       
       
         <a class='next' href='/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/'>
           <p class='title'>鞅的停时定理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言
-该内容算法竞赛涉及不多，属于较深概率论内容。
-鞅的停时定理
-“鞅”，martingale 用来指一类随机过程，定义如下：
+          <p class='content'>前言该内容算法竞赛涉及不多，属于较深概率论内容。
+鞅的停时定理“鞅”，martingale 用来指一类随机过程，定义如下：
 
-鞅是一种离散时间的随机过程 \(X_0,X_1,\cd...</p>
+鞅是一种离散时间的随机过程 $X_0,X_1,\cdots$ 满足：...</p>
         </a>
       
     </div>
@@ -3078,7 +3064,7 @@ a^{p-2}=a^{-1}\pmod p
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mt19937"><span class="toc-text">mt19937</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uniform_int_distribution"><span class="toc-text">uniform_int_distribution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B4%E6%95%B0"><span class="toc-text">生成固定范围的随机整数</span></a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mt19937"><span class="toc-text">mt19937</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uniform-int-distribution"><span class="toc-text">uniform_int_distribution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B4%E6%95%B0"><span class="toc-text">生成固定范围的随机整数</span></a>
     </div>
   </section>
 
@@ -3218,9 +3204,7 @@ a^{p-2}=a^{-1}\pmod p
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4232,7 +4216,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

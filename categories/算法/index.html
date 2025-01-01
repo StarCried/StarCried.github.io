@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2757,14 +2757,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        问题描述
-SAT(satisfiabality) 是适应性的缩写，一般称 k 的适应性问题为
-k-SAT。适应性问题指有 \(n\) 个布尔变量
-\(\{x_i\}\)，加入一些限制然后求限制内的解的问题。
-因为 \(k&gt;2\) 的 k-SAT 问题是 NP
-完全问题（没有一定的算法和正解），我们只讨论 2-SAT 问题。
-Tarjan
-一般来讲，我们会想到把变量 \(x...
+        问题描述SAT(satisfiabality) 是适应性的缩写，一般称 k 的适应性问题为 k-SAT。适应性问题指有 $n$ 个布尔变量 ${x_i}$，加入一些限制然后求限制内的解的问题。
+因为 $k&gt;2$ 的 k-SAT 问题是 NP 完全问题（没有一定的算法和正解），我们只讨论 2-SAT 问题。
+Tarjan一般来讲，我们会想到把变量 $x_i$ 的两种状态（比如选和不选，记...
       
     
   </div>
@@ -2829,7 +2824,7 @@ Tarjan
       
         AC来自一个大佬的名字，并不是写了就可以自动AC的意思 XD
 AC自动机是建立在trie树上的一种优化手段。trie在每次查询一个字符串时，如果在一个子树查不到就会回溯再查，效率会很低。我们考虑在给每个节点加一个如果查不到就跳转的指针fail，那么如果找不到的话直接跳转到fail就可以了。fail代表的是拥有该点的最大后缀的点的位置。
-那么怎么寻找这个fail呢？因为我们要寻找最大后缀，...
+那么怎么寻找这个fail呢？因为我们要寻找最大后缀，深度...
       
     
   </div>
@@ -2892,14 +2887,11 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra
-或者 dijskra……
+        我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra 或者 dijskra……
 我以后叫她迪杰克斯歘！
-dijkstra
-是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。
-dijkstra
-的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。
-dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
+dijkstra 是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。
+dijkstra 的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。
+dis 数组代表由起点到其他点的最短路，初始化其为 $INF$ (不要过...
       
     
   </div>
@@ -2962,16 +2954,14 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Guass消元
-约旦·高斯消元法 求线性方程组
-我们用一个\(n*(n+1)\)的矩阵存储线性方程组各项系数和零次项系数。
+        Guass消元约旦·高斯消元法 求线性方程组我们用一个$n*(n+1)$的矩阵存储线性方程组各项系数和零次项系数。
 
 每一次找到一个未知数系数最大的方程，交换当前行方程和该方程，并将其他行该未知数的系数化为零。
 重复n次即可。
-最后第\(a[i][i]\)个数就是第i个未知数的系数，\(a[i][n+1]\)是等式右侧的数，用后者除以前者即可。
+最后第$a[i][i]$个数就是第i个未知数的系数，$a[i][n+1]$是等式右侧的数，用后者除以前者即可。
 
 
-当化第i个方程时...
+当化第i个方程时，若找到所有方程的最大值为零，即都...
       
     
   </div>
@@ -3034,14 +3024,10 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt
-三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。
+        KMP 算法是 D.E.Knuth、J,H,Morris 和 V.R.Pratt 三位神人共同提出的，称之为 Knuth-Morria-Pratt 算法，简称 KMP 算法。
 问题：求 a 字符串与 b 字符串中子串相同的串首位置。
-暴力就不说了，设 a 长 \(m\)，b 长
-\(n\)，每次枚举比对每个字符，复杂度
-\(O(nm)\)。
-KMP
-主要思想：如果一个字符串的子...
+暴力就不说了，设 a 长 $m$，b 长 $n$，每次枚举比对每个字符，复杂度 $O(nm)$。
+KMP 主要思想：如果一个字符串的子串与前缀相等，那么在查找时...
       
     
   </div>
@@ -3107,17 +3093,22 @@ KMP
         LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
 
 查询、修改链上的信息
+
 随意指定原树的根（即换根）
+
 动态连边、删边
+
 合并两棵树、分离一棵树
+
 动态维护连通性
+
 等
 
-主要性质
 
+主要性质
 每一个Splay维护的是一条从上到下按在原树中深度严格递增的路径，且中序遍历Splay得到的每个点的深度序列严格递增。
 每个节点仅包含于一个splay中。
-边分为实边和虚边...
+边分为实边和虚边，实边记录 so...
       
     
   </div>
@@ -3180,15 +3171,13 @@ KMP
   <div class='md article-desc' itemprop="articleBody">
     
       
-        矩阵树定理
-定义
+        矩阵树定理定义
+邻接矩阵：$A&#x3D;(a_{ij})$，其中 $a_{ij}$ 表示 $i$ 到 $j$ 有几条边相连。
+度数矩阵：$C&#x3D;(c_{ij})$，为对角矩阵，其中 $c_{ii}$ 表示 $i$ 的度数。
+基尔霍夫矩阵：$D&#x3D;C-A$。
+余子式：$M_{ij}$ 表示去掉第 $i$ 行第 $j$ 列后得到矩阵的行列式。
 
-邻接矩阵：\(A=(a_{ij})\)，其中
-\(a_{ij}\) 表示 \(i\) 到 \(j\) 有几条边相连。
-度数矩阵：\(C=(c_{ij})\)，为对角矩阵，其中 \(c_{ii}\) 表示 \(i\) 的度数。
-基尔霍夫矩阵：\(D=C-A\)。
-余子式：\(M_{ij}\) 表示去掉第 \(i\) 行第 \(j\) 列后得到矩阵的行列式。
-...
+定理无向图的生成树个数等于其基尔...
       
     
   </div>
@@ -3210,6 +3199,70 @@ KMP
       
         <div>
           <a class='readmore' href='/2022/04/30/matrix-tree%E5%AE%9A%E7%90%86/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/主定理/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/"  itemprop="url">
+        主定理
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
+时间复杂度相关定义在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大 $O$ 符号表述，不包括这个函...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3254,13 +3307,9 @@ KMP
         
 “有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
 
-中国剩余定理
-即求多个同余方程的解。
-举个栗子。求一个数x，使得： \[\begin{cases}
-x≡2\pmod 3\\
-x≡3\pmod 5\\
-x≡2\pmod {11}\end{cases}\]
-设 \(M=3*5*11=165\), \(a1=3\), \(a2=5\),...
+中国剩余定理即求多个同余方程的解。
+举个栗子。求一个数x，使得：$$\begin{cases}x≡2\pmod 3\x≡3\pmod 5\x≡2\pmod {11}\end{cases}$$
+设 $M&#x3D;3511&#x3D;165$, $a1&#x3D;3$, $a2&#x3D;5$, $a3...
       
     
   </div>
@@ -3297,7 +3346,7 @@ x≡2\pmod {11}\end{cases}\]
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/主定理/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/分数规划/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3315,21 +3364,20 @@ x≡2\pmod {11}\end{cases}\]
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/"  itemprop="url">
-        主定理
+      <a href="/2022/04/30/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/"  itemprop="url">
+        分数规划
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        主定理（Master
-Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
-时间复杂度相关定义
-在计算机科学中，算法的时间复杂度（time
-complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大
-\(O\)
-符号...
+        问题描述有 $n$ 个物品，每种物品两个权值 $a_i$，$b_i$，求一组 $w_i\in{0,1}$，使得
+$$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i}$$
+最大（或最小）。
+有可能包含其他限制。
+二分法显然答案是单调的。对一个答案 $mid$，有
+$$\begin{aligned}&amp...
       
     
   </div>
@@ -3350,76 +3398,7 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/分层图/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/"  itemprop="url">
-        分层图
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言
-前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ
-所以又在网上找着看了看写一篇博客备忘。
-学习笔记真的很有用！
-分层图
-这个很容易理解，来源就是在一些最短路的问题上题目又加了比如说主角可以用传送宝石进行折跃之类的问题（针对），即可以选择k条边把这些边的边权变为零。
-怎么样解决呢？可以在原图的基础上多复制k个相同的图，并用k条边把图之间的边用0边权边相连。就...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3751,9 +3730,7 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4765,7 +4742,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -50,12 +50,12 @@
   <title>P3214 [HNOI2011]卡农 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,组合数学,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="P3214 [HNOI2011]卡农 题意 在集合 \(\{1,2,\cdots,n\}\) 中选出 \(m\) 个非空子集满足：  不存在完全相同的两个集合； 每个元素在所有集合中出现次数之和为偶数。  思路 考虑转移，利用容斥方法进行 Dp。设 \(f_i\) 表示选了 \(i\) 个集合满足条件的方案数：  首先，如果确定了前 \(i-1\) 个集合，那么为了满足上面">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="P3214 [HNOI2011]卡农">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P3214%20[HNOI2011]%E5%8D%A1%E5%86%9C/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P3214 [HNOI2011]卡农 题意 在集合 \(\{1,2,\cdots,n\}\) 中选出 \(m\) 个非空子集满足：  不存在完全相同的两个集合； 每个元素在所有集合中出现次数之和为偶数。  思路 考虑转移，利用容斥方法进行 Dp。设 \(f_i\) 表示选了 \(i\) 个集合满足条件的方案数：  首先，如果确定了前 \(i-1\) 个集合，那么为了满足上面">
+<meta property="og:description" content="P3214 [HNOI2011]卡农题意在集合 ${1,2,\cdots,n}$ 中选出 $m$ 个非空子集满足：  不存在完全相同的两个集合； 每个元素在所有集合中出现次数之和为偶数。  思路考虑转移，利用容斥方法进行 Dp。设 $f_i$ 表示选了 $i$ 个集合满足条件的方案数：  首先，如果确定了前 $i-1$ 个集合，那么为了满足上面第二个限制这个位置选的集合一定是固定的。前 $i-1$">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,42 +2803,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="p3214-hnoi2011卡农">P3214 [HNOI2011]卡农</h2>
-<h3 id="题意">题意</h3>
-<p>在集合 <span class="math inline">\(\{1,2,\cdots,n\}\)</span> 中选出
-<span class="math inline">\(m\)</span> 个非空子集满足：</p>
-<ol type="1">
+    <h2 id="P3214-HNOI2011-卡农"><a href="#P3214-HNOI2011-卡农" class="headerlink" title="P3214 [HNOI2011]卡农"></a>P3214 [HNOI2011]卡农</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>在集合 ${1,2,\cdots,n}$ 中选出 $m$ 个非空子集满足：</p>
+<ol>
 <li>不存在完全相同的两个集合；</li>
 <li>每个元素在所有集合中出现次数之和为偶数。</li>
 </ol>
-<h3 id="思路">思路</h3>
-<p>考虑转移，利用容斥方法进行 Dp。设 <span
-class="math inline">\(f_i\)</span> 表示选了 <span
-class="math inline">\(i\)</span> 个集合满足条件的方案数：</p>
-<ol type="1">
-<li>首先，如果确定了前 <span class="math inline">\(i-1\)</span>
-个集合，那么为了满足上面第二个限制这个位置选的集合一定是固定的。前 <span
-class="math inline">\(i-1\)</span> 个集合的选择方案数是 <span
-class="math inline">\(A_{2^n-1}^{i-1}\)</span>。</li>
-<li>上面的方案中有选择了空集的方案。选择空集当且仅当前 <span
-class="math inline">\(i-1\)</span> 个集合已经是合法方案了，即有 <span
-class="math inline">\(f_{i-1}\)</span> 个是多计算的，减去即可。</li>
-<li>还有选择集合相同的方案数。考虑若有相同的集合那么去掉这两个集合剩下的也是合法的，即
-<span class="math inline">\(f_{i-2}\)</span>。有 <span
-class="math inline">\(i-1\)</span> 个位置和 <span
-class="math inline">\(2^n-1-(i-2)\)</span> 种取法（减去空集和不同的
-<span class="math inline">\(i-2\)</span> 个集合），所以总共有 <span
-class="math inline">\(f_{i-2}*(i-1)*(2^n-1-(i-2))\)</span>
-种，减去即可。</li>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>考虑转移，利用容斥方法进行 Dp。设 $f_i$ 表示选了 $i$ 个集合满足条件的方案数：</p>
+<ol>
+<li>首先，如果确定了前 $i-1$ 个集合，那么为了满足上面第二个限制这个位置选的集合一定是固定的。前 $i-1$ 个集合的选择方案数是 $A_{2^n-1}^{i-1}$。</li>
+<li>上面的方案中有选择了空集的方案。选择空集当且仅当前 $i-1$ 个集合已经是合法方案了，即有 $f_{i-1}$ 个是多计算的，减去即可。</li>
+<li>还有选择集合相同的方案数。考虑若有相同的集合那么去掉这两个集合剩下的也是合法的，即 $f_{i-2}$。有 $i-1$ 个位置和 $2^n-1-(i-2)$ 种取法（减去空集和不同的 $i-2$ 个集合），所以总共有 $f_{i-2}<em>(i-1)</em>(2^n-1-(i-2))$ 种，减去即可。</li>
 </ol>
-<p>转移式为： <span class="math display">\[
-f_i=A_{2^n-1}^{i-1}-f_{i-1}-f_{i-2}*(i-1)*(2^n-1-(i-2))
-\]</span> 边界条件为 <span class="math inline">\(f_0=1\)</span>,<span
-class="math inline">\(f_1=0\)</span>。</p>
-<h3 id="实现">实现</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e6</span><span class="number">+10</span>,mod=<span class="number">1e8</span><span class="number">+7</span>;</span><br><span class="line">	<span class="type">int</span> n,m,pow=<span class="number">1</span>,A[maxn],f[maxn];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">fpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="type">int</span> ans=<span class="number">1</span>;<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=<span class="number">1ll</span>*a*a%mod) <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=<span class="number">1ll</span>*ans*a%mod;<span class="keyword">return</span> ans;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) pow=(pow&lt;&lt;<span class="number">1</span>)%mod; pow=(pow<span class="number">-1</span>+mod)%mod;</span><br><span class="line">		A[<span class="number">0</span>]=<span class="number">1</span>;<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) A[i]=<span class="number">1ll</span>*A[i<span class="number">-1</span>]*((pow-i<span class="number">+1</span>+mod)%mod)%mod;</span><br><span class="line">		f[<span class="number">0</span>]=<span class="number">1</span>,f[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=m;i++) f[i]=(A[i<span class="number">-1</span>]-f[i<span class="number">-1</span>]+mod<span class="number">-1ll</span>*f[i<span class="number">-2</span>]*(i<span class="number">-1</span>)%mod*(pow-i<span class="number">+2</span>+mod)%mod+mod)%mod;</span><br><span class="line">		<span class="type">int</span> res=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) res=<span class="number">1ll</span>*res*i%mod;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="number">1ll</span>*f[m]*<span class="built_in">fpow</span>(res,mod<span class="number">-2</span>)%mod);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="闲话">闲话</h3>
-<p>我搜了下，音阶的意思是从主音到主音的连续音符段，所以一个音阶是若干音符的集合（大概）</p>
+<p>转移式为：<br>$$<br>f_i&#x3D;A_{2^n-1}^{i-1}-f_{i-1}-f_{i-2}<em>(i-1)</em>(2^n-1-(i-2))<br>$$<br>边界条件为 $f_0&#x3D;1$,$f_1&#x3D;0$。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e6</span><span class="number">+10</span>,mod=<span class="number">1e8</span><span class="number">+7</span>;</span><br><span class="line">	<span class="type">int</span> n,m,pow=<span class="number">1</span>,A[maxn],f[maxn];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">fpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="type">int</span> ans=<span class="number">1</span>;<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=<span class="number">1ll</span>*a*a%mod) <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=<span class="number">1ll</span>*ans*a%mod;<span class="keyword">return</span> ans;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) pow=(pow&lt;&lt;<span class="number">1</span>)%mod; pow=(pow<span class="number">-1</span>+mod)%mod;</span><br><span class="line">		A[<span class="number">0</span>]=<span class="number">1</span>;<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) A[i]=<span class="number">1ll</span>*A[i<span class="number">-1</span>]*((pow-i<span class="number">+1</span>+mod)%mod)%mod;</span><br><span class="line">		f[<span class="number">0</span>]=<span class="number">1</span>,f[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=m;i++) f[i]=(A[i<span class="number">-1</span>]-f[i<span class="number">-1</span>]+mod<span class="number">-1ll</span>*f[i<span class="number">-2</span>]*(i<span class="number">-1</span>)%mod*(pow-i<span class="number">+2</span>+mod)%mod+mod)%mod;</span><br><span class="line">		<span class="type">int</span> res=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) res=<span class="number">1ll</span>*res*i%mod;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="number">1ll</span>*f[m]*<span class="built_in">fpow</span>(res,mod<span class="number">-2</span>)%mod);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="闲话"><a href="#闲话" class="headerlink" title="闲话"></a>闲话</h3><p>我搜了下，音阶的意思是从主音到主音的连续音符段，所以一个音阶是若干音符的集合（大概）</p>
 <p>所以小余大概是把一个音符分成了一个音阶（</p>
 
   </div>
@@ -2937,21 +2916,18 @@ class="math inline">\(f_1=0\)</span>。</p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P3209-平面图判定</p>
-          <p class='content'>平面图
-平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过...</p>
+        <a class='prev' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2490 [SDOI2011]黑白棋</p>
+          <p class='content'>P2490 [SDOI2011]黑白棋题意一个 $1*n$ 的棋盘上，A 可以移动白色棋子，B 可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动 1 到 $d$ 个棋子。...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/'>
-          <p class='title'>P3643 [APIO2016]划艇<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P3643 [APIO2016]划艇
-题意
-一个合法序列可表示为一个长度为 \(n\)
-的序列，其中第 \(i\) 个数可以为 0 或
-\([l_i,r_i]\)
-中一个整数，且满足所...</p>
+        <a class='next' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/'>
+          <p class='title'>P3203 弹飞绵羊-分块<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P3203 弹飞绵羊-分块观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。
+对于修改，重构整个块内信息即可。
+时间复杂度正确的一批
+...</p>
         </a>
       
     </div>
@@ -3084,7 +3060,7 @@ class="math inline">\(f_1=0\)</span>。</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p3214-hnoi2011%E5%8D%A1%E5%86%9C"><span class="toc-text">P3214 [HNOI2011]卡农</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%B2%E8%AF%9D"><span class="toc-text">闲话</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P3214-HNOI2011-%E5%8D%A1%E5%86%9C"><span class="toc-text">P3214 [HNOI2011]卡农</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%B2%E8%AF%9D"><span class="toc-text">闲话</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3224,9 +3200,7 @@ class="math inline">\(f_1=0\)</span>。</p>
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4238,7 +4212,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

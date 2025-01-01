@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2757,14 +2757,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        问题描述
-SAT(satisfiabality) 是适应性的缩写，一般称 k 的适应性问题为
-k-SAT。适应性问题指有 \(n\) 个布尔变量
-\(\{x_i\}\)，加入一些限制然后求限制内的解的问题。
-因为 \(k&gt;2\) 的 k-SAT 问题是 NP
-完全问题（没有一定的算法和正解），我们只讨论 2-SAT 问题。
-Tarjan
-一般来讲，我们会想到把变量 \(x...
+        问题描述SAT(satisfiabality) 是适应性的缩写，一般称 k 的适应性问题为 k-SAT。适应性问题指有 $n$ 个布尔变量 ${x_i}$，加入一些限制然后求限制内的解的问题。
+因为 $k&gt;2$ 的 k-SAT 问题是 NP 完全问题（没有一定的算法和正解），我们只讨论 2-SAT 问题。
+Tarjan一般来讲，我们会想到把变量 $x_i$ 的两种状态（比如选和不选，记...
       
     
   </div>
@@ -2827,12 +2822,8 @@ Tarjan
   <div class='md article-desc' itemprop="articleBody">
     
       
-        AT2390 Games on DAG
-题意
-\(n\) 个点 \(m\) 条边的 DAG，每条边 \((u,v)\) 有 \(u&lt;v\)。\(1,2\) 号点各一个石头，Alice 和 Bob
-轮流每次沿边移动一个石头，不能动者输。求所有连边子集中先手胜的情况。两个石头可以重合。\(n\leq 15\)。
-思路
-发现对于两个石头的 SG 函数是独立的，输者两个石头 SG 函...
+        AT2390 Games on DAG题意$n$ 个点 $m$ 条边的 DAG，每条边 $(u,v)$ 有 $u&lt;v$。$1,2$ 号点各一个石头，Alice 和 Bob 轮流每次沿边移动一个石头，不能动者输。求所有连边子集中先手胜的情况。两个石头可以重合。$n\leq 15$。
+思路发现对于两个石头的 SG 函数是独立的，输者两个石头 SG 函数异或值为 0，那么先手胜的情况就是所有...
       
     
   </div>
@@ -2895,14 +2886,11 @@ Tarjan
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF437D The Child and Zoo
-题意
-给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
+        CF437D The Child and Zoo题意给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
 思路
-
 首先，我们可以将点权转移到边权上，边权为两端点点权的较小值。正确性显然。
 然后，对于任意两个点之间的贡献，只有路径上含最大点权的简单路径有贡献，于是就可以把无向图转变为最大生成树。任意两个点间的贡献显然是在最大生成树上路径的最大边权。
-考虑对于一...
+考虑对于一条边的贡献，其实就是...
       
     
   </div>
@@ -2965,18 +2953,15 @@ Tarjan
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF487E Tourists
-前排膜拜T神
+        CF487E Tourists前排膜拜T神
 上面的话和这道题一点关系都没有
-题意
-给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
+题意给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
 思路
-
 一眼圆方树。
 ——@gxy001
 
 这种题只有在树上做才比较好处理这么多次询问。考虑广义圆方树，缩完点双连通分量后建立的方点和圆点。
-因为我们找的是最小值，所以必须将代表整个点双的方点的权值设为与其...
+因为我们找的是最小值，所以必须将代表整个点双的方点的权值设为与其相连的所有圆点的权值的最小值...
       
     
   </div>
@@ -3039,14 +3024,11 @@ Tarjan
   <div class='md article-desc' itemprop="articleBody">
     
       
-        我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra
-或者 dijskra……
+        我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra 或者 dijskra……
 我以后叫她迪杰克斯歘！
-dijkstra
-是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。
-dijkstra
-的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。
-dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
+dijkstra 是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。
+dijkstra 的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。
+dis 数组代表由起点到其他点的最短路，初始化其为 $INF$ (不要过...
       
     
   </div>
@@ -3112,17 +3094,22 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
         LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
 
 查询、修改链上的信息
+
 随意指定原树的根（即换根）
+
 动态连边、删边
+
 合并两棵树、分离一棵树
+
 动态维护连通性
+
 等
 
-主要性质
 
+主要性质
 每一个Splay维护的是一条从上到下按在原树中深度严格递增的路径，且中序遍历Splay得到的每个点的深度序列严格递增。
 每个节点仅包含于一个splay中。
-边分为实边和虚边...
+边分为实边和虚边，实边记录 so...
       
     
   </div>
@@ -3144,78 +3131,6 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
       
         <div>
           <a class='readmore' href='/2022/04/30/LCT(Link-Cut-Tree)/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2491 消防 P1099 树网的核/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/"  itemprop="url">
-        P2491 消防 P1099 树网的核
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P2491 消防/P1099 树网的核
-双倍经验，双倍快乐。
-题意
-在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。
-输出这个最小的值。
-做法
-Define:以下\(s\)指链或链长。
-
-证明一下\(s\)一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到\(s\)的距离大于现在所处支链的最大距离。所以\(s\)不在直径上一定不优。
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3257,12 +3172,9 @@ Define:以下\(s\)指链或链长。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        平面图
-平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过其他边的。
-平面图定理
-边数大于点数的三倍减六的图一定不是平面图。即设n为点数，m为边数，有
-\[m&lt;=n*3-6\]
-关于平面图的其他定理和上定理的证明我不会不过我有大佬博客就不乱搬了...
+        平面图平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过其他边的。
+平面图定理边数大于点数的三倍减六的图一定不是平面图。即设n为点数，m为边数，有$$m&lt;&#x3D;n*3-6$$关于平面图的其他定理和上定理的证明我不会不过我有大佬博客就不乱搬了。
+P3...
       
     
   </div>
@@ -3299,7 +3211,7 @@ Define:以下\(s\)指链或链长。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4180 [BJWC2010]严格次小生成树/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2491 消防 P1099 树网的核/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3317,20 +3229,21 @@ Define:以下\(s\)指链或链长。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"  itemprop="url">
-        P4180 [BJWC2010]严格次小生成树
+      <a href="/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/"  itemprop="url">
+        P2491 消防 P1099 树网的核
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4180 [BJWC2010]严格次小生成树
-题意
-求出一个无向联通图的严格次小生成树。严格次小生成树的定义为边权和大于最小生成树的边权和但不存在另一棵生成树的边权和在最小生成树和严格次小生成树之间（不相等）。
-思路
-先求出一颗最小生成树，发现严格次小生成树一定是其断了一条边并加了一条边且边权和的增加量最小。
-那么我们继续在最小生成树上做。对于每一条不是最小生成树上的边，求出其两...
+        P2491 消防&#x2F;P1099 树网的核双倍经验，双倍快乐。
+题意在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。
+输出这个最小的值。
+做法Define:以下$s$指链或链长。
+
+证明一下$s$一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到$s$的距离大于现在所处支链的最大距离。所以$s$不在直径上一定不优。
+于是我们找到直径并记录下直径上的所...
       
     
   </div>
@@ -3351,7 +3264,76 @@ Define:以下\(s\)指链或链长。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4334 [COI2007] Policija/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P4334%20%5BCOI2007%5D%20Policija/"  itemprop="url">
+        P4334 [COI2007] Policija
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P4334 [COI2007] Policija题意一个无重边的无向图，每次询问删掉一条边或删掉一个点后两个点是否联通。
+思路连通性问题，我们可以考虑使用广义圆方树解决。
+
+对于删掉一个点的情况：
+
+我们先跑 tarjan 建出圆方树。如何判断两点在删去一个点后在树上的连通性？当且仅当被删去的点在两点间的路径上。根据圆方树的性质，如果被删点在一个点双连通分量中，它是符合上面的判断条件的。
+所...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P4334%20%5BCOI2007%5D%20Policija/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3393,12 +3375,9 @@ Define:以下\(s\)指链或链长。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4494 [HAOI2018]反色游戏
-题意
-给你一个无向图，图上每个点是黑色或者白色。你可以将一条边的两个端点颜色取反。问你有多少种方法每个边至多取反一次使得图上全变成白色的点。
-思路
-若任意一个连通块黑色点的个数为奇数那么无解。
-先考虑树的情况。发现如果是树，并且黑点个数为偶数，有且仅有一种方式达到目标。然后发现，对于一个无向图，它的任意一个生成树若有解，那么其他非树边无论是...
+        P4494 [HAOI2018]反色游戏题意给你一个无向图，图上每个点是黑色或者白色。你可以将一条边的两个端点颜色取反。问你有多少种方法每个边至多取反一次使得图上全变成白色的点。
+思路若任意一个连通块黑色点的个数为奇数那么无解。
+先考虑树的情况。发现如果是树，并且黑点个数为偶数，有且仅有一种方式达到目标。然后发现，对于一个无向图，它的任意一个生成树若有解，那么其他非树边无论是否取反都有且仅有...
       
     
   </div>
@@ -3751,9 +3730,7 @@ Define:以下\(s\)指链或链长。
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4765,7 +4742,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

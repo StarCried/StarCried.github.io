@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4334 [COI2007] Policija/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4180 [BJWC2010]严格次小生成树/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2725,24 +2725,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4334%20%5BCOI2007%5D%20Policija/"  itemprop="url">
-        P4334 [COI2007] Policija
+      <a href="/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"  itemprop="url">
+        P4180 [BJWC2010]严格次小生成树
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4334 [COI2007] Policija
-题意
-一个无重边的无向图，每次询问删掉一条边或删掉一个点后两个点是否联通。
-思路
-连通性问题，我们可以考虑使用广义圆方树解决。
-
-对于删掉一个点的情况：
-
-我们先跑 tarjan
-建出圆方树。如何判断两点在删去一个点后在树上的连通性？当且仅当被删去的点在两点间的路径上。根据圆方树的性质，如果被删点在一个点双连通分量中，它是符...
+        P4180 [BJWC2010]严格次小生成树题意求出一个无向联通图的严格次小生成树。严格次小生成树的定义为边权和大于最小生成树的边权和但不存在另一棵生成树的边权和在最小生成树和严格次小生成树之间（不相等）。
+思路先求出一颗最小生成树，发现严格次小生成树一定是其断了一条边并加了一条边且边权和的增加量最小。
+那么我们继续在最小生成树上做。对于每一条不是最小生成树上的边，求出其两端两点间在最小生...
       
     
   </div>
@@ -2763,7 +2756,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P4334%20%5BCOI2007%5D%20Policija/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2805,18 +2798,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5311 [Ynoi2011] 成都七中
-题意
-给你一棵 \(n\)
-个节点的树，每个节点有一种颜色，有 \(m\) 次查询操作。
-查询操作给定参数 \(l\ r\
-x\)，需输出：
-将树中编号在 \([l,r]\)
-内的所有节点保留，\(x\)
-所在连通块中颜色种类数。
+        P5311 [Ynoi2011] 成都七中题意给你一棵 $n$ 个节点的树，每个节点有一种颜色，有 $m$ 次查询操作。
+查询操作给定参数 $l\ r\ x$，需输出：
+将树中编号在 $[l,r]$ 内的所有节点保留，$x$ 所在连通块中颜色种类数。
 每次查询操作独立。
-思路
-考虑点分树的思想。假设我们已经建出点分树，对于每一个分治中心，我们应该...
+思路考虑点分树的思想。假设我们已经建出点分树，对于每一个分治中心，我们应该维护什么东西？
+我们从分治中心开始遍历，记录遍历...
       
     
   </div>
@@ -2838,78 +2825,6 @@ x\)，需输出：
       
         <div>
           <a class='readmore' href='/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5296 [北京省选集训2019]生成树计数/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/"  itemprop="url">
-        P5296 [北京省选集训2019]生成树计数
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P5296
-[北京省选集训2019]生成树计数
-题意
-求一个带权无向图所有生成树边权和的 \(k\) 次方的和。
-思路
-首先有一个结论：\(a^i\) 的 EGF 卷
-\(b^i\) 的 EGF 等于 \((a+b)^i\) 的 EGF。即： \[
-F(a)=\sum_{i=0}\frac{a^ix^i}{i!}\\
-F(a+b)=F(a)*F(b)
-\] 证明如下： \[...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2952,12 +2867,10 @@ F(a+b)=F(a)*F(b)
     
       
         P5471- K-D tree优化建图-弹跳
-
 优化建图是一种思想。
 
-题意
-有\(n\)个城市分布在小鸟岛上，有\(m\)个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹弓只能把小鸟弹飞到一块固定的矩形范围内的城市，同时小鸟会在空中滞留\(t_i\)的时间。闪电黄的家在1号城市，追求速度的它想知道，若只使用弹弓出行，它从家到其他所有城市的最短时间花费是多少。
-抱歉魔...
+题意有$n$个城市分布在小鸟岛上，有$m$个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹弓只能把小鸟弹飞到一块固定的矩形范围内的城市，同时小鸟会在空中滞留$t_i$的时间。闪电黄的家在1号城市，追求速度的它想知道，若只使用弹弓出行，它从家到其他所有城市的最短时间花费是多少。
+抱歉魔改了题面，但是这个题意真的太...
       
     
   </div>
@@ -2979,6 +2892,70 @@ F(a+b)=F(a)*F(b)
       
         <div>
           <a class='readmore' href='/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5296 [北京省选集训2019]生成树计数/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        P5296 [北京省选集训2019]生成树计数
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P5296 [北京省选集训2019]生成树计数题意求一个带权无向图所有生成树边权和的 $k$ 次方的和。
+思路首先有一个结论：$a^i$ 的 EGF 卷 $b^i$ 的 EGF 等于 $(a+b)^i$ 的 EGF。即：$$F(a)&#x3D;\sum_{i&#x3D;0}\frac{a^ix^i}{i!}\F(a+b)&#x3D;F(a)*F(b)$$证明如下：$$(a+b)^k&#x3D...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3020,17 +2997,8 @@ F(a+b)=F(a)*F(b)
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6295 有标号 DAG 计数
-题意
-求 \(n\) 个点有标号弱联通 DAG
-数量。
-推导
-设 \(f_i\) 表示 \(i\) 个点有标号 DAG
-数量（不保证弱联通），有： \[
-f(i)=\sum_{j=1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}
-\] 意义为选至少 \(j\)
-个度数为零的点，向剩下的 \(i-j\)
-个点随...
+        P6295 有标号 DAG 计数题意求 $n$ 个点有标号弱联通 DAG 数量。
+推导设 $f_i$ 表示 $i$ 个点有标号 DAG 数量（不保证弱联通），有：$$f(i)&#x3D;\sum_{j&#x3D;1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}$$意义为选至少 $j$ 个度数为零的点，向剩下的 $i-j$ 个点随便连有向边，容斥一下就得到了上式。...
       
     
   </div>
@@ -3093,14 +3061,10 @@ f(i)=\sum_{j=1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}
   <div class='md article-desc' itemprop="articleBody">
     
       
-        因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次
-dijkstra，一次正向从 \(x\) 开始
-dijkstra，再将边全部反向存再来一次。
-因为是板子题比较良心 \(n\)
-比较小，我们就可以用矩阵来存储啦。如果 \(n\)
-比较大的话，我的想法是再造一个图，同时反向存边。内存可能占用比较大但是想起来简单。
+        因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次 dijkstra，一次正向从 $x$ 开始 dijkstra，再将边全部反向存再来一次。
+因为是板子题比较良心 $n$ 比较小，我们就可以用矩阵来存储啦。如果 $n$ 比较大的话，我的想法是再造一个图，同时反向存边。内存可能占用比较大但是想起来简单。
 代码很短。
-12345678910111213141516...
+123456789101112131415161718192021222...
       
     
   </div>
@@ -3163,11 +3127,8 @@ dijkstra，再将边全部反向存再来一次。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Description
-墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
-存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\{a_n\}\)、以及 \(B\) 的取值范围，求出有多少 \(B\) 可以使等式存在非负整数解。
-Input
-输入的第一行包含 3 个正整数，分别表示 \(N\)、\(B_{Min}\)、\(B...
+        Description墨墨突然对等式很感兴趣，他正在研究 $a_1x_1+a_2x_2+…+a_nx_n&#x3D;B$ 存在非负整数解的条件，他要求你编写一个程序，给定 $N$、${a_n}$、以及 $B$ 的取值范围，求出有多少 $B$ 可以使等式存在非负整数解。
+Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B_{Max}$ 分别表示数列的长度、$B...
       
     
   </div>
@@ -3230,13 +3191,11 @@ Input
   <div class='md article-desc' itemprop="articleBody">
     
       
-        前言
-前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ
-所以又在网上找着看了看写一篇博客备忘。
+        前言前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ 所以又在网上找着看了看写一篇博客备忘。
 学习笔记真的很有用！
-分层图
-这个很容易理解，来源就是在一些最短路的问题上题目又加了比如说主角可以用传送宝石进行折跃之类的问题（针对），即可以选择k条边把这些边的边权变为零。
-怎么样解决呢？可以在原图的基础上多复制k个相同的图，并用k条边把图之间的边用0边权边相连。就...
+分层图这个很容易理解，来源就是在一些最短路的问题上题目又加了比如说主角可以用传送宝石进行折跃之类的问题（针对），即可以选择k条边把这些边的边权变为零。
+怎么样解决呢？可以在原图的基础上多复制k个相同的图，并用k条边把图之间的边用0边权边相连。就是：
+于是就有人...
       
     
   </div>
@@ -3299,16 +3258,12 @@ Input
   <div class='md article-desc' itemprop="articleBody">
     
       
-        无用的文字
-又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……
-二分图最大匹配
-二分图
-二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。
-匈牙利算法
-匈牙利算法是用来寻找最大匹配的一个算法。
+        无用的文字又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……
+二分图最大匹配二分图二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。
+匈牙利算法匈牙利算法是用来寻找最大匹配的一个算法。
 
 交替路：从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边……形成的路径叫交替路。
-增广路：从一个未匹...
+增广路：从一个未匹配点出发，走交替路，如果途...
       
     
   </div>
@@ -3371,8 +3326,7 @@ Input
   <div class='md article-desc' itemprop="articleBody">
     
       
-        并查集
-并查集是一种树型数据结构，用于处理一些动态集合的合并及查询问题。
+        并查集并查集是一种树型数据结构，用于处理一些动态集合的合并及查询问题。
 并查集的基本操作有：
 
 合并：将两个集合合并为一个集合。
@@ -3384,8 +3338,7 @@ Input
 最小生成树：计算最小生成树。
 路径压缩：减少树的高度。
 
-并查集优化
-并查集有两种启发式优化。第一种是路径压缩，即将每个节点的父节点压...
+并查集优化并查集有两种启发式优化。第一种是路径压缩，即将每个节点的父节点压缩到根节点，总时间复杂度为 $O...
       
     
   </div>
@@ -3744,9 +3697,7 @@ Input
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4758,7 +4709,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

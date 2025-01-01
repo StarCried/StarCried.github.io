@@ -50,12 +50,12 @@
   <title>线性基 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,线性代数,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  <meta name="description" content="定义  基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元素个数有限，就称向量空间为有限维向量空间，将元素的个数称作向量空间的维数。 同样的，线性基是一种特殊的基，它通常会在异或运算中出现，它的意义是：通过原集合S的某一个最小子集S1使得S1内元素相互异">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性基">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E7%BA%BF%E6%80%A7%E5%9F%BA/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="定义  基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元素个数有限，就称向量空间为有限维向量空间，将元素的个数称作向量空间的维数。 同样的，线性基是一种特殊的基，它通常会在异或运算中出现，它的意义是：通过原集合S的某一个最小子集S1使得S1内元素相互异">
+<meta property="og:description" content="定义 基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元素个数有限，就称向量空间为有限维向量空间，将元素的个数称作向量空间的维数。同样的，线性基是一种特殊的基，它通常会在异或运算中出现，它的意义是：通过原集合S的某一个最小子集S1使得S1内元素相互异或得到的值">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,20 +2803,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="定义">定义</h2>
-<blockquote>
-<p>基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元素个数有限，就称向量空间为有限维向量空间，将元素的个数称作向量空间的维数。
-同样的，线性基是一种特殊的基，它通常会在异或运算中出现，它的意义是：通过原集合S的某一个最小子集S1使得S1内元素相互异或得到的值域与原集合S相互异或得到的值域相同。</p>
+    <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p>基：在线性代数中，基（也称为基底）是描述、刻画向量空间的基本工具。向量空间的基是它的一个特殊的子集，基的元素称为基向量。向量空间中任意一个元素，都可以唯一地表示成基向量的线性组合。如果基中元素个数有限，就称向量空间为有限维向量空间，将元素的个数称作向量空间的维数。<br>同样的，线性基是一种特殊的基，它通常会在异或运算中出现，它的意义是：通过原集合S的某一个最小子集S1使得S1内元素相互异或得到的值域与原集合S相互异或得到的值域相同。</p>
 </blockquote>
 <p>上文来自百度百科。</p>
 <p>个人理解，线性基的“线性”表示的是数列，即用一个数列表示另一个数列。而“基”表示的是一种类似于向量的思想。因为原数列中的每个数都是不同的，那么它们每个数就分别对应一些线性基的异或和——和向量的表示方式有异曲同工之处。</p>
 <blockquote>
-<p>UPD
-2024-8-14：实际上就是二进制异或基，不是异曲同工，就是一个曲儿。</p>
+<p>UPD 2024-8-14：实际上就是二进制异或基，不是异曲同工，就是一个曲儿。</p>
 </blockquote>
 <p>大概理解了思想后，我们来理解它的构造。线性基是一个数列，其大小为原数列的最大数的二进制位数（所以是longlong的话大概最好开65位）。它的每一位是原数列中的一个数。有可能含有多个零。</p>
-<h2 id="线性基的性质">线性基的性质</h2>
-<ol type="1">
+<h2 id="线性基的性质"><a href="#线性基的性质" class="headerlink" title="线性基的性质"></a>线性基的性质</h2><ol>
 <li>可以用线性基中任意个数异或和表示原数列中的所有数（或者说是原数列中任意数的异或和，表达其实是等价的）</li>
 <li>线性基中的任意数的异或和不可能为0（除非你用0异或0，然而并不算做线性基内部的数）</li>
 <li>线性基是满足性质1的最小集合</li>
@@ -2825,20 +2821,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <blockquote>
 <p>UPD 2024-8-14：这就是“基”的定义，详见线性代数。</p>
 </blockquote>
-<h2 id="线性基的构造">线性基的构造</h2>
-<p>每插入一个数，我们从<strong>最高位向下</strong>遍历（注意这里是指二进制位数），找到第一个线性基上没有的插入并跳出，如果已经有数则与之异或（保证线性基的所有性质）：</p>
+<h2 id="线性基的构造"><a href="#线性基的构造" class="headerlink" title="线性基的构造"></a>线性基的构造</h2><p>每插入一个数，我们从<strong>最高位向下</strong>遍历（注意这里是指二进制位数），找到第一个线性基上没有的插入并跳出，如果已经有数则与之异或（保证线性基的所有性质）：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">insert</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">62</span>;i<span class="number">+1</span>;i--)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!(x&gt;&gt;i))<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span>(!p[i])&#123;</span><br><span class="line">			p[i]=x;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		x^=p[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="线性基的应用">线性基的应用</h2>
-<h3 id="查询异或和最小值">查询异或和最小值</h3>
-<p>最小值就是p的最小的值啦~因为它任意异或一个比它大的线性基的数一定都比它大。</p>
-<h3 id="查询异或和最大值">查询异或和最大值</h3>
-<p>既然能由任何数异或得到原数列任意异或和的值，我们再次从上向下遍历，每异或后的值大于原答案，就取这个值。</p>
+
+<h2 id="线性基的应用"><a href="#线性基的应用" class="headerlink" title="线性基的应用"></a>线性基的应用</h2><h3 id="查询异或和最小值"><a href="#查询异或和最小值" class="headerlink" title="查询异或和最小值"></a>查询异或和最小值</h3><p>最小值就是p的最小的值啦~因为它任意异或一个比它大的线性基的数一定都比它大。</p>
+<h3 id="查询异或和最大值"><a href="#查询异或和最大值" class="headerlink" title="查询异或和最大值"></a>查询异或和最大值</h3><p>既然能由任何数异或得到原数列任意异或和的值，我们再次从上向下遍历，每异或后的值大于原答案，就取这个值。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">find</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ll ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(ll i=<span class="number">63</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">		<span class="keyword">if</span>((ans^p[i])&gt;ans)</span><br><span class="line">			ans^=p[i];</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="其他">其他</h3>
-<ul>
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
 <li>保存历史信息可以做到删除。</li>
-<li>基的大小只有 <span class="math inline">\(O(\log
-n)\)</span>，可以用该性质处理问题，比如用线段树维护线性基。</li>
+<li>基的大小只有 $O(\log n)$，可以用该性质处理问题，比如用线段树维护线性基。</li>
 </ul>
 
   </div>
@@ -2937,23 +2929,18 @@ n)\)</span>，可以用该性质处理问题，比如用线段树维护线性基
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>笛卡尔树</p>
-          <p class='content'>笛卡尔树
-
-笛卡尔树（Cartesian
-tree）是一种树形数据结构，每个节点都是一个区间，树的根节点表示整个区间，左儿子表示区间的左半部分，右儿子表示区间的右半部分。
-
-笛卡尔树可...</p>
+        <a class='prev' href='/2022/04/30/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>树链剖分</p>
+          <p class='content'>P3384 【模板】重链剖分&#x2F;树链剖分
+适用问题对一个给定的树，维护（修改、查询）其节点点权&#x2F;边权，操作可 $O(\log n)$ 次处理（如路径、子树）。
+实现将一棵树剖分...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/'>
-          <p class='title'>类欧几里得算法<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>类欧几里得算法之所以得名是因为其算法复杂度证明与扩展欧几里得算法类似。
-我认为类欧更偏向于是一种思想。
-其主要思想就是寻找可以简便计算的边界，然后通过化式子将不同情况化为边界递归计算。
-通...</p>
+        <a class='next' href='/2022/04/30/%E7%BA%BF%E6%AE%B5%E6%A0%91%E6%87%92%E6%A0%87%E8%AE%B0/'>
+          <p class='title'>线段树懒标记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>懒标记线段树要做到其 $O(\log n)$ 的更新和查询，就需要用到懒标记。
+懒标记的作用是，当我们对线段树的某些节点（区间）进行更新时，我们并不立即更新这些节点的值，而是将这些更新操作延迟到...</p>
         </a>
       
     </div>
@@ -3226,9 +3213,7 @@ tree）是一种树形数据结构，每个节点都是一个区间，树的根�
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4240,7 +4225,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 

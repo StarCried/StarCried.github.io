@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1733986654917),
+    lastupdate: new Date(1735749212996),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2757,14 +2757,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        AT2304 Cleaning
-题意
-一个树上每个节点有一些石子，每次只能选取两个叶子节点并将路径间的所有点上的石子数量减1，问是否能将所有石子取完。
-思路
-设 \(f_x\) 表示从 \(x\) 节点向上的路径条数，\(s_x\) 为子节点的 \(f\) 值的和，则有： \[
-a_x=\frac{s_x-f_x}{2}+f_x\\
-f_x=2a_x-s_x
-\] 我们只需要保...
+        AT2304 Cleaning题意一个树上每个节点有一些石子，每次只能选取两个叶子节点并将路径间的所有点上的石子数量减1，问是否能将所有石子取完。
+思路设 $f_x$ 表示从 $x$ 节点向上的路径条数，$s_x$ 为子节点的 $f$ 值的和，则有：$$a_x&#x3D;\frac{s_x-f_x}{2}+f_x\f_x&#x3D;2a_x-s_x$$我们只需要保证以下条件即可：
+
+从子节点...
       
     
   </div>
@@ -2786,75 +2782,6 @@ f_x=2a_x-s_x
       
         <div>
           <a class='readmore' href='/2022/04/30/AT2304%20Cleaning/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF494D Birthday/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF494D%20Birthday/"  itemprop="url">
-        CF494D Birthday
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF494D Birthday
-题意
-一个1为根的带边权有根树，每次询问给定两个点 \(u,v\) 求 \(\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in
-S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
-表示 \(u,v\) 简单路径长度， \(S(u)\) 表示 \(u\) 的子树内点的集合。
-思路
-考虑 \(u\) 在 \(v\)...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF494D%20Birthday/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2896,15 +2823,14 @@ S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF459E-DP
-核心代码15行
-思路
-观察数据范围，我们建m层分层图跑最短路想到DP。
+        CF459E-DP核心代码15行
+思路观察数据范围，我们建m层分层图跑最短路想到DP。
 DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？
 发现DP值一定从边权小于当前点的位置转移而来。
 这不就无后效性了？我们按边权将所有边排序即可。
 然后，枚举边，将DP值记录到点上，每次用起始点的dp值加1更新到达点的dp值。最后输出dp值最大的即可。
-然后，您会发现第一个...
+然后，您会发现第一个样例过不去。
+因为题...
       
     
   </div>
@@ -2926,6 +2852,70 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
       
         <div>
           <a class='readmore' href='/2022/04/30/CF459E-DP/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF494D Birthday/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/CF494D%20Birthday/"  itemprop="url">
+        CF494D Birthday
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        CF494D Birthday题意一个1为根的带边权有根树，每次询问给定两个点 $u,v$ 求 $\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in S(v)}d(u,x)^2$ 其中 $d(u,v)$ 表示 $u,v$ 简单路径长度， $S(u)$ 表示 $u$ 的子树内点的集合。
+思路考虑 $u$ 在 $v$ 内和在 $v$ 外的情况，发现可以通过每个点维护...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/CF494D%20Birthday/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2967,15 +2957,11 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1040 加分二叉树
-\(n\) 很小，可以树形 dp 或者区间 dp
-。
-设 f[i][j] 为从 \(i\)
-到 \(j\) 的最大加分值，则有
-f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
-有一个小技巧，将 f[i][i-1] 全部设置为
-1，这样的话搜索到叶子就也可以按照通式 dp 了。
-对于输出前序遍历（根，左树，右树）我们再...
+        P1040 加分二叉树$n$ 很小，可以树形 dp 或者区间 dp 。
+设 f[i][j] 为从 $i$ 到 $j$ 的最大加分值，则有 f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
+有一个小技巧，将 f[i][i-1] 全部设置为 1，这样的话搜索到叶子就也可以按照通式 dp 了。
+对于输出前序遍历（根，左树，右树）我们再树形 dp 一下就行了。
+树形...
       
     
   </div>
@@ -3042,7 +3028,7 @@ f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
 一道树形DP题。
 f[i][j] 表示i个点选j门课程的最大学分。
 递推方程：
-1234for(int a=n;a&gt;0;a--)//总共选择多少    for(int b=0;b&lt;a;b++)//分别选择多少(b,a-b)        f[x][a]=max(f[x][a],f[x][a-b]+f[u][b]);//都不遍历0的原因是f[i][0]无...
+1234for(int a=n;a&gt;0;a--)//总共选择多少    for(int b=0;b&lt;a;b++)//分别选择多少(b,a-b)        f[x][a]=max(f[x][a],f[x][a-b]+f[u][b]);//都不遍历0的原因是f[i][0]无论怎样都...
       
     
   </div>
@@ -3105,16 +3091,13 @@ f[i][j] 表示i个点选j门课程的最大学分。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P2491 消防/P1099 树网的核
-双倍经验，双倍快乐。
-题意
-在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。
+        P2491 消防&#x2F;P1099 树网的核双倍经验，双倍快乐。
+题意在一个树上选择一段总长度不超过$s$的链使所有点到该链距离的最大值最小。
 输出这个最小的值。
-做法
-Define:以下\(s\)指链或链长。
+做法Define:以下$s$指链或链长。
 
-证明一下\(s\)一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到\(s\)的距离大于现在所处支链的最大距离。所以\(s\)不在直径上一定不优。
-...
+证明一下$s$一定处于直径上。假设它不在直径上，一定存在直径的其中一个端点到$s$的距离大于现在所处支链的最大距离。所以$s$不在直径上一定不优。
+于是我们找到直径并记录下直径上的所...
       
     
   </div>
@@ -3177,14 +3160,12 @@ Define:以下\(s\)指链或链长。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4074 [WC2013]糖果公园
-树上带修莫队
-题意：树上每个点有一种糖果，求\(\sum_c\sum_{i=1}^{cnt_c}v_c*w_i\)
-其中c为糖果种类，\(cnt_c\)其为出现次数。
-思路
-离线树上带修莫队。
+        P4074 [WC2013]糖果公园树上带修莫队
+题意：树上每个点有一种糖果，求$\sum_c\sum_{i&#x3D;1}^{cnt_c}v_c*w_i$
+其中c为糖果种类，$cnt_c$其为出现次数。
+思路离线树上带修莫队。
 先进行树上分块。分块内的询问按照出发点、终止点、询问id优先级依次递减排序。
-对于树上莫队，其实就是在欧拉序上莫队。因为欧拉序的性质，即每个节点子树...
+对于树上莫队，其实就是在欧拉序上莫队。因为欧拉序的性质，即每个节点子树内的节点一定会经...
       
     
   </div>
@@ -3247,16 +3228,8 @@ Define:以下\(s\)指链或链长。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4827 [国家集训队] Crash
-的文明世界
-题意
-求出对于树上每个点 \(x\) 的 \(\sum_{u=1}^ndis(x,u)^k\)。所有边长为
-1。
-思路
-根据斯特林反演： \[
-m^n=\sum_{j=0}^n\begin{Bmatrix}n\\j\end{Bmatrix}C_m^jj!
-\] 可以得到： \[
-\sum_{i=1}^n\sum_{j=0}...
+        P4827 [国家集训队] Crash 的文明世界题意求出对于树上每个点 $x$ 的 $\sum_{u&#x3D;1}^ndis(x,u)^k$。所有边长为 1。
+思路根据斯特林反演：$$m^n&#x3D;\sum_{j&#x3D;0}^n\begin{Bmatrix}n\j\end{Bmatrix}C_m^jj!$$可以得到：$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;...
       
     
   </div>
@@ -3319,15 +3292,13 @@ m^n=\sum_{j=0}^n\begin{Bmatrix}n\\j\end{Bmatrix}C_m^jj!
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5658 括号树
-NOIp2019
-我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
+        P5658 括号树NOIp2019我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
 于是今天我克服心理阴影来写这道题。
-树形结构
-因为这是一个树，所有优秀的性质这个题都有。并且题目仅仅是问从1开始到所有点的答案，所以我们就可以依靠树的性质来做。
+树形结构因为这是一个树，所有优秀的性质这个题都有。并且题目仅仅是问从1开始到所有点的答案，所以我们就可以依靠树的性质来做。
 首先，对于一个节点，我们给它记录几个值：
 
-\(lst_i\)表示i的贡献（只是i的贡献，并不包括从根节点到i路径...
+$lst_i$表示i的贡献（只是i的贡献，并不包括从根节点到i路径上点的贡献）
+那么我们发现...
       
     
   </div>
@@ -3390,12 +3361,10 @@ NOIp2019
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6753 [BalticOI 2013
-Day1] Ball Machine
-题意
-给你一个树，每次从根节点放一个求，如果其子节点有空这个球会向下滚，若有多个节点为空则找儿子中以子树内编号的最小值为优先级从小到大找第一个为空的位置滚。
+        P6753 [BalticOI 2013 Day1] Ball Machine题意给你一个树，每次从根节点放一个求，如果其子节点有空这个球会向下滚，若有多个节点为空则找儿子中以子树内编号的最小值为优先级从小到大找第一个为空的位置滚。
 有两种操作，第一种插入若干个球，输出最后一个球到的节点编号；第二种删除一个位置，此时若有可以向下滚的球那么这个球就会滚，输出有多少个球滚了。
-保证...
+保证数据合法。
+思...
       
     
   </div>
@@ -3733,9 +3702,7 @@ Day1] Ball Machine
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4747,7 +4714,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
   let index = 0;
   let IntervalParallax = null;
 
