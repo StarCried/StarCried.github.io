@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2749,12 +2749,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF833B-线段树优化DP题意将一个长为$n$的序列分成$k$段，每段贡献为其中不同数字的个数，求最大贡献和。$n\leq 35000,k\leq 50$。
-思路此处感谢@gxy001 聚铑的精彩讲解
-先考虑暴力DP，可以想到一个时空复杂度$O(n^2k)$的方法，即记录前i个数字分成了j段。我们现在来思考几个问题来优化这个操作：
+        CF833B-线段树优化DP
+题意
+将一个长为\(n\)的序列分成\(k\)段，每段贡献为其中不同数字的个数，求最大贡献和。\(n\leq 35000,k\leq 50\)。
+思路
+此处感谢@gxy001 聚铑的精彩讲解
+先考虑暴力DP，可以想到一个时空复杂度\(O(n^2k)\)的方法，即记录前i个数字分成了j段。我们现在来思考几个问题来优化这个操作：
 
-对于一个数字，它对那些地方实际有贡献？
-每次分割出一个区...
+对于一个数字，它对那...
       
     
   </div>
@@ -2817,10 +2819,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6845 [CEOI2019] Dynamic Diameter题意一颗带权树，每次更改一条边的权，每次修改后求出最大直径。强制在线。
-思路$O(n\log^2n)$ 的暴力做法。
+        P6845 [CEOI2019] Dynamic
+Diameter
+题意
+一颗带权树，每次更改一条边的权，每次修改后求出最大直径。强制在线。
+思路
+\(O(n\log^2n)\) 的暴力做法。
 根据经典结论，对于两个点集的树上最大直径（权值非负），并集点集的树上最大直径的端点一定是原四个端点中的两个。
-那么我们就可以用线段树维护点集，合并时 $O(\log n)$ 查询两点间距离合并就可以做到 $O(...
+那么我们就可以用线段树维护点集，合并时 \(O(\log n)\) 查询两点...
       
     
   </div>
@@ -2888,7 +2894,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 扫描线处理矩阵面积之和的问题，当然它们会有互相覆盖而不能直接加起来。
 扫描线就是从下往上一次扫描“线”，然后用线将图分成多个区域，累加即可。用线段树记录横坐标此时扫描线处的长度。
-用 Xi 表示第 $i$ 条竖直的线（用来划分区间），用 line 结构体表...
+用 Xi 表示第 \(i\)
+条竖直的线（用来划分区间），用 l...
       
     
   </div>
@@ -2951,12 +2958,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        【模板】权值线段树套序列线段树P3380 【模板】二逼平衡树（树套树）
+        【模板】权值线段树套序列线段树
+P3380
+【模板】二逼平衡树（树套树）
 主要思路如下：
 外层为权值线段树，内层为动态开点线段树，也就是每个权值线段树上的节点开一个动态开点线段树。
 外层的权值线段树支持查询排名，内层的线段树限制了区间。实际上就是在普通权值线段树上查询的价值变成了在其线段树上区间查询返回的值。
 对于这道模板题，我们先写几个函数：
-插入下方的update为外层线段树，将路径上的所...
+插入
+下方的update为外层...
       
     
   </div>
@@ -3019,11 +3029,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        懒标记线段树要做到其 $O(\log n)$ 的更新和查询，就需要用到懒标记。
+        懒标记
+线段树要做到其 \(O(\log n)\)
+的更新和查询，就需要用到懒标记。
 懒标记的作用是，当我们对线段树的某些节点（区间）进行更新时，我们并不立即更新这些节点的值，而是将这些更新操作延迟到下一次查询或更新时再进行。
 洛谷已经为我们排好了对线段树的逐层深度学习XD
 
-P3372 【模板】线段树 11234567891011121314151617181920212223242526272...
+P3372 【模板】线段树
+1
+1234567891011121314151617181920212...
       
     
   </div>
@@ -3087,9 +3101,11 @@ P3372 【模板】线段树 11234567891011121314151617181920212223242526272...
     
       
         线段树在维护区间时可以维护任何区间信息，比如，一个单调栈。
-P4198 楼房重建题意：维护全局最大上升序列大小。
-更新线段树当前节点存储整个区间的最大值，对于该题，左子树的区间答案可以直接继承，然后用左子树区间的最大值查询右子树的答案并记录在该节点上。
-123456void update(const int &amp;x,const double &amp;k,const int &amp;...
+P4198 楼房重建
+题意：维护全局最大上升序列大小。
+更新
+线段树当前节点存储整个区间的最大值，对于该题，左子树的区间答案可以直接继承，然后用左子树区间的最大值查询右子树的答案并记录在该节点上。
+123456void update(const int &amp;x,const double &amp;k,const in...
       
     
   </div>
@@ -3427,7 +3443,9 @@ P4198 楼房重建题意：维护全局最大上升序列大小。
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4439,7 +4457,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

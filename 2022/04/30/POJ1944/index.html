@@ -50,12 +50,12 @@
   <title>POJ1944 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,贪心,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="poj1944 一道我不会做的贪心题。 （思维才是OI的重点） 但是if您也不会，那就来听我瞎扯吧。 首先，这个图是一个圈，只能连接邻点，使所有求的点联通。 我们先不考虑环，那么就可以想出一个假的做法：用一个a数组记录入度和出度，出度为正，入度为负，用一个sum&#x3D;0从0遍历每个点记录当前出入度，每次加ai，若sum大于0给答案加上1就行了。 然后，我们来考虑环。我们发现。不管怎么连这个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="POJ1944">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/POJ1944/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="poj1944 一道我不会做的贪心题。 （思维才是OI的重点） 但是if您也不会，那就来听我瞎扯吧。 首先，这个图是一个圈，只能连接邻点，使所有求的点联通。 我们先不考虑环，那么就可以想出一个假的做法：用一个a数组记录入度和出度，出度为正，入度为负，用一个sum&#x3D;0从0遍历每个点记录当前出入度，每次加ai，若sum大于0给答案加上1就行了。 然后，我们来考虑环。我们发现。不管怎么连这个图">
+<meta property="og:description" content="poj1944 一道我不会做的贪心题。 （思维才是OI的重点） 但是if您也不会，那就来听我瞎扯吧。 首先，这个图是一个圈，只能连接邻点，使所有求的点联通。 我们先不考虑环，那么就可以想出一个假的做法：用一个a数组记录入度和出度，出度为正，入度为负，用一个sum&#x3D;0从0遍历每个点记录当前出入度，每次加ai，若sum大于0给答案加上1就行了。 然后，我们来考虑环。我们发现。不管怎么连这个">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2808,7 +2808,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>（思维才是OI的重点）</p>
 <p>但是if您也不会，那就来听我瞎扯吧。</p>
 <p>首先，这个图是一个圈，只能连接邻点，使所有求的点联通。</p>
-<p>我们先不考虑环，那么就可以想出一个假的做法：用一个a数组记录入度和出度，出度为正，入度为负，用一个sum&#x3D;0从0遍历每个点记录当前出入度，每次加ai，若sum大于0给答案加上1就行了。</p>
+<p>我们先不考虑环，那么就可以想出一个假的做法：用一个a数组记录入度和出度，出度为正，入度为负，用一个sum=0从0遍历每个点记录当前出入度，每次加ai，若sum大于0给答案加上1就行了。</p>
 <p>然后，我们来考虑环。我们发现。不管怎么连这个图，肯定都会有一个断边的，连接的路径绝不会是一个完整的环。因为如果连成了完整地环，肯定有一条边断掉这个图还是联通的，即这条边是无用的。那么，我们欺负n小就可以分别从第i个点出发像上述查找一条链的做法一样地计算，然后取最大值就行了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1010</span>,maxm=<span class="number">10010</span>;</span><br><span class="line"><span class="type">int</span> n,m,a[maxn],l[maxm],r[maxm];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)l[i]=<span class="built_in">read</span>(),r[i]=<span class="built_in">read</span>();</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span> a);</span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">            x=(l[j]+i)%n;</span><br><span class="line">            y=(r[j]+i)%n;</span><br><span class="line">            <span class="keyword">if</span>(x&gt;y)<span class="built_in">swap</span>(x,y);</span><br><span class="line">            a[x]++;</span><br><span class="line">            a[y]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> now=<span class="number">0</span>,pre=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            now+=a[i];</span><br><span class="line">            <span class="keyword">if</span>(now)pre++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pre&lt;ans)ans=pre;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2908,17 +2908,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P7003%20%5BNEERC2013%5DHack%20Protection/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P7003 [NEERC2013]Hack Protection</p>
-          <p class='content'>P7003 [NEERC2013]Hack Protection题意给定一个序列 $a$ ，求有多少个区间满足区间内的数的异或和等于与的和的值。
-思路首先我们求一个异或前缀和 $s$，对于每一个...</p>
+        <a class='prev' href='/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P7362 [eJOI 2020 Day2] XOR Sort</p>
+          <p class='content'>P7362 [eJOI 2020 Day2] XOR
+Sort
+题意
+给你一个长度为 \(n\)
+的序列，每次操作可以将一个数异或上相邻的一个数，求将序列改为严格单调递增序列或严格单调不...</p>
         </a>
       
       
         <a class='next' href='/2022/04/30/POJ3268-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84-%E5%8F%8D%E5%90%91%E5%AD%98%E8%BE%B9/'>
           <p class='title'>POJ3268-最短路径-反向存边<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次 dijkstra，一次正向从 $x$ 开始 dijkstra，再将边全部反向存再来一次。
-因为是板子题比较良心 $n$ 比较小，我们就可...</p>
+          <p class='content'>因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次
+dijkstra，一次正向从 \(x\) 开始
+dijkstra，再将边全部反向存再来一次。
+因为是板子题比较良心 \(n\)
+...</p>
         </a>
       
     </div>
@@ -3181,7 +3187,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4193,7 +4201,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

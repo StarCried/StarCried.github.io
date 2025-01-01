@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,72 +2707,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/读入、输出优化/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E8%AF%BB%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96/"  itemprop="url">
-        读入、输出优化
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        关闭流同步1std::ios::sync_with_stdio(false);
-
-关闭输入输出流与标准输入输出（scanf printf）的同步，加快流速度，但关闭后不可混用。
-整形快读从标准输入流读入一个 int12345678#include&lt;cctype&gt;#include&lt;cstdio&gt;inline int read()&#123;    int x=0,w=0...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/C/">C++</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/C/" itemprop="url"><span itemprop="name">C++</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E8%AF%BB%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/随机数生成/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -2800,11 +2734,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         我知道是伪随机数生成啦
-可以用 srand(time(0)) 和 rand() 函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。
+可以用 srand(time(0)) 和 rand()
+函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。
 下面的方法可以生成指定范围的随机数。如果修改分布，还可以得到符合特定分布的随机数。
-mt19937c++11 加入。
+mt19937
+c++11 加入。
 定义一个名叫 rd 的随机数生成器（括号内为种子）。
-12mt19937 rd(std::chrono::syste...
+12mt19937 rd(std::chron...
       
     
   </div>
@@ -2826,6 +2762,71 @@ mt19937c++11 加入。
       
         <div>
           <a class='readmore' href='/2022/04/30/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/高斯消元求行列式/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F/"  itemprop="url">
+        高斯消元求行列式
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        前言
+我原在博客园上发表的这篇文章是阅读排行榜最高的一篇。然而，作为一个刚学竞赛的学生写的东西，它的质量实在堪忧。行列式又是一个及其重要、基础和困难的概念，无论对于大学数学还是高中竞赛。因此，我决定将这篇文章重新编辑，以便更好地帮助学习的人。
+如果你想知道行列式是什么，强烈建议先去学习线性代数基础知识，了解什么是向量、矩阵、线性变换以及会用矩阵描述线性方程组，然后认真理解学习行列式的概念...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2867,16 +2868,20 @@ mt19937c++11 加入。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        前言该内容算法竞赛涉及不多，属于较深概率论内容。
-鞅的停时定理“鞅”，martingale 用来指一类随机过程，定义如下：
+        前言
+该内容算法竞赛涉及不多，属于较深概率论内容。
+鞅的停时定理
+“鞅”，martingale 用来指一类随机过程，定义如下：
 
-鞅是一种离散时间的随机过程 $X_0,X_1,\cdots$ 满足：
+鞅是一种离散时间的随机过程 \(X_0,X_1,\cdots\) 满足：
 
-$E(X_t)&lt;\infty,\forall t\geq0$
-$E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t$
+\(E(X_t)&lt;\infty,\forall
+t\geq0\)
+\(E(X_{t+1}\mid X_0,\cdots
+X_t)=X_t\)
 
 
-根据定义可以得到 $E(X_t)&#x3D...
+根据定义可...
       
     
   </div>
@@ -2945,7 +2950,7 @@ $E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t$
 “快让学生查下结果，有个学生没接到电话被拒绝了。”
 我感到气愤。因为清华甚至没有前天给我打电话。
 我感到失望。因为这落差实在太大了。
-我前天还在为其他被拒绝的学生鸣不平。我以为能够成为...
+我前天还在为其他被拒绝的学生鸣不平。我...
       
     
   </div>
@@ -3008,14 +3013,18 @@ $E(X_{t+1}\mid X_0,\cdots X_t)&#x3D;X_t$
   <div class='md article-desc' itemprop="articleBody">
     
       
-        NOIP2021 游记T1水题，所幸我还会分析复杂度——
-$O(能过)$
-T2数位 Dp、Dp 数字，当初我就没搞懂过这个东西……
-傻乎乎的，被之前欠的账暗算了。还在那里想怎么组合一下，没想到操作次数巨少，可以直接开多个维度暴力 Dp。
+        NOIP2021 游记
+T1
+水题，所幸我还会分析复杂度——
+\(O(能过)\)
+T2
+数位 Dp、Dp 数字，当初我就没搞懂过这个东西……
+傻乎乎的，被之前欠的账暗算了。还在那里想怎么组合一下，没想到操作次数巨少，可以直接开多个维度暴力
+Dp。
 幸好还是有一半的暴力分的。
-T3方差……
-回忆了一下之前见过的有关方差的题目，要么需要维护非常阴间的东西，要么就根本只能暴力，似乎没有什么优秀的方法。
-两边...
+T3
+方差……
+回忆了一下之前见过的有关方差的题目，要么需要维护非常阴间的东西，要么就根本只能暴...
       
     
   </div>
@@ -3078,11 +3087,15 @@ T3方差……
   <div class='md article-desc' itemprop="articleBody">
     
       
-        这不是一篇严格意义上的游记，因为我已经退役了。不过是借题写一点在文化课生活中突然回归了一下午 OI 生活的感受罢。
+        这不是一篇严格意义上的游记，因为我已经退役了。不过是借题写一点在文化课生活中突然回归了一下午
+OI 生活的感受罢。
 先走个形式。
 
-T1第一眼看着就挺简单，考虑了一下发现对于每个区域增加个数时单调，但是没完全考虑。于是便写出了三分两个单调方向相反函数的和的垃圾。离谱的是，样例全过了，于是花了四十分钟直接就过了没管。
-T2一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了很久都不会，准备...
+T1
+第一眼看着就挺简单，考虑了一下发现对于每个区域增加个数时单调，但是没完全考虑。于是便写出了三分两个单调方向相反函数的和的垃圾。离谱的是，样例全过了，于是花了四十分钟直接就过了没管。
+T2
+一眼区间
+Dp，看了眼数据范围更加坚信不疑。但是看了...
       
     
   </div>
@@ -3148,10 +3161,14 @@ T2一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了
         高中 OI 竞赛游记，按时间顺序。
 【CSP-S2020初赛】
 【CSP-S2020】
-【NOIp 2020】
-【NOI冬令营 2021】
-【省选 2021】
-【NOI 2021】
+【NOIp
+2020】
+【NOI冬令营
+2021】
+【省选
+2021】
+【NOI
+2021】
 【回忆录】
 
       
@@ -3219,9 +3236,10 @@ T2一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了
         本篇为意识流文章。
 谨献给我结束的高中信息竞赛生活。
 
-最开始，我只是玩过 MC 对指令有点兴趣，只是看到网上关于程序员和计算机科学家的描述，只是在初中带领过机器人比赛。
+最开始，我只是玩过 MC
+对指令有点兴趣，只是看到网上关于程序员和计算机科学家的描述，只是在初中带领过机器人比赛。
 考上附中以后，我在许多见烦了名字的竞赛中发现了：信息竞赛。
-说实话，一开始我真的以为这个竞赛是搞什么网络攻防或者软件设计的竞赛，和机器人比赛类似。可惜的是，我在入门的时候根本没有理解到这个竞赛的真正含义，没有形成具体的概念...
+说实话，一开始我真的以为这个竞赛是搞什么网络攻防或者软件设计的竞赛，和机器人比赛类似。可惜的是，我在入门的时候根本没有理解到这个竞赛的真正含义，没有形...
       
     
   </div>
@@ -3284,12 +3302,16 @@ T2一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了
   <div class='md article-desc' itemprop="articleBody">
     
       
-        前言写于 2021.7.28，成绩榜刚出后几个小时。总分 345 拿到银牌 183 名。
-我的高中 OI 生活在这里画上句号。结局对我而言虽然不够完美，但是无论怎样都是我人生道路上最好的结果。
+        前言
+写于 2021.7.28，成绩榜刚出后几个小时。总分 345 拿到银牌 183 名。
+我的高中 OI
+生活在这里画上句号。结局对我而言虽然不够完美，但是无论怎样都是我人生道路上最好的结果。
 
-7.23北方人第一次遇到台风，害怕极了。何况还是迎面直冲台风圈。
+7.23
+北方人第一次遇到台风，害怕极了。何况还是迎面直冲台风圈。
 不过队友都在身边，没在怕的。
-一切准备工作没有出什么纰漏，一切都好，我们只需要全心备战 NOI 就行。我有预感，陕西省今年的运气，我...
+一切准备工作没有出什么纰漏，一切都好，我们只需要全心备战 NOI
+就行。我有预感...
       
     
   </div>
@@ -3358,7 +3380,8 @@ T2一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了
 毕竟这次我没有获得任何奖项。
 我唯一的获得就是……
 ……好好看题。
-（冬令营用了 C++11 导致只有 20 分但幸亏 SN 省不将冬令营成绩纳入省选所以当时没有退役的选手留）
+（冬令营用了 C++11 导致只有 20 分但幸亏 SN
+省不将冬令营成绩纳入省选所以当时没有退役的选手留）
 
       
     
@@ -3718,7 +3741,9 @@ T2一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4730,7 +4755,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

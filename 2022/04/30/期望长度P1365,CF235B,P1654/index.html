@@ -50,12 +50,12 @@
   <title>期望长度P1365,CF235B,P1654 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,DP,数学,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="定义 这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率连续和断开。求所有连续序列和的期望。 当然，对于以上期望长度的定义，我们只需要求出每个点存在的期望的和即可。但是题目永远不会这么简单。 Osu!  Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长度。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="期望长度P1365,CF235B,P1654">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E6%9C%9F%E6%9C%9B%E9%95%BF%E5%BA%A6P1365,CF235B,P1654/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="定义这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率连续和断开。求所有连续序列和的期望。 当然，对于以上期望长度的定义，我们只需要求出每个点存在的期望的和即可。但是题目永远不会这么简单。 Osu!  Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长度。  我们接下来">
+<meta property="og:description" content="定义 这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率连续和断开。求所有连续序列和的期望。 当然，对于以上期望长度的定义，我们只需要求出每个点存在的期望的和即可。但是题目永远不会这么简单。 Osu!  Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长度。">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1893,7 +1893,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2804,53 +2804,91 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率<strong>连续</strong>和<strong>断开</strong>。求所有连续序列和的期望。</p>
+    <h2 id="定义">定义</h2>
+<p>这里期望长度表示一段序列连续长度的期望。具体来说，对于一段序列，每个点都有一个概率<strong>连续</strong>和<strong>断开</strong>。求所有连续序列和的期望。</p>
 <p>当然，对于以上期望长度的定义，我们只需要求出每个点存在的期望的和即可。但是题目永远不会这么简单。</p>
-<h3 id="Osu"><a href="#Osu" class="headerlink" title="Osu!"></a>Osu!</h3><blockquote>
-<p> Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长度。</p>
+<h3 id="osu">Osu!</h3>
+<blockquote>
+<p>Osu!是一个音乐游戏，玩家需要对音符在恰当时候进行敲击来通关。一次到位的敲击为o，不到位的为x。一段连续到位的敲击，即combo次数为这段序列的长度。</p>
 </blockquote>
 <p><del>我们接下来讨论的三个题都和这个游戏有关。</del></p>
-<hr>
-<h3 id="level1"><a href="#level1" class="headerlink" title="level1"></a><strong>level1</strong></h3><p>一段Osu!序列为一串字符，包括’o’,’x’,’?’。其中’o’,’x’的定义如上，’?’表示此位置有<strong>一半</strong>的几率为’o’。游戏得分为所有combo次数<strong>平方</strong>的和。求得分的期望。</p>
+<hr />
+<h3 id="level1"><strong>level1</strong></h3>
+<p>一段Osu!序列为一串字符，包括'o','x','?'。其中'o','x'的定义如上，'?'表示此位置有<strong>一半</strong>的几率为'o'。游戏得分为所有combo次数<strong>平方</strong>的和。求得分的期望。</p>
 <p>也就是我们要求所有序列长度平方的期望和。</p>
-<h4 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h4><p>期望具有线性性，但不具有积性。这意味着我们无法对求得的期望长度直接平方来得到答案。</p>
-<p>并且请注意一点，若一个值的期望为 0，并不意味着它的平方的期望为 0。这可以帮助我们理解期望的线性性。</p>
+<h4 id="期望">期望</h4>
+<p>期望具有线性性，但不具有积性。这意味着我们无法对求得的期望长度直接平方来得到答案。</p>
+<p>并且请注意一点，若一个值的期望为 0，并不意味着它的平方的期望为
+0。这可以帮助我们理解期望的线性性。</p>
 <p>期望的平方在大多数情况下并没有什么实际意义。</p>
 <p>但是，期望具有线性性。</p>
-<p>考虑我们的答案，实际上就是长度平方的期望。考虑往后的转移。（设 $f1$ 表示当前期望长度，$f2$ 表示<strong>答案</strong>，即长度平方期望的和）</p>
-<p>根据公式 $(len+1)^2&#x3D;len^2+2*len+1$ 若后一位 $i$ 为’o’,则后一位 $i$ 的期望值分别为</p>
-<p>$$f1_i&#x3D;f1_{i-1}+1$$</p>
-<p>$$f2_i&#x3D;f2_{i-1}+2*f1_{i-1}+1$$</p>
-<p>即此位 $f2$ 的值其实是可以从前一位线性转移来的。所谓线性，就是其幂为 1。</p>
-<p>同样，考虑第 $i$ 位为’x’的情况，$f1&#x3D;0$ , $f2$ 直接继承前面的答案。</p>
-<p>然后我们就可以得到’?’的情况：上述两种情况和除以2.</p>
-<p>$$f1_i&#x3D;\frac{f1_{i-1}+1}2$$</p>
-<p>$$f2_i&#x3D;\frac{2<em>f2_{i-1}+2</em>f1_{i-1}+1}{2}$$</p>
-<p>于是我们就能完成<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1365">P1365</a></p>
+<p>考虑我们的答案，实际上就是长度平方的期望。考虑往后的转移。（设 <span
+class="math inline">\(f1\)</span> 表示当前期望长度，<span
+class="math inline">\(f2\)</span>
+表示<strong>答案</strong>，即长度平方期望的和）</p>
+<p>根据公式 <span class="math inline">\((len+1)^2=len^2+2*len+1\)</span>
+若后一位 <span class="math inline">\(i\)</span> 为'o',则后一位 <span
+class="math inline">\(i\)</span> 的期望值分别为</p>
+<p><span class="math display">\[f1_i=f1_{i-1}+1\]</span></p>
+<p><span class="math display">\[f2_i=f2_{i-1}+2*f1_{i-1}+1\]</span></p>
+<p>即此位 <span class="math inline">\(f2\)</span>
+的值其实是可以从前一位线性转移来的。所谓线性，就是其幂为 1。</p>
+<p>同样，考虑第 <span class="math inline">\(i\)</span>
+位为'x'的情况，<span class="math inline">\(f1=0\)</span> , <span
+class="math inline">\(f2\)</span> 直接继承前面的答案。</p>
+<p>然后我们就可以得到'?'的情况：上述两种情况和除以2.</p>
+<p><span class="math display">\[f1_i=\frac{f1_{i-1}+1}2\]</span></p>
+<p><span
+class="math display">\[f2_i=\frac{2*f2_{i-1}+2*f1_{i-1}+1}{2}\]</span></p>
+<p>于是我们就能完成<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1365">P1365</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">double</span> f,len,p;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>();</span><br><span class="line">		<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">		<span class="keyword">while</span>(c!=<span class="string">&#x27;o&#x27;</span> <span class="keyword">and</span> c!=<span class="string">&#x27;?&#x27;</span> <span class="keyword">and</span> c!=<span class="string">&#x27;x&#x27;</span>)c=<span class="built_in">getchar</span>(); </span><br><span class="line">		<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">			<span class="keyword">if</span>(c==<span class="string">&#x27;o&#x27;</span>)f=(f<span class="number">+2</span>*len<span class="number">+1</span>),len=len<span class="number">+1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27;?&#x27;</span>)f=(<span class="number">2</span>*(f+len)<span class="number">+1</span>)/<span class="number">2</span>,len=(len<span class="number">+1</span>)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">else</span> len=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%.4lf&quot;</span>,f);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="level2"><a href="#level2" class="headerlink" title="level2"></a><strong>level2</strong></h3><p>我们发现，其实对于概率任意的情况也可以推出来。上题三种字符其实就是对应概率为 $1$，$0.5$，$0$ 的三种情况。</p>
-<p>设 $p$ 为该点为’o’的概率，则有:</p>
-<p>$$f2_i&#x3D;f2_{i-1}+p*(2*f1_{i-1}+1)$$</p>
-<p>$$f1_i&#x3D;p*(f1_{i-1}+1)$$</p>
+<hr />
+<h3 id="level2"><strong>level2</strong></h3>
+<p>我们发现，其实对于概率任意的情况也可以推出来。上题三种字符其实就是对应概率为
+<span class="math inline">\(1\)</span>，<span
+class="math inline">\(0.5\)</span>，<span
+class="math inline">\(0\)</span> 的三种情况。</p>
+<p>设 <span class="math inline">\(p\)</span>
+为该点为'o'的概率，则有:</p>
+<p><span
+class="math display">\[f2_i=f2_{i-1}+p*(2*f1_{i-1}+1)\]</span></p>
+<p><span class="math display">\[f1_i=p*(f1_{i-1}+1)\]</span></p>
 <p>所以上题的代码的核心部分等同于：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(n--)&#123;</span><br><span class="line">	p=c==<span class="string">&#x27;o&#x27;</span>?<span class="number">1.0</span>:c==<span class="string">&#x27;?&#x27;</span>?<span class="number">0.5</span>:<span class="number">0.0</span>;</span><br><span class="line">	f=f+p*(<span class="number">2</span>*len<span class="number">+1</span>);</span><br><span class="line">	len=p*(len<span class="number">+1</span>);</span><br><span class="line">	c=<span class="built_in">getchar</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>于是我们可以完成<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF235B">CF235B</a></p>
+<p>于是我们可以完成<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF235B">CF235B</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">double</span> f,len,p;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;p);</span><br><span class="line">			f=(f-len*len+(len<span class="number">+1</span>)*(len<span class="number">+1</span>))*p+f*(<span class="number">1</span>-p);</span><br><span class="line">			len=p*(len<span class="number">+1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%.8lf&quot;</span>,f);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="level3"><a href="#level3" class="headerlink" title="level3"></a><strong>level3</strong></h3><p>我们已经完成了对于长度平方的期望和的问题。那么我们就可以解决新的问题：对于答案为所有combo长度<strong>立方</strong>的和的期望我们怎么求解呢？</p>
+<hr />
+<h3 id="level3"><strong>level3</strong></h3>
+<p>我们已经完成了对于长度平方的期望和的问题。那么我们就可以解决新的问题：对于答案为所有combo长度<strong>立方</strong>的和的期望我们怎么求解呢？</p>
 <p>根据期望的线性性，我们再维护一个平方的期望即可。</p>
-<p>根据公式 $(len+1)^3&#x3D;len^3+3len^2+3len+1$，我们可以得到以下转移：<br>$$<br>\begin{aligned}<br>f3_i&amp;&#x3D;f3_{i-1}+p*(3*(f2_{i-1}+f1_{i-1})+1)\<br>f2_i&amp;&#x3D;p*(f2_{i-1}+2<em>f1_{i-1}+1)\<br>f1_i&amp;&#x3D;p</em>(f1_{i-1}+1);<br>\end{aligned}<br>$$</p>
-<h2 id="注意！"><a href="#注意！" class="headerlink" title="注意！"></a>注意！</h2><p>我承认我的变量名的定义有亿点点毒瘤，因为读者可以清楚地发现在上一题中 $f2$ 的转移为 $f2_i&#x3D;f2_{i-1}+p*(2*f1_{i-1}+1)$ 而非当前转移。实际上在定义 $f2$ 时我的定义为<strong>答案</strong>而非二次项的期望，根据期望的线性性，答案是可以继承上一次的答案进行转移的，也就是对于’x’的情况继承 $f2$ 而非 $0$ 的原因。</p>
-<p>在此level中我对 $f2$ 重新定义为长度二次幂的期望。希望不要因为我的毒瘤误导大家。</p>
-<p>相同的，我对 $f3$ 的定义为<strong>答案</strong>，因此需要继承之前的答案。</p>
-<p>于是我们就完成了<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1654">P1654</a></p>
+<p>根据公式 <span
+class="math inline">\((len+1)^3=len^3+3len^2+3len+1\)</span>，我们可以得到以下转移：
+<span class="math display">\[
+\begin{aligned}
+f3_i&amp;=f3_{i-1}+p*(3*(f2_{i-1}+f1_{i-1})+1)\\
+f2_i&amp;=p*(f2_{i-1}+2*f1_{i-1}+1)\\
+f1_i&amp;=p*(f1_{i-1}+1);
+\end{aligned}
+\]</span></p>
+<h2 id="注意">注意！</h2>
+<p>我承认我的变量名的定义有亿点点毒瘤，因为读者可以清楚地发现在上一题中
+<span class="math inline">\(f2\)</span> 的转移为 <span
+class="math inline">\(f2_i=f2_{i-1}+p*(2*f1_{i-1}+1)\)</span>
+而非当前转移。实际上在定义 <span class="math inline">\(f2\)</span>
+时我的定义为<strong>答案</strong>而非二次项的期望，根据期望的线性性，答案是可以继承上一次的答案进行转移的，也就是对于'x'的情况继承
+<span class="math inline">\(f2\)</span> 而非 <span
+class="math inline">\(0\)</span> 的原因。</p>
+<p>在此level中我对 <span class="math inline">\(f2\)</span>
+重新定义为长度二次幂的期望。希望不要因为我的毒瘤误导大家。</p>
+<p>相同的，我对 <span class="math inline">\(f3\)</span>
+的定义为<strong>答案</strong>，因此需要继承之前的答案。</p>
+<p>于是我们就完成了<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1654">P1654</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">double</span> f1,f2,f3;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>();</span><br><span class="line">		<span class="type">double</span> p;</span><br><span class="line">		<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;p);</span><br><span class="line">			f3=f3+p*(<span class="number">3</span>*(f2+f1)<span class="number">+1</span>);</span><br><span class="line">			f2=p*(f2<span class="number">+2</span>*f1<span class="number">+1</span>);</span><br><span class="line">			f1=p*(f1<span class="number">+1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%.1lf&quot;</span>,f3);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>期望好神奇。</p>
+<h3 id="总结">总结</h3>
+<p>期望好神奇。</p>
 
   </div>
   
@@ -2948,17 +2986,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E7%BD%91%E7%BB%9C%E6%B5%81dinic/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>最大网络流dinic</p>
-          <p class='content'>算法介绍最大流问题是指在一个有向图中，从一个源点到一个汇点，最大化流量，使得所有边的容量都大于等于 0。
-dinic 算法是一种高效的求解最大流问题的算法，其时间复杂度为 $O(EV^2)$。
-...</p>
+        <a class='prev' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-POJ3041-P1129/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>最小覆盖问题-POJ3041-P1129</p>
+          <p class='content'>POJ3041
+这道题正解对于像我这种蒟蒻来说比较难以想到。
+我们发现每次覆盖的只是一条线上的所有点。那么我们可以把它想象成一个二分图，两个集合分别是横轴和纵轴。
+想一想，这实际上是不是就...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-POJ3041-P1129/'>
-          <p class='title'>最小覆盖问题-POJ3041-P1129<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>POJ3041这道题正解对于像我这种蒟蒻来说比较难以想到。我们发现每次覆盖的只是一条线上的所有点。那么我们可以把它想象成一个二分图，两个集合分别是横轴和纵轴。想一想，这实际上是不是就是x轴轴和纵...</p>
+        <a class='next' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E8%A6%86%E7%9B%96/'>
+          <p class='title'>最小路径覆盖<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>路径覆盖
+路径覆盖指一个路径的集合中所有路径点集的并集为原图点集。最小路径覆盖使路径集合大小最小。
+路径覆盖分为可否重复选点两种。可重复选点在建模中加大流量即可。
+网络流模型
+
+建超级...</p>
         </a>
       
     </div>
@@ -3091,7 +3135,7 @@ dinic 算法是一种高效的求解最大流问题的算法，其时间复杂�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Osu"><span class="toc-text">Osu!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level1"><span class="toc-text">level1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B"><span class="toc-text">期望</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level2"><span class="toc-text">level2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level3"><span class="toc-text">level3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%81"><span class="toc-text">注意！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#osu"><span class="toc-text">Osu!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level1"><span class="toc-text">level1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B"><span class="toc-text">期望</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level2"><span class="toc-text">level2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level3"><span class="toc-text">level3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3231,7 +3275,9 @@ dinic 算法是一种高效的求解最大流问题的算法，其时间复杂�
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4243,7 +4289,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

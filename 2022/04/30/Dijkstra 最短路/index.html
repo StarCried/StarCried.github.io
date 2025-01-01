@@ -50,12 +50,12 @@
   <title>Dijkstra 最短路 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,图论,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra 或者 dijskra…… 我以后叫她迪杰克斯歘！ dijkstra 是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。 dijkstra 的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。 dis 数组代表由起点到其他点的最短路，初始化其为 \(INF\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dijkstra 最短路">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/Dijkstra%20%E6%9C%80%E7%9F%AD%E8%B7%AF/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra 或者 dijskra…… 我以后叫她迪杰克斯歘！ dijkstra 是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。 dijkstra 的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。 dis 数组代表由起点到其他点的最短路，初始化其为 $INF$ (不要过大导致">
+<meta property="og:description" content="我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra 或者 dijskra…… 我以后叫她迪杰克斯歘！ dijkstra 是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。 dijkstra 的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。 dis 数组代表由起点到其他点的最短路，初始化其为 \(INF\">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,14 +2803,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p><del>我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra 或者 dijskra……</del></p>
+    <p><del>我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra
+或者 dijskra……</del></p>
 <p><del>我以后叫她迪杰克斯歘！</del></p>
-<p>dijkstra 是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。</p>
-<p>dijkstra 的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。</p>
-<p><code>dis</code> 数组代表由起点到其他点的最短路，初始化其为 $INF$ (不要过大导致溢出；把到起点的 <code>dis[s]</code> 设为 0)，每次找到点集外与点集内的点直接相连的点中距离最短的一个点加入点集。重复此过程直到无点可以扩展。<code>dis</code> 记录着从起点到能到的所有点的距离。</p>
-<p>如果 <code>dis[i]</code> 仍为 $INF$，可能不可至。</p>
+<p>dijkstra
+是用来在有向图或者无向图中寻找任意两个点的最小距离的算法。但是无法处理带负环的图和求最长路。</p>
+<p>dijkstra
+的核心思想是由已找到的最短路的点集每次扩展一个点的最短路。</p>
+<p><code>dis</code> 数组代表由起点到其他点的最短路，初始化其为 <span
+class="math inline">\(INF\)</span> (不要过大导致溢出；把到起点的
+<code>dis[s]</code> 设为
+0)，每次找到点集外与点集内的点直接相连的点中距离最短的一个点加入点集。重复此过程直到无点可以扩展。<code>dis</code>
+记录着从起点到能到的所有点的距离。</p>
+<p>如果 <code>dis[i]</code> 仍为 <span
+class="math inline">\(INF\)</span>，可能不可至。</p>
 <p>注意到“每次找到点集外与点集内的点直接相连的点中距离最短的一个点加入点集”的过程可以用堆完成。</p>
-<p>时间复杂度为 $O(m\log m)$</p>
+<p>时间复杂度为 <span class="math inline">\(O(m\log m)\)</span></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,w=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn=<span class="number">1e5</span><span class="number">+10</span>,maxm=<span class="number">2e5</span><span class="number">+10</span>,INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="type">int</span> n,m,s;</span><br><span class="line"><span class="type">int</span> ecnt,head[maxn],to[maxm],nxt[maxm],v[maxm];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">addedge</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c)</span></span>&#123;</span><br><span class="line">	to[++ecnt]=b,nxt[ecnt]=head[a],head[a]=ecnt;v[ecnt]=c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> dis[maxn];</span><br><span class="line"><span class="type">bool</span> vis[maxn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">dijkstra</span><span class="params">()</span></span>&#123;</span><br><span class="line">	priority_queue&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;,vector&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt;,greater&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt;&gt; q;</span><br><span class="line">	q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>,s));</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) dis[i]=INF;</span><br><span class="line">	dis[s]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!q.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		<span class="type">int</span> x=q.<span class="built_in">top</span>().second;q.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span>(vis[x])<span class="keyword">continue</span>;</span><br><span class="line">		vis[x]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> u,i=head[x];i;i=nxt[i]) <span class="keyword">if</span>(dis[u=to[i]]&gt;dis[x]+v[i])</span><br><span class="line">			dis[u]=dis[x]+v[i],q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(dis[u],u));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	n=<span class="built_in">read</span>(),m=<span class="built_in">read</span>(),s=<span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> a,b,i=<span class="number">1</span>;i&lt;=m;i++)a=<span class="built_in">read</span>(),b=<span class="built_in">read</span>(),<span class="built_in">addedge</span>(a,b,<span class="built_in">read</span>());</span><br><span class="line">	<span class="built_in">dijkstra</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,dis[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2911,13 +2919,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/04/30/CF896D%20Nephren%20Runs%20a%20Cinema/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF896D Nephren Runs a Cinema</p>
-          <p class='content'>CF896D Nephren Runs a Cinema题意售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况 $n$ 名顾客后剩余钱数在 $l\s...</p>
+          <p class='content'>CF896D Nephren Runs a Cinema
+题意
+售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况
+\(n\) 名顾客后剩余钱...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/GCD%20SUM/'>
-          <p class='title'>GCD SUM<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>GCD SUM求$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n\gcd(i,j)$$将原式变换得到$$\sum_{d&#x3D;1}^nd\sum_{i&#x3D;1}...</p>
+        <a class='next' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/'>
+          <p class='title'>Dirichlet卷积和莫比乌斯反演<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+非全面讲解，仅供记录笔记
+
+Dirichlet卷积
+\[(f\ast g)(n)=\sum_{d\mid
+n}f(d)g(\frac{n}{d})\] \[\varepsilon
+...</p>
         </a>
       
     </div>
@@ -3180,7 +3197,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4192,7 +4211,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -50,12 +50,12 @@
   <title>CSP-S2021 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,游记,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="这不是一篇严格意义上的游记，因为我已经退役了。不过是借题写一点在文化课生活中突然回归了一下午 OI 生活的感受罢。 先走个形式。  T1 第一眼看着就挺简单，考虑了一下发现对于每个区域增加个数时单调，但是没完全考虑。于是便写出了三分两个单调方向相反函数的和的垃圾。离谱的是，样例全过了，于是花了四十分钟直接就过了没管。 T2 一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了很">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSP-S2021">
 <meta property="og:url" content="https://starcried.github.io/2021/10/26/CSP-S2021/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="这不是一篇严格意义上的游记，因为我已经退役了。不过是借题写一点在文化课生活中突然回归了一下午 OI 生活的感受罢。 先走个形式。  T1第一眼看着就挺简单，考虑了一下发现对于每个区域增加个数时单调，但是没完全考虑。于是便写出了三分两个单调方向相反函数的和的垃圾。离谱的是，样例全过了，于是花了四十分钟直接就过了没管。 T2一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了很久都不会，准备先读完">
+<meta property="og:description" content="这不是一篇严格意义上的游记，因为我已经退役了。不过是借题写一点在文化课生活中突然回归了一下午 OI 生活的感受罢。 先走个形式。  T1 第一眼看着就挺简单，考虑了一下发现对于每个区域增加个数时单调，但是没完全考虑。于是便写出了三分两个单调方向相反函数的和的垃圾。离谱的是，样例全过了，于是花了四十分钟直接就过了没管。 T2 一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了很">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2021-10-26T13:31:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,38 +2803,56 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>这不是一篇严格意义上的游记，因为我已经退役了。不过是借题写一点在文化课生活中突然回归了一下午 OI 生活的感受罢。</p>
+    <p>这不是一篇严格意义上的游记，因为我已经退役了。不过是借题写一点在文化课生活中突然回归了一下午
+OI 生活的感受罢。</p>
 <p>先走个形式。</p>
-<hr>
-<h4 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h4><p>第一眼看着就挺简单，考虑了一下发现对于每个区域增加个数时单调，但是没完全考虑。于是便写出了三分两个单调方向相反函数的和的垃圾。离谱的是，样例全过了，于是花了四十分钟直接就过了没管。</p>
-<h4 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h4><p>一眼区间 Dp，看了眼数据范围更加坚信不疑。但是看了试了很久都不会，准备先读完其他题。</p>
-<h4 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h4><p>感觉就 CF Div2 CD 难度的样子，仔细思索了一下，发现只要确定了两个起始点后面的都是向左右扩张，贪心之后，也就是确定好的。而起始点只有两个，大力模拟两遍即可。</p>
-<h4 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h4><p>一眼网络流，没别的想法了（没想到对偶图最短路）。本来只是想得 $k&#x3D;2$ 的分数的，就没去想其他分数，发现 $k&#x3D;2$ 就是网络流。我记得我国赛前专门训练过一段时间 dinic，于是凭着一点记忆就写出来了，竟然没写挂。不过因为期间又在 T2 上耗费了许多时间，并且建图方式反复横跳了好几次（因为要多组数据忘了前向星怎么删边了，后来想起来又写回来了），耗费了一个小时，最后很紧张地把 $k&#x3D;2$ 调过了。其实再多给我点时间我把其他边加上就能多得好多分。</p>
-<hr>
-<p>比赛打完第二天，lwc 跑过来给我说我爆零了，然后他直接没影了，留我一个人一脸懵逼。下课之后赶忙跑去机房，结果没人。一上午浑浑噩噩，像丢了魂，无心听课。</p>
+<hr />
+<h4 id="t1">T1</h4>
+<p>第一眼看着就挺简单，考虑了一下发现对于每个区域增加个数时单调，但是没完全考虑。于是便写出了三分两个单调方向相反函数的和的垃圾。离谱的是，样例全过了，于是花了四十分钟直接就过了没管。</p>
+<h4 id="t2">T2</h4>
+<p>一眼区间
+Dp，看了眼数据范围更加坚信不疑。但是看了试了很久都不会，准备先读完其他题。</p>
+<h4 id="t3">T3</h4>
+<p>感觉就 CF Div2 CD
+难度的样子，仔细思索了一下，发现只要确定了两个起始点后面的都是向左右扩张，贪心之后，也就是确定好的。而起始点只有两个，大力模拟两遍即可。</p>
+<h4 id="t4">T4</h4>
+<p>一眼网络流，没别的想法了（没想到对偶图最短路）。本来只是想得 <span
+class="math inline">\(k=2\)</span> 的分数的，就没去想其他分数，发现
+<span class="math inline">\(k=2\)</span>
+就是网络流。我记得我国赛前专门训练过一段时间
+dinic，于是凭着一点记忆就写出来了，竟然没写挂。不过因为期间又在 T2
+上耗费了许多时间，并且建图方式反复横跳了好几次（因为要多组数据忘了前向星怎么删边了，后来想起来又写回来了），耗费了一个小时，最后很紧张地把
+<span class="math inline">\(k=2\)</span>
+调过了。其实再多给我点时间我把其他边加上就能多得好多分。</p>
+<hr />
+<p>比赛打完第二天，lwc
+跑过来给我说我爆零了，然后他直接没影了，留我一个人一脸懵逼。下课之后赶忙跑去机房，结果没人。一上午浑浑噩噩，像丢了魂，无心听课。</p>
 <p>然后，突然意识到，为什么我会变成这个样子。</p>
 <p>因为 OI 真的对我很重要。</p>
-<p>我意识到，我爱上了 OI。我爱上了陷身艰深题目的感觉，爱上了和同志们一起激发想象和思考火花的和谐，爱上了因为学艺不精却自信无比而针锋相对的激情，爱上了要么是灵机一动、要么是无奈看题解后的豁然开朗，爱上了和全国甚至全世界同志追求共同目标的归属感，爱上了不吝赐教的学长学姐们的个性张扬。有一次，有外国网友来问我题目，我曾用蹩脚的英语尝试向他解释数学问题；有一次，我写的题解被一个陌生的选手指出错误，我花了一个下午将这道题重新学懂、弄透……有一次，我一个人坐在机房里，担忧着自己的前程，感谢着自己的选择。那些的时光无论有多么难熬，现在被岁月洗涤干燥下来的，只有最纯粹的、最美丽的结晶。</p>
+<p>我意识到，我爱上了
+OI。我爱上了陷身艰深题目的感觉，爱上了和同志们一起激发想象和思考火花的和谐，爱上了因为学艺不精却自信无比而针锋相对的激情，爱上了要么是灵机一动、要么是无奈看题解后的豁然开朗，爱上了和全国甚至全世界同志追求共同目标的归属感，爱上了不吝赐教的学长学姐们的个性张扬。有一次，有外国网友来问我题目，我曾用蹩脚的英语尝试向他解释数学问题；有一次，我写的题解被一个陌生的选手指出错误，我花了一个下午将这道题重新学懂、弄透……有一次，我一个人坐在机房里，担忧着自己的前程，感谢着自己的选择。那些的时光无论有多么难熬，现在被岁月洗涤干燥下来的，只有最纯粹的、最美丽的结晶。</p>
 <p>我从来没有这么在乎过一件事，即使这件事已经不会影响的我的学业和前程。我在乎它，是因为我对它动了真感情。它是我现在所引以为傲的一切。最近一直不好好写作业，一回宿舍就弹吉他，全然没有了高一时候的那股卷劲。如果没有这块银牌，我根本不可能像这样生活。要么会闷头学习，要么自暴自弃，怀疑自己。现在，这块银牌提醒着，我有能力，我有价值，但是如果突然发现它只是我一时运气好所得到的，那么它就是一块铁锥子，把我的心扎穿扎透。</p>
 <p>我记起来，我最开始学习 OI 的初心是什么。</p>
 <p>我很庆幸，这份初心从未变过。</p>
 <blockquote>
 <p>经历了这么多，你还是你。——UNDERTALE</p>
 </blockquote>
-<hr>
+<hr />
 <p>回去问了之后发现，sys 第一次测的确实有问题。实际得分应该在 125+。</p>
 <p>也许，这就是天意。</p>
 <p>我要珍惜这份感情、这份经历。我会将它贯穿我今后的人生。我会去不断证明，自己的价值。</p>
 <p>我明白了为何 LCA 要一直献身 OI 教学事业。</p>
-<hr>
+<hr />
 <p>附记：</p>
-<p>一位同学反复在我耳边重复的一件事情。中考前其实我已经被 xgdfz 点考选中了，但是还是去参加了 xtyz 的考试。面试时老师问，有没有人已经和其他学校签过约了。我举手。问及为什么，我回答道：</p>
+<p>一位同学反复在我耳边重复的一件事情。中考前其实我已经被 xgdfz
+点考选中了，但是还是去参加了 xtyz
+的考试。面试时老师问，有没有人已经和其他学校签过约了。我举手。问及为什么，我回答道：</p>
 <p>“为了看看我是不是真的有上 xgdfz 的实力。”</p>
 <p>最后没被录上。<del>看来是没有</del></p>
-<hr>
-<p>2021&#x2F;10&#x2F;30 补记</p>
+<hr />
+<p>2021/10/30 补记</p>
 <p>最终成绩</p>
-<p>$$ 90+0+100+25&#x3D;215 $$</p>
+<p><span class="math display">\[ 90+0+100+25=215 \]</span></p>
 <p>T1 我直接震惊拿了 90 分是没想到的。CCF 的数据还是一如既往的水。</p>
 <p>心里还是挺高兴的。能看到自己<del>宝刀未老</del>，说明我这一年没有白白度过。</p>
 
@@ -2936,17 +2954,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/11/25/NOIP%202021%20%E6%B8%B8%E8%AE%B0/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>NOIP2021 游记</p>
-          <p class='content'>NOIP2021 游记T1水题，所幸我还会分析复杂度——
-$O(能过)$
-T2数位 Dp、Dp 数字，当初我就没搞懂过这个东西……
-傻乎乎的，被之前欠的账暗算了。还在那里想怎么组合一下，没想到操...</p>
+          <p class='content'>NOIP2021 游记
+T1
+水题，所幸我还会分析复杂度——
+\(O(能过)\)
+T2
+数位 Dp、Dp 数字，当初我就没搞懂过这个东西……
+傻乎乎的，被之前欠的账暗算了。还在那里想...</p>
         </a>
       
       
         <a class='next' href='/2021/09/07/%E6%96%87%E5%8C%96%E8%AF%BE%E9%9A%8F%E7%AC%94/'>
           <p class='title'>文化课随笔<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>2021&#x2F;9&#x2F;4
-我不应该坐在这里，坐在电脑前写这些字的。我现在应该在晚自习，应该在学习，应该在做作业。可是我静不下心来。这不是一旁 sys 在给高二讲课导致的，我清楚；但是...</p>
+          <p class='content'>2021/9/4
+我不应该坐在这里，坐在电脑前写这些字的。我现在应该在晚自习，应该在学习，应该在做作业。可是我静不下心来。这不是一旁
+sys
+在给高二讲课导致的，我清楚；但是我却不能说出来...</p>
         </a>
       
     </div>
@@ -3079,7 +3102,7 @@ T2数位 Dp、Dp 数字，当初我就没搞懂过这个东西……
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#T1"><span class="toc-text">T1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#T2"><span class="toc-text">T2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#T3"><span class="toc-text">T3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#T4"><span class="toc-text">T4</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#t1"><span class="toc-text">T1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t2"><span class="toc-text">T2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t3"><span class="toc-text">T3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t4"><span class="toc-text">T4</span></a></li></ol>
     </div>
   </section>
 
@@ -3219,7 +3242,9 @@ T2数位 Dp、Dp 数字，当初我就没搞懂过这个东西……
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4231,7 +4256,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

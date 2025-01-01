@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2743,12 +2743,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        最大权闭合子图闭合子图定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。
-最大权闭合子图给有向图的点加一个点权，能得到的点权最大的闭合子图。
+        最大权闭合子图
+闭合子图
+定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。
+最大权闭合子图
+给有向图的点加一个点权，能得到的点权最大的闭合子图。
 网络流模型
+
 将所有正点权的点的点权全部加入答案。接下来我们将原来正点权的点变成负点权。现在图上全是负点，我们需要尽量选最少点权使图符合条件。
 设超级源点和超级汇点。
-将超级源向所有原来是正点权的点连边，流量...
+将超级源向所有...
       
     
   </div>
@@ -2811,11 +2815,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        算法介绍最大流问题是指在一个有向图中，从一个源点到一个汇点，最大化流量，使得所有边的容量都大于等于 0。
-dinic 算法是一种高效的求解最大流问题的算法，其时间复杂度为 $O(EV^2)$。
-dinic 算法的基本思想是，通过增广路算法，找到一条从源点到汇点的增广路，然后通过深度优先搜索（DFS）算法，在增广路上进行流的增广，直到不能再增广为止。
+        算法介绍
+最大流问题是指在一个有向图中，从一个源点到一个汇点，最大化流量，使得所有边的容量都大于等于
+0。
+dinic 算法是一种高效的求解最大流问题的算法，其时间复杂度为 \(O(EV^2)\)。
+dinic
+算法的基本思想是，通过增广路算法，找到一条从源点到汇点的增广路，然后通过深度优先搜索（DFS）算法，在增广路上进行流的增广，直到不能再增广为止。
 步骤
-初始化 flow（最大流量）为 IN...
+
+初始化 fl...
       
     
   </div>
@@ -2878,13 +2886,15 @@ dinic 算法的基本思想是，通过增广路算法，找到一条从源点�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        路径覆盖路径覆盖指一个路径的集合中所有路径点集的并集为原图点集。最小路径覆盖使路径集合大小最小。
+        路径覆盖
+路径覆盖指一个路径的集合中所有路径点集的并集为原图点集。最小路径覆盖使路径集合大小最小。
 路径覆盖分为可否重复选点两种。可重复选点在建模中加大流量即可。
 网络流模型
-建超级源 $S$ 和超级汇 $T$，将每个点拆点。
-将 $S$ 向所有点 $i$ 连边，将所有点 $i’$ 向 $T$ 连边。
-对于原图边集，每一条边 $u$ 向 $v’$ 连边。
-选点不重的最小路径覆盖问题，上述所有边...
+
+建超级源 \(S\) 和超级汇 \(T\)，将每个点拆点。
+将 \(S\) 向所有点 \(i\) 连边，将所有点 \(i&#39;\) 向 \(T\) 连边。
+对于原图边集，每一条边 \(u\) 向
+...
       
     
   </div>
@@ -3222,7 +3232,9 @@ dinic 算法的基本思想是，通过增广路算法，找到一条从源点�
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4234,7 +4246,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

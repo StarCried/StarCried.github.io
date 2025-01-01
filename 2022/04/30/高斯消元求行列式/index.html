@@ -50,12 +50,12 @@
   <title>高斯消元求行列式 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,线性代数,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="前言 我原在博客园上发表的这篇文章是阅读排行榜最高的一篇。然而，作为一个刚学竞赛的学生写的东西，它的质量实在堪忧。行列式又是一个及其重要、基础和困难的概念，无论对于大学数学还是高中竞赛。因此，我决定将这篇文章重新编辑，以便更好地帮助学习的人。 如果你想知道行列式是什么，强烈建议先去学习线性代数基础知识，了解什么是向量、矩阵、线性变换以及会用矩阵描述线性方程组，然后认真理解学习行列式的概念。千万">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高斯消元求行列式">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="前言我原在博客园上发表的这篇文章是阅读排行榜最高的一篇。然而，作为一个刚学竞赛的学生写的东西，它的质量实在堪忧。行列式又是一个及其重要、基础和困难的概念，无论对于大学数学还是高中竞赛。因此，我决定将这篇文章重新编辑，以便更好地帮助学习的人。 如果你想知道行列式是什么，强烈建议先去学习线性代数基础知识，了解什么是向量、矩阵、线性变换以及会用矩阵描述线性方程组，然后认真理解学习行列式的概念。千万不要从">
+<meta property="og:description" content="前言 我原在博客园上发表的这篇文章是阅读排行榜最高的一篇。然而，作为一个刚学竞赛的学生写的东西，它的质量实在堪忧。行列式又是一个及其重要、基础和困难的概念，无论对于大学数学还是高中竞赛。因此，我决定将这篇文章重新编辑，以便更好地帮助学习的人。 如果你想知道行列式是什么，强烈建议先去学习线性代数基础知识，了解什么是向量、矩阵、线性变换以及会用矩阵描述线性方程组，然后认真理解学习行列式的概念。千万">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,27 +2803,56 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我原在博客园上发表的这篇文章是阅读排行榜最高的一篇。然而，作为一个刚学竞赛的学生写的东西，它的质量实在堪忧。行列式又是一个及其重要、基础和困难的概念，无论对于大学数学还是高中竞赛。因此，我决定将这篇文章重新编辑，以便更好地帮助学习的人。</p>
+    <h2 id="前言">前言</h2>
+<p>我原在博客园上发表的这篇文章是阅读排行榜最高的一篇。然而，作为一个刚学竞赛的学生写的东西，它的质量实在堪忧。行列式又是一个及其重要、基础和困难的概念，无论对于大学数学还是高中竞赛。因此，我决定将这篇文章重新编辑，以便更好地帮助学习的人。</p>
 <p>如果你想知道行列式是什么，强烈建议先去学习线性代数基础知识，了解什么是向量、矩阵、线性变换以及会用矩阵描述线性方程组，然后认真理解学习行列式的概念。<strong>千万不要从形式上（如计算）学习行列式，而是要先理解它。</strong></p>
 <p>由于概念部分较深入，本文不会对线性代数的基础知识做过多介绍，而是着重于行列式的计算。</p>
-<h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>行列式（Determinant）是一个线性代数里的数学概念。它可以被看做是有向面积或体积的概念在一般的欧几里得空间中的推广。或者说，在 n 维欧几里得空间中，行列式描述的是一个线性变换对“体积”所造成的影响。</p>
-<p>形式上讲，行列式是一个函数，接受一个矩阵作为输入，输出一个标量。对于一个$n\times n$的矩阵$A$，它的行列式的值记为：</p>
-<p>$$\det(A)&#x3D;\begin{vmatrix}a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n}\a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n}\\vdots &amp; \vdots &amp; \ddots &amp; \vdots\a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}\end{vmatrix}$$</p>
-<p>其中$a_{ij}$表示矩阵$A$的第$i$行第$j$列元素。</p>
+<h2 id="行列式">行列式</h2>
+<h3 id="定义">定义</h3>
+<p>行列式（Determinant）是一个线性代数里的数学概念。它可以被看做是有向面积或体积的概念在一般的欧几里得空间中的推广。或者说，在
+n 维欧几里得空间中，行列式描述的是一个线性变换对“体积”所造成的影响。</p>
+<p>形式上讲，行列式是一个函数，接受一个矩阵作为输入，输出一个标量。对于一个<span
+class="math inline">\(n\times n\)</span>的矩阵<span
+class="math inline">\(A\)</span>，它的行列式的值记为：</p>
+<p><span class="math display">\[\det(A)=\begin{vmatrix}a_{11} &amp;
+a_{12} &amp; \cdots &amp; a_{1n}\\a_{21} &amp; a_{22} &amp; \cdots &amp;
+a_{2n}\\\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\a_{n1} &amp;
+a_{n2} &amp; \cdots &amp; a_{nn}\end{vmatrix}\]</span></p>
+<p>其中<span class="math inline">\(a_{ij}\)</span>表示矩阵<span
+class="math inline">\(A\)</span>的第<span
+class="math inline">\(i\)</span>行第<span
+class="math inline">\(j\)</span>列元素。</p>
 <p>行列式的定义有很多种。以下是一个通过展开式的定义：</p>
-<p>设 $R$ 是交换环，$A &#x3D; (a_{i, j})$ 是 $R$ 上的 $n \times n$ 矩阵。则 $A$ 的\textbf{行列式}定义为<br>$$<br>    \det (A) &#x3D;<br>    \sum_{\sigma \in \mathfrak{S}<em>n}<br>    (-1)^{\sigma} ,<br>    a</em>{1, \sigma(1)} \cdots a_{n, \sigma(n)},<br>$$<br>其中 $\mathfrak{S}_n$ 是 $n$ 元置换群，$(-1)^\sigma$ 是 $\sigma$ 的符号（偶置换为 $+1$, 奇置换为 $-1$）。</p>
+<p>设 <span class="math inline">\(R\)</span> 是交换环，<span
+class="math inline">\(A = (a_{i, j})\)</span> 是 <span
+class="math inline">\(R\)</span> 上的 <span class="math inline">\(n
+\times n\)</span> 矩阵。则 <span class="math inline">\(A\)</span>
+的定义为 <span class="math display">\[
+    \det (A) =
+    \sum_{\sigma \in \mathfrak{S}_n}
+    (-1)^{\sigma} \,
+    a_{1, \sigma(1)} \cdots a_{n, \sigma(n)},
+\]</span> 其中 <span class="math inline">\(\mathfrak{S}_n\)</span> 是
+<span class="math inline">\(n\)</span> 元置换群，<span
+class="math inline">\((-1)^\sigma\)</span> 是 <span
+class="math inline">\(\sigma\)</span> 的符号（偶置换为 <span
+class="math inline">\(+1\)</span>, 奇置换为 <span
+class="math inline">\(-1\)</span>）。</p>
 <p>仅从如上定义我们无法知道如何计算行列式。除了二阶、三阶行列式可以快速计算外，一般的行列式的计算需要借助于高斯消元法。该方法需要用到一些行列式的性质。</p>
-<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ol>
+<h3 id="性质">性质</h3>
+<ol type="1">
 <li>行列式与其转置行列式值相等。</li>
 <li>交换行列式的两行，行列式的值取相反数。</li>
 <li>行列式的某一行乘以一个数，行列式的值乘以这个数。</li>
 <li>行列式的某一行乘以一数加到另一行上，行列式不变。</li>
 </ol>
 <p>以上结论都可以由其定义推出。</p>
-<h2 id="高斯消元法"><a href="#高斯消元法" class="headerlink" title="高斯消元法"></a>高斯消元法</h2><p>高斯消元法（Gauss Elimination）是一种数值计算方法，它可以用来求解线性方程组和行列式。其基本思想是将矩阵化简为上三角矩阵，然后化为对角矩阵。化简的基本操作是将一行减去另一行乘以一个非零数，使得本行某一列的元素被消为 0。时间复杂度为 $O(n^3)$。</p>
+<h2 id="高斯消元法">高斯消元法</h2>
+<p>高斯消元法（Gauss
+Elimination）是一种数值计算方法，它可以用来求解线性方程组和行列式。其基本思想是将矩阵化简为上三角矩阵，然后化为对角矩阵。化简的基本操作是将一行减去另一行乘以一个非零数，使得本行某一列的元素被消为
+0。时间复杂度为 <span class="math inline">\(O(n^3)\)</span>。</p>
 <p>以下为数据为浮点数时的代码。若有模数，求逆元即可。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">Gauss</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">double</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="type">int</span> x=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i;j&lt;=n <span class="keyword">and</span> !x;j++) <span class="keyword">if</span>(a[j][i]) x=j;</span><br><span class="line">        <span class="keyword">if</span>(!x) <span class="keyword">return</span> (<span class="type">void</span>)<span class="built_in">puts</span>(<span class="string">&quot;No Solution&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span>(a[i]!=a[x]) <span class="built_in">swap</span>(a[i],a[x]),ans=-ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) <span class="keyword">if</span>(j!=i)&#123;</span><br><span class="line">            <span class="type">double</span> tmp=a[j][i]/a[i][i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i;k&lt;=n<span class="number">+1</span>;k++) a[j][k]-=a[i][k]*tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        ans*=a[i][i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>若模数不为质数，也可以通过辗转相除法消元。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">Gauss</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i<span class="number">+1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(a[j][i])&#123;</span><br><span class="line">                <span class="type">long</span> <span class="type">long</span> t=a[i][i]/a[j][i];</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=i;k&lt;=n;k++) a[i][k]=(a[i][k]-t*a[j][k]%mod+mod)%mod;</span><br><span class="line">                <span class="built_in">swap</span>(a[i],a[j]);</span><br><span class="line">                ans=-ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans=(ans*a[i][i]%mod+mod)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2923,22 +2952,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>费马小定理</p>
-          <p class='content'>费马小定理对于任何互质数 $a,p$,有
-$$a^{p-1}&#x3D;1\pmod p$$
-应用求逆元：
-$$a^{p-2}&#x3D;a^{-1}\pmod p$$
-</p>
+        <a class='prev' href='/2022/04/30/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>随机数生成</p>
+          <p class='content'>我知道是伪随机数生成啦
+可以用 srand(time(0)) 和 rand()
+函数生成伪随机数。然而，这个方法生成的随机数效果不是很好，也没法指定生成范围。
+下面的方法可以生成指定范围的...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E8%AF%BB%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96/'>
-          <p class='title'>读入、输出优化<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>关闭流同步1std::ios::sync_with_stdio(false);
+        <a class='next' href='/2022/04/30/%E9%9E%85%E7%9A%84%E5%81%9C%E6%97%B6%E5%AE%9A%E7%90%86/'>
+          <p class='title'>鞅的停时定理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言
+该内容算法竞赛涉及不多，属于较深概率论内容。
+鞅的停时定理
+“鞅”，martingale 用来指一类随机过程，定义如下：
 
-关闭输入输出流与标准输入输出（scanf printf）的同步，加快流速度，但关闭后不可混用。
-整形快读从标准输...</p>
+鞅是一种离散时间的随机过程 \(X_0,X_1,\cd...</p>
         </a>
       
     </div>
@@ -3211,7 +3241,9 @@ $$a^{p-2}&#x3D;a^{-1}\pmod p$$
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4223,7 +4255,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2707,7 +2707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4180 [BJWC2010]严格次小生成树/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4494 [HAOI2018]反色游戏/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2725,17 +2725,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"  itemprop="url">
-        P4180 [BJWC2010]严格次小生成树
+      <a href="/2022/04/30/P4494%20%5BHAOI2018%5D%E5%8F%8D%E8%89%B2%E6%B8%B8%E6%88%8F/"  itemprop="url">
+        P4494 [HAOI2018]反色游戏
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4180 [BJWC2010]严格次小生成树题意求出一个无向联通图的严格次小生成树。严格次小生成树的定义为边权和大于最小生成树的边权和但不存在另一棵生成树的边权和在最小生成树和严格次小生成树之间（不相等）。
-思路先求出一颗最小生成树，发现严格次小生成树一定是其断了一条边并加了一条边且边权和的增加量最小。
-那么我们继续在最小生成树上做。对于每一条不是最小生成树上的边，求出其两端两点间在最小生...
+        P4494 [HAOI2018]反色游戏
+题意
+给你一个无向图，图上每个点是黑色或者白色。你可以将一条边的两个端点颜色取反。问你有多少种方法每个边至多取反一次使得图上全变成白色的点。
+思路
+若任意一个连通块黑色点的个数为奇数那么无解。
+先考虑树的情况。发现如果是树，并且黑点个数为偶数，有且仅有一种方式达到目标。然后发现，对于一个无向图，它的任意一个生成树若有解，那么其他非树边无论是...
       
     
   </div>
@@ -2756,7 +2759,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P4494%20%5BHAOI2018%5D%E5%8F%8D%E8%89%B2%E6%B8%B8%E6%88%8F/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2798,12 +2801,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4293 [WC2010]能量场题意给你 $n$ 个粒子，每个粒子有两个权值 $m_i,c_i$ 每个相邻有序对 $(a,b)$ 会产生 $m_am_b(c_a-c_b)$ 的贡献。现让你处理两个问题：
+        P4293 [WC2010]能量场
+题意
+给你 \(n\)
+个粒子，每个粒子有两个权值 \(m_i,c_i\)
+每个相邻有序对 \((a,b)\) 会产生 \(m_am_b(c_a-c_b)\)
+的贡献。现让你处理两个问题：
 
 找出一个有序对使贡献最大。
 找出一个序列成环后贡献和最大。
 
-思路我们将贡献转化一下：$$m_am_b(c_a-c_b)&#x3D;m_ac_am_b-m_bc_bm_a$$那么这就形成...
+思路
+我们将贡献转化一下： \[
+m_am_b(c_a-c_b)=m_ac_am...
       
     
   </div>
@@ -2825,70 +2835,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div>
           <a class='readmore' href='/2022/04/30/P4293%20%5BWC2010%5D%E8%83%BD%E9%87%8F%E5%9C%BA/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5110 块速递推-光速幂、斐波那契数列通项/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5110%20%E5%9D%97%E9%80%9F%E9%80%92%E6%8E%A8-%E5%85%89%E9%80%9F%E5%B9%82%E3%80%81%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E9%80%9A%E9%A1%B9/"  itemprop="url">
-        P5110 块速递推-光速幂、斐波那契数列通项
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P5110 块速递推题意多次询问，求数列$$a_i&#x3D;\begin{cases}233a_{i-1}+666a_{i-2} &amp; i&gt;1\0 &amp; i&#x3D;0\1 &amp; i&#x3D;1\\end{cases}$$的第 $n$ 项在 $\mod 1e9+7$ 意义下的值的异或和。
-思路首先这个数列是一个广义斐波那契数列。对于广义斐波那契数列，我们一般是用...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P5110%20%E5%9D%97%E9%80%9F%E9%80%92%E6%8E%A8-%E5%85%89%E9%80%9F%E5%B9%82%E3%80%81%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E9%80%9A%E9%A1%B9/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2934,7 +2880,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 很久很久以前，巨龙突然出现，带来了灾难带走公主又消失不见。王国十分危险，世间谁最勇敢，一位英雄出现……
 
 学习于该大佬博客
-题意那么你就是这位英雄，不过不同的是，你面对的是一群巨龙，虽然巨龙都不会攻击；你每次使用的剑一打就爆，虽然每打死一条巨龙的奖励是一把新的剑；巨龙不会因为生命值降为负数而死亡，虽然巨龙会憨憨地回血然后把自己奶死；最重要的是你完成游戏不会获得公主的爱，只会获得参加ION8...
+题意
+那么你就是这位英雄，不过不同的是，你面对的是一群巨龙，虽然巨龙都不会攻击；你每次使用的剑一打就爆，虽然每打死一条巨龙的奖励是一把新的剑；巨龙不会因为生命值降为负数而死亡，虽然巨龙会憨憨地回血然后把自己奶死；最重要的是你完成游戏不会获得公主的爱，只会获得...
       
     
   </div>
@@ -2971,7 +2918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4169-CDQ分治 K-D tree（三维偏序）-天使玩偶/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4334 [COI2007] Policija/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2989,23 +2936,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4169-CDQ%E5%88%86%E6%B2%BB%20K-D%20tree%EF%BC%88%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%EF%BC%89-%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6/"  itemprop="url">
-        P4169-CDQ分治 K-D tree（三维偏序）-天使玩偶
+      <a href="/2022/04/30/P4334%20%5BCOI2007%5D%20Policija/"  itemprop="url">
+        P4334 [COI2007] Policija
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4169-CDQ分治&#x2F;K-D tree（三维偏序）-天使玩偶这是一篇两种做法都有的题解
-题外话我写吐了……
-本着不看题解的原则，没写（不会）K-D tree，就写了个cdq分治的做法。下面是我的写题步骤：
+        P4334 [COI2007] Policija
+题意
+一个无重边的无向图，每次询问删掉一条边或删掉一个点后两个点是否联通。
+思路
+连通性问题，我们可以考虑使用广义圆方树解决。
 
-想着树状数组维护不了区间最值，于是写了线段树，因为一个**的错误调了几个小时；
+对于删掉一个点的情况：
 
-cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂了；
-
-加上另外两个方向，正确性终于...
+我们先跑 tarjan
+建出圆方树。如何判断两点在删去一个点后在树上的连通性？当且仅当被删去的点在两点间的路径上。根据圆方树的性质，如果被删点在一个点双连通分量中，它是符...
       
     
   </div>
@@ -3026,7 +2974,7 @@ cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P4169-CDQ%E5%88%86%E6%B2%BB%20K-D%20tree%EF%BC%88%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%EF%BC%89-%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P4334%20%5BCOI2007%5D%20Policija/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3068,8 +3016,16 @@ cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4827 [国家集训队] Crash 的文明世界题意求出对于树上每个点 $x$ 的 $\sum_{u&#x3D;1}^ndis(x,u)^k$。所有边长为 1。
-思路根据斯特林反演：$$m^n&#x3D;\sum_{j&#x3D;0}^n\begin{Bmatrix}n\j\end{Bmatrix}C_m^jj!$$可以得到：$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;...
+        P4827 [国家集训队] Crash
+的文明世界
+题意
+求出对于树上每个点 \(x\) 的 \(\sum_{u=1}^ndis(x,u)^k\)。所有边长为
+1。
+思路
+根据斯特林反演： \[
+m^n=\sum_{j=0}^n\begin{Bmatrix}n\\j\end{Bmatrix}C_m^jj!
+\] 可以得到： \[
+\sum_{i=1}^n\sum_{j=0}...
       
     
   </div>
@@ -3132,12 +3088,16 @@ cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5042 丢失的题面顺序：10 - 1 - 7 - 8 - 9 - 4 - 5 - 6 - 2 - 3
-Point 10读入，特判，输出。
-读入的英文意思是让选手输出自己的程序本身，这个题的确存在，但是这题并没有 SPJ ，所以特判一下输出输出文件就好了。
-C++ 的atoi函数可以让读入的字符串变成数字以完成其他点的任务。
-Point 1我和其他聚铑做这个点的过程就十分有趣了。
-开始，我...
+        P5042 丢失的题面
+顺序：10 - 1 - 7 - 8 - 9 - 4 - 5 - 6 - 2 - 3
+Point 10
+读入，特判，输出。
+读入的英文意思是让选手输出自己的程序本身，这个题的确存在，但是这题并没有
+SPJ ，所以特判一下输出输出文件就好了。
+C++
+的atoi函数可以让读入的字符串变成数字以完成其他点的任务。
+Point 1
+我和其他聚铑做这个点的过程...
       
     
   </div>
@@ -3174,7 +3134,7 @@ Point 1我和其他聚铑做这个点的过程就十分有趣了。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5311 [Ynoi2011] 成都七中/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5110 块速递推-光速幂、斐波那契数列通项/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3192,20 +3152,24 @@ Point 1我和其他聚铑做这个点的过程就十分有趣了。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/"  itemprop="url">
-        P5311 [Ynoi2011] 成都七中
+      <a href="/2022/04/30/P5110%20%E5%9D%97%E9%80%9F%E9%80%92%E6%8E%A8-%E5%85%89%E9%80%9F%E5%B9%82%E3%80%81%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E9%80%9A%E9%A1%B9/"  itemprop="url">
+        P5110 块速递推-光速幂、斐波那契数列通项
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5311 [Ynoi2011] 成都七中题意给你一棵 $n$ 个节点的树，每个节点有一种颜色，有 $m$ 次查询操作。
-查询操作给定参数 $l\ r\ x$，需输出：
-将树中编号在 $[l,r]$ 内的所有节点保留，$x$ 所在连通块中颜色种类数。
-每次查询操作独立。
-思路考虑点分树的思想。假设我们已经建出点分树，对于每一个分治中心，我们应该维护什么东西？
-我们从分治中心开始遍历，记录遍历...
+        P5110 块速递推
+题意
+多次询问，求数列 \[
+a_i=\begin{cases}233a_{i-1}+666a_{i-2} &amp; i&gt;1\\
+0 &amp; i=0\\
+1 &amp; i=1\\
+\end{cases}
+\] 的第 \(n\) 项在 \(\mod 1e9+7\) 意义下的值的异或和。
+思路
+首先这个数列是一个广义斐波那契数列。对于广义斐波...
       
     
   </div>
@@ -3226,7 +3190,79 @@ Point 1我和其他聚铑做这个点的过程就十分有趣了。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P5110%20%E5%9D%97%E9%80%9F%E9%80%92%E6%8E%A8-%E5%85%89%E9%80%9F%E5%B9%82%E3%80%81%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E9%80%9A%E9%A1%B9/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5296 [北京省选集训2019]生成树计数/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/"  itemprop="url">
+        P5296 [北京省选集训2019]生成树计数
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P5296
+[北京省选集训2019]生成树计数
+题意
+求一个带权无向图所有生成树边权和的 \(k\) 次方的和。
+思路
+首先有一个结论：\(a^i\) 的 EGF 卷
+\(b^i\) 的 EGF 等于 \((a+b)^i\) 的 EGF。即： \[
+F(a)=\sum_{i=0}\frac{a^ix^i}{i!}\\
+F(a+b)=F(a)*F(b)
+\] 证明如下： \[...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3268,11 +3304,14 @@ Point 1我和其他聚铑做这个点的过程就十分有趣了。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5147-数学-随机数生成器（洛谷第一篇题解说这是高一数学题，新高二感觉到被吊打）
-我们设work(x)的期望值为$f_x$
-注意$f_1$是边界。不过对下列式子没有影响。原因参照必修的数列
-那么$\displaystyle f_n&#x3D;1+\frac{1}{n}\sum_{i&#x3D;1}^{n}f_i$
-移项得到$\displaystyle f_n&#x3D;\frac{n}{...
+        P5147-数学-随机数生成器
+（洛谷第一篇题解说这是高一数学题，新高二感觉到被吊打）
+我们设work(x)的期望值为\(f_x\)
+注意\(f_1\)是边界。不过对下列式子没有影响。原因参照必修的数列
+那么\(\displaystyle
+f_n=1+\frac{1}{n}\sum_{i=1}^{n}f_i\)
+移项得到\(\displaystyle
+f_n=\frac{n}{...
       
     
   </div>
@@ -3309,7 +3348,7 @@ Point 1我和其他聚铑做这个点的过程就十分有趣了。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5471- K-D tree优化建图-弹跳/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5311 [Ynoi2011] 成都七中/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3327,19 +3366,26 @@ Point 1我和其他聚铑做这个点的过程就十分有趣了。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/"  itemprop="url">
-        P5471- K-D tree优化建图-弹跳
+      <a href="/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/"  itemprop="url">
+        P5311 [Ynoi2011] 成都七中
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5471- K-D tree优化建图-弹跳
-优化建图是一种思想。
-
-题意有$n$个城市分布在小鸟岛上，有$m$个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹弓只能把小鸟弹飞到一块固定的矩形范围内的城市，同时小鸟会在空中滞留$t_i$的时间。闪电黄的家在1号城市，追求速度的它想知道，若只使用弹弓出行，它从家到其他所有城市的最短时间花费是多少。
-抱歉魔改了题面，但是这个题意真的太...
+        P5311 [Ynoi2011] 成都七中
+题意
+给你一棵 \(n\)
+个节点的树，每个节点有一种颜色，有 \(m\) 次查询操作。
+查询操作给定参数 \(l\ r\
+x\)，需输出：
+将树中编号在 \([l,r]\)
+内的所有节点保留，\(x\)
+所在连通块中颜色种类数。
+每次查询操作独立。
+思路
+考虑点分树的思想。假设我们已经建出点分树，对于每一个分治中心，我们应该...
       
     
   </div>
@@ -3360,7 +3406,7 @@ Point 1我和其他聚铑做这个点的过程就十分有趣了。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P5311%20%5BYnoi2011%5D%20%E6%88%90%E9%83%BD%E4%B8%83%E4%B8%AD/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3698,7 +3744,9 @@ Point 1我和其他聚铑做这个点的过程就十分有趣了。
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4710,7 +4758,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

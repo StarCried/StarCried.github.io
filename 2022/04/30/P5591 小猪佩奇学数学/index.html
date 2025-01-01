@@ -50,12 +50,12 @@
   <title>P5591 小猪佩奇学数学 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,组合数学,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="P5591 小猪佩奇学数学 知识点 二项式定理 \[ (x+1)^n&#x3D;\sum_{i&#x3D;0}^n\binom nix^i \] 单位根反演 \[ [n\mid k]&#x3D;\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik} \] 证明： \[ [n\mid k]&#x3D;\begin{cases}\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P5591 小猪佩奇学数学">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P5591%20%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E5%AD%A6%E6%95%B0%E5%AD%A6/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P5591 小猪佩奇学数学知识点二项式定理$$(x+1)^n&#x3D;\sum_{i&#x3D;0}^n\binom nix^i$$ 单位根反演$$[n\mid k]&#x3D;\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik}$$ 证明：$$[n\mid k]&#x3D;\begin{cases}\frac 1n\sum_{i&#x3D;0}^{n-1}\om">
+<meta property="og:description" content="P5591 小猪佩奇学数学 知识点 二项式定理 \[ (x+1)^n&#x3D;\sum_{i&#x3D;0}^n\binom nix^i \] 单位根反演 \[ [n\mid k]&#x3D;\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik} \] 证明： \[ [n\mid k]&#x3D;\begin{cases}\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,14 +2803,74 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="P5591-小猪佩奇学数学"><a href="#P5591-小猪佩奇学数学" class="headerlink" title="P5591 小猪佩奇学数学"></a>P5591 小猪佩奇学数学</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><h4 id="二项式定理"><a href="#二项式定理" class="headerlink" title="二项式定理"></a>二项式定理</h4><p>$$<br>(x+1)^n&#x3D;\sum_{i&#x3D;0}^n\binom nix^i<br>$$</p>
-<h4 id="单位根反演"><a href="#单位根反演" class="headerlink" title="单位根反演"></a>单位根反演</h4><p>$$<br>[n\mid k]&#x3D;\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik}<br>$$</p>
-<p>证明：<br>$$<br>[n\mid k]&#x3D;\begin{cases}\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik}&#x3D;\frac 1n\sum_{i&#x3D;0}^{n-1}1&#x3D;1 &amp;,n\mid k\<br>\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik}&#x3D;\frac 1n\frac{\omega_n^k-\omega_n^{nk}}{1-\omega_n^k}&#x3D;0 &amp;,n\not\mid k\end{cases}<br>$$</p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>求<br>$$<br>\sum_{i&#x3D;0}^n\binom ni p^i\left\lfloor\frac ik\right\rfloor \pmod{998244353}<br>$$<br>$1\le n,p\le998244353,k\in{2^w|0\le w\le 20}$</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>一看到前面这个形式容易想到二项式定理，但是后面这个 $\left\lfloor\frac ik\right\rfloor$ 不好处理。</p>
-<p>观察一下数据范围发现 $k$ 较小，考虑使用单位根反演，我们将柿子往这边化：<br>$$<br>\left\lfloor\frac ik\right\rfloor&#x3D;(\sum_{j&#x3D;0}^i[k\mid j])-1&#x3D;(\sum_{j&#x3D;0}^i[k\mid j])-1&#x3D;(\sum_{j&#x3D;0}^i\frac 1k\sum_{i&#x3D;0}^{k-1}\omega_k^{ij})-1<br>$$<br>代入得到<br>$$<br>\begin{aligned}&amp;\sum_{i&#x3D;0}^n\binom ni p^i\left\lfloor\frac ik\right\rfloor\<br>&amp;&#x3D;\sum_{i&#x3D;0}^n\binom ni p^i\sum_{j&#x3D;0}^i\frac 1k\sum_{d&#x3D;0}^{k-1}\omega_k^{dj}-(\sum_{i&#x3D;0}^n\binom ni p^i)\<br>&amp;&#x3D;\frac 1k\sum_{d&#x3D;0}^{k-1}\sum_{i&#x3D;0}^n\binom ni p^i\sum_{j&#x3D;0}^i\omega_k^{dj}-(p+1)^n\<br>&amp;&#x3D;\frac 1k(P+\sum_{d&#x3D;1}^{k-1}\sum_{i&#x3D;0}^n\binom ni p^i\frac{\omega_k^{di+d}-1}{\omega_k^d-1})-(p+1)^n\<br>&amp;&#x3D;\frac 1k(P+\sum_{d&#x3D;1}^{k-1}\frac{\sum_{i&#x3D;0}^n\binom ni p^i(\omega_k^{di+d}-1)}NaN)-(p+1)^n\<br>&amp;&#x3D;\frac 1k(P+\sum_{d&#x3D;1}^{k-1}\frac{\sum_{i&#x3D;0}^n\binom ni p^i\omega_k^{di+d}-\sum_{i&#x3D;0}^n\binom ni p^i}NaN)-(p+1)^n\<br>&amp;&#x3D;\frac 1k(P+\sum_{d&#x3D;1}^{k-1}\frac{\omega_k^d\sum_{i&#x3D;0}^n\binom ni p^i\omega_k^{di}-\sum_{i&#x3D;0}^n\binom ni p^i}NaN)-(p+1)^n\<br>&amp;&#x3D;\frac 1k(P+\sum_{d&#x3D;1}^{k-1}\frac{\omega_k^d(p\omega_k^d+1)^n-(p+1)^n}NaN)-(p+1)^n<br>\end{aligned}<br>$$<br>上式中 $P$ 是 $d$ 等于零的情况，此时 $\sum_{j&#x3D;0}^i\omega_k^{dj}$ 全为 1，公比为 1，不适用等比数列求和公式，我们单独算一下。由 $\binom nmm&#x3D;\binom {n-1}{m-1}n$，有</p>
-<p>$$<br>\begin{aligned}<br>P&amp;&#x3D;\sum_{i&#x3D;0}^n\binom ni p^i(i+1)\<br>&amp;&#x3D;(\sum_{i&#x3D;0}^n\binom ni p^ii)+(p+1)^n\<br>&amp;&#x3D;(np\sum_{i&#x3D;0}^n\binom {n-1}{i-1} p^{i-1})+(p+1)^n\<br>&amp;&#x3D;np(p+1)^{n-1}+(p+1)^n<br>\end{aligned}<br>$$</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=(<span class="number">1</span>&lt;&lt;<span class="number">10</span>)<span class="number">+5</span>,mod=<span class="number">998244353</span>,g=<span class="number">3</span>;</span><br><span class="line">	<span class="type">int</span> n,p,k,ans,rt;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">fpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="type">int</span> ans=<span class="number">1</span>;<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=<span class="number">1ll</span>*a*a%mod) <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=<span class="number">1ll</span>*ans*a%mod; <span class="keyword">return</span> ans;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),p=<span class="built_in">read</span>(),k=<span class="built_in">read</span>(),rt=<span class="built_in">fpow</span>(g,(mod<span class="number">-1</span>)/k);</span><br><span class="line">		ans=(<span class="number">1ll</span>*n*p%mod*<span class="built_in">fpow</span>(p<span class="number">+1</span>,n<span class="number">-1</span>)+<span class="built_in">fpow</span>(p<span class="number">+1</span>,n))%mod;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> mul=rt,d=<span class="number">1</span>;d&lt;k;d++,mul=<span class="number">1ll</span>*mul*rt%mod) ans=(ans+(<span class="number">1ll</span>*mul*<span class="built_in">fpow</span>((<span class="number">1ll</span>*p*mul<span class="number">+1</span>)%mod,n)%mod-<span class="built_in">fpow</span>(p<span class="number">+1</span>,n)+mod)%mod*<span class="built_in">fpow</span>((mul<span class="number">-1</span>+mod)%mod,mod<span class="number">-2</span>))%mod;</span><br><span class="line">		ans=<span class="number">1ll</span>*ans*<span class="built_in">fpow</span>(k,mod<span class="number">-2</span>)%mod;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,(ans-<span class="built_in">fpow</span>(p<span class="number">+1</span>,n)+mod)%mod);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <h2 id="p5591-小猪佩奇学数学">P5591 小猪佩奇学数学</h2>
+<h3 id="知识点">知识点</h3>
+<h4 id="二项式定理">二项式定理</h4>
+<p><span class="math display">\[
+(x+1)^n=\sum_{i=0}^n\binom nix^i
+\]</span></p>
+<h4 id="单位根反演">单位根反演</h4>
+<p><span class="math display">\[
+[n\mid k]=\frac 1n\sum_{i=0}^{n-1}\omega_n^{ik}
+\]</span></p>
+<p>证明： <span class="math display">\[
+[n\mid k]=\begin{cases}\frac 1n\sum_{i=0}^{n-1}\omega_n^{ik}=\frac
+1n\sum_{i=0}^{n-1}1=1 &amp;,n\mid k\\
+\frac 1n\sum_{i=0}^{n-1}\omega_n^{ik}=\frac
+1n\frac{\omega_n^k-\omega_n^{nk}}{1-\omega_n^k}=0 &amp;,n\not\mid
+k\end{cases}
+\]</span></p>
+<h3 id="题意">题意</h3>
+<p>求 <span class="math display">\[
+\sum_{i=0}^n\binom ni p^i\left\lfloor\frac ik\right\rfloor
+\pmod{998244353}
+\]</span> <span class="math inline">\(1\le
+n,p\le998244353,k\in\{2^w|0\le w\le 20\}\)</span></p>
+<h3 id="思路">思路</h3>
+<p>一看到前面这个形式容易想到二项式定理，但是后面这个 <span
+class="math inline">\(\left\lfloor\frac ik\right\rfloor\)</span>
+不好处理。</p>
+<p>观察一下数据范围发现 <span class="math inline">\(k\)</span>
+较小，考虑使用单位根反演，我们将柿子往这边化： <span
+class="math display">\[
+\left\lfloor\frac ik\right\rfloor=(\sum_{j=0}^i[k\mid
+j])-1=(\sum_{j=0}^i[k\mid j])-1=(\sum_{j=0}^i\frac
+1k\sum_{i=0}^{k-1}\omega_k^{ij})-1
+\]</span> 代入得到 <span class="math display">\[
+\begin{aligned}&amp;\sum_{i=0}^n\binom ni p^i\left\lfloor\frac
+ik\right\rfloor\\
+&amp;=\sum_{i=0}^n\binom ni p^i\sum_{j=0}^i\frac
+1k\sum_{d=0}^{k-1}\omega_k^{dj}-(\sum_{i=0}^n\binom ni p^i)\\
+&amp;=\frac 1k\sum_{d=0}^{k-1}\sum_{i=0}^n\binom ni
+p^i\sum_{j=0}^i\omega_k^{dj}-(p+1)^n\\
+&amp;=\frac 1k(P+\sum_{d=1}^{k-1}\sum_{i=0}^n\binom ni
+p^i\frac{\omega_k^{di+d}-1}{\omega_k^d-1})-(p+1)^n\\
+&amp;=\frac 1k(P+\sum_{d=1}^{k-1}\frac{\sum_{i=0}^n\binom ni
+p^i(\omega_k^{di+d}-1)}NaN)-(p+1)^n\\
+&amp;=\frac 1k(P+\sum_{d=1}^{k-1}\frac{\sum_{i=0}^n\binom ni
+p^i\omega_k^{di+d}-\sum_{i=0}^n\binom ni
+p^i}NaN)-(p+1)^n\\
+&amp;=\frac 1k(P+\sum_{d=1}^{k-1}\frac{\omega_k^d\sum_{i=0}^n\binom ni
+p^i\omega_k^{di}-\sum_{i=0}^n\binom ni
+p^i}NaN)-(p+1)^n\\
+&amp;=\frac
+1k(P+\sum_{d=1}^{k-1}\frac{\omega_k^d(p\omega_k^d+1)^n-(p+1)^n}NaN)-(p+1)^n
+\end{aligned}
+\]</span> 上式中 <span class="math inline">\(P\)</span> 是 <span
+class="math inline">\(d\)</span> 等于零的情况，此时 <span
+class="math inline">\(\sum_{j=0}^i\omega_k^{dj}\)</span> 全为 1，公比为
+1，不适用等比数列求和公式，我们单独算一下。由 <span
+class="math inline">\(\binom nmm=\binom {n-1}{m-1}n\)</span>，有</p>
+<p><span class="math display">\[
+\begin{aligned}
+P&amp;=\sum_{i=0}^n\binom ni p^i(i+1)\\
+&amp;=(\sum_{i=0}^n\binom ni p^ii)+(p+1)^n\\
+&amp;=(np\sum_{i=0}^n\binom {n-1}{i-1} p^{i-1})+(p+1)^n\\
+&amp;=np(p+1)^{n-1}+(p+1)^n
+\end{aligned}
+\]</span></p>
+<h3 id="代码">代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=(<span class="number">1</span>&lt;&lt;<span class="number">10</span>)<span class="number">+5</span>,mod=<span class="number">998244353</span>,g=<span class="number">3</span>;</span><br><span class="line">	<span class="type">int</span> n,p,k,ans,rt;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">fpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;<span class="type">int</span> ans=<span class="number">1</span>;<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>,a=<span class="number">1ll</span>*a*a%mod) <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=<span class="number">1ll</span>*ans*a%mod; <span class="keyword">return</span> ans;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),p=<span class="built_in">read</span>(),k=<span class="built_in">read</span>(),rt=<span class="built_in">fpow</span>(g,(mod<span class="number">-1</span>)/k);</span><br><span class="line">		ans=(<span class="number">1ll</span>*n*p%mod*<span class="built_in">fpow</span>(p<span class="number">+1</span>,n<span class="number">-1</span>)+<span class="built_in">fpow</span>(p<span class="number">+1</span>,n))%mod;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> mul=rt,d=<span class="number">1</span>;d&lt;k;d++,mul=<span class="number">1ll</span>*mul*rt%mod) ans=(ans+(<span class="number">1ll</span>*mul*<span class="built_in">fpow</span>((<span class="number">1ll</span>*p*mul<span class="number">+1</span>)%mod,n)%mod-<span class="built_in">fpow</span>(p<span class="number">+1</span>,n)+mod)%mod*<span class="built_in">fpow</span>((mul<span class="number">-1</span>+mod)%mod,mod<span class="number">-2</span>))%mod;</span><br><span class="line">		ans=<span class="number">1ll</span>*ans*<span class="built_in">fpow</span>(k,mod<span class="number">-2</span>)%mod;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,(ans-<span class="built_in">fpow</span>(p<span class="number">+1</span>,n)+mod)%mod);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2908,18 +2968,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P5658%20%E6%8B%AC%E5%8F%B7%E6%A0%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5658 括号树</p>
-          <p class='content'>P5658 括号树NOIp2019我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
-于是今天我克服心理阴影来写这道题。
-树形结构因为这是一个树，所有优秀的性质这个题都有。并且题目仅...</p>
+        <a class='prev' href='/2022/04/30/P5350%20%E5%BA%8F%E5%88%97/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5350 序列</p>
+          <p class='content'>P5350 序列
+题意
+维护一个序列，支持区间求和、赋值、加值、复制、交换、翻转操作，其中交换和复制操作保证两段区间长度相等且不交。答案对
+\(1e9+7\) 取模。
+思路
+对于区间求...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P5296%20%5B%E5%8C%97%E4%BA%AC%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD2019%5D%E7%94%9F%E6%88%90%E6%A0%91%E8%AE%A1%E6%95%B0/'>
-          <p class='title'>P5296 [北京省选集训2019]生成树计数<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P5296 [北京省选集训2019]生成树计数题意求一个带权无向图所有生成树边权和的 $k$ 次方的和。
-思路首先有一个结论：$a^i$ 的 EGF 卷 $b^i$ 的 EGF 等于 $(a+b...</p>
+        <a class='next' href='/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/'>
+          <p class='title'>P5471- K-D tree优化建图-弹跳<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P5471- K-D tree优化建图-弹跳
+
+优化建图是一种思想。
+
+题意
+有\(n\)个城市分布在小鸟岛上，有\(m\)个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹...</p>
         </a>
       
     </div>
@@ -3052,7 +3119,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P5591-%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E5%AD%A6%E6%95%B0%E5%AD%A6"><span class="toc-text">P5591 小猪佩奇学数学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="toc-text">二项式定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E6%A0%B9%E5%8F%8D%E6%BC%94"><span class="toc-text">单位根反演</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p5591-%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E5%AD%A6%E6%95%B0%E5%AD%A6"><span class="toc-text">P5591 小猪佩奇学数学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="toc-text">二项式定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E6%A0%B9%E5%8F%8D%E6%BC%94"><span class="toc-text">单位根反演</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3192,7 +3259,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4204,7 +4273,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

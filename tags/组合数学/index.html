@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2751,9 +2751,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF896D Nephren Runs a Cinema题意售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况 $n$ 名顾客后剩余钱数在 $l\sim r$ 的方案数。
-思路这是我们一道模拟赛题。
-解法 1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，用组合数减去另外一个组合数然...
+        CF896D Nephren Runs a Cinema
+题意
+售票员最开始没有纸币，每次来一个顾客可以给她一张、拿走她一张或不操作。求出不出现中途没钱给的情况
+\(n\) 名顾客后剩余钱数在 \(l\sim r\) 的方案数。
+思路
+这是我们一道模拟赛题。
+解法
+1：套路组合计数。先不考虑不操作的顾客，那么就相当于是求二维平面不过一条直线到达一点的方案数。直接枚举操作顾客数，...
       
     
   </div>
@@ -2817,11 +2822,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         P1447能量采集
+
 定义:(i,j)表示处于(i,j)的植物的贡献
 
-我们发现，点(i,j)与(0,0)的连线所过整点的数目为$\gcd(i,j)$
+我们发现，点(i,j)与(0,0)的连线所过整点的数目为\(\gcd(i,j)\)
 发现要是想记录每个点的答案并不好算。那么怎么好算呢？
-我们来找一找同一直线上的所有点答案的和的关系。先不考虑答案只考虑个数。发现，寻找一个点及其倍数的个数的和更加好算。而且，因为有n和m的限制，那么向下取整的答案一定就是其本身。考虑容斥，我们只...
+我们来找一找同一直线上的所有点答案的和的关系。先不考虑答案只考虑个数。发现，寻找一个点及其倍数的个数的和更加好算。而且，因为有n和m的限制，那么向下取整的答案一定就是其本身...
       
     
   </div>
@@ -2884,14 +2890,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P3214 [HNOI2011]卡农题意在集合 ${1,2,\cdots,n}$ 中选出 $m$ 个非空子集满足：
+        P3214 [HNOI2011]卡农
+题意
+在集合 \(\{1,2,\cdots,n\}\) 中选出
+\(m\) 个非空子集满足：
 
 不存在完全相同的两个集合；
 每个元素在所有集合中出现次数之和为偶数。
 
-思路考虑转移，利用容斥方法进行 Dp。设 $f_i$ 表示选了 $i$ 个集合满足条件的方案数：
+思路
+考虑转移，利用容斥方法进行 Dp。设 \(f_i\) 表示选了 \(i\) 个集合满足条件的方案数：
 
-首先，如果确定了前 $i-1$ 个集合，那么为了满足上面第二个限制这个位置选的集合一定是固定的。前 $i...
+首先，如果确定了前 \(i-1\)
+个集合，那么为了满...
       
     
   </div>
@@ -2954,8 +2965,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4827 [国家集训队] Crash 的文明世界题意求出对于树上每个点 $x$ 的 $\sum_{u&#x3D;1}^ndis(x,u)^k$。所有边长为 1。
-思路根据斯特林反演：$$m^n&#x3D;\sum_{j&#x3D;0}^n\begin{Bmatrix}n\j\end{Bmatrix}C_m^jj!$$可以得到：$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;...
+        P4827 [国家集训队] Crash
+的文明世界
+题意
+求出对于树上每个点 \(x\) 的 \(\sum_{u=1}^ndis(x,u)^k\)。所有边长为
+1。
+思路
+根据斯特林反演： \[
+m^n=\sum_{j=0}^n\begin{Bmatrix}n\\j\end{Bmatrix}C_m^jj!
+\] 可以得到： \[
+\sum_{i=1}^n\sum_{j=0}...
       
     
   </div>
@@ -3018,9 +3037,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5591 小猪佩奇学数学知识点二项式定理$$(x+1)^n&#x3D;\sum_{i&#x3D;0}^n\binom nix^i$$
-单位根反演$$[n\mid k]&#x3D;\frac 1n\sum_{i&#x3D;0}^{n-1}\omega_n^{ik}$$
-证明：$$[n\mid k]&#x3D;\begin{cases}\frac 1n\sum_{i&#x3D;0}^{n-1}...
+        P5591 小猪佩奇学数学
+知识点
+二项式定理
+\[
+(x+1)^n=\sum_{i=0}^n\binom nix^i
+\]
+单位根反演
+\[
+[n\mid k]=\frac 1n\sum_{i=0}^{n-1}\omega_n^{ik}
+\]
+证明： \[
+[n\mid k]=\begin{cases}\frac 1n\sum_{i=0}^{n-1}\omega_n^...
       
     
   </div>
@@ -3083,8 +3111,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6295 有标号 DAG 计数题意求 $n$ 个点有标号弱联通 DAG 数量。
-推导设 $f_i$ 表示 $i$ 个点有标号 DAG 数量（不保证弱联通），有：$$f(i)&#x3D;\sum_{j&#x3D;1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}$$意义为选至少 $j$ 个度数为零的点，向剩下的 $i-j$ 个点随便连有向边，容斥一下就得到了上式。...
+        P6295 有标号 DAG 计数
+题意
+求 \(n\) 个点有标号弱联通 DAG
+数量。
+推导
+设 \(f_i\) 表示 \(i\) 个点有标号 DAG
+数量（不保证弱联通），有： \[
+f(i)=\sum_{j=1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}
+\] 意义为选至少 \(j\)
+个度数为零的点，向剩下的 \(i-j\)
+个点随...
       
     
   </div>
@@ -3147,9 +3184,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P7324 [WC2021] 表达式求值闲话WC2021 我只得了 20 分，三道题总共 20 分。我是下场了突然后知后觉这件事的，主要原因是我开了 C++11，然后 T1 T2 都没分了。在洛谷上测本来能拿银牌的。T1 的乱搞能拿 48，还挺高的。
+        P7324 [WC2021] 表达式求值
+闲话
+WC2021 我只得了 20 分，三道题总共 20
+分。我是下场了突然后知后觉这件事的，主要原因是我开了 C++11，然后 T1 T2
+都没分了。在洛谷上测本来能拿银牌的。T1 的乱搞能拿 48，还挺高的。
 幸亏咱们陕西省选不看冬令营成绩。幸亏是在省选前犯的这个错误。告诫后人和自己，写题前一定要看编译选项，否则只能后悔莫及。
-T2 场上写的是不带问...
+T2 ...
       
     
   </div>
@@ -3487,7 +3528,9 @@ T2 场上写的是不带问...
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4499,7 +4542,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

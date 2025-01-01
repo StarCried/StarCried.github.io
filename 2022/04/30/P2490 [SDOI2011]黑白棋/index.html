@@ -50,12 +50,12 @@
   <title>P2490 [SDOI2011]黑白棋 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,博弈论,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="P2490 [SDOI2011]黑白棋 题意 一个 \(1*n\) 的棋盘上，A 可以移动白色棋子，B 可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动 1 到 \(d\) 个棋子。 每当移动某一个棋子时，这个棋子不能跨越两边的棋子，当然也不可以出界。当谁不可以操作时，谁就失败了。 思路 显然可以将题意转化为一种 K-Nim 游戏，即在 \(\frac k2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P2490 [SDOI2011]黑白棋">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P2490%20[SDOI2011]%E9%BB%91%E7%99%BD%E6%A3%8B/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="P2490 [SDOI2011]黑白棋题意一个 $1*n$ 的棋盘上，A 可以移动白色棋子，B 可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动 1 到 $d$ 个棋子。 每当移动某一个棋子时，这个棋子不能跨越两边的棋子，当然也不可以出界。当谁不可以操作时，谁就失败了。 思路显然可以将题意转化为一种 K-Nim 游戏，即在 $\frac k2$ 堆石子中，每次可将 $d$">
+<meta property="og:description" content="P2490 [SDOI2011]黑白棋 题意 一个 \(1*n\) 的棋盘上，A 可以移动白色棋子，B 可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动 1 到 \(d\) 个棋子。 每当移动某一个棋子时，这个棋子不能跨越两边的棋子，当然也不可以出界。当谁不可以操作时，谁就失败了。 思路 显然可以将题意转化为一种 K-Nim 游戏，即在 \(\frac k2">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,26 +2803,67 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="P2490-SDOI2011-黑白棋"><a href="#P2490-SDOI2011-黑白棋" class="headerlink" title="P2490 [SDOI2011]黑白棋"></a>P2490 [SDOI2011]黑白棋</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>一个 $1*n$ 的棋盘上，A 可以移动白色棋子，B 可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动 1 到 $d$ 个棋子。</p>
+    <h2 id="p2490-sdoi2011黑白棋">P2490 [SDOI2011]黑白棋</h2>
+<h3 id="题意">题意</h3>
+<p>一个 <span class="math inline">\(1*n\)</span> 的棋盘上，A
+可以移动白色棋子，B
+可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动
+1 到 <span class="math inline">\(d\)</span> 个棋子。</p>
 <p>每当移动某一个棋子时，这个棋子不能跨越两边的棋子，当然也不可以出界。当谁不可以操作时，谁就失败了。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>显然可以将题意转化为一种 K-Nim 游戏，即在 $\frac k2$ 堆石子中，每次可将 $d$ 堆石子取任意个，令对手无路可走时获胜。</p>
+<h3 id="思路">思路</h3>
+<p>显然可以将题意转化为一种 K-Nim 游戏，即在 <span
+class="math inline">\(\frac k2\)</span> 堆石子中，每次可将 <span
+class="math inline">\(d\)</span>
+堆石子取任意个，令对手无路可走时获胜。</p>
 <p>用总方案数减去先手必败的方案数即为答案，因为先手必败方案更加好算。</p>
-<hr>
-<h2 id="K-Nim-游戏"><a href="#K-Nim-游戏" class="headerlink" title="K-Nim 游戏"></a>K-Nim 游戏</h2><h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>设 $r_i$ 为二进制第 $i$ 位所有数该位为 1 的个数 $\pmod {d+1}$  的值，那么只用一步即可在 “$r$ 全为 0” 和 “$r$ 不全为 0” 两种状态间转移。</p>
-<h3 id="感性证明"><a href="#感性证明" class="headerlink" title="感性证明"></a>感性证明</h3><p>考虑一个大小不超过 $d$ 的集合，为我们一次操作需要拿走的石子堆的集合，选 0 或 1 都是合法的。</p>
-<p>假设我们现在已经有这样一个大小为 $d$ 的集合，其中有 $x$ 个 1，$y$ 个 0，即 $x+y&#x3D;d$。我们要让 $r$ 等于零，分以下情况：</p>
+<hr />
+<h2 id="k-nim-游戏">K-Nim 游戏</h2>
+<h3 id="结论">结论</h3>
+<p>设 <span class="math inline">\(r_i\)</span> 为二进制第 <span
+class="math inline">\(i\)</span> 位所有数该位为 1 的个数 <span
+class="math inline">\(\pmod {d+1}\)</span> 的值，那么只用一步即可在
+“<span class="math inline">\(r\)</span> 全为 0” 和 “<span
+class="math inline">\(r\)</span> 不全为 0” 两种状态间转移。</p>
+<h3 id="感性证明">感性证明</h3>
+<p>考虑一个大小不超过 <span class="math inline">\(d\)</span>
+的集合，为我们一次操作需要拿走的石子堆的集合，选 0 或 1 都是合法的。</p>
+<p>假设我们现在已经有这样一个大小为 <span
+class="math inline">\(d\)</span> 的集合，其中有 <span
+class="math inline">\(x\)</span> 个 1，<span
+class="math inline">\(y\)</span> 个 0，即 <span
+class="math inline">\(x+y=d\)</span>。我们要让 <span
+class="math inline">\(r\)</span> 等于零，分以下情况：</p>
 <ul>
-<li>$x\ge r$ 则选择 $r$ 个 1 变为 0 即可。</li>
-<li>$x&lt;r$ 则 $y+r\ge d+1$ ，则选择 $d-r+1$ 个 0 变为 1 即可。</li>
+<li><span class="math inline">\(x\ge r\)</span> 则选择 <span
+class="math inline">\(r\)</span> 个 1 变为 0 即可。</li>
+<li><span class="math inline">\(x&lt;r\)</span> 则 <span
+class="math inline">\(y+r\ge d+1\)</span> ，则选择 <span
+class="math inline">\(d-r+1\)</span> 个 0 变为 1 即可。</li>
 </ul>
-<p>所以一定有一种方法使这一位的 $r$ 变成 0.</p>
-<p>现在我们并没有一个可以随便转换的集合，但是当一个数的高位从 1 变为 0 之后低位就可以随便选 0 和 1.所以我们从高位向低位考虑，如果一直符合第二个情况就向下考虑，否则就是第一个情况，并且在这种情况下把 1 变成 0 是合法的，那么我们扩大集合即可。</p>
+<p>所以一定有一种方法使这一位的 <span class="math inline">\(r\)</span>
+变成 0.</p>
+<p>现在我们并没有一个可以随便转换的集合，但是当一个数的高位从 1 变为 0
+之后低位就可以随便选 0 和
+1.所以我们从高位向低位考虑，如果一直符合第二个情况就向下考虑，否则就是第一个情况，并且在这种情况下把
+1 变成 0 是合法的，那么我们扩大集合即可。</p>
 <p>得证。</p>
-<hr>
-<p>在上述博弈中，所有 $r$ 为 0 的状态是必败态。我们只需要算所有这种情况的方案就可以了。</p>
-<p>考虑 Dp。设 $f_{ij}$ 为前 $i$ 位的 $r$ 均为 0，总共 $j$ 个石子的方案数。</p>
-<p>新选一位，枚举在 $d+1$ 堆石子中放入若干次石子。即<br>$$<br>f_{i+1,j+2^ix(d+1)}+&#x3D;f_{i,j}\binom{\frac k2}{x*(d+1)}<br>$$<br>最后统计答案需要枚举每一堆的起点位置，即在原题中的白棋的位置，答案为所有位的<br>$$<br>f_{i,j}\binom{n-j-\frac k2}{\frac k2}<br>$$<br>的和。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">10005</span>,mod=<span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line">	<span class="type">int</span> n,k,d,C[maxn][<span class="number">205</span>],f[<span class="number">18</span>][<span class="number">100005</span>];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),k=<span class="built_in">read</span>(),d=<span class="built_in">read</span>();</span><br><span class="line">		C[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			C[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">200</span>;j++) C[i][j]=(C[i<span class="number">-1</span>][j<span class="number">-1</span>]+C[i<span class="number">-1</span>][j])%mod;</span><br><span class="line">		&#125;</span><br><span class="line">		f[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">16</span>;i++) <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=n-k;j++) <span class="keyword">for</span>(<span class="type">int</span> x=<span class="number">0</span>;(<span class="number">1ll</span>&lt;&lt;i)*x*(d<span class="number">+1</span>)&lt;=n-k <span class="keyword">and</span> x*(d<span class="number">+1</span>)&lt;=k/<span class="number">2</span>;x++)</span><br><span class="line">			f[i<span class="number">+1</span>][j+(<span class="number">1ll</span>&lt;&lt;i)*x*(d<span class="number">+1</span>)]=(f[i<span class="number">+1</span>][j+(<span class="number">1ll</span>&lt;&lt;i)*x*(d<span class="number">+1</span>)]<span class="number">+1ll</span>*f[i][j]*C[k/<span class="number">2</span>][x*(d<span class="number">+1</span>)])%mod;</span><br><span class="line">		<span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=n-k;i++) ans=(ans<span class="number">+1ll</span>*f[<span class="number">17</span>][i]*C[n-i-k/<span class="number">2</span>][k/<span class="number">2</span>])%mod;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,(C[n][k]-ans+mod)%mod);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+<p>在上述博弈中，所有 <span class="math inline">\(r\)</span> 为 0
+的状态是必败态。我们只需要算所有这种情况的方案就可以了。</p>
+<p>考虑 Dp。设 <span class="math inline">\(f_{ij}\)</span> 为前 <span
+class="math inline">\(i\)</span> 位的 <span
+class="math inline">\(r\)</span> 均为 0，总共 <span
+class="math inline">\(j\)</span> 个石子的方案数。</p>
+<p>新选一位，枚举在 <span class="math inline">\(d+1\)</span>
+堆石子中放入若干次石子。即 <span class="math display">\[
+f_{i+1,j+2^ix(d+1)}+=f_{i,j}\binom{\frac k2}{x*(d+1)}
+\]</span>
+最后统计答案需要枚举每一堆的起点位置，即在原题中的白棋的位置，答案为所有位的
+<span class="math display">\[
+f_{i,j}\binom{n-j-\frac k2}{\frac k2}
+\]</span> 的和。</p>
+<h3 id="代码">代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> w=<span class="number">0</span>,x=<span class="number">0</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))w|=c==<span class="string">&#x27;-&#x27;</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))x=x*<span class="number">10</span>+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">return</span> w?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> star</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn=<span class="number">10005</span>,mod=<span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line">	<span class="type">int</span> n,k,d,C[maxn][<span class="number">205</span>],f[<span class="number">18</span>][<span class="number">100005</span>];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">		n=<span class="built_in">read</span>(),k=<span class="built_in">read</span>(),d=<span class="built_in">read</span>();</span><br><span class="line">		C[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			C[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">200</span>;j++) C[i][j]=(C[i<span class="number">-1</span>][j<span class="number">-1</span>]+C[i<span class="number">-1</span>][j])%mod;</span><br><span class="line">		&#125;</span><br><span class="line">		f[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">16</span>;i++) <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=n-k;j++) <span class="keyword">for</span>(<span class="type">int</span> x=<span class="number">0</span>;(<span class="number">1ll</span>&lt;&lt;i)*x*(d<span class="number">+1</span>)&lt;=n-k <span class="keyword">and</span> x*(d<span class="number">+1</span>)&lt;=k/<span class="number">2</span>;x++)</span><br><span class="line">			f[i<span class="number">+1</span>][j+(<span class="number">1ll</span>&lt;&lt;i)*x*(d<span class="number">+1</span>)]=(f[i<span class="number">+1</span>][j+(<span class="number">1ll</span>&lt;&lt;i)*x*(d<span class="number">+1</span>)]<span class="number">+1ll</span>*f[i][j]*C[k/<span class="number">2</span>][x*(d<span class="number">+1</span>)])%mod;</span><br><span class="line">		<span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=n-k;i++) ans=(ans<span class="number">+1ll</span>*f[<span class="number">17</span>][i]*C[n-i-k/<span class="number">2</span>][k/<span class="number">2</span>])%mod;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,(C[n][k]-ans+mod)%mod);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	star::<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2922,21 +2963,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2476-记忆化搜索</p>
-          <p class='content'>P2476-记忆化搜索DP?
+          <p class='content'>P2476-记忆化搜索
+DP?
 我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.
 15维DP显然不靠谱。
-那么我们就思考一下……状态个数？发现记忆化搜索可ac：...</p>
+那么我们就思考一下……状态个数？发现记忆化搜...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/'>
-          <p class='title'>P3214 [HNOI2011]卡农<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P3214 [HNOI2011]卡农题意在集合 ${1,2,\cdots,n}$ 中选出 $m$ 个非空子集满足：
-
-不存在完全相同的两个集合；
-每个元素在所有集合中出现次数之和为偶数。
-
-思路...</p>
+        <a class='next' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/'>
+          <p class='title'>P3203 弹飞绵羊-分块<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P3203 弹飞绵羊-分块
+观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。
+对于修改，重构整个块内信息即可。
+时间复杂度正确...</p>
         </a>
       
     </div>
@@ -3069,7 +3109,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P2490-SDOI2011-%E9%BB%91%E7%99%BD%E6%A3%8B"><span class="toc-text">P2490 [SDOI2011]黑白棋</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K-Nim-%E6%B8%B8%E6%88%8F"><span class="toc-text">K-Nim 游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E6%80%A7%E8%AF%81%E6%98%8E"><span class="toc-text">感性证明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p2490-sdoi2011%E9%BB%91%E7%99%BD%E6%A3%8B"><span class="toc-text">P2490 [SDOI2011]黑白棋</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#k-nim-%E6%B8%B8%E6%88%8F"><span class="toc-text">K-Nim 游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E6%80%A7%E8%AF%81%E6%98%8E"><span class="toc-text">感性证明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3209,7 +3249,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4221,7 +4263,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 

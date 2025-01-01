@@ -50,12 +50,12 @@
   <title>分数规划 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,二分法,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="问题描述 有 \(n\) 个物品，每种物品两个权值 \(a_i\)，\(b_i\)，求一组 \(w_i\in\{0,1\}\)，使得 \[ \frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i} \] 最大（或最小）。 有可能包含其他限制。 二分法 显然答案是单调的。对一个答案 \(mid\)，有 \[ \beg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分数规划">
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="问题描述有 $n$ 个物品，每种物品两个权值 $a_i$，$b_i$，求一组 $w_i\in{0,1}$，使得 $$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i}$$ 最大（或最小）。 有可能包含其他限制。 二分法显然答案是单调的。对一个答案 $mid$，有 $$\begin{aligned}&amp;\f">
+<meta property="og:description" content="问题描述 有 \(n\) 个物品，每种物品两个权值 \(a_i\)，\(b_i\)，求一组 \(w_i\in\{0,1\}\)，使得 \[ \frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i} \] 最大（或最小）。 有可能包含其他限制。 二分法 显然答案是单调的。对一个答案 \(mid\)，有 \[ \beg">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1735749212996),
+    lastupdate: new Date(1735749440896),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2803,14 +2803,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>有 $n$ 个物品，每种物品两个权值 $a_i$，$b_i$，求一组 $w_i\in{0,1}$，使得</p>
-<p>$$<br>\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i}<br>$$</p>
+    <h2 id="问题描述">问题描述</h2>
+<p>有 <span class="math inline">\(n\)</span> 个物品，每种物品两个权值
+<span class="math inline">\(a_i\)</span>，<span
+class="math inline">\(b_i\)</span>，求一组 <span
+class="math inline">\(w_i\in\{0,1\}\)</span>，使得</p>
+<p><span class="math display">\[
+\frac{\sum_{i=1}^n w_i\cdot a_i}{\sum_{i=1}^n w_i\cdot b_i}
+\]</span></p>
 <p>最大（或最小）。</p>
 <p>有可能包含其他限制。</p>
-<h2 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h2><p>显然答案是单调的。对一个答案 $mid$，有</p>
-<p>$$<br>\begin{aligned}<br>&amp;\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i}&gt;mid\<br>\Leftrightarrow&amp;\sum_{i&#x3D;1}^n w_i\cdot a_i-mid\sum_{i&#x3D;1}^n w_i\cdot b_i&gt;0\<br>\Leftrightarrow&amp;\sum_{i&#x3D;1}^n w_i\cdot (a_i-mid \cdot b_i)&gt;0\<br>\end{aligned}<br>$$</p>
-<p>因此可以对该权值 $a_i-mid \cdot b_i$ 进行贪心对答案进行检查。顺便满足题目要求。</p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=2976">POJ2976</a></p>
+<h2 id="二分法">二分法</h2>
+<p>显然答案是单调的。对一个答案 <span
+class="math inline">\(mid\)</span>，有</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\frac{\sum_{i=1}^n w_i\cdot a_i}{\sum_{i=1}^n w_i\cdot
+b_i}&gt;mid\\
+\Leftrightarrow&amp;\sum_{i=1}^n w_i\cdot a_i-mid\sum_{i=1}^n w_i\cdot
+b_i&gt;0\\
+\Leftrightarrow&amp;\sum_{i=1}^n w_i\cdot (a_i-mid \cdot b_i)&gt;0\\
+\end{aligned}
+\]</span></p>
+<p>因此可以对该权值 <span class="math inline">\(a_i-mid \cdot
+b_i\)</span> 进行贪心对答案进行检查。顺便满足题目要求。</p>
+<h2 id="例题">例题</h2>
+<p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=2976">POJ2976</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//01分数规划 </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,k;</span><br><span class="line"><span class="type">int</span> a[<span class="number">1010</span>],b[<span class="number">1010</span>];</span><br><span class="line"><span class="type">double</span> d[<span class="number">1010</span>];</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> eps=<span class="number">1e-7</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">ok</span><span class="params">(<span class="type">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    d[i]=a[i]-x*b[i];</span><br><span class="line">    <span class="built_in">sort</span>(d<span class="number">+1</span>,d<span class="number">+1</span>+n);</span><br><span class="line">    <span class="type">double</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=n;i&gt;=k<span class="number">+1</span>;i--)ans+=d[i];</span><br><span class="line">    <span class="keyword">return</span> ans&gt;=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;k) <span class="keyword">and</span> n|k)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,a+i);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,b+i);</span><br><span class="line"><span class="type">double</span> l=<span class="number">0</span>,r=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(r-l&gt;eps)</span><br><span class="line">&#123;</span><br><span class="line"><span class="type">double</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">ok</span>(mid))l=mid;</span><br><span class="line"><span class="keyword">else</span> r=mid;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%.0f\n&quot;</span>,l*<span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -2909,21 +2927,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>中国剩余定理</p>
-          <p class='content'>
-“有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
-
-中国剩余定理即求多个同余方程的解。
-举个栗子。求一个数x，使得：$$\begin{cases}x≡2\...</p>
+        <a class='prev' href='/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>分层图</p>
+          <p class='content'>前言
+前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ
+所以又在网上找着看了看写一篇博客备忘。
+学习笔记真的很有用！
+分层图
+这个很容易理解，来源就是在一些最短路的问...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/%E5%88%86%E5%B1%82%E5%9B%BE/'>
-          <p class='title'>分层图<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ 所以又在网上找着看了看写一篇博客备忘。
-学习笔记真的很有用！
-分层图这个很容易理解，来源就是在一些最短路的问题上题目又加了...</p>
+        <a class='next' href='/2022/04/30/%E5%8A%A8%E6%80%81%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%93%E7%BB%83/'>
+          <p class='title'>动态逆序对专练<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>就是三倍经验
+题意
+维护一个序列，每次修改后求出当前序列逆序对个数。
+思路
+题目让我们求出 \[
+\sum_{i=1}^n\sum_{j=i+1}^n[a_i&gt;a_j]
+\] ...</p>
         </a>
       
     </div>
@@ -3196,7 +3219,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4208,7 +4233,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 
