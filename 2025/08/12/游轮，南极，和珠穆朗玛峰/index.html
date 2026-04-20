@@ -50,12 +50,12 @@
   <title>游轮，南极，和珠穆朗玛峰 - StarCried 的狼窝</title>
   <meta name="keywords" content="随想,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
-  
+  <meta name="description" content="五月劳动节的假期，我和彬瑞开启了四天四夜的游轮之旅。这次旅行并不便宜，我们考虑了很久，才在还剩半个月的时间里下定决心买票——实际上，在出发前两天我才拿到我的护照。 那是一次很美好的旅行。巨大的游轮，里面有各式各样的娱乐设施和餐厅，以及红紫色的酒吧。每桌一位的专属服务员，无限的美食，一望无际的大海，都让我感到高消费带来的遍历、舒适和快乐。 我们开始这趟旅行的原因是，想珍惜年轻的时间享受时光不留遗">
 <meta property="og:type" content="article">
 <meta property="og:title" content="游轮，南极，和珠穆朗玛峰">
 <meta property="og:url" content="https://starcried.github.io/2025/08/12/%E6%B8%B8%E8%BD%AE%EF%BC%8C%E5%8D%97%E6%9E%81%EF%BC%8C%E5%92%8C%E7%8F%A0%E7%A9%86%E6%9C%97%E7%8E%9B%E5%B3%B0/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="五月劳动节的假期，我和彬瑞开启了四天四夜的游轮之旅。这次旅行并不便宜，我们考虑了很久，才在还剩半个月的时间里下定决心买票——实际上，在出发前两天我才拿到我的护照。 那是一次很美好的旅行。巨大的游轮，里面有各式各样的娱乐设施和餐厅，以及红紫色的酒吧。每桌一位的专属服务员，无限的美食，一望无际的大海，都让我感到高消费带来的遍历、舒适和快乐。 我们开始这趟旅行的原因是，想珍惜年轻的时间享受时光不留遗憾，">
+<meta property="og:description" content="五月劳动节的假期，我和彬瑞开启了四天四夜的游轮之旅。这次旅行并不便宜，我们考虑了很久，才在还剩半个月的时间里下定决心买票——实际上，在出发前两天我才拿到我的护照。 那是一次很美好的旅行。巨大的游轮，里面有各式各样的娱乐设施和餐厅，以及红紫色的酒吧。每桌一位的专属服务员，无限的美食，一望无际的大海，都让我感到高消费带来的遍历、舒适和快乐。 我们开始这趟旅行的原因是，想珍惜年轻的时间享受时光不留遗">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2025-08-12T11:55:50.000Z">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1776097891465),
+    lastupdate: new Date(1776703969575),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2316,7 +2316,63 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<!-- hexo injector head_end start -->
+<style>
+/* 默认日间模式颜色 */
+:root {
+    --qq-my-bg: #0099FF;
+    --qq-my-text: #FFFFFF;
+    --qq-other-bg: #F0F0F0; /* 浅灰，解决在纯白背景下看不清的问题 */
+    --qq-other-text: #333333;
+    --qq-avatar-bg: #E0E0E0;
+}
+
+/* 适配 Volantis 的暗色模式 (Dark Mode) */
+[data-theme="dark"] {
+    --qq-my-bg: #1A598F;    /* 暗色下更柔和的深蓝 */
+    --qq-my-text: #E8E8E8;
+    --qq-other-bg: #2D2D2D; /* 暗色下的深灰色 */
+    --qq-other-text: #E8E8E8;
+    --qq-avatar-bg: #444444;
+}
+
+/* 兜底：如果用户系统开启了深色，且主题没有强制日间模式 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --qq-my-bg: #1A598F;
+        --qq-my-text: #E8E8E8;
+        --qq-other-bg: #2D2D2D;
+        --qq-other-text: #E8E8E8;
+        --qq-avatar-bg: #444444;
+    }
+}
+
+.qq-chat-container { display: flex; flex-direction: column; gap: 16px; padding: 10px 0; background-color: transparent; margin: 1.5rem 0; font-family: inherit; }
+.chat-message { display: flex; width: 100%; align-items: flex-start; }
+.chat-left { flex-direction: row; }
+.chat-right { flex-direction: row-reverse; }
+
+.chat-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--qq-avatar-bg); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #888; flex-shrink: 0; overflow: hidden; /* 保证方形图片在圆角内 */ }
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-left .chat-avatar { margin-right: 12px; }
+.chat-right .chat-avatar { margin-left: 12px; }
+.chat-continuous .chat-avatar { visibility: hidden; }
+
+.chat-content { display: flex; flex-direction: column; max-width: 75%; }
+.chat-left .chat-content { align-items: flex-start; }
+.chat-right .chat-content { align-items: flex-end; }
+
+.chat-name { font-size: 0.8rem; color: #888; margin-bottom: 4px; white-space: nowrap; }
+.chat-time { font-size: 0.75rem; color: #aaa; margin-left: 6px; }
+
+.chat-bubble { padding: 10px 14px; border-radius: 12px; font-size: 0.95rem; line-height: 1.6; word-break: break-word; text-align: left; }
+.chat-left .chat-bubble { background-color: var(--qq-other-bg); color: var(--qq-other-text); border-top-left-radius: 2px; }
+.chat-right .chat-bubble { background-color: var(--qq-my-bg); color: var(--qq-my-text); border-top-right-radius: 2px; }
+
+.chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
+.chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
+</style>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2804,13 +2860,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>五月劳动节的假期，我和彬瑞开启了四天四夜的游轮之旅。这次旅行并不便宜，我们考虑了很久，才在还剩半个月的时间里下定决心买票——实际上，在出发前两天我才拿到我的护照。</p>
 <p>那是一次很美好的旅行。巨大的游轮，里面有各式各样的娱乐设施和餐厅，以及红紫色的酒吧。每桌一位的专属服务员，无限的美食，一望无际的大海，都让我感到高消费带来的遍历、舒适和快乐。</p>
 <p>我们开始这趟旅行的原因是，想珍惜年轻的时间享受时光不留遗憾，并且摆脱只会存钱不会花钱的消费观念。从结果来看无疑是很成功的（指我的存款显著减少了），同时也让我重新提起了那个没有终止的思考：人生的意义是什么？或者，简化些的版本，我想过的人生是怎样的？</p>
-<p>最近一直在求职。我把自己反复打磨到反光的简历拿给各种人看，虽然表面光鲜，总能过简历筛，但还是要笔试面试的。想做 QR 岗需得参加最长 7 小时的笔试，考概率统计组合算法题。然而我并没有很认真学概率统计方面的课程，做题做得十分勉强。一次又一次的失利令我信心大失，又陷入了痛苦的焦虑之中。</p>
+<p>最近一直在求职。我把自己反复打磨到反光的简历拿给各种人看，虽然表面光鲜，总能过简历筛，但还是要笔试面试的。想做
+QR 岗需得参加最长 7
+小时的笔试，考概率统计组合算法题。然而我并没有很认真学概率统计方面的课程，做题做得十分勉强。一次又一次的失利令我信心大失，又陷入了痛苦的焦虑之中。</p>
 <p>焦虑并非毫无用处，事实上，他是我打起精神前进的必需品。然而，以前的我尚且能用可见的进步缓解我的焦虑，今天的我已很难做到这一点：我的能力和精力达到了上限。我对我自身有了更深的了解，也对社会乃至世界有了更深的了解，我此刻正站在人生道路的关键岔口——但我却没有足够的经验和技巧来做出决定。这些决定十分重要，包含了取舍、牺牲、理性的思考和感性的参悟。它们决定着我未来会成为什么样的人，决定着我会为什么而奋斗终生。这些决定如此重要，如此困难，故而化为焦虑，我无法用之前的经验疏解的焦虑。唯一的办法就是改变自己的想法和认知。我从小到大在应试教育中养成的想法，此刻成了我继续成长的阻碍。</p>
 <p>第一个想法，即是所谓“争做第一”的攀比心理。从小我便从老师和家长那里灌输这种思维方式，他们希望我竞技争先，和更优秀的孩子比，做所谓的“第一名”。由于我希望得到认可（这个之后也会提到），且碰巧有一些天赋，我的确满足了长辈的要求，也非常受用他们的赞赏。渐渐地，我养成了一个习惯：见到任何人时第一件事是评价对方的各项能力，尤其是同龄人，且不限任何角度。只要是我觉得好的，我都会去比。见到聪明学生，我会去比排名和做题；报了篮球班，我会和那些又高又强的体育生比；再到后来，和高中同学的谈话中，甚至开始比哲学，比谁的思想深度更深，谁更有道理可以说服他人……最后，我见到什么人都会条件反射地想：他哪方面比我厉害？我可以做得和他一样吗？</p>
 <p>这些想法固然是好的，也的确很大程度帮到了我进步，但问题是——它们的动机来自于“攀比”。攀比，是中性词还是贬义词？如果它后面跟的是我刚才说的东西，比如成绩、能力等，那仿佛可以定义为一种正向的竞争。如果后面跟的是比如消费能力、社会地位等，那又是妥妥的贬义词。但我认为，“攀比”一词的核心不在于宾语——比的东西是否符合社会主流认知——而在于主语，在于要比的那个人，是以什么样的心态去比的。如果那人是以满足自己虚荣心为目的去比，那么即便比的是如能力、思想这般高尚的东西，即便会被社会认同、被其他人夸赞，即便提升名次的手段的确是提升自己，却也仍然是攀比，只因为其动机不纯。</p>
 <p>既然说到“不纯”，那动机的纯与不纯如何区别？我们可以想象一位学者，研究员，他已经达到学术评价体系中的最高峰，拥有最好的资源和名利。他之后会做什么？如果是纯粹的学者，那毫无疑问是继续研究，致力于人类认知的发展。但实际上对于大多数这样的人——我可以肯定的说——他们绝对分神到了其他地方，分神到了巩固自己或家人地位、用资源换取稳定和利益，甚至压制竞争对手上。程度大点，我们就称之为“学阀”。这是一种“邪恶的”不纯。还有一种不纯则是我身边许多人的情况。我的同学们尽力去保研、直博，只是因为现在出去找不到工作，或者不知道自己想干什么，于是在学校拖延时间，试图等待人生的正确道路自己送上门来。</p>
 <p>回归正题。我的动机显然不是为了提升自己本身，而是为了超越别人，满足被他人仰视、称赞的快感，喜欢被别人叫做“聪明的小孩”。这种动机适合在体育竞技或者当兵的时候用，但对我来说，在许多情况下会有负面作用：如果和别人在自己不擅长、没有天赋的赛道比，那么付出的经历越多，受到的挫败感越大。在这种情况下，确实可以及时止损换赛道，可问题是，如果这条路是自己喜欢的呢？小时候我曾喜欢画画，在纸上画、墙上画、用电脑画图画。但由于没有人指导，总是画得很抽象简约。直到一次做美术课作业时，我的妈妈说我画得好丑，“没有画画的天赋”，直接帮我画了一幅。我突然就丧失了对画画的全部热情。我开始排斥画画，不敢展示自己画的任何东西，因为我最在意的人对我下了“没有天赋”的评价。然而，在我的记忆里，画画是我少数自己只是因为感兴趣就开始的活动之一。如此，一份纯粹的动机葬送在了我的虚荣心下。</p>
-<p>反过来讲，我也会因为虚荣心去做一些我本来没有兴趣的事情。这部分可以算是好处居多，因为它会帮我尝试一些全新的东西，比如做兽装、重拾画画、做 3D 模型。如果不是为了让大家觉得我很厉害，我应该一辈子不会去碰针线活、学 Blender 和 Unity。但当我实际上手做之后，如果运气好有点天赋，那我很大概率其实会享受那个过程。在学着做 3D 模型时，我跟着教程做到了凌晨四点，看着自己的设子根据自己的心意渐渐成型的确是令人愉悦的事情。如果到了这种状态，就有很大的机会将其转化为纯粹的爱好——目前对兴趣爱好的成功率较高，因为没有明显的评价体系身边也没有许多能被攀比的人。</p>
+<p>反过来讲，我也会因为虚荣心去做一些我本来没有兴趣的事情。这部分可以算是好处居多，因为它会帮我尝试一些全新的东西，比如做兽装、重拾画画、做
+3D 模型。如果不是为了让大家觉得我很厉害，我应该一辈子不会去碰针线活、学
+Blender 和
+Unity。但当我实际上手做之后，如果运气好有点天赋，那我很大概率其实会享受那个过程。在学着做
+3D
+模型时，我跟着教程做到了凌晨四点，看着自己的设子根据自己的心意渐渐成型的确是令人愉悦的事情。如果到了这种状态，就有很大的机会将其转化为纯粹的爱好——目前对兴趣爱好的成功率较高，因为没有明显的评价体系身边也没有许多能被攀比的人。</p>
 <p>因此，要解决这种焦虑，最有效的办法就是断掉焦虑的根：攀比。然而，十几年来养成的习惯肯定无法一蹴而就地改变，而且我还想保留其中的正面部分，于是我决定用理性的思考计划来解析和说服我自己。首先定性，想清楚自己为什么要做这件事，对它进行必要性、紧急性等分级；然后设立目标，明确所有事都是几乎无法做到最好的，结合必要性确定自己想达到什么水平、需要付出多少等；之后对目标进行长线计划，分段完成什么子目标，预设情景协调自己的各线，如何融入自己的生活方式之中；最后脚踏实地，一步步开始实践，并由实际情况反馈调整计划。如此一来，对于任何事情就可以明确其定位，用符合实际的定位代替“做第一”。如果遇到比自己强的人，可以用类似的方法分析他对这件事的定位，然后将自己与其整体进行评价，通常会发现自己并没有什么理由非得超越他。</p>
 <p>第二个想法，则是认可感。刚才提到，我进行攀比的最大动机就是为了得到别人的认可。这导致我将自己的价值建立在他人的评价之上，而这个“他人”通常是任何人，好人，烂人，价值观不同的人，因此必定会有不可调和的矛盾。同时，我还会被身边人的价值观推着走，自己无法控制，导致自己疲惫而无所适从。虽然我一直以为自己有独立思考和反抗精神，但这种错误的价值观是耳濡目染、潜移默化的，因此直到最近我才发现，自己的根是歪的，飘的，不稳定的。</p>
 <p>不得不承认，认可感是人类的正常心理，而我的确很受用这种心理，从出生一直在受用着。但如果不摆脱这种心理，肯定称不上是精神独立和成熟。因此，我必须削弱认可感的重要地位，逐渐建立自己的个人价值观，形成自己的评价体系。这并不简单，需要足够的能力、自信和定力，而我在这几年的实践摸索中已经基本得到了这些东西。只有建立了自己的价值观，才算拥有真正的自尊。一个很明显的、值得我自豪的转变是，我可以自信地表述我的观点，并对他人不符合我价值观的评价心如止水。之前的我可能会认为这是一种自大，但这实际是一种必要的自信。过度谦逊会导致自卑和自我否定。</p>
@@ -2927,7 +2990,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='next' href='/2025/06/23/Outer-Wilds/'>
           <p class='title'>Outer Wilds<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>2025.06.23很早之前的游戏了，初中还是高中时也在视频网站上见过。但是弹幕和评论都建议没玩过的去亲自体验一下，于是把它当做一个需要仔细品味的艺术品，过滤了剧透内容，等待一个机会完整体验一下...</p>
+          <p class='content'>2025.06.23
+很早之前的游戏了，初中还是高中时也在视频网站上见过。但是弹幕和评论都建议没玩过的去亲自体验一下，于是把它当做一个需要仔细品味的艺术品，过滤了剧透内容，等待一个机会完整体验...</p>
         </a>
       
     </div>
@@ -4194,7 +4258,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 

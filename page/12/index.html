@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1776097891465),
+    lastupdate: new Date(1776703969575),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2314,7 +2314,63 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<!-- hexo injector head_end start -->
+<style>
+/* 默认日间模式颜色 */
+:root {
+    --qq-my-bg: #0099FF;
+    --qq-my-text: #FFFFFF;
+    --qq-other-bg: #F0F0F0; /* 浅灰，解决在纯白背景下看不清的问题 */
+    --qq-other-text: #333333;
+    --qq-avatar-bg: #E0E0E0;
+}
+
+/* 适配 Volantis 的暗色模式 (Dark Mode) */
+[data-theme="dark"] {
+    --qq-my-bg: #1A598F;    /* 暗色下更柔和的深蓝 */
+    --qq-my-text: #E8E8E8;
+    --qq-other-bg: #2D2D2D; /* 暗色下的深灰色 */
+    --qq-other-text: #E8E8E8;
+    --qq-avatar-bg: #444444;
+}
+
+/* 兜底：如果用户系统开启了深色，且主题没有强制日间模式 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --qq-my-bg: #1A598F;
+        --qq-my-text: #E8E8E8;
+        --qq-other-bg: #2D2D2D;
+        --qq-other-text: #E8E8E8;
+        --qq-avatar-bg: #444444;
+    }
+}
+
+.qq-chat-container { display: flex; flex-direction: column; gap: 16px; padding: 10px 0; background-color: transparent; margin: 1.5rem 0; font-family: inherit; }
+.chat-message { display: flex; width: 100%; align-items: flex-start; }
+.chat-left { flex-direction: row; }
+.chat-right { flex-direction: row-reverse; }
+
+.chat-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--qq-avatar-bg); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #888; flex-shrink: 0; overflow: hidden; /* 保证方形图片在圆角内 */ }
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-left .chat-avatar { margin-right: 12px; }
+.chat-right .chat-avatar { margin-left: 12px; }
+.chat-continuous .chat-avatar { visibility: hidden; }
+
+.chat-content { display: flex; flex-direction: column; max-width: 75%; }
+.chat-left .chat-content { align-items: flex-start; }
+.chat-right .chat-content { align-items: flex-end; }
+
+.chat-name { font-size: 0.8rem; color: #888; margin-bottom: 4px; white-space: nowrap; }
+.chat-time { font-size: 0.75rem; color: #aaa; margin-left: 6px; }
+
+.chat-bubble { padding: 10px 14px; border-radius: 12px; font-size: 0.95rem; line-height: 1.6; word-break: break-word; text-align: left; }
+.chat-left .chat-bubble { background-color: var(--qq-other-bg); color: var(--qq-other-text); border-top-left-radius: 2px; }
+.chat-right .chat-bubble { background-color: var(--qq-my-bg); color: var(--qq-my-text); border-top-right-radius: 2px; }
+
+.chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
+.chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
+</style>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2704,7 +2760,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/[省选联考 2020 A B 卷] 冰火战士/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Trie树/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2722,21 +2778,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/"  itemprop="url">
-        [省选联考 2020 A B 卷] 冰火战士
+      <a href="/2022/04/30/Trie%E6%A0%91/"  itemprop="url">
+        Trie树
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        对树状数组的理解加深了！
-转化题意
-动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
-思路
-首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。
-再次阅读，发现冰系是一个（以温度为自变量的）单调不降序列，每次修改一个战士就是修改一段后缀。火系相反，修改前缀。
-深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述...
+        就是把字符串转变成一个树，每个节点连接下一个字符，用空间换时间。
+对于区分大小写或不区分的题目，只需要改变 ch[][26]
+的值就行了。
+ch[u][x] 表示 u 节点（标号决定）下一个
+x 字符节点的标号。
+如果题目让记录附加值，那就用 val[]
+在插入时记录一下就好了。
+1234567891011121314151617181920212223242526272829...
       
     
   </div>
@@ -2757,7 +2814,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/Trie%E6%A0%91/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2825,76 +2882,6 @@ Input
       
         <div>
           <a class='readmore' href='/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Trie树/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/Trie%E6%A0%91/"  itemprop="url">
-        Trie树
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        就是把字符串转变成一个树，每个节点连接下一个字符，用空间换时间。
-对于区分大小写或不区分的题目，只需要改变 ch[][26]
-的值就行了。
-ch[u][x] 表示 u 节点（标号决定）下一个
-x 字符节点的标号。
-如果题目让记录附加值，那就用 val[]
-在插入时记录一下就好了。
-1234567891011121314151617181920212223242526272829...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/Trie%E6%A0%91/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3053,7 +3040,7 @@ x≡2\pmod {11}\end{cases}\]
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/二项式反演/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/[省选联考 2020 A B 卷] 冰火战士/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3071,21 +3058,21 @@ x≡2\pmod {11}\end{cases}\]
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/"  itemprop="url">
-        二项式反演
+      <a href="/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/"  itemprop="url">
+        [省选联考 2020 A B 卷] 冰火战士
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        二项式反演
-\[
-\begin{aligned}
-g_n=\sum_{i=0}^n(-1)^i\binom ni f_i\Leftrightarrow
-f_n=\sum_{i=0}^n(-1)^i\binom ni g_i\\
-g_n=\sum_{i=0}^n\binom ni f_i\Leftrightarrow
-g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
+        对树状数组的理解加深了！
+转化题意
+动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
+思路
+首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。
+再次阅读，发现冰系是一个（以温度为自变量的）单调不降序列，每次修改一个战士就是修改一段后缀。火系相反，修改前缀。
+深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述...
       
     
   </div>
@@ -3096,17 +3083,17 @@ g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%5B%E7%9C%81%E9%80%89%E8%81%94%E8%80%83%202020%20A%20B%20%E5%8D%B7%5D%20%E5%86%B0%E7%81%AB%E6%88%98%E5%A3%AB/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3176,6 +3163,75 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
       
         <div>
           <a class='readmore' href='/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/二项式反演/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/"  itemprop="url">
+        二项式反演
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        二项式反演
+\[
+\begin{aligned}
+g_n=\sum_{i=0}^n(-1)^i\binom ni f_i\Leftrightarrow
+f_n=\sum_{i=0}^n(-1)^i\binom ni g_i\\
+g_n=\sum_{i=0}^n\binom ni f_i\Leftrightarrow
+g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3334,7 +3390,7 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/动态逆序对专练/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/匈牙利算法（二分图最大匹配）/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3352,24 +3408,24 @@ complexity）是一个函数，它定性描述该算法的运行时间。其原�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E5%8A%A8%E6%80%81%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%93%E7%BB%83/"  itemprop="url">
-        动态逆序对专练
+      <a href="/2022/04/30/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/"  itemprop="url">
+        匈牙利算法（二分图最大匹配）
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        就是三倍经验
-题意
-维护一个序列，每次修改后求出当前序列逆序对个数。
-思路
-题目让我们求出 \[
-\sum_{i=1}^n\sum_{j=i+1}^n[a_i&gt;a_j]
-\] 也就是让我们求出满足 \[
-pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
-\] 的点对数量。
-对于不修改的情况，这显然是一个三维偏序问题，用树状数组或归并处理都可以。...
+        无用的文字
+又是一篇笔记，因为不做题的话太容易忘了啊啊啊QAQ看到一个题目知道用什么算法做但就是想不出来的感觉太难受了……
+二分图最大匹配
+二分图
+二分图是指可以被分为两个不相交点子集的图，其中相同点集内无连边。
+匈牙利算法
+匈牙利算法是用来寻找最大匹配的一个算法。
+
+交替路：从一个未匹配点出发，依次经过非匹配边、匹配边、非匹配边……形成的路径叫交替路。
+增广路：从一个未匹...
       
     
   </div>
@@ -3380,17 +3436,17 @@ pos_i&lt;pos_j\&amp;\&amp;a_i&gt;a_j
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E5%8A%A8%E6%80%81%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%93%E7%BB%83/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/' itemprop="url">
             Read More
           </a>
         </div>
@@ -4731,7 +4787,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 

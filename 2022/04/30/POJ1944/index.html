@@ -1892,7 +1892,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1776097891465),
+    lastupdate: new Date(1776703969575),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2318,7 +2318,63 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<!-- hexo injector head_end start -->
+<style>
+/* 默认日间模式颜色 */
+:root {
+    --qq-my-bg: #0099FF;
+    --qq-my-text: #FFFFFF;
+    --qq-other-bg: #F0F0F0; /* 浅灰，解决在纯白背景下看不清的问题 */
+    --qq-other-text: #333333;
+    --qq-avatar-bg: #E0E0E0;
+}
+
+/* 适配 Volantis 的暗色模式 (Dark Mode) */
+[data-theme="dark"] {
+    --qq-my-bg: #1A598F;    /* 暗色下更柔和的深蓝 */
+    --qq-my-text: #E8E8E8;
+    --qq-other-bg: #2D2D2D; /* 暗色下的深灰色 */
+    --qq-other-text: #E8E8E8;
+    --qq-avatar-bg: #444444;
+}
+
+/* 兜底：如果用户系统开启了深色，且主题没有强制日间模式 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --qq-my-bg: #1A598F;
+        --qq-my-text: #E8E8E8;
+        --qq-other-bg: #2D2D2D;
+        --qq-other-text: #E8E8E8;
+        --qq-avatar-bg: #444444;
+    }
+}
+
+.qq-chat-container { display: flex; flex-direction: column; gap: 16px; padding: 10px 0; background-color: transparent; margin: 1.5rem 0; font-family: inherit; }
+.chat-message { display: flex; width: 100%; align-items: flex-start; }
+.chat-left { flex-direction: row; }
+.chat-right { flex-direction: row-reverse; }
+
+.chat-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--qq-avatar-bg); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #888; flex-shrink: 0; overflow: hidden; /* 保证方形图片在圆角内 */ }
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-left .chat-avatar { margin-right: 12px; }
+.chat-right .chat-avatar { margin-left: 12px; }
+.chat-continuous .chat-avatar { visibility: hidden; }
+
+.chat-content { display: flex; flex-direction: column; max-width: 75%; }
+.chat-left .chat-content { align-items: flex-start; }
+.chat-right .chat-content { align-items: flex-end; }
+
+.chat-name { font-size: 0.8rem; color: #888; margin-bottom: 4px; white-space: nowrap; }
+.chat-time { font-size: 0.75rem; color: #aaa; margin-left: 6px; }
+
+.chat-bubble { padding: 10px 14px; border-radius: 12px; font-size: 0.95rem; line-height: 1.6; word-break: break-word; text-align: left; }
+.chat-left .chat-bubble { background-color: var(--qq-other-bg); color: var(--qq-other-text); border-top-left-radius: 2px; }
+.chat-right .chat-bubble { background-color: var(--qq-my-bg); color: var(--qq-my-text); border-top-right-radius: 2px; }
+
+.chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
+.chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
+</style>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2908,22 +2964,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P7473%20%5BNOI%20Online%202021%20%E5%85%A5%E9%97%A8%E7%BB%84%5D%20%E9%87%8D%E5%8A%9B%E7%90%83/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P7473 [NOI Online 2021 入门组] 重力球</p>
+        <a class='prev' href='/2022/04/30/P7324%20%5BWC2021%5D%20%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P7324 [WC2021] 表达式求值</p>
+          <p class='content'>P7324 [WC2021] 表达式求值
+闲话
+WC2021 我只得了 20 分，三道题总共 20
+分。我是下场了突然后知后觉这件事的，主要原因是我开了 C++11，然后 T1 T2
+都...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/P7473%20%5BNOI%20Online%202021%20%E5%85%A5%E9%97%A8%E7%BB%84%5D%20%E9%87%8D%E5%8A%9B%E7%90%83/'>
+          <p class='title'>P7473 [NOI Online 2021 入门组] 重力球<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>P7473 [NOI Online 2021
 入门组] 重力球
 题意
 给你一个正方形平面，某些位置有障碍，对于平面上两个球，每次你可以改变重力方向使两个球下落到最底端，求使两个球位置重合的...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/POJ3268-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84-%E5%8F%8D%E5%90%91%E5%AD%98%E8%BE%B9/'>
-          <p class='title'>POJ3268-最短路径-反向存边<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>因为是单向边，牛儿来回的路径长度并不相同，所以需要用两次
-dijkstra，一次正向从 \(x\) 开始
-dijkstra，再将边全部反向存再来一次。
-因为是板子题比较良心 \(n\)
-...</p>
         </a>
       
     </div>
@@ -4190,7 +4246,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 

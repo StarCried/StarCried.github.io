@@ -59,7 +59,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2026-04-09T15:36:56.000Z">
-<meta property="article:modified_time" content="2026-04-09T16:13:05.803Z">
+<meta property="article:modified_time" content="2026-04-20T16:39:35.020Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="生活">
 <meta name="twitter:card" content="summary">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1776097891465),
+    lastupdate: new Date(1776703969575),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2316,7 +2316,63 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<!-- hexo injector head_end start -->
+<style>
+/* 默认日间模式颜色 */
+:root {
+    --qq-my-bg: #0099FF;
+    --qq-my-text: #FFFFFF;
+    --qq-other-bg: #F0F0F0; /* 浅灰，解决在纯白背景下看不清的问题 */
+    --qq-other-text: #333333;
+    --qq-avatar-bg: #E0E0E0;
+}
+
+/* 适配 Volantis 的暗色模式 (Dark Mode) */
+[data-theme="dark"] {
+    --qq-my-bg: #1A598F;    /* 暗色下更柔和的深蓝 */
+    --qq-my-text: #E8E8E8;
+    --qq-other-bg: #2D2D2D; /* 暗色下的深灰色 */
+    --qq-other-text: #E8E8E8;
+    --qq-avatar-bg: #444444;
+}
+
+/* 兜底：如果用户系统开启了深色，且主题没有强制日间模式 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --qq-my-bg: #1A598F;
+        --qq-my-text: #E8E8E8;
+        --qq-other-bg: #2D2D2D;
+        --qq-other-text: #E8E8E8;
+        --qq-avatar-bg: #444444;
+    }
+}
+
+.qq-chat-container { display: flex; flex-direction: column; gap: 16px; padding: 10px 0; background-color: transparent; margin: 1.5rem 0; font-family: inherit; }
+.chat-message { display: flex; width: 100%; align-items: flex-start; }
+.chat-left { flex-direction: row; }
+.chat-right { flex-direction: row-reverse; }
+
+.chat-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--qq-avatar-bg); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #888; flex-shrink: 0; overflow: hidden; /* 保证方形图片在圆角内 */ }
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-left .chat-avatar { margin-right: 12px; }
+.chat-right .chat-avatar { margin-left: 12px; }
+.chat-continuous .chat-avatar { visibility: hidden; }
+
+.chat-content { display: flex; flex-direction: column; max-width: 75%; }
+.chat-left .chat-content { align-items: flex-start; }
+.chat-right .chat-content { align-items: flex-end; }
+
+.chat-name { font-size: 0.8rem; color: #888; margin-bottom: 4px; white-space: nowrap; }
+.chat-time { font-size: 0.75rem; color: #aaa; margin-left: 6px; }
+
+.chat-bubble { padding: 10px 14px; border-radius: 12px; font-size: 0.95rem; line-height: 1.6; word-break: break-word; text-align: left; }
+.chat-left .chat-bubble { background-color: var(--qq-other-bg); color: var(--qq-other-text); border-top-left-radius: 2px; }
+.chat-right .chat-bubble { background-color: var(--qq-my-bg); color: var(--qq-my-text); border-top-right-radius: 2px; }
+
+.chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
+.chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
+</style>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2761,10 +2817,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2026-04-10T00:13:05+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2026-04-21T00:39:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 10, 2026</p>
+    <p>更新于：Apr 21, 2026</p>
   </a>
 </div>
 
@@ -2804,7 +2860,189 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>之前提到现在自己有什么想法会倾向于给朋友讲而非写博客，但又担忧聊的东西没法记下，于是干脆把聊天记录直接贴在这作为基底，然后加些后来的想法。这样既能
 push 自己写博客，对话的方式也能让内容更生动一些。</p>
 <p>这个对话发生在彬瑞过来帮我的公寓撕贴在墙上的胶，结果把墙纸带着撕下来之后。公寓门很不隔音，于是我买了个隔音门帘，需要用胶把魔术贴粘在门框一圈，粘完发现根本用不了（因为门是朝我们粘的这一侧打开的，会直接被门帘挡住，我俩都没想到这事），于是要把胶撕下来退货，结果劣质木板直接被胶带着撕下来了三块。为了不要太明显需要把撕下来的墙纸贴回去。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">Star_Cried: 04-07 21:16:40</span><br><span class="line">刚在贴木头 贴的歪七扭八的 感觉你来贴的话肯定很好</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:17:05</span><br><span class="line">买的胶水太黏了 刚才把我左右手一块黏在墙上了哈哈哈</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:17:50</span><br><span class="line">噗嗤 已经贴完了吗</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:17:59</span><br><span class="line">能洗干净不</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:18:02</span><br><span class="line">弄下来了</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:18:05</span><br><span class="line">还挺有趣的昨天撕下来墙皮的时候 有那么一小会感觉回到了小时候 感觉做了天大的错事非常慌张</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:18:12</span><br><span class="line">我也是</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:18:52</span><br><span class="line">我问你咋了你没回我的时候我就知道了哈哈哈</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:19:35</span><br><span class="line">我当时直接愣住了</span><br><span class="line">而且才和你一起看完租房合同哈哈哈</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:20:34</span><br><span class="line">确实想想也不是什么大事</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:21:02</span><br><span class="line">所以当时我特别想把它贴好</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:21:02</span><br><span class="line">大不了就是赔钱呗</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:21:19</span><br><span class="line">太有实力了小狼！</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:21:35</span><br><span class="line">嗯 就是这个大难临头的感觉 我觉得还挺珍惜的</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:22:04</span><br><span class="line">哈哈哈 不过今早起晚了我又感受了一次</span><br><span class="line"></span><br><span class="line">（彬瑞需要早起从公寓赶回公司）</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:22:10</span><br><span class="line">XD</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:22:56</span><br><span class="line">就是这种世界很小，事情很大的感觉</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:23:21</span><br><span class="line">其实意味着还有许多更大的事情我还没见到</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:23:51</span><br><span class="line">就是说还有很多能体验的东西？</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:24:35</span><br><span class="line">如果已经开始思考人生理想，到了探索之后的建房子阶段，或者感觉自己什么都见过而无聊的时候，是不太会有这种感觉的</span><br><span class="line"></span><br><span class="line">（之前我说，感觉我的小时候是玩 Minecraft 的探索阶段，乐趣在于不断发现新东西；现在是拿到好装备打完龙通关的建房子阶段，世界的边界被摸清了，找片好地方开始建基地，乐趣在于创造和经营。而当我逐渐无聊、失去兴趣，最后永远地离开这个存档的时候，便是死了）</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:25:43</span><br><span class="line">这种“天塌了”的感觉让我以为天离我很近 后面天慢慢不塌了，发现其实自己本来就压根够不着天</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:26:28</span><br><span class="line">天根本懒得塌下来压我</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:28:31</span><br><span class="line">然后自己在地上做什么呢？有的人反而想去摸天，研究火箭科学，飞上去发现所谓的天根本摸不着；有的人接受了这辈子就只能呆在地上，也不用杞人忧天，直接开摆；或者自己找事情做，在地上建房子，总之不再去想天的事情了</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:28:43</span><br><span class="line">也是狼自己越来越强 所以之前的天不是天了</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 21:29:17</span><br><span class="line">我没那么强 毕业和导师对我来说还是天来的</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 21:29:35</span><br><span class="line">XD</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="qq-chat-container" >
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 21:16:40</span></div>
+                <div class="chat-bubble">刚在贴木头 贴的歪七扭八的 感觉你来贴的话肯定很好</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">买的胶水太黏了 刚才把我左右手一块黏在墙上了哈哈哈</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 21:17:50</span></div>
+                <div class="chat-bubble">噗嗤 已经贴完了吗</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">能洗干净不</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 21:18:02</span></div>
+                <div class="chat-bubble">弄下来了</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">还挺有趣的昨天撕下来墙皮的时候 有那么一小会感觉回到了小时候 感觉做了天大的错事非常慌张</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 21:18:12</span></div>
+                <div class="chat-bubble">我也是</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 21:18:52</span></div>
+                <div class="chat-bubble">我问你咋了你没回我的时候我就知道了哈哈哈</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 21:19:35</span></div>
+                <div class="chat-bubble">我当时直接愣住了<br/>而且才和你一起看完租房合同哈哈哈</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">确实想想也不是什么大事</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">所以当时我特别想把它贴好</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 21:21:02</span></div>
+                <div class="chat-bubble">大不了就是赔钱呗</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 21:21:19</span></div>
+                <div class="chat-bubble">太有实力了小狼！</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 21:21:35</span></div>
+                <div class="chat-bubble">嗯 就是这个大难临头的感觉 我觉得还挺珍惜的</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 21:22:04</span></div>
+                <div class="chat-bubble">哈哈哈 不过今早起晚了我又感受了一次<br/><br/>（彬瑞需要早起从公寓赶回公司）</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 21:22:10</span></div>
+                <div class="chat-bubble">XD</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">就是这种世界很小，事情很大的感觉</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">其实意味着还有许多更大的事情我还没见到</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 21:23:51</span></div>
+                <div class="chat-bubble">就是说还有很多能体验的东西？</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 21:24:35</span></div>
+                <div class="chat-bubble">如果已经开始思考人生理想，到了探索之后的建房子阶段，或者感觉自己什么都见过而无聊的时候，是不太会有这种感觉的<br/><br/>（之前我说，感觉我的小时候是玩 Minecraft 的探索阶段，乐趣在于不断发现新东西；现在是拿到好装备打完龙通关的建房子阶段，世界的边界被摸清了，找片好地方开始建基地，乐趣在于创造和经营。而当我逐渐无聊、失去兴趣，最后永远地离开这个存档的时候，便是死了）</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">这种“天塌了”的感觉让我以为天离我很近 后面天慢慢不塌了，发现其实自己本来就压根够不着天</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">天根本懒得塌下来压我</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">然后自己在地上做什么呢？有的人反而想去摸天，研究火箭科学，飞上去发现所谓的天根本摸不着；有的人接受了这辈子就只能呆在地上，也不用杞人忧天，直接开摆；或者自己找事情做，在地上建房子，总之不再去想天的事情了</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 21:28:43</span></div>
+                <div class="chat-bubble">也是狼自己越来越强 所以之前的天不是天了</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">我没那么强 毕业和导师对我来说还是天来的</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 21:29:35</span></div>
+                <div class="chat-bubble">XD</div>
+            </div>
+        </div></div>
 <p>从小到大，随着见识、能力和责任的不断增长，越来越多的“天”被打破。这些“天”虽然阻碍我的认知，但同时又像宗教信徒遵守的教义一样，或者像汉代的儒教治国，在某种程度上指导人们的行为，也让他们有了目标和动力。“人在做，天在看。”我个人是不太喜欢这些所谓的“天”的，至少不喜欢这些被他人所创造的“天”。然而，我又不知我是否要为自己创造一个“天”，或者说一个“信仰”，来给我目标和标准。当前的感觉是，我刚打破了层层的天，突然感觉眼界宽阔，却无依无靠。要给自己建一个小房子吗？可是，我之前不是想无拘无束吗？</p>
 <p>无拘无束之人，一定有着某种坚定不易的“天”在吧，因此走到哪里都不会觉得迷惘。或许“天”虽然摸不到、塌不下来，但它的确是存在的，它能将无穷和虚空具体到眼前，让人们能够安心脚踏实地地走着路。</p>
 <p>天啊。</p>
@@ -2832,10 +3070,10 @@ push 自己写博客，对话的方式也能让内容更生动一些。</p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-04-10T00:13:05+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-04-21T00:39:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 10, 2026</p>
+    <p>更新于：Apr 21, 2026</p>
   </a>
 </div>
 
@@ -2907,7 +3145,12 @@ push 自己写博客，对话的方式也能让内容更生动一些。</p>
       
         <a class='prev' href='/2026/04/10/%E5%A3%81%E5%9E%92%E7%9A%84%E6%AF%81%E7%81%AD%E4%B8%8E%E5%BB%BA%E7%AD%91/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>壁垒的毁灭与建筑</p>
-          <p class='content'>1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253...</p>
+          <p class='content'>
+        
+            
+            
+                Star_Cried 04-07 18:22:26
+                我认为...</p>
         </a>
       
       
@@ -4183,7 +4426,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4466,7 +4709,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/日记/","name":"日记"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2026/04/09/天啊/","name":"天啊"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"天啊","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2026/04/09/%E5%A4%A9%E5%95%8A/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2026/04/09/%E5%A4%A9%E5%95%8A/","wordCount":0,"datePublished":"2026-04-09T15:36:56.000Z","dateModified":"2026-04-09T16:13:05.803Z","articleSection":"日记","keywords":"生活","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/日记/","name":"日记"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2026/04/09/天啊/","name":"天啊"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"天啊","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2026/04/09/%E5%A4%A9%E5%95%8A/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2026/04/09/%E5%A4%A9%E5%95%8A/","wordCount":0,"datePublished":"2026-04-09T15:36:56.000Z","dateModified":"2026-04-20T16:39:35.020Z","articleSection":"日记","keywords":"生活","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 

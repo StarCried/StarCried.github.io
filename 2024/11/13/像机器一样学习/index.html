@@ -1891,7 +1891,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1776097891465),
+    lastupdate: new Date(1776703969575),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2317,7 +2317,63 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<!-- hexo injector head_end start -->
+<style>
+/* 默认日间模式颜色 */
+:root {
+    --qq-my-bg: #0099FF;
+    --qq-my-text: #FFFFFF;
+    --qq-other-bg: #F0F0F0; /* 浅灰，解决在纯白背景下看不清的问题 */
+    --qq-other-text: #333333;
+    --qq-avatar-bg: #E0E0E0;
+}
+
+/* 适配 Volantis 的暗色模式 (Dark Mode) */
+[data-theme="dark"] {
+    --qq-my-bg: #1A598F;    /* 暗色下更柔和的深蓝 */
+    --qq-my-text: #E8E8E8;
+    --qq-other-bg: #2D2D2D; /* 暗色下的深灰色 */
+    --qq-other-text: #E8E8E8;
+    --qq-avatar-bg: #444444;
+}
+
+/* 兜底：如果用户系统开启了深色，且主题没有强制日间模式 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --qq-my-bg: #1A598F;
+        --qq-my-text: #E8E8E8;
+        --qq-other-bg: #2D2D2D;
+        --qq-other-text: #E8E8E8;
+        --qq-avatar-bg: #444444;
+    }
+}
+
+.qq-chat-container { display: flex; flex-direction: column; gap: 16px; padding: 10px 0; background-color: transparent; margin: 1.5rem 0; font-family: inherit; }
+.chat-message { display: flex; width: 100%; align-items: flex-start; }
+.chat-left { flex-direction: row; }
+.chat-right { flex-direction: row-reverse; }
+
+.chat-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--qq-avatar-bg); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #888; flex-shrink: 0; overflow: hidden; /* 保证方形图片在圆角内 */ }
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-left .chat-avatar { margin-right: 12px; }
+.chat-right .chat-avatar { margin-left: 12px; }
+.chat-continuous .chat-avatar { visibility: hidden; }
+
+.chat-content { display: flex; flex-direction: column; max-width: 75%; }
+.chat-left .chat-content { align-items: flex-start; }
+.chat-right .chat-content { align-items: flex-end; }
+
+.chat-name { font-size: 0.8rem; color: #888; margin-bottom: 4px; white-space: nowrap; }
+.chat-time { font-size: 0.75rem; color: #aaa; margin-left: 6px; }
+
+.chat-bubble { padding: 10px 14px; border-radius: 12px; font-size: 0.95rem; line-height: 1.6; word-break: break-word; text-align: left; }
+.chat-left .chat-bubble { background-color: var(--qq-other-bg); color: var(--qq-other-text); border-top-left-radius: 2px; }
+.chat-right .chat-bubble { background-color: var(--qq-my-bg); color: var(--qq-my-text); border-top-right-radius: 2px; }
+
+.chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
+.chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
+</style>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2803,7 +2859,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，这个密码好像不太对，请重新尝试或联系我" data-whm="抱歉，这个文章不能被校验，不过您还是能看看解密后的内容">
-  <script id="hbeData" type="hbeData" data-hmacdigest="6fe22e3a209199dd3a07391cd377dedbe7f0026eaff26b2a3fd167bbd49c754f">cfa2926ad01c1ca5b72f4176a524df6353092533768cfe9a7117e732ae0ff86819821b961b7afec770b09f7e9071af234f2c3c9a99e18f154c6a6fa36ed7253fb74cfb02253530e812757c108bd6b9be00d0e6338f318e165637de160749db11c151b8f57c73c75e335740656c5b1e124217f8c62d8ab113297e00c9ac960a8947c8d060753eba8623098c3847586226c4b925f6ee5fea24ceaffd6ef85f5d7fb5e8980adfc885411363cf43859d2cf2ab32d886b4d49eb253828a219d4d037876a30db49cf388d90b3717f249b41b2729bed8a861b7c5037280837accded0543b614f11f195f2ea30a4d6af74418526943b04c1df3e82207e9fe2559100673f7a818bd51cdb641930a3e397b72d4d8744e608356a8a13b636788374ddeca1cb357395e7c871fb829a7e09b1ae6aff874ca9aad84e88998b557bb7a5e48274134ef672e7c750e09aad8cb70eb7f957a6032d393c2ae09e42049f3175cd9bc7e7fc372bde06be0786436e0dbb6936aefa4383dae412d82f938979896b9557fc3591f90f22bb7d3249e2a567afa4a70fee7553910250296c5230a8b6782d945eb36c11818885518a4c306073b9045282f06ff74ebae7f16590bcaa436e8d00fa765e05c5d0a3f804db2524dce16d05d40edcc8e46cb6eb05aadad1a12716c903971d870730d5fb1e34ff0bace9a04889b3f11c14197ae5a586e77d89233c872b3fbaeb77f31c0932a727e63e2d661ad527d036cab027a8142a0db323dec1cc36892e3714d533fafeef022bfea0de73a280677d40fa6aedbf4cf93f4da79f792c1992da9dacbf24c9c191bc318eab93732f9594e28d20de424105c0c67951f54dc1efc3a107c8c791268e8660c0cde1880c870ed0503cb069bdf8d69355da79fc20d4cda0ab36280fa6ce5caea02a9829e132bcd96f2ce85e65d422c49f6d841386018ef98dd259412b331905d765744e9071bd228dbc1f70637c7b58ae90534a26667886ffbacee63c859732e23556a9c94f3872cdad3e18c25d9dbab6cd2561dd20a160c36a223635ebdc23926529089a6e70e851802729952320b92a94868057</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="d7e8a7b9bf0ad48594ceeaf0dacc0a17bdc349df8e5cdea7675d01663cd1007a">cfa2926ad01c1ca5b72f4176a524df6353092533768cfe9a7117e732ae0ff86832be8b0a660fb2b1f260622092713713b48c3ea957ab5601b1d0a9b2e281e21bab5a2df91e0e5d63ba6b1d9f1cdd54d0c47f627dfc6f30101f6ea3c4ab88d1699ef3b0876150de12bfd721a499b17a50c5012e08409ede9038bbeb7317cf7999581b5057de6647f931e959a95eab21cd016c129926b6bee17d844aec52fc371434b64ce019af32a1f003ff1de8fe34d3cc1112be166b5fab8adf49436853099efd0aad4770f3469776d33ea1084a1cb425ff3bc281495eace2117c51d0d12b49aba7cd18bfb7168a1734e11d96487cc8518ce42aaf67ad2eb7add28bdc298e571185a0dbf82ce97ddeb9795e41277d9c46a16eff095cd4d14d549a935207c3cea25a7c35bf5f9054db4897e9694487448cd5228761c4822cef1e9ac2ac391637e444d25f264fe7d39469e42fc5179416c21379d7d65369193631224ba14a4426e18d40c00e29840f9562cc241d579681f93679f54d05021ac0ebf00c14f5e6859053691496b6f855aa5f20893b4d605c3101022f98960490a1284734900fdd1b2b504870d7602d95941d4919accbacbecd8ff9b2bda7d3208a65c79d0af88d0b2374970fc2e7e1c4046ac5f56689285130ab4d73e25600a7a4a7dd774abd8ed5de7c66930c106052f575eecb06129a876c5a74d287df244728a0969b97d1382eae50dc0de111ca49765266d8725f8679add620b09419b0f7fec2d9a3e37f7cba806910f427d9bdc7a27b4b179e31ca84242b1771dd413f07567537e0da9f3aa33a9d8b0a9ddbd8071545790c9b7fb371c870229bad233854fc1ef83bf013e15ce7afd7ad0b731ab7236ce99110a2a5fa5167d618b1f0a5d86d2c9622bf320575ed687008ed6419377cef131736cf546fa7aa5f32f7d21bf01c0fd77af8a2bb5255507445302078d5f87c6e7d82ba1bd18b5541bee6581326358c07ee1df6d8bc5c8eff72757735270c08a5a24e701af06f26ef477533d153fc8c3b486200efb379587d9306bb4123649315a3244c38f67dd2de5afe6fdbcfe1e3cd3a61f77806</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -4192,7 +4248,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 

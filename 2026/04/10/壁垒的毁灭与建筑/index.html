@@ -55,11 +55,11 @@
 <meta property="og:title" content="壁垒的毁灭与建筑">
 <meta property="og:url" content="https://starcried.github.io/2026/04/10/%E5%A3%81%E5%9E%92%E7%9A%84%E6%AF%81%E7%81%AD%E4%B8%8E%E5%BB%BA%E7%AD%91/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970Star_Cried: 04-07 18:22:26我认为我对数学等理科思维的兴趣根源在于可以用来更准确地描述现象。而古典的视角也的确如此">
+<meta property="og:description" content="Star_Cried 04-07 18:22:26                 我认为我对数学等理科思维的兴趣根源在于可以用来更准确地描述现象。而古典的视角也的确如此。然而，在步入大学之后，我发现那些所谓的“专家”“数学家”并不总在意这个事情。这从他们的讲课方式和晦涩难懂的教材就可以看出。他">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
 <meta property="article:published_time" content="2026-04-09T16:17:48.000Z">
-<meta property="article:modified_time" content="2026-04-13T16:26:16.992Z">
+<meta property="article:modified_time" content="2026-04-20T16:08:56.879Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="生活">
 <meta name="twitter:card" content="summary">
@@ -1890,7 +1890,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1776097891465),
+    lastupdate: new Date(1776703969575),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2316,7 +2316,63 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-</head>
+<!-- hexo injector head_end start -->
+<style>
+/* 默认日间模式颜色 */
+:root {
+    --qq-my-bg: #0099FF;
+    --qq-my-text: #FFFFFF;
+    --qq-other-bg: #F0F0F0; /* 浅灰，解决在纯白背景下看不清的问题 */
+    --qq-other-text: #333333;
+    --qq-avatar-bg: #E0E0E0;
+}
+
+/* 适配 Volantis 的暗色模式 (Dark Mode) */
+[data-theme="dark"] {
+    --qq-my-bg: #1A598F;    /* 暗色下更柔和的深蓝 */
+    --qq-my-text: #E8E8E8;
+    --qq-other-bg: #2D2D2D; /* 暗色下的深灰色 */
+    --qq-other-text: #E8E8E8;
+    --qq-avatar-bg: #444444;
+}
+
+/* 兜底：如果用户系统开启了深色，且主题没有强制日间模式 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --qq-my-bg: #1A598F;
+        --qq-my-text: #E8E8E8;
+        --qq-other-bg: #2D2D2D;
+        --qq-other-text: #E8E8E8;
+        --qq-avatar-bg: #444444;
+    }
+}
+
+.qq-chat-container { display: flex; flex-direction: column; gap: 16px; padding: 10px 0; background-color: transparent; margin: 1.5rem 0; font-family: inherit; }
+.chat-message { display: flex; width: 100%; align-items: flex-start; }
+.chat-left { flex-direction: row; }
+.chat-right { flex-direction: row-reverse; }
+
+.chat-avatar { width: 40px; height: 40px; border-radius: 50%; background-color: var(--qq-avatar-bg); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #888; flex-shrink: 0; overflow: hidden; /* 保证方形图片在圆角内 */ }
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-left .chat-avatar { margin-right: 12px; }
+.chat-right .chat-avatar { margin-left: 12px; }
+.chat-continuous .chat-avatar { visibility: hidden; }
+
+.chat-content { display: flex; flex-direction: column; max-width: 75%; }
+.chat-left .chat-content { align-items: flex-start; }
+.chat-right .chat-content { align-items: flex-end; }
+
+.chat-name { font-size: 0.8rem; color: #888; margin-bottom: 4px; white-space: nowrap; }
+.chat-time { font-size: 0.75rem; color: #aaa; margin-left: 6px; }
+
+.chat-bubble { padding: 10px 14px; border-radius: 12px; font-size: 0.95rem; line-height: 1.6; word-break: break-word; text-align: left; }
+.chat-left .chat-bubble { background-color: var(--qq-other-bg); color: var(--qq-other-text); border-top-left-radius: 2px; }
+.chat-right .chat-bubble { background-color: var(--qq-my-bg); color: var(--qq-my-text); border-top-right-radius: 2px; }
+
+.chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
+.chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
+</style>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2761,10 +2817,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2026-04-14T00:26:16+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2026-04-21T00:08:56+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 14, 2026</p>
+    <p>更新于：Apr 21, 2026</p>
   </a>
 </div>
 
@@ -2801,7 +2857,133 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">Star_Cried: 04-07 18:22:26</span><br><span class="line">我认为我对数学等理科思维的兴趣根源在于可以用来更准确地描述现象。而古典的视角也的确如此。然而，在步入大学之后，我发现那些所谓的“专家”“数学家”并不总在意这个事情。这从他们的讲课方式和晦涩难懂的教材就可以看出。他们把知识当做某种资产，并对其进行垄断，就像资本通过什么所谓“品味”的东西来划分阶级、筛选人一样。所以学阀出现了。而之所以会有“垄断”的现象产生，这往往意味着——知识并非像他们想塑造的那样难以获取和理解。正是因为钻石、内存廉价，资本家为了赚钱就用垄断的手段将其炒作得普通人望尘莫及；正是因为那些知识实际不难被理解和学习，学阀们凭借自己的资产用教育资源、经费和晦涩教材筑起一座知识高墙，给所有人一种“这种东西不是我能学会的”的假象。学生们必须挤破头爬过那些人造的壁垒，回头发现，原来这就是这么一回事。然而，此时他们已经有大量的沉没成本了，如果让他们再花费精力帮后人把这个高墙推倒，让大家知道自己其实学的东西没那么高深，是又费精力又损害自己的利益的事情。相反，大多数人为了维护自己的利益，会继续在文章里用高大上的名词灌水，继续堆砌名词地狱用理解成本给自己的学术垃圾吹泡泡。所幸的是，大语言模型会粉碎大多数精心营造的泡沫墙。所以一定会有既得利益者进行抵制</span><br><span class="line"></span><br><span class="line">另一个视角看，似乎学术界是自然而然地发展成这么个资本主义或封建主义类似物，比较悲观地想好像人类文明只能发展到这么个残缺的阶段了。学术界需要一次共产主义革命，而AI的到来似乎可以使知识壁垒大幅减少。只要没资本干预，这似乎可以符合某种“生产力高度发达”的条件。我很期待未来会变成什么样。</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 18:53:17</span><br><span class="line">前半段狼把知识和钻石做比的时候我还没有那么理解，因为许多知识理解起来确实很费脑子，比如你和我聊过的一些博弈论的东西，不过后面狼说到名词地狱又确实让我感同身受。</span><br><span class="line">有很多东西就是在时代的浪潮里换了一个又一个外套，让自己不断成为前沿，不断响应“政策需求”</span><br><span class="line">因为大家都要向政策证明自己更有用、更高级、更专业才能得到资助</span><br><span class="line">最方便的证明方法就是写一堆和政策需求相符合又高深的东西。</span><br><span class="line">感觉大语言模型在这方面其实会很有天赋？</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 18:56:12</span><br><span class="line">有些东西的确是有深度的，深度要花些时间，但并不是可望不可及，那些知识壁垒就是在将这个花费的时间无限拉长。更多的东西或者说大多数的东西没很深的深度，壁垒就被造得更严重</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 18:57:51</span><br><span class="line">另一方面，有些时候虽然没有主观意愿制造知识壁垒，但会被动的助长这个现象，比如“知识的诅咒”，学懂一个知识和能给不懂的人讲懂是两个能力</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:08:29</span><br><span class="line">现在看来，Ai解释知识确实越来越靠谱了，毕竟都已经能自己调查写综述了，而且还不会出什么问题</span><br><span class="line">和一开始的胡编乱相比起来看，大语言模型发展确实非常迅速</span><br><span class="line">我之前有说我喜欢给别人解释原理，不过我其实也不能确保听我讲的人真的听懂了，毕竟有我讲了很多遍还是会弄错的员工</span><br><span class="line">但是AI应该可以一层一层不断往下回答，只要有疑问，应该会是更好的老师</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:09:58</span><br><span class="line">造壁垒这事，现在感觉是不造就活不下去了</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 19:11:28</span><br><span class="line">就很悲哀呢</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:14:16</span><br><span class="line">嗯 就像狼说的没法自己把自己的墙推到</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 19:17:41</span><br><span class="line">其实一开始是我看到了一位高中没我学得好的同学考上了美国西北大学，但是他又感觉自己本科没体验青春也没朋友，让我想到我之前对自己学不进去数学的理由“是不想学不是学不会”，然后想到为什么我不想学，然后想到之前我的兴趣都是建立在对现实现象的解释和已有知识的迁移上，而大学知识在刻意营造一种高大上的感觉</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:19:41</span><br><span class="line">刚好我们课题组的文章多了个有趣的东西，叫LCA（生命周期分析）</span><br><span class="line">这个东西的作用是分析一个产品生产的全过程（最长可以是从原料到最后的产品废弃回收的全过程）对环境造成的影响</span><br><span class="line">它诞生的目的是分析出整个过程中哪个部分造成的负面影响大，或者比较不同生产过程的优劣</span><br><span class="line">但是由于其非常繁杂，我们可以对过程环节、参数进行调整，让结果符合任何预期</span><br><span class="line">我们组有个师弟钻研过这个，然后去读别人的文章就会发现总有不合理的地方，代码也跑不通（当然是故意的）</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:21:59</span><br><span class="line">哦 我还记得当时我学大物</span><br><span class="line">老师一来就说我们高中学的都是不对的，要用微积分的思维来看题</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:22:06</span><br><span class="line">然后我学的一塌糊涂</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:22:50</span><br><span class="line">我是真的把高中的那些东西摒弃了</span><br><span class="line">但是回头看根本不该这么学的</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:23:36</span><br><span class="line">“他又感觉自己本科没体验青春也没朋友，让我想到我之前对自己学不进去数学的理由‘是不想学不是学不会’”</span><br><span class="line"></span><br><span class="line">狼是怎么产生这个联想的 是因为他的描述回忆了自己的本科？</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 19:27:00</span><br><span class="line">嗯 不是很直观 大概讲就是我和他做了相反的选择 我没继续进修而是选择了青春和质疑努力的目的</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 19:28:44</span><br><span class="line">and 他在某种程度上证明了我是对的 因为我不觉得他比我聪明而他考上了好学校，意味着只要我想我也可以（</span><br><span class="line"></span><br><span class="line">Star_Cried: 04-07 19:29:37</span><br><span class="line">虽然我有点担心这是种精神胜利法但是我还挺喜欢用的</span><br><span class="line"></span><br><span class="line">Henry•Bean•Lee: 04-07 19:30:08</span><br><span class="line">感觉确实没什么问题，我也觉得你想的话就能做到</span><br></pre></td></tr></table></figure>
+    <div class="qq-chat-container" >
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 18:22:26</span></div>
+                <div class="chat-bubble">我认为我对数学等理科思维的兴趣根源在于可以用来更准确地描述现象。而古典的视角也的确如此。然而，在步入大学之后，我发现那些所谓的“专家”“数学家”并不总在意这个事情。这从他们的讲课方式和晦涩难懂的教材就可以看出。他们把知识当做某种资产，并对其进行垄断，就像资本通过什么所谓“品味”的东西来划分阶级、筛选人一样。所以学阀出现了。而之所以会有“垄断”的现象产生，这往往意味着——知识并非像他们想塑造的那样难以获取和理解。正是因为钻石、内存廉价，资本家为了赚钱就用垄断的手段将其炒作得普通人望尘莫及；正是因为那些知识实际不难被理解和学习，学阀们凭借自己的资产用教育资源、经费和晦涩教材筑起一座知识高墙，给所有人一种“这种东西不是我能学会的”的假象。学生们必须挤破头爬过那些人造的壁垒，回头发现，原来这就是这么一回事。然而，此时他们已经有大量的沉没成本了，如果让他们再花费精力帮后人把这个高墙推倒，让大家知道自己其实学的东西没那么高深，是又费精力又损害自己的利益的事情。相反，大多数人为了维护自己的利益，会继续在文章里用高大上的名词灌水，继续堆砌名词地狱用理解成本给自己的学术垃圾吹泡泡。所幸的是，大语言模型会粉碎大多数精心营造的泡沫墙。所以一定会有既得利益者进行抵制<br/><br/>另一个视角看，似乎学术界是自然而然地发展成这么个资本主义或封建主义类似物，比较悲观地想好像人类文明只能发展到这么个残缺的阶段了。学术界需要一次共产主义革命，而AI的到来似乎可以使知识壁垒大幅减少。只要没资本干预，这似乎可以符合某种“生产力高度发达”的条件。我很期待未来会变成什么样。</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 18:53:17</span></div>
+                <div class="chat-bubble">前半段狼把知识和钻石做比的时候我还没有那么理解，因为许多知识理解起来确实很费脑子，比如你和我聊过的一些博弈论的东西，不过后面狼说到名词地狱又确实让我感同身受。<br/>有很多东西就是在时代的浪潮里换了一个又一个外套，让自己不断成为前沿，不断响应“政策需求”<br/>因为大家都要向政策证明自己更有用、更高级、更专业才能得到资助<br/>最方便的证明方法就是写一堆和政策需求相符合又高深的东西。<br/>感觉大语言模型在这方面其实会很有天赋？</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 18:56:12</span></div>
+                <div class="chat-bubble">有些东西的确是有深度的，深度要花些时间，但并不是可望不可及，那些知识壁垒就是在将这个花费的时间无限拉长。更多的东西或者说大多数的东西没很深的深度，壁垒就被造得更严重</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">另一方面，有些时候虽然没有主观意愿制造知识壁垒，但会被动的助长这个现象，比如“知识的诅咒”，学懂一个知识和能给不懂的人讲懂是两个能力</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 19:08:29</span></div>
+                <div class="chat-bubble">现在看来，Ai解释知识确实越来越靠谱了，毕竟都已经能自己调查写综述了，而且还不会出什么问题<br/>和一开始的胡编乱相比起来看，大语言模型发展确实非常迅速<br/>我之前有说我喜欢给别人解释原理，不过我其实也不能确保听我讲的人真的听懂了，毕竟有我讲了很多遍还是会弄错的员工<br/>但是AI应该可以一层一层不断往下回答，只要有疑问，应该会是更好的老师</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">造壁垒这事，现在感觉是不造就活不下去了</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 19:11:28</span></div>
+                <div class="chat-bubble">就很悲哀呢</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 19:14:16</span></div>
+                <div class="chat-bubble">嗯 就像狼说的没法自己把自己的墙推到</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 19:17:41</span></div>
+                <div class="chat-bubble">其实一开始是我看到了一位高中没我学得好的同学考上了美国西北大学，但是他又感觉自己本科没体验青春也没朋友，让我想到我之前对自己学不进去数学的理由“是不想学不是学不会”，然后想到为什么我不想学，然后想到之前我的兴趣都是建立在对现实现象的解释和已有知识的迁移上，而大学知识在刻意营造一种高大上的感觉</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 19:19:41</span></div>
+                <div class="chat-bubble">刚好我们课题组的文章多了个有趣的东西，叫LCA（生命周期分析）<br/>这个东西的作用是分析一个产品生产的全过程（最长可以是从原料到最后的产品废弃回收的全过程）对环境造成的影响<br/>它诞生的目的是分析出整个过程中哪个部分造成的负面影响大，或者比较不同生产过程的优劣<br/>但是由于其非常繁杂，我们可以对过程环节、参数进行调整，让结果符合任何预期<br/>我们组有个师弟钻研过这个，然后去读别人的文章就会发现总有不合理的地方，代码也跑不通（当然是故意的）</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">哦 我还记得当时我学大物<br/>老师一来就说我们高中学的都是不对的，要用微积分的思维来看题</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">然后我学的一塌糊涂</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">我是真的把高中的那些东西摒弃了<br/>但是回头看根本不该这么学的</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left chat-continuous">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">“他又感觉自己本科没体验青春也没朋友，让我想到我之前对自己学不进去数学的理由‘是不想学不是学不会’”<br/><br/>狼是怎么产生这个联想的 是因为他的描述回忆了自己的本科？</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right ">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                <div class="chat-name">Star_Cried <span class="chat-time" style="display:none">04-07 19:27:00</span></div>
+                <div class="chat-bubble">嗯 不是很直观 大概讲就是我和他做了相反的选择 我没继续进修而是选择了青春和质疑努力的目的</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">and 他在某种程度上证明了我是对的 因为我不觉得他比我聪明而他考上了好学校，意味着只要我想我也可以（</div>
+            </div>
+        </div>
+        <div class="chat-message chat-right chat-continuous">
+            <div class="chat-avatar"><img src="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Star_Cried"></div>
+            <div class="chat-content">
+                
+                <div class="chat-bubble">虽然我有点担心这是种精神胜利法但是我还挺喜欢用的</div>
+            </div>
+        </div>
+        <div class="chat-message chat-left ">
+            <div class="chat-avatar">H</div>
+            <div class="chat-content">
+                <div class="chat-name">Henry•Bean•Lee <span class="chat-time" style="display:none">04-07 19:30:08</span></div>
+                <div class="chat-bubble">感觉确实没什么问题，我也觉得你想的话就能做到</div>
+            </div>
+        </div></div>
 
   </div>
   
@@ -2826,10 +3008,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-04-14T00:26:16+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-04-21T00:08:56+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 14, 2026</p>
+    <p>更新于：Apr 21, 2026</p>
   </a>
 </div>
 
@@ -4176,7 +4358,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4459,7 +4641,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/日记/","name":"日记"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2026/04/10/壁垒的毁灭与建筑/","name":"壁垒的毁灭与建筑"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"壁垒的毁灭与建筑","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2026/04/10/%E5%A3%81%E5%9E%92%E7%9A%84%E6%AF%81%E7%81%AD%E4%B8%8E%E5%BB%BA%E7%AD%91/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2026/04/10/%E5%A3%81%E5%9E%92%E7%9A%84%E6%AF%81%E7%81%AD%E4%B8%8E%E5%BB%BA%E7%AD%91/","wordCount":0,"datePublished":"2026-04-09T16:17:48.000Z","dateModified":"2026-04-13T16:26:16.992Z","articleSection":"日记","keywords":"生活","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/日记/","name":"日记"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2026/04/10/壁垒的毁灭与建筑/","name":"壁垒的毁灭与建筑"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"壁垒的毁灭与建筑","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2026/04/10/%E5%A3%81%E5%9E%92%E7%9A%84%E6%AF%81%E7%81%AD%E4%B8%8E%E5%BB%BA%E7%AD%91/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2026/04/10/%E5%A3%81%E5%9E%92%E7%9A%84%E6%AF%81%E7%81%AD%E4%B8%8E%E5%BB%BA%E7%AD%91/","wordCount":0,"datePublished":"2026-04-09T16:17:48.000Z","dateModified":"2026-04-20T16:08:56.879Z","articleSection":"日记","keywords":"生活","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
 
 
 
