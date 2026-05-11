@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1778507843131),
+    lastupdate: new Date(1778512583393),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2813,11 +2813,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF1166E The LCMs Must be Large思维好题，结论好题。
-题意一个长度为 $n$ 的未知长度的序列，有 $m$ 个限制，每个限制形如给定一个集合 $S$ ，使集合内元素的 $lcm$ 严格大于其补集元素的 $lcm$ 。问是否存在这一序列。
-思路要注意我们是要尽可能使序列有解。
-先给出结论：若所有集合两两间有交，则有解。否则一定无解。
-首先有一个结论：若 $A\sub...
+        CF1166E The LCMs Must be
+Large
+思维好题，结论好题。
+题意
+一个长度为 \(n\)
+的未知长度的序列，有 \(m\)
+个限制，每个限制形如给定一个集合 \(S\)
+，使集合内元素的 \(lcm\)
+严格大于其补集元素的 \(lcm\)
+。问是否存在这一序列。
+思路
+要注意我们是要尽可能使序列有解。
+先给出结论：若所有集合两两间有交，则有解...
       
     
   </div>
@@ -2883,8 +2891,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
 非全面讲解，仅供记录笔记
 
-Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsilon &#x3D;\mu \ast 1 \iff \varepsilon(n) &#x3D; \sum_{d\mid n} \mu(d)$$其中$\varepsilon$卷任何函数等于其函数本身。
-莫比乌斯函数$...
+Dirichlet卷积
+\[(f\ast g)(n)=\sum_{d\mid
+n}f(d)g(\frac{n}{d})\] \[\varepsilon
+=\mu \ast 1 \iff \varepsilon(n) = \sum_{d\mid n} \mu(d)\]
+其中\(\varepsilon\)卷任何函数等于其函数本身。
+莫比乌斯函数\(\...
       
     
   </div>
@@ -2947,7 +2959,13 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        GCD SUM求$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n\gcd(i,j)$$将原式变换得到$$\sum_{d&#x3D;1}^nd\sum_{i&#x3D;1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j&#x3D;1}^{\lfloor\frac{n}{d}\rfloor}[\gcd(i,j)&#x3D;1]$$别着急莫比乌斯反演...
+        GCD SUM
+求 \[
+\sum_{i=1}^n\sum_{j=1}^n\gcd(i,j)
+\] 将原式变换得到 \[
+\sum_{d=1}^nd\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}[\gcd(i,j)=1]
+\] 别着急莫比乌斯反演，我们知道 \[
+\varph...
       
     
   </div>
@@ -3010,10 +3028,15 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1414 又是毕业季II数论题，主要在于推演。
+        P1414
+又是毕业季II
+数论题，主要在于推演。
 洛谷的《又是毕业季I》更好玩
-发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个 $c$ 数组为所有因子出现的次数。
-因为让输出 $1\sim n$ 所有的值，而且因子数 c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 $c$ 向下遍历到 c[i] 更高的位置，即最大公约数i...
+发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个
+\(c\) 数组为所有因子出现的次数。
+因为让输出 \(1\sim n\)
+所有的值，而且因子数
+c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历到 c[i...
       
     
   </div>
@@ -3076,8 +3099,16 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P3312 数表题意求出$$\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^m\sigma(\gcd(i,j))[\sigma(\gcd(i,j))\le a]$$其中 $\sigma$ 表示约数和。
-思路&#x2F;推导考虑没有 $a$ 的限制的情况。$$\begin{aligned}ans&amp;&#x3D;\sum_{d&#x3D;1}^{\min(n,m)}\si...
+        P3312 数表
+题意
+求出 \[
+\sum_{i=1}^n\sum_{j=1}^m\sigma(\gcd(i,j))[\sigma(\gcd(i,j))\le a]
+\] 其中 \(\sigma\)
+表示约数和。
+思路/推导
+考虑没有 \(a\) 的限制的情况。 \[
+\begin{aligned}
+ans&amp;=\sum_{d=1}^{\min(n,m)}\sigm...
       
     
   </div>
@@ -3144,7 +3175,8 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
 很久很久以前，巨龙突然出现，带来了灾难带走公主又消失不见。王国十分危险，世间谁最勇敢，一位英雄出现……
 
 学习于该大佬博客
-题意那么你就是这位英雄，不过不同的是，你面对的是一群巨龙，虽然巨龙都不会攻击；你每次使用的剑一打就爆，虽然每打死一条巨龙的奖励是一把新的剑；巨龙不会因为生命值降为负数而死亡，虽然巨龙会憨憨地回血然后把自己奶死；最重要的是你完成游戏不会获得公主的爱，只会获得参加ION8...
+题意
+那么你就是这位英雄，不过不同的是，你面对的是一群巨龙，虽然巨龙都不会攻击；你每次使用的剑一打就爆，虽然每打死一条巨龙的奖励是一把新的剑；巨龙不会因为生命值降为负数而死亡，虽然巨龙会憨憨地回血然后把自己奶死；最重要的是你完成游戏不会获得公主的爱，只会获得...
       
     
   </div>
@@ -3207,8 +3239,16 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5110 块速递推题意多次询问，求数列$$a_i&#x3D;\begin{cases}233a_{i-1}+666a_{i-2} &amp; i&gt;1\0 &amp; i&#x3D;0\1 &amp; i&#x3D;1\\end{cases}$$的第 $n$ 项在 $\mod 1e9+7$ 意义下的值的异或和。
-思路首先这个数列是一个广义斐波那契数列。对于广义斐波那契数列，我们一般是用...
+        P5110 块速递推
+题意
+多次询问，求数列 \[
+a_i=\begin{cases}233a_{i-1}+666a_{i-2} &amp; i&gt;1\\
+0 &amp; i=0\\
+1 &amp; i=1\\
+\end{cases}
+\] 的第 \(n\) 项在 \(\mod 1e9+7\) 意义下的值的异或和。
+思路
+首先这个数列是一个广义斐波那契数列。对于广义斐波...
       
     
   </div>
@@ -3271,8 +3311,11 @@ Dirichlet卷积$$(f\ast g)(n)&#x3D;\sum_{d\mid n}f(d)g(\frac{n}{d})$$$$\varepsil
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Description墨墨突然对等式很感兴趣，他正在研究 $a_1x_1+a_2x_2+…+a_nx_n&#x3D;B$ 存在非负整数解的条件，他要求你编写一个程序，给定 $N$、${a_n}$、以及 $B$ 的取值范围，求出有多少 $B$ 可以使等式存在非负整数解。
-Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B_{Max}$ 分别表示数列的长度、$B...
+        Description
+墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
+存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\{a_n\}\)、以及 \(B\) 的取值范围，求出有多少 \(B\) 可以使等式存在非负整数解。
+Input
+输入的第一行包含 3 个正整数，分别表示 \(N\)、\(B_{Min}\)、\(B...
       
     
   </div>
@@ -3338,9 +3381,13 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
         
 “有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
 
-中国剩余定理即求多个同余方程的解。
-举个栗子。求一个数x，使得：$$\begin{cases}x≡2\pmod 3\x≡3\pmod 5\x≡2\pmod {11}\end{cases}$$
-设 $M&#x3D;3511&#x3D;165$, $a1&#x3D;3$, $a2&#x3D;5$, $a3...
+中国剩余定理
+即求多个同余方程的解。
+举个栗子。求一个数x，使得： \[\begin{cases}
+x≡2\pmod 3\\
+x≡3\pmod 5\\
+x≡2\pmod {11}\end{cases}\]
+设 \(M=3*5*11=165\), \(a1=3\), \(a2=5\),...
       
     
   </div>
@@ -3403,10 +3450,13 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
   <div class='md article-desc' itemprop="articleBody">
     
       
-        贝祖定理如果 $a$、$b$ 是整数，那么一定存在整数 $x$、$y$ 使得 $ax+by&#x3D;\gcd(a,b)$。
-换句话说，如果 $ax+by&#x3D;m$ 有解，那么 $m$ 一定是 $\gcd(a,b)$ 的若干倍。（可以来判断一个这样的式子有没有解）
-有一个直接的应用就是 如果 $ax+by&#x3D;1$ 有解，那么 $gcd(a,b)&#x3D;1$。
-然而这并不能告...
+        贝祖定理
+如果 \(a\)、\(b\) 是整数，那么一定存在整数 \(x\)、\(y\)
+使得 \(ax+by=\gcd(a,b)\)。
+换句话说，如果 \(ax+by=m\)
+有解，那么 \(m\) 一定是 \(\gcd(a,b)\)
+的若干倍。（可以来判断一个这样的式子有没有解）
+有一个直接的应用就是 如果 \(ax+by=1\) 有解，那么 \(gcd(a,b)=1\)。...
       
     
   </div>
@@ -3749,7 +3799,9 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4761,7 +4813,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

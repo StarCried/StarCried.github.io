@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1778507843131),
+    lastupdate: new Date(1778512583393),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2760,6 +2760,75 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/POJ1944/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/POJ1944/"  itemprop="url">
+        POJ1944
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        poj1944
+一道我不会做的贪心题。
+（思维才是OI的重点）
+但是if您也不会，那就来听我瞎扯吧。
+首先，这个图是一个圈，只能连接邻点，使所有求的点联通。
+我们先不考虑环，那么就可以想出一个假的做法：用一个a数组记录入度和出度，出度为正，入度为负，用一个sum=0从0遍历每个点记录当前出入度，每次加ai，若sum大于0给答案加上1就行了。
+然后，我们来考虑环。我们发现。不管怎么...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/POJ1944/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Trie树/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -2787,10 +2856,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         就是把字符串转变成一个树，每个节点连接下一个字符，用空间换时间。
-对于区分大小写或不区分的题目，只需要改变 ch[][26] 的值就行了。
-ch[u][x] 表示 u 节点（标号决定）下一个 x 字符节点的标号。
-如果题目让记录附加值，那就用 val[] 在插入时记录一下就好了。
-12345678910111213141516171819202122232425262728293031323...
+对于区分大小写或不区分的题目，只需要改变 ch[][26]
+的值就行了。
+ch[u][x] 表示 u 节点（标号决定）下一个
+x 字符节点的标号。
+如果题目让记录附加值，那就用 val[]
+在插入时记录一下就好了。
+1234567891011121314151617181920212223242526272829...
       
     
   </div>
@@ -2854,11 +2926,12 @@ ch[u][x] 表示 u 节点（标号决定）下一个 x 字符节点的标号。
     
       
         对树状数组的理解加深了！
-转化题意动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
-思路首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。
+转化题意
+动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。
+思路
+首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。
 再次阅读，发现冰系是一个（以温度为自变量的）单调不降序列，每次修改一个战士就是修改一段后缀。火系相反，修改前缀。
-深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述题意。
-考虑二分...
+深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述...
       
     
   </div>
@@ -2921,8 +2994,11 @@ ch[u][x] 表示 u 节点（标号决定）下一个 x 字符节点的标号。
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Description墨墨突然对等式很感兴趣，他正在研究 $a_1x_1+a_2x_2+…+a_nx_n&#x3D;B$ 存在非负整数解的条件，他要求你编写一个程序，给定 $N$、${a_n}$、以及 $B$ 的取值范围，求出有多少 $B$ 可以使等式存在非负整数解。
-Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B_{Max}$ 分别表示数列的长度、$B...
+        Description
+墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
+存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\{a_n\}\)、以及 \(B\) 的取值范围，求出有多少 \(B\) 可以使等式存在非负整数解。
+Input
+输入的第一行包含 3 个正整数，分别表示 \(N\)、\(B_{Min}\)、\(B...
       
     
   </div>
@@ -2985,13 +3061,15 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
   <div class='md article-desc' itemprop="articleBody">
     
       
-        矩阵树定理定义
-邻接矩阵：$A&#x3D;(a_{ij})$，其中 $a_{ij}$ 表示 $i$ 到 $j$ 有几条边相连。
-度数矩阵：$C&#x3D;(c_{ij})$，为对角矩阵，其中 $c_{ii}$ 表示 $i$ 的度数。
-基尔霍夫矩阵：$D&#x3D;C-A$。
-余子式：$M_{ij}$ 表示去掉第 $i$ 行第 $j$ 列后得到矩阵的行列式。
+        矩阵树定理
+定义
 
-定理无向图的生成树个数等于其基尔...
+邻接矩阵：\(A=(a_{ij})\)，其中
+\(a_{ij}\) 表示 \(i\) 到 \(j\) 有几条边相连。
+度数矩阵：\(C=(c_{ij})\)，为对角矩阵，其中 \(c_{ii}\) 表示 \(i\) 的度数。
+基尔霍夫矩阵：\(D=C-A\)。
+余子式：\(M_{ij}\) 表示去掉第 \(i\) 行第 \(j\) 列后得到矩阵的行列式。
+...
       
     
   </div>
@@ -3028,7 +3106,7 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/POJ3187 Backward Digit Sums/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/主定理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3046,20 +3124,21 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/POJ3187%20Backward%20Digit%20Sums/"  itemprop="url">
-        POJ3187 Backward Digit Sums
+      <a href="/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/"  itemprop="url">
+        主定理
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        POJ3187 Backward Digit Sums
-好熟悉的题目……但是忘了是怎么做的……好像是随机排列？
-反正都是暴力，看了下网上的题解，好像也没有更好的正解了。有想法的告诉我一下蟹蟹~
-题意我们可以用1~n这n个数字用类似杨辉三角的方法加起来，我们就可以把他们拆回去。这样的排列可能有多种，我们要它字典序最小的一种。
-思路$n$ 比较小，考虑排列所有可能一个个试……这里用一下新东西。
-...
+        主定理（Master
+Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
+时间复杂度相关定义
+在计算机科学中，算法的时间复杂度（time
+complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大
+\(O\)
+符号...
       
     
   </div>
@@ -3070,17 +3149,17 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/POJ3187%20Backward%20Digit%20Sums/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3122,7 +3201,13 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
   <div class='md article-desc' itemprop="articleBody">
     
       
-        二项式反演$$\begin{aligned}g_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni f_i\Leftrightarrow f_n&#x3D;\sum_{i&#x3D;0}^n(-1)^i\binom ni g_i\g_n&#x3D;\sum_{i&#x3D;0}^n\binom ni f_i\Leftrightarrow g_n&#x3D;\sum...
+        二项式反演
+\[
+\begin{aligned}
+g_n=\sum_{i=0}^n(-1)^i\binom ni f_i\Leftrightarrow
+f_n=\sum_{i=0}^n(-1)^i\binom ni g_i\\
+g_n=\sum_{i=0}^n\binom ni f_i\Leftrightarrow
+g_n=\sum_{i=0}^n(-1)^{n-i}\binom...
       
     
   </div>
@@ -3188,9 +3273,13 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
         
 “有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？”——《孙子算经》
 
-中国剩余定理即求多个同余方程的解。
-举个栗子。求一个数x，使得：$$\begin{cases}x≡2\pmod 3\x≡3\pmod 5\x≡2\pmod {11}\end{cases}$$
-设 $M&#x3D;3511&#x3D;165$, $a1&#x3D;3$, $a2&#x3D;5$, $a3...
+中国剩余定理
+即求多个同余方程的解。
+举个栗子。求一个数x，使得： \[\begin{cases}
+x≡2\pmod 3\\
+x≡3\pmod 5\\
+x≡2\pmod {11}\end{cases}\]
+设 \(M=3*5*11=165\), \(a1=3\), \(a2=5\),...
       
     
   </div>
@@ -3212,70 +3301,6 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
       
         <div>
           <a class='readmore' href='/2022/04/30/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/主定理/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/"  itemprop="url">
-        主定理
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        主定理（Master Theorem）通常是指在算法分析领域中的一个定理，特别是用于分析递归算法的时间复杂度。
-时间复杂度相关定义在计算机科学中，算法的时间复杂度（time complexity）是一个函数，它定性描述该算法的运行时间。其原理在于，将计算机的每种基本运算（如加减乘除）所需的时间视为常数，然后考察一个算法调用了多大量级的基本运算。时间复杂度常用大 $O$ 符号表述，不包括这个函...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url"><span itemprop="name">算法</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E4%B8%BB%E5%AE%9A%E7%90%86/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3317,11 +3342,13 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
   <div class='md article-desc' itemprop="articleBody">
     
       
-        前言前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ 所以又在网上找着看了看写一篇博客备忘。
+        前言
+前几天考试了发现这个东西完全不会欸……学了又忘真是讨厌至极 QAQ
+所以又在网上找着看了看写一篇博客备忘。
 学习笔记真的很有用！
-分层图这个很容易理解，来源就是在一些最短路的问题上题目又加了比如说主角可以用传送宝石进行折跃之类的问题（针对），即可以选择k条边把这些边的边权变为零。
-怎么样解决呢？可以在原图的基础上多复制k个相同的图，并用k条边把图之间的边用0边权边相连。就是：
-于是就有人...
+分层图
+这个很容易理解，来源就是在一些最短路的问题上题目又加了比如说主角可以用传送宝石进行折跃之类的问题（针对），即可以选择k条边把这些边的边权变为零。
+怎么样解决呢？可以在原图的基础上多复制k个相同的图，并用k条边把图之间的边用0边权边相连。就...
       
     
   </div>
@@ -3384,12 +3411,18 @@ Input输入的第一行包含 3 个正整数，分别表示 $N$、$B_{Min}$、$B
   <div class='md article-desc' itemprop="articleBody">
     
       
-        问题描述有 $n$ 个物品，每种物品两个权值 $a_i$，$b_i$，求一组 $w_i\in{0,1}$，使得
-$$\frac{\sum_{i&#x3D;1}^n w_i\cdot a_i}{\sum_{i&#x3D;1}^n w_i\cdot b_i}$$
+        问题描述
+有 \(n\) 个物品，每种物品两个权值
+\(a_i\)，\(b_i\)，求一组 \(w_i\in\{0,1\}\)，使得
+\[
+\frac{\sum_{i=1}^n w_i\cdot a_i}{\sum_{i=1}^n w_i\cdot b_i}
+\]
 最大（或最小）。
 有可能包含其他限制。
-二分法显然答案是单调的。对一个答案 $mid$，有
-$$\begin{aligned}&amp...
+二分法
+显然答案是单调的。对一个答案 \(mid\)，有
+\[
+\...
       
     
   </div>
@@ -3737,7 +3770,9 @@ $$\begin{aligned}&amp...
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4749,7 +4784,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -1888,7 +1888,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1778507843131),
+    lastupdate: new Date(1778512583393),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2791,7 +2791,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         AC来自一个大佬的名字，并不是写了就可以自动AC的意思 XD
 AC自动机是建立在trie树上的一种优化手段。trie在每次查询一个字符串时，如果在一个子树查不到就会回溯再查，效率会很低。我们考虑在给每个节点加一个如果查不到就跳转的指针fail，那么如果找不到的话直接跳转到fail就可以了。fail代表的是拥有该点的最大后缀的点的位置。
-那么怎么寻找这个fail呢？因为我们要寻找最大后缀，深度...
+那么怎么寻找这个fail呢？因为我们要寻找最大后缀，...
       
     
   </div>
@@ -2854,9 +2854,15 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        成品B站链接Wallpaper Engine 可用：搜索 Alice_StarCried
-简述参考了B站的两个自学教程，都是直接搜能搜到的。PS、AE 零基础。因为需要渲染所用电脑配置有一定需求，额外用了数位板。AE 使用了现成脚本。从学习到制作完成总用时不过四天。
-所需技能为 PS 基本使用，包括抠图、补图等，以及 AE 基本使用和脚本使用，都很简单。最耗时的部分实际上是 PS 部分，一开...
+        成品
+B站链接
+Wallpaper Engine 可用：搜索 Alice_StarCried
+简述
+参考了B站的两个自学教程，都是直接搜能搜到的。PS、AE
+零基础。因为需要渲染所用电脑配置有一定需求，额外用了数位板。AE
+使用了现成脚本。从学习到制作完成总用时不过四天。
+所需技能为 PS 基本使用，包括抠图、补图等，以及 AE
+基本使用和脚本使用，都很简单。最耗时的部分实际...
       
     
   </div>
@@ -2919,10 +2925,14 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        AT2304 Cleaning题意一个树上每个节点有一些石子，每次只能选取两个叶子节点并将路径间的所有点上的石子数量减1，问是否能将所有石子取完。
-思路设 $f_x$ 表示从 $x$ 节点向上的路径条数，$s_x$ 为子节点的 $f$ 值的和，则有：$$a_x&#x3D;\frac{s_x-f_x}{2}+f_x\f_x&#x3D;2a_x-s_x$$我们只需要保证以下条件即可：
-
-从子节点...
+        AT2304 Cleaning
+题意
+一个树上每个节点有一些石子，每次只能选取两个叶子节点并将路径间的所有点上的石子数量减1，问是否能将所有石子取完。
+思路
+设 \(f_x\) 表示从 \(x\) 节点向上的路径条数，\(s_x\) 为子节点的 \(f\) 值的和，则有： \[
+a_x=\frac{s_x-f_x}{2}+f_x\\
+f_x=2a_x-s_x
+\] 我们只需要保...
       
     
   </div>
@@ -2985,8 +2995,12 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        AT2390 Games on DAG题意$n$ 个点 $m$ 条边的 DAG，每条边 $(u,v)$ 有 $u&lt;v$。$1,2$ 号点各一个石头，Alice 和 Bob 轮流每次沿边移动一个石头，不能动者输。求所有连边子集中先手胜的情况。两个石头可以重合。$n\leq 15$。
-思路发现对于两个石头的 SG 函数是独立的，输者两个石头 SG 函数异或值为 0，那么先手胜的情况就是所有...
+        AT2390 Games on DAG
+题意
+\(n\) 个点 \(m\) 条边的 DAG，每条边 \((u,v)\) 有 \(u&lt;v\)。\(1,2\) 号点各一个石头，Alice 和 Bob
+轮流每次沿边移动一个石头，不能动者输。求所有连边子集中先手胜的情况。两个石头可以重合。\(n\leq 15\)。
+思路
+发现对于两个石头的 SG 函数是独立的，输者两个石头 SG 函...
       
     
   </div>
@@ -3049,10 +3063,13 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF1032G Chattering思路对于每一个位置，它转移的范围是确定的。
+        CF1032G
+Chattering
+思路
+对于每一个位置，它转移的范围是确定的。
 对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。
 于是这个就可以倍增进行转移。
-如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST表做到 $O(1...
+如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST...
       
     
   </div>
@@ -3074,6 +3091,81 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
       
         <div>
           <a class='readmore' href='/2022/04/30/CF1032G%20Chattering/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF1166E The LCMs Must be Large/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/CF1166E%20The%20LCMs%20Must%20be%20Large/"  itemprop="url">
+        CF1166E The LCMs Must be Large
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        CF1166E The LCMs Must be
+Large
+思维好题，结论好题。
+题意
+一个长度为 \(n\)
+的未知长度的序列，有 \(m\)
+个限制，每个限制形如给定一个集合 \(S\)
+，使集合内元素的 \(lcm\)
+严格大于其补集元素的 \(lcm\)
+。问是否存在这一序列。
+思路
+要注意我们是要尽可能使序列有解。
+先给出结论：若所有集合两两间有交，则有解...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/CF1166E%20The%20LCMs%20Must%20be%20Large/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3115,9 +3207,10 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF175E Power Defence题意一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。
-其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有$k$个寒冰塔覆盖，敌人速度变为$\frac{1}{k+1}$。
-敌人...
+        CF175E Power Defence
+题意
+一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。
+其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有\(k\)个寒冰塔覆盖，敌人速度变为\(\frac{1}{k...
       
     
   </div>
@@ -3180,12 +3273,16 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF404D-DP正经的东西
-题意给定一个字符串，只包含’0’,’1’,’2’,’*’,’?’五种字符，其中’?’可被替换为其他任何一种，求使序列符合扫雷地图定义的方案数。
+        CF404D-DP
+正经的东西
+
+题意
+给定一个字符串，只包含'0','1','2','*','?'五种字符，其中'?'可被替换为其他任何一种，求使序列符合扫雷地图定义的方案数。
 一个数字字符大小表示与之临近的位置总共有多少个雷。
-思路DP。
+思路
+DP。
 和其他题解不太相同，我们每个点只记录三种状态：0,1,2，分别表示若此点的下一位不为雷、为雷和此点位就是雷的此位及以前的方案数。
-注意，这些状态除了最后一个...
+...
       
     
   </div>
@@ -3207,73 +3304,6 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
       
         <div>
           <a class='readmore' href='/2022/04/30/CF404D-DP%E3%80%90%E6%88%90%E5%B0%B1%E8%BE%BE%E6%88%90%E3%80%91/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF1166E The LCMs Must be Large/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF1166E%20The%20LCMs%20Must%20be%20Large/"  itemprop="url">
-        CF1166E The LCMs Must be Large
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF1166E The LCMs Must be Large思维好题，结论好题。
-题意一个长度为 $n$ 的未知长度的序列，有 $m$ 个限制，每个限制形如给定一个集合 $S$ ，使集合内元素的 $lcm$ 严格大于其补集元素的 $lcm$ 。问是否存在这一序列。
-思路要注意我们是要尽可能使序列有解。
-先给出结论：若所有集合两两间有交，则有解。否则一定无解。
-首先有一个结论：若 $A\sub...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF1166E%20The%20LCMs%20Must%20be%20Large/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3315,11 +3345,14 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF437D The Child and Zoo题意给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
+        CF437D The Child and Zoo
+题意
+给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
 思路
+
 首先，我们可以将点权转移到边权上，边权为两端点点权的较小值。正确性显然。
 然后，对于任意两个点之间的贡献，只有路径上含最大点权的简单路径有贡献，于是就可以把无向图转变为最大生成树。任意两个点间的贡献显然是在最大生成树上路径的最大边权。
-考虑对于一条边的贡献，其实就是...
+考虑对于一...
       
     
   </div>
@@ -3382,14 +3415,15 @@ AC自动机是建立在trie树上的一种优化手段。trie在每次查询一�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF459E-DP核心代码15行
-思路观察数据范围，我们建m层分层图跑最短路想到DP。
+        CF459E-DP
+核心代码15行
+思路
+观察数据范围，我们建m层分层图跑最短路想到DP。
 DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？
 发现DP值一定从边权小于当前点的位置转移而来。
 这不就无后效性了？我们按边权将所有边排序即可。
 然后，枚举边，将DP值记录到点上，每次用起始点的dp值加1更新到达点的dp值。最后输出dp值最大的即可。
-然后，您会发现第一个样例过不去。
-因为题...
+然后，您会发现第一个...
       
     
   </div>
@@ -3738,7 +3772,9 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
     
       
         
-          <div><p><span id="lc-uv">你是第 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 位访客，欢迎你。</span></p>
+          <div><p><span id="lc-uv">你是第 <span
+id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+位访客，欢迎你。</span></p>
 </div>
         
       
@@ -4750,7 +4786,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 
