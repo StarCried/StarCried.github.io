@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans,en,zh-CN,default">
+<html lang="zh-CN">
     <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
   <meta name="generator" content="Hexo 7.3.0">
   <meta name="Volantis" content="5.8.0">
@@ -21,28 +21,25 @@
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
   <!-- import head_begin begin -->
-      <script>(function(){try{if(!localStorage.getItem("color-scheme")){localStorage.setItem("color-scheme","dark");document.documentElement.setAttribute("color-scheme","dark");}}catch(e){document.documentElement.setAttribute("color-scheme","dark");}})();</script>
-      <meta name="msapplication-TileColor" content="#ffffff">
-      <meta name="theme-color" content="#ffffff">
-      <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried32x32.png">
-      <link rel="manifest" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/site.webmanifest">
-      <link rel="mask-icon" href="https://raw.githubusercontent.com/StarCried/Pictures/2e3c3071db60be3c2e310e58b0a65c93f850d2d2/SVG/StarCried.svg" color="#5bbad5">
-      <link rel="shortcut icon" href="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried.ico">
+      <meta name="msapplication-TileColor" content="#edf6f4">
+      <link rel="apple-touch-icon" href="/assets/brand/starcried-128.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/starcried-32.png">
+      <link rel="manifest" href="/site.webmanifest">
+      <link rel="mask-icon" href="/assets/brand/starcried.svg" color="#1aa6b7">
+      <link rel="shortcut icon" href="/assets/brand/favicon.ico">
       <meta name="apple-mobile-web-app-title" content="StarCried">
       <meta name="application-name" content="StarCried">
-      <meta name="msapplication-TileColor" content="#f4f4f4">
-      <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried32x32.png">
-      <meta name="theme-color" content="#f4f4f4" media="(prefers-color-scheme: light)">
-      <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+      <meta name="msapplication-TileImage" content="/assets/brand/starcried-128.png">
+      <meta name="theme-color" content="#edf6f4" media="(prefers-color-scheme: light)">
+      <meta name="theme-color" content="#10151c" media="(prefers-color-scheme: dark)">
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
   <!-- front-matter head_begin begin -->
   <!-- front-matter head_begin end -->
-    <link rel="shortcut icon" type='image/x-icon' href="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried.ico">
-  <link rel="preload" href="/css/style.css" as="style">
+    <link rel="shortcut icon" type='image/x-icon' href="/assets/brand/favicon.ico">
+  <link rel="preload" href="/css/style.35b3785d.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -57,16 +54,16 @@
 <meta property="og:url" content="https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
 <meta property="og:description" content="P2375 [NOI2014]动物园 我竟然会做NOI的题目辣(≧▽≦)&#x2F;（看的题解 总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。 我们发现，这个所谓的 num 数组和 nxt 有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。 于是在标记 nxt 时同时也可以把 num 标记。原理是，nxt 记录的">
-<meta property="og:locale">
-<meta property="og:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://starcried.github.io/assets/brand/starcried-128.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-11T13:15:33.027Z">
+<meta property="article:modified_time" content="2022-04-29T16:00:00.000Z">
 <meta property="article:author" content="StarCried">
 <meta property="article:tag" content="博客园">
 <meta property="article:tag" content="OI">
 <meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+<meta name="twitter:image" content="https://starcried.github.io/assets/brand/starcried-128.png">
   <style>
     /* 首屏样式 */
     #safearea {
@@ -124,8 +121,8 @@ html {
   color: var(--color-text);
   width: 100%;
   height: 100%;
-  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
-  font-size: 20px;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-size: 18px;
 }
 html >::-webkit-scrollbar {
   height: 6px;
@@ -147,7 +144,7 @@ body {
   background-color: var(--color-site-body);
   text-rendering: optimizelegibility;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  line-height: 1.6;
+  line-height: 1.75;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -286,6 +283,103 @@ button {
   position: relative;
   overflow: hidden;
   margin-bottom: -100px;
+}
+.cover-wrapper .cover-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+}
+.cover-wrapper .cover-bg.lazyload:not(.loaded) {
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+}
+.cover-wrapper .cover-bg.lazyload.loaded {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
 }
 .cover-wrapper .cover-body {
   z-index: 1;
@@ -444,7 +538,7 @@ button {
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 .cover-wrapper .cover-body .subtitle {
-  font-size: 25px;
+  font-size: 22.5px;
 }
 .cover-wrapper .cover-body .logo {
   max-height: 120px;
@@ -752,71 +846,6 @@ button {
     backdrop-filter: saturate(200%) blur(20px);
   }
 }
-.cover-wrapper #parallax-window {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-}
-.parallax-mirror {
-  animation-delay: 0s;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  animation-name: fadeIn;
-}
-@-moz-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-  }
-}
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-  }
-}
-@-o-keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    filter: blur(12px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-  }
-}
 @media (prefers-color-scheme: dark) {
   :root {
     --color-mode: 'dark';
@@ -1112,7 +1141,7 @@ button {
 }
 .l_header .nav-sub .title {
   font-weight: bold;
-  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   line-height: 1.2;
   max-height: 64px;
   white-space: normal;
@@ -1812,8 +1841,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  <link rel="stylesheet" href="/css/style.35b3785d.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.35b3785d.css"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1846,9 +1875,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		'}'+
 	'</style>'+
     '<div class="kill-ie">'+
-        `<span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>`+
-        `<span class="kill-c">Microsoft has terminated support for Internet Explorer (IE) 10 and earlier versions in 2016. <br/>There are great security risks to continue using it. Please use contemporary mainstream browsers to access.</span><br/>`+
-        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>Learn more ></strong></a>`+
+        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
+        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
     '</div>');
 </script>
 
@@ -1876,9 +1905,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		}
 	</style>
     <div class="kill-noscript">
-        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>
-        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br/>
-        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
+        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
+        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
     </div>
 </noscript>
 
@@ -1891,9 +1920,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
+    cdn: {"js":{"app":"/js/app.6d801d25.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1782050050757),
+    lastupdate: new Date(1784193165255),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -1912,14 +1941,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
       
-      aplayer: {
-        id: 137470856,
-        enable:true
-      },
       
       
-      
-      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":true,"musicAlwaysShow":true},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"},{"id":"googleSearch","name":"谷歌搜索","icon":"fa-solid fa-search","event":"window.open(`https://www.google.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":true,"musicAlwaysShow":true},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"},{"id":"googleSearch","name":"谷歌搜索","icon":"fa-solid fa-search","event":"window.open(`https://www.google.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
       
     }
   }
@@ -2319,7 +2343,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=07317ed247">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2385,7 +2409,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2402,7 +2426,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
         <a class="title flat-box" target="_self" href='/'>
           
-            <img no-lazy class='logo' src='https://raw.githubusercontent.com/StarCried/Pictures/414fd2f9199d349c72355473472e3b782ff39679/SVG/StarCried.svg'/>
+            <img no-lazy class='logo' src='/assets/brand/starcried.svg'/>
           
           
           
@@ -2676,7 +2700,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
       <div id="none" class='cover-wrapper post dock' style="display: none;">
         
-  <div id="parallax-window"></div>
+  <div class='cover-bg lazyload placeholder' data-bg="/assets/images/weiguang-cover.jpg"></div>
 
 <div class='cover-body'>
   <div class='top'>
@@ -2728,18 +2752,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               <img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/twemoji/assets/svg/1f497.svg'><p>友链</p>
             </a>
           
-            <a href="/archives/"
-              
-              
-              active-action="action-archives">
-              <img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/twemoji/assets/svg/1f5c3.svg'><p>归档</p>
-            </a>
-          
             <a href="/about/"
               
               
               active-action="action-about">
-              <img src='https://raw.githubusercontent.com/StarCried/Pictures/414fd2f9199d349c72355473472e3b782ff39679/SVG/StarCried.svg'><p>微光</p>
+              <img src='/assets/brand/starcried.svg'><p>微光</p>
             </a>
           
         
@@ -2758,7 +2775,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2375 [NOI2014]动物园/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -2772,7 +2789,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
     <span hidden>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png">
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
     </span>
   
   <div class="article-meta" id="top">
@@ -2814,40 +2831,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Apr 30, 2022</p>
+    <p>发布于：2022年4月30日</p>
   </a>
 </div>
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2026-05-11T21:15:33+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-30T00:00:00+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 11, 2026</p>
+    <p>更新于：2022年4月30日</p>
   </a>
 </div>
-
-          
-        
-          
-            
-
-
-<div class="new-meta-item browse">
-  <a class='notlink'>
-    <p>
-      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="lc-pv" data-title="P2375 [NOI2014]动物园" data-path="/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/">
-        <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-      </span>
-      
-      <span>次浏览</span>
-    </p>
-  </a>
-</div>
-
 
           
         
@@ -2908,10 +2904,10 @@ class="math inline">\(i\)</span>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-05-11T21:15:33+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-30T00:00:00+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 11, 2026</p>
+    <p>更新于：2022年4月30日</p>
   </a>
 </div>
 
@@ -3012,7 +3008,7 @@ f[i][j] 表示i个点选j门课程的最大学分。
   
 
 
-  <article class="post white-box shadow floatable blur" id="comments">
+  <article class="post white-box shadow" id="comments">
     <span hidden>
       <meta itemprop="discussionUrl" content="/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/index.html#comments">
     </span>
@@ -3048,7 +3044,7 @@ f[i][j] 表示i个点选j门课程的最大学分。
     
   <header>
     
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
@@ -3079,7 +3075,7 @@ f[i][j] 表示i个点选j门课程的最大学分。
           <li><a class="flat-box"
             title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
             active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(56)</div></a></li>
+            ><div class='name'>日记</div><div class='badge'>(55)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -3203,30 +3199,6 @@ f[i][j] 表示i个点选j门课程的最大学分。
     <br><br>
     
       
-        <div class="aplayer-container">
-          
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='album'
-      id='137470856'
-      list-folded='true'>
-    </meting-js>
-  
-
-
-        </div>
-      
-    
-      
         <br>
         <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
           
@@ -3262,16 +3234,14 @@ f[i][j] 表示i个点选j门课程的最大学分。
     
       
         
-          <div><p><span id="lc-uv">你是第 <span
-id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
-位访客，欢迎你。</span></p>
+          <div><p>星星平野阔，月涌大江流。</p>
 </div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright ©Star_Cried since 2024 XXX</a></p>
+        <p><a href="/">Copyright © Star_Cried · 2024-2026</a></p>
 
         </div>
       
@@ -3312,7 +3282,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
 <!-- internal -->
 
-<script src="/js/app.js"></script>
+<script src="/js/app.6d801d25.js"></script>
 
 
 
@@ -3519,7 +3489,7 @@ id="number"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i><
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.js"></script>
+<script src="/js/plugins/rightMenus.80d861b1.js"></script>
 <script>
   const RightMenusFunction = {};
   
@@ -3750,20 +3720,10 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/tags/sites.js")
+        volantis.js("/js/plugins/tags/sites.76bf19b8.js")
       }
     
     
-      const friends_api = document.getElementById('friends-api');
-      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/tags/friends.js")
-      }
-    
-    
-      const contributors_api = document.getElementById('contributors-api');
-      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/tags/contributors.js")
-      }
     
   };
   loadIssuesJS()
@@ -3821,109 +3781,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-   <script type="text/javascript">
-  function pjax_scrollrebeal() {
-    ScrollReveal().reveal("#l_main .reveal", {
-      distance: "32px",
-      duration: "800",
-      interval: "20",
-      scale: "1",
-      easing: "ease-out",
-    });
-  }
-  function init_scrollrebeal() {
-    if (typeof ScrollReveal == "undefined") {
-      volantis.requestAnimationFrame(init_scrollrebeal);
-    } else {
-      pjax_scrollrebeal();
-    }
-  }
-  volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/scrollreveal/dist/scrollreveal.min.js");
-  document.addEventListener("DOMContentLoaded", init_scrollrebeal);
-  volantis.pjax.push(
-    pjax_scrollrebeal,
-    "pjax_scrollrebeal",
-    (setRequestAnimationFrame = false)
-  );
-</script>
-
-
-
-
-  <script>
-  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
-  (async () => {
-    // APlayer 需要在  MetingJS 之前加载
-    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
-    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
-  
-    // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js')
-  
-  })();
-
-  function SetAPlayerPlugin(){
-    let Metings = document.querySelectorAll('meting-js');
-    if (Metings.length === 0) {return;};
-    if (Metings[0].aplayer && Metings[0].aplayer.on) {
-      // improve the accessibility https://web.dev/button-name/
-      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
-        e.setAttribute("aria-label","Aplayer Menu")
-      })
-      // message see: /layout/_plugins/message/script.ejs
-      
-        try {
-          setTimeout(() => {
-            Metings.forEach((item, index) => {
-              const aplayerItem = item.aplayer; if(!aplayerItem) return;
-              const rightAplayerCheck = 'true' === 'true'
-                && item.meta.id === '137470856';
-              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
-              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
-                aplayerItem.on('play', function messagePlay() {
-                  let index = aplayerItem.list.index;
-                  let title = aplayerItem.list.audios[index].title;
-                  let artist = aplayerItem.list.audios[index].artist;
-                  setTimeout(() => {
-                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                      icon: 'fa-solid fa-play',
-                      transitionIn: 'flipInX',
-                      transitionOut: 'flipOutX'
-                    });
-                  }, 100)
-                });
-              }
-              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
-                aplayerItem.on('pause', function messagePause() {
-                  let index = aplayerItem.list.index;
-                  let title = aplayerItem.list.audios[index].title;
-                  let artist = aplayerItem.list.audios[index].artist;
-                  setTimeout(() => {
-                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
-                    if(aplayerItem.paused) {
-                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                        icon: 'fa-solid fa-pause',
-                        transitionIn: 'flipInX',
-                        transitionOut: 'flipOutX'
-                      });
-                    }
-                  }, 100)
-                });
-              }
-            });
-          }, 500)
-        } catch (error) { console.error(error); }
-      
-    }else{
-      volantis.requestAnimationFrame(SetAPlayerPlugin)
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", ()=>{
-    SetAPlayerPlugin();
-  });
-  volantis.pjax.push(SetAPlayerPlugin);
-</script>
 
 
 
@@ -3992,7 +3849,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js");
+    return volantis.js("/js/search/hexo.65811610.js");
   }
 
   function loadSearchService() {
@@ -4060,274 +3917,10 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script defer>
-
-  const LCCounter = {
-    app_id: 'TQ6VGW64yFB0p8CjE7ZXzMdL-MdYXbMMI',
-    app_key: '5M96L1i3YzMB41cF0H8fgyNv',
-    custom_api_server: '',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://StarCried.github.io' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://StarCried.github.io' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'https://StarCried.github.io' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
-
-
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.custom_api_server || `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
-    }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
 
 
 
 
-
-
-
-
-  <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp"];
-  let index = 0;
-  let IntervalParallax = null;
-
-  function parallax(){
-    let ParallaxWindow = document.querySelector("#parallax-window");
-    
-    Parallax.window = ParallaxWindow;
-    Parallax.options.fade = 1000;
-    Parallax.cache = 1;
-    next_parallax();
-    Parallax.init();
-    if (imgs.length>1) {
-      IntervalParallax = setInterval(function () {
-        next_parallax();
-      }, '10000');
-    }
-  }
-
-  function next_parallax() {
-    if (typeof Parallax == "undefined") {
-      return
-    }
-    
-      if (!document.querySelector("#full")&&!document.querySelector("#half")) {
-        return
-      }
-    
-    if (imgs.length>=1) {
-      Parallax.options.src = imgs[index % imgs.length];
-      Parallax.start();
-      index++;
-      if (Parallax.cache) {
-        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
-        if (index == imgs.length) {
-          Parallax.cache = 0;
-        }
-      }
-    }
-  }
-  var runningOnBrowser = typeof window !== "undefined";
-  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
-  if (!isBot) {
-    volantis.js('/js/plugins/parallax.js').then(()=>{
-      parallax()
-    })
-    volantis.pjax.send(()=>{
-      clearInterval(IntervalParallax)
-    },"clearIntervalParallax");
-    volantis.pjax.push(parallax);
-  }
-</script>
 
 
 
@@ -4559,7 +4152,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/volantis-x"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/P2375 [NOI2014]动物园/","name":"P2375 [NOI2014]动物园"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"P2375 [NOI2014]动物园","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":["zh-Hans","en","zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2026-05-11T13:15:33.027Z","articleSection":"题解","keywords":"博客园,OI,字符串","image":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/StarCried/Pictures/main/SVG/StarCried128x.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/StarCried"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/P2375 [NOI2014]动物园/","name":"P2375 [NOI2014]动物园"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"P2375 [NOI2014]动物园","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/P2375%20[NOI2014]%E5%8A%A8%E7%89%A9%E5%9B%AD/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2022-04-29T16:00:00.000Z","articleSection":"题解","keywords":"博客园,OI,字符串","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}}]</script>
 
 
 
@@ -4646,8 +4239,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
+<div id="sc-radio" class="sc-radio" hidden>
+  <div class="sc-radio-panel" aria-live="polite">
+    <div class="sc-radio-status">点击播放键加载歌单</div>
+    <div class="sc-radio-player"></div>
+  </div>
+  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+    <i class="fas fa-music" aria-hidden="true"></i>
+  </button>
+</div>
 <script>
 (function () {
+  var HOME_PATHS = ['/', '/index.html'];
+
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4672,36 +4276,190 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     return !!(target && target.closest && target.closest('#scroll-down'));
   }
 
-  function bindStarCriedScrollDown() {
+  function bindScrollDown() {
     var trigger = document.getElementById('scroll-down');
-    if (!trigger || trigger.dataset.starcriedScrollBound === 'true') return;
+    if (!trigger) return;
 
-    trigger.dataset.starcriedScrollBound = 'true';
     trigger.setAttribute('role', 'button');
-    trigger.setAttribute('aria-label', 'Scroll to posts');
+    trigger.setAttribute('aria-label', '滚动到文章列表');
     trigger.setAttribute('tabindex', '0');
-    trigger.setAttribute('onclick', "var t=document.getElementById('safearea')||document.getElementById('l_body')||document.getElementById('l_main');var h=document.getElementById('l_header');window.scrollTo({top:Math.max(0,(t?t.getBoundingClientRect().top+window.scrollY:window.innerHeight)-(h?h.offsetHeight+16:80)),behavior:'smooth'});return false;");
+    trigger.removeAttribute('onclick');
   }
 
-  if (window.__starcriedScrollDownDelegated !== true) {
-    window.__starcriedScrollDownDelegated = true;
+  function classifyPostCards() {
+    document.querySelectorAll('.post-v3').forEach(function (card) {
+      var categoryLink = card.querySelector('.meta-v3 a[href*="/categories/"]');
+      var category = categoryLink ? categoryLink.textContent.trim() : '';
+      var kind = 'notes';
 
-    document.addEventListener('click', function (event) {
-      if (isScrollDownTrigger(event)) {
-        scrollToPosts(event);
+      if (/日记|随笔|生活/.test(category)) {
+        kind = 'journal';
+      } else if (/创作|绘画|旅行|摄影|兽/.test(category)) {
+        kind = 'creative';
+      } else if (/题解|算法|数学|编程|Web|开发|技术/.test(category)) {
+        kind = 'tech';
       }
-    }, true);
 
+      card.dataset.contentKind = kind;
+    });
+  }
+
+  function markGalleryImages() {
+    document.querySelectorAll('.gallery[galleryFlag] img, .tag-plugin.gallery img').forEach(function (image) {
+      if (image.dataset.starcriedImageBound === 'true') return;
+      image.dataset.starcriedImageBound = 'true';
+      image.classList.add('sc-image-pending');
+
+      var markReady = function () {
+        if (image.naturalWidth <= 2) return;
+        image.classList.remove('sc-image-pending', 'sc-image-error');
+        image.classList.add('sc-image-ready');
+      };
+      var markError = function () {
+        image.classList.remove('sc-image-pending', 'sc-image-ready');
+        image.classList.add('sc-image-error');
+        if (image.parentElement && image.parentElement.tagName === 'A') {
+          image.parentElement.dataset.galleryStatus = '图片暂时未能载入，点击可尝试查看原图';
+        }
+      };
+
+      image.addEventListener('load', markReady);
+      image.addEventListener('error', markError);
+      if (image.complete) {
+        if (image.naturalWidth > 2) markReady();
+        else if (image.naturalWidth === 0) markError();
+      }
+    });
+  }
+
+  function bindFriendAvatars() {
+    document.querySelectorAll('.friend-card').forEach(function (card) {
+      var name = card.querySelector('.friend-name');
+      var avatarWrap = card.querySelector('.friend-left');
+      var image = avatarWrap && avatarWrap.querySelector('img');
+      if (!avatarWrap || !image || image.dataset.starcriedAvatarBound === 'true') return;
+
+      image.dataset.starcriedAvatarBound = 'true';
+      avatarWrap.dataset.initial = name && name.textContent.trim() ? name.textContent.trim().charAt(0) : '友';
+
+      var markReady = function () {
+        if (image.naturalWidth <= 2) return;
+        avatarWrap.classList.remove('avatar-missing');
+      };
+      var markMissing = function () {
+        avatarWrap.classList.add('avatar-missing');
+      };
+
+      image.addEventListener('load', markReady);
+      image.addEventListener('error', markMissing);
+      if (image.complete) {
+        if (image.naturalWidth > 2) markReady();
+        else markMissing();
+      }
+    });
+  }
+
+  function loadStyle(href) {
+    if (document.querySelector('link[href="' + href + '"]')) return;
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var existing = document.querySelector('script[src="' + src + '"]');
+      if (existing) {
+        if (existing.dataset.loaded === 'true') resolve();
+        else {
+          existing.addEventListener('load', resolve, { once: true });
+          existing.addEventListener('error', reject, { once: true });
+        }
+        return;
+      }
+
+      var script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.addEventListener('load', function () {
+        script.dataset.loaded = 'true';
+        resolve();
+      }, { once: true });
+      script.addEventListener('error', reject, { once: true });
+      document.body.appendChild(script);
+    });
+  }
+
+  function syncRadioVisibility() {
+    var radio = document.getElementById('sc-radio');
+    if (!radio) return;
+    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
+  }
+
+  function bindRadio() {
+    var radio = document.getElementById('sc-radio');
+    var toggle = radio && radio.querySelector('.sc-radio-toggle');
+    var status = radio && radio.querySelector('.sc-radio-status');
+    var player = radio && radio.querySelector('.sc-radio-player');
+    if (!radio || !toggle || !status || !player || radio.dataset.bound === 'true') return;
+
+    radio.dataset.bound = 'true';
+    toggle.addEventListener('click', function () {
+      radio.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', radio.classList.contains('is-open') ? 'true' : 'false');
+
+      if (radio.dataset.loaded === 'true' || radio.dataset.loading === 'true') return;
+      radio.dataset.loading = 'true';
+      toggle.disabled = true;
+      status.textContent = '正在加载歌单...';
+      loadStyle('https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css');
+
+      loadScript('https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js')
+        .then(function () {
+          return loadScript('https://unpkg.com/meting@2/dist/Meting.min.js');
+        })
+        .then(function () {
+          player.innerHTML = '<meting-js server="netease" type="album" id="137470856" fixed="false" mini="false" autoplay="false" loop="all" order="random" preload="metadata" volume="0.7"></meting-js>';
+          status.hidden = true;
+          radio.dataset.loaded = 'true';
+          radio.dataset.loading = 'false';
+          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+        })
+        .catch(function () {
+          status.textContent = '歌单加载失败，请稍后重试';
+          radio.dataset.loading = 'false';
+        })
+        .finally(function () {
+          toggle.disabled = false;
+        });
+    });
+  }
+
+  function enhancePage() {
+    bindScrollDown();
+    classifyPostCards();
+    markGalleryImages();
+    bindFriendAvatars();
+    syncRadioVisibility();
+    bindRadio();
+  }
+
+  if (window.__starcriedExperienceBound !== true) {
+    window.__starcriedExperienceBound = true;
+    document.addEventListener('click', function (event) {
+      if (isScrollDownTrigger(event)) scrollToPosts(event);
+    }, true);
     document.addEventListener('keydown', function (event) {
       if ((event.key === 'Enter' || event.key === ' ') && isScrollDownTrigger(event)) {
         scrollToPosts(event);
       }
     }, true);
+    document.addEventListener('DOMContentLoaded', enhancePage);
+    document.addEventListener('pjax:complete', enhancePage);
   }
 
-  bindStarCriedScrollDown();
-  document.addEventListener('DOMContentLoaded', bindStarCriedScrollDown);
-  document.addEventListener('pjax:complete', bindStarCriedScrollDown);
+  enhancePage();
 })();
 </script><!-- hexo injector body_end end --></body>
 </html>

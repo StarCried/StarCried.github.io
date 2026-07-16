@@ -62,6 +62,7 @@ const VolantisApp = (() => {
         fn.setHeader();
         fn.setHeaderSearch();
       }
+      fn.scrollEventCallBack();
     }
     volantis.scroll.push(fn.scrollEventCallBack, "scrollEventCallBack")
   }
@@ -148,7 +149,17 @@ const VolantisApp = (() => {
 
     // Header导航
     if (volantis.dom.header) {
-      if (scrollTop - showHeaderPoint > -1) {
+      const maxScroll = Math.max(
+        0,
+        document.documentElement.scrollHeight - document.documentElement.clientHeight
+      );
+      const shortPageLimit = Math.max(
+        scrollCorrection,
+        document.documentElement.clientHeight * 0.35
+      );
+      const isNavigationIndex = /^\/(categories|tags)\/?$/.test(window.location.pathname);
+      const isShortPage = maxScroll <= shortPageLimit;
+      if (isNavigationIndex || isShortPage || scrollTop - showHeaderPoint > -1) {
         volantis.dom.header.addClass('show');
       } else {
         volantis.dom.header.removeClass('show');
@@ -268,12 +279,13 @@ const VolantisApp = (() => {
       index = index[0];
       idname = idname.split(index)[0];
     }
-    // 转义字符如 [, ], ~, #, @
-    idname = idname.replace(/(\[|\]|~|#|@)/g, '\\$1');
     if (idname && volantis.dom.headerMenu) {
       volantis.dom.headerMenu.forEach(element => {
-        // idname 不能为数字开头, 加一个 action- 前缀
-        let id = element.querySelector("[active-action=action-" + idname + "]")
+        // Compare attributes directly so punctuation in post slugs cannot form an invalid selector.
+        let action = 'action-' + idname;
+        let id = Array.from(element.querySelectorAll('[active-action]')).find(item => {
+          return item.getAttribute('active-action') === action;
+        });
         if (id) {
           volantis.dom.$(id).addClass('active')
         }
@@ -288,7 +300,7 @@ const VolantisApp = (() => {
       document.querySelectorAll('#l_header .m-phone li').forEach(function (_e) {
         if (_e.querySelector(".list-v")) {
           // 点击菜单
-          volantis.dom.$(_e).click(function (e) {  
+          volantis.dom.$(_e).click(function (e) {
             e.stopPropagation();
             let menuType = ''
             // 关闭.menu-phone
@@ -316,7 +328,7 @@ const VolantisApp = (() => {
               })
               // 点击展开二级子菜单
 
-              /* 
+              /*
                 由于采用事件委托，因此此处点击， 两种情况，currentTarget指向菜单按钮a.s-menu和ul的共同父元素li， 第二，指向ul中的li元素，也就是子菜单
                 区分：情况一的第一个子元素a的类名是s-menu；情况二的子元素a的类名为menuitem
                 我们要点击外部的menu icon时要关闭的是.menu-phone而不是.menuitem
@@ -330,7 +342,7 @@ const VolantisApp = (() => {
                   volantis.dom.$(element).show()
                 }
               }
-            } else {  
+            } else {
               let menuPhone = document.querySelector('.switcher .menu-phone')
               let isHiding = window.getComputedStyle(menuPhone).display === 'none'
               if(isHiding) {
@@ -370,7 +382,7 @@ const VolantisApp = (() => {
     }
     fn.setPageHeaderMenuEvent();
   }
-  
+
   // 【移动端】隐藏子菜单
   fn.setPageHeaderMenuEvent = () => {
     if (!volantis.isMobile) return
@@ -384,6 +396,42 @@ const VolantisApp = (() => {
 
   // 设置导航栏搜索框 【移动端】
   fn.setHeaderSearch = () => {
+    document.querySelectorAll('.input.u-search-input').forEach(function (input) {
+      if (input.dataset.volantisSearchBound === 'true') return;
+      input.dataset.volantisSearchBound = 'true';
+
+      const loadSearch = (event) => {
+        // Replace Volantis' fire-and-forget loader so fast submissions cannot load the script twice.
+        event?.stopImmediatePropagation();
+        if (typeof SearchService !== 'undefined') return Promise.resolve();
+        if (!fn.headerSearchPromise && typeof loadSearchScript === 'function') {
+          fn.headerSearchPromise = loadSearchScript().catch((error) => {
+            fn.headerSearchPromise = null;
+            throw error;
+          });
+        }
+        return fn.headerSearchPromise || Promise.resolve();
+      };
+      const submitSearch = (event) => {
+        if (event.type === 'keydown' && event.key !== 'Enter') return;
+        event.preventDefault();
+        const query = input.value.trim();
+        if (!query) return;
+        loadSearch().then(() => {
+          if (typeof OpenSearch === 'function') OpenSearch(query);
+        });
+      };
+
+      input.addEventListener('focus', loadSearch, true);
+      input.addEventListener('keydown', submitSearch, false);
+
+      const form = input.closest('.u-search-form');
+      if (form && form.dataset.volantisSearchBound !== 'true') {
+        form.dataset.volantisSearchBound = 'true';
+        form.addEventListener('submit', submitSearch, false);
+      }
+    });
+
     if (!volantis.isMobile) return;
     if (!volantis.dom.switcher) return;
     // 点击移动端搜索按钮
@@ -727,6 +775,7 @@ const VolantisApp = (() => {
       })
       document.querySelector("#l_header .menu-phone.list-v").removeAttribute("style");
       messageCopyrightShow = 0;
+      requestAnimationFrame(fn.scrollEventCallBack);
     },
     utilCopyCode: fn.utilCopyCode,
     utilWriteClipText: fn.utilWriteClipText,
@@ -753,10 +802,10 @@ const VolantisFancyBox = (() => {
 
   /**
    * 加载及处理
-   * 
+   *
    * @param {*} checkMain 是否只处理文章区域的文章
    * @param {*} done      FancyBox 加载完成后的动作，默认执行分组绑定
-   * @returns 
+   * @returns
    */
   fn.init = (checkMain = true, done = fn.groupBind) => {
     if (!document.querySelector(".md .gallery img, .fancybox") && checkMain) return;
@@ -769,7 +818,7 @@ const VolantisFancyBox = (() => {
 
   /**
    * 图片元素预处理
-   * 
+   *
    * @param {*} selectors 选择器
    * @param {*} name      分组
    */
@@ -790,7 +839,7 @@ const VolantisFancyBox = (() => {
 
   /**
    * 原生绑定
-   * 
+   *
    * @param {*} selectors 选择器
    */
   fn.bind = (selectors) => {
@@ -811,7 +860,7 @@ const VolantisFancyBox = (() => {
 
   /**
    * 分组绑定
-   * 
+   *
    * @param {*} groupName 分组名称
    */
   fn.groupBind = (groupName = null) => {
