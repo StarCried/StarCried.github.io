@@ -162,8 +162,12 @@ input[type="submit"] {
   overflow: hidden;
   background:
     var(--sc-cover-overlay),
-    url("/assets/images/weiguang-cover.jpg") center 38% / cover no-repeat;
+    url("/assets/images/weiguang-cover.jpg") center top / cover no-repeat;
   box-shadow: inset 0 -150px 120px -105px var(--sc-page-color);
+}
+
+.cover-wrapper .cover-bg {
+  background-position: center top !important;
 }
 
 .cover-wrapper::before,
