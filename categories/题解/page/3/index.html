@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.6d801d25.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1784219932804),
+    lastupdate: new Date(1784531307888),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=2377a609de">
+<!-- hexo injector head_end start -->
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2396,7 +2396,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<!-- hexo injector head_end end --></head>
+<link rel="stylesheet" href="/css/starcried.css?v=9f102cdabb"><!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2782,7 +2782,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2375 [NOI2014]动物园/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2014 选课/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2800,23 +2800,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/"  itemprop="url">
-        P2375 [NOI2014]动物园
+      <a href="/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/"  itemprop="url">
+        P2014 选课
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P2375
-[NOI2014]动物园
-我竟然会做NOI的题目辣(≧▽≦)/（看的题解
-总而言之，这是一道简单的KMP问题。题面简直是给没学过KMP的人看的（比如我）。
-我们发现，这个所谓的 num 数组和 nxt
-有异曲同工之妙。但是我们对于不能重合这一块有一点问号。那我们先不管重不重合，先给他记录成重合的。
-于是在标记 nxt 时同时也可以把 num
-标记。原理是，nxt
-...
+        洛谷P2014选课
+一道树形DP题。
+f[i][j] 表示i个点选j门课程的最大学分。
+递推方程：
+1234for(int a=n;a&gt;0;a--)//总共选择多少    for(int b=0;b&lt;a;b++)//分别选择多少(b,a-b)        f[x][a]=max(f[x][a],f[x][a-b]+f[u][b]);//都不遍历0的原因是f[i][0]无...
       
     
   </div>
@@ -2837,7 +2833,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P2375%20%5BNOI2014%5D%E5%8A%A8%E7%89%A9%E5%9B%AD/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3207,7 +3203,7 @@ Define:以下\(s\)指链或链长。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3643 [APIO2016]划艇/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3209-平面图判定/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3225,23 +3221,20 @@ Define:以下\(s\)指链或链长。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/"  itemprop="url">
-        P3643 [APIO2016]划艇
+      <a href="/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/"  itemprop="url">
+        P3209-平面图判定
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P3643 [APIO2016]划艇
-题意
-一个合法序列可表示为一个长度为 \(n\)
-的序列，其中第 \(i\) 个数可以为 0 或
-\([l_i,r_i]\)
-中一个整数，且满足所有不为零的数组成的子序列严格上升。求合法序列方案数。\(n\leq 500,l_i\leq r_i\leq 10^9\)。
-思路
-朴素动态规划做法为，设 \(f_{ij}\)
-表示第 \(i\)...
+        平面图
+平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过其他边的。
+平面图定理
+边数大于点数的三倍减六的图一定不是平面图。即设n为点数，m为边数，有
+\[m&lt;=n*3-6\]
+关于平面图的其他定理和上定理的证明我不会不过我有大佬博客就不乱搬了...
       
     
   </div>
@@ -3262,7 +3255,7 @@ Define:以下\(s\)指链或链长。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3350,7 +3343,7 @@ ans&amp;=\sum_{d=1}^{\min(n,m)}\sigm...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3209-平面图判定/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3643 [APIO2016]划艇/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3368,20 +3361,23 @@ ans&amp;=\sum_{d=1}^{\min(n,m)}\sigm...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/"  itemprop="url">
-        P3209-平面图判定
+      <a href="/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/"  itemprop="url">
+        P3643 [APIO2016]划艇
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        平面图
-平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过其他边的。
-平面图定理
-边数大于点数的三倍减六的图一定不是平面图。即设n为点数，m为边数，有
-\[m&lt;=n*3-6\]
-关于平面图的其他定理和上定理的证明我不会不过我有大佬博客就不乱搬了...
+        P3643 [APIO2016]划艇
+题意
+一个合法序列可表示为一个长度为 \(n\)
+的序列，其中第 \(i\) 个数可以为 0 或
+\([l_i,r_i]\)
+中一个整数，且满足所有不为零的数组成的子序列严格上升。求合法序列方案数。\(n\leq 500,l_i\leq r_i\leq 10^9\)。
+思路
+朴素动态规划做法为，设 \(f_{ij}\)
+表示第 \(i\)...
       
     
   </div>
@@ -3402,7 +3398,7 @@ ans&amp;=\sum_{d=1}^{\min(n,m)}\sigm...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3418,7 +3414,7 @@ ans&amp;=\sum_{d=1}^{\min(n,m)}\sigm...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4169-CDQ分治 K-D tree（三维偏序）-天使玩偶/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P4074 [WC2013]糖果公园/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3436,25 +3432,22 @@ ans&amp;=\sum_{d=1}^{\min(n,m)}\sigm...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P4169-CDQ%E5%88%86%E6%B2%BB%20K-D%20tree%EF%BC%88%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%EF%BC%89-%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6/"  itemprop="url">
-        P4169-CDQ分治 K-D tree（三维偏序）-天使玩偶
+      <a href="/2022/04/30/P4074%20%5BWC2013%5D%E7%B3%96%E6%9E%9C%E5%85%AC%E5%9B%AD/"  itemprop="url">
+        P4074 [WC2013]糖果公园
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P4169-CDQ分治/K-D
-tree（三维偏序）-天使玩偶
-这是一篇两种做法都有的题解
-题外话
-我写吐了……
-本着不看题解的原则，没写（不会）K-D
-tree，就写了个cdq分治的做法。下面是我的写题步骤：
-
-想着树状数组维护不了区间最值，于是写了线段树，因为一个**的错误调了几个小时；
-cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂了；
-加上另外两个方向，...
+        P4074 [WC2013]糖果公园
+树上带修莫队
+题意：树上每个点有一种糖果，求\(\sum_c\sum_{i=1}^{cnt_c}v_c*w_i\)
+其中c为糖果种类，\(cnt_c\)其为出现次数。
+思路
+离线树上带修莫队。
+先进行树上分块。分块内的询问按照出发点、终止点、询问id优先级依次递减排序。
+对于树上莫队，其实就是在欧拉序上莫队。因为欧拉序的性质，即每个节点子树...
       
     
   </div>
@@ -3475,7 +3468,7 @@ cdq只写了两个方向。显然是错的，因为没考虑修改。所以挂�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P4169-CDQ%E5%88%86%E6%B2%BB%20K-D%20tree%EF%BC%88%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%EF%BC%89-%E5%A4%A9%E4%BD%BF%E7%8E%A9%E5%81%B6/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P4074%20%5BWC2013%5D%E7%B3%96%E6%9E%9C%E5%85%AC%E5%9B%AD/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -4947,5 +4940,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><!-- hexo injector body_end end --></body>
+</script><script defer src="/js/starfield.js?v=6ac85d95b0"></script><!-- hexo injector body_end end --></body>
 </html>

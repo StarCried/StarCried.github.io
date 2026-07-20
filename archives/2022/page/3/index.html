@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.6d801d25.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1784219932804),
+    lastupdate: new Date(1784531307888),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=2377a609de">
+<!-- hexo injector head_end start -->
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2396,7 +2396,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<!-- hexo injector head_end end --></head>
+<link rel="stylesheet" href="/css/starcried.css?v=9f102cdabb"><!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2780,7 +2780,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF459E-DP/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF487E Tourists/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2798,23 +2798,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF459E-DP/"  itemprop="url">
-        CF459E-DP
+      <a href="/2022/04/30/CF487E%20Tourists/"  itemprop="url">
+        CF487E Tourists
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF459E-DP
-核心代码15行
+        CF487E Tourists
+前排膜拜T神
+上面的话和这道题一点关系都没有
+题意
+给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
 思路
-观察数据范围，我们建m层分层图跑最短路想到DP。
-DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？
-发现DP值一定从边权小于当前点的位置转移而来。
-这不就无后效性了？我们按边权将所有边排序即可。
-然后，枚举边，将DP值记录到点上，每次用起始点的dp值加1更新到达点的dp值。最后输出dp值最大的即可。
-然后，您会发现第一个...
+
+一眼圆方树。
+——@gxy001
+
+这种题只有在树上做才比较好处理这么多次询问。考虑广义圆方树，缩完点双连通分量后建立的方点和圆点。
+因为我们找的是最小值，所以必须将代表整个点双的方点的权值设为与其...
       
     
   </div>
@@ -2835,7 +2838,7 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/CF459E-DP/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF487E%20Tourists/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2905,80 +2908,6 @@ S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
       
         <div>
           <a class='readmore' href='/2022/04/30/CF494D%20Birthday/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF487E Tourists/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF487E%20Tourists/"  itemprop="url">
-        CF487E Tourists
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF487E Tourists
-前排膜拜T神
-上面的话和这道题一点关系都没有
-题意
-给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
-思路
-
-一眼圆方树。
-——@gxy001
-
-这种题只有在树上做才比较好处理这么多次询问。考虑广义圆方树，缩完点双连通分量后建立的方点和圆点。
-因为我们找的是最小值，所以必须将代表整个点双的方点的权值设为与其...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF487E%20Tourists/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3064,6 +2993,76 @@ AC 自动机，每次询问在两个自动机中匹配将答案...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF833B-线段树优化DP/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/"  itemprop="url">
+        CF833B-线段树优化DP
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        CF833B-线段树优化DP
+题意
+将一个长为\(n\)的序列分成\(k\)段，每段贡献为其中不同数字的个数，求最大贡献和。\(n\leq 35000,k\leq 50\)。
+思路
+此处感谢@gxy001 聚铑的精彩讲解
+先考虑暴力DP，可以想到一个时空复杂度\(O(n^2k)\)的方法，即记录前i个数字分成了j段。我们现在来思考几个问题来优化这个操作：
+
+对于一个数字，它对那...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF896D Nephren Runs a Cinema/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -3134,7 +3133,7 @@ AC 自动机，每次询问在两个自动机中匹配将答案...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF833B-线段树优化DP/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF459E-DP/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3152,22 +3151,23 @@ AC 自动机，每次询问在两个自动机中匹配将答案...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/"  itemprop="url">
-        CF833B-线段树优化DP
+      <a href="/2022/04/30/CF459E-DP/"  itemprop="url">
+        CF459E-DP
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF833B-线段树优化DP
-题意
-将一个长为\(n\)的序列分成\(k\)段，每段贡献为其中不同数字的个数，求最大贡献和。\(n\leq 35000,k\leq 50\)。
+        CF459E-DP
+核心代码15行
 思路
-此处感谢@gxy001 聚铑的精彩讲解
-先考虑暴力DP，可以想到一个时空复杂度\(O(n^2k)\)的方法，即记录前i个数字分成了j段。我们现在来思考几个问题来优化这个操作：
-
-对于一个数字，它对那...
+观察数据范围，我们建m层分层图跑最短路想到DP。
+DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？
+发现DP值一定从边权小于当前点的位置转移而来。
+这不就无后效性了？我们按边权将所有边排序即可。
+然后，枚举边，将DP值记录到点上，每次用起始点的dp值加1更新到达点的dp值。最后输出dp值最大的即可。
+然后，您会发现第一个...
       
     
   </div>
@@ -3188,7 +3188,7 @@ AC 自动机，每次询问在两个自动机中匹配将答案...
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF459E-DP/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3275,75 +3275,6 @@ n}f(d)g(\frac{n}{d})\] \[\varepsilon
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/GCD SUM/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/GCD%20SUM/"  itemprop="url">
-        GCD SUM
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        GCD SUM
-求 \[
-\sum_{i=1}^n\sum_{j=1}^n\gcd(i,j)
-\] 将原式变换得到 \[
-\sum_{d=1}^nd\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}[\gcd(i,j)=1]
-\] 别着急莫比乌斯反演，我们知道 \[
-\varph...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/GCD%20SUM/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Dijkstra 最短路/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -3399,6 +3330,75 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
       
         <div>
           <a class='readmore' href='/2022/04/30/Dijkstra%20%E6%9C%80%E7%9F%AD%E8%B7%AF/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/GCD SUM/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/GCD%20SUM/"  itemprop="url">
+        GCD SUM
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        GCD SUM
+求 \[
+\sum_{i=1}^n\sum_{j=1}^n\gcd(i,j)
+\] 将原式变换得到 \[
+\sum_{d=1}^nd\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}[\gcd(i,j)=1]
+\] 别着急莫比乌斯反演，我们知道 \[
+\varph...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/GCD%20SUM/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -4941,5 +4941,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><!-- hexo injector body_end end --></body>
+</script><script defer src="/js/starfield.js?v=6ac85d95b0"></script><!-- hexo injector body_end end --></body>
 </html>
