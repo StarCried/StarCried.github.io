@@ -1,23 +1,23 @@
 :root {
-  --sc-accent: #0e7589;
-  --sc-accent-bright: #35bfd2;
-  --sc-accent-soft: rgba(14, 117, 137, 0.13);
+  --sc-accent: #087f9f;
+  --sc-accent-bright: #22bdd8;
+  --sc-accent-soft: rgba(8, 127, 159, 0.14);
   --sc-mint: #367f70;
   --sc-warm: #9b6d2c;
   --sc-rose: #a95770;
-  --sc-page-color: #a2aca8;
+  --sc-page-color: #6f96b0;
   --sc-cover-mask: linear-gradient(180deg, #000 0%, #000 84%, transparent 100%);
   --sc-cover-fade: linear-gradient(180deg, rgba(22, 39, 51, 0.08) 0%, rgba(22, 39, 51, 0.08) 84%, transparent 100%);
-  --sc-card-border: rgba(29, 85, 100, 0.22);
-  --sc-card-bg: rgba(245, 249, 249, 0.86);
-  --sc-card-bg-strong: rgba(249, 251, 250, 0.95);
-  --sc-heading: #18343e;
-  --sc-text: rgba(24, 47, 56, 0.92);
-  --sc-muted: rgba(44, 68, 77, 0.76);
-  --sc-code-bg: rgba(234, 241, 242, 0.95);
-  --sc-header-bg: rgba(235, 243, 243, 0.84);
-  --sc-shadow: 0 16px 44px rgba(30, 57, 69, 0.17);
-  --sc-shadow-hover: 0 20px 50px rgba(30, 57, 69, 0.23);
+  --sc-card-border: rgba(20, 91, 125, 0.24);
+  --sc-card-bg: rgba(242, 248, 251, 0.88);
+  --sc-card-bg-strong: rgba(248, 252, 253, 0.96);
+  --sc-heading: #14394d;
+  --sc-text: rgba(20, 52, 67, 0.92);
+  --sc-muted: rgba(38, 73, 89, 0.78);
+  --sc-code-bg: rgba(230, 240, 246, 0.96);
+  --sc-header-bg: rgba(230, 241, 247, 0.88);
+  --sc-shadow: 0 16px 44px rgba(17, 63, 91, 0.19);
+  --sc-shadow-hover: 0 20px 50px rgba(17, 63, 91, 0.25);
 }
 
 html[color-scheme="dark"] {
@@ -475,10 +475,22 @@ html[color-scheme="dark"] #sc-cover-sky {
   box-shadow: none !important;
 }
 
+#friends .article-meta .title,
+#friends.article-type-friends > .p.logo,
+#friends .friend-header {
+  color: rgba(244, 251, 255, 0.96) !important;
+  text-shadow: 0 2px 12px rgba(7, 31, 52, 0.55);
+}
+
+#friends.article-type-friends > p,
+#friends .friends-group > p {
+  color: rgba(235, 247, 252, 0.88) !important;
+  text-shadow: 0 2px 10px rgba(7, 31, 52, 0.48);
+}
+
 #friends .friend-header {
   margin-top: 2rem;
   border: 0;
-  color: var(--sc-heading);
   text-align: left;
 }
 
@@ -550,6 +562,17 @@ html[color-scheme="dark"] #sc-cover-sky {
   white-space: nowrap;
 }
 
+#friends .friend-name {
+  color: var(--sc-heading);
+  font-weight: 650;
+}
+
+#friends .friend-card .tags,
+#friends .friend-tags,
+#friends .friend-title {
+  color: var(--sc-muted);
+}
+
 .sc-radio {
   position: fixed;
   right: auto;
@@ -583,7 +606,7 @@ html[color-scheme="dark"] #sc-cover-sky {
 
 .sc-radio-toggle:hover,
 .sc-radio.is-open .sc-radio-toggle {
-  color: var(--sc-page-color);
+  color: #f7fcff;
   background: var(--sc-accent);
 }
 

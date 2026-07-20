@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.6d801d25.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1784556942491),
+    lastupdate: new Date(1784558774184),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=261ed585a2">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=6091d0bb7a">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2918,7 +2918,7 @@ Wallpaper Engine 可用：搜索 Alice_StarCried
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/AT2390 Games on DAG/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF1032G Chattering/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2936,20 +2936,21 @@ Wallpaper Engine 可用：搜索 Alice_StarCried
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/AT2390%20Games%20on%20DAG/"  itemprop="url">
-        AT2390 Games on DAG
+      <a href="/2022/04/30/CF1032G%20Chattering/"  itemprop="url">
+        CF1032G Chattering
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        AT2390 Games on DAG
-题意
-\(n\) 个点 \(m\) 条边的 DAG，每条边 \((u,v)\) 有 \(u&lt;v\)。\(1,2\) 号点各一个石头，Alice 和 Bob
-轮流每次沿边移动一个石头，不能动者输。求所有连边子集中先手胜的情况。两个石头可以重合。\(n\leq 15\)。
+        CF1032G
+Chattering
 思路
-发现对于两个石头的 SG 函数是独立的，输者两个石头 SG 函...
+对于每一个位置，它转移的范围是确定的。
+对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。
+于是这个就可以倍增进行转移。
+如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST...
       
     
   </div>
@@ -2970,7 +2971,7 @@ Wallpaper Engine 可用：搜索 Alice_StarCried
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/AT2390%20Games%20on%20DAG/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF1032G%20Chattering/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3041,147 +3042,6 @@ f_x=2a_x-s_x
       
         <div>
           <a class='readmore' href='/2022/04/30/AT2304%20Cleaning/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF1032G Chattering/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF1032G%20Chattering/"  itemprop="url">
-        CF1032G Chattering
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF1032G
-Chattering
-思路
-对于每一个位置，它转移的范围是确定的。
-对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。
-于是这个就可以倍增进行转移。
-如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF1032G%20Chattering/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF404D-DP【成就达成】/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF404D-DP%E3%80%90%E6%88%90%E5%B0%B1%E8%BE%BE%E6%88%90%E3%80%91/"  itemprop="url">
-        CF404D-DP【成就达成】
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF404D-DP
-正经的东西
-
-题意
-给定一个字符串，只包含'0','1','2','*','?'五种字符，其中'?'可被替换为其他任何一种，求使序列符合扫雷地图定义的方案数。
-一个数字字符大小表示与之临近的位置总共有多少个雷。
-思路
-DP。
-和其他题解不太相同，我们每个点只记录三种状态：0,1,2，分别表示若此点的下一位不为雷、为雷和此点位就是雷的此位及以前的方案数。
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF404D-DP%E3%80%90%E6%88%90%E5%B0%B1%E8%BE%BE%E6%88%90%E3%80%91/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3272,7 +3132,7 @@ Large
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF437D The Child and Zoo/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/AT2390 Games on DAG/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3290,22 +3150,20 @@ Large
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF437D%20The%20Child%20and%20Zoo/"  itemprop="url">
-        CF437D The Child and Zoo
+      <a href="/2022/04/30/AT2390%20Games%20on%20DAG/"  itemprop="url">
+        AT2390 Games on DAG
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF437D The Child and Zoo
+        AT2390 Games on DAG
 题意
-给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
+\(n\) 个点 \(m\) 条边的 DAG，每条边 \((u,v)\) 有 \(u&lt;v\)。\(1,2\) 号点各一个石头，Alice 和 Bob
+轮流每次沿边移动一个石头，不能动者输。求所有连边子集中先手胜的情况。两个石头可以重合。\(n\leq 15\)。
 思路
-
-首先，我们可以将点权转移到边权上，边权为两端点点权的较小值。正确性显然。
-然后，对于任意两个点之间的贡献，只有路径上含最大点权的简单路径有贡献，于是就可以把无向图转变为最大生成树。任意两个点间的贡献显然是在最大生成树上路径的最大边权。
-考虑对于一...
+发现对于两个石头的 SG 函数是独立的，输者两个石头 SG 函...
       
     
   </div>
@@ -3326,7 +3184,7 @@ Large
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/CF437D%20The%20Child%20and%20Zoo/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/AT2390%20Games%20on%20DAG/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3408,7 +3266,7 @@ Large
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF494D Birthday/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF404D-DP【成就达成】/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3426,21 +3284,24 @@ Large
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF494D%20Birthday/"  itemprop="url">
-        CF494D Birthday
+      <a href="/2022/04/30/CF404D-DP%E3%80%90%E6%88%90%E5%B0%B1%E8%BE%BE%E6%88%90%E3%80%91/"  itemprop="url">
+        CF404D-DP【成就达成】
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF494D Birthday
+        CF404D-DP
+正经的东西
+
 题意
-一个1为根的带边权有根树，每次询问给定两个点 \(u,v\) 求 \(\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in
-S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
-表示 \(u,v\) 简单路径长度， \(S(u)\) 表示 \(u\) 的子树内点的集合。
+给定一个字符串，只包含'0','1','2','*','?'五种字符，其中'?'可被替换为其他任何一种，求使序列符合扫雷地图定义的方案数。
+一个数字字符大小表示与之临近的位置总共有多少个雷。
 思路
-考虑 \(u\) 在 \(v\)...
+DP。
+和其他题解不太相同，我们每个点只记录三种状态：0,1,2，分别表示若此点的下一位不为雷、为雷和此点位就是雷的此位及以前的方案数。
+...
       
     
   </div>
@@ -3461,7 +3322,151 @@ S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/CF494D%20Birthday/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF404D-DP%E3%80%90%E6%88%90%E5%B0%B1%E8%BE%BE%E6%88%90%E3%80%91/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF437D The Child and Zoo/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/CF437D%20The%20Child%20and%20Zoo/"  itemprop="url">
+        CF437D The Child and Zoo
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        CF437D The Child and Zoo
+题意
+给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
+思路
+
+首先，我们可以将点权转移到边权上，边权为两端点点权的较小值。正确性显然。
+然后，对于任意两个点之间的贡献，只有路径上含最大点权的简单路径有贡献，于是就可以把无向图转变为最大生成树。任意两个点间的贡献显然是在最大生成树上路径的最大边权。
+考虑对于一...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/CF437D%20The%20Child%20and%20Zoo/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF487E Tourists/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/CF487E%20Tourists/"  itemprop="url">
+        CF487E Tourists
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        CF487E Tourists
+前排膜拜T神
+上面的话和这道题一点关系都没有
+题意
+给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
+思路
+
+一眼圆方树。
+——@gxy001
+
+这种题只有在树上做才比较好处理这么多次询问。考虑广义圆方树，缩完点双连通分量后建立的方点和圆点。
+因为我们找的是最小值，所以必须将代表整个点双的方点的权值设为与其...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/CF487E%20Tourists/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -4938,5 +4943,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><script defer src="/js/starfield.js?v=a8666b36b8"></script><!-- hexo injector body_end end --></body>
+</script><script defer src="/js/starfield.js?v=f6c817925c"></script><!-- hexo injector body_end end --></body>
 </html>
