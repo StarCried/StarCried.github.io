@@ -35,22 +35,24 @@
         grain: 0.026
       },
       galaxy: {
-        outer: [87, 156, 193],
-        cool: [122, 192, 219],
-        warm: [225, 174, 151],
-        core: [248, 228, 198],
-        violet: [165, 157, 205],
-        opacity: 0.86,
-        overlayOpacity: 0.56,
+        outer: [45, 105, 176],
+        cool: [56, 205, 238],
+        warm: [255, 157, 122],
+        core: [255, 236, 174],
+        violet: [182, 105, 244],
+        magenta: [245, 79, 179],
+        mint: [89, 231, 196],
+        opacity: 0.92,
+        overlayOpacity: 0.6,
         dust: 0.64
       },
       stars: ['#e8fbff', '#8be4f5', '#f2d494', '#c6d3ff', '#c7f4e6'],
       line: 'rgba(126, 213, 229, 0.12)',
       dust: 'rgba(166, 229, 237, 0.14)',
-      streak: ['rgba(126, 231, 247, 0)', 'rgba(126, 231, 247, 0.92)']
+      streak: ['rgba(104, 218, 255, 0)', 'rgba(104, 218, 255, 0.46)', 'rgba(232, 253, 255, 0.98)']
     },
     light: {
-      sky: ['#526f88', '#7690a0', '#a7ada7'],
+      sky: ['#496984', '#708b9c', '#a3aaa5'],
       atmosphere: {
         horizon: ['rgba(201, 222, 216, 0)', 'rgba(220, 221, 199, 0.2)'],
         afterglow: ['rgba(246, 187, 157, 0.22)', 'rgba(116, 194, 196, 0.11)', 'rgba(80, 111, 137, 0)'],
@@ -58,19 +60,21 @@
         grain: 0.018
       },
       galaxy: {
-        outer: [139, 193, 213],
-        cool: [172, 220, 226],
-        warm: [243, 190, 163],
-        core: [255, 239, 207],
-        violet: [190, 183, 217],
-        opacity: 0.7,
-        overlayOpacity: 0.46,
+        outer: [75, 143, 204],
+        cool: [78, 196, 218],
+        warm: [247, 154, 136],
+        core: [255, 226, 169],
+        violet: [178, 122, 219],
+        magenta: [224, 93, 172],
+        mint: [74, 198, 174],
+        opacity: 0.76,
+        overlayOpacity: 0.32,
         dust: 0.48
       },
       stars: ['#f8fcff', '#d6f7f4', '#fff0c2', '#d7e8ff', '#c9f2de'],
       line: 'rgba(226, 246, 247, 0.22)',
       dust: 'rgba(235, 250, 248, 0.18)',
-      streak: ['rgba(255, 240, 190, 0)', 'rgba(255, 240, 190, 0.88)']
+      streak: ['rgba(255, 205, 160, 0)', 'rgba(255, 205, 160, 0.42)', 'rgba(255, 249, 217, 0.96)']
     }
   };
 
@@ -197,10 +201,16 @@
         const rift = Math.max(0, 1 - laneDistance / riftWidth) * (0.52 + riftTexture * 0.36);
         const intensity = profile * edge * (0.11 + cloud * 0.84) * (0.68 + core * 0.72) * (1 - rift * 0.82);
         const warmMix = Math.min(0.84, core * (0.38 + cloud * 0.42));
-        const violetMix = Math.max(0, (fine - 0.52) * 0.68);
+        const violetMix = Math.max(0, (fine - 0.48) * 0.92);
+        const chromaField = fractalNoise(normalizedX * 4.2, normalizedY * 5.1, seedValue + 683);
+        const mintField = fractalNoise(normalizedX * 6.8, normalizedY * 7.4, seedValue + 811);
+        const magentaMix = Math.max(0, Math.min(1, (chromaField - 0.46) * 2.35)) * (1 - core * 0.56);
+        const mintMix = Math.max(0, Math.min(1, (mintField - 0.5) * 2.45)) * (0.42 + cloud * 0.58);
         const coolTone = mixColor(galaxy.outer, galaxy.cool, cloud * 0.76);
         const warmTone = mixColor(coolTone, galaxy.warm, warmMix);
-        const color = mixColor(warmTone, galaxy.violet, violetMix);
+        const violetTone = mixColor(warmTone, galaxy.violet, violetMix);
+        const magentaTone = mixColor(violetTone, galaxy.magenta, magentaMix * 0.72);
+        const color = mixColor(magentaTone, galaxy.mint, mintMix * 0.56);
         const alpha = Math.max(0, Math.min(0.72, intensity * (0.22 + cloud * 0.58 + core * 0.12)));
         const offset = (y * sampleWidth + x) * 4;
         image.data[offset] = Math.round(color[0]);
@@ -292,8 +302,42 @@
       galaxy.core,
       0.24
     );
+    drawNebulaCloud(
+      textureContext,
+      galaxyWidth * 0.54,
+      centerY - galaxyHeight * 0.018,
+      galaxyHeight * 0.4,
+      galaxyHeight * 0.11,
+      0.03,
+      galaxy.warm,
+      0.18
+    );
+    [
+      { x: 0.26, y: -0.035, radiusX: 0.32, radiusY: 0.105, color: galaxy.magenta, alpha: 0.16 },
+      { x: 0.71, y: 0.03, radiusX: 0.28, radiusY: 0.09, color: galaxy.mint, alpha: 0.14 },
+      { x: 0.84, y: -0.045, radiusX: 0.24, radiusY: 0.08, color: galaxy.violet, alpha: 0.13 }
+    ].forEach((bloom) => {
+      drawNebulaCloud(
+        textureContext,
+        galaxyWidth * bloom.x,
+        centerY + galaxyHeight * bloom.y,
+        galaxyHeight * bloom.radiusX,
+        galaxyHeight * bloom.radiusY,
+        -0.08 + bloom.x * 0.12,
+        bloom.color,
+        bloom.alpha
+      );
+    });
 
-    const cloudColors = [galaxy.outer, galaxy.cool, galaxy.warm, galaxy.violet, galaxy.core];
+    const cloudColors = [
+      galaxy.outer,
+      galaxy.cool,
+      galaxy.warm,
+      galaxy.violet,
+      galaxy.magenta,
+      galaxy.mint,
+      galaxy.core
+    ];
     const cloudCount = width < 640 ? 30 : 46;
     for (let index = 0; index < cloudCount; index += 1) {
       const x = random() * galaxyWidth;
@@ -313,6 +357,25 @@
         (random() - 0.5) * 0.42,
         tone,
         0.014 + random() * 0.044
+      );
+    }
+
+    const accentColors = [galaxy.cool, galaxy.magenta, galaxy.mint, galaxy.violet];
+    const accentCount = width < 640 ? 9 : 14;
+    for (let index = 0; index < accentCount; index += 1) {
+      const x = galaxyWidth * (0.08 + random() * 0.84);
+      const y = centerY
+        + Math.sin(x / galaxyWidth * Math.PI * 2.6 + 0.45) * galaxyHeight * 0.03
+        + randomNormal(random) * galaxyHeight * 0.16;
+      drawNebulaCloud(
+        textureContext,
+        x,
+        y,
+        34 + random() * 96,
+        18 + random() * 42,
+        (random() - 0.5) * 0.5,
+        accentColors[index % accentColors.length],
+        0.045 + random() * 0.07
       );
     }
 
@@ -491,7 +554,7 @@
     const texture = palette === palettes.dark ? galaxyTextures.dark : galaxyTextures.light;
     if (!texture.width || !texture.height) return;
     target.save();
-    target.globalCompositeOperation = 'screen';
+    target.globalCompositeOperation = dark ? 'screen' : 'source-over';
     target.globalAlpha = overlay ? palette.galaxy.overlayOpacity : palette.galaxy.opacity;
 
     const orbitCenterX = width * 0.5;
@@ -628,18 +691,25 @@
 
   function createStreak(time) {
     const random = createRandom(Math.round(time) + width * 13 + height * 7);
-    const direction = random() > 0.14 ? 1 : -1;
     streak = {
       startedAt: time,
-      duration: 420 + random() * 280,
-      direction,
-      x: direction > 0 ? width * (-0.08 + random() * 0.5) : width * (0.58 + random() * 0.46),
-      y: height * (0.06 + random() * 0.32),
-      length: 120 + random() * 110,
-      distance: 340 + random() * 210,
-      slope: 0.27 + random() * 0.22
+      duration: 260 + random() * 140,
+      x: width * (-0.14 + random() * 0.54),
+      y: height * (0.04 + random() * 0.3),
+      length: 150 + random() * 100,
+      distance: 460 + random() * 220,
+      slope: 0.28 + random() * 0.14
     };
     nextStreakAt = time + 4800 + random() * 7000;
+  }
+
+  function fillTaperedStreak(target, tipX, tipY, headX, headY, perpendicularX, perpendicularY, halfWidth) {
+    target.beginPath();
+    target.moveTo(tipX, tipY);
+    target.lineTo(headX + perpendicularX * halfWidth, headY + perpendicularY * halfWidth);
+    target.lineTo(headX - perpendicularX * halfWidth, headY - perpendicularY * halfWidth);
+    target.closePath();
+    target.fill();
   }
 
   function drawStreak(target, palette, time) {
@@ -656,34 +726,50 @@
     const fadeIn = Math.min(1, progress / 0.07);
     const fadeOut = Math.min(1, (1 - progress) / 0.06);
     const visibility = Math.min(fadeIn, fadeOut);
-    const headX = streak.x + streak.direction * streak.distance * progress;
+    const headX = streak.x + streak.distance * progress;
     const headY = streak.y + streak.distance * streak.slope * progress;
-    const tailX = headX - streak.direction * streak.length;
-    const tailY = headY - streak.length * streak.slope;
+    const inverseLength = 1 / Math.hypot(1, streak.slope);
+    const directionX = inverseLength;
+    const directionY = streak.slope * inverseLength;
+    const perpendicularX = -directionY;
+    const perpendicularY = directionX;
+    const tailX = headX - directionX * streak.length;
+    const tailY = headY - directionY * streak.length;
+    const shoulderX = headX - directionX * 2.4;
+    const shoulderY = headY - directionY * 2.4;
     const streakGradient = target.createLinearGradient(tailX, tailY, headX, headY);
     streakGradient.addColorStop(0, palette.streak[0]);
-    streakGradient.addColorStop(0.78, palette.streak[0]);
-    streakGradient.addColorStop(1, palette.streak[1]);
+    streakGradient.addColorStop(0.58, palette.streak[1]);
+    streakGradient.addColorStop(1, palette.streak[2]);
 
     target.save();
     target.globalCompositeOperation = 'screen';
-    target.globalAlpha = visibility * (dark ? 0.18 : 0.13);
-    target.strokeStyle = palette.streak[1];
-    target.lineWidth = dark ? 5 : 4;
+    target.fillStyle = streakGradient;
+    target.globalAlpha = visibility * (dark ? 0.26 : 0.2);
+    fillTaperedStreak(
+      target,
+      tailX,
+      tailY,
+      shoulderX,
+      shoulderY,
+      perpendicularX,
+      perpendicularY,
+      dark ? 6 : 5
+    );
+    target.globalAlpha = visibility * (dark ? 0.96 : 0.84);
+    fillTaperedStreak(
+      target,
+      tailX,
+      tailY,
+      shoulderX,
+      shoulderY,
+      perpendicularX,
+      perpendicularY,
+      dark ? 1.8 : 1.5
+    );
+    target.fillStyle = palette.streak[2];
     target.beginPath();
-    target.moveTo(tailX, tailY);
-    target.lineTo(headX, headY);
-    target.stroke();
-    target.globalAlpha = visibility * (dark ? 0.94 : 0.8);
-    target.strokeStyle = streakGradient;
-    target.lineWidth = dark ? 1.5 : 1.25;
-    target.beginPath();
-    target.moveTo(tailX, tailY);
-    target.lineTo(headX, headY);
-    target.stroke();
-    target.fillStyle = palette.streak[1];
-    target.beginPath();
-    target.arc(headX, headY, dark ? 1.5 : 1.25, 0, Math.PI * 2);
+    target.arc(headX, headY, dark ? 1.7 : 1.4, 0, Math.PI * 2);
     target.fill();
     target.restore();
   }
