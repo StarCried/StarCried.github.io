@@ -6,8 +6,8 @@
   const canvas = document.createElement('canvas');
   const coverCanvas = document.createElement('canvas');
   const galaxyTextures = {
-    dark: document.createElement('canvas'),
-    light: document.createElement('canvas')
+    dark: [document.createElement('canvas'), document.createElement('canvas')],
+    light: [document.createElement('canvas'), document.createElement('canvas')]
   };
   const grainCanvas = document.createElement('canvas');
   const context = canvas.getContext('2d', { alpha: false });
@@ -42,12 +42,11 @@
         violet: [182, 105, 244],
         magenta: [245, 79, 179],
         mint: [89, 231, 196],
-        opacity: 0.92,
-        overlayOpacity: 0.6,
-        dust: 0.64
+        opacity: 0.74,
+        overlayOpacity: 0.46,
+        dust: 0.56
       },
       stars: ['#e8fbff', '#8be4f5', '#f2d494', '#c6d3ff', '#c7f4e6'],
-      line: 'rgba(126, 213, 229, 0.12)',
       dust: 'rgba(166, 229, 237, 0.14)',
       streak: ['rgba(104, 218, 255, 0)', 'rgba(104, 218, 255, 0.46)', 'rgba(232, 253, 255, 0.98)']
     },
@@ -67,22 +66,15 @@
         violet: [178, 122, 219],
         magenta: [224, 93, 172],
         mint: [74, 198, 174],
-        opacity: 0.76,
-        overlayOpacity: 0.32,
-        dust: 0.48
+        opacity: 0.56,
+        overlayOpacity: 0.26,
+        dust: 0.42
       },
       stars: ['#f8fcff', '#d6f7f4', '#fff0c2', '#d7e8ff', '#c9f2de'],
-      line: 'rgba(226, 246, 247, 0.22)',
       dust: 'rgba(235, 250, 248, 0.18)',
       streak: ['rgba(255, 205, 160, 0)', 'rgba(255, 205, 160, 0.42)', 'rgba(255, 249, 217, 0.96)']
     }
   };
-
-  const constellationPaths = [
-    [[0.08, 0.21], [0.14, 0.17], [0.2, 0.23], [0.27, 0.18], [0.32, 0.27]],
-    [[0.67, 0.12], [0.72, 0.2], [0.79, 0.16], [0.84, 0.25], [0.91, 0.19]],
-    [[0.58, 0.7], [0.65, 0.63], [0.72, 0.69], [0.79, 0.61]]
-  ];
 
   let width = 0;
   let height = 0;
@@ -168,6 +160,10 @@
     ];
   }
 
+  function galaxyCorePosition(seedValue) {
+    return 0.38 + hashNoise(7, 11, seedValue + 19) * 0.3;
+  }
+
   function buildFractalGalaxy(palette, seedValue) {
     const sampleScale = width < 640 ? 2.5 : 3;
     const sampleWidth = Math.max(1, Math.ceil(galaxyWidth / sampleScale));
@@ -179,28 +175,36 @@
     noiseCanvas.height = sampleHeight;
     const image = noiseContext.createImageData(sampleWidth, sampleHeight);
     const galaxy = palette.galaxy;
+    const corePosition = galaxyCorePosition(seedValue);
 
     for (let y = 0; y < sampleHeight; y += 1) {
       const normalizedY = y / Math.max(1, sampleHeight - 1);
       for (let x = 0; x < sampleWidth; x += 1) {
         const normalizedX = x / Math.max(1, sampleWidth - 1);
-        const broadWarp = (valueNoise(normalizedX * 3.8, 0.37, seedValue + 41) - 0.5) * 0.105;
-        const center = 0.5 + Math.sin(normalizedX * 7.8 + 0.42) * 0.018 + broadWarp;
+        const broadWarp = (valueNoise(normalizedX * 3.8, 0.37, seedValue + 41) - 0.5) * 0.13;
+        const center = 0.5 + Math.sin(normalizedX * 7.8 + 0.42) * 0.022 + broadWarp;
         const distance = Math.abs(normalizedY - center);
-        const profileBase = Math.max(0, 1 - distance / 0.43);
-        const profile = smoothStep(profileBase);
+        const widthField = valueNoise(normalizedX * 4.6, 1.31, seedValue + 79);
+        const halfWidth = 0.22 + widthField * 0.17;
+        const denseProfile = smoothStep(Math.max(0, 1 - distance / halfWidth));
+        const outerProfile = Math.exp(-Math.pow(distance / (halfWidth * 1.45), 2) * 1.7);
         const coarse = fractalNoise(normalizedX * 7.4, normalizedY * 9.2, seedValue + 113);
         const fine = fractalNoise(normalizedX * 22.8, normalizedY * 31.6, seedValue + 257);
-        const cloud = Math.max(0, Math.min(1, (coarse * 0.72 + fine * 0.28 - 0.28) / 0.58));
-        const core = Math.exp(-Math.pow((normalizedX - 0.56) / 0.2, 2));
-        const edge = Math.min(1, normalizedX / 0.07, (1 - normalizedX) / 0.07);
+        const cloud = Math.max(0, Math.min(1, (coarse * 0.68 + fine * 0.32 - 0.34) / 0.52));
+        const filament = Math.max(0, Math.min(1, (fine - 0.43) * 2.25));
+        const structure = cloud * 0.74 + filament * 0.26;
+        const core = Math.exp(-Math.pow((normalizedX - corePosition) / 0.19, 2));
+        const edge = smoothStep(Math.min(1, normalizedX / 0.15, (1 - normalizedX) / 0.15));
         const laneWarp = (valueNoise(normalizedX * 13, 0.83, seedValue + 389) - 0.5) * 0.055;
         const laneDistance = Math.abs(normalizedY - center - laneWarp);
         const riftTexture = fractalNoise(normalizedX * 19, normalizedY * 28, seedValue + 521);
         const riftWidth = 0.015 + riftTexture * 0.026;
         const rift = Math.max(0, 1 - laneDistance / riftWidth) * (0.52 + riftTexture * 0.36);
-        const intensity = profile * edge * (0.11 + cloud * 0.84) * (0.68 + core * 0.72) * (1 - rift * 0.82);
-        const warmMix = Math.min(0.84, core * (0.38 + cloud * 0.42));
+        const intensity = edge
+          * (outerProfile * 0.026 + denseProfile * structure * 0.78)
+          * (0.68 + core * 0.58)
+          * (1 - rift * 0.78);
+        const warmMix = Math.min(0.8, core * (0.3 + cloud * 0.42));
         const violetMix = Math.max(0, (fine - 0.48) * 0.92);
         const chromaField = fractalNoise(normalizedX * 4.2, normalizedY * 5.1, seedValue + 683);
         const mintField = fractalNoise(normalizedX * 6.8, normalizedY * 7.4, seedValue + 811);
@@ -211,7 +215,7 @@
         const violetTone = mixColor(warmTone, galaxy.violet, violetMix);
         const magentaTone = mixColor(violetTone, galaxy.magenta, magentaMix * 0.72);
         const color = mixColor(magentaTone, galaxy.mint, mintMix * 0.56);
-        const alpha = Math.max(0, Math.min(0.72, intensity * (0.22 + cloud * 0.58 + core * 0.12)));
+        const alpha = Math.max(0, Math.min(0.58, intensity * (0.18 + structure * 0.56 + core * 0.1)));
         const offset = (y * sampleWidth + x) * 4;
         image.data[offset] = Math.round(color[0]);
         image.data[offset + 1] = Math.round(color[1]);
@@ -261,7 +265,7 @@
   function buildGalaxyTexture(texture, palette, seedValue) {
     const textureContext = texture.getContext('2d');
     if (!textureContext) return;
-    const textureRatio = Math.min(1.15, Math.max(0.9, pixelRatio * 0.72));
+    const textureRatio = Math.min(1, Math.max(0.78, pixelRatio * 0.62));
     texture.width = Math.ceil(galaxyWidth * textureRatio);
     texture.height = Math.ceil(galaxyHeight * textureRatio);
     textureContext.setTransform(textureRatio, 0, 0, textureRatio, 0, 0);
@@ -270,17 +274,18 @@
     const galaxy = palette.galaxy;
     const random = createRandom(seedValue + Math.round(width * 11 + height * 19));
     const centerY = galaxyHeight * 0.5;
+    const corePosition = galaxyCorePosition(seedValue);
     const veil = textureContext.createLinearGradient(0, 0, 0, galaxyHeight);
     [
       [0, rgba(galaxy.outer, 0)],
-      [0.14, rgba(galaxy.outer, 0.012)],
-      [0.29, rgba(galaxy.cool, 0.025)],
-      [0.41, rgba(galaxy.violet, 0.045)],
-      [0.48, rgba(galaxy.warm, 0.07)],
-      [0.52, rgba(galaxy.core, 0.09)],
-      [0.59, rgba(galaxy.cool, 0.045)],
-      [0.72, rgba(galaxy.outer, 0.018)],
-      [0.88, rgba(galaxy.outer, 0.008)],
+      [0.12, rgba(galaxy.outer, 0.006)],
+      [0.27, rgba(galaxy.cool, 0.014)],
+      [0.4, rgba(galaxy.violet, 0.025)],
+      [0.48, rgba(galaxy.warm, 0.04)],
+      [0.52, rgba(galaxy.core, 0.052)],
+      [0.62, rgba(galaxy.cool, 0.026)],
+      [0.76, rgba(galaxy.outer, 0.012)],
+      [0.9, rgba(galaxy.outer, 0.004)],
       [1, rgba(galaxy.outer, 0)]
     ].forEach(([position, color]) => veil.addColorStop(position, color));
     textureContext.fillStyle = veil;
@@ -294,28 +299,28 @@
     }
     drawNebulaCloud(
       textureContext,
-      galaxyWidth * 0.56,
+      galaxyWidth * corePosition,
       centerY,
-      galaxyHeight * 0.66,
-      galaxyHeight * 0.2,
+      galaxyHeight * 0.7,
+      galaxyHeight * 0.23,
       -0.04,
       galaxy.core,
-      0.24
+      0.17
     );
     drawNebulaCloud(
       textureContext,
-      galaxyWidth * 0.54,
+      galaxyWidth * (corePosition - 0.02),
       centerY - galaxyHeight * 0.018,
-      galaxyHeight * 0.4,
-      galaxyHeight * 0.11,
+      galaxyHeight * 0.44,
+      galaxyHeight * 0.13,
       0.03,
       galaxy.warm,
-      0.18
+      0.13
     );
     [
-      { x: 0.26, y: -0.035, radiusX: 0.32, radiusY: 0.105, color: galaxy.magenta, alpha: 0.16 },
-      { x: 0.71, y: 0.03, radiusX: 0.28, radiusY: 0.09, color: galaxy.mint, alpha: 0.14 },
-      { x: 0.84, y: -0.045, radiusX: 0.24, radiusY: 0.08, color: galaxy.violet, alpha: 0.13 }
+      { x: 0.24, y: -0.035, radiusX: 0.34, radiusY: 0.12, color: galaxy.magenta, alpha: 0.11 },
+      { x: 0.69, y: 0.03, radiusX: 0.3, radiusY: 0.1, color: galaxy.mint, alpha: 0.1 },
+      { x: 0.84, y: -0.045, radiusX: 0.27, radiusY: 0.095, color: galaxy.violet, alpha: 0.09 }
     ].forEach((bloom) => {
       drawNebulaCloud(
         textureContext,
@@ -416,15 +421,41 @@
     }
 
     textureContext.globalAlpha = 1;
+    textureContext.globalCompositeOperation = 'destination-in';
+    // Feather both axes so neighboring tiles blend without exposing their canvas bounds.
+    const verticalFeather = textureContext.createLinearGradient(0, 0, 0, galaxyHeight);
+    verticalFeather.addColorStop(0, 'rgba(0, 0, 0, 0)');
+    verticalFeather.addColorStop(0.14, 'rgba(0, 0, 0, 0.18)');
+    verticalFeather.addColorStop(0.3, 'rgba(0, 0, 0, 0.82)');
+    verticalFeather.addColorStop(0.43, 'rgba(0, 0, 0, 1)');
+    verticalFeather.addColorStop(0.58, 'rgba(0, 0, 0, 1)');
+    verticalFeather.addColorStop(0.74, 'rgba(0, 0, 0, 0.76)');
+    verticalFeather.addColorStop(0.89, 'rgba(0, 0, 0, 0.14)');
+    verticalFeather.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    textureContext.fillStyle = verticalFeather;
+    textureContext.fillRect(0, 0, galaxyWidth, galaxyHeight);
+
+    const horizontalFeather = textureContext.createLinearGradient(0, 0, galaxyWidth, 0);
+    horizontalFeather.addColorStop(0, 'rgba(0, 0, 0, 0)');
+    horizontalFeather.addColorStop(0.14, 'rgba(0, 0, 0, 1)');
+    horizontalFeather.addColorStop(0.86, 'rgba(0, 0, 0, 1)');
+    horizontalFeather.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    textureContext.fillStyle = horizontalFeather;
+    textureContext.fillRect(0, 0, galaxyWidth, galaxyHeight);
+
     textureContext.globalCompositeOperation = 'source-over';
     textureContext.filter = 'none';
   }
 
   function rebuildAtmosphereTextures() {
-    galaxyWidth = Math.min(2800, Math.ceil(Math.hypot(width, height) * 1.58));
-    galaxyHeight = Math.min(760, Math.max(340, Math.ceil(height * 0.78)));
-    buildGalaxyTexture(galaxyTextures.dark, palettes.dark, 0x2e71c41);
-    buildGalaxyTexture(galaxyTextures.light, palettes.light, 0x713fb21);
+    galaxyWidth = Math.min(2200, Math.max(1200, Math.ceil(Math.hypot(width, height) * 0.92)));
+    galaxyHeight = Math.min(900, Math.max(420, Math.ceil(height * 0.98)));
+    galaxyTextures.dark.forEach((texture, index) => {
+      buildGalaxyTexture(texture, palettes.dark, 0x2e71c41 + index * 0x18a43d);
+    });
+    galaxyTextures.light.forEach((texture, index) => {
+      buildGalaxyTexture(texture, palettes.light, 0x713fb21 + index * 0x14c62b);
+    });
     if (!grainCanvas.width) buildGrainTexture();
   }
 
@@ -551,8 +582,8 @@
   }
 
   function drawMilkyWay(target, palette, time, overlay) {
-    const texture = palette === palettes.dark ? galaxyTextures.dark : galaxyTextures.light;
-    if (!texture.width || !texture.height) return;
+    const textures = palette === palettes.dark ? galaxyTextures.dark : galaxyTextures.light;
+    if (!textures[0].width || !textures[0].height) return;
     target.save();
     target.globalCompositeOperation = dark ? 'screen' : 'source-over';
     target.globalAlpha = overlay ? palette.galaxy.overlayOpacity : palette.galaxy.opacity;
@@ -564,13 +595,25 @@
     target.translate(-orbitCenterX, -orbitCenterY);
     target.translate(width * 0.52 + pointerX * 7, height * 0.49 + pointerY * 5);
     target.rotate(-0.54);
-    target.drawImage(
-      texture,
-      -galaxyWidth * 0.5,
-      -galaxyHeight * 0.5,
-      galaxyWidth,
-      galaxyHeight
-    );
+    const tileStride = galaxyWidth * 0.72;
+    const tileReach = Math.hypot(width, height) * 0.75 + galaxyWidth * 0.5;
+    const tileCount = Math.ceil(tileReach / tileStride);
+    // Alternate mirrored textures across the full orbit instead of rotating one finite strip.
+    for (let tileIndex = -tileCount; tileIndex <= tileCount; tileIndex += 1) {
+      const textureIndex = ((tileIndex % textures.length) + textures.length) % textures.length;
+      const verticalOffset = Math.sin(tileIndex * 1.73) * galaxyHeight * 0.025;
+      target.save();
+      target.translate(tileIndex * tileStride, verticalOffset);
+      if (Math.abs(tileIndex) % 2 === 1) target.scale(-1, 1);
+      target.drawImage(
+        textures[textureIndex],
+        -galaxyWidth * 0.5,
+        -galaxyHeight * 0.5,
+        galaxyWidth,
+        galaxyHeight
+      );
+      target.restore();
+    }
     target.restore();
   }
 
@@ -599,6 +642,13 @@
     return ((value + margin) % span + span) % span - margin;
   }
 
+  function edgeVisibility(x, y, margin) {
+    // Wrapped particles complete their lifecycle outside the viewport rather than popping at an edge.
+    const xFade = Math.min(1, Math.max(0, (x + margin) / margin), Math.max(0, (width + margin - x) / margin));
+    const yFade = Math.min(1, Math.max(0, (y + margin) / margin), Math.max(0, (height + margin - y) / margin));
+    return smoothStep(Math.min(xFade, yFade));
+  }
+
   function drawDust(target, palette, time) {
     target.fillStyle = palette.dust;
     dust.forEach((particle, index) => {
@@ -608,33 +658,15 @@
         particle.y * height + pointerY * 3,
         time
       );
-      const x = wrap(point.x, width, 4);
-      const y = wrap(point.y, height, 4);
-      target.globalAlpha = particle.alpha * shimmer;
+      const margin = 24;
+      const x = wrap(point.x, width, margin);
+      const y = wrap(point.y, height, margin);
+      target.globalAlpha = particle.alpha * shimmer * edgeVisibility(x, y, margin);
       target.beginPath();
       target.arc(x, y, particle.radius, 0, Math.PI * 2);
       target.fill();
     });
     target.globalAlpha = 1;
-  }
-
-  function drawConstellations(target, palette, time) {
-    target.strokeStyle = palette.line;
-    target.lineWidth = 0.8;
-    constellationPaths.forEach((path, pathIndex) => {
-      target.beginPath();
-      path.forEach((point, index) => {
-        const depth = 4 + pathIndex * 1.5;
-        const rotated = orbitPoint(
-          point[0] * width + pointerX * depth,
-          point[1] * height + pointerY * depth,
-          time
-        );
-        if (index === 0) target.moveTo(rotated.x, rotated.y);
-        else target.lineTo(rotated.x, rotated.y);
-      });
-      target.stroke();
-    });
   }
 
   function drawStars(target, palette, time) {
@@ -645,10 +677,12 @@
         star.y * height + pointerY * star.depth * 6,
         time
       );
-      const x = wrap(point.x, width, 8);
-      const y = wrap(point.y, height, 8);
+      const margin = 36;
+      const x = wrap(point.x, width, margin);
+      const y = wrap(point.y, height, margin);
       const twinkle = reducedMotion ? 0.82 : 0.7 + Math.sin(time * star.speed + star.phase) * 0.3;
       const alphaScale = dark ? 1 : 0.76;
+      const visibility = edgeVisibility(x, y, margin);
 
       if (star.trail && !reducedMotion) {
         const radialX = point.x - point.centerX;
@@ -657,7 +691,7 @@
         const tangentX = -radialY / radius;
         const tangentY = radialX / radius;
         const trailLength = 3 + star.radius * 4.2;
-        target.globalAlpha = star.alpha * twinkle * alphaScale * 0.18;
+        target.globalAlpha = star.alpha * twinkle * alphaScale * visibility * 0.18;
         target.strokeStyle = palette.stars[star.color];
         target.lineWidth = 0.7;
         target.beginPath();
@@ -666,7 +700,7 @@
         target.stroke();
       }
 
-      target.globalAlpha = star.alpha * twinkle * alphaScale;
+      target.globalAlpha = star.alpha * twinkle * alphaScale * visibility;
       target.fillStyle = palette.stars[star.color];
       target.beginPath();
       target.arc(x, y, star.radius, 0, Math.PI * 2);
@@ -779,7 +813,6 @@
     else drawSky(target, palette);
     drawMilkyWay(target, palette, time, overlay);
     drawDust(target, palette, time);
-    drawConstellations(target, palette, time);
     drawStars(target, palette, time);
     drawStreak(target, palette, time);
   }
