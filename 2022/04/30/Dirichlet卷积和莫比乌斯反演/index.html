@@ -1922,7 +1922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.6d801d25.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1784531307888),
+    lastupdate: new Date(1784533797061),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -3006,24 +3006,25 @@ class="math display">\[\sum_{d=1}^{min(\frac{n}{k},\frac{m}{k})}\mu(d)\lfloor\fr
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF459E-DP/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF459E-DP</p>
-          <p class='content'>CF459E-DP
-核心代码15行
+        <a class='prev' href='/2022/04/30/CF710F%20String%20Set%20Queries/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF710F String Set Queries</p>
+          <p class='content'>CF710F String Set Queries
+题意
+动态支持加入删除字符串和字符串匹配
 思路
-观察数据范围，我们建m层分层图跑最短路想到DP。
-DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？
-发现DP值一定从边权小于当前...</p>
+动态 AC自动机
+先不考虑动态情况。对于加入一个字符串，直接插入到自动机即可。
+考...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/Dijkstra%20%E6%9C%80%E7%9F%AD%E8%B7%AF/'>
-          <p class='title'>Dijkstra 最短路<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>我之前一直记的迪杰斯特拉的翻译导致我把 dijkstra 写成了 dijstra
-或者 dijskra……
-我以后叫她迪杰克斯歘！
-dijkstra
-是用来在有向图或者无向图中寻找任意两...</p>
+        <a class='next' href='/2022/04/30/GCD%20SUM/'>
+          <p class='title'>GCD SUM<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>GCD SUM
+求 \[
+\sum_{i=1}^n\sum_{j=1}^n\gcd(i,j)
+\] 将原式变换得到 \[
+\sum_{d=1}^nd\sum_{i=1}^{\lfloor...</p>
         </a>
       
     </div>
@@ -4484,5 +4485,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><script defer src="/js/starfield.js?v=6ac85d95b0"></script><!-- hexo injector body_end end --></body>
+</script><script defer src="/js/starfield.js?v=e686494d99"></script><!-- hexo injector body_end end --></body>
 </html>
