@@ -818,6 +818,11 @@
   }
 
   function render(time) {
+    if (document.getElementById('ride-experience')) {
+      frameId = 0;
+      return;
+    }
+
     lastTime = time || 0;
     dark = isDarkMode();
     const palette = dark ? palettes.dark : palettes.light;
