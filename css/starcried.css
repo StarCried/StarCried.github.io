@@ -735,12 +735,22 @@ html[color-scheme="dark"] #sc-cover-sky {
 
   .cover-wrapper.dock .menu {
     bottom: 28px;
+    width: calc(100vw - 24px);
     max-width: calc(100vw - 24px);
   }
 
+  .cover-wrapper.dock .menu .list-h {
+    flex-wrap: nowrap;
+    width: calc(100% - 4px);
+    margin: 2px;
+  }
+
   .cover-wrapper.dock .menu .list-h a {
-    flex-basis: 44px;
-    padding: 6px 4px;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    margin: 2px !important;
+    padding: 6px 2px;
     line-height: 20px;
   }
 
@@ -751,6 +761,7 @@ html[color-scheme="dark"] #sc-cover-sky {
 
   .cover-wrapper.dock .menu .list-h a p {
     font-size: 12px;
+    white-space: nowrap;
   }
 
   .md .highlight,

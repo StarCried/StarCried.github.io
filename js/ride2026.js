@@ -5,6 +5,8 @@
   const ROUTE_PROVINCES = new Set([310000, 320000, 340000, 410000, 610000]);
   const MAP_BOUNDS = { minLon: 104.5, maxLon: 123.8, minLat: 26, maxLat: 41.5 };
   const FOCUS_COORDINATE = [115.25, 34.1];
+  const MAP_ASPECT_RATIO = 0.59;
+  const MAP_EDGE_GUARD = 24;
   const SVG_NS = 'http://www.w3.org/2000/svg';
   const SEGMENT_COLORS = [
     '#52e6ff', '#4ddfea', '#4bd7d7', '#52d4bf', '#68d2a7',
@@ -242,8 +244,11 @@
       this.height = height;
       this.smallScreen = smallScreen;
       this.syncDragListeners();
-      this.worldWidth = this.smallScreen ? Math.max(1320, this.width * 3.3) : Math.max(1760, this.width * 1.38);
-      this.worldHeight = this.worldWidth * 0.59;
+      const mobileHeightWidth = (this.height + MAP_EDGE_GUARD * 2) / MAP_ASPECT_RATIO;
+      this.worldWidth = this.smallScreen
+        ? Math.max(1320, this.width * 3.3, mobileHeightWidth)
+        : Math.max(1760, this.width * 1.38);
+      this.worldHeight = this.worldWidth * MAP_ASPECT_RATIO;
       this.mapStage.style.width = this.worldWidth + 'px';
       this.mapStage.style.height = this.worldHeight + 'px';
       this.map.setAttribute('viewBox', '0 0 ' + this.worldWidth + ' ' + this.worldHeight);
@@ -493,8 +498,12 @@
         this.pan.x = 0;
         this.pan.y = 0;
       } else {
-        this.pan.x = clamp(this.pan.x, -this.worldWidth * 0.42, this.worldWidth * 0.42);
-        this.pan.y = clamp(this.pan.y, -this.worldHeight * 0.22, this.worldHeight * 0.22);
+        const minStageX = this.width + MAP_EDGE_GUARD - this.worldWidth;
+        const maxStageX = -MAP_EDGE_GUARD;
+        const minStageY = this.height + MAP_EDGE_GUARD - this.worldHeight;
+        const maxStageY = -MAP_EDGE_GUARD;
+        this.pan.x = clamp(this.pan.x, minStageX - this.basePosition.x, maxStageX - this.basePosition.x);
+        this.pan.y = clamp(this.pan.y, minStageY - this.basePosition.y, maxStageY - this.basePosition.y);
       }
       this.stagePosition.x = Math.round(this.basePosition.x + this.pan.x);
       this.stagePosition.y = Math.round(this.basePosition.y + this.pan.y);

@@ -546,7 +546,11 @@ html[color-scheme="dark"] .ride-map-stage > .ride-map-base-dark {
   box-shadow: var(--ride-shadow);
   user-select: text;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+
+.ride-detail::-webkit-scrollbar {
+  display: none;
 }
 
 .ride-detail[hidden] {
@@ -555,20 +559,17 @@ html[color-scheme="dark"] .ride-map-stage > .ride-map-base-dark {
 
 .ride-detail-media {
   position: relative;
-  display: grid;
+  display: block;
   width: 100%;
-  height: clamp(220px, 34vh, 300px);
   overflow: hidden;
   background: rgba(5, 30, 44, 0.16);
-  place-items: center;
 }
 
 #ride-experience #ride-detail-media > #ride-detail-image {
-  position: absolute !important;
-  inset: 0 !important;
+  position: relative !important;
   display: block;
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
   max-width: none !important;
   max-height: none !important;
   margin: 0 !important;
@@ -966,10 +967,6 @@ html[color-scheme="dark"] .ride-detail-eyebrow {
     width: calc(100% - 24px);
     height: auto;
     max-height: calc(100% - 112px);
-  }
-
-  .ride-detail-media {
-    height: 220px;
   }
 
   .ride-summary {
