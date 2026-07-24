@@ -9,6 +9,7 @@
     dark: [document.createElement('canvas'), document.createElement('canvas')],
     light: [document.createElement('canvas'), document.createElement('canvas')]
   };
+  const textureReady = { dark: false, light: false };
   const grainCanvas = document.createElement('canvas');
   const context = canvas.getContext('2d', { alpha: false });
   const coverContext = coverCanvas.getContext('2d', { alpha: true });
@@ -18,6 +19,9 @@
   const darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
   const motionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(pointer: fine)');
+  const coarsePointer = window.matchMedia('(pointer: coarse)');
+  const textureResizeThreshold = 180;
+  const mobileFrameInterval = 30;
 
   canvas.id = 'sc-sky';
   canvas.setAttribute('aria-hidden', 'true');
@@ -96,6 +100,21 @@
   let targetPointerY = 0;
   let galaxyWidth = 0;
   let galaxyHeight = 0;
+  let lastRenderedAt = 0;
+  let coverVisible = false;
+  let sceneReady = false;
+
+  const coverObserver = typeof window.IntersectionObserver === 'function'
+    ? new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.target !== coverHost) return;
+        const nextVisible = entry.isIntersecting;
+        if (nextVisible === coverVisible) return;
+        coverVisible = nextVisible;
+        if (coverVisible && !frameId) restart();
+      });
+    }, { rootMargin: '96px 0px' })
+    : null;
 
   function isDarkMode() {
     const explicit = html.getAttribute('color-scheme');
@@ -447,15 +466,42 @@
     textureContext.filter = 'none';
   }
 
+  function buildPaletteTextures(mode) {
+    const textures = galaxyTextures[mode];
+    const palette = palettes[mode];
+    const seed = mode === 'dark' ? 0x2e71c41 : 0x713fb21;
+    const increment = mode === 'dark' ? 0x18a43d : 0x14c62b;
+    textures.forEach((texture, index) => {
+      buildGalaxyTexture(texture, palette, seed + index * increment);
+    });
+    textureReady[mode] = true;
+  }
+
   function rebuildAtmosphereTextures() {
-    galaxyWidth = Math.min(2200, Math.max(1200, Math.ceil(Math.hypot(width, height) * 0.92)));
-    galaxyHeight = Math.min(900, Math.max(420, Math.ceil(height * 0.98)));
-    galaxyTextures.dark.forEach((texture, index) => {
-      buildGalaxyTexture(texture, palettes.dark, 0x2e71c41 + index * 0x18a43d);
-    });
-    galaxyTextures.light.forEach((texture, index) => {
-      buildGalaxyTexture(texture, palettes.light, 0x713fb21 + index * 0x14c62b);
-    });
+    const nextWidth = Math.min(2200, Math.max(1200, Math.ceil(Math.hypot(width, height) * 0.92)));
+    const nextHeight = Math.min(900, Math.max(420, Math.ceil(height * 0.98)));
+    const mode = isDarkMode() ? 'dark' : 'light';
+    const sizeStable = galaxyWidth > 0
+      && galaxyHeight > 0
+      && Math.abs(nextWidth - galaxyWidth) < textureResizeThreshold
+      && Math.abs(nextHeight - galaxyHeight) < textureResizeThreshold;
+
+    // Mobile browser chrome changes viewport height while scrolling. Reuse the existing
+    // high-resolution textures instead of rebuilding the procedural noise maps.
+    if (sizeStable && textureReady[mode]) {
+      if (!grainCanvas.width) buildGrainTexture();
+      return;
+    }
+
+    if (!sizeStable) {
+      galaxyWidth = nextWidth;
+      galaxyHeight = nextHeight;
+      textureReady.dark = false;
+      textureReady.light = false;
+    }
+
+    buildPaletteTextures(mode);
+    if (!isMobileRendering()) buildPaletteTextures(mode === 'dark' ? 'light' : 'dark');
     if (!grainCanvas.width) buildGrainTexture();
   }
 
@@ -463,10 +509,15 @@
     const nextHost = document.querySelector('.cover-wrapper');
     const nextActive = Boolean(nextHost && window.getComputedStyle(nextHost).display !== 'none');
     if (nextHost === coverHost && nextActive === coverActive && (!nextActive || coverCanvas.isConnected)) return;
+    if (coverObserver && coverHost) coverObserver.unobserve(coverHost);
     if (coverCanvas.isConnected) coverCanvas.remove();
     coverHost = nextHost;
     coverActive = nextActive;
-    if (coverActive && coverContext) coverHost.prepend(coverCanvas);
+    coverVisible = coverActive;
+    if (coverActive && coverContext) {
+      coverHost.prepend(coverCanvas);
+      if (coverObserver) coverObserver.observe(coverHost);
+    }
   }
 
   function rebuildScene() {
@@ -500,6 +551,7 @@
     rebuildAtmosphereTextures();
     streak = null;
     nextStreakAt = lastTime + 1800 + random() * 4200;
+    sceneReady = true;
   }
 
   function resize() {
@@ -521,8 +573,10 @@
       coverContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
     }
 
+    if (document.getElementById('ride-experience')) return;
     rebuildScene();
-    render(lastTime || 0);
+    lastRenderedAt = 0;
+    render(window.performance.now(), true);
   }
 
   function drawSky(target, palette) {
@@ -817,28 +871,60 @@
     drawStreak(target, palette, time);
   }
 
-  function render(time) {
-    if (document.getElementById('ride-experience')) {
+  function isMobileRendering() {
+    return width < 640 || coarsePointer.matches;
+  }
+
+  function hasPendingInput() {
+    const scheduling = navigator.scheduling;
+    if (!scheduling || typeof scheduling.isInputPending !== 'function') return false;
+    try {
+      return scheduling.isInputPending({ includeContinuous: true });
+    } catch (error) {
+      return scheduling.isInputPending();
+    }
+  }
+
+  function scheduleRender() {
+    if (!reducedMotion && !document.hidden) {
+      frameId = window.requestAnimationFrame(render);
+    } else {
       frameId = 0;
+    }
+  }
+
+  function render(time, force) {
+    frameId = 0;
+    if (document.getElementById('ride-experience')) {
       return;
     }
 
-    lastTime = time || 0;
+    const nextTime = time || window.performance.now();
+    const mobile = isMobileRendering();
+    if (
+      !force
+      && (
+        (mobile && lastRenderedAt && nextTime - lastRenderedAt < mobileFrameInterval)
+        || (mobile && hasPendingInput())
+      )
+    ) {
+      scheduleRender();
+      return;
+    }
+
+    lastRenderedAt = nextTime;
+    lastTime = nextTime;
     dark = isDarkMode();
     const palette = dark ? palettes.dark : palettes.light;
     pointerX += (targetPointerX - pointerX) * 0.035;
     pointerY += (targetPointerY - pointerY) * 0.035;
 
     drawScene(context, palette, lastTime, false);
-    if (coverContext && coverActive && coverCanvas.isConnected) {
+    if (coverContext && coverActive && coverVisible && coverCanvas.isConnected) {
       drawScene(coverContext, palette, lastTime, true);
     }
 
-    if (!reducedMotion && !document.hidden) {
-      frameId = window.requestAnimationFrame(render);
-    } else {
-      frameId = 0;
-    }
+    scheduleRender();
   }
 
   function restart() {
@@ -848,7 +934,11 @@
     reducedMotion = motionMedia.matches;
     streak = null;
     syncCoverCanvas();
-    render(window.performance.now());
+    if (document.getElementById('ride-experience')) return;
+    if (!sceneReady) rebuildScene();
+    else rebuildAtmosphereTextures();
+    lastRenderedAt = 0;
+    render(window.performance.now(), true);
   }
 
   function onPointerMove(event) {
@@ -864,7 +954,8 @@
   }, { passive: true });
   window.addEventListener('resize', () => {
     window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(resize, 120);
+    const delay = window.innerWidth < 640 || coarsePointer.matches ? 240 : 120;
+    resizeTimer = window.setTimeout(resize, delay);
   }, { passive: true });
   document.addEventListener('visibilitychange', restart);
   document.addEventListener('pjax:complete', () => {

@@ -105,13 +105,17 @@
       this.stagePosition = { x: 0, y: 0 };
       this.drag = null;
       this.selectedDay = null;
+      this.detailAnchor = null;
       this.lastSoundAt = 0;
-      this.soundEnabled = false;
+      this.soundEnabled = true;
       this.audioContext = null;
+      this.imageRequestId = 0;
       this.firstFrame = true;
       this.resizeFrame = 0;
+      this.detailPositionFrame = 0;
       this.loadingTimer = 0;
       this.dragListenersBound = false;
+      this.detailResizeObserver = null;
       this.boundPointerDown = this.handlePointerDown.bind(this);
       this.boundPointerMove = this.handlePointerMove.bind(this);
       this.boundPointerUp = this.handlePointerUp.bind(this);
@@ -121,6 +125,7 @@
       this.createMarkers();
       this.populateSummary();
       this.bindControls();
+      this.observeDetailSize();
       this.resize();
     }
 
@@ -147,6 +152,7 @@
 
         marker.addEventListener('click', (event) => {
           event.stopPropagation();
+          this.captureDetailAnchor(event, marker);
           this.openDay(day.day);
         }, { signal: this.signal });
 
@@ -155,6 +161,18 @@
       });
 
       this.markerLayer.replaceChildren(fragment);
+    }
+
+    captureDetailAnchor(event, marker) {
+      const rootRect = this.root.getBoundingClientRect();
+      const markerRect = marker.getBoundingClientRect();
+      const hasPointerCoordinates = event.detail > 0 && (event.clientX !== 0 || event.clientY !== 0);
+      const clientX = hasPointerCoordinates ? event.clientX : markerRect.left + markerRect.width / 2;
+      const clientY = hasPointerCoordinates ? event.clientY : markerRect.top + markerRect.height / 2;
+      this.detailAnchor = {
+        x: clamp(clientX - rootRect.left, 0, rootRect.width),
+        y: clamp(clientY - rootRect.top, 0, rootRect.height)
+      };
     }
 
     bindControls() {
@@ -185,6 +203,15 @@
       }, { signal: this.signal });
 
       window.addEventListener('resize', this.boundWindowResize, { signal: this.signal });
+      this.syncSoundButton();
+    }
+
+    observeDetailSize() {
+      if (!window.ResizeObserver) return;
+      this.detailResizeObserver = new ResizeObserver(() => {
+        this.queueDetailPosition();
+      });
+      this.detailResizeObserver.observe(this.detail);
     }
 
     handleWindowResize() {
@@ -385,35 +412,47 @@
 
     toggleSound() {
       this.soundEnabled = !this.soundEnabled;
+      this.syncSoundButton();
+      if (this.soundEnabled) this.playTick(620, true);
+    }
+
+    syncSoundButton() {
       const button = this.root.querySelector('#ride-sound');
       const icon = button.querySelector('i');
       button.setAttribute('aria-pressed', String(this.soundEnabled));
       button.setAttribute('aria-label', this.soundEnabled ? '关闭交互提示音' : '开启交互提示音');
       icon.className = this.soundEnabled ? 'fas fa-volume-up' : 'fas fa-volume-mute';
-      if (this.soundEnabled) {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (AudioContext && !this.audioContext) this.audioContext = new AudioContext();
-        if (this.audioContext && this.audioContext.state === 'suspended') this.audioContext.resume();
-        this.playTick(620, true);
-      }
     }
 
     playTick(frequency, force) {
-      if (!this.soundEnabled || !this.audioContext) return;
+      if (!this.soundEnabled) return;
       const now = performance.now();
       if (!force && now - this.lastSoundAt < 85) return;
       this.lastSoundAt = now;
-      const oscillator = this.audioContext.createOscillator();
-      const gain = this.audioContext.createGain();
-      const start = this.audioContext.currentTime;
-      oscillator.type = 'sine';
-      oscillator.frequency.setValueAtTime(frequency, start);
-      gain.gain.setValueAtTime(0.0001, start);
-      gain.gain.exponentialRampToValueAtTime(0.025, start + 0.008);
-      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.055);
-      oscillator.connect(gain).connect(this.audioContext.destination);
-      oscillator.start(start);
-      oscillator.stop(start + 0.06);
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      if (!this.audioContext) this.audioContext = new AudioContext();
+
+      const play = () => {
+        if (!this.audioContext || this.audioContext.state !== 'running') return;
+        const oscillator = this.audioContext.createOscillator();
+        const gain = this.audioContext.createGain();
+        const start = this.audioContext.currentTime;
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, start);
+        gain.gain.setValueAtTime(0.0001, start);
+        gain.gain.exponentialRampToValueAtTime(0.025, start + 0.008);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.055);
+        oscillator.connect(gain).connect(this.audioContext.destination);
+        oscillator.start(start);
+        oscillator.stop(start + 0.06);
+      };
+
+      if (this.audioContext.state === 'suspended') {
+        this.audioContext.resume().then(play).catch(function () {});
+      } else {
+        play();
+      }
     }
 
     openDay(dayNumber) {
@@ -429,15 +468,7 @@
       this.root.querySelector('#ride-detail-title').textContent = day.title;
       this.root.querySelector('#ride-detail-route').textContent = day.route;
       this.root.querySelector('#ride-detail-summary').textContent = day.summary;
-      const media = this.root.querySelector('#ride-detail-media');
-      let image = media.querySelector('img');
-      if (!image) {
-        image = document.createElement('img');
-        image.id = 'ride-detail-image';
-        media.appendChild(image);
-      }
-      image.src = day.image;
-      image.alt = day.image_alt;
+      this.loadDetailImage(day);
 
       const statsContainer = this.root.querySelector('#ride-detail-stats');
       if (day.stats) {
@@ -463,7 +494,6 @@
         );
       }
 
-      this.fillList(this.root.querySelector('#ride-detail-highlights'), day.highlights);
       const lodging = this.root.querySelector('#ride-detail-lodging');
       if (day.hotel) {
         lodging.textContent = '住宿 · ' + day.hotel + ' · ¥' + day.lodging_cny.toFixed(2) +
@@ -480,6 +510,38 @@
       this.positionDetail();
     }
 
+    loadDetailImage(day) {
+      const media = this.root.querySelector('#ride-detail-media');
+      const requestId = ++this.imageRequestId;
+      const image = document.createElement('img');
+      image.id = 'ride-detail-image';
+      image.alt = day.image_alt;
+      image.decoding = 'async';
+
+      media.classList.remove('is-ready', 'is-error');
+      media.classList.add('is-loading');
+      media.setAttribute('aria-busy', 'true');
+      media.replaceChildren(image);
+
+      image.addEventListener('load', () => {
+        if (requestId !== this.imageRequestId || this.selectedDay !== day.day) return;
+        media.classList.remove('is-loading', 'is-error');
+        media.classList.add('is-ready');
+        media.setAttribute('aria-busy', 'false');
+        this.queueDetailPosition();
+      }, { once: true, signal: this.signal });
+
+      image.addEventListener('error', () => {
+        if (requestId !== this.imageRequestId || this.selectedDay !== day.day) return;
+        media.classList.remove('is-loading', 'is-ready');
+        media.classList.add('is-error');
+        media.setAttribute('aria-busy', 'false');
+        this.queueDetailPosition();
+      }, { once: true, signal: this.signal });
+
+      image.src = day.image;
+    }
+
     statElement(value, label) {
       const span = createElement('span');
       span.append(createElement('strong', '', value), createElement('small', '', label));
@@ -488,9 +550,18 @@
 
     closeDay() {
       this.selectedDay = null;
+      this.detailAnchor = null;
       this.detail.hidden = true;
       this.markerElements.forEach(function (marker) { marker.classList.remove('is-selected'); });
       this.live.textContent = '逐日卡片已关闭';
+    }
+
+    queueDetailPosition() {
+      if (this.detail.hidden || this.detailPositionFrame) return;
+      this.detailPositionFrame = requestAnimationFrame(() => {
+        this.detailPositionFrame = 0;
+        this.positionDetail();
+      });
     }
 
     applyStagePosition() {
@@ -547,8 +618,11 @@
       const day = this.daysByNumber.get(this.selectedDay);
       const world = this.project(day.coordinate);
       const offset = markerOffset(this.selectedDay);
-      const anchorX = world[0] + this.stagePosition.x + offset[0];
-      const anchorY = world[1] + this.stagePosition.y + offset[1];
+      const fallbackAnchor = {
+        x: world[0] + this.stagePosition.x + offset[0],
+        y: world[1] + this.stagePosition.y + offset[1]
+      };
+      const anchor = this.detailAnchor || fallbackAnchor;
       const cardWidth = this.detail.offsetWidth || 350;
       const cardHeight = this.detail.offsetHeight || 430;
       let x;
@@ -556,12 +630,26 @@
       if (this.smallScreen) {
         this.detail.dataset.side = 'bottom';
         x = clamp((this.width - cardWidth) / 2, 12, Math.max(12, this.width - cardWidth - 12));
-        y = Math.max(88, this.height - cardHeight - 12);
+        y = clamp(this.height - cardHeight - 12, 88, Math.max(88, this.height - cardHeight - 12));
       } else {
-        const side = anchorX < this.width * 0.5 ? 'right' : 'left';
+        const edgeGap = 24;
+        const pointerGap = 18;
+        const rightX = anchor.x + pointerGap;
+        const leftX = anchor.x - cardWidth - pointerGap;
+        const fitsRight = rightX + cardWidth <= this.width - edgeGap;
+        const fitsLeft = leftX >= edgeGap;
+        const side = fitsRight || (!fitsLeft && anchor.x < this.width * 0.5) ? 'right' : 'left';
         this.detail.dataset.side = side;
-        x = side === 'right' ? this.width - cardWidth - 28 : 28;
-        y = clamp(anchorY - cardHeight * 0.34, 24, Math.max(24, this.height - cardHeight - 24));
+        x = clamp(
+          side === 'right' ? rightX : leftX,
+          edgeGap,
+          Math.max(edgeGap, this.width - cardWidth - edgeGap)
+        );
+        y = clamp(
+          anchor.y - cardHeight * 0.5,
+          edgeGap,
+          Math.max(edgeGap, this.height - cardHeight - edgeGap)
+        );
       }
       const left = Math.round(x) + 'px';
       const top = Math.round(y) + 'px';
@@ -572,7 +660,9 @@
     destroy() {
       this.abortController.abort();
       if (this.resizeFrame) cancelAnimationFrame(this.resizeFrame);
+      if (this.detailPositionFrame) cancelAnimationFrame(this.detailPositionFrame);
       if (this.loadingTimer) window.clearTimeout(this.loadingTimer);
+      if (this.detailResizeObserver) this.detailResizeObserver.disconnect();
       if (this.audioContext) this.audioContext.close();
       document.documentElement.classList.remove('ride-page-active');
       document.body.classList.remove('ride-page-active');

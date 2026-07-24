@@ -565,6 +565,38 @@ html[color-scheme="dark"] .ride-map-stage > .ride-map-base-dark {
   background: rgba(5, 30, 44, 0.16);
 }
 
+.ride-detail-media.is-loading {
+  min-height: clamp(190px, 26vw, 280px);
+}
+
+.ride-detail-media.is-loading::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border: 2px solid rgba(83, 113, 130, 0.28);
+  border-top-color: var(--ride-accent);
+  border-radius: 50%;
+  content: "";
+  animation: ride-loading-spin 700ms linear infinite;
+}
+
+.ride-detail-media.is-error {
+  min-height: 120px;
+}
+
+.ride-detail-media.is-error::after {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  color: var(--ride-panel-muted);
+  content: "图片暂时无法载入";
+  font-size: 0.78rem;
+  place-items: center;
+}
+
 #ride-experience #ride-detail-media > #ride-detail-image {
   position: relative !important;
   display: block;
@@ -574,7 +606,12 @@ html[color-scheme="dark"] .ride-map-stage > .ride-map-base-dark {
   max-height: none !important;
   margin: 0 !important;
   border-radius: 7px 7px 0 0;
+  opacity: 0;
   object-fit: contain !important;
+}
+
+#ride-experience #ride-detail-media.is-ready > #ride-detail-image {
+  opacity: 1;
 }
 
 .ride-detail-close {
@@ -614,6 +651,11 @@ html[color-scheme="dark"] .ride-detail-eyebrow {
   line-height: 1.28;
 }
 
+#ride-experience .ride-detail h2::before {
+  display: none;
+  content: none;
+}
+
 .ride-detail-route,
 .ride-detail-summary,
 .ride-detail-lodging {
@@ -621,6 +663,12 @@ html[color-scheme="dark"] .ride-detail-eyebrow {
   color: var(--ride-panel-muted);
   font-size: 0.84rem;
   line-height: 1.65;
+}
+
+.ride-detail-summary {
+  color: var(--ride-panel-ink);
+  font-size: 0.88rem;
+  line-height: 1.78;
 }
 
 .ride-detail-stats {
@@ -657,32 +705,8 @@ html[color-scheme="dark"] .ride-detail-eyebrow {
   font-size: 0.62rem;
 }
 
-.ride-detail-highlights {
-  margin: 12px 0 14px;
-  padding: 0;
-  color: var(--ride-panel-ink);
-  font-size: 0.82rem;
-  line-height: 1.58;
-  list-style: none;
-}
-
-.ride-detail-highlights li {
-  position: relative;
-  margin: 5px 0;
-  padding-left: 15px;
-}
-
-.ride-detail-highlights li::before {
-  position: absolute;
-  top: 0.72em;
-  left: 0;
-  width: 6px;
-  height: 1px;
-  content: "";
-  background: var(--ride-accent);
-}
-
 .ride-detail-lodging {
+  margin-top: 14px;
   padding-top: 10px;
   border-top: 1px solid var(--ride-panel-border);
 }
@@ -1059,6 +1083,7 @@ html[color-scheme="dark"] .ride-detail-eyebrow {
 @media (prefers-reduced-motion: reduce) {
   .ride-route-flow,
   .ride-marker::before,
+  .ride-detail-media.is-loading::after,
   .ride-loading span {
     animation: none !important;
   }

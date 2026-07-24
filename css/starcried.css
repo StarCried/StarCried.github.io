@@ -709,6 +709,44 @@ html[color-scheme="dark"] #sc-cover-sky {
   }
 }
 
+@media (max-width: 640px), (pointer: coarse) {
+  #l_header,
+  .cover-wrapper.dock .menu,
+  .sc-radio-toggle,
+  .sc-radio-panel {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  #l_header {
+    background: var(--sc-card-bg-strong) !important;
+  }
+
+  .cover-wrapper.dock .menu {
+    background: rgba(10, 18, 24, 0.82) !important;
+  }
+
+  .article-type-docs .gallery img.sc-image-pending,
+  .article-type-docs .tag-plugin.gallery img.sc-image-pending {
+    animation-duration: 2.8s;
+    animation-timing-function: steps(16, end);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .post.white-box,
+  .l_friends .friend-card {
+    transition: none;
+  }
+
+  .post.white-box:hover,
+  .l_friends .friend-card:hover {
+    border-color: var(--sc-card-border);
+    box-shadow: var(--sc-shadow) !important;
+    transform: none;
+  }
+}
+
 @media (max-width: 640px) and (prefers-color-scheme: dark) {
   html:not([color-scheme="light"]) .cover-wrapper .cover-bg {
     filter: brightness(0.98) contrast(0.92) saturate(0.9) !important;

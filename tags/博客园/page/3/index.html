@@ -1916,9 +1916,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.6d801d25.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
+    cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1784714238496),
+    lastupdate: new Date(1784906299960),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=7b33f897e6"><link rel="stylesheet" href="/css/ride2026.css?v=4fee62509b">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2779,7 +2779,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
               
               active-action="action-ride2026">
-              <i class='fa-solid fa-bicycle fa-fw'></i><p>骑行</p>
+              <img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/twemoji/assets/svg/1f6b2.svg'><p>骑行</p>
             </a>
           
             <a href="/friends/"
@@ -2823,7 +2823,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/2-SAT问题/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/AC自动机/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2841,22 +2841,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/2-SAT%E9%97%AE%E9%A2%98/"  itemprop="url">
-        2-SAT问题
+      <a href="/2022/04/30/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"  itemprop="url">
+        AC自动机
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        问题描述
-SAT(satisfiabality) 是适应性的缩写，一般称 k 的适应性问题为
-k-SAT。适应性问题指有 \(n\) 个布尔变量
-\(\{x_i\}\)，加入一些限制然后求限制内的解的问题。
-因为 \(k&gt;2\) 的 k-SAT 问题是 NP
-完全问题（没有一定的算法和正解），我们只讨论 2-SAT 问题。
-Tarjan
-一般来讲，我们会想到把变量 \(x...
+        AC来自一个大佬的名字，并不是写了就可以自动AC的意思 XD
+AC自动机是建立在trie树上的一种优化手段。trie在每次查询一个字符串时，如果在一个子树查不到就会回溯再查，效率会很低。我们考虑在给每个节点加一个如果查不到就跳转的指针fail，那么如果找不到的话直接跳转到fail就可以了。fail代表的是拥有该点的最大后缀的点的位置。
+那么怎么寻找这个fail呢？因为我们要寻找最大后缀，...
       
     
   </div>
@@ -2877,7 +2872,148 @@ Tarjan
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/2-SAT%E9%97%AE%E9%A2%98/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/AE 制作简单动态壁纸/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/AE%20%E5%88%B6%E4%BD%9C%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8/"  itemprop="url">
+        AE 制作简单动态壁纸
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        成品
+B站链接
+Wallpaper Engine 可用：搜索 Alice_StarCried
+简述
+参考了B站的两个自学教程，都是直接搜能搜到的。PS、AE
+零基础。因为需要渲染所用电脑配置有一定需求，额外用了数位板。AE
+使用了现成脚本。从学习到制作完成总用时不过四天。
+所需技能为 PS 基本使用，包括抠图、补图等，以及 AE
+基本使用和脚本使用，都很简单。最耗时的部分实际...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%88%9B%E4%BD%9C/">创作</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%88%9B%E4%BD%9C/" itemprop="url"><span itemprop="name">创作</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/AE%20%E5%88%B6%E4%BD%9C%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/AT2304 Cleaning/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/AT2304%20Cleaning/"  itemprop="url">
+        AT2304 Cleaning
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        AT2304 Cleaning
+题意
+一个树上每个节点有一些石子，每次只能选取两个叶子节点并将路径间的所有点上的石子数量减1，问是否能将所有石子取完。
+思路
+设 \(f_x\) 表示从 \(x\) 节点向上的路径条数，\(s_x\) 为子节点的 \(f\) 值的和，则有： \[
+a_x=\frac{s_x-f_x}{2}+f_x\\
+f_x=2a_x-s_x
+\] 我们只需要保...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/AT2304%20Cleaning/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2961,7 +3097,7 @@ Tarjan
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/AE 制作简单动态壁纸/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF1032G Chattering/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2979,23 +3115,21 @@ Tarjan
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/AE%20%E5%88%B6%E4%BD%9C%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8/"  itemprop="url">
-        AE 制作简单动态壁纸
+      <a href="/2022/04/30/CF1032G%20Chattering/"  itemprop="url">
+        CF1032G Chattering
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        成品
-B站链接
-Wallpaper Engine 可用：搜索 Alice_StarCried
-简述
-参考了B站的两个自学教程，都是直接搜能搜到的。PS、AE
-零基础。因为需要渲染所用电脑配置有一定需求，额外用了数位板。AE
-使用了现成脚本。从学习到制作完成总用时不过四天。
-所需技能为 PS 基本使用，包括抠图、补图等，以及 AE
-基本使用和脚本使用，都很简单。最耗时的部分实际...
+        CF1032G
+Chattering
+思路
+对于每一个位置，它转移的范围是确定的。
+对于一段可以走到的区间，我们可以求出区间中所有点再能走到区间范围。
+于是这个就可以倍增进行转移。
+如何快速求出一段区间能走到的区间范围？也就是分别求出一段区间向左跳的位置的最小值和向右跳位置的最大值，发现这其实就是一个RMQ问题。但是因为还有倍增的时间复杂度，而且是没有修改的，那么我们可以利用ST...
       
     
   </div>
@@ -3006,17 +3140,17 @@ Wallpaper Engine 可用：搜索 Alice_StarCried
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%88%9B%E4%BD%9C/">创作</a>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%88%9B%E4%BD%9C/" itemprop="url"><span itemprop="name">创作</span></a>
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/AE%20%E5%88%B6%E4%BD%9C%E7%AE%80%E5%8D%95%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF1032G%20Chattering/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3107,7 +3241,7 @@ Large
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/AT2304 Cleaning/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF175E Power Defence/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3125,22 +3259,18 @@ Large
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/AT2304%20Cleaning/"  itemprop="url">
-        AT2304 Cleaning
+      <a href="/2022/04/30/CF175E%20Power%20Defence/"  itemprop="url">
+        CF175E Power Defence
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        AT2304 Cleaning
+        CF175E Power Defence
 题意
-一个树上每个节点有一些石子，每次只能选取两个叶子节点并将路径间的所有点上的石子数量减1，问是否能将所有石子取完。
-思路
-设 \(f_x\) 表示从 \(x\) 节点向上的路径条数，\(s_x\) 为子节点的 \(f\) 值的和，则有： \[
-a_x=\frac{s_x-f_x}{2}+f_x\\
-f_x=2a_x-s_x
-\] 我们只需要保...
+一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。
+其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有\(k\)个寒冰塔覆盖，敌人速度变为\(\frac{1}{k...
       
     
   </div>
@@ -3161,7 +3291,7 @@ f_x=2a_x-s_x
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/AT2304%20Cleaning/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF175E%20Power%20Defence/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3249,7 +3379,7 @@ DP。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF437D The Child and Zoo/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF487E Tourists/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3267,22 +3397,26 @@ DP。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF437D%20The%20Child%20and%20Zoo/"  itemprop="url">
-        CF437D The Child and Zoo
+      <a href="/2022/04/30/CF487E%20Tourists/"  itemprop="url">
+        CF487E Tourists
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF437D The Child and Zoo
+        CF487E Tourists
+前排膜拜T神
+上面的话和这道题一点关系都没有
 题意
-给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
+给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
 思路
 
-首先，我们可以将点权转移到边权上，边权为两端点点权的较小值。正确性显然。
-然后，对于任意两个点之间的贡献，只有路径上含最大点权的简单路径有贡献，于是就可以把无向图转变为最大生成树。任意两个点间的贡献显然是在最大生成树上路径的最大边权。
-考虑对于一...
+一眼圆方树。
+——@gxy001
+
+这种题只有在树上做才比较好处理这么多次询问。考虑广义圆方树，缩完点双连通分量后建立的方点和圆点。
+因为我们找的是最小值，所以必须将代表整个点双的方点的权值设为与其...
       
     
   </div>
@@ -3303,73 +3437,7 @@ DP。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/CF437D%20The%20Child%20and%20Zoo/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF175E Power Defence/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF175E%20Power%20Defence/"  itemprop="url">
-        CF175E Power Defence
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF175E Power Defence
-题意
-一个塔防游戏：给定一个无限长的数轴，一个无限血的敌人要从正无穷走到负无穷。你的任务是放置三种塔，包含两种攻击塔和一种寒冰塔，使得敌人受到的伤害最大。
-其中，每种塔的攻击半径可能不同，每种攻击塔的攻击力也可能不同。而寒冰塔没有攻击力，它的作用是使范围内敌人的速度减速，即一段区间若有\(k\)个寒冰塔覆盖，敌人速度变为\(\frac{1}{k...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF175E%20Power%20Defence/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF487E%20Tourists/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3441,76 +3509,6 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
       
         <div>
           <a class='readmore' href='/2022/04/30/CF459E-DP/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF833B-线段树优化DP/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/"  itemprop="url">
-        CF833B-线段树优化DP
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF833B-线段树优化DP
-题意
-将一个长为\(n\)的序列分成\(k\)段，每段贡献为其中不同数字的个数，求最大贡献和。\(n\leq 35000,k\leq 50\)。
-思路
-此处感谢@gxy001 聚铑的精彩讲解
-先考虑暴力DP，可以想到一个时空复杂度\(O(n^2k)\)的方法，即记录前i个数字分成了j段。我们现在来思考几个问题来优化这个操作：
-
-对于一个数字，它对那...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF833B-%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96DP/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3862,7 +3860,7 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
 
 <!-- internal -->
 
-<script src="/js/app.6d801d25.js"></script>
+<script src="/js/app.7f9b83b8.js"></script>
 
 
 
@@ -4987,5 +4985,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><script defer src="/js/starfield.js?v=759028ab8d"></script><script defer src="/js/ride2026.js?v=2756f30690"></script><!-- hexo injector body_end end --></body>
+</script><script defer src="/js/starfield.js?v=ce1b6c5c51"></script><script defer src="/js/ride2026.js?v=a318fe938a"></script><!-- hexo injector body_end end --></body>
 </html>

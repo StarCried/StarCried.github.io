@@ -61,6 +61,7 @@ const VolantisApp = (() => {
         fn.setGlobalHeaderMenuEvent();
         fn.setHeader();
         fn.setHeaderSearch();
+        volantis.isMobileOld = volantis.isMobile;
       }
       fn.scrollEventCallBack();
     }
@@ -299,6 +300,8 @@ const VolantisApp = (() => {
       // 【移动端】 关闭已经展开的子菜单 点击展开子菜单
       document.querySelectorAll('#l_header .m-phone li').forEach(function (_e) {
         if (_e.querySelector(".list-v")) {
+          if (_e.dataset.volantisMobileMenuBound === 'true') return;
+          _e.dataset.volantisMobileMenuBound = 'true';
           // 点击菜单
           volantis.dom.$(_e).click(function (e) {
             e.stopPropagation();
@@ -370,7 +373,10 @@ const VolantisApp = (() => {
     } else {
       // 【PC端】 hover时展开子菜单，点击时[target.baseURI==origin时]隐藏子菜单? 现有逻辑大部分情况不隐藏子菜单
       document.querySelectorAll('#wrapper .m-pc li > a[href]').forEach(function (e) {
-        volantis.dom.$(e.parentElement).click(function (e) {
+        const parent = e.parentElement;
+        if (parent.dataset.volantisDesktopMenuBound === 'true') return;
+        parent.dataset.volantisDesktopMenuBound = 'true';
+        volantis.dom.$(parent).click(function (e) {
           e.stopPropagation();
           if (e.target.origin == e.target.baseURI) {
             document.querySelectorAll('#wrapper .m-pc .list-v').forEach(function (e) {
@@ -386,12 +392,14 @@ const VolantisApp = (() => {
   // 【移动端】隐藏子菜单
   fn.setPageHeaderMenuEvent = () => {
     if (!volantis.isMobile) return
+    if (document.documentElement.dataset.volantisMobileMenuDismissBound === 'true') return
+    document.documentElement.dataset.volantisMobileMenuDismissBound = 'true'
     // 【移动端】 点击空白处隐藏子菜单
     volantis.dom.$(document).click(function (e) {
       volantis.dom.mPhoneList.forEach(function (e) {
         volantis.dom.$(e).hide();
       })
-    });
+    }, false);
   }
 
   // 设置导航栏搜索框 【移动端】
@@ -434,6 +442,8 @@ const VolantisApp = (() => {
 
     if (!volantis.isMobile) return;
     if (!volantis.dom.switcher) return;
+    if (volantis.dom.switcher.dataset.volantisMobileSearchBound === 'true') return;
+    volantis.dom.switcher.dataset.volantisMobileSearchBound = 'true';
     // 点击移动端搜索按钮
     volantis.dom.switcher.click(function (e) {
       e.stopPropagation();

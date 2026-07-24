@@ -1916,9 +1916,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.6d801d25.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
+    cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1784714238496),
+    lastupdate: new Date(1784906299960),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=7b33f897e6"><link rel="stylesheet" href="/css/ride2026.css?v=4fee62509b">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2779,7 +2779,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
               
               active-action="action-ride2026">
-              <i class='fa-solid fa-bicycle fa-fw'></i><p>骑行</p>
+              <img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/twemoji/assets/svg/1f6b2.svg'><p>骑行</p>
             </a>
           
             <a href="/friends/"
@@ -2820,7 +2820,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6295 有标号 DAG 计数/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6106 [Ynoi2010] Self Adjusting Top Tree/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2838,25 +2838,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P6295%20%E6%9C%89%E6%A0%87%E5%8F%B7%20DAG%20%E8%AE%A1%E6%95%B0/"  itemprop="url">
-        P6295 有标号 DAG 计数
+      <a href="/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/"  itemprop="url">
+        P6106 [Ynoi2010] Self Adjusting Top Tree
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P6295 有标号 DAG 计数
+        P6106 [Ynoi2010] Self
+Adjusting Top Tree
 题意
-求 \(n\) 个点有标号弱联通 DAG
-数量。
-推导
-设 \(f_i\) 表示 \(i\) 个点有标号 DAG
-数量（不保证弱联通），有： \[
-f(i)=\sum_{j=1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}
-\] 意义为选至少 \(j\)
-个度数为零的点，向剩下的 \(i-j\)
-个点随...
+给出平面直角坐标系上若干不与坐标轴平行的处于第一象限的互不相交的线段，多次询问平面中一个第一象限的矩形与这些线段相交部分的长度长度和与所有线段长度和的比值。给出的所有坐标
+\(\in[1,10^6]\)。
+思路
+假设所有线段的斜率都是正的，考虑将询问差分成四个前缀矩形。我们只需要考虑统计若干斜...
       
     
   </div>
@@ -2877,7 +2873,7 @@ f(i)=\sum_{j=1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)}
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P6295%20%E6%9C%89%E6%A0%87%E5%8F%B7%20DAG%20%E8%AE%A1%E6%95%B0/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2963,7 +2959,7 @@ Diameter
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P5591 小猪佩奇学数学/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6982 [NEERC2015]Jump/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2981,26 +2977,24 @@ Diameter
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P5591%20%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E5%AD%A6%E6%95%B0%E5%AD%A6/"  itemprop="url">
-        P5591 小猪佩奇学数学
+      <a href="/2022/04/30/P6982%20%5BNEERC2015%5DJump/"  itemprop="url">
+        P6982 [NEERC2015]Jump
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P5591 小猪佩奇学数学
-知识点
-二项式定理
-\[
-(x+1)^n=\sum_{i=0}^n\binom nix^i
-\]
-单位根反演
-\[
-[n\mid k]=\frac 1n\sum_{i=0}^{n-1}\omega_n^{ik}
-\]
-证明： \[
-[n\mid k]=\begin{cases}\frac 1n\sum_{i=0}^{n-1}\omega_n^...
+        P6982 [NEERC2015]Jump
+题意
+给你一个未知的 01 串，每次可以输出询问一个 01
+串，如果该串中正确的个数刚好等于 \(n\)
+或者 \(n/2\)
+，将会返回相应的答案，否则会返回 0 。求出这个串。（询问次数不大于 \(n+500\)，\(n\leq
+1000\)）
+思路
+先无视询问次数，我们来想一下确定性算法怎么做。
+第一步，我们来试着找出 \(...
       
     
   </div>
@@ -3021,7 +3015,7 @@ Diameter
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P5591%20%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E5%AD%A6%E6%95%B0%E5%AD%A6/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P6982%20%5BNEERC2015%5DJump/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3110,7 +3104,7 @@ Protection
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P7362 [eJOI 2020 Day2] XOR Sort/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6753 [BalticOI 2013 Day1] Ball Machine/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3128,22 +3122,20 @@ Protection
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/"  itemprop="url">
-        P7362 [eJOI 2020 Day2] XOR Sort
+      <a href="/2022/04/30/P6753%20%5BBalticOI%202013%20Day1%5D%20Ball%20Machine/"  itemprop="url">
+        P6753 [BalticOI 2013 Day1] Ball Machine
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P7362 [eJOI 2020 Day2] XOR
-Sort
+        P6753 [BalticOI 2013
+Day1] Ball Machine
 题意
-给你一个长度为 \(n\)
-的序列，每次操作可以将一个数异或上相邻的一个数，求将序列改为严格单调递增序列或严格单调不降序列的操作次数的操作序列。
-注意，改为严格单调递增序列的数据 \(n\leq
-200\) 且每个数不相同，改为严格单调不降序列的数据 \(n\leq 1000\)。
-不要求操作次数最小，次数需...
+给你一个树，每次从根节点放一个求，如果其子节点有空这个球会向下滚，若有多个节点为空则找儿子中以子树内编号的最小值为优先级从小到大找第一个为空的位置滚。
+有两种操作，第一种插入若干个球，输出最后一个球到的节点编号；第二种删除一个位置，此时若有可以向下滚的球那么这个球就会滚，输出有多少个球滚了。
+保证...
       
     
   </div>
@@ -3164,79 +3156,7 @@ Sort
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P6982 [NEERC2015]Jump/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P6982%20%5BNEERC2015%5DJump/"  itemprop="url">
-        P6982 [NEERC2015]Jump
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P6982 [NEERC2015]Jump
-题意
-给你一个未知的 01 串，每次可以输出询问一个 01
-串，如果该串中正确的个数刚好等于 \(n\)
-或者 \(n/2\)
-，将会返回相应的答案，否则会返回 0 。求出这个串。（询问次数不大于 \(n+500\)，\(n\leq
-1000\)）
-思路
-先无视询问次数，我们来想一下确定性算法怎么做。
-第一步，我们来试着找出 \(...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P6982%20%5BNEERC2015%5DJump/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P6753%20%5BBalticOI%202013%20Day1%5D%20Ball%20Machine/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3306,6 +3226,76 @@ T2 ...
       
         <div>
           <a class='readmore' href='/2022/04/30/P7324%20%5BWC2021%5D%20%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P7362 [eJOI 2020 Day2] XOR Sort/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/"  itemprop="url">
+        P7362 [eJOI 2020 Day2] XOR Sort
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P7362 [eJOI 2020 Day2] XOR
+Sort
+题意
+给你一个长度为 \(n\)
+的序列，每次操作可以将一个数异或上相邻的一个数，求将序列改为严格单调递增序列或严格单调不降序列的操作次数的操作序列。
+注意，改为严格单调递增序列的数据 \(n\leq
+200\) 且每个数不相同，改为严格单调不降序列的数据 \(n\leq 1000\)。
+不要求操作次数最小，次数需...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P7362%20%5BeJOI%202020%20Day2%5D%20XOR%20Sort/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3391,7 +3381,7 @@ T2 ...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/POJ3187 Backward Digit Sums/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Trie树/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3409,23 +3399,22 @@ T2 ...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/POJ3187%20Backward%20Digit%20Sums/"  itemprop="url">
-        POJ3187 Backward Digit Sums
+      <a href="/2022/04/30/Trie%E6%A0%91/"  itemprop="url">
+        Trie树
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        POJ3187 Backward Digit
-Sums
-好熟悉的题目……但是忘了是怎么做的……好像是随机排列？
-反正都是暴力，看了下网上的题解，好像也没有更好的正解了。有想法的告诉我一下蟹蟹~
-题意
-我们可以用1~n这n个数字用类似杨辉三角的方法加起来，我们就可以把他们拆回去。这样的排列可能有多种，我们要它字典序最小的一种。
-思路
-\(n\)
-比较小，考虑排列所有可能一个个试...
+        就是把字符串转变成一个树，每个节点连接下一个字符，用空间换时间。
+对于区分大小写或不区分的题目，只需要改变 ch[][26]
+的值就行了。
+ch[u][x] 表示 u 节点（标号决定）下一个
+x 字符节点的标号。
+如果题目让记录附加值，那就用 val[]
+在插入时记录一下就好了。
+1234567891011121314151617181920212223242526272829...
       
     
   </div>
@@ -3446,7 +3435,7 @@ Sums
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/POJ3187%20Backward%20Digit%20Sums/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/Trie%E6%A0%91/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3866,7 +3855,7 @@ Sums
 
 <!-- internal -->
 
-<script src="/js/app.6d801d25.js"></script>
+<script src="/js/app.7f9b83b8.js"></script>
 
 
 
@@ -4991,5 +4980,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><script defer src="/js/starfield.js?v=759028ab8d"></script><script defer src="/js/ride2026.js?v=2756f30690"></script><!-- hexo injector body_end end --></body>
+</script><script defer src="/js/starfield.js?v=ce1b6c5c51"></script><script defer src="/js/ride2026.js?v=a318fe938a"></script><!-- hexo injector body_end end --></body>
 </html>
