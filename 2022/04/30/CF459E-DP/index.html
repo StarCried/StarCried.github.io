@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>CF459E-DP - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,DP,树,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="CF459E-DP 核心代码15行 思路 观察数据范围，我们建m层分层图跑最短路想到DP。 DP最大的特点就是无后效性。那么我们这一题哪个条件无后效性呢？ 发现DP值一定从边权小于当前点的位置转移而来。 这不就无后效性了？我们按边权将所有边排序即可。 然后，枚举边，将DP值记录到点上，每次用起始点的dp值加1更新到达点的dp值。最后输出dp值最大的即可。 然后，您会发现第一个样例过">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF459E-DP">
@@ -1923,7 +1923,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2344,7 +2344,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3012,8 +3012,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF487E%20Tourists/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF487E Tourists</p>
+        <a class='prev' href='/2022/04/30/CF437D%20The%20Child%20and%20Zoo/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF437D The Child and Zoo</p>
+          <p class='content'>CF437D The Child and Zoo
+题意
+给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
+思路
+
+首先，我们可以将点权转移到边权上，边权为两端点点权...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/CF487E%20Tourists/'>
+          <p class='title'>CF487E Tourists<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>CF487E Tourists
 前排膜拜T神
 上面的话和这道题一点关系都没有
@@ -3022,17 +3033,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 思路
 
 一眼圆...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/CF437D%20The%20Child%20and%20Zoo/'>
-          <p class='title'>CF437D The Child and Zoo<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>CF437D The Child and Zoo
-题意
-给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
-思路
-
-首先，我们可以将点权转移到边权上，边权为两端点点权...</p>
         </a>
       
     </div>
@@ -4281,19 +4281,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4433,12 +4431,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4466,7 +4458,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4483,7 +4475,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>P3214 [HNOI2011]卡农 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,组合数学,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="P3214 [HNOI2011]卡农 题意 在集合 \(\{1,2,\cdots,n\}\) 中选出 \(m\) 个非空子集满足：  不存在完全相同的两个集合； 每个元素在所有集合中出现次数之和为偶数。  思路 考虑转移，利用容斥方法进行 Dp。设 \(f_i\) 表示选了 \(i\) 个集合满足条件的方案数：  首先，如果确定了前 \(i-1\) 个集合，那么为了满足上面">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P3214 [HNOI2011]卡农">
@@ -1922,7 +1922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2343,7 +2343,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3032,25 +3032,23 @@ class="math inline">\(f_1=0\)</span>。</p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2491 消防 P1099 树网的核</p>
-          <p class='content'>P2491 消防/P1099 树网的核
-双倍经验，双倍快乐。
+        <a class='prev' href='/2022/04/30/P4494%20%5BHAOI2018%5D%E5%8F%8D%E8%89%B2%E6%B8%B8%E6%88%8F/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P4494 [HAOI2018]反色游戏</p>
+          <p class='content'>P4494 [HAOI2018]反色游戏
 题意
-在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。
-输出这个最小的值。
-做法
-Defin...</p>
+给你一个无向图，图上每个点是黑色或者白色。你可以将一条边的两个端点颜色取反。问你有多少种方法每个边至多取反一次使得图上全变成白色的点。
+思路...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P3312%20%E6%95%B0%E8%A1%A8/'>
-          <p class='title'>P3312 数表<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P3312 数表
+        <a class='next' href='/2022/04/30/P4774-%E5%B1%A0%E9%BE%99%E5%8B%87%E5%A3%AB-%E6%89%A9%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/'>
+          <p class='title'>P4774-屠龙勇士-扩展中国剩余定理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+很久很久以前，巨龙突然出现，带来了灾难带走公主又消失不见。王国十分危险，世间谁最勇敢，一位英雄出现……
+
+学习于该大佬博客
 题意
-求出 \[
-\sum_{i=1}^n\sum_{j=1}^m\sigma(\gcd(i,j))[\sigma(\gcd(i,j))\le a]
-\] 其中 \(\...</p>
+那么你就是这位英雄，不过不同的是，你面对的是一群巨龙...</p>
         </a>
       
     </div>
@@ -4299,19 +4297,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4451,12 +4447,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4484,7 +4474,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4501,7 +4491,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

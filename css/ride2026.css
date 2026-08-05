@@ -130,14 +130,19 @@ body.ride-page-active #layoutHelper-page-plugins,
 body.ride-page-active #safearea > .site-footer,
 body.ride-page-active #safearea > footer,
 body.ride-page-active #sc-sky,
-body.ride-page-active #s-top,
-body.ride-page-active #sc-radio {
+body.ride-page-active #s-top {
   display: none !important;
 }
 
 body.ride-page-active .scroll-down-effects {
   display: none !important;
   animation: none !important;
+}
+
+@media (max-width: 480px) {
+  body.ride-page-active #sc-radio {
+    bottom: 124px;
+  }
 }
 
 .ride-world {

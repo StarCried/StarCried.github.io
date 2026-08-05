@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>P6295 有标号 DAG 计数 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,图论,组合数学,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="P6295 有标号 DAG 计数 题意 求 \(n\) 个点有标号弱联通 DAG 数量。 推导 设 \(f_i\) 表示 \(i\) 个点有标号 DAG 数量（不保证弱联通），有： \[ f(i)&#x3D;\sum_{j&#x3D;1}^i\binom ij(-1)^{j-1}f(i-j)2^{j(i-j)} \] 意义为选至少 \(j\) 个度数为零的点，向剩下的 \(i-j\) 个点随便连有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P6295 有标号 DAG 计数">
@@ -1923,7 +1923,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2344,7 +2344,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3036,25 +3036,26 @@ class="math inline">\(f\)</span> 的 EGF。根据多项式 ln 和 exp
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P5658%20%E6%8B%AC%E5%8F%B7%E6%A0%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5658 括号树</p>
-          <p class='content'>P5658 括号树
-NOIp2019
-我是永远不会忘记我那天在考场上傻瞪着题啥都不会的心理阴影的……
-于是今天我克服心理阴影来写这道题。
-树形结构
-因为这是一个树，所有优秀的性质这个题...</p>
+        <a class='prev' href='/2022/04/30/P5591%20%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E5%AD%A6%E6%95%B0%E5%AD%A6/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5591 小猪佩奇学数学</p>
+          <p class='content'>P5591 小猪佩奇学数学
+知识点
+二项式定理
+\[
+(x+1)^n=\sum_{i=0}^n\binom nix^i
+\]
+单位根反演
+\[
+[n\mid k]=\frac 1...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/'>
-          <p class='title'>P5471- K-D tree优化建图-弹跳<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P5471- K-D tree优化建图-弹跳
-
-优化建图是一种思想。
-
+        <a class='next' href='/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/'>
+          <p class='title'>P6106 [Ynoi2010] Self Adjusting Top Tree<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P6106 [Ynoi2010] Self
+Adjusting Top Tree
 题意
-有\(n\)个城市分布在小鸟岛上，有\(m\)个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹...</p>
+给出平面直角坐标系上若干不与坐标轴平行的处于第一象限的互不相交的线段，多次询问平面中一个第一象限的矩...</p>
         </a>
       
     </div>
@@ -4303,19 +4304,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4455,12 +4454,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4488,7 +4481,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4505,7 +4498,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

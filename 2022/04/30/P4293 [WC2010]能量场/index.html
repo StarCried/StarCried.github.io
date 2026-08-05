@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>P4293 [WC2010]能量场 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,几何,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="P4293 [WC2010]能量场 题意 给你 \(n\) 个粒子，每个粒子有两个权值 \(m_i,c_i\) 每个相邻有序对 \((a,b)\) 会产生 \(m_am_b(c_a-c_b)\) 的贡献。现让你处理两个问题：  找出一个有序对使贡献最大。 找出一个序列成环后贡献和最大。  思路 我们将贡献转化一下： \[ m_am_b(c_a-c_b)&#x3D;m_ac_am_b-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P4293 [WC2010]能量场">
@@ -1922,7 +1922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2343,7 +2343,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3020,23 +3020,23 @@ class="math inline">\(x=m_ic_i,y=m_i\)</span> 的向量。</p>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P4180%20%5BBJWC2010%5D%E4%B8%A5%E6%A0%BC%E6%AC%A1%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P4180 [BJWC2010]严格次小生成树</p>
-          <p class='content'>P4180 [BJWC2010]严格次小生成树
+        <a class='prev' href='/2022/04/30/P5350%20%E5%BA%8F%E5%88%97/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5350 序列</p>
+          <p class='content'>P5350 序列
 题意
-求出一个无向联通图的严格次小生成树。严格次小生成树的定义为边权和大于最小生成树的边权和但不存在另一棵生成树的边权和在最小生成树和严格次小...</p>
+维护一个序列，支持区间求和、赋值、加值、复制、交换、翻转操作，其中交换和复制操作保证两段区间长度相等且不交。答案对
+\(1e9+7\) 取模。
+思路
+对于区间求...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P4334%20%5BCOI2007%5D%20Policija/'>
-          <p class='title'>P4334 [COI2007] Policija<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P4334 [COI2007] Policija
+        <a class='next' href='/2022/04/30/P5468%20%5BNOI2019%5D%20%E5%9B%9E%E5%AE%B6%E8%B7%AF%E7%BA%BF/'>
+          <p class='title'>P5468 [NOI2019] 回家路线<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P5468 [NOI2019] 回家路线
+斜率优化入门（指我写的东西而不是这道题）
 题意
-一个无重边的无向图，每次询问删掉一条边或删掉一个点后两个点是否联通。
-思路
-连通性问题，我们可以考虑使用广义圆方树解决。
-
-对...</p>
+\(n\) 个节点，有 \(m\) 趟列车，车 \(i\) 从 \(p_i\) 时刻至 \(q_i...</p>
         </a>
       
     </div>
@@ -4285,19 +4285,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4437,12 +4435,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4470,7 +4462,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4487,7 +4479,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

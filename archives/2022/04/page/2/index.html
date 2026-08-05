@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2892,7 +2892,7 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF437D The Child and Zoo/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF487E Tourists/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2910,22 +2910,26 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF437D%20The%20Child%20and%20Zoo/"  itemprop="url">
-        CF437D The Child and Zoo
+      <a href="/2022/04/30/CF487E%20Tourists/"  itemprop="url">
+        CF487E Tourists
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        CF437D The Child and Zoo
+        CF487E Tourists
+前排膜拜T神
+上面的话和这道题一点关系都没有
 题意
-给定一个无向图，求所有点对间所有简单路径上最小点权的最大值的平均值。
+给一个点带权的无向图，每次询问查询两点间所有简单路径上最小值的最小值，单点修改。
 思路
 
-首先，我们可以将点权转移到边权上，边权为两端点点权的较小值。正确性显然。
-然后，对于任意两个点之间的贡献，只有路径上含最大点权的简单路径有贡献，于是就可以把无向图转变为最大生成树。任意两个点间的贡献显然是在最大生成树上路径的最大边权。
-考虑对于一...
+一眼圆方树。
+——@gxy001
+
+这种题只有在树上做才比较好处理这么多次询问。考虑广义圆方树，缩完点双连通分量后建立的方点和圆点。
+因为我们找的是最小值，所以必须将代表整个点双的方点的权值设为与其...
       
     
   </div>
@@ -2946,7 +2950,7 @@ DP最大的特点就是无后效性。那么我们这一题哪个条件无后效
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/CF437D%20The%20Child%20and%20Zoo/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/CF487E%20Tourists/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3016,6 +3020,76 @@ S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
       
         <div>
           <a class='readmore' href='/2022/04/30/CF494D%20Birthday/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF710F String Set Queries/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/CF710F%20String%20Set%20Queries/"  itemprop="url">
+        CF710F String Set Queries
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        CF710F String Set Queries
+题意
+动态支持加入删除字符串和字符串匹配
+思路
+动态 AC自动机
+先不考虑动态情况。对于加入一个字符串，直接插入到自动机即可。
+考虑删除。发现对于答案具有可减性，意思是对于同一个匹配串，答案可以表示为在自动机中匹配的答案减去删去的所有串匹配的答案。那我们考虑给所有删除的串也开一个
+AC 自动机，每次询问在两个自动机中匹配将答案...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/CF710F%20String%20Set%20Queries/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3171,76 +3245,6 @@ S(v)}d(u,x)^2\) 其中 \(d(u,v)\)
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/CF710F String Set Queries/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/CF710F%20String%20Set%20Queries/"  itemprop="url">
-        CF710F String Set Queries
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        CF710F String Set Queries
-题意
-动态支持加入删除字符串和字符串匹配
-思路
-动态 AC自动机
-先不考虑动态情况。对于加入一个字符串，直接插入到自动机即可。
-考虑删除。发现对于答案具有可减性，意思是对于同一个匹配串，答案可以表示为在自动机中匹配的答案减去删去的所有串匹配的答案。那我们考虑给所有删除的串也开一个
-AC 自动机，每次询问在两个自动机中匹配将答案...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/CF710F%20String%20Set%20Queries/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Dijkstra 最短路/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -3296,6 +3300,77 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
       
         <div>
           <a class='readmore' href='/2022/04/30/Dijkstra%20%E6%9C%80%E7%9F%AD%E8%B7%AF/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Dirichlet卷积和莫比乌斯反演/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"  itemprop="url">
+        Dirichlet卷积和莫比乌斯反演
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+非全面讲解，仅供记录笔记
+
+Dirichlet卷积
+\[(f\ast g)(n)=\sum_{d\mid
+n}f(d)g(\frac{n}{d})\] \[\varepsilon
+=\mu \ast 1 \iff \varepsilon(n) = \sum_{d\mid n} \mu(d)\]
+其中\(\varepsilon\)卷任何函数等于其函数本身。
+莫比乌斯函数\(\...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3437,77 +3512,6 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
       
         <div>
           <a class='readmore' href='/2022/04/30/Guass%E6%B6%88%E5%85%83%E6%80%BB%E7%BB%93/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Dirichlet卷积和莫比乌斯反演/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"  itemprop="url">
-        Dirichlet卷积和莫比乌斯反演
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-非全面讲解，仅供记录笔记
-
-Dirichlet卷积
-\[(f\ast g)(n)=\sum_{d\mid
-n}f(d)g(\frac{n}{d})\] \[\varepsilon
-=\mu \ast 1 \iff \varepsilon(n) = \sum_{d\mid n} \mu(d)\]
-其中\(\varepsilon\)卷任何函数等于其函数本身。
-莫比乌斯函数\(\...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -4766,19 +4770,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4918,12 +4920,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4951,7 +4947,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4968,7 +4964,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

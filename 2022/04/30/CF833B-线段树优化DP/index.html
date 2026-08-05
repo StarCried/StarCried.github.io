@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>CF833B-线段树优化DP - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,DP,线段树,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="CF833B-线段树优化DP 题意 将一个长为\(n\)的序列分成\(k\)段，每段贡献为其中不同数字的个数，求最大贡献和。\(n\leq 35000,k\leq 50\)。 思路 此处感谢@gxy001 聚铑的精彩讲解 先考虑暴力DP，可以想到一个时空复杂度\(O(n^2k)\)的方法，即记录前i个数字分成了j段。我们现在来思考几个问题来优化这个操作：  对于一个数字，它对那些地方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF833B-线段树优化DP">
@@ -1923,7 +1923,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2344,7 +2344,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3023,11 +3023,15 @@ class="math inline">\(O(n^2k)\)</span>的方法，即记录前i个数字分成�
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/CF494D%20Birthday/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF494D Birthday</p>
-          <p class='content'>CF494D Birthday
+        <a class='prev' href='/2022/04/30/CF710F%20String%20Set%20Queries/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CF710F String Set Queries</p>
+          <p class='content'>CF710F String Set Queries
 题意
-一个1为根的带边权有根树，每次询问给定两个点 \(u,v\) 求 \(\sum_{x\in S(v)} d(u,x)^2-\sum_{x\not\in...</p>
+动态支持加入删除字符串和字符串匹配
+思路
+动态 AC自动机
+先不考虑动态情况。对于加入一个字符串，直接插入到自动机即可。
+考...</p>
         </a>
       
       
@@ -4285,19 +4289,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4437,12 +4439,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4470,7 +4466,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4487,7 +4483,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

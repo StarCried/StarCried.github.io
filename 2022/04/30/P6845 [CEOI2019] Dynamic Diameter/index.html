@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>P6845 [CEOI2019] Dynamic Diameter - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,线段树,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="P6845 [CEOI2019] Dynamic Diameter 题意 一颗带权树，每次更改一条边的权，每次修改后求出最大直径。强制在线。 思路 \(O(n\log^2n)\) 的暴力做法。 根据经典结论，对于两个点集的树上最大直径（权值非负），并集点集的树上最大直径的端点一定是原四个端点中的两个。 那么我们就可以用线段树维护点集，合并时 \(O(\log n)\) 查询两点间距离">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P6845 [CEOI2019] Dynamic Diameter">
@@ -1922,7 +1922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2343,7 +2343,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3016,23 +3016,23 @@ class="math inline">\(dis\)</span>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P6106%20%5BYnoi2010%5D%20Self%20Adjusting%20Top%20Tree/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P6106 [Ynoi2010] Self Adjusting Top Tree</p>
-          <p class='content'>P6106 [Ynoi2010] Self
-Adjusting Top Tree
+        <a class='prev' href='/2022/04/30/P5471-%20K-D%20tree%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE-%E5%BC%B9%E8%B7%B3/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P5471- K-D tree优化建图-弹跳</p>
+          <p class='content'>P5471- K-D tree优化建图-弹跳
+
+优化建图是一种思想。
+
 题意
-给出平面直角坐标系上若干不与坐标轴平行的处于第一象限的互不相交的线段，多次询问平面中一个第一象限的矩...</p>
+有\(n\)个城市分布在小鸟岛上，有\(m\)个弹弓分布在这些城市里。因为弹弓体积大，固定麻烦，所以每个弹...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P6982%20%5BNEERC2015%5DJump/'>
-          <p class='title'>P6982 [NEERC2015]Jump<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P6982 [NEERC2015]Jump
+        <a class='next' href='/2022/04/30/P6753%20%5BBalticOI%202013%20Day1%5D%20Ball%20Machine/'>
+          <p class='title'>P6753 [BalticOI 2013 Day1] Ball Machine<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P6753 [BalticOI 2013
+Day1] Ball Machine
 题意
-给你一个未知的 01 串，每次可以输出询问一个 01
-串，如果该串中正确的个数刚好等于 \(n\)
-或者 \(n/2\)
-，将会返回相...</p>
+给你一个树，每次从根节点放一个求，如果其子节点有空这个球会向下滚，若有多个节点为空则找儿子中以子树内编...</p>
         </a>
       
     </div>
@@ -4282,19 +4282,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4434,12 +4432,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4467,7 +4459,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4484,7 +4476,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

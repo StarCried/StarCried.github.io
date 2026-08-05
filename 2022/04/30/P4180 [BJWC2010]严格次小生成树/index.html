@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>P4180 [BJWC2010]严格次小生成树 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,图论,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="P4180 [BJWC2010]严格次小生成树 题意 求出一个无向联通图的严格次小生成树。严格次小生成树的定义为边权和大于最小生成树的边权和但不存在另一棵生成树的边权和在最小生成树和严格次小生成树之间（不相等）。 思路 先求出一颗最小生成树，发现严格次小生成树一定是其断了一条边并加了一条边且边权和的增加量最小。 那么我们继续在最小生成树上做。对于每一条不是最小生成树上的边，求出其两端两点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P4180 [BJWC2010]严格次小生成树">
@@ -1922,7 +1922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2343,7 +2343,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3005,22 +3005,25 @@ target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4180">[BJ
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P4074%20%5BWC2013%5D%E7%B3%96%E6%9E%9C%E5%85%AC%E5%9B%AD/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P4074 [WC2013]糖果公园</p>
-          <p class='content'>P4074 [WC2013]糖果公园
-树上带修莫队
-题意：树上每个点有一种糖果，求\(\sum_c\sum_{i=1}^{cnt_c}v_c*w_i\)
-其中c为糖果种类，\(cnt_c\...</p>
+        <a class='prev' href='/2022/04/30/P3312%20%E6%95%B0%E8%A1%A8/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P3312 数表</p>
+          <p class='content'>P3312 数表
+题意
+求出 \[
+\sum_{i=1}^n\sum_{j=1}^m\sigma(\gcd(i,j))[\sigma(\gcd(i,j))\le a]
+\] 其中 \(\...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P4293%20%5BWC2010%5D%E8%83%BD%E9%87%8F%E5%9C%BA/'>
-          <p class='title'>P4293 [WC2010]能量场<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P4293 [WC2010]能量场
+        <a class='next' href='/2022/04/30/P4334%20%5BCOI2007%5D%20Policija/'>
+          <p class='title'>P4334 [COI2007] Policija<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P4334 [COI2007] Policija
 题意
-给你 \(n\)
-个粒子，每个粒子有两个权值 \(m_i,c_i\)
-每个相邻有序对 \((a,b)\) 会产生 \(m_am_b(c_a-c_...</p>
+一个无重边的无向图，每次询问删掉一条边或删掉一个点后两个点是否联通。
+思路
+连通性问题，我们可以考虑使用广义圆方树解决。
+
+对...</p>
         </a>
       
     </div>
@@ -4269,19 +4272,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4421,12 +4422,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4454,7 +4449,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4471,7 +4466,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

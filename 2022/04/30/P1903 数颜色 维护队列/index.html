@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>P1903 数颜色 维护队列 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,分块,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="莫队算法的待修版本，增加一个时间的维度进行分块。  P1903 [国家集训队] 数颜色 &#x2F; 维护队列 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P1903 数颜色 维护队列">
@@ -1922,7 +1922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2343,7 +2343,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3000,24 +3000,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2014 选课</p>
-          <p class='content'>洛谷P2014选课
-一道树形DP题。
-f[i][j] 表示i个点选j门课程的最大学分。
-递推方程：
-1234for(int a=n;a&gt;0;a--)//总共选择多少    for(...</p>
+        <a class='prev' href='/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P1880 [NOI1995] 石子合并</p>
+          <p class='content'>P1880 [NOI1995]
+石子合并
+一道区间dp题目。
+用 d[i][j] 表示从 i 到 j
+的最大/最小得分，那么依次枚举长度 len，坐标 i
+和 j，三层循环就可以 dp...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/'>
-          <p class='title'>P2490 [SDOI2011]黑白棋<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P2490 [SDOI2011]黑白棋
-题意
-一个 \(1*n\) 的棋盘上，A
-可以移动白色棋子，B
-可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动
-1 到...</p>
+        <a class='next' href='/2022/04/30/P2476-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/'>
+          <p class='title'>P2476-记忆化搜索<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P2476-记忆化搜索
+DP?
+我们看看，这个状态似乎有亿点点多。我们看看数据范围，数量不超过5，颜色数不超过15.
+15维DP显然不靠谱。
+那么我们就思考一下……状态个数？发现记忆化搜...</p>
         </a>
       
     </div>
@@ -4256,19 +4256,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4408,12 +4406,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4441,7 +4433,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4458,7 +4450,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

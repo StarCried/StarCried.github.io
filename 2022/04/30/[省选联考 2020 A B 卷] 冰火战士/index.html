@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>[省选联考 2020 A B 卷] 冰火战士 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,树状数组,二分,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="对树状数组的理解加深了！ 转化题意 动态维护一个单调不降和一个单调不增序列，每次修改后输出两序列取最小值后的最大值和其最大位置。 思路 首先，阅读原题，知道最后答案一定是某个战士的温度，所以我们将温度离散化。 再次阅读，发现冰系是一个（以温度为自变量的）单调不降序列，每次修改一个战士就是修改一段后缀。火系相反，修改前缀。 深度阅读，发现题目其实就是求两个序列的交点。于是转化成上述题意。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[省选联考 2020 A B 卷] 冰火战士">
@@ -1923,7 +1923,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2344,7 +2344,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3022,22 +3022,22 @@ class="math inline">\(P+2^i\)</span>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/matrix-tree%E5%AE%9A%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Matrix-tree定理</p>
+        <a class='prev' href='/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>bzoj2118 墨墨的等式</p>
+          <p class='content'>Description
+墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
+存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/matrix-tree%E5%AE%9A%E7%90%86/'>
+          <p class='title'>Matrix-tree定理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>矩阵树定理
 定义
 
 邻接矩阵：\(A=(a_{ij})\)，其中
 \(a_{ij}\) 表示 \(i\) 到 \(j\) 有几条边相连。
 度数矩阵：\(C=(c_{ij})\)，为对角...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/'>
-          <p class='title'>bzoj2118 墨墨的等式<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Description
-墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
-存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\...</p>
         </a>
       
     </div>
@@ -4286,19 +4286,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4438,12 +4436,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4471,7 +4463,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4488,7 +4480,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 

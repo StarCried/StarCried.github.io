@@ -47,7 +47,7 @@
   <!-- 页面元数据 -->
   <title>Trie树 - StarCried 的狼窝</title>
   <meta name="keywords" content="博客园,OI,字符串,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
-  <meta desc name="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。 - StarCried - StarCried 的狼窝">
+  
   <meta name="description" content="就是把字符串转变成一个树，每个节点连接下一个字符，用空间换时间。 对于区分大小写或不区分的题目，只需要改变 ch[][26] 的值就行了。 ch[u][x] 表示 u 节点（标号决定）下一个 x 字符节点的标号。 如果题目让记录附加值，那就用 val[] 在插入时记录一下就好了。 1234567891011121314151617181920212223242526272829303">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Trie树">
@@ -1922,7 +1922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785751874261),
+    lastupdate: new Date(1785901353120),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2343,7 +2343,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=f40d6347d5"><link rel="stylesheet" href="/css/ride2026.css?v=41afa2a94f">
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -3008,23 +3008,22 @@ target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2580">P25
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P7473%20%5BNOI%20Online%202021%20%E5%85%A5%E9%97%A8%E7%BB%84%5D%20%E9%87%8D%E5%8A%9B%E7%90%83/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P7473 [NOI Online 2021 入门组] 重力球</p>
-          <p class='content'>P7473 [NOI Online 2021
-入门组] 重力球
-题意
-给你一个正方形平面，某些位置有障碍，对于平面上两个球，每次你可以改变重力方向使两个球下落到最底端，求使两个球位置重合的...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/04/30/POJ1944/'>
-          <p class='title'>POJ1944<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/2022/04/30/POJ1944/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>POJ1944</p>
           <p class='content'>poj1944
 一道我不会做的贪心题。
 （思维才是OI的重点）
 但是if您也不会，那就来听我瞎扯吧。
 首先，这个图是一个圈，只能连接邻点，使所有求的点联通。
 我们先不考虑环，那么就可以...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/04/30/bzoj2118%20%E5%A2%A8%E5%A2%A8%E7%9A%84%E7%AD%89%E5%BC%8F/'>
+          <p class='title'>bzoj2118 墨墨的等式<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Description
+墨墨突然对等式很感兴趣，他正在研究 \(a_1x_1+a_2x_2+...+a_nx_n=B\)
+存在非负整数解的条件，他要求你编写一个程序，给定 \(N\)、\(\...</p>
         </a>
       
     </div>
@@ -4274,19 +4273,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- front-matter body_end begin -->
     <!-- front-matter body_end end -->
   <!-- hexo injector body_end start -->
-<div id="sc-radio" class="sc-radio" hidden>
+<div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
     <div class="sc-radio-player"></div>
   </div>
-  <button class="sc-radio-toggle" type="button" aria-label="加载首页歌单" title="首页歌单">
+  <button class="sc-radio-toggle" type="button" aria-label="加载全站歌单" aria-expanded="false" title="全站歌单">
     <i class="fas fa-music" aria-hidden="true"></i>
   </button>
 </div>
 <script>
 (function () {
-  var HOME_PATHS = ['/', '/index.html'];
-
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4426,12 +4423,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
   }
 
-  function syncRadioVisibility() {
-    var radio = document.getElementById('sc-radio');
-    if (!radio) return;
-    radio.hidden = HOME_PATHS.indexOf(window.location.pathname) === -1;
-  }
-
   function bindRadio() {
     var radio = document.getElementById('sc-radio');
     var toggle = radio && radio.querySelector('.sc-radio-toggle');
@@ -4459,7 +4450,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           status.hidden = true;
           radio.dataset.loaded = 'true';
           radio.dataset.loading = 'false';
-          toggle.setAttribute('aria-label', '显示或隐藏首页歌单');
+          toggle.setAttribute('aria-label', '显示或隐藏全站歌单');
         })
         .catch(function () {
           status.textContent = '歌单加载失败，请稍后重试';
@@ -4476,7 +4467,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     classifyPostCards();
     markGalleryImages();
     bindFriendAvatars();
-    syncRadioVisibility();
     bindRadio();
   }
 
