@@ -1922,7 +1922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1787234400419),
+    lastupdate: new Date(1787239638950),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -3841,20 +3841,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  
-
-<script>
-  window.FPConfig = {
-	delay: 0,
-	ignoreKeywords: ["#"],
-	maxRPS: 6,
-	hoverDelay: 0
-  };
-</script>
-<script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/flying-pages/flying-pages.min.js"></script>
-
-
-
 
 
 
@@ -4263,7 +4249,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
         ],
         cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000,
+        timeout: 15000,
         
       });
     });
@@ -4326,6 +4312,38 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </div>
 <script>
 (function () {
+  var pjaxNavigationTimer = 0;
+  var pjaxNavigationTarget = '';
+
+  function clearPjaxNavigationGuard() {
+    if (pjaxNavigationTimer) window.clearTimeout(pjaxNavigationTimer);
+    pjaxNavigationTimer = 0;
+    pjaxNavigationTarget = '';
+  }
+
+  function navigateWithoutPjax(target) {
+    if (!target || window.location.href === target) return;
+    clearPjaxNavigationGuard();
+    window.location.assign(target);
+  }
+
+  function armPjaxNavigationGuard(event) {
+    var trigger = event && event.triggerElement;
+    var target = trigger && trigger.href;
+    if (!target) return;
+
+    clearPjaxNavigationGuard();
+    pjaxNavigationTarget = target;
+    pjaxNavigationTimer = window.setTimeout(function () {
+      navigateWithoutPjax(pjaxNavigationTarget);
+    }, 16000);
+  }
+
+  function recoverPjaxNavigation(event) {
+    var trigger = event && event.triggerElement;
+    navigateWithoutPjax((trigger && trigger.href) || pjaxNavigationTarget);
+  }
+
   function scrollToPosts(event) {
     if (event) {
       event.preventDefault();
@@ -4524,6 +4542,9 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }, true);
     document.addEventListener('DOMContentLoaded', enhancePage);
     document.addEventListener('pjax:complete', enhancePage);
+    document.addEventListener('pjax:send', armPjaxNavigationGuard);
+    document.addEventListener('pjax:success', clearPjaxNavigationGuard);
+    document.addEventListener('pjax:error', recoverPjaxNavigation);
   }
 
   enhancePage();
