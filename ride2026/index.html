@@ -53,7 +53,7 @@
 <meta property="og:title" content="西迁骑行">
 <meta property="og:url" content="https://starcried.github.io/ride2026/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="2026.06.25 — 07.11 · 上海至西安       从交大骑到交大       一场横穿五省市、持续十七天的毕业骑行">
+<meta property="og:description" content="2026.06.25 — 07.11 · 上海至西安       从交大骑到交大       一场横穿五省市、持续十七天的毕业骑行                         读《千里走单骑》">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://starcried.github.io/assets/brand/starcried-128.png">
 <meta property="article:published_time" content="2026-07-16T15:57:41.000Z">
@@ -1920,7 +1920,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1785902212152),
+    lastupdate: new Date(1787233252585),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2398,7 +2398,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=bba572c5df"><!-- hexo injector head_end end --></head>
+<link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2900,6 +2900,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <span class="ride-kicker">2026.06.25 — 07.11 · 上海至西安</span>
       <h1 id="ride-title">从交大骑到交大</h1>
       <p>一场横穿五省市、持续十七天的毕业骑行</p>
+      <a class="ride-story-shortcut" href="/2026/07/29/千里走单骑/">
+        <i class="fas fa-book-open" aria-hidden="true"></i>
+        <span>读《千里走单骑》</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
     </div>
     <div class="ride-actions" aria-label="地图控制">
       <button id="ride-reset" class="ride-icon-button" type="button" aria-label="重置地图位置" title="重置地图位置">
@@ -2924,7 +2929,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <h2 id="ride-detail-title"></h2>
       <p id="ride-detail-route" class="ride-detail-route"></p>
       <div id="ride-detail-stats" class="ride-detail-stats"></div>
-      <p id="ride-detail-summary" class="ride-detail-summary"></p>
+      <div id="ride-detail-summary" class="ride-detail-summary"></div>
       <p id="ride-detail-lodging" class="ride-detail-lodging"></p>
     </div>
   </article>
@@ -2933,7 +2938,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <button id="ride-summary-toggle" class="ride-summary-toggle" type="button" aria-expanded="false" aria-controls="ride-summary-more">
       <span class="ride-summary-label">
         <span class="ride-summary-kicker">FIT FINAL</span>
-        <strong id="ride-summary-title">全程数据</strong>
+        <strong id="ride-summary-title">全程数据与复现清单</strong>
       </span>
       <span class="ride-summary-metrics" aria-label="全程核心统计">
         <span><strong id="ride-total-distance">—</strong><small>公里</small></span>
@@ -2944,21 +2949,46 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
     <div id="ride-summary-more" class="ride-summary-more" aria-hidden="true">
+      <div class="ride-replay-heading">
+        <span class="ride-summary-kicker">RIDE IT YOURSELF</span>
+        <h2>复现这段旅程</h2>
+        <p id="ride-replay-intro"></p>
+      </div>
       <div class="ride-before-after">
-        <section>
-          <h3>出发时</h3>
-          <ul id="ride-before-list"></ul>
+        <section class="ride-guide-section">
+          <span id="ride-before-kicker" class="ride-guide-kicker"></span>
+          <h3 id="ride-before-title"></h3>
+          <p id="ride-before-lede" class="ride-guide-lede"></p>
+          <div id="ride-vehicle-facts" class="ride-fact-strip"></div>
+          <ol id="ride-before-list" class="ride-guide-list"></ol>
+          <div class="ride-gear-block">
+            <h4>已验证的核心装备</h4>
+            <div id="ride-before-gear" class="ride-gear-list"></div>
+          </div>
         </section>
-        <section>
-          <h3>抵达后</h3>
-          <ul id="ride-after-list"></ul>
+        <section class="ride-guide-section">
+          <span id="ride-after-kicker" class="ride-guide-kicker"></span>
+          <h3 id="ride-after-title"></h3>
+          <p id="ride-after-lede" class="ride-guide-lede"></p>
+          <ol id="ride-after-list" class="ride-guide-list"></ol>
+          <div id="ride-after-facts" class="ride-fact-strip ride-fact-strip-after"></div>
         </section>
       </div>
+      <section class="ride-expenses" aria-labelledby="ride-expenses-title">
+        <div class="ride-expenses-heading">
+          <div>
+            <span class="ride-guide-kicker">KNOWN COSTS</span>
+            <h3 id="ride-expenses-title">已确认的行程与收尾花销</h3>
+          </div>
+          <p><strong id="ride-known-cost">—</strong><span>已记录小计</span></p>
+        </div>
+        <div id="ride-expense-list" class="ride-expense-list"></div>
+        <p id="ride-expense-note" class="ride-expense-note"></p>
+      </section>
       <div class="ride-ledger">
         <span><strong id="ride-total-days">17</strong> 个自然日</span>
         <span><strong id="ride-total-calories">—</strong> kcal 码表估算</span>
-        <span><strong>¥3004.91</strong> 15晚住宿</span>
-        <span><strong>¥329</strong> D2护目镜</span>
+        <span><strong id="ride-vehicle-cost">—</strong> 既有整车投入参考</span>
       </div>
       <p id="ride-data-note" class="ride-data-note"></p>
     </div>
@@ -4286,5 +4316,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><script defer src="/js/starfield.js?v=ce1b6c5c51"></script><script defer src="/js/ride2026.js?v=a318fe938a"></script><!-- hexo injector body_end end --></body>
+</script><script defer src="/js/starfield.js?v=ce1b6c5c51"></script><script defer src="/js/ride2026.js?v=261c4d40df"></script><!-- hexo injector body_end end --></body>
 </html>

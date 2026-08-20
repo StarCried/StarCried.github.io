@@ -189,6 +189,7 @@
         const expanded = summary.classList.toggle('is-expanded');
         summaryToggle.setAttribute('aria-expanded', String(expanded));
         this.root.querySelector('#ride-summary-more').setAttribute('aria-hidden', String(!expanded));
+        document.body.classList.toggle('ride-summary-open', expanded);
       }, { signal: this.signal });
 
       this.root.addEventListener('click', (event) => {
@@ -242,22 +243,87 @@
 
     populateSummary() {
       const totals = this.routeData.totals;
+      const beforeAfter = this.routeData.before_after;
       this.root.querySelector('#ride-total-distance').textContent = totals.distance_km.toFixed(2);
       this.root.querySelector('#ride-total-time').textContent = totals.moving_time;
       this.root.querySelector('#ride-total-ascent').textContent = String(totals.ascent_m) + ' m';
       this.root.querySelector('#ride-total-average').textContent = totals.average_kmh.toFixed(2) + ' km/h';
       this.root.querySelector('#ride-total-days').textContent = String(totals.natural_days);
       this.root.querySelector('#ride-total-calories').textContent = String(totals.calories_kcal);
-      this.fillList(this.root.querySelector('#ride-before-list'), this.routeData.before_after.before);
-      this.fillList(this.root.querySelector('#ride-after-list'), this.routeData.before_after.after);
+      this.root.querySelector('#ride-replay-intro').textContent = beforeAfter.intro;
+      this.populateGuide('before', beforeAfter.before);
+      this.populateGuide('after', beforeAfter.after);
+      this.populateExpenses(beforeAfter.expenses);
       this.root.querySelector('#ride-data-note').textContent =
-        '最终统计来自16个iGPSPORT FIT文件。' + this.routeData.meta.route_note + ' ' + this.routeData.before_after.note;
+        '最终统计来自16个iGPSPORT FIT文件。' + this.routeData.meta.route_note + ' ' + beforeAfter.note;
     }
 
-    fillList(list, items) {
-      list.replaceChildren(...items.map(function (item) {
-        return createElement('li', '', item);
+    populateGuide(key, guide) {
+      this.root.querySelector('#ride-' + key + '-kicker').textContent = guide.kicker;
+      this.root.querySelector('#ride-' + key + '-title').textContent = guide.title;
+      this.root.querySelector('#ride-' + key + '-lede').textContent = guide.lede;
+      this.fillFactStrip(this.root.querySelector('#ride-' + (key === 'before' ? 'vehicle' : 'after') + '-facts'), guide.facts);
+      this.fillGuideList(this.root.querySelector('#ride-' + key + '-list'), guide.checklist);
+      if (guide.gear) this.fillGearList(this.root.querySelector('#ride-before-gear'), guide.gear);
+    }
+
+    fillFactStrip(container, facts) {
+      container.replaceChildren(...facts.map(function (fact) {
+        const item = createElement('div', 'ride-fact');
+        item.append(
+          createElement('span', '', fact.label),
+          createElement('strong', '', fact.value)
+        );
+        return item;
       }));
+    }
+
+    fillGuideList(list, items) {
+      list.replaceChildren(...items.map(function (item) {
+        const entry = createElement('li', 'ride-guide-item');
+        entry.append(
+          createElement('strong', '', item.title),
+          createElement('span', '', item.detail)
+        );
+        return entry;
+      }));
+    }
+
+    fillGearList(container, items) {
+      container.replaceChildren(...items.map(function (item) {
+        const entry = createElement('div', 'ride-gear-item');
+        entry.append(
+          createElement('strong', '', item.label),
+          createElement('span', '', item.items)
+        );
+        return entry;
+      }));
+    }
+
+    populateExpenses(expenses) {
+      this.root.querySelector('#ride-known-cost').textContent = this.formatCurrency(expenses.known_total_cny);
+      this.root.querySelector('#ride-vehicle-cost').textContent = '约 ' + this.formatCurrency(expenses.vehicle_reference_cny);
+      this.root.querySelector('#ride-expense-note').textContent = expenses.note;
+      this.root.querySelector('#ride-expense-list').replaceChildren(...expenses.items.map((item) => {
+        const entry = createElement('div', 'ride-expense-item' + (item.amount_cny === null ? ' is-unpriced' : ''));
+        const label = createElement('span', 'ride-expense-label');
+        label.append(
+          createElement('strong', '', item.label),
+          createElement('small', '', item.phase)
+        );
+        entry.append(
+          label,
+          createElement('b', '', item.amount_cny === null ? '未计入' : this.formatCurrency(item.amount_cny))
+        );
+        return entry;
+      }));
+    }
+
+    formatCurrency(value) {
+      return '¥' + Number(value).toLocaleString('zh-CN', {
+        minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
+        maximumFractionDigits: 2,
+      });
     }
 
     resize() {
@@ -467,8 +533,11 @@
       this.root.querySelector('#ride-detail-date').textContent = day.date;
       this.root.querySelector('#ride-detail-title').textContent = day.title;
       this.root.querySelector('#ride-detail-route').textContent = day.route;
-      this.root.querySelector('#ride-detail-summary').textContent = day.summary;
-      this.loadDetailImage(day);
+      const summary = this.root.querySelector('#ride-detail-summary');
+      summary.replaceChildren.apply(summary, day.summary.map(function (paragraph) {
+        return createElement('p', '', paragraph);
+      }));
+      this.loadDetailImages(day);
 
       const statsContainer = this.root.querySelector('#ride-detail-stats');
       if (day.stats) {
@@ -510,36 +579,49 @@
       this.positionDetail();
     }
 
-    loadDetailImage(day) {
+    loadDetailImages(day) {
       const media = this.root.querySelector('#ride-detail-media');
       const requestId = ++this.imageRequestId;
-      const image = document.createElement('img');
-      image.id = 'ride-detail-image';
-      image.alt = day.image_alt;
-      image.decoding = 'async';
+      const images = Array.isArray(day.images) ? day.images : [];
+      const imageEntries = images.filter(function (entry) {
+        return entry && typeof entry.src === 'string' && entry.src.length > 0;
+      });
 
-      media.classList.remove('is-ready', 'is-error');
-      media.classList.add('is-loading');
-      media.setAttribute('aria-busy', 'true');
-      media.replaceChildren(image);
+      media.dataset.count = imageEntries.length >= 3 ? 'many' : String(imageEntries.length);
+      media.hidden = imageEntries.length === 0;
+      media.setAttribute('aria-busy', String(imageEntries.length > 0));
 
-      image.addEventListener('load', () => {
-        if (requestId !== this.imageRequestId || this.selectedDay !== day.day) return;
-        media.classList.remove('is-loading', 'is-error');
-        media.classList.add('is-ready');
-        media.setAttribute('aria-busy', 'false');
+      if (imageEntries.length === 0) {
+        media.replaceChildren();
         this.queueDetailPosition();
-      }, { once: true, signal: this.signal });
+        return;
+      }
 
-      image.addEventListener('error', () => {
-        if (requestId !== this.imageRequestId || this.selectedDay !== day.day) return;
-        media.classList.remove('is-loading', 'is-ready');
-        media.classList.add('is-error');
-        media.setAttribute('aria-busy', 'false');
-        this.queueDetailPosition();
-      }, { once: true, signal: this.signal });
+      let pending = imageEntries.length;
+      const records = imageEntries.map((entry, index) => {
+        const item = createElement('div', 'ride-detail-media-item is-loading');
+        const image = createElement('img', 'ride-detail-image');
+        image.alt = entry.alt || day.title + '照片' + (imageEntries.length > 1 ? ' ' + (index + 1) : '');
+        image.decoding = 'async';
+        image.loading = 'eager';
+        item.appendChild(image);
 
-      image.src = day.image;
+        const settle = (state) => {
+          if (requestId !== this.imageRequestId || this.selectedDay !== day.day) return;
+          item.classList.remove('is-loading');
+          item.classList.add(state);
+          pending -= 1;
+          if (pending === 0) media.setAttribute('aria-busy', 'false');
+          this.queueDetailPosition();
+        };
+
+        image.addEventListener('load', () => settle('is-ready'), { once: true, signal: this.signal });
+        image.addEventListener('error', () => settle('is-error'), { once: true, signal: this.signal });
+        return { item: item, image: image, src: entry.src };
+      });
+
+      media.replaceChildren.apply(media, records.map(function (record) { return record.item; }));
+      records.forEach(function (record) { record.image.src = record.src; });
     }
 
     statElement(value, label) {
@@ -665,7 +747,7 @@
       if (this.detailResizeObserver) this.detailResizeObserver.disconnect();
       if (this.audioContext) this.audioContext.close();
       document.documentElement.classList.remove('ride-page-active');
-      document.body.classList.remove('ride-page-active');
+      document.body.classList.remove('ride-page-active', 'ride-summary-open');
       document.documentElement.style.removeProperty('--ride-header-height');
     }
   }
