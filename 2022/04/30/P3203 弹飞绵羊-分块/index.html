@@ -46,7 +46,7 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>P3203 弹飞绵羊-分块 - StarCried 的狼窝</title>
-  <meta name="keywords" content="博客园,OI,分块,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
+  <meta name="keywords" content="OI,分块,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   
   <meta name="description" content="P3203 弹飞绵羊-分块 观察数据范围，发现可以分块。只需要处理每个点跳出所在块后的位置和次数即可。目的是为了加速查询并降低修改复杂度。 对于修改，重构整个块内信息即可。 时间复杂度正确的一批 具体实现也挺简单。注意重构时从后往前贡献即可。 1234567891011121314151617181920212223242526272829303132333435363738394041">
 <meta property="og:type" content="article">
@@ -59,7 +59,6 @@
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-04-29T16:00:00.000Z">
 <meta property="article:author" content="StarCried">
-<meta property="article:tag" content="博客园">
 <meta property="article:tag" content="OI">
 <meta property="article:tag" content="分块">
 <meta name="twitter:card" content="summary">
@@ -1922,7 +1921,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1789921228062),
+    lastupdate: new Date(1791044357469),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2343,7 +2342,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239">
+<!-- hexo injector head_end start -->
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2400,7 +2399,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<!-- hexo injector head_end end --></head>
+<link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2857,10 +2856,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+    <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
       </span>
     
   </div>
@@ -2964,8 +2967,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E5%9B%AD/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>博客园</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%88%86%E5%9D%97/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>分块</p></a></div>
-  <span hidden itemprop="keywords">博客园 OI 分块</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%88%86%E5%9D%97/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>分块</p></a></div>
+  <span hidden itemprop="keywords">OI 分块</span>
 
 
         
@@ -3025,21 +3028,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P3209-平面图判定</p>
-          <p class='content'>平面图
-平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过...</p>
+        <a class='prev' href='/2022/04/30/P2491%20%E6%B6%88%E9%98%B2%20P1099%20%E6%A0%91%E7%BD%91%E7%9A%84%E6%A0%B8/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>P2491 消防 P1099 树网的核</p>
+          <p class='content'>P2491 消防/P1099 树网的核
+双倍经验，双倍快乐。
+题意
+在一个树上选择一段总长度不超过\(s\)的链使所有点到该链距离的最大值最小。
+输出这个最小的值。
+做法
+Defin...</p>
         </a>
       
       
-        <a class='next' href='/2022/04/30/P3643%20%5BAPIO2016%5D%E5%88%92%E8%89%87/'>
-          <p class='title'>P3643 [APIO2016]划艇<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>P3643 [APIO2016]划艇
-题意
-一个合法序列可表示为一个长度为 \(n\)
-的序列，其中第 \(i\) 个数可以为 0 或
-\([l_i,r_i]\)
-中一个整数，且满足所...</p>
+        <a class='next' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/'>
+          <p class='title'>P3209-平面图判定<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>平面图
+平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过...</p>
         </a>
       
     </div>
@@ -3098,9 +3102,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/categories/Web/" href="/categories/Web/"
-            active-action="action-categoriesWeb"
-            ><div class='name'>Web</div><div class='badge'>(3)</div></a></li>
+            title="/categories/%E4%BD%9C%E5%93%81%E6%84%9F%E6%83%B3/" href="/categories/%E4%BD%9C%E5%93%81%E6%84%9F%E6%83%B3/"
+            active-action="action-categoriesE4BD9CE59381E6849FE683B3"
+            ><div class='name'>作品感想</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%88%9B%E4%BD%9C/" href="/categories/%E5%88%9B%E4%BD%9C/"
@@ -3108,39 +3112,54 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             ><div class='name'>创作</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
-            active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(5)</div></a></li>
+            title="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/"
+            active-action="action-categoriesE5ADA6E4B9A0E4B88EE68A80E69CAF"
+            ><div class='name'>学习与技术</div><div class='badge'>(115)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/"
+            active-action="action-categoriesE5ADA6E4B9A0E4B88EE68A80E69CAFE68A80E69CAFE5AE9EE8B7B5"
+            ><div class='name'>技术实践</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"
+            active-action="action-categoriesE5ADA6E4B9A0E4B88EE68A80E69CAFE695B0E5ADA6E7AC94E8AEB0"
+            ><div class='name'>数学笔记</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"
+            active-action="action-categoriesE5ADA6E4B9A0E4B88EE68A80E69CAFE7AE97E6B395E7AC94E8AEB0"
+            ><div class='name'>算法笔记</div><div class='badge'>(37)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE5ADA6E4B9A0E4B88EE68A80E69CAFE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(65)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
-            active-action="action-categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(56)</div></a></li>
+            title="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"
+            active-action="action-categoriesE7949FE6B4BBE8AEB0E5BD95"
+            ><div class='name'>生活记录</div><div class='badge'>(40)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"
+            active-action="action-categoriesE7949FE6B4BBE8AEB0E5BD95E5B9B4E7BB88E680BBE7BB93"
+            ><div class='name'>年终总结</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%97%A5%E8%AE%B0/" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%97%A5%E8%AE%B0/"
+            active-action="action-categoriesE7949FE6B4BBE8AEB0E5BD95E697A5E8AEB0"
+            ><div class='name'>日记</div><div class='badge'>(21)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E7%AB%9E%E8%B5%9B%E8%AE%B0%E4%BA%8B/" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E7%AB%9E%E8%B5%9B%E8%AE%B0%E4%BA%8B/"
+            active-action="action-categoriesE7949FE6B4BBE8AEB0E5BD95E7AB9EE8B59BE8AEB0E4BA8B"
+            ><div class='name'>竞赛记事</div><div class='badge'>(11)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/%E7%94%9F%E6%B4%BB/" href="/categories/%E7%94%9F%E6%B4%BB/"
-            active-action="action-categoriesE7949FE6B4BB"
-            ><div class='name'>生活</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%95%99%E6%A1%A3/" href="/categories/%E7%95%99%E6%A1%A3/"
-            active-action="action-categoriesE79599E6A1A3"
-            ><div class='name'>留档</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
-            active-action="action-categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(38)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BC%96%E7%A8%8B/"
-            active-action="action-categoriesE7BC96E7A88B"
-            ><div class='name'>编程</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
-            active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(67)</div></a></li>
+            title="/categories/%E9%9A%8F%E6%83%B3/" href="/categories/%E9%9A%8F%E6%83%B3/"
+            active-action="action-categoriesE99A8FE683B3"
+            ><div class='name'>随想</div><div class='badge'>(12)</div></a></li>
         
       </ul>
     </div>
@@ -4193,7 +4212,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/StarCried"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/P3203 弹飞绵羊-分块/","name":"P3203 弹飞绵羊-分块"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"P3203 弹飞绵羊-分块","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2022-04-29T16:00:00.000Z","articleSection":"题解","keywords":"博客园,OI,分块","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/StarCried"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/学习与技术/","name":"学习与技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/学习与技术/题解/","name":"题解"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io/2022/04/30/P3203 弹飞绵羊-分块/","name":"P3203 弹飞绵羊-分块"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"P3203 弹飞绵羊-分块","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"url":"https://starcried.github.io/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/","wordCount":0,"datePublished":"2022-04-29T16:00:00.000Z","dateModified":"2022-04-29T16:00:00.000Z","articleSection":"学习与技术","keywords":"OI,分块","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}}]</script>
 
 
 
