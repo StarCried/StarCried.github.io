@@ -1,5 +1,8 @@
 .model-vrm-widget { position:relative; width:320px; height:480px; background:transparent; touch-action:none; }
 .model-vrm-widget canvas { position:absolute; display:block; left:0; top:0; background:transparent; }
+.model-vrm-widget[data-model-pass-through],
+.model-vrm-widget[data-model-pass-through] > canvas,
+.model-vrm-widget[data-model-pass-through] > img { pointer-events:none; touch-action:auto; }
 .model-vrm-widget > img { display:block; width:100%; height:100%; object-fit:contain; }
 .model-vrm-widget > img[hidden], .model-vrm-widget > canvas[hidden] { display:none; }
 

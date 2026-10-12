@@ -858,3 +858,21 @@ body [data-inochi2d-widget-host].model-vrm-widget {
   right: 112px;
   bottom: 160px;
 }
+
+/* Immediate navigation feedback; never cover or intercept the page. */
+.sc-navigation-status {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 10000;
+  padding: 8px 16px;
+  border: 1px solid var(--sc-card-border);
+  border-radius: 20px;
+  color: var(--sc-heading);
+  background: var(--sc-card-bg-strong);
+  box-shadow: var(--sc-shadow);
+  font-size: 13px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.sc-navigation-status[hidden] { display: none; }

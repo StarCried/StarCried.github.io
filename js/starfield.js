@@ -18,6 +18,7 @@
     light: [document.createElement('canvas'), document.createElement('canvas')]
   };
   const textureReady = { dark: false, light: false };
+  const textureBuilt = { dark: false, light: false };
   const grainCanvas = document.createElement('canvas');
   const context = canvas.getContext('2d', { alpha: false });
   const coverContext = coverCanvas.getContext('2d', { alpha: true });
@@ -132,7 +133,11 @@
   let coverVisible = false;
   let sceneReady = false;
   let galaxyCache = null;
+  let coverGalaxyCache = null;
   let lastSkyRenderedAt = null;
+  let textureRatioForSize = 0;
+  let textureGeneration = 0;
+  let textureJob = null;
 
   const coverObserver = typeof window.IntersectionObserver === 'function'
     ? new IntersectionObserver((entries) => {
@@ -213,7 +218,17 @@
     return 0.38 + hashNoise(7, 11, seedValue + 19) * 0.3;
   }
 
-  function buildFractalGalaxy(palette, seedValue) {
+  function isCurrentTextureJob(job) {
+    return textureJob === job && job.generation === textureGeneration
+      && job.mode === (isDarkMode() ? 'dark' : 'light');
+  }
+
+  function yieldTextureWork() {
+    return new Promise((resolve) => window.setTimeout(resolve, 0));
+  }
+
+  async function buildFractalGalaxy(palette, seedValue, job) {
+    const { width, galaxyWidth, galaxyHeight } = job;
     const sampleScale = width < 640 ? 2.5 : 3;
     const sampleWidth = Math.max(1, Math.ceil(galaxyWidth / sampleScale));
     const sampleHeight = Math.max(1, Math.ceil(galaxyHeight / sampleScale));
@@ -225,6 +240,7 @@
     const image = noiseContext.createImageData(sampleWidth, sampleHeight);
     const galaxy = palette.galaxy;
     const corePosition = galaxyCorePosition(seedValue);
+    let batchStartedAt = window.performance.now();
 
     for (let y = 0; y < sampleHeight; y += 1) {
       const normalizedY = y / Math.max(1, sampleHeight - 1);
@@ -270,9 +286,21 @@
         image.data[offset + 1] = Math.round(color[1]);
         image.data[offset + 2] = Math.round(color[2]);
         image.data[offset + 3] = Math.round(alpha * 255);
+        if ((x + 1) % 32 === 0 && window.performance.now() - batchStartedAt >= 4) {
+          await yieldTextureWork();
+          if (!isCurrentTextureJob(job)) return null;
+          batchStartedAt = window.performance.now();
+        }
+      }
+      // Keep input, document readiness, and the model loader runnable during noise generation.
+      if (window.performance.now() - batchStartedAt >= 4) {
+        await yieldTextureWork();
+        if (!isCurrentTextureJob(job)) return null;
+        batchStartedAt = window.performance.now();
       }
     }
 
+    if (!isCurrentTextureJob(job)) return null;
     noiseContext.putImageData(image, 0, 0);
     return noiseCanvas;
   }
@@ -311,10 +339,10 @@
     target.restore();
   }
 
-  function buildGalaxyTexture(texture, palette, seedValue) {
+  function buildGalaxyTexture(texture, palette, seedValue, fractalGalaxy, job) {
+    const { width, height, galaxyWidth, galaxyHeight, textureRatio } = job;
     const textureContext = texture.getContext('2d');
     if (!textureContext) return;
-    const textureRatio = Math.min(1, Math.max(0.78, pixelRatio * 0.62));
     texture.width = Math.ceil(galaxyWidth * textureRatio);
     texture.height = Math.ceil(galaxyHeight * textureRatio);
     textureContext.setTransform(textureRatio, 0, 0, textureRatio, 0, 0);
@@ -341,7 +369,6 @@
     textureContext.fillRect(0, 0, galaxyWidth, galaxyHeight);
 
     textureContext.globalCompositeOperation = 'screen';
-    const fractalGalaxy = buildFractalGalaxy(palette, seedValue);
     if (fractalGalaxy) {
       textureContext.imageSmoothingEnabled = true;
       textureContext.drawImage(fractalGalaxy, 0, 0, galaxyWidth, galaxyHeight);
@@ -496,20 +523,42 @@
     textureContext.filter = 'none';
   }
 
-  function buildPaletteTextures(mode) {
-    const textures = galaxyTextures[mode];
+  async function buildPaletteTextures(job) {
+    const { mode } = job;
     const palette = palettes[mode];
     const seed = mode === 'dark' ? 0x2e71c41 : 0x713fb21;
     const increment = mode === 'dark' ? 0x18a43d : 0x14c62b;
-    textures.forEach((texture, index) => {
-      buildGalaxyTexture(texture, palette, seed + index * increment);
-    });
+    const textures = [];
+    // Defer even the first batch until after the current defer/PJAX event has returned.
+    await yieldTextureWork();
+    for (let index = 0; index < 2; index += 1) {
+      if (!isCurrentTextureJob(job)) return;
+      const fractalGalaxy = await buildFractalGalaxy(palette, seed + index * increment, job);
+      if (!isCurrentTextureJob(job)) return;
+      const texture = document.createElement('canvas');
+      buildGalaxyTexture(texture, palette, seed + index * increment, fractalGalaxy, job);
+      textures.push(texture);
+      await yieldTextureWork();
+    }
+    if (!isCurrentTextureJob(job)) return;
+    // Commit the complete pair together; canceled size/theme jobs never replace a usable layer.
+    galaxyTextures[mode] = textures;
     textureReady[mode] = true;
+    textureBuilt[mode] = true;
+    textureJob = null;
+    galaxyCache = coverGalaxyCache = null;
+    requestRender(true);
+  }
+
+  function cancelTextureJob() {
+    textureGeneration += 1;
+    textureJob = null;
   }
 
   function rebuildAtmosphereTextures() {
     const nextWidth = Math.min(2200, Math.max(1200, Math.ceil(Math.hypot(width, height) * 0.92)));
     const nextHeight = Math.min(900, Math.max(420, Math.ceil(height * 0.98)));
+    const nextRatio = Math.min(1, Math.max(0.78, pixelRatio * 0.62));
     const mode = isDarkMode() ? 'dark' : 'light';
     const sizeStable = galaxyWidth > 0
       && galaxyHeight > 0
@@ -518,27 +567,46 @@
 
     // Mobile browser chrome changes viewport height while scrolling. Reuse the existing
     // high-resolution textures instead of rebuilding the procedural noise maps.
-    if (sizeStable && textureReady[mode]) {
-      if (!grainCanvas.width) buildGrainTexture();
-      return;
-    }
-
-    if (!sizeStable) {
+    if (!sizeStable || nextRatio !== textureRatioForSize) {
+      cancelTextureJob();
       galaxyWidth = nextWidth;
       galaxyHeight = nextHeight;
+      textureRatioForSize = nextRatio;
       textureReady.dark = false;
       textureReady.light = false;
     }
 
-    buildPaletteTextures(mode);
-    if (!isMobileRendering()) buildPaletteTextures(mode === 'dark' ? 'light' : 'dark');
     if (!grainCanvas.width) buildGrainTexture();
+    if (textureJob && textureJob.mode !== mode) cancelTextureJob();
+    if (textureReady[mode]) {
+      if (galaxyCache && galaxyCache.mode !== mode) galaxyCache = coverGalaxyCache = null;
+      return;
+    }
+    if (textureJob) return;
+    const job = {
+      generation: ++textureGeneration,
+      mode,
+      width,
+      height,
+      galaxyWidth,
+      galaxyHeight,
+      textureRatio: textureRatioForSize
+    };
+    textureJob = job;
+    buildPaletteTextures(job).catch((error) => {
+      if (!isCurrentTextureJob(job)) return;
+      textureJob = null;
+      console.warn('Unable to prepare the sky texture.', error);
+    });
   }
 
   function syncCoverCanvas() {
     const nextHost = document.querySelector('.cover-wrapper');
     const nextActive = Boolean(nextHost && window.getComputedStyle(nextHost).display !== 'none');
-    if (nextHost === coverHost && nextActive === coverActive && (!nextActive || coverSkyHost.isConnected)) return;
+    if (nextHost === coverHost && nextActive === coverActive && (!nextActive || coverSkyHost.isConnected)) {
+      if (nextActive) resizeCoverScene();
+      return;
+    }
     if (coverObserver && coverHost) coverObserver.unobserve(coverHost);
     if (coverSkyHost.isConnected) coverSkyHost.remove();
     coverHost = nextHost;
@@ -549,12 +617,13 @@
       if (coverObserver) coverObserver.observe(coverHost);
       resizeCoverScene();
     }
-    galaxyCache = null;
   }
 
   function resizeCanvas(target, targetContext) {
-    target.width = Math.round(width * pixelRatio);
-    target.height = Math.round(height * pixelRatio);
+    const backingWidth = Math.round(width * pixelRatio);
+    const backingHeight = Math.round(height * pixelRatio);
+    if (target.width !== backingWidth) target.width = backingWidth;
+    if (target.height !== backingHeight) target.height = backingHeight;
     target.style.width = width + 'px';
     target.style.height = height + 'px';
     targetContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
@@ -617,13 +686,13 @@
 
     syncCoverCanvas();
     resizeCoverScene();
-    galaxyCache = null;
+    galaxyCache = coverGalaxyCache = null;
     lastSkyRenderedAt = null;
 
     if (document.getElementById('ride-experience')) return;
     rebuildScene();
     lastRenderedAt = 0;
-    render(window.performance.now(), true);
+    requestRender(true);
   }
 
   function drawSky(target, palette) {
@@ -682,19 +751,21 @@
     target.restore();
   }
 
-  function drawMilkyWay(target, palette, time, overlay) {
-    const textures = palette === palettes.dark ? galaxyTextures.dark : galaxyTextures.light;
+  function drawMilkyWay(target, palette, time, overlay, pose) {
+    const paletteDark = palette === palettes.dark;
+    const textures = paletteDark ? galaxyTextures.dark : galaxyTextures.light;
     if (!textures[0].width || !textures[0].height) return;
     target.save();
-    target.globalCompositeOperation = dark ? 'screen' : 'source-over';
+    target.globalCompositeOperation = paletteDark ? 'screen' : 'source-over';
     target.globalAlpha = overlay ? palette.galaxy.overlayOpacity : palette.galaxy.opacity;
 
     const orbitCenterX = width * 0.5;
     const orbitCenterY = height * 1.55;
     target.translate(orbitCenterX, orbitCenterY);
-    target.rotate(skyRotation(time) * 0.94);
+    target.rotate(pose ? pose.angle : skyRotation(time) * 0.94);
     target.translate(-orbitCenterX, -orbitCenterY);
-    target.translate(width * 0.52 + pointerX * 7, height * 0.49 + pointerY * 5);
+    target.translate(width * 0.52 + (pose ? pose.pointerX : pointerX) * 7,
+      height * 0.49 + (pose ? pose.pointerY : pointerY) * 5);
     target.rotate(-0.54);
     const tileStride = galaxyWidth * 0.72;
     const tileReach = Math.hypot(width, height) * 0.75 + galaxyWidth * 0.5;
@@ -909,7 +980,7 @@
     target.restore();
   }
 
-  function bakeGalaxyCanvas(target, targetContext, palette, time, margin, overlay) {
+  function bakeGalaxyCanvas(target, targetContext, palette, time, margin, overlay, pose) {
     const cachedWidth = width + margin * 2;
     const cachedHeight = height + margin * 2;
     target.width = Math.round(cachedWidth * pixelRatio);
@@ -920,28 +991,38 @@
     target.style.transformOrigin = `${width * 0.5 + margin}px ${height * 1.55 + margin}px`;
     target.style.transform = '';
     targetContext.setTransform(pixelRatio, 0, 0, pixelRatio, margin * pixelRatio, margin * pixelRatio);
-    drawMilkyWay(targetContext, palette, time, overlay);
+    drawMilkyWay(targetContext, palette, time, overlay, pose);
   }
 
   function bakeGalaxies(palette, time) {
     // Cache only the visible neighborhood, rather than allocating a very wide galaxy strip.
     const margin = Math.ceil(Math.max(96, Math.hypot(width, height) * 0.08));
     bakeGalaxyCanvas(galaxyCanvas, galaxyContext, palette, time, margin, false);
-    galaxyCanvas.style.mixBlendMode = dark ? 'screen' : 'normal';
-    if (coverActive && coverGalaxyContext) {
+    galaxyCanvas.style.mixBlendMode = palette === palettes.dark ? 'screen' : 'normal';
+    if (coverActive && coverVisible && coverGalaxyContext) {
       bakeGalaxyCanvas(coverGalaxyCanvas, coverGalaxyContext, palette, time, margin, true);
     }
     galaxyCache = {
+      mode: palette === palettes.dark ? 'dark' : 'light',
+      palette,
+      time,
       angle: skyRotation(time) * 0.94,
       pointerX,
       pointerY,
       margin,
       radius: Math.hypot(width * 0.5 + margin, height * 1.55 + margin)
     };
+    coverGalaxyCache = coverActive && coverVisible ? galaxyCache : null;
   }
 
   function updateGalaxyTransforms(palette, time) {
-    if (!galaxyCache) bakeGalaxies(palette, time);
+    if (!galaxyCache) {
+      const requestedMode = palette === palettes.dark ? 'dark' : 'light';
+      const availableMode = textureBuilt[requestedMode] ? requestedMode
+        : textureBuilt.dark ? 'dark' : textureBuilt.light ? 'light' : null;
+      if (!availableMode) return;
+      bakeGalaxies(palettes[availableMode], time);
+    }
     const angle = skyRotation(time) * 0.94;
     const rotation = angle - galaxyCache.angle;
     const localX = (pointerX - galaxyCache.pointerX) * 7;
@@ -952,8 +1033,14 @@
       + Math.hypot(offsetX, offsetY);
 
     if (displacement >= galaxyCache.margin * 0.5) {
-      bakeGalaxies(palette, time);
+      bakeGalaxies(galaxyCache.palette, time);
       return;
+    }
+
+    if (coverActive && coverVisible && coverGalaxyContext && coverGalaxyCache !== galaxyCache) {
+      bakeGalaxyCanvas(coverGalaxyCanvas, coverGalaxyContext, galaxyCache.palette,
+        galaxyCache.time, galaxyCache.margin, true, galaxyCache);
+      coverGalaxyCache = galaxyCache;
     }
 
     // This delta matrix maps the cached orbit and pointer position onto the current ones.
@@ -990,6 +1077,12 @@
       frameId = window.requestAnimationFrame(render);
     } else {
       frameId = 0;
+    }
+  }
+
+  function requestRender(force) {
+    if (!frameId && !document.hidden) {
+      frameId = window.requestAnimationFrame((time) => render(time, force));
     }
   }
 
@@ -1037,17 +1130,21 @@
   function restart() {
     if (frameId) window.cancelAnimationFrame(frameId);
     frameId = 0;
-    dark = isDarkMode();
-    reducedMotion = motionMedia.matches;
-    streak = null;
+    if (document.hidden) return;
+    const nextDark = isDarkMode();
+    const nextReducedMotion = motionMedia.matches;
+    if (nextDark !== dark || nextReducedMotion !== reducedMotion) {
+      streak = null;
+      lastSkyRenderedAt = null;
+    }
+    dark = nextDark;
+    reducedMotion = nextReducedMotion;
     syncCoverCanvas();
-    galaxyCache = null;
-    lastSkyRenderedAt = null;
     if (document.getElementById('ride-experience')) return;
     if (!sceneReady) rebuildScene();
     else rebuildAtmosphereTextures();
     lastRenderedAt = 0;
-    render(window.performance.now(), true);
+    requestRender(reducedMotion);
   }
 
   function onPointerMove(event) {
@@ -1063,12 +1160,12 @@
   }, { passive: true });
   window.addEventListener('resize', () => {
     window.clearTimeout(resizeTimer);
+    cancelTextureJob();
     const delay = window.innerWidth < 640 || coarsePointer.matches ? 240 : 120;
     resizeTimer = window.setTimeout(resize, delay);
   }, { passive: true });
   document.addEventListener('visibilitychange', restart);
   document.addEventListener('pjax:complete', () => {
-    syncCoverCanvas();
     restart();
   });
   darkMedia.addEventListener('change', restart);
