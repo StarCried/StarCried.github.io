@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1791798597100),
+    lastupdate: new Date(1791807793279),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start -->
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2396,7 +2396,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<link rel="stylesheet" href="/css/starcried.css?v=b591c323db"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -3192,7 +3192,7 @@ KMP
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1040 加分二叉树/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/LCT(Link-Cut-Tree)/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3210,23 +3210,28 @@ KMP
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/"  itemprop="url">
-        P1040 加分二叉树
+      <a href="/2022/04/30/LCT(Link-Cut-Tree)/"  itemprop="url">
+        LCT(Link-Cut-Tree)
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1040 加分二叉树
-\(n\) 很小，可以树形 dp 或者区间 dp
-。
-设 f[i][j] 为从 \(i\)
-到 \(j\) 的最大加分值，则有
-f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
-有一个小技巧，将 f[i][i-1] 全部设置为
-1，这样的话搜索到叶子就也可以按照通式 dp 了。
-对于输出前序遍历（根，左树，右树）我们再...
+        LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
+
+查询、修改链上的信息
+随意指定原树的根（即换根）
+动态连边、删边
+合并两棵树、分离一棵树
+动态维护连通性
+等
+
+主要性质
+
+每一个Splay维护的是一条从上到下按在原树中深度严格递增的路径，且中序遍历Splay得到的每个点的深度序列严格递增。
+每个节点仅包含于一个splay中。
+边分为实边和虚边...
       
     
   </div>
@@ -3237,21 +3242,21 @@ f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">算法笔记</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">算法笔记</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/LCT(Link-Cut-Tree)/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3327,6 +3332,81 @@ c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历�
       
         <div>
           <a class='readmore' href='/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1040 加分二叉树/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/"  itemprop="url">
+        P1040 加分二叉树
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P1040 加分二叉树
+\(n\) 很小，可以树形 dp 或者区间 dp
+。
+设 f[i][j] 为从 \(i\)
+到 \(j\) 的最大加分值，则有
+f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
+有一个小技巧，将 f[i][i-1] 全部设置为
+1，这样的话搜索到叶子就也可以按照通式 dp 了。
+对于输出前序遍历（根，左树，右树）我们再...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P1040%20%E5%8A%A0%E5%88%86%E4%BA%8C%E5%8F%89%E6%A0%91/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3475,86 +3555,6 @@ c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历�
       
         <div>
           <a class='readmore' href='/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/LCT(Link-Cut-Tree)/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/LCT(Link-Cut-Tree)/"  itemprop="url">
-        LCT(Link-Cut-Tree)
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        LCT维护一个森林，即把每个节点用splay维护，可以进行许多操作：
-
-查询、修改链上的信息
-随意指定原树的根（即换根）
-动态连边、删边
-合并两棵树、分离一棵树
-动态维护连通性
-等
-
-主要性质
-
-每一个Splay维护的是一条从上到下按在原树中深度严格递增的路径，且中序遍历Splay得到的每个点的深度序列严格递增。
-每个节点仅包含于一个splay中。
-边分为实边和虚边...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">算法笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">算法笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/LCT(Link-Cut-Tree)/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -4931,7 +4931,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   }
   if (document.readyState !== "loading") scheduleMount();
   else document.addEventListener("DOMContentLoaded", scheduleMount, {once:true});
-})({"entryUrl":"/vrm-widget/7a6c4c658439/index.js","config":{"backend":"vrm","model":"/vrm-model/b8dbad11c9f8/Weiguang.vrm","fallback":"/assets/model-companion/weiguang.png","animations":[{"name":"Idle","url":"/vrm-model/b8dbad11c9f8/motions/Idle.vrma","durationMs":6000},{"name":"GentleWave","url":"/vrm-model/b8dbad11c9f8/motions/GentleWave.vrma","durationMs":7033.333333333333},{"name":"HighFive","url":"/vrm-model/b8dbad11c9f8/motions/HighFive.vrma","durationMs":4000},{"name":"HighWave","url":"/vrm-model/b8dbad11c9f8/motions/HighWave.vrma","durationMs":8000},{"name":"StumbleAndRecover","url":"/vrm-model/b8dbad11c9f8/motions/StumbleAndRecover.vrma","durationMs":9766.666666666668},{"name":"PlayfulScare","url":"/vrm-model/b8dbad11c9f8/motions/PlayfulScare.vrma","durationMs":7700},{"name":"RaisedHandWave","url":"/vrm-model/b8dbad11c9f8/motions/RaisedHandWave.vrma","durationMs":3800},{"name":"Stretch","url":"/vrm-model/b8dbad11c9f8/motions/Stretch.vrma","durationMs":6366.666666666666},{"name":"BackStretch","url":"/vrm-model/b8dbad11c9f8/motions/BackStretch.vrma","durationMs":15700},{"name":"AbsentmindedWait","url":"/vrm-model/b8dbad11c9f8/motions/AbsentmindedWait.vrma","durationMs":6033.333333333333},{"name":"Thinking","url":"/vrm-model/b8dbad11c9f8/motions/Thinking.vrma","durationMs":6833.333333333333},{"name":"HaveAnIdea","url":"/vrm-model/b8dbad11c9f8/motions/HaveAnIdea.vrma","durationMs":9366.666666666668},{"name":"AwkwardHeadScratch","url":"/vrm-model/b8dbad11c9f8/motions/AwkwardHeadScratch.vrma","durationMs":6833.333333333333}],"profile":"/vrm-model/b8dbad11c9f8/profile.json","display":{"width":260,"height":390},"mobile":{"show":false,"breakpoint":900},"gaze":{"maxYawDegrees":25,"maxPitchDegrees":15,"smoothingMs":100},"camera":{"yawDegrees":0,"pitchDegrees":5,"fovDegrees":20,"targetHeight":0.54},"render":{"fps":60,"maxDevicePixelRatio":1.5,"autoFit":true,"fitPadding":0.92},"ambient":{"animations":["Idle"]},"dialogue":{"enter":{"delayMs":500,"durationMs":6300,"linesByAnimation":{"RaisedHandWave":["嗨！我是微光！","欢迎来我的小窝~","你好呀，今天想看些什么？"]},"animation":"RaisedHandWave"},"click":{"durationMs":6300,"linesByAnimation":{"GentleWave":["嗨~","有什么想聊的？可以留下评论或者联系社交媒体哦~","喜欢我的文章吗？诶，只是喜欢戳我吗？"],"HighFive":["High Five!","今天过得怎么样~肯定过得不错！"],"HighWave":["你好你好！如果我们熟的话，可以给彼此的网站添加友链~","我是小狼微光！可以在顶部的“微光”页了解我哦","很高兴认识你！请务必留下你的想法！"],"StumbleAndRecover":["嗷……好痛……是你干的吗？呃，不是吗……","啊！……没事，就当没看到好吗","为什么我们不再为摔倒而哭泣？是学会了保护自己，还是接纳了疼痛……嗯，只是为了思考这个问题才摔的……"],"PlayfulScare":["饿狼扑食！","哇！没吓到你吗……"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再加个“有选择的自由”的幻想应该就很完美了……","生命是逆天的：宇宙在熵增，生命却在熵减。其中，人类尤其逆天。然而人们却有惰性，习惯待在舒适圈里。这是凑巧顺应天道，还是逆天中的逆天？"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟我仔细修饰过了。","嗯……嘶……欸……哦哦哦！水题！"],"AwkwardHeadScratch":["觉得我的功能太少或者有 BUG？欢迎给我的开源项目贡献！反馈建议和 PR 都可以！"]},"animation":"GentleWave","animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]},"idle":{"durationMs":9000,"intervalMinMs":60000,"intervalMaxMs":120000,"linesByAnimation":{"Stretch":["唔——","站着好累……下版本加个坐着的动作好了","我猜你坐了很久了，一起舒展一下吧。"],"BackStretch":["呼吸……放松……遁入虚无……","呼吸……放松……遁入智瞳……不对！","啊……我的腰……全身的骨头都在弹响……"],"AbsentmindedWait":["在看我的日记、技术博客还是题解？肯定不是题解……","平常喜欢做什么？看看“微光”页，或许我们可以交流下同好~","你站在桥上看风景，看风景的人在楼上看你。"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再加个“有选择的自由”的幻想应该就很完美了……","生命是逆天的：宇宙在熵增，生命却在熵减。其中，人类尤其逆天。然而人们却有惰性，习惯待在舒适圈里。这是凑巧顺应天道，还是逆天中的逆天？"],"RaisedHandWave":["觉得我的功能太少或可以优化？欢迎给我的开源项目贡献！","你知道吗？虽然我是工程师，但看板娘组件主要使用 AI 开发，大部分时间都花在了手搓模型上"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟我仔细修饰过了。","嗯……嘶……欸……哦哦哦！水题！"],"AwkwardHeadScratch":["觉得我的功能太少或者有 BUG？欢迎给我的开源项目贡献！反馈建议和 PR 都可以！"]},"animation":"Stretch","animations":["Stretch","BackStretch","AbsentmindedWait","Thinking","RaisedHandWave","HaveAnIdea","AwkwardHeadScratch"]}},"interactions":{"pointer":true,"drag":false,"click":{"animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]}}},"breakpoint":900,"showOnMobile":false});</script>
+})({"entryUrl":"/vrm-widget/7a6c4c658439/index.js","config":{"backend":"vrm","model":"/vrm-model/b8dbad11c9f8/Weiguang.vrm","fallback":"/assets/model-companion/weiguang.png","animations":[{"name":"Idle","url":"/vrm-model/b8dbad11c9f8/motions/Idle.vrma","durationMs":6000},{"name":"GentleWave","url":"/vrm-model/b8dbad11c9f8/motions/GentleWave.vrma","durationMs":7033.333333333333},{"name":"HighFive","url":"/vrm-model/b8dbad11c9f8/motions/HighFive.vrma","durationMs":4000},{"name":"HighWave","url":"/vrm-model/b8dbad11c9f8/motions/HighWave.vrma","durationMs":8000},{"name":"StumbleAndRecover","url":"/vrm-model/b8dbad11c9f8/motions/StumbleAndRecover.vrma","durationMs":9766.666666666668},{"name":"PlayfulScare","url":"/vrm-model/b8dbad11c9f8/motions/PlayfulScare.vrma","durationMs":7700},{"name":"RaisedHandWave","url":"/vrm-model/b8dbad11c9f8/motions/RaisedHandWave.vrma","durationMs":3800},{"name":"Stretch","url":"/vrm-model/b8dbad11c9f8/motions/Stretch.vrma","durationMs":6366.666666666666},{"name":"BackStretch","url":"/vrm-model/b8dbad11c9f8/motions/BackStretch.vrma","durationMs":15700},{"name":"AbsentmindedWait","url":"/vrm-model/b8dbad11c9f8/motions/AbsentmindedWait.vrma","durationMs":6033.333333333333},{"name":"Thinking","url":"/vrm-model/b8dbad11c9f8/motions/Thinking.vrma","durationMs":6833.333333333333},{"name":"HaveAnIdea","url":"/vrm-model/b8dbad11c9f8/motions/HaveAnIdea.vrma","durationMs":9366.666666666668},{"name":"AwkwardHeadScratch","url":"/vrm-model/b8dbad11c9f8/motions/AwkwardHeadScratch.vrma","durationMs":6833.333333333333}],"profile":"/vrm-model/b8dbad11c9f8/profile.json","display":{"width":260,"height":390},"mobile":{"show":false,"breakpoint":900},"gaze":{"maxYawDegrees":25,"maxPitchDegrees":15,"smoothingMs":100},"camera":{"yawDegrees":0,"pitchDegrees":5,"fovDegrees":20,"targetHeight":0.54},"render":{"fps":60,"maxDevicePixelRatio":1,"autoFit":true,"fitPadding":0.92},"ambient":{"animations":["Idle"]},"dialogue":{"enter":{"delayMs":500,"durationMs":6300,"linesByAnimation":{"RaisedHandWave":["嗨！我是微光！","欢迎来我的小窝~","你好呀，今天想看些什么？"]},"animation":"RaisedHandWave"},"click":{"durationMs":6300,"linesByAnimation":{"GentleWave":["嗨~","有什么想聊的？可以留下评论或者联系社交媒体哦~","喜欢我的文章吗？诶，只是喜欢戳我吗？"],"HighFive":["High Five!","今天过得怎么样~肯定过得不错！"],"HighWave":["你好你好！如果我们熟的话，可以给彼此的网站添加友链~","我是小狼微光！可以在顶部的“微光”页了解我哦","很高兴认识你！请务必留下你的想法！"],"StumbleAndRecover":["嗷……好痛……是你干的吗？呃，不是吗……","啊！……没事，就当没看到好吗","为什么我们不再为摔倒而哭泣？是学会了保护自己，还是接纳了疼痛……嗯，只是为了思考这个问题才摔的……"],"PlayfulScare":["饿狼扑食！","哇！没吓到你吗……"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再加个“有选择的自由”的幻想应该就很完美了……","生命是逆天的：宇宙在熵增，生命却在熵减。其中，人类尤其逆天。然而人们却有惰性，习惯待在舒适圈里。这是凑巧顺应天道，还是逆天中的逆天？"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟我仔细修饰过了。","嗯……嘶……欸……哦哦哦！水题！"],"AwkwardHeadScratch":["觉得我的功能太少或者有 BUG？欢迎给我的开源项目贡献！反馈建议和 PR 都可以！"]},"animation":"GentleWave","animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]},"idle":{"durationMs":9000,"intervalMinMs":60000,"intervalMaxMs":120000,"linesByAnimation":{"Stretch":["唔——","站着好累……下版本加个坐着的动作好了","我猜你坐了很久了，一起舒展一下吧。"],"BackStretch":["呼吸……放松……遁入虚无……","呼吸……放松……遁入智瞳……不对！","啊……我的腰……全身的骨头都在弹响……"],"AbsentmindedWait":["在看我的日记、技术博客还是题解？肯定不是题解……","平常喜欢做什么？看看“微光”页，或许我们可以交流下同好~","你站在桥上看风景，看风景的人在楼上看你。"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再加个“有选择的自由”的幻想应该就很完美了……","生命是逆天的：宇宙在熵增，生命却在熵减。其中，人类尤其逆天。然而人们却有惰性，习惯待在舒适圈里。这是凑巧顺应天道，还是逆天中的逆天？"],"RaisedHandWave":["觉得我的功能太少或可以优化？欢迎给我的开源项目贡献！","你知道吗？虽然我是工程师，但看板娘组件主要使用 AI 开发，大部分时间都花在了手搓模型上"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟我仔细修饰过了。","嗯……嘶……欸……哦哦哦！水题！"],"AwkwardHeadScratch":["觉得我的功能太少或者有 BUG？欢迎给我的开源项目贡献！反馈建议和 PR 都可以！"]},"animation":"Stretch","animations":["Stretch","BackStretch","AbsentmindedWait","Thinking","RaisedHandWave","HaveAnIdea","AwkwardHeadScratch"]}},"interactions":{"pointer":true,"drag":false,"click":{"animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]}}},"breakpoint":900,"showOnMobile":false});</script>
 <div id="sc-radio" class="sc-radio">
   <div class="sc-radio-panel" aria-live="polite">
     <div class="sc-radio-status">点击播放键加载歌单</div>
