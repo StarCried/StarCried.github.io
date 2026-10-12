@@ -3,8 +3,16 @@
 
   if (window.__starcriedSky) return;
 
+  const skyHost = document.createElement('div');
+  const coverSkyHost = document.createElement('div');
+  const coverScene = document.createElement('div');
   const canvas = document.createElement('canvas');
   const coverCanvas = document.createElement('canvas');
+  const galaxyCanvas = document.createElement('canvas');
+  const coverGalaxyCanvas = document.createElement('canvas');
+  const dustCanvas = document.createElement('canvas');
+  const coverDustCanvas = document.createElement('canvas');
+  const starsCanvas = document.createElement('canvas');
   const galaxyTextures = {
     dark: [document.createElement('canvas'), document.createElement('canvas')],
     light: [document.createElement('canvas'), document.createElement('canvas')]
@@ -13,7 +21,12 @@
   const grainCanvas = document.createElement('canvas');
   const context = canvas.getContext('2d', { alpha: false });
   const coverContext = coverCanvas.getContext('2d', { alpha: true });
-  if (!context) return;
+  const galaxyContext = galaxyCanvas.getContext('2d', { alpha: true });
+  const coverGalaxyContext = coverGalaxyCanvas.getContext('2d', { alpha: true });
+  const dustContext = dustCanvas.getContext('2d', { alpha: true });
+  const coverDustContext = coverDustCanvas.getContext('2d', { alpha: true });
+  const starsContext = starsCanvas.getContext('2d', { alpha: true });
+  if (!context || !galaxyContext || !dustContext || !starsContext) return;
 
   const html = document.documentElement;
   const darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
@@ -22,12 +35,27 @@
   const coarsePointer = window.matchMedia('(pointer: coarse)');
   const textureResizeThreshold = 180;
   const mobileFrameInterval = 30;
+  const skyFrameInterval = 1000;
 
-  canvas.id = 'sc-sky';
-  canvas.setAttribute('aria-hidden', 'true');
-  coverCanvas.id = 'sc-cover-sky';
-  coverCanvas.setAttribute('aria-hidden', 'true');
-  document.body.prepend(canvas);
+  skyHost.id = 'sc-sky';
+  skyHost.setAttribute('aria-hidden', 'true');
+  coverSkyHost.id = 'sc-cover-sky';
+  coverSkyHost.setAttribute('aria-hidden', 'true');
+  skyHost.style.overflow = coverSkyHost.style.overflow = 'hidden';
+  skyHost.style.isolation = coverScene.style.isolation = 'isolate';
+  [canvas, galaxyCanvas, dustCanvas, starsCanvas, coverGalaxyCanvas, coverDustCanvas, coverCanvas, coverScene].forEach((layer) => {
+    layer.style.position = 'absolute';
+    layer.style.left = layer.style.top = '0';
+    layer.style.display = 'block';
+    layer.style.pointerEvents = 'none';
+  });
+  starsCanvas.style.mixBlendMode = coverCanvas.style.mixBlendMode = 'screen';
+  galaxyCanvas.style.willChange = coverGalaxyCanvas.style.willChange = 'transform';
+  coverScene.style.transformOrigin = '0 0';
+  skyHost.append(canvas, galaxyCanvas, dustCanvas, starsCanvas);
+  coverScene.append(coverGalaxyCanvas, coverDustCanvas, coverCanvas);
+  coverSkyHost.append(coverScene);
+  document.body.prepend(skyHost);
 
   const palettes = {
     dark: {
@@ -103,6 +131,8 @@
   let lastRenderedAt = 0;
   let coverVisible = false;
   let sceneReady = false;
+  let galaxyCache = null;
+  let lastSkyRenderedAt = null;
 
   const coverObserver = typeof window.IntersectionObserver === 'function'
     ? new IntersectionObserver((entries) => {
@@ -508,16 +538,37 @@
   function syncCoverCanvas() {
     const nextHost = document.querySelector('.cover-wrapper');
     const nextActive = Boolean(nextHost && window.getComputedStyle(nextHost).display !== 'none');
-    if (nextHost === coverHost && nextActive === coverActive && (!nextActive || coverCanvas.isConnected)) return;
+    if (nextHost === coverHost && nextActive === coverActive && (!nextActive || coverSkyHost.isConnected)) return;
     if (coverObserver && coverHost) coverObserver.unobserve(coverHost);
-    if (coverCanvas.isConnected) coverCanvas.remove();
+    if (coverSkyHost.isConnected) coverSkyHost.remove();
     coverHost = nextHost;
     coverActive = nextActive;
     coverVisible = coverActive;
-    if (coverActive && coverContext) {
-      coverHost.prepend(coverCanvas);
+    if (coverActive && coverContext && coverGalaxyContext && coverDustContext) {
+      coverHost.prepend(coverSkyHost);
       if (coverObserver) coverObserver.observe(coverHost);
+      resizeCoverScene();
     }
+    galaxyCache = null;
+  }
+
+  function resizeCanvas(target, targetContext) {
+    target.width = Math.round(width * pixelRatio);
+    target.height = Math.round(height * pixelRatio);
+    target.style.width = width + 'px';
+    target.style.height = height + 'px';
+    targetContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+  }
+
+  function resizeCoverScene() {
+    if (!coverActive || !coverContext || !coverDustContext || !width || !height) return;
+    resizeCanvas(coverCanvas, coverContext);
+    resizeCanvas(coverDustCanvas, coverDustContext);
+    coverScene.style.width = width + 'px';
+    coverScene.style.height = height + 'px';
+    // Retain the old canvas's viewport-to-cover scaling when a theme uses a shorter cover.
+    const bounds = coverSkyHost.getBoundingClientRect();
+    coverScene.style.transform = `scale(${bounds.width / width}, ${bounds.height / height})`;
   }
 
   function rebuildScene() {
@@ -560,18 +611,14 @@
     width = Math.max(1, window.innerWidth);
     height = Math.max(1, window.innerHeight);
     pixelRatio = Math.min(window.devicePixelRatio || 1, width < 640 ? 1.35 : 1.75);
-    canvas.width = Math.round(width * pixelRatio);
-    canvas.height = Math.round(height * pixelRatio);
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    resizeCanvas(canvas, context);
+    resizeCanvas(dustCanvas, dustContext);
+    resizeCanvas(starsCanvas, starsContext);
 
     syncCoverCanvas();
-    if (coverContext && coverActive) {
-      coverCanvas.width = canvas.width;
-      coverCanvas.height = canvas.height;
-      coverContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    }
+    resizeCoverScene();
+    galaxyCache = null;
+    lastSkyRenderedAt = null;
 
     if (document.getElementById('ride-experience')) return;
     rebuildScene();
@@ -862,13 +909,66 @@
     target.restore();
   }
 
-  function drawScene(target, palette, time, overlay) {
-    if (overlay) target.clearRect(0, 0, width, height);
-    else drawSky(target, palette);
-    drawMilkyWay(target, palette, time, overlay);
-    drawDust(target, palette, time);
-    drawStars(target, palette, time);
-    drawStreak(target, palette, time);
+  function bakeGalaxyCanvas(target, targetContext, palette, time, margin, overlay) {
+    const cachedWidth = width + margin * 2;
+    const cachedHeight = height + margin * 2;
+    target.width = Math.round(cachedWidth * pixelRatio);
+    target.height = Math.round(cachedHeight * pixelRatio);
+    target.style.width = cachedWidth + 'px';
+    target.style.height = cachedHeight + 'px';
+    target.style.left = target.style.top = -margin + 'px';
+    target.style.transformOrigin = `${width * 0.5 + margin}px ${height * 1.55 + margin}px`;
+    target.style.transform = '';
+    targetContext.setTransform(pixelRatio, 0, 0, pixelRatio, margin * pixelRatio, margin * pixelRatio);
+    drawMilkyWay(targetContext, palette, time, overlay);
+  }
+
+  function bakeGalaxies(palette, time) {
+    // Cache only the visible neighborhood, rather than allocating a very wide galaxy strip.
+    const margin = Math.ceil(Math.max(96, Math.hypot(width, height) * 0.08));
+    bakeGalaxyCanvas(galaxyCanvas, galaxyContext, palette, time, margin, false);
+    galaxyCanvas.style.mixBlendMode = dark ? 'screen' : 'normal';
+    if (coverActive && coverGalaxyContext) {
+      bakeGalaxyCanvas(coverGalaxyCanvas, coverGalaxyContext, palette, time, margin, true);
+    }
+    galaxyCache = {
+      angle: skyRotation(time) * 0.94,
+      pointerX,
+      pointerY,
+      margin,
+      radius: Math.hypot(width * 0.5 + margin, height * 1.55 + margin)
+    };
+  }
+
+  function updateGalaxyTransforms(palette, time) {
+    if (!galaxyCache) bakeGalaxies(palette, time);
+    const angle = skyRotation(time) * 0.94;
+    const rotation = angle - galaxyCache.angle;
+    const localX = (pointerX - galaxyCache.pointerX) * 7;
+    const localY = (pointerY - galaxyCache.pointerY) * 5;
+    const offsetX = Math.cos(angle) * localX - Math.sin(angle) * localY;
+    const offsetY = Math.sin(angle) * localX + Math.cos(angle) * localY;
+    const displacement = Math.abs(2 * galaxyCache.radius * Math.sin(rotation * 0.5))
+      + Math.hypot(offsetX, offsetY);
+
+    if (displacement >= galaxyCache.margin * 0.5) {
+      bakeGalaxies(palette, time);
+      return;
+    }
+
+    // This delta matrix maps the cached orbit and pointer position onto the current ones.
+    const transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}rad)`;
+    galaxyCanvas.style.transform = transform;
+    if (coverActive) coverGalaxyCanvas.style.transform = transform;
+  }
+
+  function drawFastScene(dustTarget, starsTarget, palette, time) {
+    dustTarget.clearRect(0, 0, width, height);
+    starsTarget.clearRect(0, 0, width, height);
+    // Dust uses source-over; the separate stars layer retains the original screen blend.
+    drawDust(dustTarget, palette, time);
+    drawStars(starsTarget, palette, time);
+    drawStreak(starsTarget, palette, time);
   }
 
   function isMobileRendering() {
@@ -919,9 +1019,16 @@
     pointerX += (targetPointerX - pointerX) * 0.035;
     pointerY += (targetPointerY - pointerY) * 0.035;
 
-    drawScene(context, palette, lastTime, false);
-    if (coverContext && coverActive && coverVisible && coverCanvas.isConnected) {
-      drawScene(coverContext, palette, lastTime, true);
+    // The full-screen gradients and grain barely change over a second. Fast particles
+    // keep their original clock while the galaxy moves as a composited static image.
+    if (force || lastSkyRenderedAt === null || nextTime - lastSkyRenderedAt >= skyFrameInterval) {
+      drawSky(context, palette);
+      lastSkyRenderedAt = nextTime;
+    }
+    updateGalaxyTransforms(palette, lastTime);
+    drawFastScene(dustContext, starsContext, palette, lastTime);
+    if (coverContext && coverDustContext && coverActive && coverVisible && coverSkyHost.isConnected) {
+      drawFastScene(coverDustContext, coverContext, palette, lastTime);
     }
 
     scheduleRender();
@@ -934,6 +1041,8 @@
     reducedMotion = motionMedia.matches;
     streak = null;
     syncCoverCanvas();
+    galaxyCache = null;
+    lastSkyRenderedAt = null;
     if (document.getElementById('ride-experience')) return;
     if (!sceneReady) rebuildScene();
     else rebuildAtmosphereTextures();
@@ -970,6 +1079,6 @@
     attributeFilter: ['color-scheme']
   });
 
-  window.__starcriedSky = { canvas, coverCanvas, restart };
+  window.__starcriedSky = { canvas, coverCanvas, host: skyHost, coverHost: coverSkyHost, restart };
   resize();
 })();

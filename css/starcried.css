@@ -851,3 +851,10 @@ article.md #post-body > hr:not([class]) {
     left: 12px;
   }
 }
+
+/* Keep the companion's expanded gesture canvas clear of the screen edges.
+   The portrait stays the same size; only the blog anchor moves. */
+body [data-inochi2d-widget-host].model-vrm-widget {
+  right: 112px;
+  bottom: 160px;
+}
