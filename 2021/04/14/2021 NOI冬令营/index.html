@@ -1920,7 +1920,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1792575330922),
+    lastupdate: new Date(1793692900227),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2341,7 +2341,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239">
+<!-- hexo injector head_end start -->
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2398,7 +2398,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<!-- hexo injector head_end end --></head>
+<link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -3155,7 +3155,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <li><a class="flat-box"
             title="/categories/%E9%9A%8F%E6%83%B3/" href="/categories/%E9%9A%8F%E6%83%B3/"
             active-action="action-categoriesE99A8FE683B3"
-            ><div class='name'>随想</div><div class='badge'>(12)</div></a></li>
+            ><div class='name'>随想</div><div class='badge'>(13)</div></a></li>
         
       </ul>
     </div>
@@ -4498,8 +4498,75 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><script defer src="/js/navigation.js?v=021d57afa0"></script><script defer src="/js/starfield.js?v=5c22400fd1"></script><script defer src="/js/ride2026.js?v=261c4d40df"></script><!-- hexo injector body_end end --><!-- starlite-widget:start --><div data-starlite-widget-host></div><style>[data-starlite-widget-host],[data-starlite-widget-host].model-vrm-widget{position:fixed;right:16px;bottom:0px;z-index:20}</style><link rel="stylesheet" href="/vrm-widget/879b90cca7fb/widget.css"><script type="module">
+</script><script defer src="/js/navigation.js?v=021d57afa0"></script><script defer src="/js/starfield.js?v=5c22400fd1"></script><script defer src="/js/ride2026.js?v=261c4d40df"></script><!-- hexo injector body_end end --><!-- starlite-widget:start --><div data-starlite-widget-host></div><style>[data-starlite-widget-host],[data-starlite-widget-host].model-vrm-widget{position:fixed;right:16px;bottom:0px;z-index:20}</style><link rel="stylesheet" href="/vrm-widget/b1a59025f3aa/widget.css"><script type="module">
 (async (options) => {
+  const createEnvironmentLighting = function createEnvironmentLighting(input, scope = globalThis) {
+    const doc = scope.document;
+    const media = input.darkColor === undefined && input.brightness === undefined && input.darkBrightness === undefined
+        ? undefined : scope.matchMedia("(prefers-color-scheme: dark)");
+    const attributes = ["data-theme", "data-color-mode", "data-user-color-scheme", "class"];
+    const dark = () => {
+        for (const element of [doc.documentElement, doc.body]) {
+            if (!element)
+                continue;
+            for (const name of attributes.slice(0, 3)) {
+                const value = element.getAttribute(name)?.toLowerCase();
+                if (value === "dark" || value === "light")
+                    return value === "dark";
+            }
+            if (element.classList.contains("dark") || element.classList.contains("dark-mode"))
+                return true;
+            if (element.classList.contains("light") || element.classList.contains("light-mode"))
+                return false;
+        }
+        return media?.matches ?? false;
+    };
+    const current = () => {
+        const isDark = dark(), brightness = isDark ? input.darkBrightness : input.brightness;
+        // Each mode owns its brightness. Omitting it restores automatic luminance
+        // from that mode's colour, rather than inheriting the previous mode's gain.
+        return { color: isDark ? input.darkColor ?? input.color : input.color,
+            ...(input.strength !== undefined ? { strength: input.strength } : {}),
+            ...(brightness !== undefined ? { brightness } : {}) };
+    };
+    let observer;
+    let listener;
+    const destroy = () => { observer?.disconnect(); observer = undefined; if (listener)
+        media?.removeEventListener("change", listener); listener = undefined; };
+    return { current, destroy, attach(controller) {
+            destroy();
+            if (!controller.setEnvironmentLighting)
+                return;
+            let previous = "";
+            const update = () => {
+                const value = current(), signature = JSON.stringify(value);
+                if (signature === previous)
+                    return;
+                controller.setEnvironmentLighting(value);
+                previous = signature;
+            };
+            update();
+            if (!media)
+                return;
+            let body = doc.body;
+            const observe = () => {
+                observer.disconnect();
+                observer.observe(doc.documentElement, { attributes: true, attributeFilter: attributes, childList: true });
+                if (body)
+                    observer.observe(body, { attributes: true, attributeFilter: attributes });
+            };
+            observer = new scope.MutationObserver(() => {
+                if (body !== doc.body) {
+                    body = doc.body;
+                    observe();
+                }
+                update();
+            });
+            observe();
+            listener = update;
+            media.addEventListener("change", listener);
+        } };
+};
   const installQuickSettings = function installVisitorMenu(runtime, state, options) {
     if (typeof runtime.QuickSettingsMenu !== "function")
         return;
@@ -4507,6 +4574,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     const host = state.host;
     const controller = state.controller;
     const config = options.config;
+    const en = config.locale === "en";
+    const text = (zh, english) => en ? english : zh;
     const storageKey = "starlite:visitor-settings:v1";
     const baseWidth = config.display?.width ?? 320;
     const baseHeight = config.display?.height ?? 480;
@@ -4543,8 +4612,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     const recovery = document.createElement("button");
     recovery.type = "button";
     recovery.dataset.starliteWidgetRestore = "";
-    recovery.textContent = "显示角色";
-    recovery.setAttribute("aria-label", "重新显示 StarLite 角色");
+    recovery.textContent = text("显示角色", "Show character");
+    recovery.setAttribute("aria-label", text("重新显示 StarLite 角色", "Show the StarLite character again"));
     Object.assign(recovery.style, {
         position: "fixed", right: "16px", bottom: "16px", zIndex: String(position?.zIndex ?? 20),
         border: "1px solid #9c8fba", borderRadius: "999px", padding: "8px 14px",
@@ -4619,27 +4688,27 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     };
     recovery.addEventListener("click", () => setHidden(false));
     const menuOptions = () => ({
-        title: "StarLite",
+        title: "StarLite", locale: config.locale,
         tabs: [
-            { id: "display", label: "显示", items: [
-                    { id: "size", kind: "range", label: "模型大小", value: Math.round(preferences.scale * 100), min: 50, max: 150, step: 5,
+            { id: "display", label: text("显示", "Display"), items: [
+                    { id: "size", kind: "range", label: text("模型大小", "Model size"), value: Math.round(preferences.scale * 100), min: 50, max: 150, step: 5,
                         disabled: typeof controller.setDisplaySize !== "function", formatValue: (value) => `${value}%`, onChange: (value) => set("scale", value / 100) },
-                    { id: "reset-size", kind: "action", label: "恢复默认大小", disabled: typeof controller.setDisplaySize !== "function", onAction: () => set("scale", 1) },
-                    { id: "fps", kind: "select", label: "帧率上限", value: String(preferences.fps),
+                    { id: "reset-size", kind: "action", label: text("恢复默认大小", "Reset size"), disabled: typeof controller.setDisplaySize !== "function", onAction: () => set("scale", 1) },
+                    { id: "fps", kind: "select", label: text("帧率上限", "Frame rate limit"), value: String(preferences.fps),
                         disabled: typeof controller.setFrameRate !== "function",
-                        options: [...(preferences.fps !== 30 && preferences.fps !== 60 ? [{ value: String(preferences.fps), label: preferences.fps === "display" ? "跟随屏幕" : `${preferences.fps} FPS` }] : []), { value: "30", label: "30 FPS" }, { value: "60", label: "60 FPS" }],
+                        options: [...(preferences.fps !== 30 && preferences.fps !== 60 ? [{ value: String(preferences.fps), label: preferences.fps === "display" ? text("跟随屏幕", "Match display") : `${preferences.fps} FPS` }] : []), { value: "30", label: "30 FPS" }, { value: "60", label: "60 FPS" }],
                         onChange: (value) => set("fps", Number(value)) },
-                    { id: "performance", kind: "toggle", label: "显示性能", value: preferences.performance,
+                    { id: "performance", kind: "toggle", label: text("显示性能", "Show performance"), value: preferences.performance,
                         disabled: typeof controller.setPerformanceVisible !== "function", onChange: (value) => set("performance", value) },
-                    { id: "reset-position", kind: "action", label: "恢复默认位置", onAction: restorePosition },
-                    { id: "hide", kind: "action", label: "暂时隐藏角色", onAction: () => setHidden(true) },
+                    { id: "reset-position", kind: "action", label: text("恢复默认位置", "Reset position"), onAction: restorePosition },
+                    { id: "hide", kind: "action", label: text("暂时隐藏角色", "Hide character"), onAction: () => setHidden(true) },
                 ] },
-            { id: "interaction", label: "互动", items: [
-                    { id: "pointer", kind: "toggle", label: "跟随光标", value: preferences.pointer,
+            { id: "interaction", label: text("互动", "Interaction"), items: [
+                    { id: "pointer", kind: "toggle", label: text("跟随光标", "Follow pointer"), value: preferences.pointer,
                         disabled: !pointerAllowed || typeof controller.setPointerEnabled !== "function", onChange: (value) => set("pointer", value) },
-                    { id: "bubbles", kind: "toggle", label: "显示气泡", value: preferences.bubbles,
+                    { id: "bubbles", kind: "toggle", label: text("显示气泡", "Show bubbles"), value: preferences.bubbles,
                         disabled: !bubblesAllowed || typeof controller.setBubblesVisible !== "function", onChange: (value) => set("bubbles", value) },
-                    { id: "pause", kind: "toggle", label: "暂停动画", value: paused, onChange: (value) => {
+                    { id: "pause", kind: "toggle", label: text("暂停动画", "Pause animation"), value: paused, onChange: (value) => {
                             paused = value;
                             if (paused)
                                 controller.pause();
@@ -4842,6 +4911,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       state.observer?.disconnect();
       state.observer = undefined;
       state.abort?.abort();
+      state.environmentLighting?.destroy(); state.environmentLighting = undefined;
       state.controller?.destroy();
       state.quickSettings?.destroy();
       state.quickSettings = undefined;
@@ -4881,6 +4951,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     state.abort?.abort();
     const abort = new AbortController();
     state.abort = abort;
+    state.environmentLighting?.destroy(); state.environmentLighting = undefined;
     state.controller?.destroy();
     state.quickSettings?.destroy();
     state.quickSettings = undefined;
@@ -4894,6 +4965,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       state.observer = undefined;
       unavailable(host);
       abort.abort();
+      state.environmentLighting?.destroy(); state.environmentLighting = undefined;
       state.controller?.destroy();
       state.quickSettings?.destroy();
       state.quickSettings = undefined;
@@ -4920,10 +4992,11 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       .then(async (runtime) => {
         abort.signal.throwIfAborted();
         state.runtime = runtime;
+        const environmentLighting = options.environmentLighting ? createEnvironmentLighting(options.environmentLighting, globalThis) : undefined;
         const config = hasEntered()
           ? {...options.config, dialogue:{...options.config.dialogue, enter:false}}
           : options.config;
-        const controller = await runtime.mountModelWidget(host, config, {signal:abort.signal});
+        const controller = await runtime.mountModelWidget(host, environmentLighting ? {...config, environmentLighting:environmentLighting.current()} : config, {signal:abort.signal});
         // A load can finish between fragment replacement and pjax:complete.
         if (state.generation === generation && state.host === host &&
             (options.showOnMobile || !media.matches) && !host.isConnected) document.body.append(host);
@@ -4942,6 +5015,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
           host.style.removeProperty("visibility");
           host.style.removeProperty("pointer-events");
           if (options.config.interactions?.passThrough) host.style.pointerEvents = "none";
+          state.environmentLighting = environmentLighting;
+          environmentLighting?.attach(controller);
           syncPageDialogue();
           installQuickSettings(runtime, state, options);
           rememberEntry();
@@ -4985,5 +5060,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   }
   if (document.readyState !== "loading") scheduleMount();
   else document.addEventListener("DOMContentLoaded", scheduleMount, {once:true});
-})({"entryUrl":"/vrm-widget/879b90cca7fb/index.js","config":{"backend":"vrm","model":"/vrm-model/b8dbad11c9f8/Weiguang.vrm","fallback":"/assets/model-companion/weiguang.png","animations":[{"name":"Idle","url":"/vrm-model/b8dbad11c9f8/motions/Idle.vrma","durationMs":6000},{"name":"GentleWave","url":"/vrm-model/b8dbad11c9f8/motions/GentleWave.vrma","durationMs":7033.333333333333},{"name":"HighFive","url":"/vrm-model/b8dbad11c9f8/motions/HighFive.vrma","durationMs":4000},{"name":"HighWave","url":"/vrm-model/b8dbad11c9f8/motions/HighWave.vrma","durationMs":8000},{"name":"StumbleAndRecover","url":"/vrm-model/b8dbad11c9f8/motions/StumbleAndRecover.vrma","durationMs":9766.666666666668},{"name":"PlayfulScare","url":"/vrm-model/b8dbad11c9f8/motions/PlayfulScare.vrma","durationMs":7700},{"name":"RaisedHandWave","url":"/vrm-model/b8dbad11c9f8/motions/RaisedHandWave.vrma","durationMs":3800},{"name":"Stretch","url":"/vrm-model/b8dbad11c9f8/motions/Stretch.vrma","durationMs":6366.666666666666},{"name":"BackStretch","url":"/vrm-model/b8dbad11c9f8/motions/BackStretch.vrma","durationMs":15700},{"name":"AbsentmindedWait","url":"/vrm-model/b8dbad11c9f8/motions/AbsentmindedWait.vrma","durationMs":6033.333333333333},{"name":"Thinking","url":"/vrm-model/b8dbad11c9f8/motions/Thinking.vrma","durationMs":6833.333333333333},{"name":"HaveAnIdea","url":"/vrm-model/b8dbad11c9f8/motions/HaveAnIdea.vrma","durationMs":9366.666666666668},{"name":"AwkwardHeadScratch","url":"/vrm-model/b8dbad11c9f8/motions/AwkwardHeadScratch.vrma","durationMs":6833.333333333333}],"profile":"/vrm-model/b8dbad11c9f8/profile.json","embeddedAnimations":[],"neutralAnimation":"Idle","display":{"width":260,"height":390},"mobile":{"show":false,"breakpoint":900},"gaze":{"maxYawDegrees":25,"maxPitchDegrees":15,"smoothingMs":100},"camera":{"yawDegrees":0,"pitchDegrees":5,"fovDegrees":20,"targetHeight":0.54},"render":{"fps":60,"maxDevicePixelRatio":1,"autoFit":true,"fitPadding":0.92},"ambient":{"animations":["Idle"]},"dialogue":{"enter":{"delayMs":500,"durationMs":6300,"linesByAnimation":{"RaisedHandWave":["嗨！我是微光！","欢迎来我的小窝~","你好呀，今天想看些什么？"]},"animation":"RaisedHandWave"},"click":{"durationMs":6300,"linesByAnimation":{"GentleWave":["嗨~","有什么想聊的？可以留下评论或者联系社交媒体哦~","喜欢我的文章吗？诶，只是喜欢戳我吗？"],"HighFive":["High Five!","耶！"],"HighWave":["你好你好！欢迎你来~","我是小狼微光！可以在顶部的“微光”页更了解我哦","很高兴认识你！在评论可以留下你的想法~"],"StumbleAndRecover":["嗷……好痛……是你干的吗？呃，不是吗……","啊！……没事，就当没看到好吗","为什么我们不再为摔倒而哭泣？是学会了保护自己，还是接纳了疼痛……嗯，只是为了思考这个问题才摔的……"],"PlayfulScare":["饿狼扑食！","哇！没吓到你吗……"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再给人类加个“有选择的自由”的幻想……","宇宙在熵增，生命却在熵减，人类更是。这应该就是逆天吧……嗯，希望我能越来越逆天"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟是我仔细包装过的。","嗯……这样的话……哦哦我会了！这是水题！"],"AwkwardHeadScratch":["遇到 BUG 或者有想吐槽的？请告诉我！就是麻烦下口轻点……"]},"animation":"GentleWave","animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]},"idle":{"durationMs":9000,"intervalMinMs":60000,"intervalMaxMs":120000,"linesByAnimation":{"Stretch":["唔——","站着好累……下版本加个坐着的动作好了","我猜你坐了很久了，一起舒展一下吧。"],"BackStretch":["呼吸……放松……遁入虚无……","呼吸……放松……遁入智瞳……不对！","啊……我的腰……一定要记得多活动啊……"],"AbsentmindedWait":["在看我的日记、技术博客还是题解？肯定不是题解……","平时喜欢做什么？我平时喜欢睡大觉","你站在桥上看风景，看风景的人在楼上看你。"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再给人类加个“有选择的自由”的幻想……","宇宙在熵增，生命却在熵减，人类更是。这应该就是逆天吧……嗯，希望我能越来越逆天"],"RaisedHandWave":["觉得可以给我添加新功能或优化？欢迎向 starlite 项目贡献！","你知道吗？虽然我是工程师，但看板娘组件主要使用 AI 开发，大部分时间都花在了手搓模型上。建模感觉比小时候的橡皮泥好玩~"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟是我仔细包装过的。","嗯……这样的话……哦哦我会了！这是水题！"],"AwkwardHeadScratch":["遇到 BUG 或者有想吐槽的？请告诉我！就是麻烦下口轻点……"]},"animation":"Stretch","animations":["Stretch","BackStretch","AbsentmindedWait","Thinking","RaisedHandWave","HaveAnIdea","AwkwardHeadScratch"]}},"interactions":{"pointer":true,"passThrough":true,"drag":false,"click":{"animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]}}},"breakpoint":900,"showOnMobile":false,"position":{"right":16,"bottom":0,"zIndex":20},"pageRoot":"/"});</script><!-- starlite-widget:end --></body>
+})({"entryUrl":"/vrm-widget/b1a59025f3aa/index.js","config":{"backend":"vrm","model":"/vrm-model/b8dbad11c9f8/Weiguang.vrm","fallback":"/assets/model-companion/weiguang.png","locale":"zh-CN","animations":[{"name":"Idle","url":"/vrm-model/b8dbad11c9f8/motions/Idle.vrma","durationMs":6000},{"name":"GentleWave","url":"/vrm-model/b8dbad11c9f8/motions/GentleWave.vrma","durationMs":7033.333333333333},{"name":"HighFive","url":"/vrm-model/b8dbad11c9f8/motions/HighFive.vrma","durationMs":4000},{"name":"HighWave","url":"/vrm-model/b8dbad11c9f8/motions/HighWave.vrma","durationMs":8000},{"name":"StumbleAndRecover","url":"/vrm-model/b8dbad11c9f8/motions/StumbleAndRecover.vrma","durationMs":9766.666666666668},{"name":"PlayfulScare","url":"/vrm-model/b8dbad11c9f8/motions/PlayfulScare.vrma","durationMs":7700},{"name":"RaisedHandWave","url":"/vrm-model/b8dbad11c9f8/motions/RaisedHandWave.vrma","durationMs":3800},{"name":"Stretch","url":"/vrm-model/b8dbad11c9f8/motions/Stretch.vrma","durationMs":6366.666666666666},{"name":"BackStretch","url":"/vrm-model/b8dbad11c9f8/motions/BackStretch.vrma","durationMs":15700},{"name":"AbsentmindedWait","url":"/vrm-model/b8dbad11c9f8/motions/AbsentmindedWait.vrma","durationMs":6033.333333333333},{"name":"Thinking","url":"/vrm-model/b8dbad11c9f8/motions/Thinking.vrma","durationMs":6833.333333333333},{"name":"HaveAnIdea","url":"/vrm-model/b8dbad11c9f8/motions/HaveAnIdea.vrma","durationMs":9366.666666666668},{"name":"AwkwardHeadScratch","url":"/vrm-model/b8dbad11c9f8/motions/AwkwardHeadScratch.vrma","durationMs":6833.333333333333}],"profile":"/vrm-model/b8dbad11c9f8/profile.json","embeddedAnimations":[],"neutralAnimation":"Idle","display":{"width":260,"height":390},"mobile":{"show":false,"breakpoint":900},"gaze":{"maxYawDegrees":25,"maxPitchDegrees":15,"smoothingMs":100},"camera":{"yawDegrees":0,"pitchDegrees":5,"fovDegrees":20,"targetHeight":0.54},"render":{"fps":60,"maxDevicePixelRatio":1,"autoFit":true,"fitPadding":0.92},"ambient":{"animations":["Idle"]},"dialogue":{"enter":{"delayMs":500,"durationMs":6300,"linesByAnimation":{"RaisedHandWave":["嗨！我是微光！","欢迎来我的小窝~","你好呀，今天想看些什么？"]},"animation":"RaisedHandWave"},"click":{"durationMs":6300,"linesByAnimation":{"GentleWave":["嗨~","有什么想聊的？可以留下评论或者联系社交媒体哦~","喜欢我的文章吗？诶，只是喜欢戳我吗？"],"HighFive":["High Five!","耶！"],"HighWave":["你好你好！欢迎你来~","我是小狼微光！可以在顶部的“微光”页更了解我哦","很高兴认识你！在评论可以留下你的想法~"],"StumbleAndRecover":["嗷……好痛……是你干的吗？呃，不是吗……","啊！……没事，就当没看到好吗","为什么我们不再为摔倒而哭泣？是学会了保护自己，还是接纳了疼痛……嗯，只是为了思考这个问题才摔的……"],"PlayfulScare":["饿狼扑食！","哇！没吓到你吗……"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再给人类加个“有选择的自由”的幻想……","宇宙在熵增，生命却在熵减，人类更是。这应该就是逆天吧……嗯，希望我能越来越逆天"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟是我仔细包装过的。","嗯……这样的话……哦哦我会了！这是水题！"],"AwkwardHeadScratch":["遇到 BUG 或者有想吐槽的？请告诉我！就是麻烦下口轻点……"]},"animation":"GentleWave","animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]},"idle":{"durationMs":9000,"intervalMinMs":60000,"intervalMaxMs":120000,"linesByAnimation":{"Stretch":["唔——","站着好累……下版本加个坐着的动作好了","我猜你坐了很久了，一起舒展一下吧。"],"BackStretch":["呼吸……放松……遁入虚无……","呼吸……放松……遁入智瞳……不对！","啊……我的腰……一定要记得多活动啊……"],"AbsentmindedWait":["在看我的日记、技术博客还是题解？肯定不是题解……","平时喜欢做什么？我平时喜欢睡大觉","你站在桥上看风景，看风景的人在楼上看你。"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再给人类加个“有选择的自由”的幻想……","宇宙在熵增，生命却在熵减，人类更是。这应该就是逆天吧……嗯，希望我能越来越逆天"],"RaisedHandWave":["觉得可以给我添加新功能或优化？欢迎向 starlite 项目贡献！","你知道吗？虽然我是工程师，但看板娘组件主要使用 AI 开发，大部分时间都花在了手搓模型上。建模感觉比小时候的橡皮泥好玩~"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟是我仔细包装过的。","嗯……这样的话……哦哦我会了！这是水题！"],"AwkwardHeadScratch":["遇到 BUG 或者有想吐槽的？请告诉我！就是麻烦下口轻点……"]},"animation":"Stretch","animations":["Stretch","BackStretch","AbsentmindedWait","Thinking","RaisedHandWave","HaveAnIdea","AwkwardHeadScratch"]}},"interactions":{"pointer":true,"passThrough":true,"drag":false,"click":{"animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]}}},"breakpoint":900,"showOnMobile":false,"position":{"right":16,"bottom":0,"zIndex":20},"pageRoot":"/"});</script><!-- starlite-widget:end --></body>
 </html>
