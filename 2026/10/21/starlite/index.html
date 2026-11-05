@@ -48,12 +48,12 @@
   <title>StarLite：把自己的 3D 模型放进博客和桌面 - StarCried 的狼窝</title>
   <meta name="keywords" content="微光,StarLite,VRM,Hexo,桌宠,StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常">
   
-  <meta name="description" content="前言 在之前搭建博客的文章里，我写过想把微光放进网页，后面接了一句“待更新”。现在终于可以更新了。 最开始我想用 Inochi2D 做看板娘。不过，我的 2D 模型还没做完，3D 模型倒是已经能在 VRChat 和 Warudo 里使用了。既然如此，为什么不直接把现成的模型用起来呢？于是便有了 StarLite。 如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向光标，偶尔">
+  <meta name="description" content="项目仓库  StarLite：公共核心、模型后端和 Hexo 插件，按包分开。Hexo 插件可从此项目中安装使用。 StarLite for DSH：Deepseek Harness 插件，包含 DSH 事件接入和 Windows 桌宠，使用前面的模型运行时。官方桌面版可直接添加插件 dsh-starlite。  前言 之前的 TODO 列表里，我写过想把微光放进博客里。现在应">
 <meta property="og:type" content="article">
 <meta property="og:title" content="StarLite：把自己的 3D 模型放进博客和桌面">
 <meta property="og:url" content="https://starcried.github.io/2026/10/21/starlite/index.html">
 <meta property="og:site_name" content="StarCried 的狼窝">
-<meta property="og:description" content="前言 在之前搭建博客的文章里，我写过想把微光放进网页，后面接了一句“待更新”。现在终于可以更新了。 最开始我想用 Inochi2D 做看板娘。不过，我的 2D 模型还没做完，3D 模型倒是已经能在 VRChat 和 Warudo 里使用了。既然如此，为什么不直接把现成的模型用起来呢？于是便有了 StarLite。 如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向光标，偶尔">
+<meta property="og:description" content="项目仓库  StarLite：公共核心、模型后端和 Hexo 插件，按包分开。Hexo 插件可从此项目中安装使用。 StarLite for DSH：Deepseek Harness 插件，包含 DSH 事件接入和 Windows 桌宠，使用前面的模型运行时。官方桌面版可直接添加插件 dsh-starlite。  前言 之前的 TODO 列表里，我写过想把微光放进博客里。现在应">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://starcried.github.io/assets/brand/starcried-128.png">
 <meta property="article:published_time" content="2026-10-21T09:20:00.000Z">
@@ -1924,7 +1924,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1793692900227),
+    lastupdate: new Date(1793869312555),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2345,7 +2345,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start -->
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2402,7 +2402,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2923,96 +2923,81 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="前言">前言</h2>
-<p>在之前搭建博客的文章里，我写过想把微光放进网页，后面接了一句“待更新”。现在终于可以更新了。</p>
-<p>最开始我想用 Inochi2D 做看板娘。不过，我的 2D 模型还没做完，3D
-模型倒是已经能在 VRChat 和 Warudo
-里使用了。既然如此，为什么不直接把现成的模型用起来呢？于是便有了
-<strong>StarLite</strong>。</p>
-<p>如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向光标，偶尔活动一下，戳他也会有回应。同一套模型组件还接到了
-DSH（DeepSeek Harness），可以根据 Agent
-的工作状态播放动作和显示气泡。</p>
-<p>这篇文章主要记录我想实现什么、各部分如何工作，以及一些静态截图里看不出来的小问题。具体安装和配置会继续更新，请以对应版本的仓库文档为准。</p>
-<span id="more"></span>
-<h2 id="我想要一个什么样的桌宠">我想要一个什么样的桌宠</h2>
-<p>现在已经有一些功能十分全面的虚拟角色项目，可以语音对话、调用大模型，甚至观察屏幕和操作游戏。我最初想做的事情要简单得多：让自己的角色在博客或桌面的一角待着，在适当的时候回应一下。</p>
-<p>因此，StarLite
-的核心可以概括为：<strong>把模型已有的动作，映射到一些交互和应用事件上。</strong></p>
-<p>比如点一下角色，挥手并打个招呼；Agent
-工作时，切换到工作动作；需要我回答时，在气泡里显示选项。平时则安静地站着，有一点呼吸和眨眼。微光只是默认示例，更重要的是其他人也能放进自己的角色。</p>
-<p>我希望它轻量、容易上手，而且不要占据太多注意力。气泡本身不调用大模型，博客中的句子也是提前写好的。DSH
-里的实时内容来自
-DSH，桌宠负责呈现。要让角色说什么、做什么，不需要再养一套推理服务。</p>
-<p>当然，“功能简单”和“实现简单”是两回事……</p>
-<h2 id="从模型到可以交互的角色">从模型到可以交互的角色</h2>
-<h3 id="模型动作和程序是不同的东西">模型、动作和程序是不同的东西</h3>
-<p>模型本身主要保存几何、贴图、骨骼和表情等信息。有了模型，并不代表程序自动知道怎样让它挥手。</p>
-<p>这里采用 VRM，是因为它在 glTF
-的基础上约定了人形骨骼、表情、视线和弹簧骨骼等信息。程序可以按“头部”“左上臂”这样的标准映射操作角色，不必为每个模型重新猜一遍骨骼名称。浏览器中的加载和渲染使用
-Three.js 和 three-vrm。</p>
-<p>用户导入标准人形 VRM 后，不必先制作一整套动作。StarLite 自带一个基础
-Idle，提供放松站姿和轻呼吸，再配合眨眼、限角光标跟随。对应效果仍然需要模型正确配置：比如眨眼需要
-VRM 的 Blink
-表达绑定，眼球跟随需要合适的视线设置。给一个形态键起名叫“眨眼”，不等于已经完成了这些配置。</p>
-<p>挥手、击掌之类的具体动作，则需要模型作者自己提供。动作可以内嵌在模型文件中，也可以使用外部
-VRMA。微光的那套动作不会自动套在别人身上；不同角色的比例、手指和特殊肢体，仍然需要实际检查。</p>
-<h3 id="动作和句子需要一起考虑">动作和句子需要一起考虑</h3>
-<p>如果分别随机选一个动作和一句话，就可能出现身体摔倒、气泡里却在说“做得好”的情况。因此，句库可以按动作绑定：先决定做什么，再从对应句子里选一句。</p>
-<p>动作之间也需要衔接。循环、单次动作和静态姿势，处理方式并不一样；把一个静态姿势叫作“待机动画”，并不会让它自己呼吸。运行时可以处理有限的姿态过渡，但不能代替动作制作。模型穿模、权重不合适、手指没有正确映射这些问题，最后还是要回到模型或动作里修改。</p>
-<h2 id="项目是怎样组织的">项目是怎样组织的</h2>
-<p>现在主要有两个仓库：</p>
+    <h2 id="项目仓库">项目仓库</h2>
 <ul>
 <li><a
 target="_blank" rel="noopener" href="https://github.com/StarCried/starlite">StarLite</a>：公共核心、模型后端和
-Hexo 插件在同一个工作区，按包分开。</li>
+Hexo 插件，按包分开。Hexo 插件可从此项目中安装使用。</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/StarCried/starlite-dsh">StarLite for
-DSH</a>：DSH 事件接入和 Windows 桌宠，使用前面的模型运行时。</li>
+DSH</a>：Deepseek Harness 插件，包含 DSH 事件接入和 Windows
+桌宠，使用前面的模型运行时。官方桌面版可直接添加插件 dsh-starlite。</li>
 </ul>
-<p>公共核心负责气泡、句库调度和播放契约；VRM
-后端负责渲染、骨骼、表情、物理和动作；Hexo
-插件负责配置、资源生成和页面生命周期。早期的 Inochi2D
-实现也保留在独立后端里，目前主要完善的是 VRM。</p>
-<p>所以，气泡不是 Hexo 独有的功能，DSH
-也不需要再写一套模型播放器。修改句子不必碰渲染代码，把模型接到另一个应用时也不需要把博客一起带过去。</p>
-<h2 id="一些真正用起来才会发现的问题">一些真正用起来才会发现的问题</h2>
-<h3 id="切换文章不应该换一只角色">切换文章，不应该换一只角色</h3>
-<p>Volantis 使用 PJAX
-切换页面时，不会重新加载整个网页。如果每次切页都重新创建模型，既慢，也可能留下重复的画布和事件监听；但如果只保留角色而不更新上下文，他又会继续说上一篇文章的句子。</p>
-<p>现在的做法是保留模型实例，只更新页面对应的句库。首次入场按标签页去重，不会每翻一篇文章就重新挥一次手。加载失败时先隐藏，再自动重试，成功后恢复；失败的角色也不应该挡住正文和链接。</p>
-<h3 id="耳朵为什么会突然飞起来">耳朵为什么会突然飞起来</h3>
-<p>动作、视线和弹簧物理都可能修改骨骼。如果同一根骨骼在不同阶段被重复更新，或者上一帧的物理结果被当成下一帧的基准，就会出现很奇怪的抖动。微光的耳朵确实给这个项目找了不少事情做……</p>
-<p>这里需要明确谁负责哪一部分、按什么顺序更新。类似地，正在控制头部的动作和光标跟随，也不能无条件地同时覆盖同一个旋转。看到耳朵异常时，一味调整弹簧力度并不能解决更新顺序的问题。</p>
-<h3
-id="页面掉帧也不一定是模型的问题">页面掉帧，也不一定是模型的问题</h3>
-<p>有一轮测试中，小窗口流畅，最大化之后却持续低帧。最后发现博客的全屏星空背景也在消耗渲染时间。角色和背景共用浏览器的资源，只盯着模型优化，很容易找错地方。</p>
-<p>静态银河纹理可以预先生成，再做移动、旋转；流星和闪烁星星则单独更新。模型本身还要控制绘制分辨率，在页面隐藏时暂停动画和物理。角色看起来只占屏幕的一小块，不代表贴图、骨骼和浏览器合成就没有开销，因此目前我还不想给出一个脱离设备和模型的“性能很好”的结论。</p>
-<h2 id="给每篇文章写几句话">给每篇文章写几句话</h2>
-<p>这次新加了页面专属句库。文章正文和属于这篇文章的句子，可以放在同一份
-Markdown 里维护。在开头的 front matter 中直接写：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">一篇关于模型的文章</span></span><br><span class="line"><span class="attr">starlite:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;嗨！这篇讲的是我怎么来到网页里的~&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;看完之后，也可以试着把自己的角色放进来。&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>默认点击和偶发互动都可以触发，按顺序读，读完再从第一句开始；它们使用全站入场动画作为配套动作。这里沿用的是动作，不会因为切换文章重新触发一次自动入场。</p>
-<p>如果想单独指定动作或规则，可以改成对象形式：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">starlite:</span></span><br><span class="line">  <span class="attr">lines:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;要击个掌吗？&quot;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;耶！&quot;</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="string">HighFive</span></span><br><span class="line">  <span class="attr">triggers:</span> [<span class="string">click</span>]</span><br><span class="line">  <span class="attr">mode:</span> <span class="string">merge</span></span><br><span class="line">  <span class="attr">order:</span> <span class="string">random</span></span><br></pre></td></tr></table></figure>
-<p>这表示只在点击时触发，页面两句使用
-<code>HighFive</code>，和全站点击句库合并后随机选择；全站候选仍保留各自的动作与句子绑定。<code>HighFive</code>
-是微光的动作名，换成自己的模型时也要换成实际存在的名称。默认值还可以统一写在博客
-<code>_config.yml</code> 的 <code>starlite.pageDialogue</code>
-中，不必每篇重复配置。</p>
-<p>这篇文章本身就用了最简写法，可以戳旁边的微光试试。切到其他文章后，他会恢复全站句库。</p>
-<h2 id="使用和后续">使用和后续</h2>
-<p>Hexo 插件的公开测试版安装入口是：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-starlite@alpha</span><br></pre></td></tr></table></figure>
-<p>不过，<strong>本文页面使用的是新的候选构建，页面专属句库和默认自动获取微光的流程尚未发布到
-npm</strong>。公开版本的具体安装、模型导入方式请查看对应版本的
-README；本轮验证通过后再同步发布。</p>
-<p>程序采用 BSD-2-Clause
-许可，微光模型采用单独的模型许可，两者不是一回事。将角色放进网页，意味着浏览器必须能下载运行所需的资源；只能在授权范围内托管，不能把“文件能下载到”理解为可以提取再利用。使用自己的模型，也要确认模型、贴图和动作的公开托管权限。</p>
-<p>目前项目仍在 alpha 阶段，主要验收环境是桌面 Chrome 和
-Edge，小屏默认不加载模型。我更想继续把导入、性能和交互这些基础部分做好，再根据实际使用反馈补功能。</p>
-<p>从三视图、建模，到
-VRChat、Warudo，再到现在的网页和桌面，同一个角色又多了一种呈现方式。对我来说，这也是继续完善他的一个理由。</p>
-<p>如果你也有自己的角色，可以来试试。遇到问题或者有什么想法，欢迎在评论或仓库里告诉我。</p>
-<!-- starlite-page:start --><script type="application/json" data-starlite-page-dialogue>{"path":"2026/10/21/starlite/","context":{"lines":["嗨！这篇文章讲的是我怎么来到网页里的~","模型做好了，还得想办法让我动起来……只是站着也太无聊了。","想把自己的角色也放进博客？结尾有项目入口，欢迎尝试！","程序是开源的，欢迎捉虫和贡献！"],"animation":"RaisedHandWave","triggers":["click","idle"],"mode":"replace","order":"sequential"}}</script><!-- starlite-page:end -->
+<h2 id="前言">前言</h2>
+<p>之前的 TODO
+列表里，我写过想把微光放进博客里。现在应该是超额完成了。</p>
+<p>最开始只想着做个自己的 live2d 模型，因为 live2d
+的消耗资源少且有现成的博客项目。然而，由于软件付费原因，我暂缓了这个计划。在这期间为了玩
+VRC 我开始学习 blender 手搓 3D 模型，终于得到了满意的结果。然后，Agent
+开始极大发展。我意识到，我可以开发自己的博客看板娘项目，直接用上现成的模型。于是，StarLite
+诞生了。</p>
+<p>如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向你的光标、偶尔活动，你也可以点击他互动。同一套模型组件还接到了
+DSH（DeepSeek Harness），可以根据 Agent
+的工作状态播放动作和显示气泡。默认都会使用微光的模型和动作。另外，你也可以使用蓝色大肥鱼模型，感谢作者<strong>水原镜（Mzkagami）</strong>的授权。<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WNt86bEyu/">模型展示视频链接</a></p>
+<p>你当然也可以导入自己的人型 VRM 模型使用。插件会自带一些基础动作和
+Idle
+循环、光标追踪，确保新模型直接可以用。如果有动画的话可以更自由地自定义。</p>
+<p>这更像是一篇分享或者介绍博客，不是一篇技术博客，只有 codex
+直到这个插件怎么写出来的（哈哈）。我想技术博客应该也会很快消失吧，stackoverflow
+几乎已经死掉了。总之，只是分享我的经历和一些想法，想使用 StarLite
+的话请根据第一节对应仓库安装即可，自己懒得搞直接让 Agent
+折腾。具体内容应该会继续更新，请以对应版本的仓库文档为准。</p>
+<span id="more"></span>
+<h2 id="创建-starlite">创建 StarLite</h2>
+<p>高中时期就看到 live2d
+模型作为网页看板娘的博客，当时打竞赛无聊就喜欢这些花哨玩意。但是人家博客里的二次元纸片人我不认识，也不感兴趣。上了大学之后有了自己的设定，迁移了博客，于是想完成下自己的小心愿。在开发
+StarLite
+的过程中，我也借此机会同步优化了微光的网格、权重和动作，并且探索了 Agent
+辅助建模工作。这些都对我受益匪浅。</p>
+<p>在创建仓库前，我查到市面上已经有很多角色项目了。很著名的是 AI 主播
+Neuro，头上顶着乌龟的那个。这些项目功能很全社区也很大，可以让大模型扮演角色进行各种操作，比如进行直播、聊天、甚至打游戏等。我对养电子女友没有那么大的兴趣，只是想完成下当年的小心愿，做一个很酷的、有用的摆件而已，所以我没用那些大框架，也并不希望微光能通过这个模型跟我对话：如果他很像我，和
+OC 对话感觉就像是精神分裂；如果他不像我，那他就不是我的 OC
+微光了。至少在目前这个阶段，LLM 的陪伴功能还不尽我意。</p>
+<p>微光是我的自设，对其他人来说未必有那么大的吸引力。所以我更希望
+StarLite 能让大家用上自己的角色。之后如果有需求，可能会让 StarLite
+适配更多场景，或者添加新功能。</p>
+<h2 id="开发-starlite">开发 StarLite</h2>
+<p>虽然打过算法竞赛，但我并没有实际古法开发独立项目的经验，或许之后也不会有。StarLite
+大部分是用 TypeScript/JavaScript 和 Rust
+写的，而这三种语言我压根没学过，连语法都不会。然而，我已有的知识可以帮助我准确地描述
+Agent
+无法看到的错误、知道大概是哪部分的问题，以及准确描述我的需求。这点加快了我
+vibe coding
+的速度。说到底，编程语言也不过是工具。虽然我偶尔会怀念当年写代码时思路的行云流水，但我也会记得为了找一个
+bug 调试一整天的崩溃。我也知道大部分开发任务不是难而是繁。因此我很庆幸
+AI 能取代这部分工作，让我可以专注在更有趣的事情上。</p>
+<p>开发的过程大多数时间在验收、提需求，以及让 Agent
+工作。我不停地模拟所有用户可能的操作、需求，感觉更像测试工程师或前端 UI
+设计的工作。这部分应该也算是程序设计必要的能力：从用户/人的角度出发思考问题。不管是做游戏还是做什么功能都要尽可能地让用户感到直观、流畅、专业、需求对口。</p>
+<p>值得一提的是，在微光的模型打磨好之前，我其实想用 inochi2d 代替 live2d
+的，前者是一个开源的 2D
+模型框架平替。然而，在开发了一阵子之后，我才发现该项目开发较慢、不太成熟，以及禁止
+AI 代码贡献。巧的是，那时 GPT 6 刚好发布，很多建模的工作可以让 AI
+来完成，于是我干脆直接换上了 vrm 模型。Blender 社区十分活跃，Agent
+在有资源、社区的情况下能力很强大。</p>
+<p>不管怎样，最终的成果我还是满意的。就算没有那么多人用，我自己用着也很开心，至少不算造轮子。</p>
+<p>（我感觉每天对着 AI 工作，说话被反向注入得有些 AI 味了……）</p>
+<h2 id="未来">未来</h2>
+<p>这两个项目已经发布了第一个正式版
+0.1.0。安装、换模型、动作和气泡这些基本流程已经能用了，我自己的博客也在用
+npm 发布的版本。我希望 StarLite
+保持现在的方向：简单地把自己的角色放到日常使用的地方。不要添加各种功能让它变得庞杂。</p>
+<p>接下来想多找一些人实际用用，尤其是用自定义的模型。这步或许才是最难的。我想做个演示视频发
+B
+站，总是被很对自我怀疑的想法阻止：视频做的好不好，会不会有人看，甚至会怀疑我做的这点东西值不值得拿出来讲。虽然已经和这些想法对抗了很久，也知道迈出第一步比打磨完美更重要，但在学校里腌了多年的思维定式就像条件反射一样折磨我。</p>
+<p>从最早想做一个 live2d 美化博客，到学习建模、在 VRC
+里用上微光，再到把他放进自己的博客和桌面，都是同一件事情往前多走了一点。也算把另一件高中时愿望实现了，现在倒有些担心自己没有新的目标可以追求。嗯……或许我不应该太在意未来的事。</p>
+<!-- starlite-page:start --><script type="application/json" data-starlite-page-dialogue>{"path":"2026/10/21/starlite/","context":{"lines":["嗨！这篇文章讲的是我怎么来到网页里的~","live2d……如果我会画画的画其实也想做一个","想把自己的角色也放进博客？欢迎尝试！","啊，没有自己的博客吗？让 AI 搭一个不就好了~","只是个小插件而已没错，但把狼放进狼窝也挺有成就感的","程序是开源的，欢迎捉虫和贡献！"],"animation":"RaisedHandWave","triggers":["click","idle"],"mode":"replace","order":"sequential"}}</script><!-- starlite-page:end -->
   </div>
   
   
@@ -3062,16 +3047,33 @@ VRChat、Warudo，再到现在的网页和桌面，同一个角色又多了一�
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://starcried.github.io/2026/10/21/starlite/&title=StarLite：把自己的 3D 模型放进博客和桌面 - StarCried 的狼窝&summary=前言
-在之前搭建博客的文章里，我写过想把微光放进网页，后面接了一句“待更新”。现在终于可以更新了。
-最开始我想用 Inochi2D 做看板娘。不过，我的 2D 模型还没做完，3D
-模型倒是已经能在 VRChat 和 Warudo
-里使用了。既然如此，为什么不直接把现成的模型用起来呢？于是便有了
-StarLite。
-如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向光标，偶尔活动一下，戳他也会有回应。同一套模型组件还接到了
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://starcried.github.io/2026/10/21/starlite/&title=StarLite：把自己的 3D 模型放进博客和桌面 - StarCried 的狼窝&summary=项目仓库
+
+StarLite：公共核心、模型后端和
+Hexo 插件，按包分开。Hexo 插件可从此项目中安装使用。
+StarLite for
+DSH：Deepseek Harness 插件，包含 DSH 事件接入和 Windows
+桌宠，使用前面的模型运行时。官方桌面版可直接添加插件 dsh-starlite。
+
+前言
+之前的 TODO
+列表里，我写过想把微光放进博客里。现在应该是超额完成了。
+最开始只想着做个自己的 live2d 模型，因为 live2d
+的消耗资源少且有现成的博客项目。然而，由于软件付费原因，我暂缓了这个计划。在这期间为了玩
+VRC 我开始学习 blender 手搓 3D 模型，终于得到了满意的结果。然后，Agent
+开始极大发展。我意识到，我可以开发自己的博客看板娘项目，直接用上现成的模型。于是，StarLite
+诞生了。
+如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向你的光标、偶尔活动，你也可以点击他互动。同一套模型组件还接到了
 DSH（DeepSeek Harness），可以根据 Agent
-的工作状态播放动作和显示气泡。
-这篇文章主要记录我想实现什么、各部分如何工作，以及一些静态截图里看不出来的小问题。具体安装和配置会继续更新，请以对应版本的仓库文档为准。"
+的工作状态播放动作和显示气泡。默认都会使用微光的模型和动作。另外，你也可以使用蓝色大肥鱼模型，感谢作者水原镜（Mzkagami）的授权。模型展示视频链接
+你当然也可以导入自己的人型 VRM 模型使用。插件会自带一些基础动作和
+Idle
+循环、光标追踪，确保新模型直接可以用。如果有动画的话可以更自由地自定义。
+这更像是一篇分享或者介绍博客，不是一篇技术博客，只有 codex
+直到这个插件怎么写出来的（哈哈）。我想技术博客应该也会很快消失吧，stackoverflow
+几乎已经死掉了。总之，只是分享我的经历和一些想法，想使用 StarLite
+的话请根据第一节对应仓库安装即可，自己懒得搞直接让 Agent
+折腾。具体内容应该会继续更新，请以对应版本的仓库文档为准。"
           
           >
           
@@ -3083,16 +3085,33 @@ DSH（DeepSeek Harness），可以根据 Agent
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://starcried.github.io/2026/10/21/starlite/&title=StarLite：把自己的 3D 模型放进博客和桌面 - StarCried 的狼窝&summary=前言
-在之前搭建博客的文章里，我写过想把微光放进网页，后面接了一句“待更新”。现在终于可以更新了。
-最开始我想用 Inochi2D 做看板娘。不过，我的 2D 模型还没做完，3D
-模型倒是已经能在 VRChat 和 Warudo
-里使用了。既然如此，为什么不直接把现成的模型用起来呢？于是便有了
-StarLite。
-如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向光标，偶尔活动一下，戳他也会有回应。同一套模型组件还接到了
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://starcried.github.io/2026/10/21/starlite/&title=StarLite：把自己的 3D 模型放进博客和桌面 - StarCried 的狼窝&summary=项目仓库
+
+StarLite：公共核心、模型后端和
+Hexo 插件，按包分开。Hexo 插件可从此项目中安装使用。
+StarLite for
+DSH：Deepseek Harness 插件，包含 DSH 事件接入和 Windows
+桌宠，使用前面的模型运行时。官方桌面版可直接添加插件 dsh-starlite。
+
+前言
+之前的 TODO
+列表里，我写过想把微光放进博客里。现在应该是超额完成了。
+最开始只想着做个自己的 live2d 模型，因为 live2d
+的消耗资源少且有现成的博客项目。然而，由于软件付费原因，我暂缓了这个计划。在这期间为了玩
+VRC 我开始学习 blender 手搓 3D 模型，终于得到了满意的结果。然后，Agent
+开始极大发展。我意识到，我可以开发自己的博客看板娘项目，直接用上现成的模型。于是，StarLite
+诞生了。
+如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向你的光标、偶尔活动，你也可以点击他互动。同一套模型组件还接到了
 DSH（DeepSeek Harness），可以根据 Agent
-的工作状态播放动作和显示气泡。
-这篇文章主要记录我想实现什么、各部分如何工作，以及一些静态截图里看不出来的小问题。具体安装和配置会继续更新，请以对应版本的仓库文档为准。"
+的工作状态播放动作和显示气泡。默认都会使用微光的模型和动作。另外，你也可以使用蓝色大肥鱼模型，感谢作者水原镜（Mzkagami）的授权。模型展示视频链接
+你当然也可以导入自己的人型 VRM 模型使用。插件会自带一些基础动作和
+Idle
+循环、光标追踪，确保新模型直接可以用。如果有动画的话可以更自由地自定义。
+这更像是一篇分享或者介绍博客，不是一篇技术博客，只有 codex
+直到这个插件怎么写出来的（哈哈）。我想技术博客应该也会很快消失吧，stackoverflow
+几乎已经死掉了。总之，只是分享我的经历和一些想法，想使用 StarLite
+的话请根据第一节对应仓库安装即可，自己懒得搞直接让 Agent
+折腾。具体内容应该会继续更新，请以对应版本的仓库文档为准。"
           
           >
           
@@ -3281,7 +3300,7 @@ DSH（DeepSeek Harness），可以根据 Agent
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E6%83%B3%E8%A6%81%E4%B8%80%E4%B8%AA%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%A1%8C%E5%AE%A0"><span class="toc-text">我想要一个什么样的桌宠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%A8%A1%E5%9E%8B%E5%88%B0%E5%8F%AF%E4%BB%A5%E4%BA%A4%E4%BA%92%E7%9A%84%E8%A7%92%E8%89%B2"><span class="toc-text">从模型到可以交互的角色</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%8A%A8%E4%BD%9C%E5%92%8C%E7%A8%8B%E5%BA%8F%E6%98%AF%E4%B8%8D%E5%90%8C%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="toc-text">模型、动作和程序是不同的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E4%BD%9C%E5%92%8C%E5%8F%A5%E5%AD%90%E9%9C%80%E8%A6%81%E4%B8%80%E8%B5%B7%E8%80%83%E8%99%91"><span class="toc-text">动作和句子需要一起考虑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%98%AF%E6%80%8E%E6%A0%B7%E7%BB%84%E7%BB%87%E7%9A%84"><span class="toc-text">项目是怎样组织的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%9C%9F%E6%AD%A3%E7%94%A8%E8%B5%B7%E6%9D%A5%E6%89%8D%E4%BC%9A%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">一些真正用起来才会发现的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%96%87%E7%AB%A0%E4%B8%8D%E5%BA%94%E8%AF%A5%E6%8D%A2%E4%B8%80%E5%8F%AA%E8%A7%92%E8%89%B2"><span class="toc-text">切换文章，不应该换一只角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%B3%E6%9C%B5%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E7%AA%81%E7%84%B6%E9%A3%9E%E8%B5%B7%E6%9D%A5"><span class="toc-text">耳朵为什么会突然飞起来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E6%8E%89%E5%B8%A7%E4%B9%9F%E4%B8%8D%E4%B8%80%E5%AE%9A%E6%98%AF%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">页面掉帧，也不一定是模型的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99%E6%AF%8F%E7%AF%87%E6%96%87%E7%AB%A0%E5%86%99%E5%87%A0%E5%8F%A5%E8%AF%9D"><span class="toc-text">给每篇文章写几句话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%92%8C%E5%90%8E%E7%BB%AD"><span class="toc-text">使用和后续</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%93%E5%BA%93"><span class="toc-text">项目仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-starlite"><span class="toc-text">创建 StarLite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91-starlite"><span class="toc-text">开发 StarLite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E6%9D%A5"><span class="toc-text">未来</span></a></li></ol>
     </div>
   </section>
 
@@ -4253,7 +4272,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/StarCried"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/学习与技术/","name":"学习与技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/学习与技术/技术实践/","name":"技术实践"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io//2026/10/21/starlite/","name":"StarLite：把自己的 3D 模型放进博客和桌面"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"StarLite：把自己的 3D 模型放进博客和桌面","description":"前言\r\n在之前搭建博客的文章里，我写过想把微光放进网页，后面接了一句“待更新”。现在终于可以更新了。\r\n最开始我想用 Inochi2D 做看板娘。不过，我的 2D 模型还没做完，3D\r\n模型倒是已经能在 VRChat 和 Warudo\r\n里使用了。既然如此，为什么不直接把现成的模型用起来呢？于是便有了\r\nStarLite。\r\n如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向光标，偶尔活动一下，戳他也会有回应。同一套模型组件还接到了\r\nDSH（DeepSeek Harness），可以根据 Agent\r\n的工作状态播放动作和显示气泡。\r\n这篇文章主要记录我想实现什么、各部分如何工作，以及一些静态截图里看不出来的小问题。具体安装和配置会继续更新，请以对应版本的仓库文档为准。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2026/10/21/starlite/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"url":"https://starcried.github.io/2026/10/21/starlite/","wordCount":345,"datePublished":"2026-10-21T09:20:00.000Z","dateModified":"2026-10-21T09:20:00.000Z","articleSection":"学习与技术","keywords":"微光,StarLite,VRM,Hexo,桌宠","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},{"@context":"http://schema.org","@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","sameAs":["https://github.com/StarCried"],"description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://StarCried.github.io/","name":"StarCried 的狼窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/学习与技术/","name":"学习与技术"}},{"@type":"ListItem","position":2,"item":{"@id":"https://StarCried.github.io/categories/学习与技术/技术实践/","name":"技术实践"}},{"@type":"ListItem","position":3,"item":{"@id":"https://StarCried.github.io//2026/10/21/starlite/","name":"StarLite：把自己的 3D 模型放进博客和桌面"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","keywords":"StarCried, 微光, furry, OI, ACM, 生活, 博客, 日常","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。","author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/","description":"StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","url":"https://StarCried.github.io/","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://StarCried.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"StarLite：把自己的 3D 模型放进博客和桌面","description":"项目仓库\r\n\r\nStarLite：公共核心、模型后端和\r\nHexo 插件，按包分开。Hexo 插件可从此项目中安装使用。\r\nStarLite for\r\nDSH：Deepseek Harness 插件，包含 DSH 事件接入和 Windows\r\n桌宠，使用前面的模型运行时。官方桌面版可直接添加插件 dsh-starlite。\r\n\r\n前言\r\n之前的 TODO\r\n列表里，我写过想把微光放进博客里。现在应该是超额完成了。\r\n最开始只想着做个自己的 live2d 模型，因为 live2d\r\n的消耗资源少且有现成的博客项目。然而，由于软件付费原因，我暂缓了这个计划。在这期间为了玩\r\nVRC 我开始学习 blender 手搓 3D 模型，终于得到了满意的结果。然后，Agent\r\n开始极大发展。我意识到，我可以开发自己的博客看板娘项目，直接用上现成的模型。于是，StarLite\r\n诞生了。\r\n如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向你的光标、偶尔活动，你也可以点击他互动。同一套模型组件还接到了\r\nDSH（DeepSeek Harness），可以根据 Agent\r\n的工作状态播放动作和显示气泡。默认都会使用微光的模型和动作。另外，你也可以使用蓝色大肥鱼模型，感谢作者水原镜（Mzkagami）的授权。模型展示视频链接\r\n你当然也可以导入自己的人型 VRM 模型使用。插件会自带一些基础动作和\r\nIdle\r\n循环、光标追踪，确保新模型直接可以用。如果有动画的话可以更自由地自定义。\r\n这更像是一篇分享或者介绍博客，不是一篇技术博客，只有 codex\r\n直到这个插件怎么写出来的（哈哈）。我想技术博客应该也会很快消失吧，stackoverflow\r\n几乎已经死掉了。总之，只是分享我的经历和一些想法，想使用 StarLite\r\n的话请根据第一节对应仓库安装即可，自己懒得搞直接让 Agent\r\n折腾。具体内容应该会继续更新，请以对应版本的仓库文档为准。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://starcried.github.io/2026/10/21/starlite/"},"author":{"@type":"Person","name":"StarCried","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png"},"url":"https://StarCried.github.io/"},"publisher":{"@type":"Organization","name":"StarCried 的狼窝","logo":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}},"url":"https://starcried.github.io/2026/10/21/starlite/","wordCount":834,"datePublished":"2026-10-21T09:20:00.000Z","dateModified":"2026-10-21T09:20:00.000Z","articleSection":"学习与技术","keywords":"微光,StarLite,VRM,Hexo,桌宠","image":{"@type":"ImageObject","url":"/assets/brand/starcried-128.png","width":128,"height":128}}]</script>
 
 
 

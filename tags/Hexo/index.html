@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1793692900227),
+    lastupdate: new Date(1793869312555),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start -->
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2396,7 +2396,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2930,16 +2930,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <h2 id="前言">前言</h2>
-<p>在之前搭建博客的文章里，我写过想把微光放进网页，后面接了一句“待更新”。现在终于可以更新了。</p>
-<p>最开始我想用 Inochi2D 做看板娘。不过，我的 2D 模型还没做完，3D
-模型倒是已经能在 VRChat 和 Warudo
-里使用了。既然如此，为什么不直接把现成的模型用起来呢？于是便有了
-<strong>StarLite</strong>。</p>
-<p>如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向光标，偶尔活动一下，戳他也会有回应。同一套模型组件还接到了
+      <h2 id="项目仓库">项目仓库</h2>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/StarCried/starlite">StarLite</a>：公共核心、模型后端和
+Hexo 插件，按包分开。Hexo 插件可从此项目中安装使用。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/StarCried/starlite-dsh">StarLite for
+DSH</a>：Deepseek Harness 插件，包含 DSH 事件接入和 Windows
+桌宠，使用前面的模型运行时。官方桌面版可直接添加插件 dsh-starlite。</li>
+</ul>
+<h2 id="前言">前言</h2>
+<p>之前的 TODO
+列表里，我写过想把微光放进博客里。现在应该是超额完成了。</p>
+<p>最开始只想着做个自己的 live2d 模型，因为 live2d
+的消耗资源少且有现成的博客项目。然而，由于软件付费原因，我暂缓了这个计划。在这期间为了玩
+VRC 我开始学习 blender 手搓 3D 模型，终于得到了满意的结果。然后，Agent
+开始极大发展。我意识到，我可以开发自己的博客看板娘项目，直接用上现成的模型。于是，StarLite
+诞生了。</p>
+<p>如果你正在电脑上读这篇文章，应该已经看到旁边的微光了。他会看向你的光标、偶尔活动，你也可以点击他互动。同一套模型组件还接到了
 DSH（DeepSeek Harness），可以根据 Agent
-的工作状态播放动作和显示气泡。</p>
-<p>这篇文章主要记录我想实现什么、各部分如何工作，以及一些静态截图里看不出来的小问题。具体安装和配置会继续更新，请以对应版本的仓库文档为准。</p>
+的工作状态播放动作和显示气泡。默认都会使用微光的模型和动作。另外，你也可以使用蓝色大肥鱼模型，感谢作者<strong>水原镜（Mzkagami）</strong>的授权。<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WNt86bEyu/">模型展示视频链接</a></p>
+<p>你当然也可以导入自己的人型 VRM 模型使用。插件会自带一些基础动作和
+Idle
+循环、光标追踪，确保新模型直接可以用。如果有动画的话可以更自由地自定义。</p>
+<p>这更像是一篇分享或者介绍博客，不是一篇技术博客，只有 codex
+直到这个插件怎么写出来的（哈哈）。我想技术博客应该也会很快消失吧，stackoverflow
+几乎已经死掉了。总之，只是分享我的经历和一些想法，想使用 StarLite
+的话请根据第一节对应仓库安装即可，自己懒得搞直接让 Agent
+折腾。具体内容应该会继续更新，请以对应版本的仓库文档为准。</p>
     
   </div>
   
