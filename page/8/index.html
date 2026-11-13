@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.1'>
   <meta name="generator" content="Hexo 7.3.0">
-  <meta name="Volantis" content="5.8.0">
+  <meta name="Volantis" content="5.8.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1794455695176),
+    lastupdate: new Date(1794554502090),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start -->
+<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239">
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2396,7 +2396,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2820,6 +2820,152 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1880 [NOI1995] 石子合并/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/"  itemprop="url">
+        P1880 [NOI1995] 石子合并
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        P1880 [NOI1995]
+石子合并
+一道区间dp题目。
+用 d[i][j] 表示从 i 到 j
+的最大/最小得分，那么依次枚举长度 len，坐标 i
+和 j，三层循环就可以 dp递推求得最值了。
+（如果没有环的话）
+不要着急，我们将序列复制一遍接到后面做一遍即可。
+12345678910111213141516171819202122232425262728293031...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2014 选课/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/"  itemprop="url">
+        P2014 选课
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        洛谷P2014选课
+一道树形DP题。
+f[i][j] 表示i个点选j门课程的最大学分。
+递推方程：
+1234for(int a=n;a&gt;0;a--)//总共选择多少    for(int b=0;b&lt;a;b++)//分别选择多少(b,a-b)        f[x][a]=max(f[x][a],f[x][a-b]+f[u][b]);//都不遍历0的原因是f[i][0]无...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1447 能量采集/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -2878,77 +3024,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div>
           <a class='readmore' href='/2022/04/30/P1447%20%E8%83%BD%E9%87%8F%E9%87%87%E9%9B%86/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1903 数颜色 维护队列/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/"  itemprop="url">
-        P1903 数颜色 维护队列
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        莫队算法的待修版本，增加一个时间的维度进行分块。
-
-P1903 [国家集训队]
-数颜色 / 维护队列
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3039,77 +3114,6 @@ P1903 [国家集训队]
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2014 选课/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/"  itemprop="url">
-        P2014 选课
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        洛谷P2014选课
-一道树形DP题。
-f[i][j] 表示i个点选j门课程的最大学分。
-递推方程：
-1234for(int a=n;a&gt;0;a--)//总共选择多少    for(int b=0;b&lt;a;b++)//分别选择多少(b,a-b)        f[x][a]=max(f[x][a],f[x][a-b]+f[u][b]);//都不遍历0的原因是f[i][0]无...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P2014%20%E9%80%89%E8%AF%BE/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2476-记忆化搜索/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -3182,7 +3186,7 @@ DP?
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1880 [NOI1995] 石子合并/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P2490 [SDOI2011]黑白棋/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3200,23 +3204,23 @@ DP?
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/"  itemprop="url">
-        P1880 [NOI1995] 石子合并
+      <a href="/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/"  itemprop="url">
+        P2490 [SDOI2011]黑白棋
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1880 [NOI1995]
-石子合并
-一道区间dp题目。
-用 d[i][j] 表示从 i 到 j
-的最大/最小得分，那么依次枚举长度 len，坐标 i
-和 j，三层循环就可以 dp递推求得最值了。
-（如果没有环的话）
-不要着急，我们将序列复制一遍接到后面做一遍即可。
-12345678910111213141516171819202122232425262728293031...
+        P2490 [SDOI2011]黑白棋
+题意
+一个 \(1*n\) 的棋盘上，A
+可以移动白色棋子，B
+可以移动黑色的棋子，其中白色不能往左，黑色不能往右。他们每次操作可以移动
+1 到 \(d\) 个棋子。
+每当移动某一个棋子时，这个棋子不能跨越两边的棋子，当然也不可以出界。当谁不可以操作时，谁就失败了。
+思路
+显然可以将题意转化为一种 K-Nim 游戏，即在 \(\frac...
       
     
   </div>
@@ -3241,7 +3245,7 @@ DP?
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P1880%20%5BNOI1995%5D%20%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P2490%20%5BSDOI2011%5D%E9%BB%91%E7%99%BD%E6%A3%8B/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3333,157 +3337,6 @@ Define:以下\(s\)指链或链长。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3209-平面图判定/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/"  itemprop="url">
-        P3209-平面图判定
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        平面图
-平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过其他边的。
-平面图定理
-边数大于点数的三倍减六的图一定不是平面图。即设n为点数，m为边数，有
-\[m&lt;=n*3-6\]
-关于平面图的其他定理和上定理的证明我不会不过我有大佬博客就不乱搬了...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3214 [HNOI2011]卡农/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/"  itemprop="url">
-        P3214 [HNOI2011]卡农
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        P3214 [HNOI2011]卡农
-题意
-在集合 \(\{1,2,\cdots,n\}\) 中选出
-\(m\) 个非空子集满足：
-
-不存在完全相同的两个集合；
-每个元素在所有集合中出现次数之和为偶数。
-
-思路
-考虑转移，利用容斥方法进行 Dp。设 \(f_i\) 表示选了 \(i\) 个集合满足条件的方案数：
-
-首先，如果确定了前 \(i-1\)
-个集合，那么为了满...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/P3214%20%5BHNOI2011%5D%E5%8D%A1%E5%86%9C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3203 弹飞绵羊-分块/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -3541,6 +3394,149 @@ Define:以下\(s\)指链或链长。
       
         <div>
           <a class='readmore' href='/2022/04/30/P3203%20%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E5%88%86%E5%9D%97/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1903 数颜色 维护队列/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/"  itemprop="url">
+        P1903 数颜色 维护队列
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        莫队算法的待修版本，增加一个时间的维度进行分块。
+
+P1903 [国家集训队]
+数颜色 / 维护队列
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P1903%20%E6%95%B0%E9%A2%9C%E8%89%B2%20%E7%BB%B4%E6%8A%A4%E9%98%9F%E5%88%97/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P3209-平面图判定/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/"  itemprop="url">
+        P3209-平面图判定
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        平面图
+平面图就是所有点的连边可以在平面上不相交的图。这一点可以大概理解成拓扑图的性质，即每连一条边就会将某个区域进行分割——很明显，如果两个点分别处在两个不可达的区域，它们要连边显然是要穿过其他边的。
+平面图定理
+边数大于点数的三倍减六的图一定不是平面图。即设n为点数，m为边数，有
+\[m&lt;=n*3-6\]
+关于平面图的其他定理和上定理的证明我不会不过我有大佬博客就不乱搬了...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/">题解</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E9%A2%98%E8%A7%A3/" itemprop="url"><span itemprop="name">题解</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/P3209-%E5%B9%B3%E9%9D%A2%E5%9B%BE%E5%88%A4%E5%AE%9A/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -5019,7 +5015,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   enhancePage();
 })();
-</script><script defer src="/js/navigation.js?v=021d57afa0"></script><script defer src="/js/starfield.js?v=5c22400fd1"></script><script defer src="/js/ride2026.js?v=261c4d40df"></script><!-- hexo injector body_end end --><!-- starlite-widget:start --><div data-starlite-widget-host></div><style>[data-starlite-widget-host],[data-starlite-widget-host].model-vrm-widget{position:fixed;right:16px;bottom:0px;z-index:20}</style><link rel="stylesheet" href="/vrm-widget/5992c1c04a5f/widget.css"><script type="module">
+</script><script defer src="/js/navigation.js?v=021d57afa0"></script><script defer src="/js/starfield.js?v=5c22400fd1"></script><script defer src="/js/ride2026.js?v=261c4d40df"></script><!-- hexo injector body_end end --><!-- starlite-widget:start --><div data-starlite-widget-host></div><style>[data-starlite-widget-host],[data-starlite-widget-host].model-vrm-widget{position:fixed;right:16px;bottom:0px;z-index:20}</style><link rel="stylesheet" href="/vrm-widget/0126e9c3bf4a/widget.css"><script type="module">
 (async (options) => {
   const createEnvironmentLighting = function createEnvironmentLighting(input, scope = globalThis) {
     const doc = scope.document;
@@ -5230,6 +5226,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
         recovery.hidden = !hidden;
         recovery.style.display = hidden ? "inline-flex" : "none";
         if (hidden) {
+            controller.resetCamera();
             host.style.setProperty("visibility", "hidden", "important");
             host.style.setProperty("pointer-events", "none", "important");
             controller.pause();
@@ -5951,5 +5948,5 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   }
   if (document.readyState !== "loading") scheduleMount();
   else document.addEventListener("DOMContentLoaded", scheduleMount, {once:true});
-})({"entryUrl":"/vrm-widget/5992c1c04a5f/index.js","config":{"backend":"vrm","model":"/vrm-model/b8dbad11c9f8/Weiguang.vrm","fallback":"/assets/model-companion/weiguang.png","locale":"zh-CN","animations":[{"name":"Idle","url":"/vrm-model/b8dbad11c9f8/motions/Idle.vrma","durationMs":6000},{"name":"GentleWave","url":"/vrm-model/b8dbad11c9f8/motions/GentleWave.vrma","durationMs":7033.333333333333},{"name":"HighFive","url":"/vrm-model/b8dbad11c9f8/motions/HighFive.vrma","durationMs":4000},{"name":"HighWave","url":"/vrm-model/b8dbad11c9f8/motions/HighWave.vrma","durationMs":8000},{"name":"StumbleAndRecover","url":"/vrm-model/b8dbad11c9f8/motions/StumbleAndRecover.vrma","durationMs":9766.666666666668},{"name":"PlayfulScare","url":"/vrm-model/b8dbad11c9f8/motions/PlayfulScare.vrma","durationMs":7700},{"name":"RaisedHandWave","url":"/vrm-model/b8dbad11c9f8/motions/RaisedHandWave.vrma","durationMs":3800},{"name":"Stretch","url":"/vrm-model/b8dbad11c9f8/motions/Stretch.vrma","durationMs":6366.666666666666},{"name":"BackStretch","url":"/vrm-model/b8dbad11c9f8/motions/BackStretch.vrma","durationMs":15700},{"name":"AbsentmindedWait","url":"/vrm-model/b8dbad11c9f8/motions/AbsentmindedWait.vrma","durationMs":6033.333333333333},{"name":"Thinking","url":"/vrm-model/b8dbad11c9f8/motions/Thinking.vrma","durationMs":6833.333333333333},{"name":"HaveAnIdea","url":"/vrm-model/b8dbad11c9f8/motions/HaveAnIdea.vrma","durationMs":9366.666666666668},{"name":"AwkwardHeadScratch","url":"/vrm-model/b8dbad11c9f8/motions/AwkwardHeadScratch.vrma","durationMs":6833.333333333333}],"profile":"/vrm-model/b8dbad11c9f8/profile.json","embeddedAnimations":[],"neutralAnimation":"Idle","display":{"width":260,"height":390},"mobile":{"show":false,"breakpoint":900},"gaze":{"maxYawDegrees":25,"maxPitchDegrees":15,"smoothingMs":100},"camera":{"yawDegrees":0,"pitchDegrees":5,"fovDegrees":20,"targetHeight":0.54},"environmentLighting":{"color":"#d5e9f5","strength":1,"brightness":1},"render":{"fps":60,"maxDevicePixelRatio":1,"autoFit":true,"fitPadding":0.92},"ambient":{"animations":["Idle"]},"dialogue":{"enter":{"delayMs":500,"durationMs":6300,"linesByAnimation":{"RaisedHandWave":["嗨！我是微光！","欢迎来我的小窝~","你好呀，今天想看些什么？"]},"animation":"RaisedHandWave"},"click":{"durationMs":6300,"linesByAnimation":{"GentleWave":["嗨~","有什么想聊的？可以留下评论或者联系社交媒体哦~","喜欢我的文章吗？诶，只是喜欢戳我吗？"],"HighFive":["High Five!","耶！"],"HighWave":["你好你好！欢迎你来~","我是小狼微光！可以在顶部的“微光”页更了解我哦","很高兴认识你！在评论可以留下你的想法~"],"StumbleAndRecover":["嗷……好痛……是你干的吗？呃，不是吗……","啊！……没事，就当没看到好吗","为什么我们不再为摔倒而哭泣？是学会了保护自己，还是接纳了疼痛……嗯，只是为了思考这个问题才摔的……"],"PlayfulScare":["饿狼扑食！","哇！没吓到你吗……"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再给人类加个“有选择的自由”的幻想……","宇宙在熵增，生命却在熵减，人类更是。这应该就是逆天吧……嗯，希望我能越来越逆天"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟是我仔细包装过的。","嗯……这样的话……哦哦我会了！这是水题！"],"AwkwardHeadScratch":["遇到 BUG 或者有想吐槽的？请告诉我！就是麻烦下口轻点……"]},"animation":"GentleWave","animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]},"idle":{"durationMs":9000,"intervalMinMs":60000,"intervalMaxMs":120000,"linesByAnimation":{"Stretch":["唔——","站着好累……下版本加个坐着的动作好了","我猜你坐了很久了，一起舒展一下吧。"],"BackStretch":["呼吸……放松……遁入虚无……","呼吸……放松……遁入智瞳……不对！","啊……我的腰……一定要记得多活动啊……"],"AbsentmindedWait":["在看我的日记、技术博客还是题解？肯定不是题解……","平时喜欢做什么？我平时喜欢睡大觉","你站在桥上看风景，看风景的人在楼上看你。"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再给人类加个“有选择的自由”的幻想……","宇宙在熵增，生命却在熵减，人类更是。这应该就是逆天吧……嗯，希望我能越来越逆天"],"RaisedHandWave":["觉得可以给我添加新功能或优化？欢迎向 starlite 项目贡献！","你知道吗？虽然我是工程师，但看板娘组件主要使用 AI 开发，大部分时间都花在了手搓模型上。建模感觉比小时候的橡皮泥好玩~"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟是我仔细包装过的。","嗯……这样的话……哦哦我会了！这是水题！"],"AwkwardHeadScratch":["遇到 BUG 或者有想吐槽的？请告诉我！就是麻烦下口轻点……"]},"animation":"Stretch","animations":["Stretch","BackStretch","AbsentmindedWait","Thinking","RaisedHandWave","HaveAnIdea","AwkwardHeadScratch"]}},"interactions":{"pointer":true,"passThrough":true,"drag":false,"click":{"animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]}}},"breakpoint":900,"showOnMobile":false,"position":{"right":16,"bottom":0,"zIndex":20},"visitorDrag":true,"pageRoot":"/","environmentLighting":{"color":"#d5e9f5","darkColor":"#adc6ff","strength":1,"brightness":1,"darkBrightness":0.9}});</script><!-- starlite-widget:end --></body>
+})({"entryUrl":"/vrm-widget/0126e9c3bf4a/index.js","config":{"backend":"vrm","model":"/vrm-model/c143961cde31/model.vrm","fallback":"/assets/model-companion/weiguang.png","locale":"zh-CN","animations":[],"embeddedAnimations":["AbsentmindedWait","AwkwardHeadScratch","BackStretch","GentleWave","HaveAnIdea","HighFive","HighWave","Idle","PlayfulScare","RaisedHandWave","Stretch","StumbleAndRecover","Thinking"],"neutralAnimation":"Idle","display":{"width":260,"height":390},"mobile":{"show":false,"breakpoint":900},"gaze":{"maxYawDegrees":25,"maxPitchDegrees":15,"smoothingMs":100},"adjustments":{"tailSway":{"rootBone":"Tail","amplitudeDegrees":35,"periodSeconds":10}},"camera":{"yawDegrees":0,"pitchDegrees":5,"fovDegrees":20,"targetHeight":0.54},"environmentLighting":{"color":"#d5e9f5","strength":1,"brightness":1},"render":{"fps":60,"maxDevicePixelRatio":1,"autoFit":true,"fitPadding":0.92},"ambient":{"animations":["Idle"]},"dialogue":{"enter":{"delayMs":500,"durationMs":6300,"linesByAnimation":{"RaisedHandWave":["嗨！我是微光！","欢迎来我的小窝~","你好呀，今天想看些什么？"]},"animation":"RaisedHandWave"},"click":{"durationMs":6300,"linesByAnimation":{"GentleWave":["嗨~","有什么想聊的？可以留下评论或者联系社交媒体哦~","喜欢我的文章吗？诶，只是喜欢戳我吗？"],"HighFive":["High Five!","耶！"],"HighWave":["你好你好！欢迎你来~","我是小狼微光！可以在顶部的“微光”页更了解我哦","很高兴认识你！在评论可以留下你的想法~"],"StumbleAndRecover":["嗷……好痛……是你干的吗？呃，不是吗……","啊！……没事，就当没看到好吗","为什么我们不再为摔倒而哭泣？是学会了保护自己，还是接纳了疼痛……嗯，只是为了思考这个问题才摔的……"],"PlayfulScare":["饿狼扑食！","哇！没吓到你吗……"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再给人类加个“有选择的自由”的幻想……","宇宙在熵增，生命却在熵减，人类更是。这应该就是逆天吧……嗯，希望我能越来越逆天"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟是我仔细包装过的。","嗯……这样的话……哦哦我会了！这是水题！"],"AwkwardHeadScratch":["遇到 BUG 或者有想吐槽的？请告诉我！就是麻烦下口轻点……"]},"animation":"GentleWave","animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]},"idle":{"durationMs":9000,"intervalMinMs":60000,"intervalMaxMs":120000,"linesByAnimation":{"Stretch":["唔——","站着好累……下版本加个坐着的动作好了","我猜你坐了很久了，一起舒展一下吧。"],"BackStretch":["呼吸……放松……遁入虚无……","呼吸……放松……遁入智瞳……不对！","啊……我的腰……一定要记得多活动啊……"],"AbsentmindedWait":["在看我的日记、技术博客还是题解？肯定不是题解……","平时喜欢做什么？我平时喜欢睡大觉","你站在桥上看风景，看风景的人在楼上看你。"],"Thinking":["产出作品、表达思想、探索规律和不断体验，哪个是你最想要的？哪个是我最想要的……","AI 最后会把人类圈养起来吗？人类现在难道不也活在科学理论、社会制度、思想文化等的圈养中吗？一个更好的圈有什么不好的？如果再给人类加个“有选择的自由”的幻想……","宇宙在熵增，生命却在熵减，人类更是。这应该就是逆天吧……嗯，希望我能越来越逆天"],"RaisedHandWave":["觉得可以给我添加新功能或优化？欢迎向 starlite 项目贡献！","你知道吗？虽然我是工程师，但看板娘组件主要使用 AI 开发，大部分时间都花在了手搓模型上。建模感觉比小时候的橡皮泥好玩~"],"HaveAnIdea":["写东西给别人看，是不是也算某种暴露癖？应该不是，毕竟是我仔细包装过的。","嗯……这样的话……哦哦我会了！这是水题！"],"AwkwardHeadScratch":["遇到 BUG 或者有想吐槽的？请告诉我！就是麻烦下口轻点……"]},"animation":"Stretch","animations":["Stretch","BackStretch","AbsentmindedWait","Thinking","RaisedHandWave","HaveAnIdea","AwkwardHeadScratch"]}},"interactions":{"pointer":true,"passThrough":true,"drag":false,"click":{"animations":["GentleWave","HighFive","HighWave","StumbleAndRecover","PlayfulScare","Thinking","HaveAnIdea","AwkwardHeadScratch"]}}},"breakpoint":900,"showOnMobile":false,"position":{"right":16,"bottom":0,"zIndex":20},"visitorDrag":true,"pageRoot":"/","environmentLighting":{"color":"#d5e9f5","darkColor":"#adc6ff","strength":1,"brightness":1,"darkBrightness":0.9}});</script><!-- starlite-widget:end --></body>
 </html>
