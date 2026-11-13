@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.1'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
   <meta name="generator" content="Hexo 7.3.0">
-  <meta name="Volantis" content="5.8.1">
+  <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1794554502090),
+    lastupdate: new Date(1794558245870),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239">
+<!-- hexo injector head_end start -->
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2396,7 +2396,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<!-- hexo injector head_end end --></head>
+<link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2823,7 +2823,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/斐波那契数列相关/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扩展欧拉定理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2841,23 +2841,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/"  itemprop="url">
-        斐波那契数列相关
+      <a href="/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/"  itemprop="url">
+        扩展欧拉定理
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        斐波那契数列
-\(F(0)=F(1)=1\) 或 \(F(1)=F(2)=1\)，\(F(i)=F(i-1)+F(i-2)\).
-广义斐波那契数列在转移时有系数且首两项给定。
-求法
-注意到斐波那契数列的转移为一个矩阵乘 \[
-\begin{bmatrix}F(i)&amp;F(i-1)\end{bmatrix}
-\begin{bmatrix}
-1&amp;1\\
-1&amp;...
+        欧拉定理
+欧拉定理：若 \(a\) 与 \(m\) 互质，则有 \[
+a^{\varphi(m)}\equiv1(\mod m)
+\] 我们可以发现费马小定理其实就是欧拉定理的特殊情况。
+证明的话，构造一个与 \(m\)
+互质的数列操作，利用剩余系证明
+扩展欧拉定理
+扩展欧拉定理为 \[
+a^b\equiv \begin{cases}a^{b\mod\varphi(p)},&...
       
     
   </div>
@@ -2868,21 +2868,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/">数学笔记</a>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">算法笔记</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
             </span>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">数学笔记</span></a>
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">算法笔记</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9B%B8%E5%85%B3/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2967,7 +2967,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/斜率优化/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/扫描线/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -2985,8 +2985,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/"  itemprop="url">
-        斜率优化
+      <a href="/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/"  itemprop="url">
+        扫描线
       </a>
     </h2>
   
@@ -2994,10 +2994,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-这是之前博客园的草稿，写得不好，本来想直接删除了事。然而，斜率优化是一个很重要也很基础的优化问题，是需要学习掌握的。但我现在没有精力写一篇新的文章了。
+我的第一篇洛谷博客就是扫描线。虽然那时候什么也不懂，也非常幼稚，甚至不知扫描线的原理是如何，只是一门心思地去做，就像面对未知的生活。
 
-OI wiki: 斜率优化
-
+扫描线处理矩阵面积之和的问题，当然它们会有互相覆盖而不能直接加起来。
+扫描线就是从下往上一次扫描“线”，然后用线将图分成多个区域，累加即可。用线段树记录横坐标此时扫描线处的长度。
+用 Xi 表示第 \(i\)
+条竖直的线（用来划分区间），用 l...
       
     
   </div>
@@ -3022,7 +3024,7 @@ OI wiki: 斜率优化
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/%E6%89%AB%E6%8F%8F%E7%BA%BF/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3098,82 +3100,6 @@ dinic
       
         <div>
           <a class='readmore' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E7%BD%91%E7%BB%9C%E6%B5%81dinic/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/最大权闭合子图/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/"  itemprop="url">
-        最大权闭合子图
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        最大权闭合子图
-闭合子图
-定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。
-最大权闭合子图
-给有向图的点加一个点权，能得到的点权最大的闭合子图。
-网络流模型
-
-将所有正点权的点的点权全部加入答案。接下来我们将原来正点权的点变成负点权。现在图上全是负点，我们需要尽量选最少点权使图符合条件。
-设超级源点和超级汇点。
-将超级源向所有...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">算法笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">算法笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3321,6 +3247,82 @@ dinic
       
         <div>
           <a class='readmore' href='/2022/04/30/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E8%A6%86%E7%9B%96/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/最大权闭合子图/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/"  itemprop="url">
+        最大权闭合子图
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        最大权闭合子图
+闭合子图
+定义有向图的一个闭合子图是该有向图的一个点集，其中这个点集中的所有点的出边连向的还是点集中的点。
+最大权闭合子图
+给有向图的点加一个点权，能得到的点权最大的闭合子图。
+网络流模型
+
+将所有正点权的点的点权全部加入答案。接下来我们将原来正点权的点变成负点权。现在图上全是负点，我们需要尽量选最少点权使图符合条件。
+设超级源点和超级汇点。
+将超级源向所有...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">算法笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">算法笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/' itemprop="url">
             阅读全文
           </a>
         </div>

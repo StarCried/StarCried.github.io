@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.1'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.8.0'>
   <meta name="generator" content="Hexo 7.3.0">
-  <meta name="Volantis" content="5.8.1">
+  <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
@@ -1918,7 +1918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.7f9b83b8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.80d861b1.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.65811610.js"},"css":{"style":"/css/style.35b3785d.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1794554502090),
+    lastupdate: new Date(1794558245870),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","category"],
@@ -2339,7 +2339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd end-->
   <!-- front-matter head_end begin -->
   <!-- front-matter head_end end -->
-<!-- hexo injector head_end start --><link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239">
+<!-- hexo injector head_end start -->
 <style>
 /* 默认日间模式颜色 */
 :root {
@@ -2396,7 +2396,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 .chat-left.chat-continuous .chat-bubble { border-top-left-radius: 12px; }
 .chat-right.chat-continuous .chat-bubble { border-top-right-radius: 12px; }
 </style>
-<!-- hexo injector head_end end --></head>
+<link rel="stylesheet" href="/css/starcried.css?v=b4cb48ef58"><link rel="stylesheet" href="/css/ride2026.css?v=4fed907239"><!-- hexo injector head_end end --></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -3115,6 +3115,81 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Dirichlet卷积和莫比乌斯反演/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="StarCried 的狼窝">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="StarCried 的狼窝">
+    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/assets/brand/starcried-128.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"  itemprop="url">
+        Dirichlet卷积和莫比乌斯反演
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        
+非全面讲解，仅供记录笔记
+
+Dirichlet卷积
+\[(f\ast g)(n)=\sum_{d\mid
+n}f(d)g(\frac{n}{d})\] \[\varepsilon
+=\mu \ast 1 \iff \varepsilon(n) = \sum_{d\mid n} \mu(d)\]
+其中\(\varepsilon\)卷任何函数等于其函数本身。
+莫比乌斯函数\(\...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/">数学笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">数学笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Guass消元总结/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
@@ -3176,81 +3251,6 @@ dis 数组代表由起点到其他点的最短路，初始化其为 \(I...
       
         <div>
           <a class='readmore' href='/2022/04/30/Guass%E6%B6%88%E5%85%83%E6%80%BB%E7%BB%93/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/Dirichlet卷积和莫比乌斯反演/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="StarCried 的狼窝">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="StarCried 的狼窝">
-    <meta itemprop="description" content="StarCried 的狼窝，记录算法竞赛知识、技术、furry 以及学习、生活中的点点滴滴。">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/assets/brand/starcried-128.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"  itemprop="url">
-        Dirichlet卷积和莫比乌斯反演
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-非全面讲解，仅供记录笔记
-
-Dirichlet卷积
-\[(f\ast g)(n)=\sum_{d\mid
-n}f(d)g(\frac{n}{d})\] \[\varepsilon
-=\mu \ast 1 \iff \varepsilon(n) = \sum_{d\mid n} \mu(d)\]
-其中\(\varepsilon\)卷任何函数等于其函数本身。
-莫比乌斯函数\(\...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-30T00:00:00+08:00">2022-04-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/">学习与技术</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/">数学笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/" itemprop="url"><span itemprop="name">学习与技术</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%8A%80%E6%9C%AF/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">数学笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/30/Dirichlet%E5%8D%B7%E7%A7%AF%E5%92%8C%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3495,7 +3495,7 @@ f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1414 又是毕业季II/">
+  <link itemprop="mainEntityOfPage" href="https://starcried.github.io/2022/04/30/P1447 能量采集/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="StarCried 的狼窝">
   </span>
@@ -3513,23 +3513,21 @@ f[i][j]=max(f[i][k-1]*f[k+1][j]+f[k][k])。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/"  itemprop="url">
-        P1414 又是毕业季II
+      <a href="/2022/04/30/P1447%20%E8%83%BD%E9%87%8F%E9%87%87%E9%9B%86/"  itemprop="url">
+        P1447 能量采集
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        P1414
-又是毕业季II
-数论题，主要在于推演。
-洛谷的《又是毕业季I》更好玩
-发现对于所有的同学的能力值，只要我们选出每个数的所有因子并记录所有同学所有因子出现的次数，就可以得到一个
-\(c\) 数组为所有因子出现的次数。
-因为让输出 \(1\sim n\)
-所有的值，而且因子数
-c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历到 c[i...
+        P1447能量采集
+
+定义:(i,j)表示处于(i,j)的植物的贡献
+
+我们发现，点(i,j)与(0,0)的连线所过整点的数目为\(\gcd(i,j)\)
+发现要是想记录每个点的答案并不好算。那么怎么好算呢？
+我们来找一找同一直线上的所有点答案的和的关系。先不考虑答案只考虑个数。发现，寻找一个点及其倍数的个数的和更加好算。而且，因为有n和m的限制，那么向下取整的答案一定就是其本身...
       
     
   </div>
@@ -3554,7 +3552,7 @@ c[k-1]&gt;=c[k]，我们就一定可以从因子数最高的 \(c\) 向下遍历�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/04/30/P1414%20%E5%8F%88%E6%98%AF%E6%AF%95%E4%B8%9A%E5%AD%A3II/' itemprop="url">
+          <a class='readmore' href='/2022/04/30/P1447%20%E8%83%BD%E9%87%8F%E9%87%87%E9%9B%86/' itemprop="url">
             阅读全文
           </a>
         </div>
